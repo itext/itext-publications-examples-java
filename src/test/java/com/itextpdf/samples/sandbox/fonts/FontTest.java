@@ -33,7 +33,7 @@ import java.util.Set;
 @Category(SampleTest.class)
 public class FontTest extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/fonts/font_test.pdf";
-    public static final String FONTDIR = "./src/test/resources/book/part3/chapter11/font";
+    public static final String FONTDIR = "./src/test/resources/font";
     public static final String TEXT = "Quick brown fox jumps over the lazy dog; 0123456789";
     public static final String CP1250 = "Nikogar\u0161nja zemlja";
     public static final String CP1251 = "\u042f \u043b\u044e\u0431\u043b\u044e \u0442\u0435\u0431\u044f";
