@@ -16,15 +16,15 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.experimental.categories.Category;
-
 import java.io.File;
+
+import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class BorderForParagraph2 extends GenericTest {
@@ -83,31 +83,8 @@ public class BorderForParagraph2 extends GenericTest {
         }
 
         @Override
-        protected ParagraphRenderer[] split() {
-            BorderParagraphRenderer splitRenderer = createSplitRenderer();
-            splitRenderer.occupiedArea = occupiedArea.clone();
-            splitRenderer.parent = parent;
-
-            BorderParagraphRenderer overflowRenderer = createOverflowRenderer();
-            overflowRenderer.parent = parent;
-
-            return new ParagraphRenderer[]{splitRenderer, overflowRenderer};
-        }
-
-        @Override
-        protected BorderParagraphRenderer createSplitRenderer() {
+        public IRenderer getNextRenderer() {
             return new BorderParagraphRenderer((Paragraph) modelElement);
-        }
-
-        @Override
-        protected BorderParagraphRenderer createOverflowRenderer() {
-            BorderParagraphRenderer overflowRenderer = new BorderParagraphRenderer((Paragraph) modelElement);
-            // Reset first line indent in case of overflow.
-            float firstLineIndent = getPropertyAsFloat(Property.FIRST_LINE_INDENT);
-            if (firstLineIndent != 0) {
-                overflowRenderer.setProperty(Property.FIRST_LINE_INDENT, 0);
-            }
-            return overflowRenderer;
         }
     }
 }
