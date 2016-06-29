@@ -16,11 +16,9 @@ import com.itextpdf.layout.ColumnDocumentRenderer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.test.annotations.type.SampleTest;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import org.junit.experimental.categories.Category;
+
+import java.io.IOException;
 
 /**
  * Example demonstrates how to build complex layouts using layout manager
@@ -36,12 +34,8 @@ public class Listing_99_02_ComplexDocumentLayout extends GenericTest {
 
     @Override
     public void manipulatePdf(String dest) throws IOException {
-        //Initialize writer
-        FileOutputStream fos = new FileOutputStream(dest);
-        PdfWriter writer = new PdfWriter(fos);
-
         //Initialize document
-        PdfDocument pdfDoc = new PdfDocument(writer);
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         //Set up renderer. The layout consist of 2 vertical stripes.

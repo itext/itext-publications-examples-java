@@ -17,16 +17,14 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.property.Property;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.experimental.categories.Category;
 
 import java.io.File;
-import java.io.FileOutputStream;
-
-import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class RemoteGoto extends GenericTest {
@@ -50,7 +48,7 @@ public class RemoteGoto extends GenericTest {
     }
 
     private void createPdf(String src) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(new FileOutputStream(src)));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(src));
         Document doc = new Document(pdfDoc);
         Paragraph anchor = new Paragraph("This is a destination");
         anchor.setProperty(Property.DESTINATION, "dest");
@@ -59,7 +57,7 @@ public class RemoteGoto extends GenericTest {
     }
 
     private void createPdf2(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(new FileOutputStream(dest)));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         Paragraph chunk = new Paragraph(new Link("Link", PdfAction.createGoToR("subdir/xyz.pdf", "dest")));
         doc.add(chunk);

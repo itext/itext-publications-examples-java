@@ -8,8 +8,8 @@
 package com.itextpdf.samples;
 
 import com.itextpdf.barcodes.*;
-import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
@@ -19,7 +19,6 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Listing_99_05_BarcodeLayout extends GenericTest {
@@ -31,12 +30,8 @@ public class Listing_99_05_BarcodeLayout extends GenericTest {
     }
 
     public void manipulatePdf(String dest) throws FileNotFoundException {
-        //Initialize writer
-        FileOutputStream fos = new FileOutputStream(dest);
-        PdfWriter writer = new PdfWriter(fos);
-
         //Initialize document
-        PdfDocument pdfDoc = new PdfDocument(writer);
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
         Document doc = new Document(pdfDoc, new PageSize(340, 842));
 
