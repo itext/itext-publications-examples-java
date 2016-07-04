@@ -43,11 +43,12 @@ public class MergeForms2 extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         pdfDoc.initializeOutlines();
+        PdfPageFormCopier formCopier = new PdfPageFormCopier();
         for (int i = 0; i < 3; ) {
             PdfDocument readerDoc = new PdfDocument(new PdfReader(
                     new RandomAccessSourceFactory().createSource(renameFields(SRC, ++i)),
                     new ReaderProperties()));
-            readerDoc.copyPagesTo(1, readerDoc.getNumberOfPages(), pdfDoc, new PdfPageFormCopier());
+            readerDoc.copyPagesTo(1, readerDoc.getNumberOfPages(), pdfDoc, formCopier);
             readerDoc.close();
         }
         pdfDoc.close();

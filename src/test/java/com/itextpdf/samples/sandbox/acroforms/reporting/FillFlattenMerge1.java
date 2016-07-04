@@ -41,6 +41,7 @@ public class FillFlattenMerge1 extends GenericTest {
     @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfPageFormCopier formCopier = new PdfPageFormCopier();
         pdfDoc.initializeOutlines();
 
         ByteArrayOutputStream baos;
@@ -71,7 +72,7 @@ public class FillFlattenMerge1 extends GenericTest {
             pdfInnerDoc.close();
 
             pdfInnerDoc = new PdfDocument(new PdfReader(new ByteArrayInputStream(baos.toByteArray())));
-            pdfInnerDoc.copyPagesTo(1, pdfInnerDoc.getNumberOfPages(), pdfDoc, new PdfPageFormCopier());
+            pdfInnerDoc.copyPagesTo(1, pdfInnerDoc.getNumberOfPages(), pdfDoc, formCopier);
             pdfInnerDoc.close();
         }
         br.close();
