@@ -15,13 +15,13 @@ endobj
 <</AF[9 0 R]/Metadata 11 0 R/Names 13 0 R/OutputIntents[<</DestOutputProfile 14 0 R/Info(sRGB IEC61966-2.1)/OutputCondition()/OutputConditionIdentifier(Custom)/RegistryName(http://www.color.org)/S/GTS_PDFA1/Type/OutputIntent>>]/Pages 2 0 R/Type/Catalog>>
 endobj
 3 0 obj
-<</CreationDate(D:20160419140929+03'00')/ModDate(D:20160419140929+03'00')/Producer(iText® 7.0.0-SNAPSHOT ©2000-2016 iText Group NV; AGPL)>>
+<</CreationDate(D:20160711134648+03'00')/ModDate(D:20160711134648+03'00')/Producer(iText® 7.0.1-SNAPSHOT ©2000-2016 iText Group NV \(AGPL-version\))>>
 endobj
 7 0 obj
-<</BaseFont/CTBPQV+OpenSans-Bold/Encoding/WinAnsiEncoding/FirstChar 32/FontDescriptor 15 0 R/LastChar 121/Subtype/TrueType/Type/Font/Widths[259 0 0 0 0 900 0 0 338 338 0 0 0 0 285 0 570 570 570 570 0 570 570 0 0 570 285 0 0 0 0 0 0 689 671 0 740 560 548 0 0 331 0 0 0 0 0 0 627 795 660 550 579 755 649 0 666 0 0 0 0 0 0 0 0 604 632 514 0 590 0 0 0 305 0 0 305 981 657 619 0 0 454 497 434 657 0 0 578 568]>>
+<</BaseFont/CACPJY+OpenSans-Bold/Encoding/WinAnsiEncoding/FirstChar 32/FontDescriptor 15 0 R/LastChar 121/Subtype/TrueType/Type/Font/Widths[259 0 0 0 0 900 0 0 338 338 0 0 0 0 285 0 570 570 570 570 0 570 570 0 0 570 285 0 0 0 0 0 0 689 671 0 740 560 548 0 0 331 0 0 0 0 0 0 627 795 660 550 579 755 649 0 666 0 0 0 0 0 0 0 0 604 632 514 0 590 0 0 0 305 0 0 305 981 657 619 0 0 454 497 434 657 0 0 578 568]>>
 endobj
 6 0 obj
-<</BaseFont/HIQGPF+OpenSans/Encoding/WinAnsiEncoding/FirstChar 32/FontDescriptor 16 0 R/LastChar 121/Subtype/TrueType/Type/Font/Widths[259 0 0 0 0 0 0 0 0 0 0 0 245 321 266 367 571 571 571 571 571 571 571 571 571 571 266 0 0 0 0 0 0 632 647 630 729 556 516 728 737 278 0 613 519 902 753 778 602 0 618 548 553 728 595 0 0 0 570 0 0 0 0 0 0 556 612 476 612 561 338 547 613 252 252 524 252 930 613 604 612 612 408 477 353 613 500 777 0 503]>>
+<</BaseFont/MMYUVT+OpenSans/Encoding/WinAnsiEncoding/FirstChar 32/FontDescriptor 16 0 R/LastChar 121/Subtype/TrueType/Type/Font/Widths[259 0 0 0 0 0 0 0 0 0 0 0 245 321 266 367 571 571 571 571 571 571 571 571 571 571 266 0 0 0 0 0 0 632 647 630 729 556 516 728 737 278 0 613 519 902 753 778 602 0 618 548 553 728 595 0 0 0 570 0 0 0 0 0 0 556 612 476 612 561 338 547 613 252 252 524 252 930 613 604 612 612 408 477 353 613 500 777 0 503]>>
 endobj
 2 0 obj
 <</Count 1/Kids[4 0 R]/Type/Pages>>
@@ -30,29 +30,29 @@ endobj
 <</AFRelationship/Alternative/Desc(ZUGFeRD invoice)/EF<</F 8 0 R/UF 8 0 R>>/F(ZUGFeRD-invoice.xml)/Type/Filespec/UF(ZUGFeRD-invoice.xml)>>
 endobj
 11 0 obj
-<</Length 4688/Subtype/XML/Type/Metadata>>stream
+<</Length 4697/Subtype/XML/Type/Metadata>>stream
 <?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.1.0-jc003">
   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <rdf:Description rdf:about=""
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
-        xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/"
-        xmlns:xmp="http://ns.adobe.com/xap/1.0/"
         xmlns:zf="urn:ferd:pdfa:CrossIndustryDocument:invoice:1p0#"
         xmlns:pdfaExtension="http://www.aiim.org/pdfa/ns/extension/"
         xmlns:pdfaSchema="http://www.aiim.org/pdfa/ns/schema#"
         xmlns:pdfaProperty="http://www.aiim.org/pdfa/ns/property#"
+        xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+        xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/"
       dc:format="application/pdf"
-      pdf:Producer="iTextÂ® 7.0.0-SNAPSHOT Â©2000-2016 iText Group NV; AGPL"
-      pdfaid:conformance="B"
-      pdfaid:part="3"
-      xmp:CreateDate="2016-04-19T14:09:29+03:00"
-      xmp:ModifyDate="2016-04-19T14:09:29+03:00"
+      pdf:Producer="iTextÂ® 7.0.1-SNAPSHOT Â©2000-2016 iText Group NV (AGPL-version)"
       zf:ConformanceLevel="BASIC"
       zf:DocumentFileName="ZUGFeRD-invoice.xml"
       zf:DocumentType="INVOICE"
-      zf:Version="1.0">
+      zf:Version="1.0"
+      xmp:CreateDate="2016-07-11T13:46:48+03:00"
+      xmp:ModifyDate="2016-07-11T13:46:48+03:00"
+      pdfaid:part="3"
+      pdfaid:conformance="B">
       <pdfaExtension:schemas>
         <rdf:Bag>
           <rdf:li>
@@ -130,10 +130,10 @@ cmfwB;y9­v:æôÖÙÁYì|Øù¦KšK‹Ë£yÆóøóç¹ê¹r\ë]¥n·D·½nRw]wŽ{ƒû}žG“Ç„§©gªçAÏg^
 endstream
 endobj
 15 0 obj
-<</Ascent 765/CapHeight 713/Descent -240/Flags 262176/FontBBox[-619 -292 1318 1068]/FontFamily(Open Sans)/FontFile2 17 0 R/FontName/CTBPQV+OpenSans-Bold/FontWeight 700/ItalicAngle 0/StemV 80/Type/FontDescriptor>>
+<</Ascent 765/CapHeight 713/Descent -240/Flags 262176/FontBBox[-619 -292 1318 1068]/FontFamily(Open Sans)/FontFile2 17 0 R/FontName/CACPJY+OpenSans-Bold/FontWeight 700/ItalicAngle 0/StemV 80/Type/FontDescriptor>>
 endobj
 16 0 obj
-<</Ascent 765/CapHeight 713/Descent -240/Flags 32/FontBBox[-549 -270 1204 1047]/FontFamily(Open Sans)/FontFile2 18 0 R/FontName/HIQGPF+OpenSans/FontWeight 400/ItalicAngle 0/StemV 80/Type/FontDescriptor>>
+<</Ascent 765/CapHeight 713/Descent -240/Flags 32/FontBBox[-549 -270 1204 1047]/FontFamily(Open Sans)/FontFile2 18 0 R/FontName/MMYUVT+OpenSans/FontWeight 400/ItalicAngle 0/StemV 80/Type/FontDescriptor>>
 endobj
 17 0 obj
 <</Filter/FlateDecode/Length 8649/Length1 15096>>stream
@@ -215,13 +215,11 @@ Aå˜«vò`pá²e00¹<ÔcdUÈ“,Õâ%y§ëë³²ÆÕÏœ•Å>3³êgfµý¨ÍÄqñ·èT}onÀŠÜ„8óA„îP¥p7
 endstream
 endobj
 8 0 obj
-<</Filter/FlateDecode/Length 1418/Params<</ModDate(D:20160419140929+03'00')/Size 10412>>/Subtype/application#2fxml/Type/EmbeddedFile>>stream
-xœíZßoâ8~_iÿ+Ï·@K)Ú²‚@»¨Ûn¯Ðêton2€¯‰Í:vÿþ&¿h’”Þ=\Nm„x°gÆãù¾£|ý¶ñ=ò2`‚ŸVÃ4pG¸Œ/ÎŒ»Ùù—®ñ­ÿùÓWø=[Š ˜pWJnGÂÑ>pEÐ z’úg†–¼§Ã8€ÿÌ©£z.U´(Ê]*ÝÞ-è€>x0X,$,¨‚¡‡Ðð\HŸ*tdÌSÛžÕ2RëAb}h¢ÐãO‚áºÖÊLÕ´«sêŽÿÒÔcsî'fÛÚ9NÍlvf,•ZõšÍõzÝX·B.š-Ó´š\ý˜:KðéÆCs.‚O²é
-œÈìxã,)_ ýÄ_[p•Ç
-ÔïÍ P¸5æP%ä‹ÉH ÷Ó{žTRÃ×fvì…µf•¹h­Í\ð0ø;/sÎÝP{Ž„Ú“QÿpDzŽð^{…ªyGßìª½!¾ßº ÷$óaAï&M3|Š¼G®Ñ“þäúþçÄÇ2ÑHJd‘-\è·»‰¥ÝH~Å Ð€ÄƒË˜ÙžÎM•ÄÄ$q¢`ºš-£ß2­cóÈ´b*d%÷Â\¶Rìw<í‚{-Ôžá|RŒ×lÉ‚?JÒ‹$07>BÅeèŸàDE2ñL(+z(1Ë¯¨TDÌCSÊP(v4]koû>ÆL¨7›ŒS½Zy[{IŸITÃ?`UÀÒ“É %1{°`å•X¿ ÇŸÚ<d$‡ÄUÛœL–I#[ø+Ê·…lÊhÜ,3^ìëJ,œ’i¬æ1ëNw”ÎW¨ÿÀ„üÉ¡ÿçÝIë4±qÏ cC©À+6fkÑÿÎË5ÝëY3®Ð´ñˆBq±Ä%^¤cUzBs¬C˜·ÃqÊ¦t¤ ªÍƒÃC›²hF7·°`XòhŽ9{:“	ÂS&£3ãÜŽ’¶iYíæ‘Ù2OÊLµ…û[³Zí£ãÎI·J?ž:ÐåD¸šº‘7C½=˜ÝSàýF~P-iMé}Ô:%SxB’-Éà©q0µkEÐX¬™xþmõì•8¥¼ÒxC·áÔ-`‹€=%ôÍôIv”Ÿ/j2â£ÂÖ2ÙF€ŽïnÓ³`²¨ïØŸõ9Yÿ
-°ø—Ò‘n!Ž¤-ÁexD3Ž]TÇ	A«LÚáà:™Yä¤Ý1‰ÙéXäôÄJ[‹X ó²ú³ß»ïiO°Wexâ¾R¶†½»¼†ãá0!X4V¡‘ÿrhWçzó_y™/k[Bw^Ž	–ž.9év»ÿ#B\Œ‡ƒ·bx}CÐqö@ƒúã¹ÒÅm!Ý”…Ó¦ž£=ì£Ý†8I
-g,PFß2OähÎK—YÝÝî³ÒC° Ì…ãV«ÑNÚ­‚e¶žwÒ	‹zËj¤Åz²(ð¯°2ÿ®Eåvª}¿¬¥zn)‡‡ì<'\Šè’ÊEµUs=áÒ˜zžX‡o4\$_Êº‰P=8
-¶+Í¾dwV¶ÌâÞ±ÜJ›vk‡¼ô›Ò¼ŠG¯uA…-Mævœ×ù5QàW2=¯4=,íœ‡›p÷wM£7aDs¦Â2pfØ¼ò‡i™F*+Y§½(HÒ)\í”‚¿	ðúÒgñõ¢´Êa·o>{Û? æ‚ÑLÂãcøŠæ¾{„ÚµDè’þEÉŠº®ï¡ÓZ"4Ï¢€s<iÞ;Jõ¬tyTw„Fz>ÇDú8‰j[çø#QbõÞÑ©gö|tÛ/1jÕ£L§ð@ß}§pTK”.„7'+á‰÷O·–ð\‰à—fJëV»ž	ôÑÈÕ»Uø//¬¹Ï´ª¿¼‰…?&ÃÙ¿ÝJ,
+<</Filter/FlateDecode/Length 1413/Params<</ModDate(D:20160711134649+03'00')/Size 10221>>/Subtype/application#2fxml/Type/EmbeddedFile>>stream
+xœíZMsâ8½çW¨|ÞB¨	S`˜•„É2µµ7Ån@[bd)À¿ßöŒvÈîa½E\©»Õê÷ºÕrùó—µï‘WüÚ°j¦A€;Âe|~m<M¿~j_ºgŸeàwl)‚`Ä](¹GûÀA}t$õ¯-yG‡?p ÿ˜QGu\ªh'P”»TºGÐ}ö 7ŸK˜S}0¡á™>UèÇ+¦6«a¤ÖƒÄúÐÄA?:Œ¿
+†ëZK3UÓ®:Î©'þSSÍ¸œ˜n–hç"5³Øµ±PjÙ©×W«UmÕ¬	9¯7LÓªÿq7qàÓOŒ‡æ0ºgŸ(b“%8‘ÕáÚYP>Gó‰»¶à
+Ö*–å©ß™B pcÌ¡JÈÝ\4›éìæ”Ôð¹žÛÙª—‹ºÑÌã¾õ0çØE1P÷"TºÇcÑq„ÀªØ'TÍyù^OPëøÀF |ê‚ÜÌE=ÕÍð9ài80F/º£ñï#{‹D#9 ‘9¶p¡Ûl'v¶#¹å‚@r¦ìW#[¤Ó©‰’˜‰$NÌO³at¦uaž›VŒV2Þ‚ub¸ãiÜ±PyÂé(’§é‚”(dI°­¡Ú"ôMp¢"‘x"•@½ÚÙ47º¤R1i¤$C™ØÉt¥¼ï{þÅà—šÍ»‰^.½½ ŒO%já0ÿ±Èä‚ÑCAL¬Ly*È2f«5Ï‰!OÕ&+’åÎ€Äþ’òÍ!þd/^Þu%–Ç}ÁŒ0Vì˜fW[g†‹µï0÷¾sèþùtCÒZLlÜ.ÈØN*PnbºÝol¾XÑ±vŠáp±¢e>ŠÂÍLÈŽ•¨	Í±Ü`Šö‡)ƒÒ‘ýxÖhŒhJ)]?Âœa]£Yºì©Œ$Ï ®¯v” uËjÖÏÍ†yµ_NÊüè¸-«Ñ<¿h]¶KÔã™ãüMdKÙ¹Ò×›cù<Q ÞoäŽjI«HèóÆ™À+kAz¯µcÉ\NÆR…ˆÄÓïª[oTº	(å•ºº	gÏ}ì¡k¦O²›üüÆ!>l-C‰M„ãðé1­öû“
+î–îY‡“Õïë{éâÚ\†'ÐWÆ±cÃs¨ç8!Xe)Úï#lÉ¹E.›-“˜­–E®.­´_ˆŠ þkïœÞnzOy„M'ÃÓ´¼@õG6ºvû8ô‡ý~B«h¬X'¢ûmß.Íìú¿q1_¿Ž´"<¸h¼ \,3mrÙn·ÿ/<¸ö{ïäAü@ÐköLƒŠòaWÔâ>®iSÏÑ6ÄnÏãMœ¤à„g/#£k™WµVrîæ¥Œn›ü½iQÛŸE‚,(rà¢Ñ¨5“êÁS»?€tÂÚÝÀ[¼™?ÒÉ!+v¥	w/8(*7íûÒ®GxÞ³ëœp”*çåFÍm$ö„‹ÂéybÞã´{H¾ˆ%tÁyt(›.µú+§³²oð¢ä–šl5Û ä¥ß“Ø%z«Ã9Ô¯dn¶y…W#~¿ó:ðØ+È¢V¸Ï°§v×4zgE4g*ÌûkÃnáU=ÌÄ4HYÉÒçÃ¼|ÂÕN¨ñ+Œ ïí }æ_Ï‹Êù!ÌöŒg¯éoû›7°™Jxy	ß©<ÓSF¦Y=dné_ô…,©ëzpÂÈ\U™ix2œ³€àQrÂèT°¢}äMU‘èÙç´OšJÖ3þB”Xž0*Ì–®9Á¦Q=l2À3=åà¼zèÜoF–Â'K»z°Ü‹à§fJñI·ÌL˜Æ¬š-ÀvÑÌ}òTúMK,{ð«¬îÙß›I"\
 endstream
 endobj
 12 0 obj
@@ -231,25 +229,26 @@ xref
 0 10
 0000000000 65535 f 
 0000001742 00000 n 
-0000003044 00000 n 
+0000003055 00000 n 
 0000002012 00000 n 
 0000001600 00000 n 
 0000000015 00000 n 
-0000002589 00000 n 
-0000002167 00000 n 
-0000030069 00000 n 
-0000003095 00000 n 
+0000002600 00000 n 
+0000002178 00000 n 
+0000030089 00000 n 
+0000003106 00000 n 
 11 8
-0000003249 00000 n 
-0000031654 00000 n 
-0000008013 00000 n 
-0000008055 00000 n 
-0000010744 00000 n 
-0000010973 00000 n 
-0000011193 00000 n 
-0000019925 00000 n 
+0000003260 00000 n 
+0000031669 00000 n 
+0000008033 00000 n 
+0000008075 00000 n 
+0000010764 00000 n 
+0000010993 00000 n 
+0000011213 00000 n 
+0000019945 00000 n 
 trailer
-<</ID [<f8ce633ac437c654304434c120152540><f8ce633ac437c654304434c120152540>]/Info 3 0 R/Root 1 0 R/Size 19>>
+<</ID [<c70c1710133aaae6aacf6584d0dc0ae3><c70c1710133aaae6aacf6584d0dc0ae3>]/Info 3 0 R/Root 1 0 R/Size 19>>
+%iText-7.0.1-SNAPSHOT
 startxref
-31706
+31721
 %%EOF

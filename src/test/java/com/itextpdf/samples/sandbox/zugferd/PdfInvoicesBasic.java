@@ -185,7 +185,9 @@ public class PdfInvoicesBasic extends GenericTest {
         InvoiceDOM dom = new InvoiceDOM(basic);
         PdfDictionary parameters = new PdfDictionary();
         parameters.put(PdfName.ModDate, new PdfDate().getPdfObject());
-        PdfFileSpec fileSpec = PdfFileSpec.createEmbeddedFileSpec(pdfDoc, dom.toXML(), "ZUGFeRD invoice", "ZUGFeRD-invoice.xml",
+        // platform-independent newlines
+        byte[] xml = new String(dom.toXML()).replace("\r\n", "\n").getBytes();
+        PdfFileSpec fileSpec = PdfFileSpec.createEmbeddedFileSpec(pdfDoc, xml, "ZUGFeRD invoice", "ZUGFeRD-invoice.xml",
                 new PdfName("application/xml"), parameters, PdfName.Alternative, false);
         pdfDoc.addFileAttachment("ZUGFeRD invoice", fileSpec);
         PdfArray array = new PdfArray();
