@@ -11,7 +11,12 @@ import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfArray;
+import com.itextpdf.kernel.pdf.PdfDate;
+import com.itextpdf.kernel.pdf.PdfDictionary;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfOutputIntent;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
@@ -28,7 +33,7 @@ import com.itextpdf.samples.sandbox.zugferd.pojo.Invoice;
 import com.itextpdf.samples.sandbox.zugferd.pojo.Item;
 import com.itextpdf.samples.sandbox.zugferd.pojo.PojoFactory;
 import com.itextpdf.samples.sandbox.zugferd.pojo.Product;
-import com.itextpdf.test.annotations.type.IntegrationTest;
+import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.zugferd.InvoiceDOM;
 import com.itextpdf.zugferd.ZugferdDocument;
 import com.itextpdf.zugferd.ZugferdXMPUtil;
@@ -36,11 +41,6 @@ import com.itextpdf.zugferd.exceptions.DataIncompleteException;
 import com.itextpdf.zugferd.exceptions.InvalidCodeException;
 import com.itextpdf.zugferd.profiles.IBasicProfile;
 
-import org.junit.experimental.categories.Category;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -50,6 +50,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.junit.experimental.categories.Category;
+import org.xml.sax.SAXException;
 
 /**
  * Reads invoice data from a test database and creates ZUGFeRD invoices
@@ -57,7 +62,7 @@ import java.util.Locale;
  *
  * @author Bruno Lowagie
  */
-@Category(IntegrationTest.class)
+@Category(SampleTest.class)
 public class PdfInvoicesBasic extends GenericTest {
     // Since all the document are technically almost the same
     // we will check only the first one

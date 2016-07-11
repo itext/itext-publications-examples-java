@@ -13,6 +13,7 @@
     <properties>
         <bouncycastle.version>1.49</bouncycastle.version>
         <cleanup.version>1.0.1-SNAPSHOT</cleanup.version>
+        <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
         <java.version>1.7</java.version>
         <licensekey.version>2.0.2-SNAPSHOT</licensekey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -194,7 +195,7 @@
                         <include>**/Listing_*.java</include>
                         <include>**/*.java</include>
                     </includes>
-                    <groups>${sampletests}</groups>
+                    <groups>${sampletests},${integrationtests}</groups>
                     <parallel>none</parallel>
                 </configuration>
             </plugin>

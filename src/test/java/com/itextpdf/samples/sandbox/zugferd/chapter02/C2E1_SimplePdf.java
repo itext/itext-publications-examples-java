@@ -24,16 +24,16 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.IntegrationTest;
-
-import org.junit.experimental.categories.Category;
+import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.IOException;
+
+import org.junit.experimental.categories.Category;
 
 /**
  * Creates a simple PDF with images and text.
  */
-@Category(IntegrationTest.class)
+@Category(SampleTest.class)
 public class C2E1_SimplePdf extends GenericTest {
     public static final String FOX = "./src/test/resources/img/fox.bmp";
     public static final String DOG = "./src/test/resources/img/dog.bmp";
