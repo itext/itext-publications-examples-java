@@ -15,26 +15,34 @@ import com.itextpdf.zugferd.exceptions.DataIncompleteException;
 import com.itextpdf.zugferd.exceptions.InvalidCodeException;
 import com.itextpdf.zugferd.profiles.IComfortProfile;
 
-import org.xml.sax.SAXException;
-
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Writer;
+import java.sql.SQLException;
+import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.*;
-import java.sql.SQLException;
-import java.util.List;
+
+import org.xml.sax.SAXException;
 
 /**
  * @author Bruno Lowagie
  */
 public class HtmlInvoicesComfort {
     public static final String DEST = "./target/main/resources/zugferd/html/comfort%05d.html";
-    public static final String XSL = "./src/main/resources/xml/invoice.xsl";
-    public static final String CSS = "./src/main/resources/data/invoice.css";
-    public static final String LOGO = "./src/main/resources/img/logo.png";
+    public static final String XSL = "./src/test/resources/xml/invoice.xsl";
+    public static final String CSS = "./src/test/resources/data/invoice.css";
+    public static final String LOGO = "./src/test/resources/img/logo.png";
 
     public static void main(String[] args) throws SQLException, IOException, ParserConfigurationException, SAXException, DataIncompleteException, InvalidCodeException, TransformerException {
         File file = new File(DEST);
