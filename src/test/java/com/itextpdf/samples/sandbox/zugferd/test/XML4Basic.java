@@ -12,28 +12,30 @@
  */
 package com.itextpdf.samples.sandbox.zugferd.test;
 
+import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.zugferd.InvoiceDOM;
+import com.itextpdf.zugferd.exceptions.DataIncompleteException;
+import com.itextpdf.zugferd.exceptions.InvalidCodeException;
+import com.itextpdf.zugferd.profiles.BasicProfileImp;
 import com.itextpdf.zugferd.validation.basic.DateFormatCode;
 import com.itextpdf.zugferd.validation.basic.DocumentTypeCode;
 import com.itextpdf.zugferd.validation.basic.MeasurementUnitCode;
 import com.itextpdf.zugferd.validation.basic.TaxIDTypeCode;
-import com.itextpdf.zugferd.exceptions.DataIncompleteException;
-import com.itextpdf.zugferd.exceptions.InvalidCodeException;
-import com.itextpdf.zugferd.profiles.BasicProfileImp;
 
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.xml.sax.SAXException;
 
 /**
  * @author iText
  */
 public class XML4Basic {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, DataIncompleteException, TransformerException, InvalidCodeException, ParseException {
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         BasicProfileImp data = new BasicProfileImp();
         // SpecifiedExchangedDocumentContext

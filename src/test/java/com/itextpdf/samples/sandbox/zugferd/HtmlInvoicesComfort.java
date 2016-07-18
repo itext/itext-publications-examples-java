@@ -7,6 +7,7 @@
 
 package com.itextpdf.samples.sandbox.zugferd;
 
+import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.sandbox.zugferd.data.InvoiceData;
 import com.itextpdf.samples.sandbox.zugferd.pojo.Invoice;
 import com.itextpdf.samples.sandbox.zugferd.pojo.PojoFactory;
@@ -45,6 +46,7 @@ public class HtmlInvoicesComfort {
     public static final String LOGO = "./src/test/resources/img/logo.png";
 
     public static void main(String[] args) throws SQLException, IOException, ParserConfigurationException, SAXException, DataIncompleteException, InvalidCodeException, TransformerException {
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
         File file = new File(DEST);
         file.getParentFile().mkdirs();
         File css = new File(CSS);
