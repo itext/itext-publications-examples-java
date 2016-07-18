@@ -13,10 +13,10 @@ package com.itextpdf.samples.sandbox.zugferd.data;
 import com.itextpdf.samples.sandbox.zugferd.pojo.Customer;
 import com.itextpdf.samples.sandbox.zugferd.pojo.Invoice;
 import com.itextpdf.samples.sandbox.zugferd.pojo.Item;
-import com.itextpdf.zugferd.profiles.IBasicProfile;
 import com.itextpdf.zugferd.profiles.BasicProfileImp;
-import com.itextpdf.zugferd.profiles.IComfortProfile;
 import com.itextpdf.zugferd.profiles.ComfortProfileImp;
+import com.itextpdf.zugferd.profiles.IBasicProfile;
+import com.itextpdf.zugferd.profiles.IComfortProfile;
 import com.itextpdf.zugferd.validation.basic.DateFormatCode;
 import com.itextpdf.zugferd.validation.basic.DocumentTypeCode;
 import com.itextpdf.zugferd.validation.basic.TaxIDTypeCode;
@@ -36,14 +36,14 @@ public class InvoiceData {
     public InvoiceData() {
     }
 
-    public IBasicProfile createBasicProfileData(Invoice invoice) {
+    public IBasicProfile createBasicProfileData(Invoice invoice, boolean testInvoice) {
         BasicProfileImp profileImp = new BasicProfileImp();
         importData(profileImp, invoice);
         importBasicData(profileImp, invoice);
         return profileImp;
     }
 
-    public IComfortProfile createComfortProfileData(Invoice invoice) {
+    public IComfortProfile createComfortProfileData(Invoice invoice, boolean testInvoice) {
         ComfortProfileImp profileImp = new ComfortProfileImp();
         importData(profileImp, invoice);
         importComfortData(profileImp, invoice);
@@ -51,7 +51,6 @@ public class InvoiceData {
     }
 
     public void importData(BasicProfileImp profileImp, Invoice invoice) {
-        profileImp.setTest(true);
         profileImp.setId(String.format("I/%05d", invoice.getId()));
         profileImp.setName("INVOICE");
         profileImp.setTypeCode(DocumentTypeCode.COMMERCIAL_INVOICE);

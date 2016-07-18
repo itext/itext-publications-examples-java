@@ -44,7 +44,7 @@ public class XmlInvoicesComfort {
         IBasicProfile comfort;
         InvoiceDOM dom;
         for (Invoice invoice : invoices) {
-            comfort = invoiceData.createComfortProfileData(invoice);
+            comfort = invoiceData.createComfortProfileData(invoice, true);
             dom = new InvoiceDOM(comfort);
             byte[] xml = dom.toXML();
             FileOutputStream fos = new FileOutputStream(String.format(DEST, invoice.getId()));

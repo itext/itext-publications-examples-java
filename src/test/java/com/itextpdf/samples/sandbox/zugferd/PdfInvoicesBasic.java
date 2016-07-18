@@ -102,7 +102,7 @@ public class PdfInvoicesBasic extends GenericTest {
 
         String dest = String.format(DEST_PATTERN, invoice.getId());
         InvoiceData invoiceData = new InvoiceData();
-        IBasicProfile basic = invoiceData.createBasicProfileData(invoice);
+        IBasicProfile basic = invoiceData.createBasicProfileData(invoice, true);
 
         FileInputStream is = new FileInputStream(ICC);
         ZugferdDocument pdfDoc = new ZugferdDocument(new PdfWriter(dest),

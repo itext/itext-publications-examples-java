@@ -63,7 +63,7 @@ public class HtmlInvoicesComfort {
     }
 
     public void createHtml(Invoice invoice, Writer writer) throws IOException, ParserConfigurationException, SAXException, DataIncompleteException, InvalidCodeException, TransformerException {
-        IComfortProfile comfort = new InvoiceData().createComfortProfileData(invoice);
+        IComfortProfile comfort = new InvoiceData().createComfortProfileData(invoice, true);
         InvoiceDOM dom = new InvoiceDOM(comfort);
         StreamSource xml = new StreamSource(new ByteArrayInputStream(dom.toXML()));
         StreamSource xsl = new StreamSource(new File(XSL));
