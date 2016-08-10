@@ -55,25 +55,25 @@ public class ReadOnlyField2 extends GenericTest {
 
         Rectangle rect = new Rectangle(36, 770, 108, 36);
         PdfTextFormField tf1 = PdfFormField.createText(pdfDoc, rect,
-                "text1", "text1", PdfFontFactory.createFont(), 18);
+                "text1", "text1", PdfFontFactory.createFont(), 18f);
         tf1.setMultiline(true);
         form.addField(tf1);
 
         rect = new Rectangle(148, 770, 108, 36);
         PdfTextFormField tf2 = PdfFormField.createText(pdfDoc, rect,
-                "text2", "text2", PdfFontFactory.createFont(), 18);
+                "text2", "text2", PdfFontFactory.createFont(), 18f);
         tf2.setMultiline(true);
         form.addField(tf2);
 
         rect = new Rectangle(36, 724, 108, 36);
         PdfTextFormField tf3 = PdfFormField.createText(pdfDoc, rect,
-                "text3", "text3", PdfFontFactory.createFont(), 18);
+                "text3", "text3", PdfFontFactory.createFont(), 18f);
         tf3.setMultiline(true);
         form.addField(tf3);
 
         rect = new Rectangle(148, 727, 108, 33);
         PdfTextFormField tf4 = PdfFormField.createText(pdfDoc, rect,
-                "text4", "text4", PdfFontFactory.createFont(), 18);
+                "text4", "text4", PdfFontFactory.createFont(), 18f);
         tf4.setMultiline(true);
         form.addField(tf4);
 
