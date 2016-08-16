@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to:
+ * http://stackoverflow.com/questions/24616920/last-row-in-itext-table-extending-when-it-shouldnt
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.geom.PageSize;

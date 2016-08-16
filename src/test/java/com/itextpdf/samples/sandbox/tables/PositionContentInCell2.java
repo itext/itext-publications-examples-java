@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/31169268/cell-background-image-with-text-itextsharp
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageDataFactory;

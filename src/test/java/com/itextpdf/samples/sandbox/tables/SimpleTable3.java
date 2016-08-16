@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/27884229/itextsharap-error-while-adding-pdf-table-to-document
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.geom.PageSize;

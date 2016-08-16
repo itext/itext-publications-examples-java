@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/30032558/how-to-show-a-cellcolumn-with-its-row-values-of-a-pdftableitextsharp-in-next
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

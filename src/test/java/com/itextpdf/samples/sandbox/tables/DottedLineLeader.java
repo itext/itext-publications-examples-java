@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ *http://stackoverflow.com/questions/27046352/how-to-generate-table-of-figures-dot-leaders-in-a-pdfpcell-for-the-last-line-of
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

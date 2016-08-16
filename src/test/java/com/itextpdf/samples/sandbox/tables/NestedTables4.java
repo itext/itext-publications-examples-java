@@ -5,7 +5,7 @@
 
 */
 
-/*
+/**
  * This example was written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/36259214
  */

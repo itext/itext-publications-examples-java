@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/27577633/itext-library-exception-throwing-on-adding-blank-cell-with-space
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.color.Color;

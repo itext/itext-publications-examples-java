@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to:
+ * http://stackoverflow.com/questions/28418108/itext-how-to-add-an-inner-table-surrounded-by-text-to-a-table
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.color.Color;

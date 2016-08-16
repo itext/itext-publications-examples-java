@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to:
+ * http://stackoverflow.com/questions/23730886/row-span-not-working-for-writeselectedrows-method
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageDataFactory;

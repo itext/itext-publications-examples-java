@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie and Nishanthi Grashia in answer to the following question:
+ * http://stackoverflow.com/questions/28073190/itext-maintain-identing-if-paragraph-takes-new-line-in-pdfpcell
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

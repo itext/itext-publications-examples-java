@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie and Nishanthi Grashia in answer to the following question:
+ * http://stackoverflow.com/questions/24359321/adding-row-to-a-table-in-pdf-using-itext
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

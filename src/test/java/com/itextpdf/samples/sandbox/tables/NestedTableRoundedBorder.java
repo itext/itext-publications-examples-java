@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * This example was written in answer to the following question:
+ * http://stackoverflow.com/questions/31330062/need-to-make-pdf-sample-with-boxes-as-table-columns-by-android-app
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

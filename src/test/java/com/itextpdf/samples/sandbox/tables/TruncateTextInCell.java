@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/22093488/itext-how-do-i-get-the-rendered-dimensions-of-text
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.font.PdfFont;

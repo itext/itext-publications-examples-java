@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Ramesh in the context of a question on SO:
+ * http://stackoverflow.com/questions/29345454/itext-avoid-row-splitting-in-table
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.FontConstants;

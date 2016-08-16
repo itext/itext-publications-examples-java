@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question on StackOverflow:
+ * http://stackoverflow.com/questions/31315441/how-to-add-inline-spacing-in-pdfpcell
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

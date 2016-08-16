@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/22094289/itext-precisely-position-an-image-on-top-of-a-pdfptable
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageData;

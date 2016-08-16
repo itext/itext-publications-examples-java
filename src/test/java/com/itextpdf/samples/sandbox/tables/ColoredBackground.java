@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie and Nishanthi Grashia in answer to the following question:
+ * http://stackoverflow.com/questions/27871574/appears-space-between-cells-without-border-itextpdf
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.FontConstants;

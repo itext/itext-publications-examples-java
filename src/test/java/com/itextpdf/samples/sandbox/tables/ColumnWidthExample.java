@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * This example was written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/26628678/manipulating-witdh-and-height-of-rows-and-cells-in-itextsharp
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.FontConstants;

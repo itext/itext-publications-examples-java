@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * This example was written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/23375618/how-to-add-an-icon-to-an-itext-pdfpcell
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageDataFactory;

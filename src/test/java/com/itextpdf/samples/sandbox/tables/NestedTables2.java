@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * This example was written by Bruno Lowagie in answer to the following questions:
+ * http://stackoverflow.com/questions/28503491/large-table-in-table-cell-invoke-page-break
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

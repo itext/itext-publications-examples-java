@@ -5,7 +5,7 @@
 
 */
 
-/*
+/**
  * Example written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/31169268/cell-background-image-with-text-itextsharp
  */

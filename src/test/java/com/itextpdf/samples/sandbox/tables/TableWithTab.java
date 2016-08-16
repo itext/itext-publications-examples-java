@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * This example is written by Bruno Lowagie in answer to the following question:
+ * http://stackoverflow.com/questions/32593183/itextsharp-is-it-possible-to-set-a-different-alignment-in-the-same-cell-for-te
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * Example written by Bruno Lowagie in answer to:
+ * http://stackoverflow.com/questions/19873263/how-to-increase-the-width-of-pdfptable-in-itext-pdf
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.color.DeviceRgb;

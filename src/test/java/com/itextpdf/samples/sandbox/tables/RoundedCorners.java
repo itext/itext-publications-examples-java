@@ -5,6 +5,10 @@
 
 */
 
+/**
+ * This example was written by Bruno Lowagie in answer to the following questions:
+ * http://stackoverflow.com/questions/30106862/left-and-right-top-round-corner-for-rectangelroundrectangle
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
