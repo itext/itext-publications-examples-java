@@ -31,7 +31,6 @@ import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Ignore
 @Category(SampleTest.class)
 public class AddLinkAnnotation5 extends GenericTest {
     public static final String SRC = "./src/test/resources/pdfs/primes.pdf";
@@ -53,7 +52,6 @@ public class AddLinkAnnotation5 extends GenericTest {
         link.getLinkAnnotation().setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
 
         Paragraph p = new Paragraph(link).setWidth(240);
-        // TODO DEVSIX-549
         doc.showTextAligned(p, 320, 695, 1, TextAlignment.LEFT,
                 VerticalAlignment.TOP, 0);
         doc.close();

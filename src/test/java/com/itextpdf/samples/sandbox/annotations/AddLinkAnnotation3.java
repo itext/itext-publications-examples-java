@@ -33,7 +33,6 @@ import org.junit.experimental.categories.Category;
 import java.io.File;
 
 @Category(SampleTest.class)
-@Ignore
 public class AddLinkAnnotation3 extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/annotations/add_link_annotation3.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
@@ -56,7 +55,6 @@ public class AddLinkAnnotation3 extends GenericTest {
         Paragraph p = new Paragraph("Download ");
         p.add(link);
         p.add(" and discover \nmore than 200 questions and answers.");
-        // TODO DEVSIX-549
         doc.showTextAligned(p, 30, 600, 1, TextAlignment.LEFT,
                 VerticalAlignment.TOP, (float) Math.PI / 6);
         doc.close();
