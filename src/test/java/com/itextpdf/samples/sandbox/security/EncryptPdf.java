@@ -47,6 +47,7 @@ public class EncryptPdf extends GenericTest {
     protected void comparePdf(String dest, String cmp) throws Exception {
         if (cmp == null || cmp.length() == 0) return;
         CompareTool compareTool = new CompareTool();
+        compareTool.enableEncryptionCompare();
         String outPath = new File(dest).getParent();
         new File(outPath).mkdirs();
         if (compareXml) {

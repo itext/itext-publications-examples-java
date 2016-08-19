@@ -119,6 +119,7 @@ public class EncryptWithCertificate extends GenericTest {
         PrivateKey privateKey = getPrivateKey();
         compareTool.getOutReaderProperties().setPublicKeySecurityParams(getPublicCertificate(PUBLIC), privateKey, "BC", null);
         compareTool.getCmpReaderProperties().setPublicKeySecurityParams(getPublicCertificate(PUBLIC), privateKey, "BC", null);
+        compareTool.enableEncryptionCompare();
         String outPath = new File(dest).getParent();
         new File(outPath).mkdirs();
         if (compareXml) {
