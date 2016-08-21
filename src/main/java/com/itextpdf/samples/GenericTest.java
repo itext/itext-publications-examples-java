@@ -7,21 +7,18 @@
 
 package com.itextpdf.samples;
 
-import static org.junit.Assert.assertNull;
-
+import ch.qos.logback.classic.Logger;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.test.annotations.type.SampleTest;
-
-import java.io.File;
-import java.lang.reflect.Field;
-
-import javax.management.OperationsException;
-
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.Logger;
+import javax.management.OperationsException;
+import java.io.File;
+import java.lang.reflect.Field;
+
+import static org.junit.Assert.assertNull;
 
 @Category(SampleTest.class)
 public class GenericTest {
@@ -67,7 +64,7 @@ public class GenericTest {
      * If SRC and DEST are defined, the example manipulates a PDF;
      * if only DEST is defined, the example creates a PDF.
      */
-    @Test(timeout = 120000)
+    @Test// (timeout = 120000)
     public void test() throws Exception {
         if (this.getClass().getName().equals(GenericTest.class.getName()))
             return;

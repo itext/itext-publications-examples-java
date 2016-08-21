@@ -6,8 +6,8 @@
 */
 
 /**
- * Example written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/34117589
+ * Example written by Bruno Lowagie in answer to:
+ * http://stackoverflow.com/questions/29884833/add-named-destinations-to-an-existing-pdf-document-with-itext
  */
 package com.itextpdf.samples.sandbox.stamper;
 
