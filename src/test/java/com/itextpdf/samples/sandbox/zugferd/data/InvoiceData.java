@@ -37,14 +37,14 @@ public class InvoiceData {
     }
 
     public IBasicProfile createBasicProfileData(Invoice invoice, boolean testInvoice) {
-        BasicProfileImp profileImp = new BasicProfileImp();
+        BasicProfileImp profileImp = new BasicProfileImp(testInvoice);
         importData(profileImp, invoice);
         importBasicData(profileImp, invoice);
         return profileImp;
     }
 
     public IComfortProfile createComfortProfileData(Invoice invoice, boolean testInvoice) {
-        ComfortProfileImp profileImp = new ComfortProfileImp();
+        ComfortProfileImp profileImp = new ComfortProfileImp(testInvoice);
         importData(profileImp, invoice);
         importComfortData(profileImp, invoice);
         return profileImp;

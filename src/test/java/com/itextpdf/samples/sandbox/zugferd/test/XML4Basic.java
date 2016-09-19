@@ -37,7 +37,7 @@ public class XML4Basic {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, DataIncompleteException, TransformerException, InvalidCodeException, ParseException {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        BasicProfileImp data = new BasicProfileImp();
+        BasicProfileImp data = new BasicProfileImp(true);
         // SpecifiedExchangedDocumentContext
         data.setTest(true);
 

@@ -41,7 +41,7 @@ public class XML4Comfort {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
-        ComfortProfileImp data = new ComfortProfileImp();
+        ComfortProfileImp data = new ComfortProfileImp(true);
         // SpecifiedExchangedDocumentContext
         data.setTest(true);
 
@@ -171,7 +171,7 @@ public class XML4Comfort {
                         "IncludedSupplyChainTradeLineItem[0].AssociatedDocumentLineDocument.IncludedNote[1].Content[1]"},
                 {"IncludedSupplyChainTradeLineItem[0].AssociatedDocumentLineDocument.IncludedNote[2].Content[0]"}
         };
-        Boolean[] indicator = {true, false, true};
+        boolean[] indicator = {true, false, true};
         String[] actualamount = {"1.0000", "2.0000", "3.0000"};
         String[] actualamountCurr = {"USD", "USD", "USD"};
         String[] reason = {
@@ -212,7 +212,7 @@ public class XML4Comfort {
                         "IncludedSupplyChainTradeLineItem.ram:AssociatedDocumentLineDocument[1].IncludedNote[0].Content[1]"},
                 {"IncludedSupplyChainTradeLineItem.ram:AssociatedDocumentLineDocument[1].IncludedNote[1].Content[0]"}
         };
-        Boolean[] indicator1 = {false, true, false};
+        boolean[] indicator1 = {false, true, false};
         String[] actualamount1 = {"4.0000", "5.0000", "6.0000"};
         String[] actualamountCurr1 = {"USD", "USD", "USD"};
         String[] reason1 = {
