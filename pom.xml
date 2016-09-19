@@ -4,22 +4,22 @@
 
     <groupId>com.itextpdf</groupId>
     <artifactId>samples</artifactId>
-    <version>7.0.1</version>
+    <version>7.0.2-SNAPSHOT</version>
 
     <name>iText 7 Examples: Sandbox</name>
     <url>http://itextpdf.com/</url>
 
     <properties>
         <bouncycastle.version>1.49</bouncycastle.version>
-        <cleanup.version>1.0.1</cleanup.version>
+        <cleanup.version>1.0.2-SNAPSHOT</cleanup.version>
         <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
         <java.version>1.7</java.version>
-        <licensekey.version>2.0.2</licensekey.version>
+        <licensekey.version>2.0.3-SNAPSHOT</licensekey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
-        <typography.version>1.0.1</typography.version>
+        <typography.version>1.0.2-SNAPSHOT</typography.version>
         <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
-        <zugferd.version>1.0.1</zugferd.version>
+        <zugferd.version>1.0.2-SNAPSHOT</zugferd.version>
     </properties>
 
     <repositories>
