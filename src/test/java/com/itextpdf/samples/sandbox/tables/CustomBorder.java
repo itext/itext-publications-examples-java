@@ -25,11 +25,12 @@ import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-
+import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
+@Ignore
 @Category(SampleTest.class)
 public class CustomBorder extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/custom_border.pdf";
