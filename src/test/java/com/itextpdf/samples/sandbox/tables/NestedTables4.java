@@ -13,29 +13,21 @@
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.geom.PageSize;
-import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.Property;
-import com.itextpdf.layout.renderer.AbstractRenderer;
-import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.layout.renderer.IRenderer;
-import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-
+import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
-import java.io.FileOutputStream;
 
+@Ignore("DEVSIX-796")
 @Category(SampleTest.class)
 public class NestedTables4 extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/nested_tables4.pdf";
