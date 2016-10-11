@@ -11,27 +11,22 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
-import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Ignore("DEVSIX-880")
 @Category(SampleTest.class)
 public class CustomBorder2 extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/custom_border2.pdf";
@@ -51,79 +46,65 @@ public class CustomBorder2 extends GenericTest {
 
         Table table = new Table(2);
         table.setWidth(500);
-        table.setBorder(new SolidBorder(1));
-
-
-        Cell cell = new Cell().add(new Paragraph(TEXT));
-
-        cell.setBorder(null);
-        for (int i = 0; i < 60; ) {
-            table.addCell(new Cell().add("Cell " + (++i)).setBorder(Border.NO_BORDER));
+        table.setNextRenderer(new CustomBorder2TableRenderer(table, new Table.RowRange(0, 60)));
+        for (int i = 1; i < 60; i++) {
+            table.addCell(new Cell().add("Cell " + i).setBorder(Border.NO_BORDER));
             table.addCell(new Cell().add(TEXT).setBorder(Border.NO_BORDER));
         }
-        table.setNextRenderer(new CustomBorder2TableRenderer(table, new Table.RowRange(0, 59)));
         doc.add(table);
 
         doc.close();
     }
-}
 
+    class CustomBorder2TableRenderer extends TableRenderer {
+        boolean wasSplitted = false;
 
-class CustomBorder2TableRenderer extends TableRenderer {
-    protected static boolean isBottomToBeDrawn = false;
-    protected static boolean isTopToBeDrawn = true;
-
-    public CustomBorder2TableRenderer(Table modelElement) {
-        super(modelElement);
-    }
-
-    public CustomBorder2TableRenderer(Table modelElement, Table.RowRange rowRange) {
-        super(modelElement, rowRange);
-    }
-
-    @Override
-    public void drawBorder(DrawContext drawContext) {
-        CellRenderer[] firstRowRenderers = rows.get(0);
-        // yLines
-        PdfCanvas canvas = drawContext.getCanvas();
-        canvas.moveTo(firstRowRenderers[0].getBorderAreaBBox().getLeft(),
-                getBorderAreaBBox().getBottom());
-        canvas.lineTo(firstRowRenderers[0].getBorderAreaBBox().getLeft(),
-                getBorderAreaBBox().getTop());
-        canvas.moveTo(firstRowRenderers[firstRowRenderers.length - 1].getBorderAreaBBox().getRight(),
-                getBorderAreaBBox().getBottom());
-        canvas.lineTo(firstRowRenderers[firstRowRenderers.length - 1].getBorderAreaBBox().getRight(),
-                getBorderAreaBBox().getTop());
-
-        if (isTopToBeDrawn) {
-            canvas.moveTo(firstRowRenderers[0].getBorderAreaBBox().getLeft(),
-                    firstRowRenderers[0].getBorderAreaBBox().getTop());
-            canvas.lineTo(firstRowRenderers[firstRowRenderers.length - 1].getBorderAreaBBox().getRight(),
-                    firstRowRenderers[0].getBorderAreaBBox().getTop());
-            isTopToBeDrawn = false;
+        public CustomBorder2TableRenderer(Table modelElement) {
+            super(modelElement);
         }
-        if (isBottomToBeDrawn) {
-            canvas.moveTo(rows.get(rows.size() - 1)[0].getBorderAreaBBox().getLeft(),
-                    rows.get(rows.size() - 1)[0].getBorderAreaBBox().getBottom());
-            canvas.lineTo(
-                    rows.get(rows.size() - 1)[rows.get(rows.size() - 1).length - 1]
-                            .getBorderAreaBBox().getRight(),
-                    rows.get(rows.size() - 1)[rows.get(rows.size() - 1).length - 1]
-                            .getBorderAreaBBox().getBottom());
 
+        public CustomBorder2TableRenderer(Table modelElement, Table.RowRange rowRange) {
+            super(modelElement, rowRange);
         }
-        canvas.stroke();
-        isBottomToBeDrawn = true;
-    }
 
-    @Override
-    public CustomBorder2TableRenderer getNextRenderer() {
-        return new CustomBorder2TableRenderer((Table) modelElement);
-    }
+        @Override
+        public CustomBorder2TableRenderer getNextRenderer() {
+            return new CustomBorder2TableRenderer((Table) modelElement);
+        }
 
-    @Override
-    protected TableRenderer[] split(int row) {
-        isBottomToBeDrawn = false;
-        return super.split(row);
+        @Override
+        protected TableRenderer[] split(int row, boolean hasContent) {
+            TableRenderer[] results = super.split(row, hasContent);
+            CustomBorder2TableRenderer splitRenderer = (CustomBorder2TableRenderer) results[0];
+            splitRenderer.wasSplitted = true;
+            return results;
+        }
+
+        @Override
+        protected void drawBorders(DrawContext drawContext) {
+            Rectangle area = occupiedArea.getBBox();
+            PdfCanvas canvas = drawContext.getCanvas();
+
+            canvas
+                    .saveState()
+                    .moveTo(area.getLeft(), area.getBottom())
+                    .lineTo(area.getLeft(), area.getTop())
+                    .moveTo(area.getRight(), area.getTop())
+                    .lineTo(area.getRight(), area.getBottom());
+            if (wasSplitted) {
+                if (1 == drawContext.getDocument().getNumberOfPages()) {
+                    canvas
+                            .moveTo(area.getLeft(), area.getTop())
+                            .lineTo(area.getRight(), area.getTop());
+                }
+            } else {
+                canvas
+                        .moveTo(area.getLeft(), area.getBottom())
+                        .lineTo(area.getRight(), area.getBottom());
+            }
+            canvas
+                    .stroke()
+                    .restoreState();
+        }
     }
 }

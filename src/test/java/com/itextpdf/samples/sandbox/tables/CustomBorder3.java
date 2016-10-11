@@ -31,7 +31,7 @@ import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class CustomBorder3 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/custom_border_3.pdf";
+    public static final String DEST = "./target/test/resources/sandbox/tables/custom_border3.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
