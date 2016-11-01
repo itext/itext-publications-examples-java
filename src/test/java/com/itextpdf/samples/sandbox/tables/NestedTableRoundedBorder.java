@@ -26,7 +26,6 @@ import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Ignore("DEVSIX-796")
 @Category(SampleTest.class)
 public class NestedTableRoundedBorder extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/nested_table_rounded_border.pdf";

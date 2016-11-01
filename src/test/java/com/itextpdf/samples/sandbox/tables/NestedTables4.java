@@ -27,7 +27,6 @@ import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Ignore("DEVSIX-796")
 @Category(SampleTest.class)
 public class NestedTables4 extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/nested_tables4.pdf";
