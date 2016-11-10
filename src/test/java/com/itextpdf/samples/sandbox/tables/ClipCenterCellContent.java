@@ -53,7 +53,7 @@ public class ClipCenterCellContent extends GenericTest {
         Cell cell;
         for (int r = 'A'; r <= 'Z'; r++) {
             for (int c = 1; c <= 5; c++) {
-                cell = new Cell().setHeight(30);
+                cell = new Cell();
                 if (r == 'D' && c == 2) {
                     cell.setNextRenderer(new ClipCenterCellContentCellRenderer(cell,
                             new Paragraph("D2 is a cell with more content than we can fit into the cell.")));

@@ -67,11 +67,11 @@ public class NestedTables4 extends GenericTest {
         table.addCell(new Cell().add(table1).setBorder(Border.NO_BORDER));
         // third row cell 3
         Table table2 = new Table(2);
-        table2.addCell(new Cell().setHeight(10));
-        table2.addCell(new Cell().setHeight(10));
-        cell = new Cell(1, 2).add("cell 2 of nested table 2").setHeight(10);
+        table2.addCell(new Cell().setMinHeight(10));
+        table2.addCell(new Cell().setMinHeight(10));
+        cell = new Cell(1, 2).add("cell 2 of nested table 2").setMinHeight(10);
         table2.addCell(cell);
-        cell = new Cell(1, 2).add("cell 3 of nested table 2").setHeight(10);
+        cell = new Cell(1, 2).add("cell 3 of nested table 2").setMinHeight(10);
         table2.addCell(cell);
         table.addCell(new Cell().add(table2).setBorder(Border.NO_BORDER));
         // third row cell 4
@@ -79,7 +79,7 @@ public class NestedTables4 extends GenericTest {
         // fourth row
         cell = new Cell(1, 4);
         cell.setBorder(Border.NO_BORDER);
-        cell.setHeight(16);
+        cell.setMinHeight(16);
         table.addCell(cell);
 
         doc.add(table);

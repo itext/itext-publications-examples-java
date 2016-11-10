@@ -21,6 +21,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.canvas.PdfPatternCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.CellRenderer;
@@ -53,12 +54,12 @@ public class TiledBackground extends GenericTest {
         Cell cell = new Cell();
         ImageData image = ImageDataFactory.create(IMG1);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
-        cell.setHeight(770);
+        cell.setHeight(769).setBorder(Border.NO_BORDER);
         table.addCell(cell);
         cell = new Cell();
         image = ImageDataFactory.create(IMG2);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
-        cell.setHeight(770);
+        cell.setHeight(769).setBorder(Border.NO_BORDER);
         table.addCell(cell);
         doc.add(table);
 
@@ -84,11 +85,12 @@ public class TiledBackground extends GenericTest {
                     img.getHeight());
             new PdfPatternCanvas(img_pattern, drawContext.getDocument()).addImage(img, 0, 0, false);
             PdfCanvas canvas = drawContext.getCanvas();
+            canvas.saveState();
             colorRectangle(canvas, new PatternColor(img_pattern), getOccupiedAreaBBox().getX(),
                     getOccupiedAreaBBox().getY(), getOccupiedAreaBBox().getWidth(), getOccupiedAreaBBox().getHeight());
             canvas.setFillColor(new PatternColor(img_pattern));
-            canvas.rectangle(getOccupiedAreaBBox());
             canvas.stroke();
+            canvas.restoreState();
         }
     }
 }

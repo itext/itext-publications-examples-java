@@ -44,18 +44,17 @@ public class CellHeights extends GenericTest {
         Paragraph p = new Paragraph("Dr. iText or:\nHow I Learned to Stop Worrying\nand Love PDF.");
         Cell cell = new Cell().add(p);
         // the phrase fits the fixed height
-        table.addCell("fixed height (more than sufficient)");
-        cell.setHeight(72f);
+        table.addCell("set height (more than sufficient)");
+        cell.setHeight(172);
         table.addCell(cell.clone(true));
         // the phrase doesn't fit the fixed height
-        table.addCell("fixed height (not sufficient)");
-        // TODO DEVSIX-555
-        cell.setHeight(36f);
+        table.addCell("set height (not sufficient)");
+        cell.setHeight(36);
         table.addCell(cell.clone(true));
         // The minimum height is exceeded
         table.addCell("minimum height");
         cell = new Cell().add("Dr. iText");
-        cell.setHeight(36f);
+        cell.setMinHeight(70);
         table.addCell(cell);
 
         doc.add(table);
