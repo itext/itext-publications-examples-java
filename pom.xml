@@ -189,14 +189,19 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <!-- The names of the sample classes do not have
-                            to end with "Test". -->
-                        <include>**/Listing_*.java</include>
                         <include>**/*.java</include>
                     </includes>
                     <groups>${sampletests},${integrationtests}</groups>
                     <parallel>none</parallel>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
