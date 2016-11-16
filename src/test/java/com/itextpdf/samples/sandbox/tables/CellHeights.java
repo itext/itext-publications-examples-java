@@ -14,6 +14,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.Property;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -56,6 +57,12 @@ public class CellHeights extends GenericTest {
         cell = new Cell().add("Dr. iText");
         cell.setMinHeight(70);
         table.addCell(cell);
+        // the last cell that should be extended
+        table.addCell("extend last row");
+        cell.deleteOwnProperty(Property.MIN_HEIGHT);
+        table.addCell(cell.clone(true));
+
+        table.setExtendLastRow(true);
 
         doc.add(table);
         doc.close();
