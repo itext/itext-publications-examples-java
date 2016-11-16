@@ -17,7 +17,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.Property;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -52,18 +51,11 @@ public class MultipleImagesInTable extends GenericTest {
         Image img3 = new Image(ImageDataFactory.create(IMG3));
 
         Table table = new Table(1);
-        //table.setWidthPercent(20);
+        table.setWidthPercent(20);
 
-//        img1.setAutoScale(true);
-//        img2.setAutoScale(true);
-//        img3.setAutoScale(true);
-
-        table.addCell(img1);
-        table.addCell("Brazil");
-        table.addCell(img2);
-        table.addCell("Dog");
-        table.addCell(img3);
-        table.addCell("Fox");
+        img1.setAutoScale(true);
+        img2.setAutoScale(true);
+        img3.setAutoScale(true);
 
         table.addCell(img1);
         table.addCell("Brazil");
@@ -71,27 +63,7 @@ public class MultipleImagesInTable extends GenericTest {
         table.addCell("Dog");
         table.addCell(img3);
         table.addCell("Fox");
-        table.addCell(img1);
-        table.addCell("Brazil");
-        table.addCell(img2);
-        table.addCell("Dog");
-        table.addCell(img3);
-        table.addCell("Fox");
-        table.addCell(img1);
-        table.addCell("Brazil");
-        table.addCell(img2);
-        table.addCell("Dog");
-        table.addCell(img3);
-        table.addCell("Fox");
-        table.addCell(img1);
-        table.addCell("Brazil");
-        table.addCell(img2);
-        table.addCell("Dog");
-        table.addCell(img3);
-//        table.addCell("Fox");
 
-        table.setProperty(Property.EXTEND_LAST_ROW, true);
-        table.setProperty(Property.EXTEND_FINAL_ROW, true);
         doc.add(table);
 
         doc.close();

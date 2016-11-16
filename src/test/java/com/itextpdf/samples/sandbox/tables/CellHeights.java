@@ -56,7 +56,7 @@ public class CellHeights extends GenericTest {
         table.addCell("minimum height");
         cell = new Cell().add("Dr. iText");
         cell.setMinHeight(70);
-        table.addCell(cell);
+        table.addCell(cell.clone(true));
         // the last cell that should be extended
         table.addCell("extend last row");
         cell.deleteOwnProperty(Property.MIN_HEIGHT);
