@@ -62,7 +62,7 @@ public class CellHeights extends GenericTest {
         cell.deleteOwnProperty(Property.MIN_HEIGHT);
         table.addCell(cell.clone(true));
 
-        table.setExtendLastRow(true);
+        table.setExtendBottomRow(true);
 
         doc.add(table);
         doc.close();
