@@ -8,32 +8,25 @@
 package com.itextpdf.samples.tagging;
 
 import com.itextpdf.kernel.color.Color;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfName;
-import com.itextpdf.kernel.pdf.PdfPage;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.CanvasArtifact;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.tagutils.TagTreePointer;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.AreaBreakType;
 import com.itextpdf.layout.property.HorizontalAlignment;
-import com.itextpdf.layout.element.AreaBreak;
-import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.test.ExtendedITextTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 import static org.junit.Assert.fail;
 
@@ -65,13 +58,13 @@ public class TaggingSamples extends ExtendedITextTest {
             "(13:30 UTC), at the Samuel Goldwyn Theater in Beverly Hills, California, by directors Guillermo del Toro " +
             "and Ang Lee, Academy president Cheryl Boone Isaacs, and actor John Krasinski. The Revenant received the " +
             "most nominations with twelve total, with Mad Max: Fury Road coming in second with ten. For the second consecutive " +
-            "year, a film directed by Alejandro G. Iñárritu received the most nominations. Composer Anohni became the second" +
+            "year, a film directed by Alejandro G. I\u00F1\u00E1rritu received the most nominations. Composer Anohni became the second" +
             " transgender person to be nominated for an Oscar. (Angela Morley was the first, in 1974 and 1976.) Sylvester " +
             "Stallone became the sixth person to be nominated for playing the same role in two different films.";
     private static final String text5 = "The winners were announced during the awards ceremony on February 28, 2016. With two Oscars, Spotlight " +
             "was the first film since The Greatest Show on Earth in 1952 to win Best Picture with only one other award. " +
-            "Alejandro G. Iñárritu became the only Mexican and third director to win two consecutive Oscars for Best" +
-            " Director after John Ford in 1940–1941 and Joseph L. Mankiewicz in 1949–1950, respectively. At the age of 87," +
+            "Alejandro G. I\u00F1\u00E1rritu became the only Mexican and third director to win two consecutive Oscars for Best" +
+            " Director after John Ford in 1940-1941 and Joseph L. Mankiewicz in 1949-1950, respectively. At the age of 87," +
             " Ennio Morricone became the oldest winner in Oscar history for a competitive award. Having previously won " +
             "for Gravity and Birdman, Emmanuel Lubezki became the first person to win three consecutive Best " +
             "Cinematography awards. Bear Story became the first ever Chilean film to win an Oscar.";
