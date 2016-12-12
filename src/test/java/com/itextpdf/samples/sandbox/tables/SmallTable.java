@@ -21,15 +21,13 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.experimental.categories.Category;
 
 import java.io.File;
-
-import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class SmallTable extends GenericTest {
@@ -44,14 +42,13 @@ public class SmallTable extends GenericTest {
     @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        Document doc = new Document(pdfDoc, new PageSize(290, 100));
+        Document doc = new Document(pdfDoc, new PageSize(290, 112));
         doc.setMargins(5, 5, 5, 5);
 
         Table table = new Table(new float[]{ 160, 120 });
 
         // first row
         Cell cell = new Cell(1, 2).add("Some text here");
-        // TODO DEVSIX-792
         cell.setHeight(30);
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);
@@ -72,7 +69,7 @@ public class SmallTable extends GenericTest {
         table.addCell(cell);
 
         // third row
-        table.addCell(cell);
+        table.addCell(cell.clone(true));
         cell = new Cell().add(new Paragraph("and something else here").setFontSize(10));
         cell.setBorder(Border.NO_BORDER);
         cell.setTextAlignment(TextAlignment.RIGHT);

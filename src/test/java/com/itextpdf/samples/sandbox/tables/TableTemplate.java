@@ -47,7 +47,7 @@ public class TableTemplate extends GenericTest {
         for (int r = 'A'; r <= 'Z'; r++) {
             for (int c = 1; c <= 15; c++) {
                 cell = new Cell();
-                cell.setHeight(49);
+                cell.setMinHeight(45);
                 cell.add(new Paragraph(String.valueOf((char) r) + String.valueOf(c)));
                 table.addCell(cell);
             }

@@ -49,20 +49,20 @@ public class DiagonalCell extends GenericTest {
 
         Cell cell = new Cell();
         cell.setNextRenderer(new DiagonalCellRenderer(cell, "Gravity", "Occ"));
-        table.addCell(cell.setHeight(30));
+        table.addCell(cell.setMinHeight(30));
 
-        table.addCell(new Cell().add("1").setHeight(30));
-        table.addCell(new Cell().add("2").setHeight(30));
-        table.addCell(new Cell().add("3").setHeight(30));
-        table.addCell(new Cell().add("4").setHeight(30));
-        table.addCell(new Cell().add("5").setHeight(30));
+        table.addCell(new Cell().add("1").setMinHeight(30));
+        table.addCell(new Cell().add("2").setMinHeight(30));
+        table.addCell(new Cell().add("3").setMinHeight(30));
+        table.addCell(new Cell().add("4").setMinHeight(30));
+        table.addCell(new Cell().add("5").setMinHeight(30));
         for (int i = 0; i < 5; ) {
-            table.addCell(new Cell().add(String.valueOf(++i)).setHeight(30));
-            table.addCell(new Cell().setHeight(30));
-            table.addCell(new Cell().setHeight(30));
-            table.addCell(new Cell().setHeight(30));
-            table.addCell(new Cell().setHeight(30));
-            table.addCell(new Cell().setHeight(30));
+            table.addCell(new Cell().add(String.valueOf(++i)).setMinHeight(30));
+            table.addCell(new Cell().setMinHeight(30));
+            table.addCell(new Cell().setMinHeight(30));
+            table.addCell(new Cell().setMinHeight(30));
+            table.addCell(new Cell().setMinHeight(30));
+            table.addCell(new Cell().setMinHeight(30));
         }
 
         doc.add(table);

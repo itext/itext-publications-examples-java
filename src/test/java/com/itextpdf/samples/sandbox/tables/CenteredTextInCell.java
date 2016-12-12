@@ -49,7 +49,7 @@ public class CenteredTextInCell extends GenericTest {
         para.setMultipliedLeading(1);
         Table table = new Table(1);
         Cell cell = new Cell();
-        cell.setHeight(50);
+        cell.setMinHeight(50);
         cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
         cell.add(para);
         table.addCell(cell);
