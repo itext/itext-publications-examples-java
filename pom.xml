@@ -178,11 +178,11 @@
                 <version>2.19.1</version>
                 <configuration>
                     <groups>${unittests}</groups>
-                    <parallel>all</parallel>
+                    <parallel>methods</parallel>
                     <threadCount>10</threadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>
                     <reuseForks>true</reuseForks>
-                    <forkCount>2.5C</forkCount>
+                    <forkCount>1.5C</forkCount>
                 </configuration>
             </plugin>
             <plugin>
@@ -194,11 +194,11 @@
                         <include>**/*.java</include>
                     </includes>
                     <groups>${sampletests},${integrationtests}</groups>
-                    <parallel>all</parallel>
+                    <parallel>methods</parallel>
                     <threadCount>10</threadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>
                     <reuseForks>true</reuseForks>
-                    <forkCount>2.5C</forkCount>
+                    <forkCount>1.5C</forkCount>
                 </configuration>
                 <executions>
                     <execution>
