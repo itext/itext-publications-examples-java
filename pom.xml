@@ -181,7 +181,7 @@
                     <parallel>all</parallel>
                     <threadCount>10</threadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>
-                    <reuseForks>false</reuseForks>
+                    <reuseForks>true</reuseForks>
                     <forkCount>2.5C</forkCount>
                 </configuration>
             </plugin>
@@ -197,7 +197,7 @@
                     <parallel>all</parallel>
                     <threadCount>10</threadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>
-                    <reuseForks>false</reuseForks>
+                    <reuseForks>true</reuseForks>
                     <forkCount>2.5C</forkCount>
                 </configuration>
                 <executions>
