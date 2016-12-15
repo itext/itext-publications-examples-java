@@ -190,6 +190,7 @@
                         <include>**/*.java</include>
                     </includes>
                     <groups>${sampletests},${integrationtests}</groups>
+                  	<argLine>${env.SUREFIRE_OPTS}</argLine>
                 </configuration>
                 <executions>
                     <execution>
