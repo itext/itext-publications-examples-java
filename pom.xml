@@ -178,6 +178,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <groups>${unittests}</groups>
+                  	<argLine>${env.SUREFIRE_OPTS}</argLine>
                 </configuration>
             </plugin>
             <plugin>
