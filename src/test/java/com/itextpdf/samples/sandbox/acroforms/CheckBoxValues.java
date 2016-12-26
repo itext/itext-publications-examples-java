@@ -27,7 +27,7 @@ import java.util.Map;
 
 @Category(SampleTest.class)
 public class CheckBoxValues {
-    public static final String CMP = "Yes\nOff\n";
+    public static final String CMP = "Off\nYes\n";
     public static final String DEST = "./target/test/resources/sandbox/acroforms/check_box_values.pdf";
     public static final String FIELD = "CP_1";
     public static final String SRC = "./src/test/resources/pdfs/datasheet.pdf";
