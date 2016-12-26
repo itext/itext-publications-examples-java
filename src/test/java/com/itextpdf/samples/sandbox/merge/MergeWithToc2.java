@@ -82,7 +82,7 @@ public class MergeWithToc2 extends GenericTest {
                     PdfOutline outline = rootOutLine.addOutline("p" + pageNo);
                     outline.addDestination(PdfDestination.makeDestination(new PdfString("p" + pageNo)));
                 }
-                doc.add(new Paragraph(text).setFixedPosition(pageNo, 549, 810, 40));
+                doc.add(new Paragraph(text).setFixedPosition(pageNo, 549, 810, 40).setMargin(0).setMultipliedLeading(1));
             }
         }
 
@@ -98,7 +98,7 @@ public class MergeWithToc2 extends GenericTest {
             p.add(new Tab());
             p.add(String.valueOf(entry.getKey()));
             p.setAction(PdfAction.createGoTo("p" + entry.getKey()));
-            doc.add(p.setFixedPosition(pdfDoc.getNumberOfPages(), 36, y, 595 - 72));
+            doc.add(p.setFixedPosition(pdfDoc.getNumberOfPages(), 36, y, 595 - 72).setMargin(0).setMultipliedLeading(1));
             y -= 20;
         }
 

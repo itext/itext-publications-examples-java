@@ -18,17 +18,14 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.test.annotations.type.SampleTest;
-
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import java.io.FileInputStream;
 import java.util.Map;
 
 @Category(SampleTest.class)
-
 public class CheckBoxValues {
     public static final String CMP = "Yes\nOff\n";
     public static final String DEST = "./target/test/resources/sandbox/acroforms/check_box_values.pdf";

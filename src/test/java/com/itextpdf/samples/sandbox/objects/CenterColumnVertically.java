@@ -48,7 +48,7 @@ public class CenterColumnVertically extends GenericTest {
         Paragraph p = new Paragraph("This text is centered vertically. " +
                 "It is rendered in the middle of the red rectangle.");
         new Canvas(canvas, pdfDoc, rect)
-                .add(p.setFixedPosition(llx, (ury + lly) / 2, urx - llx));
+                .add(p.setFixedPosition(llx, (ury + lly) / 2, urx - llx).setMargin(0));
         pdfDoc.close();
     }
 }

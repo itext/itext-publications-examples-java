@@ -25,10 +25,9 @@ import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.experimental.categories.Category;
 
 import java.io.File;
-
-import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class CellTitle extends GenericTest {
@@ -77,7 +76,7 @@ public class CellTitle extends GenericTest {
             PdfCanvas aboveCanvas = new PdfCanvas(drawContext.getDocument().getLastPage().newContentStreamAfter(),
                     drawContext.getDocument().getLastPage().getResources(), drawContext.getDocument());
             new Canvas(aboveCanvas, drawContext.getDocument(), getOccupiedAreaBBox())
-                    .add(new Paragraph(title)
+                    .add(new Paragraph(title).setMultipliedLeading(1).setMargin(0)
                             .setBackgroundColor(Color.LIGHT_GRAY)
                             .setFixedPosition(getOccupiedAreaBBox().getLeft() + 5, getOccupiedAreaBBox().getTop() - 8, 30));
         }
