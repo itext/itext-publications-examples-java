@@ -54,12 +54,12 @@ public class TiledBackground extends GenericTest {
         Cell cell = new Cell();
         ImageData image = ImageDataFactory.create(IMG1);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
-        cell.setHeight(768).setBorder(Border.NO_BORDER);
+        cell.setHeight(766).setBorder(Border.NO_BORDER);
         table.addCell(cell);
         cell = new Cell();
         image = ImageDataFactory.create(IMG2);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
-        cell.setHeight(768).setBorder(Border.NO_BORDER);
+        cell.setHeight(766).setBorder(Border.NO_BORDER);
         table.addCell(cell);
         doc.add(table);
 
