@@ -1,10 +1,11 @@
 /*
-
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2016 iText Group NV
+    Copyright (c) 1998-2017 iText Group NV
+    Authors: iText Software.
 
-*/
-
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 /**
  * Example written in answer to:
  * http://stackoverflow.com/questions/33633363/itextpdf-cannot-use-writeselectedrows-on-a-table-where-an-anchor-has-been-in

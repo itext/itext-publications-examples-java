@@ -1,10 +1,11 @@
 /*
-
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2016 iText Group NV
+    Copyright (c) 1998-2017 iText Group NV
+    Authors: iText Software.
 
-*/
-
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 /**
  * Example written by Ramesh in the context of a question on SO:
  * http://stackoverflow.com/questions/29345454/itext-avoid-row-splitting-in-table
@@ -33,7 +34,6 @@ import com.itextpdf.test.annotations.type.SampleTest;
 import java.io.File;
 
 import org.junit.experimental.categories.Category;
-
 
 @Category(SampleTest.class)
 public class TableSplitTest extends GenericTest {

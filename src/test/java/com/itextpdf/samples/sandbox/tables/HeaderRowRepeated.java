@@ -1,10 +1,11 @@
 /*
-
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2016 iText Group NV
+    Copyright (c) 1998-2017 iText Group NV
+    Authors: iText Software.
 
-*/
-
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 /**
  * This example is written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/32582927/itext-pdfwriter-writing-table-header-if-the-few-table-rows-go-to-new-page

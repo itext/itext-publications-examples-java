@@ -1,10 +1,11 @@
 /*
-
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2016 iText Group NV
+    Copyright (c) 1998-2017 iText Group NV
+    Authors: iText Software.
 
-*/
-
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/27956833/adding-comment-on-pdf-layer-created-using-itextsharp-in-adobe-reader
@@ -26,7 +27,6 @@ import org.junit.experimental.categories.Category;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Category(SampleTest.class)
 public class AddOCG extends GenericTest {

@@ -1,10 +1,11 @@
 /*
-
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2016 iText Group NV
+    Copyright (c) 1998-2017 iText Group NV
+    Authors: iText Software.
 
-*/
-
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 /**
  * These examples are written by Bruno Lowagie in the context of an article about fonts.
  */
@@ -12,7 +13,7 @@ package com.itextpdf.samples.sandbox.fonts.tutorial;
 
 public class F99_ConvertToUnicodeNotation {
     public static void main() throws Exception {
-        String s = "Vous êtes d'où?";
+        String s = "Vous ?tes d'o??";
         System.out.print("\"");
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);

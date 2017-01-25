@@ -1,10 +1,11 @@
 /*
-
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2016 iText Group NV
+    Copyright (c) 1998-2017 iText Group NV
+    Authors: iText Software.
 
-*/
-
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 /**
  * This example was written in answer to the question
  * http://stackoverflow.com/questions/39203479
@@ -32,7 +33,7 @@ import java.io.File;
 @Category(SampleTest.class)
 public class SmallTable extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/small_table.pdf";
-    
+
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
