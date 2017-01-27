@@ -37,7 +37,6 @@ public class KeepingTogetherInnerTable extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(300, 160));
 
         Table table = new Table(2);
-        table.setWidthPercent(100);
         table.setMarginTop(10);
         Cell cell = new Cell();
         cell.add("G");
@@ -47,7 +46,6 @@ public class KeepingTogetherInnerTable extends GenericTest {
         cell.add("P");
         table.addCell(cell);
         Table inner = new Table(1);
-        table.setWidthPercent(100);
         inner.setKeepTogether(true);
         inner.addCell("row 1");
         inner.addCell("row 2");

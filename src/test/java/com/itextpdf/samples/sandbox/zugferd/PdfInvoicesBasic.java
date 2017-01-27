@@ -28,7 +28,6 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.samples.sandbox.zugferd.data.InvoiceData;
@@ -152,7 +151,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(table);
 
         // line items
-        table = new Table(UnitValue.createPercentArray(new float[]{7, 2, 1, 2, 2, 2}));
+        table = new Table(new float[]{7, 2, 1, 2, 2, 2});
         table.setWidthPercent(100);
         table.setMarginTop(10);
         table.setMarginBottom(10);

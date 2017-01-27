@@ -31,7 +31,6 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -76,7 +75,7 @@ public class Watermarking extends GenericTest {
         PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
         PdfFont bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3}));
+        Table table = new Table(new float[]{4, 1, 3});
         table.setWidthPercent(100);
 
         BufferedReader br = new BufferedReader(new FileReader(DATA));

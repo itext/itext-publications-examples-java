@@ -43,7 +43,6 @@ public class ColoredBorder extends GenericTest {
 
         Table table;
         table = new Table(2);
-        table.setWidthPercent(100);
         Cell cell;
         cell = new Cell().add("Cell 1");
         cell.setBorderTop(new SolidBorder(Color.RED, 1));

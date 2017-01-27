@@ -28,7 +28,6 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.pdfa.PdfADocument;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -76,7 +75,7 @@ public class PdfA1a extends GenericTest {
         PdfDictionary parameters = new PdfDictionary();
         parameters.put(PdfName.ModDate, new PdfDate().getPdfObject());
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3, 4, 3, 3, 3, 3, 1}));
+        Table table = new Table(new float[]{4, 1, 3, 4, 3, 3, 3, 3, 1});
         table.setWidthPercent(100);
         BufferedReader br = new BufferedReader(new FileReader(DATA));
         String line = br.readLine();

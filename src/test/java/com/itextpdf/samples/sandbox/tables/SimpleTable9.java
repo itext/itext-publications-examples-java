@@ -18,7 +18,6 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -42,7 +41,7 @@ public class SimpleTable9 extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         doc.add(new Paragraph("With 3 columns:"));
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 1, 8}));
+        Table table = new Table(new float[]{1, 1, 8});
         table.setWidthPercent(100);
         table.setMarginTop(5);
         table.addCell("Col a");

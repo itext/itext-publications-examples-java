@@ -22,7 +22,6 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -45,8 +44,7 @@ public class ImageNextToText extends GenericTest {
 
     public static Cell createImageCell(String path) throws MalformedURLException {
         Image img = new Image(ImageDataFactory.create(path));
-        img.setWidthPercent(100);
-        Cell cell = new Cell().add(img);
+        Cell cell = new Cell().add(img.setAutoScale(true));
         cell.setBorder(null);
         return cell;
     }
@@ -64,7 +62,7 @@ public class ImageNextToText extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 2}));
+        Table table = new Table(new float[]{1, 2});
         table.setWidthPercent(100);
         table.addCell(createImageCell(IMG1));
         table.addCell(createTextCell("This picture was taken at Java One.\nIt shows the iText crew at Java One in 2013."));

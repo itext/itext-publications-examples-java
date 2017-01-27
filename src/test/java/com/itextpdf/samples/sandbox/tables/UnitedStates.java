@@ -18,7 +18,6 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -58,7 +57,7 @@ public class UnitedStates extends GenericTest {
 
         PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
         PdfFont bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1.5f, 3, 4, 3, 3, 3, 3, 1}));
+        Table table = new Table(new float[]{4, 1.5f, 3, 4, 3, 3, 3, 3, 1});
         table.setWidthPercent(100);
         BufferedReader br = new BufferedReader(new FileReader(DATA));
         String line = br.readLine();

@@ -91,7 +91,7 @@ public class TableHeader extends GenericTest {
             PdfPage page = docEvent.getPage();
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
             Rectangle rect = new Rectangle(pdfDoc.getDefaultPageSize().getX() + doc.getLeftMargin(),
-                    pdfDoc.getDefaultPageSize().getTop() - doc.getTopMargin(), 523, getTableHeight());
+                    pdfDoc.getDefaultPageSize().getTop() - doc.getTopMargin(), 100, getTableHeight());
             new Canvas(canvas, pdfDoc, rect)
                     .add(table);
         }
