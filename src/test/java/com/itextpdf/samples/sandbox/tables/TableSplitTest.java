@@ -27,6 +27,7 @@ import com.itextpdf.layout.element.LineSeparator;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -62,7 +63,7 @@ public class TableSplitTest extends GenericTest {
         String[] content = new String[]{"column 1", "column 2",
                 "some Text in column 3", "Test data ", "column 5"};
 
-        Table table = new Table(new float[]{3, 2, 4, 3, 2});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{3, 2, 4, 3, 2}));
         table.setWidthPercent(98);
 
         for (String columnHeader : header) {
@@ -101,7 +102,7 @@ public class TableSplitTest extends GenericTest {
                     .setFontSize(10);
             info.setMarginTop(12f);
             doc.add(info);
-            table = new Table(new float[]{3, 2, 4, 3, 2});
+            table = new Table(UnitValue.createPercentArray(new float[]{3, 2, 4, 3, 2}));
             table.setWidthPercent(98);
             table.setMarginTop(15);
 

@@ -20,6 +20,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -49,7 +50,7 @@ public class SimpleTable11 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(new float[]{1, 2, 1, 1, 1});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 2, 1, 1, 1}));
         table.setWidthPercent(100);
         table.addCell(createCell("SKU", 2, 1, TextAlignment.LEFT));
         table.addCell(createCell("Description", 2, 1, TextAlignment.LEFT));

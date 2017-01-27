@@ -22,6 +22,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -61,7 +62,7 @@ public class HindiExample extends GenericTest {
                 + "\\u0917 \u0917").setFont(f);
         doc.add(p2);
 
-        Table table = new Table(new float[]{10, 60, 30});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{10, 60, 30}));
         table.setWidthPercent(100);
         Cell customerLblCell = new Cell().add("CUSTOMERS");
         Cell balanceLblCell = new Cell().add(new Paragraph("\u0915\u093e\u0930\u092a\u093e\u0930\u094d\u0915\u093f\u0902\u0917")

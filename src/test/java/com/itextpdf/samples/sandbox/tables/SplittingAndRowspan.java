@@ -45,6 +45,7 @@ public class SplittingAndRowspan extends GenericTest {
 
         doc.add(new Paragraph("Table with setKeepTogether(true):"));
         Table table = new Table(2);
+        table.setWidthPercent(100);
         table.setKeepTogether(true);
         table.setMarginTop(10);
         Cell cell = new Cell(3, 1);

@@ -21,6 +21,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutResult;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -49,7 +50,7 @@ public class AddExtraTable extends GenericTest {
         fields.get("Country").setValue("No Man's Land");
         form.flattenFields();
 
-        Table table = new Table(new float[]{1, 15});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
         table.setWidthPercent(80);
         table.addHeaderCell("#");
         table.addHeaderCell("description");

@@ -51,6 +51,7 @@ public class NestedTables3 extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
         Table table = new Table(2);
+        table.setWidthPercent(100);
         table.setNextRenderer(new InnerTableRenderer(table, new Table.RowRange(0, 0)));
         Cell cell = new Cell(1, 2).add("This outer header is repeated on every page");
         table.addHeaderCell(cell);

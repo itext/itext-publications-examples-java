@@ -16,6 +16,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -38,13 +39,13 @@ public class NestedTables2 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(new float[]{1, 15});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
         table.setWidthPercent(100);
         for (int i = 1; i <= 20; i++) {
             table.addCell(String.valueOf(i));
             table.addCell("It is not smart to use iText 2.1.7!");
         }
-        Table innertable = new Table(new float[]{1, 15});
+        Table innertable = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
         innertable.setWidthPercent(100);
         for (int i = 0; i < 90; i++) {
             innertable.addCell(String.valueOf(i + 1));

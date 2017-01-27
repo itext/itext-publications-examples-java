@@ -45,6 +45,7 @@ public class SplittingNestedTable1 extends GenericTest {
         // Note that the sense of KEEP_TOGETHER property is slightly different from late splitting in itext5
         doc.add(new Paragraph("Table with setKeepTogether(true):"));
         Table table = new Table(2);
+        table.setWidthPercent(100);
         table.setKeepTogether(true);
         table.setMarginTop(10);
         Cell cell = new Cell();
@@ -55,6 +56,7 @@ public class SplittingNestedTable1 extends GenericTest {
         cell.add("P");
         table.addCell(cell);
         Table inner = new Table(1);
+        table.setWidthPercent(100);
         inner.addCell("row 1");
         inner.addCell("row 2");
         inner.addCell("row 3");
