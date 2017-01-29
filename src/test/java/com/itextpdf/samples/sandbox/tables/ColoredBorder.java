@@ -21,10 +21,9 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.experimental.categories.Category;
 
 import java.io.File;
-
-import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class ColoredBorder extends GenericTest {
@@ -43,7 +42,6 @@ public class ColoredBorder extends GenericTest {
 
         Table table;
         table = new Table(2);
-        table.setWidthPercent(100);
         Cell cell;
         cell = new Cell().add("Cell 1");
         cell.setBorderTop(new SolidBorder(Color.RED, 1));

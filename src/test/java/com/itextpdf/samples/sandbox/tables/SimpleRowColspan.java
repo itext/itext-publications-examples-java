@@ -40,8 +40,7 @@ public class SimpleRowColspan extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 2, 2, 2, 1}));
-        table.setWidthPercent(100);
+        Table table = new Table(UnitValue.createPercentArray(new float[]{12.5f, 25, 25, 25, 12.5f}));
 
         Cell cell;
         cell = new Cell(2, 1).add("S/N");

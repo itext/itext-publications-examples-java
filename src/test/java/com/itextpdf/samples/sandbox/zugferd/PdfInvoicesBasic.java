@@ -12,12 +12,7 @@ import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
-import com.itextpdf.kernel.pdf.PdfArray;
-import com.itextpdf.kernel.pdf.PdfDate;
-import com.itextpdf.kernel.pdf.PdfDictionary;
-import com.itextpdf.kernel.pdf.PdfName;
-import com.itextpdf.kernel.pdf.PdfOutputIntent;
-import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
@@ -43,7 +38,11 @@ import com.itextpdf.zugferd.ZugferdXMPUtil;
 import com.itextpdf.zugferd.exceptions.DataIncompleteException;
 import com.itextpdf.zugferd.exceptions.InvalidCodeException;
 import com.itextpdf.zugferd.profiles.IBasicProfile;
+import org.junit.experimental.categories.Category;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -53,11 +52,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-
-import org.junit.experimental.categories.Category;
-import org.xml.sax.SAXException;
 
 /**
  * Reads invoice data from a test database and creates ZUGFeRD invoices
@@ -126,7 +120,6 @@ public class PdfInvoicesBasic extends GenericTest {
 
         // Address seller / buyer
         Table table = new Table(2);
-        table.setWidthPercent(100);
         Cell seller = getPartyAddress("From:",
                 basic.getSellerName(),
                 basic.getSellerLineOne(),
@@ -152,8 +145,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(table);
 
         // line items
-        table = new Table(UnitValue.createPercentArray(new float[]{7, 2, 1, 2, 2, 2}));
-        table.setWidthPercent(100);
+        table = new Table(UnitValue.createPercentArray(new float[]{7*6.25f, 2*6.25f, 1*6.25f, 2*6.25f, 2*6.25f, 2*6.25f}));
         table.setMarginTop(10);
         table.setMarginBottom(10);
         table.addCell(getCell("Item:", TextAlignment.LEFT, fontb, 12));
@@ -239,8 +231,7 @@ public class PdfInvoicesBasic extends GenericTest {
 
     public Table getTotalsTable(String tBase, String tTax, String tTotal, String tCurrency,
                                 String[] type, String[] percentage, String base[], String tax[], String currency[]) {
-        Table table = new Table(new float[]{1, 1, 3, 3, 3, 1});
-        table.setWidthPercent(100);
+        Table table = new Table(new float[]{1f*100/12, 1f*100/12, 3f*100/12, 3f*100/12, 3f*100/12, 1f*100/12});
         table.addCell(getCell("TAX", TextAlignment.LEFT, fontb, 12));
         table.addCell(getCell("%", TextAlignment.RIGHT, fontb, 12));
         table.addCell(getCell("Base amount:", TextAlignment.LEFT, fontb, 12));

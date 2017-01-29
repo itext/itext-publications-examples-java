@@ -50,8 +50,7 @@ public class AddExtraTable extends GenericTest {
         fields.get("Country").setValue("No Man's Land");
         form.flattenFields();
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
-        table.setWidthPercent(80);
+        Table table = new Table(UnitValue.createPercentArray(new float[]{5, 75}));
         table.addHeaderCell("#");
         table.addHeaderCell("description");
         for (int i = 1; i <= 150; i++) {

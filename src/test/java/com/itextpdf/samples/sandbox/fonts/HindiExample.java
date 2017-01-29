@@ -63,7 +63,6 @@ public class HindiExample extends GenericTest {
         doc.add(p2);
 
         Table table = new Table(UnitValue.createPercentArray(new float[]{10, 60, 30}));
-        table.setWidthPercent(100);
         Cell customerLblCell = new Cell().add("CUSTOMERS");
         Cell balanceLblCell = new Cell().add(new Paragraph("\u0915\u093e\u0930\u092a\u093e\u0930\u094d\u0915\u093f\u0902\u0917")
                 .setFont(f)

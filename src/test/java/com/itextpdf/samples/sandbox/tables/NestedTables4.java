@@ -24,7 +24,6 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
@@ -46,9 +45,8 @@ public class NestedTables4 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 12, 8, 1}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{5, 50, 40, 5}));
         table.setBorder(new SolidBorder(1));
-        table.setWidthPercent(100);
         // first row
         Cell cell = new Cell(1, 4).add("Main table");
         cell.setBorder(Border.NO_BORDER);

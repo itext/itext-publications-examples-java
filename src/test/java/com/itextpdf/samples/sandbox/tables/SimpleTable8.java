@@ -47,7 +47,7 @@ public class SimpleTable8 extends GenericTest {
         PdfReader reader = new PdfReader(SRC + "header_test_file.pdf");
         PdfDocument srcDoc = new PdfDocument(reader);
         PdfFormXObject header = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
-        Cell cell = new Cell(1, 3).add(new Image(header).setAutoScale(true));
+        Cell cell = new Cell(1, 3).add(new Image(header).setWidthPercent(100).setAutoScale(true));
         table.addCell(cell);
         for (int row = 1; row <= 50; row++) {
             for (int column = 1; column <= 3; column++) {
@@ -57,7 +57,7 @@ public class SimpleTable8 extends GenericTest {
         reader = new PdfReader(SRC + "footer_test_file.pdf");
         srcDoc = new PdfDocument(reader);
         PdfFormXObject footer = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
-        cell = new Cell(1, 3).add(new Image(footer).setAutoScale(true));
+        cell = new Cell(1, 3).add(new Image(footer).setWidthPercent(100).setAutoScale(true));
         table.addCell(cell);
         doc.add(table);
 
