@@ -23,12 +23,10 @@ import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Ignore
 @Category(SampleTest.class)
 public class NestedTableRoundedBorder extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/nested_table_rounded_border.pdf";
