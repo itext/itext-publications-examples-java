@@ -42,7 +42,8 @@ public class ListWithLabel extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(new float[]{20, 200});
+        Table table = new Table(new float[]{1, 10});
+        table.setWidth(200);
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         Cell cell;
         cell = new Cell();
