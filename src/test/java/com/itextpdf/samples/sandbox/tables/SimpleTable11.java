@@ -50,7 +50,7 @@ public class SimpleTable11 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{100/6, 100/3, 100/6, 100/6, 100/6}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 2, 1, 1, 1}));
         table.addCell(createCell("SKU", 2, 1, TextAlignment.LEFT));
         table.addCell(createCell("Description", 2, 1, TextAlignment.LEFT));
         table.addCell(createCell("Unit Price", 2, 1, TextAlignment.LEFT));

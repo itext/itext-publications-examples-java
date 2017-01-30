@@ -49,7 +49,6 @@ public class NestedTableRoundedBorder extends GenericTest {
         Table outertable = new Table(1);
         // inner table 1
         Table innertable = new Table(UnitValue.createPercentArray(new float[]{8, 12, 1, 4, 12}));
-        innertable.setWidthPercent(100);
         // first row
         // column 1
         cell = new Cell().add("Record Ref:");

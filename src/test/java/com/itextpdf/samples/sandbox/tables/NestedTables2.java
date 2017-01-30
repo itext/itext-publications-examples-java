@@ -39,12 +39,12 @@ public class NestedTables2 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{6.25f, 93.75f}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
         for (int i = 1; i <= 20; i++) {
             table.addCell(String.valueOf(i));
             table.addCell("It is not smart to use iText 2.1.7!");
         }
-        Table innertable = new Table(UnitValue.createPercentArray(new float[]{6.25f, 93.75f}));
+        Table innertable = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
         for (int i = 0; i < 90; i++) {
             innertable.addCell(String.valueOf(i + 1));
             innertable.addCell("Upgrade if you're a professional developer!");

@@ -49,7 +49,7 @@ public class ColumnWidthExample extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
-        float[] columnWidths = {10f, 45f, 45f};
+        float[] columnWidths = {1, 5, 5};
         Table table = new Table(UnitValue.createPercentArray(columnWidths));
         PdfFont f = PdfFontFactory.createFont(FontConstants.HELVETICA);
         Cell cell = new Cell(1, 3)

@@ -64,7 +64,7 @@ public class ImageNextToText extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(UnitValue.createPercentArray(new float[]{100f/3, 100f*2/3}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 2}));
         table.addCell(createImageCell(IMG1));
         table.addCell(createTextCell("This picture was taken at Java One.\nIt shows the iText crew at Java One in 2013."));
         doc.add(table);

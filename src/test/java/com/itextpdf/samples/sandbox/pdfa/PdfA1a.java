@@ -76,7 +76,7 @@ public class PdfA1a extends GenericTest {
         PdfDictionary parameters = new PdfDictionary();
         parameters.put(PdfName.ModDate, new PdfDate().getPdfObject());
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{16, 4, 12, 16, 12, 12, 12, 12, 4}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3, 4, 3, 3, 3, 3, 1}));
         BufferedReader br = new BufferedReader(new FileReader(DATA));
         String line = br.readLine();
         process(table, line, bold, 10, true);

@@ -22,9 +22,10 @@ import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
+
+import org.junit.experimental.categories.Category;
 
 @Category(SampleTest.class)
 public class SimpleTable13 extends GenericTest {
@@ -46,7 +47,8 @@ public class SimpleTable13 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{5f/6*50, 1f/6*50}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{5, 1}));
+        table.setWidthPercent(50);
         table.setTextAlignment(TextAlignment.LEFT);
         table.addCell(new Cell().add("Name: " + DATA[0][0]).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(DATA[0][1]).setBorder(Border.NO_BORDER));
