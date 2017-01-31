@@ -24,6 +24,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -49,8 +50,7 @@ public class ColumnWidthExample extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
         float[] columnWidths = {1, 5, 5};
-        Table table = new Table(columnWidths);
-        table.setWidthPercent(100);
+        Table table = new Table(UnitValue.createPercentArray(columnWidths));
         PdfFont f = PdfFontFactory.createFont(FontConstants.HELVETICA);
         Cell cell = new Cell(1, 3)
                 .add(new Paragraph("This is a header"))

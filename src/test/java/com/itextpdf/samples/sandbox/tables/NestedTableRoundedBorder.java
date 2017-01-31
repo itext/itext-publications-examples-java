@@ -18,6 +18,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -45,8 +46,7 @@ public class NestedTableRoundedBorder extends GenericTest {
         // outer table
         Table outertable = new Table(1);
         // inner table 1
-        Table innertable = new Table(new float[]{8, 12, 1, 4, 12});
-        innertable.setWidthPercent(100);
+        Table innertable = new Table(UnitValue.createPercentArray(new float[]{8, 12, 1, 4, 12}));
         // first row
         // column 1
         cell = new Cell().add("Record Ref:");
@@ -107,7 +107,7 @@ public class NestedTableRoundedBorder extends GenericTest {
         cell.setPadding(8);
         outertable.addCell(cell);
         // inner table 2
-        innertable = new Table(new float[]{3, 17, 1, 16});
+        innertable = new Table(UnitValue.createPercentArray(new float[]{3, 17, 1, 16}));
         innertable.setWidthPercent(100);
         // first row
         // column 1

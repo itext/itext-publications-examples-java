@@ -56,19 +56,19 @@ public class WatermarkedImages2 extends GenericTest {
         Table table = new Table(1);
         Cell cell;
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE1)).setAutoScaleWidth(true));
+        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE1)).setAutoScaleWidth(true).setWidthPercent(100));
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Bruno"));
         table.addCell(cell);
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE2)).setAutoScaleWidth(true));
+        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE2)).setAutoScaleWidth(true).setWidthPercent(100));
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Dog"));
         table.addCell(cell);
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE3)).setAutoScaleWidth(true));
+        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE3)).setAutoScaleWidth(true).setWidthPercent(100));
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Fox"));
         table.addCell(cell);
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE4)).setAutoScaleWidth(true));
+        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE4)).setAutoScaleWidth(true).setWidthPercent(100));
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Bruno and Ingeborg"));
         table.addCell(cell);
 

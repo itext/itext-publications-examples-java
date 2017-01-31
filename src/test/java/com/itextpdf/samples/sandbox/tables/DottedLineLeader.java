@@ -19,6 +19,7 @@ import com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.TabAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -42,7 +43,7 @@ public class DottedLineLeader extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(new float[]{1, 3, 1});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{10, 30, 10}));
         table.setWidthPercent(50);
         ILineDrawer leader = new DottedLine(1.5f, 6);
 

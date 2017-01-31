@@ -47,6 +47,7 @@ public class DiagonalCell extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         Table table = new Table(6);
+        table.setWidthPercent(100);
 
         Cell cell = new Cell();
         cell.setNextRenderer(new DiagonalCellRenderer(cell, "Gravity", "Occ"));

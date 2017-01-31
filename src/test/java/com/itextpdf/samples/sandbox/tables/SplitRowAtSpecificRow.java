@@ -38,6 +38,7 @@ public class SplitRowAtSpecificRow extends GenericTest {
     @Override
     protected void manipulatePdf(String dest) throws Exception {
         Table table = new Table(1);
+        // Notice that the width is bigger than available area (612 - 36 - 36 = 540, where 36 is the value of the left (and the right) margin
         table.setWidth(550);
         // the number of iterations has been changed in order to provide the same as in itext5 example
         for (int i = 0; i < 6; i++) {

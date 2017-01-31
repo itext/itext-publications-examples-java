@@ -44,7 +44,6 @@ public class RowBackground extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(7);
-        table.setWidthPercent(100);
         table.setNextRenderer(new RowBackgroundTableRenderer(table, new Table.RowRange(0, 9), 2));
         for (int i = 0; i < 10; i++) {
             for (int j = 1; j < 8; j++) {

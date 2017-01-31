@@ -23,7 +23,6 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
@@ -44,13 +43,13 @@ public class RowspanAbsolutePosition extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table1 = new Table(new float[]{15, 20, 20});
-        table1.setWidth(555);
+        Table table1 = new Table(new float[]{150, 200, 200});
         Cell cell = new Cell(1, 2).add(new Paragraph("{Month}"));
         cell.setHorizontalAlignment(HorizontalAlignment.LEFT);
         Image img = new Image(ImageDataFactory.create(IMG));
-        img.scaleToFit(555f * 20f / 55f, 10000);
-        Cell cell2 = new Cell(2, 1).add(img.setAutoScale(true));
+        img.setWidthPercent(100);
+        //img.scaleToFit(550f * 20f / 55f, 10000);
+        Cell cell2 = new Cell(2, 1).add(img);
         Cell cell3 = new Cell(1, 2).add(new Paragraph("Mr Fname Lname"));
         cell3.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table1.addCell(cell);

@@ -82,8 +82,8 @@ public class SimpleTable7 extends GenericTest {
         doc.add(new Paragraph("This is the same table, created differently").
                 setFont(subtitleFont).setFontSize(9).setMarginBottom(10));
 
-        table = new Table(new float[]{3, 2, 5}).
-                setWidth(UnitValue.createPercentValue(80));
+        table = new Table(UnitValue.createPercentArray(new float[]{30, 20, 50}))
+                .setWidthPercent(80);
         table.addCell(new Cell().add(docTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(subTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(importantNotice).setBorder(Border.NO_BORDER));
