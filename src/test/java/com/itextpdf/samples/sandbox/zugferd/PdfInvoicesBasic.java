@@ -12,7 +12,12 @@ import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfArray;
+import com.itextpdf.kernel.pdf.PdfDate;
+import com.itextpdf.kernel.pdf.PdfDictionary;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfOutputIntent;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
@@ -145,7 +150,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(table);
 
         // line items
-        table = new Table(UnitValue.createPercentArray(new float[]{7*6.25f, 2*6.25f, 1*6.25f, 2*6.25f, 2*6.25f, 2*6.25f}));
+        table = new Table(UnitValue.createPercentArray(new float[]{7, 2, 1, 2, 2, 2}));
         table.setMarginTop(10);
         table.setMarginBottom(10);
         table.addCell(getCell("Item:", TextAlignment.LEFT, fontb, 12));
