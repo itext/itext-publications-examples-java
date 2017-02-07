@@ -48,7 +48,7 @@ public class RowspanAbsolutePosition extends GenericTest {
         cell.setHorizontalAlignment(HorizontalAlignment.LEFT);
         Image img = new Image(ImageDataFactory.create(IMG));
         img.setWidthPercent(100);
-        //img.scaleToFit(550f * 20f / 55f, 10000);
+        img.setAutoScale(true);
         Cell cell2 = new Cell(2, 1).add(img);
         Cell cell3 = new Cell(1, 2).add(new Paragraph("Mr Fname Lname"));
         cell3.setHorizontalAlignment(HorizontalAlignment.LEFT);
