@@ -28,8 +28,8 @@ import org.junit.experimental.categories.Category;
  */
 @Category( SampleTest.class)
 public class FlattenXfaDocument extends GenericTest {
-    private final String XFA = "./src/test/resources/xfa/xfa.pdf";
-    private final String DEST = "./target/test/resources/xfa/flattened.pdf";
+    public static final String XFA = "./src/test/resources/xfa/xfa.pdf";
+    public static final String DEST = "./target/test/resources/xfa/flattened.pdf";
 
     private List<String> javascriptEvents;
 
