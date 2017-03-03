@@ -19,6 +19,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -102,7 +103,7 @@ public class PositionContentInCell2 extends GenericTest {
         private TextAlignment alignment;
         private float wPct;
         private float hPct;
-
+ 
         public ImageAndPositionRenderer(Cell modelElement, float wPct, float hPct,
                                         Image img, String content, TextAlignment alignment) {
             super(modelElement);
@@ -121,7 +122,7 @@ public class PositionContentInCell2 extends GenericTest {
             drawContext.getCanvas().stroke();
 
             float x = getOccupiedAreaBBox().getX() + wPct * getOccupiedAreaBBox().getWidth();
-            float y = getOccupiedAreaBBox().getY() + hPct * (getOccupiedAreaBBox().getHeight() - drawContext.getCanvas().getGraphicsState().getLeading());
+            float y = getOccupiedAreaBBox().getY() + hPct * (getOccupiedAreaBBox().getHeight() - ((float) getPropertyAsFloat(Property.FONT_SIZE))*1.5f);
             new Document(drawContext.getDocument()).showTextAligned(content, x, y, alignment);
 
         }
