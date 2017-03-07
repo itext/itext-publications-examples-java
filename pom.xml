@@ -20,6 +20,7 @@
         <typography.version>1.0.3-SNAPSHOT</typography.version>
         <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
         <zugferd.version>1.0.2-SNAPSHOT</zugferd.version>
+        <pdfHtml.version>1.0.1-SNAPSHOT</pdfHtml.version>
     </properties>
 
     <repositories>
@@ -117,6 +118,11 @@
             <artifactId>pdfXfa</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>html2pdf</artifactId>
+            <version>${pdfHtml.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hsqldb</groupId>
