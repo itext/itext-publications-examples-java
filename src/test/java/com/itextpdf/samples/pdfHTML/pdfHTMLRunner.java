@@ -25,19 +25,20 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
- * Created by SamuelHuylebroeck on 10/28/2016.
+ * Example class for converting a html file to a pdfdocument
  */
-public class Html2PdfRunner {
+public class pdfHTMLRunner {
 
 
-    public static final String sourceFolder = "src/test/resources/Develop/Html2Pdf/";
-    public static final String destinationFolder = "target/output/Develop/Html2Pdf/";
-    //public static final String[] files = {"HelloWorld", "rainbow","arabic", "simple", "Blogpost", "lists", "media", "index", "listbug", "tables", "qrcode","boldStyle"};
-    public static final String[] files = {"tables"};
+    public static final String sourceFolder = "src/test/resources/pdfHTML/";
+    public static final String destinationFolder = "target/output/pdfHTML/";
+    public static final String LICENSE = "src/test/resources/itextkey_trial.xml";
+    public static final String[] files = {"HelloWorld", "rainbow","arabic", "simple", "Blogpost", "lists", "media", "index", "qrcode","boldStyle"};
+
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile("src/test/resources/itextkey-html2pdf_typography.xml");
-        //LicenseKey.loadLicenseFile("src/test/resources/pdfHtml.xml");
+        LicenseKey.loadLicenseFile(LICENSE);
+
         for (String name : files) {
             String htmlSource = sourceFolder + name + "/" + name + ".html";
             String resourceFolder = sourceFolder + name + "/";
@@ -49,21 +50,19 @@ public class Html2PdfRunner {
 
             System.out.println("Parsing: " + htmlSource);
             file.getParentFile().mkdirs();
-            new Html2PdfRunner().parseSimple(htmlSource, pdfDest, resourceFolder);
-            //new Html2PdfRunner().parseAsPrint(htmlSource, pdfAsPrintDest, resourceFolder);
-            //new Html2PdfRunner().parseColourBlind(htmlSource,pdfColourBLind,resourceFolder);
-            new Html2PdfRunner().parseQrCode(htmlSource,pdfQrCode,resourceFolder);
+            new pdfHTMLRunner().parseSimple(htmlSource, pdfDest, resourceFolder);
+            new pdfHTMLRunner().parseAsPrint(htmlSource, pdfAsPrintDest, resourceFolder);
+            new pdfHTMLRunner().parseColourBlind(htmlSource,pdfColourBLind,resourceFolder);
+            new pdfHTMLRunner().parseQrCode(htmlSource,pdfQrCode,resourceFolder);
         }
     }
 
     public void parseSimple(String htmlSource, String pdfDest, String resoureLoc) throws IOException, InterruptedException {
-
         File pdf = new File(pdfDest);
         pdf.getParentFile().mkdirs();
 
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(resoureLoc);
         HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
-
     }
 
 
@@ -74,7 +73,6 @@ public class Html2PdfRunner {
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(resoureLoc);
         converterProperties.setMediaDeviceDescription(new MediaDeviceDescription(MediaType.PRINT));
         HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
-
     }
 
     public void parseColourBlind(String htmlSource, String pdfDest, String resoureLoc) throws IOException, InterruptedException {
@@ -85,8 +83,6 @@ public class Html2PdfRunner {
         converterProperties.setCssApplierFactory(cssApplierFactory);
         HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
     }
-
-
 
     public void parseQrCode(String htmlSource, String pdfDest, String resoureLoc) throws IOException, InterruptedException {
         File pdf = new File(pdfDest);

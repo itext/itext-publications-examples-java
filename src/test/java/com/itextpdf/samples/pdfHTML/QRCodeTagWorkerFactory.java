@@ -13,6 +13,10 @@ import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.html2pdf.html.node.IElementNode;
 
+/**
+ * Example of a custom tagworkerfactory for pdfHTML
+ * The tag <qr> is mapped on a QRCode tagworker. Every other tag is mapped to the default.
+ */
 public class QRCodeTagWorkerFactory extends DefaultTagWorkerFactory {
 
     @Override

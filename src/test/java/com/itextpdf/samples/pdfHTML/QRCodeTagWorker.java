@@ -20,6 +20,10 @@ import com.itextpdf.layout.element.Image;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Example of a custom tagworker implementation for pdfHTML.
+ * The tagworker processes a <qr> tag using iText Barcode functionality
+ */
 public class QRCodeTagWorker implements ITagWorker {
     private static String[] allowedErrorCorrection = {"L","M","Q","H"};
     private static String[] allowedCharset = {"Cp437","Shift_JIS","ISO-8859-1","ISO-8859-16"};

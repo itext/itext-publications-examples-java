@@ -16,9 +16,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * @author Michael Demey
- */
+
 public class HtmlParser {
 
     private static final String BASE_IN = "C:\\Temp\\html2pdf";
