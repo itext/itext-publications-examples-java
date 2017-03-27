@@ -32,14 +32,14 @@ public class pdfHTMLHeaderAndFooterExample {
 
     public static final String sourceFolder = "src/test/resources/pdfHTML/";
     public static final String destinationFolder = "target/output/pdfHTML/";
-    public static final String LICENSE = "src/test/resources/itextkey_trial.xml";
+    public static final String LICENSE = "src/test/resources/pdfHTML/itextkey_trial.xml";
 
     public static final String[] files = {"ipsum"};
 
     public static void main(String[] args) throws IOException, InterruptedException {
         LicenseKey.loadLicenseFile(LICENSE);
         for (String name : files) {
-            String htmlSource = sourceFolder + name + "/" + name + ".html";
+            String htmlSource = sourceFolder + name + ".html";
             String resourceFolder = sourceFolder + name + "/";
             String pdfDest = destinationFolder + name + ".pdf";
             File file = new File(pdfDest);
