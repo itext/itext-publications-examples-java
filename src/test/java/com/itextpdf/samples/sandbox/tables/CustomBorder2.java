@@ -24,11 +24,13 @@ import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
 @Category(SampleTest.class)
+@Ignore("DEVSIX-1035")
 public class CustomBorder2 extends GenericTest {
     public static final String DEST = "./target/test/resources/sandbox/tables/custom_border2.pdf";
     public static final String TEXT = "This is some long paragraph that will be added over and over " +
