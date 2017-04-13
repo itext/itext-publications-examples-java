@@ -21,6 +21,7 @@
         <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
         <zugferd.version>1.0.2-SNAPSHOT</zugferd.version>
         <pdfHtml.version>1.0.1-SNAPSHOT</pdfHtml.version>
+        <pdfCalligraph.version>1.0.3-SNAPSHOT</pdfCalligraph.version>
     </properties>
 
     <repositories>
