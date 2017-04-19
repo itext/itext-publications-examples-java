@@ -30,12 +30,11 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.pdfa.PdfADocument;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.experimental.categories.Category;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
-import org.junit.experimental.categories.Category;
 
 /**
  * Creates a PDF that conforms with PDF/A-3 Level A.
@@ -70,13 +69,9 @@ public class C2E4_PdfA3a extends GenericTest {
         pdfDoc.getCatalog().setViewerPreferences(new PdfViewerPreferences().setDisplayDocTitle(true));
         pdfDoc.getCatalog().setLang(new PdfString("en-US"));
         PdfDocumentInfo info = pdfDoc.getDocumentInfo();
-        if (null == info) {
-            info = new PdfDocumentInfo(pdfDoc);
-        }
         info.setTitle("Some title");
         //=====================
-
-
+        
         Paragraph p = new Paragraph();
         //PDF/A-3a
         //Embed font
