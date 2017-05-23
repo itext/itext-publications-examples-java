@@ -44,7 +44,7 @@ public class FullPageTable extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(595, 842));
         doc.setMargins(0, 0, 0, 0);
 
-        Table table = new Table(10);
+        Table table = new Table(new float[10]).useAllAvailableWidth();
         table.setMarginTop(0);
         table.setMarginBottom(0);
         // first row

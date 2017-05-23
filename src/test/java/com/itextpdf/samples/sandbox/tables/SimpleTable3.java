@@ -42,7 +42,7 @@ public class SimpleTable3 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A3).rotate());
 
-        Table table = new Table(35);
+        Table table = new Table(35).setFixedLayout();
         table.setWidth(pdfDoc.getDefaultPageSize().getWidth() - 80);
         Cell contractor = new Cell(1, 5).add("XXXXXXXXXXXXX");
         table.addCell(contractor);

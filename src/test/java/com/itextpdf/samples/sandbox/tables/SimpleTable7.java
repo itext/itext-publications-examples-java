@@ -63,7 +63,7 @@ public class SimpleTable7 extends GenericTest {
         importantNotice.setFontColor(Color.RED);
         doc.add(importantNotice);
 
-        Table table = new Table(10).
+        Table table = new Table(10).setFixedLayout().
                 setWidth(UnitValue.createPercentValue(80));
         Cell cell = new Cell(1, 3).add(docTitle);
         cell.setBorder(Border.NO_BORDER);
@@ -82,7 +82,7 @@ public class SimpleTable7 extends GenericTest {
         doc.add(new Paragraph("This is the same table, created differently").
                 setFont(subtitleFont).setFontSize(9).setMarginBottom(10));
 
-        table = new Table(UnitValue.createPercentArray(new float[]{30, 20, 50}))
+        table = new Table(UnitValue.createPercentArray(new float[]{30, 20, 50})).setFixedLayout()
                 .setWidthPercent(80);
         table.addCell(new Cell().add(docTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(subTitle).setBorder(Border.NO_BORDER));
