@@ -124,7 +124,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(p);
 
         // Address seller / buyer
-        Table table = new Table(2);
+        Table table = new Table(2).useAllAvailableWidth();
         Cell seller = getPartyAddress("From:",
                 basic.getSellerName(),
                 basic.getSellerLineOne(),
@@ -150,7 +150,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(table);
 
         // line items
-        table = new Table(UnitValue.createPercentArray(new float[]{7, 2, 1, 2, 2, 2}));
+        table = new Table(UnitValue.createPercentArray(new float[]{7, 2, 1, 2, 2, 2})).useAllAvailableWidth();
         table.setMarginTop(10);
         table.setMarginBottom(10);
         table.addCell(getCell("Item:", TextAlignment.LEFT, fontb, 12));
@@ -236,7 +236,7 @@ public class PdfInvoicesBasic extends GenericTest {
 
     public Table getTotalsTable(String tBase, String tTax, String tTotal, String tCurrency,
                                 String[] type, String[] percentage, String base[], String tax[], String currency[]) {
-        Table table = new Table(new float[]{1f*100/12, 1f*100/12, 3f*100/12, 3f*100/12, 3f*100/12, 1f*100/12});
+        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 1, 3, 3, 3, 1})).useAllAvailableWidth();
         table.addCell(getCell("TAX", TextAlignment.LEFT, fontb, 12));
         table.addCell(getCell("%", TextAlignment.RIGHT, fontb, 12));
         table.addCell(getCell("Base amount:", TextAlignment.LEFT, fontb, 12));

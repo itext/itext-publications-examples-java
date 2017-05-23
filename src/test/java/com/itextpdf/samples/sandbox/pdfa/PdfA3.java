@@ -62,7 +62,7 @@ public class PdfA3 extends GenericTest {
         PdfArray array = new PdfArray();
         array.add(fileSpec.getPdfObject().getIndirectReference());
         pdfDoc.getCatalog().put(new PdfName("AF"), array);
-        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3, 4, 3, 3, 3, 3, 1}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3, 4, 3, 3, 3, 3, 1})).useAllAvailableWidth();
         BufferedReader br = new BufferedReader(new FileReader(DATA));
         String line = br.readLine();
         process(table, line, bold, 10, true);

@@ -76,7 +76,7 @@ public class Watermarking extends GenericTest {
         PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
         PdfFont bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3}));
+        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3})).useAllAvailableWidth();
 
         BufferedReader br = new BufferedReader(new FileReader(DATA));
         String line = br.readLine();
