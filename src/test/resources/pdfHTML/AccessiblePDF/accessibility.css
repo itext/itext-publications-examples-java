@@ -1,0 +1,18 @@
+.arabic{
+    font-family: "Noto Naskh Arabic", "sans-serif";
+}
+.rtl{
+    direction: rtl;
+}
+
+table{
+    border: 2pt solid black;
+}
+
+th{
+    border: 1pt solid black;
+}
+
+td{
+    border: 1pt dashed black;
+}

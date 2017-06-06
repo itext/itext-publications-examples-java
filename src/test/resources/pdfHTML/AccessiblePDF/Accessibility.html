@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:âge-break-after="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>pdfHTML Accessibility example</title>
+    <link rel="stylesheet" type="text/css" href="accessibility.css"/>
+</head>
+<body>
+<h1>pdfHTML Accessibility example</h1>
+<div style="page-break-after: always">
+    <p>The quick brown </p>
+    <img src="fox.bmp" alt="Fox">
+    <p>jumps over the lazy</p>
+    <img src="dog.bmp" alt="Dog">
+</div>
+<div>
+    <h2>An accessible table</h2>
+    <table>
+        <tr>
+            <th>Table header 1</th>
+            <th>Table header 2</th>
+            <th>Table header 3</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+        <tr>
+            <td>Data 7</td>
+            <td>Data 8</td>
+            <td>Data 9</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p>To display right to left text and complex scripts, you need a dependency on pdfCalligraph</p>
+    <p>Arabic text below</p>
+    <p class="arabic rtl">بِسْمِ اللَّـهِ  الرَّ‌حْمَـٰنِ  الرَّ‌حِيمِ</p>
+    <p class="arabic">بِسْمِ اللَّـهِ  الرَّ‌حْمَـٰنِ  الرَّ‌حِيمِ</p>
+    <p>Arabic text above</p>
+</div>
+<div>
+    <p>More examples can be found <a href="http://developers.itextpdf.com/content/itext-7-examples/converting-html-pdf">here</a></p>
+</div>
+</body>
+</html>
