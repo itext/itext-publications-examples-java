@@ -1,0 +1,33 @@
+.elven{
+    font-family: "tengwar sindarin";
+}
+
+.dwarven{
+    font-family: "tolkien dwarf runes";
+}
+
+.starwars{
+    font-family: Aurebesh;
+    margin: 5pt;
+}
+.aside{
+    float:right;
+    border: 1pt navy solid;
+    width: 50%;
+}
+
+.speaker{
+    text-decoration:underline;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.description{
+    color:navy;
+    font-size: smaller;
+    font-family:Helvetica;
+}
+
+div{
+    font-family:Helvetica
+}
