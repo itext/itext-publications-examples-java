@@ -25,6 +25,8 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.BoxSizingPropertyValue;
+import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -55,12 +57,14 @@ public class TiledBackground extends GenericTest {
         Cell cell = new Cell();
         ImageData image = ImageDataFactory.create(IMG1);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
-        cell.setHeight(766).setBorder(Border.NO_BORDER);
+        cell.setProperty(Property.BOX_SIZING, BoxSizingPropertyValue.BORDER_BOX);
+        cell.setHeight(770).setBorder(Border.NO_BORDER);
         table.addCell(cell);
         cell = new Cell();
         image = ImageDataFactory.create(IMG2);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
-        cell.setHeight(766).setBorder(Border.NO_BORDER);
+        cell.setProperty(Property.BOX_SIZING, BoxSizingPropertyValue.BORDER_BOX);
+        cell.setHeight(770).setBorder(Border.NO_BORDER);
         table.addCell(cell);
         doc.add(table);
 
