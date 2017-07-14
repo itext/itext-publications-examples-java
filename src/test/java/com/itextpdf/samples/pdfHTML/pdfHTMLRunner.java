@@ -32,13 +32,10 @@ public class pdfHTMLRunner {
 
     public static final String sourceFolder = "src/test/resources/pdfHTML/";
     public static final String destinationFolder = "target/output/pdfHTML/";
-    public static final String LICENSE = "src/test/resources/itextkey_trial.xml";
-    public static final String[] files = {"HelloWorld", "rainbow","arabic", "simple", "Blogpost", "lists", "media", "index", "qrcode","boldStyle"};
-
+    public static final String[] files = {"rainbow", "qrcode"};
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile(LICENSE);
-
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
         for (String name : files) {
             String htmlSource = sourceFolder + name + "/" + name + ".html";
             String resourceFolder = sourceFolder + name + "/";
