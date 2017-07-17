@@ -1,9 +1,3 @@
-/*Actual Css*/
-.dummy{
-    /*Workaround to disable immediate flushing. With immediate flushing some form fields can throw up nullpointer exceptions*/
-    /*Workaround needed for pdfHTML 1.0.0 and 1.0.1*/
-    content:counter(pages)
-}
 p{
     margin-bottom: 5px;
     margin-left: 2px;
@@ -97,6 +91,7 @@ content: counters(pages);
         font-size:18pt
     }
 }
+
 /*Desktop*/
 @media only screen and (min-width: 768px ) {
         .col-1 {width:24.9%;}

@@ -26,6 +26,7 @@ public class E06_MediaQuery {
 
 	public static final String SRC = "src/main/resources/html/responsive/responsive.html";
 	public static final String DEST = "target/results/html/6_responsive_%s.pdf";
+	
     public static final PageSize[] pageSizes = {
             PageSize.A4.rotate(),
             new PageSize(720, PageSize.A4.getHeight()),
