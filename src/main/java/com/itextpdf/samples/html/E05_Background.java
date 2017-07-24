@@ -46,7 +46,9 @@ public class E05_Background {
         pdf.addEventHandler(PdfDocumentEvent.START_PAGE, handler);
     	ConverterProperties properties = new ConverterProperties();
     	properties.setBaseUri(new File(src).getParentFile().getAbsolutePath());
-		HtmlConverter.convertToPdf(new FileInputStream(src), pdf, properties);
+    	try (FileInputStream fileInputStream = new FileInputStream(src)) {
+			HtmlConverter.convertToPdf(fileInputStream, pdf, properties);
+		}
     }
     
     class Background implements IEventHandler {

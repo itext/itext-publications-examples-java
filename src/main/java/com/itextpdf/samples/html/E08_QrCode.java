@@ -38,6 +38,8 @@ public class E08_QrCode {
         	.setBaseUri(new File(src).getParentFile().getAbsolutePath())
         	.setCssApplierFactory(new QRCodeTagCssApplierFactory())
         	.setTagWorkerFactory(new QRCodeTagWorkerFactory());
-        HtmlConverter.convertToPdf(new FileInputStream(src), new FileOutputStream(dest), converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(src); FileOutputStream fileOutputStream = new FileOutputStream(dest)) {
+            HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
+        }
     }
 }

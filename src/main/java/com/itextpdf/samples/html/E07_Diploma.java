@@ -64,6 +64,8 @@ public class E07_Diploma {
         		    }
         		}
         	);
-        HtmlConverter.convertToPdf(new FileInputStream(src), new FileOutputStream(dest), converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(src); FileOutputStream fileOutputStream = new FileOutputStream(dest)) {
+			HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
+		}
     }
 }

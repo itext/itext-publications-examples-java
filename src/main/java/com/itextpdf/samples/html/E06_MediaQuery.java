@@ -56,6 +56,8 @@ public class E06_MediaQuery {
     	mediaDescription.setWidth(CssUtils.parseAbsoluteLength(String.valueOf(size.getWidth())));
     	properties.setMediaDeviceDescription(mediaDescription);
     	properties.setCreateAcroForm(true);
-    	HtmlConverter.convertToPdf(new FileInputStream(src), pdf, properties);	
+    	try (FileInputStream fileInputStream = new FileInputStream(src)) {
+			HtmlConverter.convertToPdf(fileInputStream, pdf, properties);
+		}
     }
 }

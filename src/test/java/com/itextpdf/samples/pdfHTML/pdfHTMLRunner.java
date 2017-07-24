@@ -59,7 +59,10 @@ public class pdfHTMLRunner {
         pdf.getParentFile().mkdirs();
 
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(resoureLoc);
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(htmlSource);
+             FileOutputStream fileOutputStream = new FileOutputStream(pdfDest)) {
+            HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
+        }
     }
 
 
@@ -69,7 +72,10 @@ public class pdfHTMLRunner {
 
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(resoureLoc);
         converterProperties.setMediaDeviceDescription(new MediaDeviceDescription(MediaType.PRINT));
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(htmlSource);
+             FileOutputStream fileOutputStream = new FileOutputStream(pdfDest)) {
+            HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
+        }
     }
 
     public void parseColourBlind(String htmlSource, String pdfDest, String resoureLoc) throws IOException, InterruptedException {
@@ -78,7 +84,9 @@ public class pdfHTMLRunner {
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(resoureLoc);
         DefaultCssApplierFactory cssApplierFactory = new ColourBlindnessCssApplierFactory(ColourBlindnessTransforms.DEUTERANOMALY);
         converterProperties.setCssApplierFactory(cssApplierFactory);
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(htmlSource); FileOutputStream fileOutputStream = new FileOutputStream(pdfDest)) {
+            HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
+        }
     }
 
     public void parseQrCode(String htmlSource, String pdfDest, String resoureLoc) throws IOException, InterruptedException {
@@ -93,7 +101,10 @@ public class pdfHTMLRunner {
         DefaultCssApplierFactory cssApplierFactory = new QRCodeTagCssApplierFactory();
         converterProperties.setCssApplierFactory(cssApplierFactory);
 
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(htmlSource);
+             FileOutputStream fileOutputStream = new FileOutputStream(pdfDest)) {
+            HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
+        }
     }
 
 }

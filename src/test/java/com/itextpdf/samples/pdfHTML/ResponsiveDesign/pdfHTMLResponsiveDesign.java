@@ -88,7 +88,9 @@ public class pdfHTMLResponsiveDesign {
         //Create acroforms from text and button input fields
         converterProperties.setCreateAcroForm(true);
 
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), pdfDoc, converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(htmlSource)) {
+            HtmlConverter.convertToPdf(fileInputStream, pdfDoc, converterProperties);
+        }
         pdfDoc.close();
     }
 }

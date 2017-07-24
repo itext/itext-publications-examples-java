@@ -90,7 +90,9 @@ public class CreateAccessiblePDF {
             DefaultTagWorkerFactory tagWorkerFactory = new AccessibilityTagWorkerFactory();
             props.setTagWorkerFactory(tagWorkerFactory);
 
-            HtmlConverter.convertToPdf(new FileInputStream(src), pdfDoc, props);
+            try (FileInputStream fileInputStream = new FileInputStream(src)) {
+                HtmlConverter.convertToPdf(fileInputStream, pdfDoc, props);
+            }
             pdfDoc.close();
 
         } catch (Exception e) {

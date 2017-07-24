@@ -74,7 +74,10 @@ public class UsingCustomFonts {
 
         //Make sure the provider is used
         converterProperties.setFontProvider(provider);
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), pdfDoc, converterProperties);
+        try (FileInputStream fileInputStream = new FileInputStream(htmlSource)) {
+            HtmlConverter.convertToPdf(fileInputStream, pdfDoc, converterProperties);
+        }
         pdfDoc.close();
+
     }
 }
