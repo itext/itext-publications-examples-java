@@ -20,6 +20,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.VerticalAlignment;
@@ -53,13 +54,13 @@ public class DiagonalCell extends GenericTest {
         cell.setNextRenderer(new DiagonalCellRenderer(cell, "Gravity", "Occ"));
         table.addCell(cell.setMinHeight(30));
 
-        table.addCell(new Cell().add("1").setMinHeight(30));
-        table.addCell(new Cell().add("2").setMinHeight(30));
-        table.addCell(new Cell().add("3").setMinHeight(30));
-        table.addCell(new Cell().add("4").setMinHeight(30));
-        table.addCell(new Cell().add("5").setMinHeight(30));
+        table.addCell(new Cell().add(new Paragraph("1")).setMinHeight(30));
+        table.addCell(new Cell().add(new Paragraph("2")).setMinHeight(30));
+        table.addCell(new Cell().add(new Paragraph("3")).setMinHeight(30));
+        table.addCell(new Cell().add(new Paragraph("4")).setMinHeight(30));
+        table.addCell(new Cell().add(new Paragraph("5")).setMinHeight(30));
         for (int i = 0; i < 5; ) {
-            table.addCell(new Cell().add(String.valueOf(++i)).setMinHeight(30));
+            table.addCell(new Cell().add(new Paragraph(String.valueOf(++i))).setMinHeight(30));
             table.addCell(new Cell().setMinHeight(30));
             table.addCell(new Cell().setMinHeight(30));
             table.addCell(new Cell().setMinHeight(30));

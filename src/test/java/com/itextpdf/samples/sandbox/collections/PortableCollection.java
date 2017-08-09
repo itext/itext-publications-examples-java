@@ -52,13 +52,13 @@ public class PortableCollection extends GenericTest {
         pdfDoc.getCatalog().setCollection(collection);
         pdfDoc.addFileAttachment("united_states.csv",
                 PdfFileSpec.createEmbeddedFileSpec(pdfDoc, DATA, "united_states.csv", "united_states.csv",
-                        null, null, false));
+                        null, null));
         pdfDoc.addFileAttachment("hello.pdf",
                 PdfFileSpec.createEmbeddedFileSpec(pdfDoc, HELLO, "hello.pdf", "hello.pdf",
-                        null, null, false));
+                        null, null));
         pdfDoc.addFileAttachment("berlin2013.jpg",
                 PdfFileSpec.createEmbeddedFileSpec(pdfDoc, IMG, "berlin2013.jpg", "berlin2013.jpg",
-                        null, null, false));
+                        null, null));
         doc.close();
     }
 }

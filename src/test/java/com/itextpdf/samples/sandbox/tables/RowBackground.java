@@ -12,13 +12,14 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
@@ -47,7 +48,7 @@ public class RowBackground extends GenericTest {
         table.setNextRenderer(new RowBackgroundTableRenderer(table, new Table.RowRange(0, 9), 2));
         for (int i = 0; i < 10; i++) {
             for (int j = 1; j < 8; j++) {
-                table.addCell(new Cell().add(String.valueOf(j)).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph(String.valueOf(j))).setBorder(Border.NO_BORDER));
             }
         }
         doc.add(table);

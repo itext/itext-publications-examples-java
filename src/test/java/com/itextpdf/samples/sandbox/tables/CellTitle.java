@@ -13,7 +13,7 @@
 
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -41,7 +41,7 @@ public class CellTitle extends GenericTest {
     }
 
     public Cell getCell(String content, String title) {
-        Cell cell = new Cell().add(content);
+        Cell cell = new Cell().add(new Paragraph(content));
         cell.setNextRenderer(new CellTitleRenderer(cell, title));
         cell.setPaddingTop(8).setPaddingBottom(8);
         return cell;

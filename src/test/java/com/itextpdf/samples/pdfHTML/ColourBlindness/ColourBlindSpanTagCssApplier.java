@@ -13,7 +13,7 @@ import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.css.CssConstants;
 import com.itextpdf.html2pdf.css.apply.impl.SpanTagCssApplier;
 import com.itextpdf.html2pdf.html.node.IStylesContainer;
-import com.itextpdf.kernel.color.WebColors;
+import com.itextpdf.kernel.colors.WebColors;
 
 import java.util.Map;
 

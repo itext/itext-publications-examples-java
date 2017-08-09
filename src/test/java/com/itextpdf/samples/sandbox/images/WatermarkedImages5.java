@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -23,12 +23,11 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
-import com.itextpdf.layout.property.Property;
-import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -59,10 +58,10 @@ public class WatermarkedImages5 extends GenericTest {
         Table table = new Table(2);
         table.setWidth(width);
 
-        table.addCell(new Cell().add("Test1").setBorder(new SolidBorder(Color.YELLOW, 1)));
-        table.addCell(new Cell().add("Test2").setBorder(new SolidBorder(Color.YELLOW, 1)));
-        table.addCell(new Cell().add("Test3").setBorder(new SolidBorder(Color.YELLOW, 1)));
-        table.addCell(new Cell().add("Test4").setBorder(new SolidBorder(Color.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test1")).setBorder(new SolidBorder(Color.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test2")).setBorder(new SolidBorder(Color.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test3")).setBorder(new SolidBorder(Color.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test4")).setBorder(new SolidBorder(Color.YELLOW, 1)));
 
         // find the height of the table
         TableRenderer renderer = (TableRenderer)table.createRendererSubTree();

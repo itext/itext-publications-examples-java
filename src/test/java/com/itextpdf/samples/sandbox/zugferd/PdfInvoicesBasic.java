@@ -189,7 +189,7 @@ public class PdfInvoicesBasic extends GenericTest {
         // platform-independent newlines
         byte[] xml = new String(dom.toXML()).replace("\r\n", "\n").getBytes();
         PdfFileSpec fileSpec = PdfFileSpec.createEmbeddedFileSpec(pdfDoc, xml, "ZUGFeRD invoice", "ZUGFeRD-invoice.xml",
-                new PdfName("application/xml"), parameters, PdfName.Alternative, false);
+                new PdfName("application/xml"), parameters, PdfName.Alternative);
         pdfDoc.addFileAttachment("ZUGFeRD invoice", fileSpec);
         PdfArray array = new PdfArray();
         array.add(fileSpec.getPdfObject().getIndirectReference());

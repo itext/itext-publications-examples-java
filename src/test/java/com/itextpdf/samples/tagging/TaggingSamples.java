@@ -8,7 +8,7 @@
  */
 package com.itextpdf.samples.tagging;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.CanvasArtifact;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -63,7 +63,7 @@ public class TaggingSamples extends ExtendedITextTest {
             " transgender person to be nominated for an Oscar. (Angela Morley was the first, in 1974 and 1976.) Sylvester " +
             "Stallone became the sixth person to be nominated for playing the same role in two different films.";
     private static final String text5 = "The winners were announced during the awards ceremony on February 28, 2016. With two Oscars, Spotlight " +
-            "was the first film since The Greatest Show on Earth in 1952 to win Best Picture with only one other award. " +
+            "was the first film since The Greatest Show oTagn Earth in 1952 to win Best Picture with only one other award. " +
             "Alejandro G. I\u00F1\u00E1rritu became the only Mexican and third director to win two consecutive Oscars for Best" +
             " Director after John Ford in 1940-1941 and Joseph L. Mankiewicz in 1949-1950, respectively. At the age of 87," +
             " Ennio Morricone became the oldest winner in Oscar history for a competitive award. Having previously won " +
@@ -224,8 +224,8 @@ public class TaggingSamples extends ExtendedITextTest {
         document.add(new AreaBreak(AreaBreakType.LAST_PAGE));
 
         Table table = new Table(2);
-        table.addCell(new Cell().add("Created as a sample document.").setBorder(null));
-        table.addCell(new Cell().add("30.03.2016").setBorder(null));
+        table.addCell(new Cell().add(new Paragraph("Created as a sample document.")).setBorder(null));
+        table.addCell(new Cell().add(new Paragraph("30.03.2016")).setBorder(null));
         table.setFixedPosition(40, 150, 500);
 
         // This marks the whole table contents as an Artifact.

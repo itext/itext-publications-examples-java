@@ -63,8 +63,8 @@ public class IndentationOptions extends GenericTest {
         doc.add(p);
 
         Table table = new Table(new float[]{indentation + 4, 519 - indentation});
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(LABEL));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(CONTENT));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(new Paragraph(LABEL)));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(new Paragraph(CONTENT)));
         doc.add(table);
 
         doc.close();

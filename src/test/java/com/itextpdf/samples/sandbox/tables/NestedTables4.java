@@ -20,6 +20,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
@@ -49,17 +50,17 @@ public class NestedTables4 extends GenericTest {
         Table table = new Table(UnitValue.createPercentArray(new float[]{1, 12, 8, 1}));
         table.setBorder(new SolidBorder(1));
         // first row
-        Cell cell = new Cell(1, 4).add("Main table");
+        Cell cell = new Cell(1, 4).add(new Paragraph("Main table"));
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);
         // second row
         table.addCell(new Cell().setBorder(Border.NO_BORDER));
-        table.addCell(new Cell().add("nested table 1").setBorder(Border.NO_BORDER));
-        table.addCell(new Cell().add("nested table 2").setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("nested table 1")).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("nested table 2")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().setBorder(Border.NO_BORDER));
         // third row
         // third row cell 1
-        table.addCell(new Cell().add("").setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
         // third row cell 2
         Table table1 = new Table(1);
         table1.addCell("cell 1 of nested table 1");
@@ -70,9 +71,9 @@ public class NestedTables4 extends GenericTest {
         Table table2 = new Table(2);
         table2.addCell(new Cell().setMinHeight(10));
         table2.addCell(new Cell().setMinHeight(10));
-        cell = new Cell(1, 2).add("cell 2 of nested table 2").setMinHeight(10);
+        cell = new Cell(1, 2).add(new Paragraph("cell 2 of nested table 2")).setMinHeight(10);
         table2.addCell(cell);
-        cell = new Cell(1, 2).add("cell 3 of nested table 2").setMinHeight(10);
+        cell = new Cell(1, 2).add(new Paragraph("cell 3 of nested table 2")).setMinHeight(10);
         table2.addCell(cell);
         table.addCell(new Cell().add(table2).setBorder(Border.NO_BORDER));
         // third row cell 4

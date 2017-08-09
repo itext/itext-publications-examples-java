@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.color.DeviceGray;
+import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -62,9 +62,9 @@ public class ColumnWidthExample extends GenericTest {
         table.addHeaderCell(cell);
         for (int i = 0; i < 2; i++) {
             Cell[] headerFooter = new Cell[]{
-                    new Cell().setBackgroundColor(new DeviceGray(0.75f)).add("#"),
-                    new Cell().setBackgroundColor(new DeviceGray(0.75f)).add("Key"),
-                    new Cell().setBackgroundColor(new DeviceGray(0.75f)).add("Value")
+                    new Cell().setBackgroundColor(new DeviceGray(0.75f)).add(new Paragraph("#")),
+                    new Cell().setBackgroundColor(new DeviceGray(0.75f)).add(new Paragraph("Key")),
+                    new Cell().setBackgroundColor(new DeviceGray(0.75f)).add(new Paragraph("Value"))
             };
             for (Cell hfCell : headerFooter) {
                 if (i == 0) {
@@ -75,9 +75,9 @@ public class ColumnWidthExample extends GenericTest {
             }
         }
         for (int counter = 1; counter < 101; counter++) {
-            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(String.valueOf(counter)));
-            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add("key " + counter));
-            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add("value " + counter));
+            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph(String.valueOf(counter))));
+            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("key " + counter)));
+            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("value " + counter)));
         }
         doc.add(table);
         doc.close();

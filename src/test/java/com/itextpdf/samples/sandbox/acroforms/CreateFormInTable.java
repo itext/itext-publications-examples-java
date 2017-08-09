@@ -19,6 +19,7 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -47,12 +48,12 @@ public class CreateFormInTable extends GenericTest {
 
         Table table = new Table(2);
         Cell cell;
-        cell = new Cell().add("Name:");
+        cell = new Cell().add(new Paragraph("Name:"));
         table.addCell(cell);
         cell = new Cell();
         cell.setNextRenderer(new MyCellRenderer(cell, "name"));
         table.addCell(cell);
-        cell = new Cell().add("Address");
+        cell = new Cell().add(new Paragraph("Address"));
         table.addCell(cell);
         cell = new Cell();
         cell.setNextRenderer(new MyCellRenderer(cell, "address"));

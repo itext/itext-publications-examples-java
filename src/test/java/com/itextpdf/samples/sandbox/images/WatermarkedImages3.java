@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.color.DeviceGray;
+import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -22,6 +22,7 @@ import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.samples.GenericTest;
@@ -58,7 +59,7 @@ public class WatermarkedImages3 extends GenericTest {
         Document doc = new Document(pdfDoc);
         Table table = new Table(1).setWidthPercent(80);
         for (int i = 0; i < 35; i++) {
-            table.addCell(new Cell().add("rahlrokks doesn't listen to what people tell him"));
+            table.addCell(new Cell().add(new Paragraph("rahlrokks doesn't listen to what people tell him")));
         }
         table.addCell(new Cell().add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno").setAutoScale(true).setWidthPercent(100)));
         doc.add(table);

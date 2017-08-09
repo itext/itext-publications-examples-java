@@ -49,7 +49,7 @@ public class SmallTable extends GenericTest {
         Table table = new Table(new float[]{ 160, 120 });
 
         // first row
-        Cell cell = new Cell(1, 2).add("Some text here");
+        Cell cell = new Cell(1, 2).add(new Paragraph("Some text here"));
         cell.setHeight(30);
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);

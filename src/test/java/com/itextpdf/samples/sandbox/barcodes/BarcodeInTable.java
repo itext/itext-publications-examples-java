@@ -18,6 +18,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -64,7 +65,7 @@ public class BarcodeInTable extends GenericTest {
         code128.setCodeType(Barcode128.CODE128);
         code128Image = new Image(code128.createFormXObject(pdfDoc)).setAutoScale(true);
         cell = new Cell();
-        cell.add("PO #: " + code);
+        cell.add(new Paragraph("PO #: " + code));
         cell.add(code128Image);
         table.addCell(cell);
 

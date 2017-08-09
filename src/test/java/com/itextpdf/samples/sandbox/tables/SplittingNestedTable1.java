@@ -48,11 +48,11 @@ public class SplittingNestedTable1 extends GenericTest {
         table.setKeepTogether(true);
         table.setMarginTop(10);
         Cell cell = new Cell();
-        cell.add("G");
-        cell.add("R");
-        cell.add("O");
-        cell.add("U");
-        cell.add("P");
+        cell.add(new Paragraph("G"));
+        cell.add(new Paragraph("R"));
+        cell.add(new Paragraph("O"));
+        cell.add(new Paragraph("U"));
+        cell.add(new Paragraph("P"));
         table.addCell(cell);
         Table inner = new Table(1);
         inner.addCell("row 1");

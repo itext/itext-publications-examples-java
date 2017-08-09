@@ -17,6 +17,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -44,9 +45,9 @@ public class SplitRowAtEndOfPage extends GenericTest {
         for (int i = 0; i < 6; i++) {
             Cell cell;
             if (i == 5) {
-                cell = new Cell().add("Three\nLines\nHere");
+                cell = new Cell().add(new Paragraph("Three\nLines\nHere"));
             } else {
-                cell = new Cell().add(Integer.toString(i));
+                cell = new Cell().add(new Paragraph(Integer.toString(i)));
             }
             table.addCell(cell);
         }

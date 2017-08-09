@@ -43,9 +43,9 @@ public class IndentationInCell extends GenericTest {
 
         Table table = new Table(1);
         Cell cell;
-        cell = new Cell().add("TO:\n\n   name");
+        cell = new Cell().add(new Paragraph("TO:\n\n   name"));
         table.addCell(cell);
-        cell = new Cell().add("TO:\n\n\u00a0\u00a0\u00a0name");
+        cell = new Cell().add(new Paragraph("TO:\n\n\u00a0\u00a0\u00a0name"));
         table.addCell(cell);
         cell = new Cell();
         cell.add(new Paragraph("TO:"));

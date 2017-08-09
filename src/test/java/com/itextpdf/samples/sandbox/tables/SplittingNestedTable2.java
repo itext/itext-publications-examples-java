@@ -45,7 +45,7 @@ public class SplittingNestedTable2 extends GenericTest {
         // doc.add(new Paragraph("Table with setKeepTogether(false):"));
         Table table = new Table(2);
         table.setMarginTop(10);
-        Cell cell = new Cell().add("GROUPS");
+        Cell cell = new Cell().add(new Paragraph("GROUPS"));
         //cell.setRotationAngle(Math.toRadians(90));
 //        cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
 //        cell.setHorizontalAlignment(HorizontalAlignment.CENTER);

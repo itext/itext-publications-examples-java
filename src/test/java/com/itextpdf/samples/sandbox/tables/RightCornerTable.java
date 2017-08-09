@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -53,7 +53,7 @@ public class RightCornerTable extends GenericTest {
         cell.setBackgroundColor(Color.BLACK);
         cell.setBorder(new SolidBorder(Color.GRAY, 2));
         table.addCell(cell);
-        Cell cellTwo = new Cell().add(("10/01/2015"));
+        Cell cellTwo = new Cell().add(new Paragraph("10/01/2015"));
         cellTwo.setBorder(new SolidBorder(2));
         table.addCell(cellTwo);
         doc.add(table);

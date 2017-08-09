@@ -13,7 +13,13 @@ import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PageLabelNumberingStyle;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfNumber;
+import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.PdfViewerPreferences;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfTextAnnotation;
@@ -107,9 +113,9 @@ public class PageLabels extends GenericTest {
                 .setTitle(new PdfString("Example"))
                 .setContents("This is a post-it annotation");
         pdfDoc.getLastPage().addAnnotation(a);
-        pdfDoc.getPage(1).setPageLabel(PageLabelNumberingStyleConstants.UPPERCASE_LETTERS, null);
-        pdfDoc.getPage(3).setPageLabel(PageLabelNumberingStyleConstants.DECIMAL_ARABIC_NUMERALS, null);
-        pdfDoc.getPage(4).setPageLabel(PageLabelNumberingStyleConstants.DECIMAL_ARABIC_NUMERALS, "Custom-", 2);
+        pdfDoc.getPage(1).setPageLabel(PageLabelNumberingStyle.UPPERCASE_LETTERS, null);
+        pdfDoc.getPage(3).setPageLabel(PageLabelNumberingStyle.DECIMAL_ARABIC_NUMERALS, null);
+        pdfDoc.getPage(4).setPageLabel(PageLabelNumberingStyle.DECIMAL_ARABIC_NUMERALS, "Custom-", 2);
 
         doc.close();
     }

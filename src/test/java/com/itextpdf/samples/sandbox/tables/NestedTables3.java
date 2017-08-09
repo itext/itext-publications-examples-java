@@ -51,13 +51,13 @@ public class NestedTables3 extends GenericTest {
 
         Table table = new Table(2);
         table.setNextRenderer(new InnerTableRenderer(table, new Table.RowRange(0, 0)));
-        Cell cell = new Cell(1, 2).add("This outer header is repeated on every page");
+        Cell cell = new Cell(1, 2).add(new Paragraph("This outer header is repeated on every page"));
         table.addHeaderCell(cell);
         Table inner1 = new Table(1);
         cell = new Cell();
         cell.setHeight(20);
         inner1.addHeaderCell(cell);
-        cell = new Cell().add("This inner header won't be repeated on every page");
+        cell = new Cell().add(new Paragraph("This inner header won't be repeated on every page"));
         inner1.addHeaderCell(cell);
         for (int i = 0; i < 10; i++) {
             inner1.addCell(new Cell().add(new Paragraph("test")));
@@ -68,7 +68,7 @@ public class NestedTables3 extends GenericTest {
         cell = new Cell();
         cell.setHeight(20);
         inner2.addHeaderCell(cell);
-        cell = new Cell().add("This inner may be repeated on every page");
+        cell = new Cell().add(new Paragraph("This inner may be repeated on every page"));
         inner2.addHeaderCell(cell);
         for (int i = 0; i < 35; i++) {
             inner2.addCell("test");

@@ -20,6 +20,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvasConstants;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -54,22 +55,22 @@ public class CustomBorder3 extends GenericTest {
 
         table = new Table(4);
         table.setMarginBottom(30);
-        cell = new Cell().add("dotted left border");
+        cell = new Cell().add(new Paragraph("dotted left border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, dotted, null, null}));
         table.addCell(cell);
-        cell = new Cell().add("solid right border");
+        cell = new Cell().add(new Paragraph("solid right border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, null, null, solid}));
         table.addCell(cell);
-        cell = new Cell().add("dashed top border");
+        cell = new Cell().add(new Paragraph("dashed top border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{dashed, null, null, null}));
         table.addCell(cell);
-        cell = new Cell().add("bottom border");
+        cell = new Cell().add(new Paragraph("bottom border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, null, solid, null}));
@@ -78,20 +79,20 @@ public class CustomBorder3 extends GenericTest {
 
         table = new Table(4);
         table.setMarginBottom(30);
-        cell = new Cell().add("dotted left and solid top border");
+        cell = new Cell().add(new Paragraph("dotted left and solid top border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{solid, dotted, null, null}));
         table.addCell(cell);
-        cell = new Cell().add("dashed right and dashed bottom border");
+        cell = new Cell().add(new Paragraph("dashed right and dashed bottom border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, null, dashed, dashed}));
         table.addCell(cell);
-        cell = new Cell().add("no border");
+        cell = new Cell().add(new Paragraph("no border"));
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);
-        cell = new Cell().add("full solid border");
+        cell = new Cell().add(new Paragraph("full solid border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{solid, solid, solid, solid}));

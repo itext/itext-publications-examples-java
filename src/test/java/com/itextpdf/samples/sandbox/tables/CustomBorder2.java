@@ -19,6 +19,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
@@ -51,8 +52,8 @@ public class CustomBorder2 extends GenericTest {
         table.setWidth(500);
         table.setNextRenderer(new CustomBorder2TableRenderer(table, new Table.RowRange(0, 60)));
         for (int i = 1; i < 60; i++) {
-            table.addCell(new Cell().add("Cell " + i).setBorder(Border.NO_BORDER));
-            table.addCell(new Cell().add(TEXT).setBorder(Border.NO_BORDER));
+            table.addCell(new Cell().add(new Paragraph("Cell " + i)).setBorder(Border.NO_BORDER));
+            table.addCell(new Cell().add(new Paragraph(TEXT)).setBorder(Border.NO_BORDER));
         }
         doc.add(table);
 

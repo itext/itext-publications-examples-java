@@ -54,7 +54,7 @@ public class LinkInTableCell extends GenericTest {
         phrase.add(chunk);
         table.addCell(phrase);
         // The complete cell is a link:
-        Cell cell = new Cell().add("Help us win a European Business Award!");
+        Cell cell = new Cell().add(new Paragraph("Help us win a European Business Award!"));
         cell.setNextRenderer(new LinkInCellRenderer(cell, "http://itextpdf.com/blog/help-us-win-european-business-award"));
         table.addCell(cell);
         doc.add(table);

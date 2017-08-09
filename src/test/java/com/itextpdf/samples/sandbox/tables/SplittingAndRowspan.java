@@ -48,9 +48,9 @@ public class SplittingAndRowspan extends GenericTest {
         table.setKeepTogether(true);
         table.setMarginTop(10);
         Cell cell = new Cell(3, 1);
-        cell.add("G");
-        cell.add("R");
-        cell.add("P");
+        cell.add(new Paragraph("G"));
+        cell.add(new Paragraph("R"));
+        cell.add(new Paragraph("P"));
         table.addCell(cell);
         table.addCell("row 1");
         table.addCell("row 2");

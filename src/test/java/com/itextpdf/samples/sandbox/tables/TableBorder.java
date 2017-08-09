@@ -18,6 +18,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
@@ -44,7 +45,7 @@ public class TableBorder extends GenericTest {
         Document doc = new Document(pdfDoc);
         Table table = new Table(4);
         for (int aw = 0; aw < 16; aw++) {
-            table.addCell(new Cell().add("hi").setBorder(Border.NO_BORDER));
+            table.addCell(new Cell().add(new Paragraph("hi")).setBorder(Border.NO_BORDER));
         }
         // Notice that one should set renderer after table completion
         table.setNextRenderer(new TableBorderRenderer(table));

@@ -17,7 +17,7 @@ import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.kernel.PdfException;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -36,7 +36,6 @@ import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 @Category(SampleTest.class)
@@ -59,7 +58,7 @@ public class ComboBoxItems extends GenericTest {
         // Add rows with selectors
         String[] options = {"Choose first option", "Choose second option", "Choose third option"};
         String[] exports = {"option1", "option2", "option3"};
-        table.addCell(new Cell().add("Combobox:"));
+        table.addCell(new Cell().add(new Paragraph("Combobox:")));
         cell = new Cell();
         cell.setNextRenderer(new SelectCellRenderer(cell, "Choose first option", exports, options));
         cell.setHeight(20);
