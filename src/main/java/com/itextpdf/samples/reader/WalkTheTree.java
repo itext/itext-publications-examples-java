@@ -17,7 +17,7 @@ import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfStream;
 import com.itextpdf.kernel.pdf.tagging.IStructureNode;
-import com.itextpdf.kernel.pdf.tagging.PdfStructElement;
+import com.itextpdf.kernel.pdf.tagging.PdfStructElem;
 
 public class WalkTheTree {
 
@@ -32,8 +32,8 @@ public class WalkTheTree {
 		if (elem == null) return;
 		System.out.println(elem.getRole());
 		System.out.println(elem.getClass().getName());
-		if (elem instanceof PdfStructElement) {
-			processStructElem((PdfStructElement) elem);
+		if (elem instanceof PdfStructElem) {
+			processStructElem((PdfStructElem) elem);
 		}
 		if (elem.getKids() == null) return;
 		for (IStructureNode structElem : elem.getKids()) {
@@ -41,7 +41,7 @@ public class WalkTheTree {
 		}
 	}
 	
-	public static void processStructElem(PdfStructElement elem) {
+	public static void processStructElem(PdfStructElem elem) {
 		PdfDictionary page = elem.getPdfObject().getAsDictionary(PdfName.Pg);
 		if (page == null) return;
 		PdfStream contents = page.getAsStream(PdfName.Contents);
