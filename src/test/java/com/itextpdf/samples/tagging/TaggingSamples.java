@@ -157,7 +157,7 @@ public class TaggingSamples extends ExtendedITextTest {
         document.close();
 
         // checking that everything worked as expected
-        compareResult(dest + "88th_Academy_Awards.pdf", src + "88th_Academy_Awards.pdf");
+        compareResult(dest + "88th_Academy_Awards.pdf", src + "cmp_88th_Academy_Awards.pdf");
     }
 
     /**
@@ -208,7 +208,7 @@ public class TaggingSamples extends ExtendedITextTest {
         pdfDocument.close();
 
         // checking that everything worked as expected
-        compareResult(dest + "88th_Academy_Awards_with_stars.pdf", src + "88th_Academy_Awards_with_stars.pdf");
+        compareResult(dest + "88th_Academy_Awards_with_stars.pdf", src + "cmp_88th_Academy_Awards_with_stars.pdf");
     }
 
     /**
@@ -236,7 +236,7 @@ public class TaggingSamples extends ExtendedITextTest {
         document.close();
 
         // checking that everything worked as expected
-        compareResult(dest + "88th_Academy_Awards_artifact_table.pdf", src + "88th_Academy_Awards_artifact_table.pdf");
+        compareResult(dest + "88th_Academy_Awards_artifact_table.pdf", src + "cmp_88th_Academy_Awards_artifact_table.pdf");
     }
 
     public void drawStar(PdfCanvas canvas, int x, int y, Color color) {
