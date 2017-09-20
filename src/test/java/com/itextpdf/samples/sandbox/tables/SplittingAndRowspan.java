@@ -20,6 +20,7 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -44,7 +45,7 @@ public class SplittingAndRowspan extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(300, 160));
 
         doc.add(new Paragraph("Table with setKeepTogether(true):"));
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setKeepTogether(true);
         table.setMarginTop(10);
         Cell cell = new Cell(3, 1);

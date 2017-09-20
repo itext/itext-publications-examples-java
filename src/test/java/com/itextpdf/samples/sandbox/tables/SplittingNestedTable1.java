@@ -20,6 +20,7 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -44,7 +45,7 @@ public class SplittingNestedTable1 extends GenericTest {
 
         // Note that the sense of KEEP_TOGETHER property is slightly different from late splitting in itext5
         doc.add(new Paragraph("Table with setKeepTogether(true):"));
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setKeepTogether(true);
         table.setMarginTop(10);
         Cell cell = new Cell();
@@ -54,7 +55,7 @@ public class SplittingNestedTable1 extends GenericTest {
         cell.add(new Paragraph("U"));
         cell.add(new Paragraph("P"));
         table.addCell(cell);
-        Table inner = new Table(1);
+        Table inner = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         inner.addCell("row 1");
         inner.addCell("row 2");
         inner.addCell("row 3");

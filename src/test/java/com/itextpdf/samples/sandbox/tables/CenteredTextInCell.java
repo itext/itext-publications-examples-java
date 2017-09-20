@@ -22,6 +22,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -48,7 +49,7 @@ public class CenteredTextInCell extends GenericTest {
         Paragraph para = new Paragraph("Test").setFont(font);
         para.setFixedLeading(0);
         para.setMultipliedLeading(1);
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         Cell cell = new Cell();
         cell.setMinHeight(50);
         cell.setVerticalAlignment(VerticalAlignment.MIDDLE);

@@ -21,6 +21,7 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -46,7 +47,7 @@ public class CheckboxCell2 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(6);
+        Table table = new Table(UnitValue.createPercentArray(6)).useAllAvailableWidth();
         table.setWidthPercent(100);
         Cell cell;
         for (int i = 0; i < 6; i++) {

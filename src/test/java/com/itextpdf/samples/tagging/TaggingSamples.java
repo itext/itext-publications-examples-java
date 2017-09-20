@@ -19,6 +19,7 @@ import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.AreaBreakType;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.test.ExtendedITextTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.BeforeClass;
@@ -100,7 +101,7 @@ public class TaggingSamples extends ExtendedITextTest {
         Paragraph p = new Paragraph().add(text1).add(text2).add(text3);
         document.add(p);
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setWidth(350)
                 .setHorizontalAlignment(HorizontalAlignment.CENTER)
                 .setTextAlignment(TextAlignment.CENTER);
@@ -127,7 +128,7 @@ public class TaggingSamples extends ExtendedITextTest {
         p.add(text5);
         document.add(p);
 
-        table = new Table(2);
+        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setWidth(350)
                 .setHorizontalAlignment(HorizontalAlignment.CENTER)
                 .setTextAlignment(TextAlignment.CENTER);
@@ -223,7 +224,7 @@ public class TaggingSamples extends ExtendedITextTest {
 
         document.add(new AreaBreak(AreaBreakType.LAST_PAGE));
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.addCell(new Cell().add(new Paragraph("Created as a sample document.")).setBorder(null));
         table.addCell(new Cell().add(new Paragraph("30.03.2016")).setBorder(null));
         table.setFixedPosition(40, 150, 500);

@@ -24,6 +24,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -71,7 +72,7 @@ public class SimpleTable12 extends GenericTest {
         Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
         font = PdfFontFactory.createFont(FontConstants.HELVETICA);
-        Table table = new Table(8);
+        Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
         table.addCell(createCell("Examination", 1, 2, 15));
         table.addCell(createCell("Board", 1, 2, 15));
         table.addCell(createCell("Month and Year of Passing", 1, 2, 15));

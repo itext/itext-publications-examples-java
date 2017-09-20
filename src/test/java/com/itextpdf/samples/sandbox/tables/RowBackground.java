@@ -21,6 +21,7 @@ import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -44,7 +45,7 @@ public class RowBackground extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(7);
+        Table table = new Table(UnitValue.createPercentArray(7)).useAllAvailableWidth();
         table.setNextRenderer(new RowBackgroundTableRenderer(table, new Table.RowRange(0, 9), 2));
         for (int i = 0; i < 10; i++) {
             for (int j = 1; j < 8; j++) {

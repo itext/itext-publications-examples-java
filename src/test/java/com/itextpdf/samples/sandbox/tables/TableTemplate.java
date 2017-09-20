@@ -21,6 +21,7 @@ import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -42,7 +43,7 @@ public class TableTemplate extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
-        Table table = new Table(15);
+        Table table = new Table(UnitValue.createPercentArray(15)).useAllAvailableWidth();
         table.setWidth(1500);
         Cell cell;
         for (int r = 'A'; r <= 'Z'; r++) {

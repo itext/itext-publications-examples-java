@@ -16,6 +16,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -47,7 +48,7 @@ public class RemoveListSymbol extends GenericTest {
         Paragraph phrase = new Paragraph("A list without list symbol");
         doc.add(phrase);
 
-        Table phraseTable = new Table(2);
+        Table phraseTable = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         phraseTable.setMarginTop(5);
         phraseTable.addCell(new Cell().add(new Paragraph("List:")));
         phraseTable.addCell(list);

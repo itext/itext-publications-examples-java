@@ -22,6 +22,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.AbstractRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.IRenderer;
@@ -49,11 +50,11 @@ public class NestedTables3 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setNextRenderer(new InnerTableRenderer(table, new Table.RowRange(0, 0)));
         Cell cell = new Cell(1, 2).add(new Paragraph("This outer header is repeated on every page"));
         table.addHeaderCell(cell);
-        Table inner1 = new Table(1);
+        Table inner1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         cell = new Cell();
         cell.setHeight(20);
         inner1.addHeaderCell(cell);
@@ -64,7 +65,7 @@ public class NestedTables3 extends GenericTest {
         }
         cell = new Cell().add(inner1);
         table.addCell(cell.setPadding(0));
-        Table inner2 = new Table(1);
+        Table inner2 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         cell = new Cell();
         cell.setHeight(20);
         inner2.addHeaderCell(cell);

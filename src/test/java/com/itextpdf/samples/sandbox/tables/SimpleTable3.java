@@ -19,6 +19,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -43,7 +44,7 @@ public class SimpleTable3 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A3).rotate());
 
-        Table table = new Table(35).setFixedLayout();
+        Table table = new Table(UnitValue.createPercentArray(35)).useAllAvailableWidth().setFixedLayout();
         table.setWidth(pdfDoc.getDefaultPageSize().getWidth() - 80);
         Cell contractor = new Cell(1, 5).add(new Paragraph("XXXXXXXXXXXXX"));
         table.addCell(contractor);

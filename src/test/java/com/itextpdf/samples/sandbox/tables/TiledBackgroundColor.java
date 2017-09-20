@@ -25,6 +25,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -52,7 +53,7 @@ public class TiledBackgroundColor extends GenericTest {
         PdfPattern.Tiling img_pattern = new PdfPattern.Tiling(image.getImageScaledWidth(), image.getImageScaledHeight());
         new PdfPatternCanvas(img_pattern, pdfDoc).addImage(img, 0, 0, false);
         Color color = new PatternColor(img_pattern);
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.addCell(new Cell().add(new Paragraph("Behold a cell with an image pattern:")));
         Cell cell = new Cell();
         cell.setHeight(60);

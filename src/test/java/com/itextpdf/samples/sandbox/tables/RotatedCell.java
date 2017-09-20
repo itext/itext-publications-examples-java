@@ -18,6 +18,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -40,7 +41,7 @@ public class RotatedCell extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(8);
+        Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
         for (int i = 0; i < 8; i++) {
             Cell cell = new Cell().add(new Paragraph(String.format("May %s, 2016", i + 15)));
             cell.setRotationAngle(Math.toRadians(90));

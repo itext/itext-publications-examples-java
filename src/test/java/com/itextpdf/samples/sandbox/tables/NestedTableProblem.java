@@ -22,6 +22,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.HorizontalAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -46,12 +47,12 @@ public class NestedTableProblem extends GenericTest {
         doc.setMargins(30, 21, 35, 21);
 
         // table 2
-        Table table2 = new Table(1);
+        Table table2 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table2.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table2.addCell(new Cell().setBorder(new SolidBorder(Color.RED, 1)).add(new Paragraph("Goodbye World")));
         table2.setWidthPercent(80);
         // table 1
-        Table table1 = new Table(1);
+        Table table1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table1.setHorizontalAlignment(HorizontalAlignment.LEFT);
         Cell cell = new Cell();
         cell.setBorder(new SolidBorder(Color.BLACK, 1));

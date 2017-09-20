@@ -20,6 +20,7 @@ import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 import com.itextpdf.layout.ColumnDocumentRenderer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TextRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -74,7 +75,7 @@ public class CreateTOCinColumn extends GenericTest {
     }
 
     protected Table createTable(int start, int end) {
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         for (int i = start; i <= end; i++) {
             table.addCell(new Cell().add(new Paragraph(String.valueOf(i))));
             table.addCell(new Cell().add(new Paragraph("Test")));

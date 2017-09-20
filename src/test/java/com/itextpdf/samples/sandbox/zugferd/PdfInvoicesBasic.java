@@ -124,7 +124,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(p);
 
         // Address seller / buyer
-        Table table = new Table(2).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth().useAllAvailableWidth();
         Cell seller = getPartyAddress("From:",
                 basic.getSellerName(),
                 basic.getSellerLineOne(),

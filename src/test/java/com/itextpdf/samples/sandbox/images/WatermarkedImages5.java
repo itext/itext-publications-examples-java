@@ -28,6 +28,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -55,7 +56,7 @@ public class WatermarkedImages5 extends GenericTest {
         float height = img.getImageScaledHeight();
         PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setWidth(width);
 
         table.addCell(new Cell().add(new Paragraph("Test1")).setBorder(new SolidBorder(Color.YELLOW, 1)));

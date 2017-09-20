@@ -63,7 +63,7 @@ public class SimpleTable7 extends GenericTest {
         importantNotice.setFontColor(Color.RED);
         doc.add(importantNotice);
 
-        Table table = new Table(10).setFixedLayout().
+        Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth().setFixedLayout().
                 setWidth(UnitValue.createPercentValue(80));
         Cell cell = new Cell(1, 3).add(docTitle);
         cell.setBorder(Border.NO_BORDER);

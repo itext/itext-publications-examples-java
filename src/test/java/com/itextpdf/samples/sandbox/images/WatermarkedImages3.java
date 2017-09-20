@@ -25,6 +25,7 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -57,7 +58,7 @@ public class WatermarkedImages3 extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(1).setWidthPercent(80);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth().setWidthPercent(80);
         for (int i = 0; i < 35; i++) {
             table.addCell(new Cell().add(new Paragraph("rahlrokks doesn't listen to what people tell him")));
         }

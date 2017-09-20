@@ -21,6 +21,7 @@ import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -47,7 +48,7 @@ public class DottedLineCell2 extends GenericTest {
         Table table;
         Cell cell;
 
-        table = new Table(4);
+        table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
         cell = new Cell().add(new Paragraph("left border"));
         cell.setBorder(Border.NO_BORDER);
@@ -71,7 +72,7 @@ public class DottedLineCell2 extends GenericTest {
         table.addCell(cell);
         document.add(table);
 
-        table = new Table(4);
+        table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
         cell = new Cell().add(new Paragraph("left and top border"));
         cell.setBorder(Border.NO_BORDER);

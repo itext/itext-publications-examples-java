@@ -24,6 +24,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.BaseDirection;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -57,7 +58,7 @@ public class ArabicExample2 extends GenericTest {
 
         PdfFont f = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
 
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         Paragraph p = new Paragraph("test value");
         p.add(new Text(ARABIC).setFont(f));
 

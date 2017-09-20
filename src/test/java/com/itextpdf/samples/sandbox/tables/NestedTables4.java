@@ -61,13 +61,13 @@ public class NestedTables4 extends GenericTest {
         // third row cell 1
         table.addCell(new Cell().add(new Paragraph("")).setBorder(Border.NO_BORDER));
         // third row cell 2
-        Table table1 = new Table(1);
+        Table table1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table1.addCell("cell 1 of nested table 1");
         table1.addCell("cell 2 of nested table 1");
         table1.addCell("cell 3 of nested table 1");
         table.addCell(new Cell().add(table1).setBorder(Border.NO_BORDER));
         // third row cell 3
-        Table table2 = new Table(2);
+        Table table2 = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table2.addCell(new Cell().setMinHeight(10));
         table2.addCell(new Cell().setMinHeight(10));
         cell = new Cell(1, 2).add(new Paragraph("cell 2 of nested table 2")).setMinHeight(10);

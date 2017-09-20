@@ -28,6 +28,7 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -51,7 +52,7 @@ public class TableFooter extends GenericTest {
         Document doc = new Document(pdfDoc, PageSize.A4);
         doc.setMargins(36, 36, 72, 36);
 
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setWidth(523);
 
         Cell cell = new Cell().add(new Paragraph("This is a test doc"));

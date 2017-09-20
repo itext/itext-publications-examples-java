@@ -17,6 +17,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -40,7 +41,7 @@ public class Splitting2 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         Paragraph p = new Paragraph("Test");
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         for (int i = 1; i < 6; i++) {
             table.addCell("key " + i);
             table.addCell("value " + i);
@@ -52,7 +53,7 @@ public class Splitting2 extends GenericTest {
         for (int i = 0; i < 23; i++) {
             doc.add(p);
         }
-        table = new Table(2);
+        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         for (int i = 1; i < 6; i++) {
             table.addCell("key " + i);
             table.addCell("value " + i);

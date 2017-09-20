@@ -53,7 +53,7 @@ public class SimpleTable9 extends GenericTest {
                 "It needs much more space hence we made sure that the third column is wider.");
         doc.add(table);
         doc.add(new Paragraph("With 2 columns:"));
-        table = new Table(2);
+        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(5);
         table.addCell("Col a");
         table.addCell("Col b");

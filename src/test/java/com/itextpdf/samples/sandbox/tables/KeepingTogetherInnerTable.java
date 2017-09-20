@@ -15,6 +15,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -37,7 +38,7 @@ public class KeepingTogetherInnerTable extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(300, 160));
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(10);
         Cell cell = new Cell();
         cell.add(new Paragraph("G"));
@@ -46,7 +47,7 @@ public class KeepingTogetherInnerTable extends GenericTest {
         cell.add(new Paragraph("U"));
         cell.add(new Paragraph("P"));
         table.addCell(cell);
-        Table inner = new Table(1);
+        Table inner = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         inner.setKeepTogether(true);
         inner.addCell("row 1");
         inner.addCell("row 2");

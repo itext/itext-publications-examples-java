@@ -20,6 +20,7 @@ import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -42,7 +43,7 @@ public class ColoredBorder extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         Table table;
-        table = new Table(2);
+        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell;
         cell = new Cell().add(new Paragraph("Cell 1"));
         cell.setBorderTop(new SolidBorder(Color.RED, 1));

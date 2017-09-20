@@ -23,6 +23,7 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -46,7 +47,7 @@ public class RightCornerTable extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(300, 300));
         doc.setMargins(0, 0, 0, 0);
 
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.RIGHT);
         table.setWidth(90);
         Cell cell = new Cell().add(new Paragraph(" Date").setFontColor(Color.WHITE));

@@ -19,6 +19,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -48,13 +49,13 @@ public class TableInColumn extends GenericTest {
         for (int i = 1; i <= 20; i++) {
             cell.add(new Paragraph("Line " + i));
         }
-        table = new Table(1);
+        table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell(cell);
         table.setNextRenderer(new CustomTableRenderer(table, addTable(doc, table)));
         doc.add(table);
 
         doc.add(new AreaBreak());
-        table = new Table(1);
+        table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell(cell.clone(true));
         table.addCell(cell.clone(true));
         table.setNextRenderer(new CustomTableRenderer(table, addTable(doc, table)));

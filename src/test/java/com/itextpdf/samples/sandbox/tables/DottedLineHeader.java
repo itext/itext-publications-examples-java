@@ -18,6 +18,7 @@ import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
@@ -43,7 +44,7 @@ public class DottedLineHeader extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(3);
+        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         table.setNextRenderer(new DottedHeaderTableRenderer(table, new Table.RowRange(0, 1)));
         Style noBorder = new Style().setBorder(Border.NO_BORDER);
         table.addHeaderCell(new Cell().add(new Paragraph("A1")).addStyle(noBorder));
@@ -57,7 +58,7 @@ public class DottedLineHeader extends GenericTest {
         table.addCell(new Cell().add(new Paragraph("C3")).addStyle(noBorder));
         doc.add(table);
         doc.add(new Paragraph("Cell event"));
-        table = new Table(3);
+        table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         Cell cell = new Cell().add(new Paragraph("A1")).addStyle(noBorder);
         cell.setNextRenderer(new DottedHeaderCellRenderer(cell));
         table.addCell(cell);

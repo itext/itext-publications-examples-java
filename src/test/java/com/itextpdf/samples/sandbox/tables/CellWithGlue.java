@@ -21,6 +21,7 @@ import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -46,7 +47,7 @@ public class CellWithGlue extends GenericTest {
         Table table;
         Cell cell;
 
-        table = new Table(2);
+        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidthPercent(60);
         table.setMarginBottom(20);
@@ -68,7 +69,7 @@ public class CellWithGlue extends GenericTest {
         table.setWidthPercent(50);
         doc.add(table);
 
-        table = new Table(1);
+        table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidthPercent(50);
         Paragraph p = new Paragraph();

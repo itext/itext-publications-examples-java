@@ -24,6 +24,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -49,7 +50,7 @@ public class ColoredBackground extends GenericTest {
         Table table;
         Cell cell;
         PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-        table = new Table(16);
+        table = new Table(UnitValue.createPercentArray(16)).useAllAvailableWidth();
         for (int aw = 0; aw < 16; aw++) {
             cell = new Cell().add(new Paragraph("hi").setFont(font).setFontColor(Color.WHITE));
             cell.setBackgroundColor(Color.BLUE);

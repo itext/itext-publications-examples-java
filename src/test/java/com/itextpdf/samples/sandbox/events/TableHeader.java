@@ -28,6 +28,7 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -74,7 +75,7 @@ public class TableHeader extends GenericTest {
 
         public TableHeaderEventHandler(Document doc) {
             this.doc = doc;
-            table = new Table(1);
+            table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
             table.setWidth(523);
             table.addCell("Header row 1");
             table.addCell("Header row 2");
