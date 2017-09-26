@@ -37,7 +37,7 @@ public class IncompleteTable extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(5), true).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(5), true);
 
         for (int i = 0; i < 5; i++) {
             table.addHeaderCell(new Cell().setKeepTogether(true).add(new Paragraph("Header " + i)));
