@@ -16,6 +16,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -75,7 +76,7 @@ public class Listing_99_03_ComplexElementLayout extends GenericTest {
         }
 
         @Override
-        public ParagraphRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new TwoColumnParagraphRenderer((Paragraph) modelElement);
         }
     }

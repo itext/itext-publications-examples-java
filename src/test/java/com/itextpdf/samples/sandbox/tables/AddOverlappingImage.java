@@ -22,6 +22,7 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -86,7 +87,7 @@ public class AddOverlappingImage extends GenericTest {
         }
 
         @Override
-        public OverlappingImageTableRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new OverlappingImageTableRenderer((Table) modelElement, image);
         }
     }

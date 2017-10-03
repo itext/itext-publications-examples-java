@@ -120,7 +120,7 @@ public class NestedTables3 extends GenericTest {
         }
 
         @Override
-        public InnerTableRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new InnerTableRenderer((Table) modelElement);
         }
     }

@@ -19,6 +19,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -64,7 +65,7 @@ public class RepeatLastRows extends GenericTest {
         }
 
         @Override
-        public RepeatTableRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new RepeatTableRenderer((Table) modelElement);
         }
 

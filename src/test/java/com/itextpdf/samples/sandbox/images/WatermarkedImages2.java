@@ -28,6 +28,7 @@ import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -87,7 +88,7 @@ public class WatermarkedImages2 extends GenericTest {
         }
 
         @Override
-        public CellRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new WatermarkedCellRenderer((Cell) modelElement, content);
         }
 
