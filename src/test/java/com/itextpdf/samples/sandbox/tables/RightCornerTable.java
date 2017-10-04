@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -49,9 +49,9 @@ public class RightCornerTable extends GenericTest {
         Table table = new Table(1);
         table.setHorizontalAlignment(HorizontalAlignment.RIGHT);
         table.setWidth(90);
-        Cell cell = new Cell().add(new Paragraph(" Date").setFontColor(Color.WHITE));
-        cell.setBackgroundColor(Color.BLACK);
-        cell.setBorder(new SolidBorder(Color.GRAY, 2));
+        Cell cell = new Cell().add(new Paragraph(" Date").setFontColor(ColorConstants.WHITE));
+        cell.setBackgroundColor(ColorConstants.BLACK);
+        cell.setBorder(new SolidBorder(ColorConstants.GRAY, 2));
         table.addCell(cell);
         Cell cellTwo = new Cell().add(("10/01/2015"));
         cellTwo.setBorder(new SolidBorder(2));

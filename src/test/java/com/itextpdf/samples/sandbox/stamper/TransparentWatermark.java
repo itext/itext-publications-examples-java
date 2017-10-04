@@ -13,7 +13,7 @@ package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.io.font.FontProgramFactory;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -54,7 +54,7 @@ public class TransparentWatermark extends GenericTest {
         new Canvas(under, pdfDoc, pdfDoc.getDefaultPageSize())
                 .showTextAligned(p, 297, 550, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
         PdfCanvas over = new PdfCanvas(pdfDoc.getFirstPage());
-        over.setFillColor(Color.BLACK);
+        over.setFillColor(ColorConstants.BLACK);
         p = new Paragraph("This watermark is added ON TOP OF the existing content")
                 .setFont(font).setFontSize(15);
         new Canvas(over, pdfDoc, pdfDoc.getDefaultPageSize())

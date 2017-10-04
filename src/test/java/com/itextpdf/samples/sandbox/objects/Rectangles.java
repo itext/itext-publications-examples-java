@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.color.DeviceGray;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -45,14 +45,14 @@ public class Rectangles extends GenericTest {
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         Rectangle rect1 = new Rectangle(llx, lly, urx - llx, ury - lly);
         canvas
-                .setStrokeColor(Color.BLACK)
+                .setStrokeColor(ColorConstants.BLACK)
                 .setLineWidth(1)
                 .setFillColor(new DeviceGray(0.9f))
                 .rectangle(rect1)
                 .fillStroke();
         Rectangle rect2 = new Rectangle(llx + 60, lly, urx - llx - 60, ury - 40 - lly);
         canvas
-                .setStrokeColor(Color.WHITE)
+                .setStrokeColor(ColorConstants.WHITE)
                 .setLineWidth(0.5f)
                 .setFillColor(new DeviceGray(0.1f))
                 .rectangle(rect2)

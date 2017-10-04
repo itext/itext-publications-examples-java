@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.annotations;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.action.PdfAction;
@@ -46,14 +46,14 @@ public class AddRotatedAnnotation extends GenericTest {
         PdfAnnotation link1 = new PdfLinkAnnotation(linkLocation1)
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
                 .setAction(action)
-                .setColor(Color.RED.getColorValue());
+                .setColor(ColorConstants.RED.getColorValue());
         pdfDoc.getFirstPage().addAnnotation(link1);
 
         Rectangle linkLocation2 = new Rectangle(30, 670, 30, 90);
         PdfAnnotation link2 = new PdfLinkAnnotation(linkLocation2)
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
                 .setAction(action)
-                .setColor(Color.GREEN.getColorValue());
+                .setColor(ColorConstants.GREEN.getColorValue());
         pdfDoc.getFirstPage().addAnnotation(link2);
 
         Rectangle linkLocation3 = new Rectangle(150, 770, 90, 30);

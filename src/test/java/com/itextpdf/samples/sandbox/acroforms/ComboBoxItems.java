@@ -17,7 +17,7 @@ import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.kernel.PdfException;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -26,7 +26,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -102,7 +101,7 @@ public class ComboBoxItems extends GenericTest {
             choice.setFont(font);
             choice.getWidgets().get(0).setBorderStyle(PdfAnnotation.STYLE_BEVELED);
             choice.setVisibility(PdfFormField.VISIBLE_BUT_DOES_NOT_PRINT);
-            choice.setBorderColor(Color.GRAY);
+            choice.setBorderColor(ColorConstants.GRAY);
             choice.setJustification(PdfFormField.ALIGN_CENTER);
             form.addField(choice);
         }

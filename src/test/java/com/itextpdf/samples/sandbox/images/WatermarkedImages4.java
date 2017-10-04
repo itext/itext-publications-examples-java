@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -50,14 +50,14 @@ public class WatermarkedImages4 extends GenericTest {
         new Canvas(template, pdfDocument).add(img);
         new PdfCanvas(template, pdfDocument).
                 saveState().
-                setStrokeColor(Color.GREEN).
+                setStrokeColor(ColorConstants.GREEN).
                 setLineWidth(3).
                 moveTo(width * .25f, height * .25f).
                 lineTo(width * .75f, height * .75f).
                 moveTo(width * .25f, height * .75f).
                 lineTo(width * .25f, height * .25f).
                 stroke().
-                setStrokeColor(Color.WHITE).
+                setStrokeColor(ColorConstants.WHITE).
                 ellipse(0, 0, width, height).
                 stroke().
                 restoreState();

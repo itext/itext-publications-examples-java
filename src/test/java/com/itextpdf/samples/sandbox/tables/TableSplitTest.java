@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -53,7 +53,7 @@ public class TableSplitTest extends GenericTest {
         doc.setMargins(55, 15, 35, 15);
 
         ILineDrawer line = new SolidLine(2);
-        line.setColor(Color.LIGHT_GRAY);
+        line.setColor(ColorConstants.LIGHT_GRAY);
         LineSeparator tableEndSeparator = new LineSeparator(line);
 
         tableEndSeparator.setMarginTop(10);
@@ -72,7 +72,7 @@ public class TableSplitTest extends GenericTest {
                     .setFontSize(10));
             headerCell.setTextAlignment(TextAlignment.CENTER);
             headerCell.setVerticalAlignment(VerticalAlignment.MIDDLE);
-            headerCell.setBorder(new SolidBorder(Color.LIGHT_GRAY, 1));
+            headerCell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
             headerCell.setPadding(8);
             table.addHeaderCell(headerCell);
         }
@@ -86,7 +86,7 @@ public class TableSplitTest extends GenericTest {
                 Cell cell = new Cell().add(new Paragraph(text).setFont(
                         PdfFontFactory.createFont(FontConstants.HELVETICA))
                         .setFontSize(10));
-                cell.setBorder(new SolidBorder(Color.LIGHT_GRAY, 1));
+                cell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
                 cell.setPaddingLeft(5);
                 cell.setPaddingTop(5);
                 cell.setPaddingRight(5);
@@ -112,7 +112,7 @@ public class TableSplitTest extends GenericTest {
                         .setFontSize(10));
                 headerCell.setTextAlignment(TextAlignment.CENTER);
                 headerCell.setVerticalAlignment(VerticalAlignment.MIDDLE);
-                headerCell.setBorder(new SolidBorder(Color.LIGHT_GRAY, 1));
+                headerCell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
                 headerCell.setPaddingLeft(8);
                 headerCell.setPaddingTop(8);
                 headerCell.setPaddingRight(8);
@@ -123,7 +123,7 @@ public class TableSplitTest extends GenericTest {
                 Cell cell = new Cell().add(new Paragraph(text).setFont(
                         PdfFontFactory.createFont(FontConstants.HELVETICA))
                         .setFontSize(10));
-                cell.setBorder(new SolidBorder(Color.LIGHT_GRAY, 1));
+                cell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
                 cell.setPaddingLeft(5);
                 cell.setPaddingTop(5);
                 cell.setPaddingRight(5);

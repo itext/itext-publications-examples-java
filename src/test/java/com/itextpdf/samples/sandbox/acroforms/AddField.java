@@ -15,7 +15,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
 import com.itextpdf.forms.fields.PdfFormField;
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -45,7 +45,7 @@ public class AddField extends GenericTest {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         PdfButtonFormField button = PdfFormField.createPushButton(pdfDoc, new Rectangle(36, 700, 36, 30), "post", "POST");
-        button.setBackgroundColor(Color.GRAY);
+        button.setBackgroundColor(ColorConstants.GRAY);
         button.setValue("POST");
         button.setAction(PdfAction.createSubmitForm("http://itextpdf.com:8180/book/request", null,
                 PdfAction.SUBMIT_HTML_FORMAT | PdfAction.SUBMIT_COORDINATES));

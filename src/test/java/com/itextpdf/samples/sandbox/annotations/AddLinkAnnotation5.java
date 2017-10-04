@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.annotations;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -27,7 +27,6 @@ import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.Ignore;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
@@ -49,7 +48,7 @@ public class AddLinkAnnotation5 extends GenericTest {
         Document doc = new Document(pdfDoc);
         Link link = new Link("This is a link. Click it and you'll be forwarded to another page in this document.",
                 PdfAction.createGoTo(PdfExplicitDestination.createFit(3)));
-        link.setBackgroundColor(Color.RED);
+        link.setBackgroundColor(ColorConstants.RED);
         link.getLinkAnnotation().setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
 
         Paragraph p = new Paragraph(link).setWidth(240);

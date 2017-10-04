@@ -8,7 +8,7 @@
  */
 package com.itextpdf.samples;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -40,7 +40,7 @@ public class Listing_99_01_DifferentLayouts extends GenericTest {
         doc.add(new Paragraph("Flowing paragraph"));
 
         //Add fixed paragraph
-        Paragraph p = new Paragraph("Fixed paragraph").setFixedPosition(1, 100, 100, 200).setHeight(200).setBackgroundColor(Color.GREEN);
+        Paragraph p = new Paragraph("Fixed paragraph").setFixedPosition(1, 100, 100, 200).setHeight(200).setBackgroundColor(ColorConstants.GREEN);
         doc.add(p);
 
         //Close document

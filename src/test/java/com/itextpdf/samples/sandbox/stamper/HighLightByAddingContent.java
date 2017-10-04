@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.stamper;
 
-import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -43,7 +43,7 @@ public class HighLightByAddingContent extends GenericTest {
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage().newContentStreamBefore(),
                 pdfDoc.getFirstPage().getResources(), pdfDoc);
         canvas.saveState();
-        canvas.setFillColor(Color.YELLOW);
+        canvas.setFillColor(ColorConstants.YELLOW);
         canvas.rectangle(36, 786, 66, 16);
         canvas.fill();
         canvas.restoreState();
