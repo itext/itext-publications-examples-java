@@ -40,12 +40,12 @@ public class CircleAnnotation extends GenericTest {
         Rectangle rect = new Rectangle(150, 770, 50, 50);
 
         PdfAnnotation annotation = new PdfCircleAnnotation(rect)
+                .setBorderStyle(PdfAnnotation.STYLE_DASHED)
+                .setDashPattern(new PdfArray(new int[]{3, 2}))
                 .setContents("Circle")
                 .setTitle(new PdfString("Circle"))
                 .setColor(ColorConstants.BLUE)
                 .setFlags(PdfAnnotation.PRINT)
-                .setBorderStyle(PdfAnnotation.STYLE_DASHED)
-                .setDashPattern(new PdfArray(new int[]{3, 2}))
                 .setBorder(new PdfArray(new float[]{0, 0, 2}))
                 .put(PdfName.IC, new PdfArray(new int[]{1, 0, 0}));
         pdfDoc.getFirstPage().addAnnotation(annotation);

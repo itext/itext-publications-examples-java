@@ -46,17 +46,17 @@ public class AddNavigation extends GenericTest {
         PdfDestination d1 = PdfExplicitDestination.createFit(10);
         Rectangle rect = new Rectangle(0, 806, 595, 36);
         PdfAnnotation a10 = new PdfLinkAnnotation(rect)
+                .setAction(PdfAction.createGoTo(d1))
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
                 .setPage(pdfDoc.getPage(10))
-                .setAction(PdfAction.createGoTo(d1))
                 .setBorder(new PdfArray(borders))
                 .setColor(new PdfArray(new float[]{0, 1, 0}));
         pdfDoc.getPage(1).addAnnotation(a10);
         PdfDestination d2 = PdfExplicitDestination.createFit(1);
         PdfAnnotation a1 = new PdfLinkAnnotation(rect)
+                .setAction(PdfAction.createGoTo(d2))
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_PUSH)
                 .setPage(pdfDoc.getPage(1))
-                .setAction(PdfAction.createGoTo(d2))
                 .setBorder(new PdfArray(borders))
                 .setColor(new PdfArray(new float[]{0, 1, 0}));
         pdfDoc.getPage(10).addAnnotation(a1);

@@ -42,11 +42,11 @@ public class AddInReplyTo extends GenericTest {
         List<PdfAnnotation> annots = page.getAnnotations();
         Rectangle stickyRectangle = annots.get(0).getRectangle().toRectangle();
         PdfAnnotation replySticky = new PdfTextAnnotation(stickyRectangle)
+                .setOpen(true)
                 .setIconName(new PdfName("Comment"))
                 .setInReplyTo(annots.get(0))
                 .setText(new PdfString("Reply"))
-                .setContents("Hello PDF")
-                .setOpen(true);
+                .setContents("Hello PDF");
         pdfDoc.getFirstPage().addAnnotation(replySticky);
         pdfDoc.close();
     }

@@ -40,12 +40,12 @@ public class AddMarked extends GenericTest {
         PdfAnnotation sticky = page.getAnnotations().get(0);
         Rectangle stickyRectangle = sticky.getRectangle().toRectangle();
         PdfAnnotation replySticky = new PdfTextAnnotation(stickyRectangle)
+                .setOpen(false)
                 .setStateModel(new PdfString("Marked"))
                 .setState(new PdfString("Marked"))
                 .setIconName(new PdfName("Comment"))
                 .setInReplyTo(sticky)
                 .setText(new PdfString("Bruno"))
-                .setOpen(false)
                 .setContents("Marked set by Bruno")
                 .setFlags(sticky.getFlags() + PdfAnnotation.HIDDEN);
         pdfDoc.getFirstPage().addAnnotation(replySticky);
