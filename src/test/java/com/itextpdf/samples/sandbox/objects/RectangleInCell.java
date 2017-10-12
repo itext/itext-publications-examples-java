@@ -14,7 +14,7 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -52,7 +52,7 @@ public class RectangleInCell extends GenericTest {
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         table.addCell(new Cell().add(new Paragraph("A rectangle:)")));
         PdfFormXObject template = new PdfFormXObject(new Rectangle(120, 80));
-        new PdfCanvas(template, pdfDoc).setFillColor(Color.RED)
+        new PdfCanvas(template, pdfDoc).setFillColor(ColorConstants.RED)
                 .rectangle(0, 0, 120, 80)
                 .fill();
         table.addCell(new Cell().add(new Image(template).setAutoScale(true)).setPadding(3));

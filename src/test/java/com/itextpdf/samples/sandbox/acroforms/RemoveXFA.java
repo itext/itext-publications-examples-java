@@ -14,7 +14,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -47,7 +47,7 @@ public class RemoveXFA extends GenericTest {
         Map<String, PdfFormField> fields = form.getFormFields();
         for (Map.Entry<String, PdfFormField> name : fields.entrySet()) {
             if (name.getKey().indexOf("Total") > 0) {
-                name.getValue().getWidgets().get(0).setColor(Color.RED);
+                name.getValue().getWidgets().get(0).setColor(ColorConstants.RED);
             }
             name.getValue().setValue("X");
         }

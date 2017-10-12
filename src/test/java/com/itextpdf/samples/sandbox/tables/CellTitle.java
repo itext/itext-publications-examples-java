@@ -13,7 +13,7 @@
 
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -79,7 +79,7 @@ public class CellTitle extends GenericTest {
                     drawContext.getDocument().getLastPage().getResources(), drawContext.getDocument());
             new Canvas(aboveCanvas, drawContext.getDocument(), getOccupiedAreaBBox())
                     .add(new Paragraph(title).setMultipliedLeading(1).setMargin(0)
-                            .setBackgroundColor(Color.LIGHT_GRAY)
+                            .setBackgroundColor(ColorConstants.LIGHT_GRAY)
                             .setFixedPosition(getOccupiedAreaBBox().getLeft() + 5, getOccupiedAreaBBox().getTop() - 8, 30));
         }
     }

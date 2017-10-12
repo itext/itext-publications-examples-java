@@ -8,7 +8,7 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -42,7 +42,7 @@ public class CenterColumnVertically extends GenericTest {
         Rectangle rect = new Rectangle(llx, lly, urx - llx, ury - lly);
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         canvas
-                .setStrokeColor(Color.RED)
+                .setStrokeColor(ColorConstants.RED)
                 .setLineWidth(0.5f)
                 .rectangle(rect)
                 .stroke();

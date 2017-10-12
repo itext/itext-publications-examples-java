@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -59,10 +59,10 @@ public class WatermarkedImages5 extends GenericTest {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setWidth(width);
 
-        table.addCell(new Cell().add(new Paragraph("Test1")).setBorder(new SolidBorder(Color.YELLOW, 1)));
-        table.addCell(new Cell().add(new Paragraph("Test2")).setBorder(new SolidBorder(Color.YELLOW, 1)));
-        table.addCell(new Cell().add(new Paragraph("Test3")).setBorder(new SolidBorder(Color.YELLOW, 1)));
-        table.addCell(new Cell().add(new Paragraph("Test4")).setBorder(new SolidBorder(Color.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test1")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test2")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test3")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test4")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
 
         // find the height of the table
         TableRenderer renderer = (TableRenderer)table.createRendererSubTree();

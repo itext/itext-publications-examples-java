@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -56,10 +56,10 @@ public class TableFooter extends GenericTest {
         table.setWidth(523);
 
         Cell cell = new Cell().add(new Paragraph("This is a test doc"));
-        cell.setBackgroundColor(Color.ORANGE);
+        cell.setBackgroundColor(ColorConstants.ORANGE);
         table.addCell(cell);
         cell = new Cell().add(new Paragraph("This is a copyright notice"));
-        cell.setBackgroundColor(Color.LIGHT_GRAY);
+        cell.setBackgroundColor(ColorConstants.LIGHT_GRAY);
         table.addCell(cell);
 
         pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE, new TableFooterEventHandler(table));

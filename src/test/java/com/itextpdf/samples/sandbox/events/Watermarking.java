@@ -15,7 +15,7 @@
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -106,7 +106,7 @@ public class Watermarking extends GenericTest {
             }
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
             new Canvas(canvas, pdfDoc, page.getPageSize())
-                    .setFontColor(Color.LIGHT_GRAY)
+                    .setFontColor(ColorConstants.LIGHT_GRAY)
                     .setFontSize(60)
                     .setFont(font)
                     .showTextAligned(new Paragraph("WATERMARK"), 298, 421, pdfDoc.getPageNumber(page),

@@ -9,7 +9,7 @@
 package com.itextpdf.samples.sandbox.barcodes;
 
 import com.itextpdf.barcodes.BarcodePDF417;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -36,7 +36,7 @@ public class BarcodePlacement extends GenericTest {
     public Image createBarcode(float mw, float mh, PdfDocument pdfDoc) {
         BarcodePDF417 barcode = new BarcodePDF417();
         barcode.setCode("BarcodePDF417 barcode");
-        return new Image(barcode.createFormXObject(Color.BLACK, pdfDoc)).scale(mw, mh);
+        return new Image(barcode.createFormXObject(ColorConstants.BLACK, pdfDoc)).scale(mw, mh);
     }
 
     @Override

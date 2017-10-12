@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.annotations;
 
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -50,7 +50,7 @@ public class AddLinkAnnotation3 extends GenericTest {
         PdfFont bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
         Link link = new Link("The Best iText Questions on StackOverflow",
                 PdfAction.createURI("http://pages.itextpdf.com/ebook-stackoverflow-questions.html"));
-        link.setBackgroundColor(Color.RED);
+        link.setBackgroundColor(ColorConstants.RED);
         link.setFont(bold);
         Paragraph p = new Paragraph("Download ");
         p.add(link);

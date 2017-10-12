@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -56,7 +56,7 @@ public class CellMethod extends GenericTest {
         if (size < 0) {
             size = -size;
             cell.setFontSize(size);
-            cell.setFontColor(Color.RED);
+            cell.setFontColor(ColorConstants.RED);
         }
         return cell;
     }

@@ -9,7 +9,7 @@
 package com.itextpdf.samples;
 
 import com.itextpdf.barcodes.*;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -86,7 +86,7 @@ public class Listing_99_05_BarcodeLayout extends GenericTest {
         codeSUPP.setCode("55999");
         codeSUPP.setBaseline(-2);
         BarcodeEANSUPP eanSupp = new BarcodeEANSUPP(codeEAN, codeSUPP);
-        doc.add(new Image(eanSupp.createFormXObject(null, Color.BLUE, pdfDoc)));
+        doc.add(new Image(eanSupp.createFormXObject(null, ColorConstants.BLUE, pdfDoc)));
 
         // CODE 128
         doc.add(new Paragraph("Barcode 128"));
@@ -117,20 +117,20 @@ public class Listing_99_05_BarcodeLayout extends GenericTest {
         shipBarCode.setBarHeight(50f);
         shipBarCode.setCode(data.toString());
         shipBarCode.fitWidth(250);
-        doc.add(new Image(shipBarCode.createFormXObject(Color.BLACK, Color.BLUE, pdfDoc)));
+        doc.add(new Image(shipBarCode.createFormXObject(ColorConstants.BLACK, ColorConstants.BLUE, pdfDoc)));
 
         // it is composed of 3 blocks whith AI 01, 3101 and 10
         Barcode128 uccEan128 = new Barcode128(pdfDoc);
         uccEan128.setCodeType(Barcode128.CODE128_UCC);
         uccEan128.setCode("(01)00000090311314(10)ABC123(15)060916");
         uccEan128.fitWidth(250);
-        doc.add(new Image(uccEan128.createFormXObject(Color.BLUE, Color.BLACK, pdfDoc)));
+        doc.add(new Image(uccEan128.createFormXObject(ColorConstants.BLUE, ColorConstants.BLACK, pdfDoc)));
         uccEan128.setCode("0191234567890121310100035510ABC123");
         uccEan128.fitWidth(250);
-        doc.add(new Image(uccEan128.createFormXObject(Color.BLUE, Color.RED, pdfDoc)));
+        doc.add(new Image(uccEan128.createFormXObject(ColorConstants.BLUE, ColorConstants.RED, pdfDoc)));
         uccEan128.setCode("(01)28880123456788");
         uccEan128.fitWidth(250);
-        doc.add(new Image(uccEan128.createFormXObject(Color.BLUE, Color.BLACK, pdfDoc)));
+        doc.add(new Image(uccEan128.createFormXObject(ColorConstants.BLUE, ColorConstants.BLACK, pdfDoc)));
 
 
         // INTER25

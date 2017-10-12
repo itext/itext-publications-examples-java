@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -46,20 +46,20 @@ public class ColoredBorder extends GenericTest {
         table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell;
         cell = new Cell().add(new Paragraph("Cell 1"));
-        cell.setBorderTop(new SolidBorder(Color.RED, 1));
-        cell.setBorderBottom(new SolidBorder(Color.BLUE, 1));
+        cell.setBorderTop(new SolidBorder(ColorConstants.RED, 1));
+        cell.setBorderBottom(new SolidBorder(ColorConstants.BLUE, 1));
         table.addCell(cell);
         cell = new Cell().add(new Paragraph("Cell 2"));
-        cell.setBorderLeft(new SolidBorder(Color.GREEN, 5));
-        cell.setBorderTop(new SolidBorder(Color.YELLOW, 8));
+        cell.setBorderLeft(new SolidBorder(ColorConstants.GREEN, 5));
+        cell.setBorderTop(new SolidBorder(ColorConstants.YELLOW, 8));
         table.addCell(cell);
         cell = new Cell().add(new Paragraph("Cell 3"));
-        cell.setBorderLeft(new SolidBorder(Color.RED, 1));
-        cell.setBorderBottom(new SolidBorder(Color.BLUE, 1));
+        cell.setBorderLeft(new SolidBorder(ColorConstants.RED, 1));
+        cell.setBorderBottom(new SolidBorder(ColorConstants.BLUE, 1));
         table.addCell(cell);
         cell = new Cell().add(new Paragraph("Cell 4"));
-        cell.setBorderLeft(new SolidBorder(Color.GREEN, 5));
-        cell.setBorderTop(new SolidBorder(Color.YELLOW, 8));
+        cell.setBorderLeft(new SolidBorder(ColorConstants.GREEN, 5));
+        cell.setBorderTop(new SolidBorder(ColorConstants.YELLOW, 8));
         table.addCell(cell);
 
         doc.add(table);

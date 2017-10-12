@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.colors.DeviceRgb;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -94,7 +94,7 @@ public class WatermarkedImages2 extends GenericTest {
         @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
-            Paragraph p = new Paragraph(content).setFontColor(DeviceRgb.WHITE);
+            Paragraph p = new Paragraph(content).setFontColor(ColorConstants.WHITE);
             Rectangle rect = getOccupiedAreaBBox();
             new Canvas(drawContext.getCanvas(), drawContext.getDocument(), getOccupiedAreaBBox())
                     .showTextAligned(p, (rect.getLeft() + rect.getRight()) / 2, (rect.getBottom() + rect.getTop()) / 2,

@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -83,7 +83,7 @@ public class PageBorder extends GenericTest {
             PdfCanvas canvas = new PdfCanvas(docEvent.getPage());
             Rectangle rect = docEvent.getPage().getPageSize();
 
-            canvas.setLineWidth(5).setStrokeColor(Color.RED).rectangle(rect).stroke();
+            canvas.setLineWidth(5).setStrokeColor(ColorConstants.RED).rectangle(rect).stroke();
         }
     }
 }

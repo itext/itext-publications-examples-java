@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -44,37 +44,37 @@ public class SimpleTable10 extends GenericTest {
 
         Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
         Cell sn = new Cell(2, 1).add(new Paragraph("S/N"));
-        sn.setBackgroundColor(Color.YELLOW);
+        sn.setBackgroundColor(ColorConstants.YELLOW);
         table.addCell(sn);
         Cell name = new Cell(1, 3).add(new Paragraph("Name"));
-        name.setBackgroundColor(Color.CYAN);
+        name.setBackgroundColor(ColorConstants.CYAN);
         table.addCell(name);
         Cell age = new Cell(2, 1).add(new Paragraph("Age"));
-        age.setBackgroundColor(Color.GRAY);
+        age.setBackgroundColor(ColorConstants.GRAY);
         table.addCell(age);
         Cell surname = new Cell().add(new Paragraph("SURNAME"));
-        surname.setBackgroundColor(Color.BLUE);
+        surname.setBackgroundColor(ColorConstants.BLUE);
         table.addCell(surname);
         Cell firstname = new Cell().add(new Paragraph("FIRST NAME"));
-        firstname.setBackgroundColor(Color.RED);
+        firstname.setBackgroundColor(ColorConstants.RED);
         table.addCell(firstname);
         Cell middlename = new Cell().add(new Paragraph("MIDDLE NAME"));
-        middlename.setBackgroundColor(Color.GREEN);
+        middlename.setBackgroundColor(ColorConstants.GREEN);
         table.addCell(middlename);
         Cell f1 = new Cell().add(new Paragraph("1"));
-        f1.setBackgroundColor(Color.PINK);
+        f1.setBackgroundColor(ColorConstants.PINK);
         table.addCell(f1);
         Cell f2 = new Cell().add(new Paragraph("James"));
-        f2.setBackgroundColor(Color.MAGENTA);
+        f2.setBackgroundColor(ColorConstants.MAGENTA);
         table.addCell(f2);
         Cell f3 = new Cell().add(new Paragraph("Fish"));
-        f3.setBackgroundColor(Color.ORANGE);
+        f3.setBackgroundColor(ColorConstants.ORANGE);
         table.addCell(f3);
         Cell f4 = new Cell().add(new Paragraph("Stone"));
-        f4.setBackgroundColor(Color.DARK_GRAY);
+        f4.setBackgroundColor(ColorConstants.DARK_GRAY);
         table.addCell(f4);
         Cell f5 = new Cell().add(new Paragraph("17"));
-        f5.setBackgroundColor(Color.LIGHT_GRAY);
+        f5.setBackgroundColor(ColorConstants.LIGHT_GRAY);
         table.addCell(f5);
         doc.add(table);
 

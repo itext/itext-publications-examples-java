@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -60,7 +60,7 @@ public class SimpleTable7 extends GenericTest {
         PdfFont importantNoticeFont = PdfFontFactory.createFont(FontConstants.COURIER);
         Paragraph importantNotice = new Paragraph("Important: Form must be filled out in Adobe Reader or Acrobat Professional 8.1 or above. To save completed forms, Acrobat Professional is required. For technical and accessibility assistance, contact the Campus Controller's Office.");
         importantNotice.setFont(importantNoticeFont).setFontSize(9);
-        importantNotice.setFontColor(Color.RED);
+        importantNotice.setFontColor(ColorConstants.RED);
         doc.add(importantNotice);
 
         Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth().setFixedLayout().

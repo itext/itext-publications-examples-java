@@ -16,8 +16,13 @@
  */
 package com.itextpdf.samples.sandbox.images;
 
-import com.itextpdf.kernel.colors.Color;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.colors.ColorConstants;
+import com.itextpdf.kernel.pdf.PdfDictionary;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfStream;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.SolidBorder;
@@ -52,7 +57,7 @@ public class RepeatImage extends GenericTest {
         PdfImageXObject imgObject = new PdfImageXObject(imgStream);
         Image image = new Image(imgObject);
         image.setFixedPosition(0, 0);
-        image.setBorder(new SolidBorder(Color.BLACK, 5));
+        image.setBorder(new SolidBorder(ColorConstants.BLACK, 5));
         image.scaleAbsolute(pdfDoc.getFirstPage().getPageSize().getWidth(), pdfDoc.getFirstPage().getPageSize().getHeight());
         doc.add(image);
         doc.close();

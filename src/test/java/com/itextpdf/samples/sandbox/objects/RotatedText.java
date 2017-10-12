@@ -14,7 +14,7 @@ package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.barcodes.BarcodeEAN;
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -72,7 +72,7 @@ public class RotatedText extends GenericTest {
         PdfCanvas templateCanvas = new PdfCanvas(template, pdfDoc);
         new Canvas(templateCanvas, pdfDoc, new Rectangle(rect.getWidth(), rect.getHeight() + 10))
                 .showTextAligned(new Paragraph("DARK GRAY").setFont(regular).setFontSize(6), 0, rect.getHeight() + 2, TextAlignment.LEFT);
-        barcode.placeBarcode(templateCanvas, Color.BLACK, Color.BLACK);
+        barcode.placeBarcode(templateCanvas, ColorConstants.BLACK, ColorConstants.BLACK);
         Image image = new Image(template);
         image.setRotationAngle(Math.toRadians(90));
         image.setAutoScale(true);

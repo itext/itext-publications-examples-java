@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.annotations;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
@@ -42,7 +42,7 @@ public class CircleAnnotation extends GenericTest {
         PdfAnnotation annotation = new PdfCircleAnnotation(rect)
                 .setContents("Circle")
                 .setTitle(new PdfString("Circle"))
-                .setColor(Color.BLUE)
+                .setColor(ColorConstants.BLUE)
                 .setFlags(PdfAnnotation.PRINT)
                 .setBorderStyle(PdfAnnotation.STYLE_DASHED)
                 .setDashPattern(new PdfArray(new int[]{3, 2}))

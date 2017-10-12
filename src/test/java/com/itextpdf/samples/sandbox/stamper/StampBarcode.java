@@ -9,7 +9,7 @@
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.barcodes.BarcodeEAN;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -53,7 +53,7 @@ public class StampBarcode extends GenericTest {
             String s = String.valueOf(i);
             s = "00000000".substring(s.length()) + s;
             barcode.setCode(s);
-            PdfFormXObject barcodeXObject = barcode.createFormXObject(Color.BLACK, Color.BLACK, pdfDoc);
+            PdfFormXObject barcodeXObject = barcode.createFormXObject(ColorConstants.BLACK, ColorConstants.BLACK, pdfDoc);
             over.addXObject(barcodeXObject, x, y);
             System.out.println(over.toString());
         }

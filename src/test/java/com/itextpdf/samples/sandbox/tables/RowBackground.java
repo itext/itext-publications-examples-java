@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -81,7 +81,7 @@ public class RowBackground extends GenericTest {
             canvas.lineTo(urx, lly);
             canvas.arc(urx - h / 2, lly, urx + h / 2, ury, 270, 180);
             canvas.lineTo(llx, ury);
-            canvas.setFillColor(Color.LIGHT_GRAY);
+            canvas.setFillColor(ColorConstants.LIGHT_GRAY);
             canvas.fill();
             canvas.restoreState();
             super.draw(drawContext);

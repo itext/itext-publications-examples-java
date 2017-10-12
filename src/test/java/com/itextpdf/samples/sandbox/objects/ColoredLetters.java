@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -55,16 +55,16 @@ public class ColoredLetters extends GenericTest {
     private Text returnCorrectColor(char letter) throws IOException {
         if (letter == 'b') {
             return new Text("b")
-                    .setFontColor(Color.BLUE)
+                    .setFontColor(ColorConstants.BLUE)
                     .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD));
         } else if (letter == 'g') {
             return new Text("g")
-                    .setFontColor(Color.GREEN)
+                    .setFontColor(ColorConstants.GREEN)
                     .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
                     .setItalic();
         } else {
             return new Text(String.valueOf(letter))
-                    .setFontColor(Color.RED)
+                    .setFontColor(ColorConstants.RED)
                     .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA));
         }
     }

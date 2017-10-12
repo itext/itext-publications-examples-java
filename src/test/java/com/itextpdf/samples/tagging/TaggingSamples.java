@@ -9,6 +9,7 @@
 package com.itextpdf.samples.tagging;
 
 import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.CanvasArtifact;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -176,7 +177,7 @@ public class TaggingSamples extends ExtendedITextTest {
         // The blue star would be something like logo of our document.
         // So for example we don't want it to be read out loud on every page. To achieve it, we mark it as an Artifact.
         canvas.openTag(new CanvasArtifact());
-        drawStar(canvas, 30, 745, Color.BLUE);
+        drawStar(canvas, 30, 745, ColorConstants.BLUE);
         canvas.closeTag();
 
         // The green star we want to be a part of actual content and logical structure of the document.
@@ -187,7 +188,7 @@ public class TaggingSamples extends ExtendedITextTest {
         tagPointer.setPageForTagging(firstPage); // it is important to set the page at which new content will be tagged
 
         canvas.openTag(tagPointer.getTagReference());
-        drawStar(canvas, 450, 745, Color.GREEN);
+        drawStar(canvas, 450, 745, ColorConstants.GREEN);
         canvas.closeTag();
 
 
