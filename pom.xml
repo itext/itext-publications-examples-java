@@ -4,7 +4,7 @@
 
     <groupId>com.itextpdf</groupId>
     <artifactId>samples</artifactId>
-    <version>7.0.5-SNAPSHOT</version>
+    <version>7.0.6-SNAPSHOT</version>
 
     <name>iText 7 Examples: Sandbox</name>
     <url>http://itextpdf.com/</url>
@@ -18,9 +18,9 @@
         <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
         <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
         <licensekey.version>2.0.4</licensekey.version>
-        <cleanup.version>1.0.3-SNAPSHOT</cleanup.version>
-        <zugferd.version>1.0.2-SNAPSHOT</zugferd.version>
-        <pdfHtml.version>1.0.2-SNAPSHOT</pdfHtml.version>
+        <cleanup.version>1.1.1-SNAPSHOT</cleanup.version>
+        <zugferd.version>1.0.3-SNAPSHOT</zugferd.version>
+        <pdfHtml.version>1.0.3-SNAPSHOT</pdfHtml.version>
         <pdfCalligraph.version>1.0.4-SNAPSHOT</pdfCalligraph.version>
         <pdfXfa.version>1.0.2-SNAPSHOT</pdfXfa.version>
     </properties>
