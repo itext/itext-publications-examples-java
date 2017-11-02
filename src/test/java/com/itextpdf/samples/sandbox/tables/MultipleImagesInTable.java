@@ -53,7 +53,7 @@ public class MultipleImagesInTable extends GenericTest {
         Image img3 = new Image(ImageDataFactory.create(IMG3));
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table.setWidthPercent(20);
+        table.setWidth(UnitValue.createPercentValue(20));
 
         img1.setAutoScale(true);
         img2.setAutoScale(true);

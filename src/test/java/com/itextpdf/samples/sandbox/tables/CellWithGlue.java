@@ -49,7 +49,7 @@ public class CellWithGlue extends GenericTest {
 
         table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
-        table.setWidthPercent(60);
+        table.setWidth(UnitValue.createPercentValue(60));
         table.setMarginBottom(20);
         cell = new Cell().add(new Paragraph("Received Rs (in Words):"));
         cell.setBorder(Border.NO_BORDER);
@@ -66,12 +66,12 @@ public class CellWithGlue extends GenericTest {
         table.addCell(cell);
         doc.add(table);
 
-        table.setWidthPercent(50);
+        table.setWidth(UnitValue.createPercentValue(50));
         doc.add(table);
 
         table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
-        table.setWidthPercent(50);
+        table.setWidth(UnitValue.createPercentValue(50));
         Paragraph p = new Paragraph();
         p.add(new Text("Received Rs (In Words):"));
         p.addTabStops(new TabStop(1000, TabAlignment.RIGHT));

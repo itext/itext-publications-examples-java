@@ -42,7 +42,7 @@ public class LeadingInCell extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table.setWidthPercent(60);
+        table.setWidth(UnitValue.createPercentValue(60));
         Cell cell = new Cell();
         Paragraph p;
         p = new Paragraph("paragraph 1: leading 16. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(16);

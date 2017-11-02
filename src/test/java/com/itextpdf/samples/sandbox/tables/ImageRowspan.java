@@ -45,7 +45,7 @@ public class ImageRowspan extends GenericTest {
         Document doc = new Document(pdfDoc);
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
-        table.addCell(new Cell(2, 1).add(new Image(ImageDataFactory.create(IMG)).setWidthPercent(100)));
+        table.addCell(new Cell(2, 1).add(new Image(ImageDataFactory.create(IMG)).setWidth(UnitValue.createPercentValue(100))));
         table.addCell("1");
         table.addCell("2");
         doc.add(table);

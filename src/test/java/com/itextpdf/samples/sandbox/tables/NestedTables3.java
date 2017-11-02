@@ -110,9 +110,10 @@ public class NestedTables3 extends GenericTest {
                 PdfCanvas canvas = drawContext.getCanvas();
                 canvas.beginText();
                 Rectangle box = ((AbstractRenderer) renderer).getInnerAreaBBox();
-                canvas.moveText(box.getLeft(), box.getTop() - this.getPropertyAsFloat(Property.FONT_SIZE));
+                UnitValue fontSize = this.getPropertyAsUnitValue(Property.FONT_SIZE);
+                canvas.moveText(box.getLeft(), box.getTop() - (fontSize.isPointValue() ? fontSize.getValue() : 12f));
                 canvas.setFontAndSize(this.getPropertyAsFont(Property.FONT),
-                        this.getPropertyAsFloat(Property.FONT_SIZE));
+                        fontSize.isPointValue() ? fontSize.getValue() : 12f);
                 canvas.showText("This inner table header will always be repeated");
                 canvas.endText();
                 canvas.stroke();

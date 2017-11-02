@@ -57,7 +57,7 @@ public class MultipleImagesInCell extends GenericTest {
         Image img3 = new Image(ImageDataFactory.create(IMG3));
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table.setWidthPercent(50);
+        table.setWidth(UnitValue.createPercentValue(50));
         table.addCell("Different images, one after the other vertically:");
         Cell cell = new Cell();
 
@@ -78,11 +78,11 @@ public class MultipleImagesInCell extends GenericTest {
         table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell("Different images, one after the other vertically, but scaled:");
         cell = new Cell();
-        img1.setWidthPercent(20);
+        img1.setWidth(UnitValue.createPercentValue(20));
         cell.add(img1);
-        img2.setWidthPercent(20);
+        img2.setWidth(UnitValue.createPercentValue(20));
         cell.add(img2);
-        img3.setWidthPercent(20);
+        img3.setWidth(UnitValue.createPercentValue(20));
         cell.add(img3);
         table.addCell(cell);
         table.addCell("Different images, one after the other horizontally:");

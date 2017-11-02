@@ -83,7 +83,7 @@ public class SimpleTable7 extends GenericTest {
                 setFont(subtitleFont).setFontSize(9).setMarginBottom(10));
 
         table = new Table(UnitValue.createPercentArray(new float[]{30, 20, 50})).setFixedLayout()
-                .setWidthPercent(80);
+                .setWidth(UnitValue.createPercentValue(80));
         table.addCell(new Cell().add(docTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(subTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(importantNotice).setBorder(Border.NO_BORDER));

@@ -48,7 +48,7 @@ public class HyphenationExample extends GenericTest {
         Document doc = new Document(pdfDoc);
         doc.setMargins(0, 0, 0, 0);
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth().setFixedLayout();
-        table.setWidthPercent(10);
+        table.setWidth(UnitValue.createPercentValue(10));
         Text text = new Text("Leistungsscheinziffer");
         text.setHyphenation(new HyphenationConfig("de", "DE", 2, 2));
         table.addCell(new Cell().add(new Paragraph(text)));

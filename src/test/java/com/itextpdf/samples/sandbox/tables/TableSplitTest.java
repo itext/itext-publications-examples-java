@@ -64,7 +64,7 @@ public class TableSplitTest extends GenericTest {
                 "some Text in column 3", "Test data ", "column 5"};
 
         Table table = new Table(UnitValue.createPercentArray(new float[]{3, 2, 4, 3, 2}));
-        table.setWidthPercent(98);
+        table.setWidth(UnitValue.createPercentValue(98));
 
         for (String columnHeader : header) {
             Cell headerCell = new Cell().add(new Paragraph(columnHeader).setFont(
@@ -103,7 +103,7 @@ public class TableSplitTest extends GenericTest {
             info.setMarginTop(12f);
             doc.add(info);
             table = new Table(UnitValue.createPercentArray(new float[]{3, 2, 4, 3, 2}));
-            table.setWidthPercent(98);
+            table.setWidth(UnitValue.createPercentValue(98));
             table.setMarginTop(15);
 
             for (String columnHeader : header) {

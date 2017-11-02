@@ -50,7 +50,7 @@ public class NestedTableProblem extends GenericTest {
         Table table2 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table2.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table2.addCell(new Cell().setBorder(new SolidBorder(ColorConstants.RED, 1)).add(new Paragraph("Goodbye World")));
-        table2.setWidthPercent(80);
+        table2.setWidth(UnitValue.createPercentValue(80));
         // table 1
         Table table1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table1.setHorizontalAlignment(HorizontalAlignment.LEFT);

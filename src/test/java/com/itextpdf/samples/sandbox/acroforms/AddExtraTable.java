@@ -51,7 +51,7 @@ public class AddExtraTable extends GenericTest {
         form.flattenFields();
 
         Table table = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
-        table.setWidthPercent(80);
+        table.setWidth(UnitValue.createPercentValue(80));
         table.addHeaderCell("#");
         table.addHeaderCell("description");
         for (int i = 1; i <= 150; i++) {

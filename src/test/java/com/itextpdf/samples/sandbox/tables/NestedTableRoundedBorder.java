@@ -109,7 +109,7 @@ public class NestedTableRoundedBorder extends GenericTest {
         outertable.addCell(cell);
         // inner table 2
         innertable = new Table(UnitValue.createPercentArray(new float[]{3, 17, 1, 16}));
-        innertable.setWidthPercent(100);
+        innertable.setWidth(UnitValue.createPercentValue(100));
         // first row
         // column 1
         cell = new Cell();

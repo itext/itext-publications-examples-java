@@ -58,11 +58,11 @@ public class WatermarkedImages3 extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth().setWidthPercent(80);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth().setWidth(UnitValue.createPercentValue(80));
         for (int i = 0; i < 35; i++) {
             table.addCell(new Cell().add(new Paragraph("rahlrokks doesn't listen to what people tell him")));
         }
-        table.addCell(new Cell().add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno").setAutoScale(true).setWidthPercent(100)));
+        table.addCell(new Cell().add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno").setAutoScale(true).setWidth(UnitValue.createPercentValue(100))));
         doc.add(table);
         doc.showTextAligned("Bruno knows best", 260, 400, TextAlignment.CENTER, 45f * (float) Math.PI / 180f);
         doc.close();

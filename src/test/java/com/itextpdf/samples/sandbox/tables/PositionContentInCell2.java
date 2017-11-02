@@ -122,8 +122,9 @@ public class PositionContentInCell2 extends GenericTest {
             drawContext.getCanvas().addXObject(img.getXObject(), getOccupiedAreaBBox());
             drawContext.getCanvas().stroke();
 
+            UnitValue fontSizeUV = getPropertyAsUnitValue(Property.FONT_SIZE);
             float x = getOccupiedAreaBBox().getX() + wPct * getOccupiedAreaBBox().getWidth();
-            float y = getOccupiedAreaBBox().getY() + hPct * (getOccupiedAreaBBox().getHeight() - ((float) getPropertyAsFloat(Property.FONT_SIZE))*1.5f);
+            float y = getOccupiedAreaBBox().getY() + hPct * (getOccupiedAreaBBox().getHeight() - (fontSizeUV.isPointValue() ? fontSizeUV.getValue() : 12f)*1.5f);
             new Document(drawContext.getDocument()).showTextAligned(content, x, y, alignment);
 
         }

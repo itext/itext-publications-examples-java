@@ -49,7 +49,7 @@ public class SimpleTable13 extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(new float[]{5, 1}));
-        table.setWidthPercent(50);
+        table.setWidth(UnitValue.createPercentValue(50));
         table.setTextAlignment(TextAlignment.LEFT);
         table.addCell(new Cell().add(new Paragraph("Name: " + DATA[0][0])).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(DATA[0][1])).setBorder(Border.NO_BORDER));

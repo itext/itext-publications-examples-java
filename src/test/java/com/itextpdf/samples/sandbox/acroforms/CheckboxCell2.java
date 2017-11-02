@@ -48,7 +48,6 @@ public class CheckboxCell2 extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(6)).useAllAvailableWidth();
-        table.setWidthPercent(100);
         Cell cell;
         for (int i = 0; i < 6; i++) {
             cell = new Cell();

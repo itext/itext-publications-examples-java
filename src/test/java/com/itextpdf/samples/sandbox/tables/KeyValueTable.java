@@ -61,7 +61,7 @@ public class KeyValueTable extends GenericTest {
 
     public Table createTable(UserObject user) {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        table.setWidthPercent(30).setMarginBottom(10);
+        table.setWidth(UnitValue.createPercentValue(30)).setMarginBottom(10);
         table.addHeaderCell(new Cell().setFont(bold).add(new Paragraph("Key")));
         table.addHeaderCell(new Cell().setFont(bold).add(new Paragraph("Value")));
         table.addCell(new Cell().setFont(bold).add(new Paragraph("Name")));

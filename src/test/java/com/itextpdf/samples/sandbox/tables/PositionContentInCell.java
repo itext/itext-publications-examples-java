@@ -114,8 +114,8 @@ public class PositionContentInCell extends GenericTest {
 
             Paragraph p = new Paragraph(content);
             Leading leading = p.getDefaultProperty(Property.LEADING);
-            Float defaultFontSize = new DocumentRenderer(new Document(drawContext.getDocument())).getPropertyAsFloat(Property.FONT_SIZE);
-
+            UnitValue defaultFontSizeUV = new DocumentRenderer(new Document(drawContext.getDocument())).getPropertyAsUnitValue(Property.FONT_SIZE);
+            float defaultFontSize = defaultFontSizeUV.isPointValue() ? defaultFontSizeUV.getValue() : 12f;
             float x;
             float y;
             TextAlignment alignment;
