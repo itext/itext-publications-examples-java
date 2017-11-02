@@ -8,7 +8,7 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -61,7 +61,7 @@ public class PageLabels extends GenericTest {
         doc.add(new Paragraph("Hello People"));
         doc.add(new AreaBreak());
 
-        PdfFont bf = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        PdfFont bf = PdfFontFactory.createFont(StandardFonts.HELVETICA);
 
         // we add the text to the direct content, but not in the right order
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(2));

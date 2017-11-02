@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -37,8 +37,8 @@ public class KeyValueTable extends GenericTest {
 
     @Override
     public void manipulatePdf(String dest) throws IOException {
-        regular = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
-        bold = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+        regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
+        bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
 
         UserObject rohit = new UserObject();
         rohit.setName("Rohit");

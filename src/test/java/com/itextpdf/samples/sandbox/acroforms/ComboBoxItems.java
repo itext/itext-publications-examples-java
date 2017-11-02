@@ -15,7 +15,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.PdfException;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
@@ -86,7 +86,7 @@ public class ComboBoxItems extends GenericTest {
         public void draw(DrawContext drawContext) {
             PdfFont font;
             try {
-                font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+                font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
             } catch (IOException e) {
                 throw new PdfException(e);
             }

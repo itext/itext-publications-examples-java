@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -62,7 +62,7 @@ public class AddExtraPage extends GenericTest {
         // the easiest way to add a Text object to Paragraph
         p.add("Hello ");
         // use add(Text) if you want to specify some Text characteristics, for example, font size
-        p.add(new Text("World").setFont(PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD)));
+        p.add(new Text("World").setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD)));
 
         for (int i = 1; i < 101; i++) {
             doc.add(new Paragraph("Hello " + i));

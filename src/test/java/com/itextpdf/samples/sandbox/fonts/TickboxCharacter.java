@@ -13,7 +13,7 @@
 
 package com.itextpdf.samples.sandbox.fonts;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -46,7 +46,7 @@ public class TickboxCharacter extends GenericTest {
         Paragraph p = new Paragraph("This is a tick box character: ");
 
         Text text = new Text("o");
-        PdfFont zapfdingbats = PdfFontFactory.createFont(FontConstants.ZAPFDINGBATS);
+        PdfFont zapfdingbats = PdfFontFactory.createFont(StandardFonts.ZAPFDINGBATS);
         text.setFont(zapfdingbats);
         text.setFontSize(14);
         p.add(text);

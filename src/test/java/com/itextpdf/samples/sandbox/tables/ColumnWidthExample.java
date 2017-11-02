@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -51,7 +51,7 @@ public class ColumnWidthExample extends GenericTest {
 
         float[] columnWidths = {1, 5, 5};
         Table table = new Table(UnitValue.createPercentArray(columnWidths));
-        PdfFont f = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        PdfFont f = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Cell cell = new Cell(1, 3)
                 .add(new Paragraph("This is a header"))
                 .setFont(f)

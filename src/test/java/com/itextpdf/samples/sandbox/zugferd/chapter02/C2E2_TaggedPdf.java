@@ -12,7 +12,7 @@
 */
 package com.itextpdf.samples.sandbox.zugferd.chapter02;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -57,7 +57,7 @@ public class C2E2_TaggedPdf extends GenericTest {
         //==========
 
         Paragraph p = new Paragraph();
-        p.setFont(PdfFontFactory.createFont(FontConstants.HELVETICA)).setFontSize(20);
+        p.setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA)).setFontSize(20);
         Text text = new Text("The quick brown ");
         p.add(text);
         Image image = new Image(ImageDataFactory.create(FOX));

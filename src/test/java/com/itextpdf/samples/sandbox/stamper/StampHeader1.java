@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.stamper;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -46,7 +46,7 @@ public class StampHeader1 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
         Paragraph header = new Paragraph("Copy")
-                .setFont(PdfFontFactory.createFont(FontConstants.HELVETICA))
+                .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
                 .setFontSize(14)
                 .setFontColor(ColorConstants.RED);
         for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {

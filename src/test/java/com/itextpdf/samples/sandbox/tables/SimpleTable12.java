@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -71,7 +71,7 @@ public class SimpleTable12 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
-        font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
         table.addCell(createCell("Examination", 1, 2, 15));
         table.addCell(createCell("Board", 1, 2, 15));

@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -68,7 +68,7 @@ public class TableSplitTest extends GenericTest {
 
         for (String columnHeader : header) {
             Cell headerCell = new Cell().add(new Paragraph(columnHeader).setFont(
-                    PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                    PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
                     .setFontSize(10));
             headerCell.setTextAlignment(TextAlignment.CENTER);
             headerCell.setVerticalAlignment(VerticalAlignment.MIDDLE);
@@ -84,7 +84,7 @@ public class TableSplitTest extends GenericTest {
                 }
                 j++;
                 Cell cell = new Cell().add(new Paragraph(text).setFont(
-                        PdfFontFactory.createFont(FontConstants.HELVETICA))
+                        PdfFontFactory.createFont(StandardFonts.HELVETICA))
                         .setFontSize(10));
                 cell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
                 cell.setPaddingLeft(5);
@@ -98,7 +98,7 @@ public class TableSplitTest extends GenericTest {
         doc.add(tableEndSeparator);
         for (int k = 0; k < 5; k++) {
             Paragraph info = new Paragraph("Some title").setFont(
-                    PdfFontFactory.createFont(FontConstants.HELVETICA))
+                    PdfFontFactory.createFont(StandardFonts.HELVETICA))
                     .setFontSize(10);
             info.setMarginTop(12f);
             doc.add(info);
@@ -108,7 +108,7 @@ public class TableSplitTest extends GenericTest {
 
             for (String columnHeader : header) {
                 Cell headerCell = new Cell().add(new Paragraph(columnHeader).setFont(
-                        PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD))
+                        PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
                         .setFontSize(10));
                 headerCell.setTextAlignment(TextAlignment.CENTER);
                 headerCell.setVerticalAlignment(VerticalAlignment.MIDDLE);
@@ -121,7 +121,7 @@ public class TableSplitTest extends GenericTest {
             }
             for (String text : content) {
                 Cell cell = new Cell().add(new Paragraph(text).setFont(
-                        PdfFontFactory.createFont(FontConstants.HELVETICA))
+                        PdfFontFactory.createFont(StandardFonts.HELVETICA))
                         .setFontSize(10));
                 cell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
                 cell.setPaddingLeft(5);

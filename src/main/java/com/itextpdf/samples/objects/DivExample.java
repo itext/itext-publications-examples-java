@@ -8,9 +8,7 @@
  */
 package com.itextpdf.samples.objects;
 
-import java.io.IOException;
-
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -20,6 +18,8 @@ import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Div;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.HorizontalAlignment;
+
+import java.io.IOException;
 
 public class DivExample {
 
@@ -31,7 +31,7 @@ public class DivExample {
 	public static void main(String[] args) throws IOException {
 		PdfWriter writer = new PdfWriter("Notiz.pdf");
 		PdfDocument pdfDocument = new PdfDocument(writer);
-		PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+		PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
 		Document doc = new Document(pdfDocument);
 		Paragraph para = new Paragraph(TEXT1);
 		doc.add(para);
