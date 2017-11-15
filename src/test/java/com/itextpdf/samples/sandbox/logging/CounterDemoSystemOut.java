@@ -8,9 +8,8 @@
  */
 package com.itextpdf.samples.sandbox.logging;
 
-import com.itextpdf.kernel.log.CounterFactory;
-import com.itextpdf.kernel.log.DefaultCounter;
-import com.itextpdf.kernel.log.SystemOutCounter;
+import com.itextpdf.kernel.log.CounterManager;
+import com.itextpdf.kernel.log.SystemOutCounterFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -46,7 +45,8 @@ public class CounterDemoSystemOut extends GenericTest {
 
     @Override
     public void manipulatePdf(String dest) throws IOException {
-        CounterFactory.getInstance().setCounter(new SystemOutCounter());
+        SystemOutCounterFactory sysOutFactory = new SystemOutCounterFactory();
+        CounterManager.getInstance().register(sysOutFactory);
 
         createPdf();
         PdfReader reader = new PdfReader(SRC);
@@ -54,7 +54,7 @@ public class CounterDemoSystemOut extends GenericTest {
         Document document = new Document(pdfDocument).showTextAligned(new Paragraph("Stamped text"), 559, 806, TextAlignment.RIGHT);
         document.close();
 
-        CounterFactory.getInstance().setCounter(new DefaultCounter());
+        CounterManager.getInstance().unregister(sysOutFactory);
     }
 
 }
