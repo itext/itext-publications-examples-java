@@ -22,6 +22,7 @@ import com.itextpdf.kernel.pdf.PdfOutputIntent;
 import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.WriterProperties;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
@@ -55,7 +56,7 @@ public class C2E4_PdfA3a extends GenericTest {
         //Set output intents
         //Create PdfAWDocument with the required conformance level
         InputStream is = new FileInputStream(ICC);
-        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_3A,
+        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest, new WriterProperties().addUAXmpMetadata()), PdfAConformanceLevel.PDF_A_3A,
                 new PdfOutputIntent("Custom", "", "http://www.color.org", "sRGB IEC61966-2.1", is));
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 

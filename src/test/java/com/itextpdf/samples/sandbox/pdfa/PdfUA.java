@@ -44,7 +44,7 @@ public class PdfUA extends GenericTest {
     }
 
     public void manipulatePdf(String dest) throws IOException, XMPException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, new WriterProperties().setPdfVersion(PdfVersion.PDF_1_7)));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, new WriterProperties().addUAXmpMetadata().setPdfVersion(PdfVersion.PDF_1_7)));
         Document document = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
         //TAGGED PDF
         //Make document tagged
