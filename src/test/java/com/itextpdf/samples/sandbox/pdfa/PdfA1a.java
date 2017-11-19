@@ -22,6 +22,7 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
+import com.itextpdf.kernel.pdf.tagging.StandardRoles;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
@@ -69,7 +70,7 @@ public class PdfA1a extends GenericTest {
         template = new PdfFormXObject(new Rectangle(795, 575, 30, 30));
         PdfCanvas canvas = new PdfCanvas(template, pdfDoc);
         total = new Image(template);
-        total.setRole(PdfName.Artifact);
+        total.getAccessibilityProperties().setRole(StandardRoles.ARTIFACT);
 
         pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE, new HeaderHandler());
         pdfDoc.getCatalog().setLang(new PdfString("en-us"));
