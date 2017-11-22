@@ -20,10 +20,10 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutResult;
+import com.itextpdf.layout.layout.RootLayoutArea;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
-
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
@@ -63,7 +63,7 @@ public class ColumnTextParagraphs extends GenericTest {
                             .lineTo(297.5f, 806)
                             .stroke();
                 }
-                return (currentArea = new LayoutArea(currentPageNumber, COLUMNS[nextAreaNumber++ % 2].clone()));
+                return (currentArea = new RootLayoutArea(currentPageNumber, COLUMNS[nextAreaNumber++ % 2].clone()));
             }
         });
 

@@ -20,6 +20,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -42,9 +43,9 @@ public class ImageRowspan extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
-        table.addCell(new Cell(2, 1).add(new Image(ImageDataFactory.create(IMG)).setWidthPercent(100)));
+        table.addCell(new Cell(2, 1).add(new Image(ImageDataFactory.create(IMG)).setWidth(UnitValue.createPercentValue(100))));
         table.addCell("1");
         table.addCell("2");
         doc.add(table);

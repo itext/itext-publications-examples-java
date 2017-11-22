@@ -12,14 +12,16 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -35,8 +37,8 @@ public class KeyValueTable extends GenericTest {
 
     @Override
     public void manipulatePdf(String dest) throws IOException {
-        regular = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
-        bold = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+        regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
+        bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
 
         UserObject rohit = new UserObject();
         rohit.setName("Rohit");
@@ -58,18 +60,18 @@ public class KeyValueTable extends GenericTest {
     }
 
     public Table createTable(UserObject user) {
-        Table table = new Table(2);
-        table.setWidthPercent(30).setMarginBottom(10);
-        table.addHeaderCell(new Cell().setFont(bold).add("Key"));
-        table.addHeaderCell(new Cell().setFont(bold).add("Value"));
-        table.addCell(new Cell().setFont(bold).add("Name"));
-        table.addCell(new Cell().setFont(regular).add(user.getName()));
-        table.addCell(new Cell().setFont(bold).add("Id"));
-        table.addCell(new Cell().setFont(regular).add(user.getId()));
-        table.addCell(new Cell().setFont(bold).add("Reputation"));
-        table.addCell(new Cell().setFont(regular).add(String.valueOf(user.getReputation())));
-        table.addCell(new Cell().setFont(bold).add("Job title"));
-        table.addCell(new Cell().setFont(regular).add(user.getJobtitle()));
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+        table.setWidth(UnitValue.createPercentValue(30)).setMarginBottom(10);
+        table.addHeaderCell(new Cell().setFont(bold).add(new Paragraph("Key")));
+        table.addHeaderCell(new Cell().setFont(bold).add(new Paragraph("Value")));
+        table.addCell(new Cell().setFont(bold).add(new Paragraph("Name")));
+        table.addCell(new Cell().setFont(regular).add(new Paragraph(user.getName())));
+        table.addCell(new Cell().setFont(bold).add(new Paragraph("Id")));
+        table.addCell(new Cell().setFont(regular).add(new Paragraph(user.getId())));
+        table.addCell(new Cell().setFont(bold).add(new Paragraph("Reputation")));
+        table.addCell(new Cell().setFont(regular).add(new Paragraph(String.valueOf(user.getReputation()))));
+        table.addCell(new Cell().setFont(bold).add(new Paragraph("Job title")));
+        table.addCell(new Cell().setFont(regular).add(new Paragraph(user.getJobtitle())));
         return table;
     }
 

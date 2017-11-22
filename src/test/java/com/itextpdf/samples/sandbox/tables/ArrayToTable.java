@@ -18,6 +18,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -43,7 +44,7 @@ public class ArrayToTable extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(8);
+        Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
         List<List<String>> dataset = getData();
         for (List<String> record : dataset) {
             for (String field : record) {

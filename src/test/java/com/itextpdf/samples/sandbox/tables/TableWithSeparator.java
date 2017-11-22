@@ -25,6 +25,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.LineSeparator;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -47,7 +48,7 @@ public class TableWithSeparator extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell(getCell1());
         table.addCell(getCell2());
         table.addCell(getCell3());

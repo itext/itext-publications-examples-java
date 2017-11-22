@@ -15,8 +15,9 @@ package com.itextpdf.samples.sandbox.tables;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
@@ -44,16 +45,16 @@ public class NestedTableRoundedBorder extends GenericTest {
 
         Cell cell;
         // outer table
-        Table outertable = new Table(1);
+        Table outertable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         // inner table 1
         Table innertable = new Table(UnitValue.createPercentArray(new float[]{8, 12, 1, 4, 12})).useAllAvailableWidth();
         // first row
         // column 1
-        cell = new Cell().add("Record Ref:");
+        cell = new Cell().add(new Paragraph("Record Ref:"));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 2
-        cell = new Cell().add("GN Staff");
+        cell = new Cell().add(new Paragraph("GN Staff"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
         // column 3
@@ -61,11 +62,11 @@ public class NestedTableRoundedBorder extends GenericTest {
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 4
-        cell = new Cell().add("Date: ");
+        cell = new Cell().add(new Paragraph("Date: "));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 5
-        cell = new Cell().add("30/4/2015");
+        cell = new Cell().add(new Paragraph("30/4/2015"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
         // spacing
@@ -75,11 +76,11 @@ public class NestedTableRoundedBorder extends GenericTest {
         innertable.addCell(cell);
         // second row
         // column 1
-        cell = new Cell().add("Hospital:");
+        cell = new Cell().add(new Paragraph("Hospital:"));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 2
-        cell = new Cell().add("Derby Royal");
+        cell = new Cell().add(new Paragraph("Derby Royal"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
         // column 3
@@ -87,12 +88,12 @@ public class NestedTableRoundedBorder extends GenericTest {
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 4
-        cell = new Cell().add("Ward: ");
+        cell = new Cell().add(new Paragraph("Ward: "));
         cell.setBorder(Border.NO_BORDER);
         cell.setPaddingLeft(5);
         innertable.addCell(cell);
         // column 5
-        cell = new Cell().add("21");
+        cell = new Cell().add(new Paragraph("21"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
         // spacing
@@ -108,14 +109,14 @@ public class NestedTableRoundedBorder extends GenericTest {
         outertable.addCell(cell);
         // inner table 2
         innertable = new Table(UnitValue.createPercentArray(new float[]{3, 17, 1, 16}));
-        innertable.setWidthPercent(100);
+        innertable.setWidth(UnitValue.createPercentValue(100));
         // first row
         // column 1
         cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 2
-        cell = new Cell().add("Name");
+        cell = new Cell().add(new Paragraph("Name"));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 3
@@ -123,7 +124,7 @@ public class NestedTableRoundedBorder extends GenericTest {
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // column 4
-        cell = new Cell().add("Signature: ");
+        cell = new Cell().add(new Paragraph("Signature: "));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
         // spacing
@@ -134,7 +135,7 @@ public class NestedTableRoundedBorder extends GenericTest {
         // subsequent rows
         for (int i = 1; i < 4; i++) {
             // column 1
-            cell = new Cell().add(String.format("%s:", i));
+            cell = new Cell().add(new Paragraph(String.format("%s:", i)));
             cell.setBorder(Border.NO_BORDER);
             innertable.addCell(cell);
             // column 2

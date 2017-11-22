@@ -41,11 +41,11 @@ public class AddAccepted extends GenericTest {
         Rectangle stickyRectangle = sticky.getRectangle().toRectangle();
         PdfAnnotation replySticky = new PdfTextAnnotation(stickyRectangle)
                 .setStateModel(new PdfString("Review"))
+                .setOpen(false)
                 .setState(new PdfString("Accepted"))
                 .setIconName(new PdfName("Comment"))
                 .setInReplyTo(sticky)
                 .setText(new PdfString("Bruno"))
-                .setOpen(false)
                 .setContents("Accepted by Bruno")
                 .setFlags(sticky.getFlags() + PdfAnnotation.HIDDEN);
         pdfDoc.getFirstPage().addAnnotation(replySticky);

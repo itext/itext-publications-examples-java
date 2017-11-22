@@ -13,6 +13,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -48,7 +49,7 @@ public class ListInCell extends GenericTest {
         phraseCell.add(list);
 
         // We add the cell to a table:
-        Table phraseTable = new Table(2);
+        Table phraseTable = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         phraseTable.setMarginTop(5);
         phraseTable.addCell("List wrapped in a phrase:");
         phraseTable.addCell(phraseCell);
@@ -65,7 +66,7 @@ public class ListInCell extends GenericTest {
         cell.add(list);
 
         // We add the cell to the table:
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(5);
         table.addCell("List placed directly into cell");
         table.addCell(cell);

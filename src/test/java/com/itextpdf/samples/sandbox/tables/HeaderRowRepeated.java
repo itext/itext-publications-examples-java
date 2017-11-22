@@ -16,6 +16,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -38,7 +39,7 @@ public class HeaderRowRepeated extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         // table with 2 columns:
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         // header row:
         table.addHeaderCell("Key");
         table.addHeaderCell("Value");

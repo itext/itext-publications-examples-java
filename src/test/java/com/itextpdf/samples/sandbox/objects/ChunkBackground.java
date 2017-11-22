@@ -15,9 +15,9 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.io.font.PdfEncodings;
-import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -47,7 +47,7 @@ public class ChunkBackground extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont f = PdfFontFactory.createFont(FontConstants.TIMES_BOLD, PdfEncodings.WINANSI);
+        PdfFont f = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD, PdfEncodings.WINANSI);
         Text text = new Text("White text on red background")
                 .setFont(f)
                 .setFontSize(25.0f)

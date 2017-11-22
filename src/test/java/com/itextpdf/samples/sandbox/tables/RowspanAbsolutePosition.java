@@ -21,6 +21,7 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.HorizontalAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -47,7 +48,7 @@ public class RowspanAbsolutePosition extends GenericTest {
         Cell cell = new Cell(1, 2).add(new Paragraph("{Month}"));
         cell.setHorizontalAlignment(HorizontalAlignment.LEFT);
         Image img = new Image(ImageDataFactory.create(IMG));
-        img.setWidthPercent(100);
+        img.setWidth(UnitValue.createPercentValue(100));
         img.setAutoScale(true);
         Cell cell2 = new Cell(2, 1).add(img);
         Cell cell3 = new Cell(1, 2).add(new Paragraph("Mr Fname Lname"));

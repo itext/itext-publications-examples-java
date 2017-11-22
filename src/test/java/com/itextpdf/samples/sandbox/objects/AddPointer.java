@@ -13,7 +13,7 @@
 package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;

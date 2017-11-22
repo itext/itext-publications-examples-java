@@ -17,7 +17,9 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -37,16 +39,16 @@ public class SplitRowAtEndOfPage extends GenericTest {
 
     @Override
     protected void manipulatePdf(String dest) throws Exception {
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         // Notice that the width is bigger than available area (612 - 36 - 36 = 540, where 36 is the value of the left (and the right) margin
         table.setWidth(550);
         // the number of iterations has been changed in order to provide the same as in itext5 example
         for (int i = 0; i < 6; i++) {
             Cell cell;
             if (i == 5) {
-                cell = new Cell().add("Three\nLines\nHere");
+                cell = new Cell().add(new Paragraph("Three\nLines\nHere"));
             } else {
-                cell = new Cell().add(Integer.toString(i));
+                cell = new Cell().add(new Paragraph(Integer.toString(i)));
             }
             table.addCell(cell);
         }

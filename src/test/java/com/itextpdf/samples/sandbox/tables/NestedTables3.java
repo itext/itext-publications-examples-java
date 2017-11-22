@@ -22,6 +22,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.AbstractRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.IRenderer;
@@ -49,26 +50,26 @@ public class NestedTables3 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setNextRenderer(new InnerTableRenderer(table, new Table.RowRange(0, 0)));
-        Cell cell = new Cell(1, 2).add("This outer header is repeated on every page");
+        Cell cell = new Cell(1, 2).add(new Paragraph("This outer header is repeated on every page"));
         table.addHeaderCell(cell);
-        Table inner1 = new Table(1);
+        Table inner1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         cell = new Cell();
         cell.setHeight(20);
         inner1.addHeaderCell(cell);
-        cell = new Cell().add("This inner header won't be repeated on every page");
+        cell = new Cell().add(new Paragraph("This inner header won't be repeated on every page"));
         inner1.addHeaderCell(cell);
         for (int i = 0; i < 10; i++) {
             inner1.addCell(new Cell().add(new Paragraph("test")));
         }
         cell = new Cell().add(inner1);
         table.addCell(cell.setPadding(0));
-        Table inner2 = new Table(1);
+        Table inner2 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         cell = new Cell();
         cell.setHeight(20);
         inner2.addHeaderCell(cell);
-        cell = new Cell().add("This inner may be repeated on every page");
+        cell = new Cell().add(new Paragraph("This inner may be repeated on every page"));
         inner2.addHeaderCell(cell);
         for (int i = 0; i < 35; i++) {
             inner2.addCell("test");
@@ -109,9 +110,10 @@ public class NestedTables3 extends GenericTest {
                 PdfCanvas canvas = drawContext.getCanvas();
                 canvas.beginText();
                 Rectangle box = ((AbstractRenderer) renderer).getInnerAreaBBox();
-                canvas.moveText(box.getLeft(), box.getTop() - this.getPropertyAsFloat(Property.FONT_SIZE));
+                UnitValue fontSize = this.getPropertyAsUnitValue(Property.FONT_SIZE);
+                canvas.moveText(box.getLeft(), box.getTop() - (fontSize.isPointValue() ? fontSize.getValue() : 12f));
                 canvas.setFontAndSize(this.getPropertyAsFont(Property.FONT),
-                        this.getPropertyAsFloat(Property.FONT_SIZE));
+                        fontSize.isPointValue() ? fontSize.getValue() : 12f);
                 canvas.showText("This inner table header will always be repeated");
                 canvas.endText();
                 canvas.stroke();
@@ -119,7 +121,7 @@ public class NestedTables3 extends GenericTest {
         }
 
         @Override
-        public InnerTableRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new InnerTableRenderer((Table) modelElement);
         }
     }

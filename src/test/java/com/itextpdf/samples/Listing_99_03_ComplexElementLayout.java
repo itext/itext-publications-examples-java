@@ -8,7 +8,7 @@
  */
 package com.itextpdf.samples;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -16,6 +16,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -47,7 +48,7 @@ public class Listing_99_03_ComplexElementLayout extends GenericTest {
         Paragraph twoColumnParagraph = new Paragraph();
         twoColumnParagraph.setNextRenderer(new TwoColumnParagraphRenderer(twoColumnParagraph));
         twoColumnParagraph.add(text.toString());
-        doc.add(twoColumnParagraph.setFont(PdfFontFactory.createFont(FontConstants.HELVETICA)));
+        doc.add(twoColumnParagraph.setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA)));
 
         doc.add(new Paragraph("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
 
@@ -75,7 +76,7 @@ public class Listing_99_03_ComplexElementLayout extends GenericTest {
         }
 
         @Override
-        public ParagraphRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new TwoColumnParagraphRenderer((Paragraph) modelElement);
         }
     }

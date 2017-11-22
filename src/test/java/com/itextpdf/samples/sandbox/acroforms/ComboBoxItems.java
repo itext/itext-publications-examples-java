@@ -15,9 +15,9 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.PdfException;
-import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -26,7 +26,9 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -35,7 +37,6 @@ import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 @Category(SampleTest.class)
@@ -53,12 +54,12 @@ public class ComboBoxItems extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(612, 792));
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell;
         // Add rows with selectors
         String[] options = {"Choose first option", "Choose second option", "Choose third option"};
         String[] exports = {"option1", "option2", "option3"};
-        table.addCell(new Cell().add("Combobox:"));
+        table.addCell(new Cell().add(new Paragraph("Combobox:")));
         cell = new Cell();
         cell.setNextRenderer(new SelectCellRenderer(cell, "Choose first option", exports, options));
         cell.setHeight(20);
@@ -85,7 +86,7 @@ public class ComboBoxItems extends GenericTest {
         public void draw(DrawContext drawContext) {
             PdfFont font;
             try {
-                font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+                font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
             } catch (IOException e) {
                 throw new PdfException(e);
             }

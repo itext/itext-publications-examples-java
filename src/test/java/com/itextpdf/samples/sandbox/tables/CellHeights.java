@@ -16,6 +16,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -40,7 +41,7 @@ public class CellHeights extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A5).rotate());
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         // a long phrase with newlines
         Paragraph p = new Paragraph("Dr. iText or:\nHow I Learned to Stop Worrying\nand Love PDF.");
         Cell cell = new Cell().add(p);
@@ -54,7 +55,7 @@ public class CellHeights extends GenericTest {
         table.addCell(cell.clone(true));
         // The minimum height is exceeded
         table.addCell("minimum height");
-        cell = new Cell().add("Dr. iText");
+        cell = new Cell().add(new Paragraph("Dr. iText"));
         cell.setMinHeight(70);
         table.addCell(cell.clone(true));
         // the last cell that should be extended

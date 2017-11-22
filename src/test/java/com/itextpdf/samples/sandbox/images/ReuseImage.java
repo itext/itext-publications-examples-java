@@ -45,7 +45,7 @@ public class ReuseImage extends GenericTest {
         PdfDictionary pageXObjects = pageResources.getAsDictionary(PdfName.XObject);
         PdfName imgRef = pageXObjects.keySet().iterator().next();
         PdfStream imgStream = pageXObjects.getAsStream(imgRef);
-        PdfImageXObject imgObject = new PdfImageXObject(imgStream.copyTo(resultDoc));
+        PdfImageXObject imgObject = new PdfImageXObject((PdfStream) imgStream.copyTo(resultDoc));
 
         srcDoc.close();
 

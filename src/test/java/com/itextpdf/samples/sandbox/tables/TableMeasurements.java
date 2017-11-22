@@ -12,7 +12,6 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -20,6 +19,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -45,7 +45,7 @@ public class TableMeasurements extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(10);
+        Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth();
         table.setWidth(millimetersToPoints(100));
         table.addCell(getCell(10));
         table.addCell(getCell(5));

@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -72,7 +72,7 @@ public class TextFooter extends GenericTest {
             Rectangle pageSize = docEvent.getPage().getPageSize();
             canvas.beginText();
             try {
-                canvas.setFontAndSize(PdfFontFactory.createFont(FontConstants.HELVETICA_OBLIQUE), 5);
+                canvas.setFontAndSize(PdfFontFactory.createFont(StandardFonts.HELVETICA_OBLIQUE), 5);
             } catch (IOException e) {
                 e.printStackTrace();
             }

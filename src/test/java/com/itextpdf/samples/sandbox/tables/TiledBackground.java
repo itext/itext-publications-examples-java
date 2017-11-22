@@ -14,19 +14,20 @@ package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
-import com.itextpdf.kernel.color.Color;
-import com.itextpdf.kernel.color.PatternColor;
+import com.itextpdf.kernel.colors.Color;
+import com.itextpdf.kernel.colors.PatternColor;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.canvas.PdfPatternCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.BoxSizingPropertyValue;
 import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -53,7 +54,7 @@ public class TiledBackground extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell = new Cell();
         ImageData image = ImageDataFactory.create(IMG1);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));

@@ -12,14 +12,14 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
@@ -47,23 +47,23 @@ public class SimpleTable7 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont titleFont = PdfFontFactory.createFont(FontConstants.COURIER_BOLD);
+        PdfFont titleFont = PdfFontFactory.createFont(StandardFonts.COURIER_BOLD);
         Paragraph docTitle = new Paragraph("UCSC Direct - Direct Payment Form").setMarginRight(1);
         docTitle.setFont(titleFont).setFontSize(11);
         doc.add(docTitle);
 
-        PdfFont subtitleFont = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
+        PdfFont subtitleFont = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
         Paragraph subTitle = new Paragraph("(not to be used for reimbursement of services)");
         subTitle.setFont(subtitleFont).setFontSize(9);
         doc.add(subTitle);
 
-        PdfFont importantNoticeFont = PdfFontFactory.createFont(FontConstants.COURIER);
+        PdfFont importantNoticeFont = PdfFontFactory.createFont(StandardFonts.COURIER);
         Paragraph importantNotice = new Paragraph("Important: Form must be filled out in Adobe Reader or Acrobat Professional 8.1 or above. To save completed forms, Acrobat Professional is required. For technical and accessibility assistance, contact the Campus Controller's Office.");
         importantNotice.setFont(importantNoticeFont).setFontSize(9);
         importantNotice.setFontColor(ColorConstants.RED);
         doc.add(importantNotice);
 
-        Table table = new Table(10).setFixedLayout().
+        Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth().setFixedLayout().
                 setWidth(UnitValue.createPercentValue(80));
         Cell cell = new Cell(1, 3).add(docTitle);
         cell.setBorder(Border.NO_BORDER);
@@ -83,7 +83,7 @@ public class SimpleTable7 extends GenericTest {
                 setFont(subtitleFont).setFontSize(9).setMarginBottom(10));
 
         table = new Table(UnitValue.createPercentArray(new float[]{30, 20, 50})).setFixedLayout()
-                .setWidthPercent(80);
+                .setWidth(UnitValue.createPercentValue(80));
         table.addCell(new Cell().add(docTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(subTitle).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(importantNotice).setBorder(Border.NO_BORDER));

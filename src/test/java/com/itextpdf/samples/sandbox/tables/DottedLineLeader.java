@@ -44,7 +44,7 @@ public class DottedLineLeader extends GenericTest {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(new float[]{10, 30, 10}));
-        table.setWidthPercent(50);
+        table.setWidth(UnitValue.createPercentValue(50));
         ILineDrawer leader = new DottedLine(1.5f, 6);
 
         Paragraph p;

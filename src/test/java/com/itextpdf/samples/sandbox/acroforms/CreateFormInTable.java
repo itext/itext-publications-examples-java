@@ -19,7 +19,9 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -45,14 +47,14 @@ public class CreateFormInTable extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell;
-        cell = new Cell().add("Name:");
+        cell = new Cell().add(new Paragraph("Name:"));
         table.addCell(cell);
         cell = new Cell();
         cell.setNextRenderer(new MyCellRenderer(cell, "name"));
         table.addCell(cell);
-        cell = new Cell().add("Address");
+        cell = new Cell().add(new Paragraph("Address"));
         table.addCell(cell);
         cell = new Cell();
         cell.setNextRenderer(new MyCellRenderer(cell, "address"));

@@ -12,13 +12,13 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.List;
 import com.itextpdf.layout.element.Paragraph;
@@ -54,7 +54,7 @@ public class IndentationOptions extends GenericTest {
                 add(CONTENT);
         doc.add(list);
 
-        PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Paragraph p = new Paragraph(LABEL + CONTENT).setFont(font);
         float indentation = font.getWidth(LABEL, 12);
         p
@@ -63,8 +63,8 @@ public class IndentationOptions extends GenericTest {
         doc.add(p);
 
         Table table = new Table(new float[]{indentation + 4, 519 - indentation});
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(LABEL));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(CONTENT));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(new Paragraph(LABEL)));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).add(new Paragraph(CONTENT)));
         doc.add(table);
 
         doc.close();

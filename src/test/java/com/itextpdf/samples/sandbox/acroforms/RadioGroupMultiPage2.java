@@ -14,6 +14,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
@@ -48,7 +49,7 @@ public class RadioGroupMultiPage2 extends GenericTest {
 
         PdfButtonFormField radioGroup = PdfFormField.createRadioGroup(pdfDoc, "answer", "answer 1");
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell;
         for (int i = 0; i < 25; i++) {
             cell = new Cell().add(new Paragraph("Question " + i));

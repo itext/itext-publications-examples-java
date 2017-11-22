@@ -49,7 +49,7 @@ public class LargeImage1 extends GenericTest {
         //create instance for new document
         PdfDocument resultDoc = new PdfDocument(new PdfWriter(dest));
 
-        PdfImageXObject imgObject = new PdfImageXObject(imgStream.copyTo(resultDoc));
+        PdfImageXObject imgObject = new PdfImageXObject((PdfStream) imgStream.copyTo(resultDoc));
 
         Image image = new Image(imgObject);
         image.scaleToFit(14400, 14400);

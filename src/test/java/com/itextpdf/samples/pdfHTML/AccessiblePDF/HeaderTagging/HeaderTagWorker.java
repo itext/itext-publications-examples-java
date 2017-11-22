@@ -26,7 +26,7 @@ public class HeaderTagWorker extends DivTagWorker {
     @Override
     public IPropertyContainer getElementResult() {
         Div div =(Div) super.getElementResult();
-        div.setRole(new PdfName("H"+i));
+        div.getAccessibilityProperties().setRole("H"+i);
         return super.getElementResult();
     }
 }

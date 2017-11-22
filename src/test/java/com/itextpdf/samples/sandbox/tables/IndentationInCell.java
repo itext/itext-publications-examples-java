@@ -19,6 +19,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -41,11 +42,11 @@ public class IndentationInCell extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         Cell cell;
-        cell = new Cell().add("TO:\n\n   name");
+        cell = new Cell().add(new Paragraph("TO:\n\n   name"));
         table.addCell(cell);
-        cell = new Cell().add("TO:\n\n\u00a0\u00a0\u00a0name");
+        cell = new Cell().add(new Paragraph("TO:\n\n\u00a0\u00a0\u00a0name"));
         table.addCell(cell);
         cell = new Cell();
         cell.add(new Paragraph("TO:"));

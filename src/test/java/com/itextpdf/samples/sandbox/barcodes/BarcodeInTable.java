@@ -18,7 +18,9 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -43,7 +45,7 @@ public class BarcodeInTable extends GenericTest {
 
         String code = "675-FH-A12";
 
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
         table.addCell("Change baseline:");
         Barcode128 code128 = new Barcode128(pdfDoc);
@@ -64,7 +66,7 @@ public class BarcodeInTable extends GenericTest {
         code128.setCodeType(Barcode128.CODE128);
         code128Image = new Image(code128.createFormXObject(pdfDoc)).setAutoScale(true);
         cell = new Cell();
-        cell.add("PO #: " + code);
+        cell.add(new Paragraph("PO #: " + code));
         cell.add(code128Image);
         table.addCell(cell);
 

@@ -23,6 +23,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -43,7 +44,7 @@ public class FitTableOnPage extends GenericTest {
 
     @Override
     protected void manipulatePdf(String dest) throws Exception {
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         for (int i = 0; i < 10; i++) {
             Cell cell;
             if (i == 9) {

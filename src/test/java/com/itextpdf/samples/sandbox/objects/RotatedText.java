@@ -13,8 +13,8 @@
 package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.barcodes.BarcodeEAN;
-import com.itextpdf.io.font.FontConstants;
-import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -52,8 +52,8 @@ public class RotatedText extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(60, 140));
         doc.setMargins(5, 5, 5, 5);
 
-        PdfFont bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-        PdfFont regular = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
+        PdfFont regular = PdfFontFactory.createFont(StandardFonts.HELVETICA);
 
         Paragraph p1 = new Paragraph();
         p1.add(new Text("23").setFont(bold).setFontSize(12));

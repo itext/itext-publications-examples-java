@@ -21,6 +21,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -61,8 +62,8 @@ public class NestedTables extends GenericTest {
     }
 
     private void buildNestedTables(Table outerTable) {
-        Table innerTable1 = new Table(1);
-        Table innerTable2 = new Table(2);
+        Table innerTable1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table innerTable2 = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell;
         innerTable1.addCell("Cell 1");
         innerTable1.addCell("Cell 2");

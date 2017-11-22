@@ -55,7 +55,7 @@ public class PdfA3 extends GenericTest {
         parameters.put(PdfName.ModDate, new PdfDate().getPdfObject());
 
         PdfFileSpec fileSpec = PdfFileSpec.createEmbeddedFileSpec(pdfDoc, DATA.getBytes(), "united_states.csv",
-                "united_states.csv", new PdfName("text/csv"), parameters, PdfName.Data, false);
+                "united_states.csv", new PdfName("text/csv"), parameters, PdfName.Data);
         fileSpec.put(new PdfName("AFRelationship"), new PdfName("Data"));
 
         pdfDoc.addFileAttachment("united_states.csv", fileSpec);

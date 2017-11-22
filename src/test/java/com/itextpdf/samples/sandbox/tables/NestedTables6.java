@@ -19,6 +19,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -42,7 +43,7 @@ public class NestedTables6 extends GenericTest {
         Document doc = new Document(pdfDoc, new PageSize(1200, 800));
 
         // Header part
-        Table mainTable = new Table(1);
+        Table mainTable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         mainTable.setWidth(1000);
 
         // Notice that in itext7 there is no getDefaultCell method

@@ -8,7 +8,7 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -56,8 +56,8 @@ public class UnitedStates extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
 
-        PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
-        PdfFont bold = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
         Table table = new Table(UnitValue.createPercentArray(new float[]{14, 6, 12, 16, 12, 12, 12, 12, 6}));
         BufferedReader br = new BufferedReader(new FileReader(DATA));
         String line = br.readLine();

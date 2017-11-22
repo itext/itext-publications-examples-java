@@ -16,7 +16,7 @@ import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
@@ -45,7 +45,7 @@ public class ImageNextToText extends GenericTest {
 
     public static Cell createImageCell(String path) throws MalformedURLException {
         Image img = new Image(ImageDataFactory.create(path));
-        img.setWidthPercent(100);
+        img.setWidth(UnitValue.createPercentValue(100));
         Cell cell = new Cell().add(img);
         cell.setBorder(null);
         return cell;

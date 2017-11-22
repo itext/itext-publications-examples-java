@@ -23,7 +23,7 @@ import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
 import com.itextpdf.kernel.xmp.XMPMetaFactory;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
@@ -124,7 +124,7 @@ public class PdfInvoicesBasic extends GenericTest {
         document.add(p);
 
         // Address seller / buyer
-        Table table = new Table(2).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth().useAllAvailableWidth();
         Cell seller = getPartyAddress("From:",
                 basic.getSellerName(),
                 basic.getSellerLineOne(),
@@ -189,7 +189,7 @@ public class PdfInvoicesBasic extends GenericTest {
         // platform-independent newlines
         byte[] xml = new String(dom.toXML()).replace("\r\n", "\n").getBytes();
         PdfFileSpec fileSpec = PdfFileSpec.createEmbeddedFileSpec(pdfDoc, xml, "ZUGFeRD invoice", "ZUGFeRD-invoice.xml",
-                new PdfName("application/xml"), parameters, PdfName.Alternative, false);
+                new PdfName("application/xml"), parameters, PdfName.Alternative);
         pdfDoc.addFileAttachment("ZUGFeRD invoice", fileSpec);
         PdfArray array = new PdfArray();
         array.add(fileSpec.getPdfObject().getIndirectReference());

@@ -18,6 +18,9 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+
+import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -41,7 +44,7 @@ public class RepeatLastRows2 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setWidth(523);
         table.setNextRenderer(new RepeatTableRenderer(table, new Table.RowRange(0, 100)));
         for (int i = 1; i < 100; i++)
@@ -62,7 +65,7 @@ public class RepeatLastRows2 extends GenericTest {
         }
 
         @Override
-        public RepeatTableRenderer getNextRenderer() {
+        public IRenderer getNextRenderer() {
             return new RepeatTableRenderer((Table) modelElement);
         }
 

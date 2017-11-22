@@ -17,6 +17,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -38,7 +39,7 @@ public class RowColumnOrder extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
         doc.add(new Paragraph("By design tables are filled row by row:"));
-        Table table = new Table(5);
+        Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
         table.setMarginTop(10);
         table.setMarginBottom(10);
         for (int i = 1; i <= 15; i++) {
@@ -60,7 +61,7 @@ public class RowColumnOrder extends GenericTest {
                 row = 0;
             }
         }
-        table = new Table(5);
+        table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
         table.setMarginTop(10);
         for (String[] r : array) {
             for (String c : r) {

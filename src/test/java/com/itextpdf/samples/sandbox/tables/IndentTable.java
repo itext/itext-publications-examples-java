@@ -16,6 +16,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.HorizontalAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -42,7 +43,7 @@ public class IndentTable extends GenericTest {
         cb.moveTo(36, 842);
         cb.lineTo(36, 0);
         cb.stroke();
-        Table table = new Table(8);
+        Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidth(150);
         for (int aw = 0; aw < 16; aw++) {

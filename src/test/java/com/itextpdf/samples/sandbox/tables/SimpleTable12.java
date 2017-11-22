@@ -12,18 +12,19 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.SolidBorder;
+import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -70,8 +71,8 @@ public class SimpleTable12 extends GenericTest {
         // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
-        font = PdfFontFactory.createFont(FontConstants.HELVETICA);
-        Table table = new Table(8);
+        font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+        Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
         table.addCell(createCell("Examination", 1, 2, 15));
         table.addCell(createCell("Board", 1, 2, 15));
         table.addCell(createCell("Month and Year of Passing", 1, 2, 15));

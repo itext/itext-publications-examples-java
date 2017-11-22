@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.columntext;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -54,7 +54,7 @@ public class WriteOnFirstPage extends GenericTest {
 
         templateCanvas
                 .beginText()
-                .setFontAndSize(PdfFontFactory.createFont(FontConstants.HELVETICA), 12)
+                .setFontAndSize(PdfFontFactory.createFont(StandardFonts.HELVETICA), 12)
                 .showText(String.format("There are %s pages in this document", pdfDoc.getNumberOfPages()))
                 .endText()
                 .stroke();

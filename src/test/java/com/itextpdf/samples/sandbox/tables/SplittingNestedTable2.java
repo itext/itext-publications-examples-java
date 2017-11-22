@@ -19,6 +19,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.Ignore;
@@ -43,14 +44,14 @@ public class SplittingNestedTable2 extends GenericTest {
         // TODO DEVSIX-466
         Document doc = new Document(pdfDoc, new PageSize(300, 120));
         // doc.add(new Paragraph("Table with setKeepTogether(false):"));
-        Table table = new Table(2);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(10);
-        Cell cell = new Cell().add("GROUPS");
+        Cell cell = new Cell().add(new Paragraph("GROUPS"));
         //cell.setRotationAngle(Math.toRadians(90));
 //        cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
 //        cell.setHorizontalAlignment(HorizontalAlignment.CENTER);
         table.addCell(cell);
-        Table inner = new Table(1);
+        Table inner = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         inner.addCell("row 1");
         inner.addCell("row 2");
         inner.addCell("row 3");
@@ -64,7 +65,7 @@ public class SplittingNestedTable2 extends GenericTest {
 ////        doc.add(new AreaBreak());
 //
         doc.add(new Paragraph("T")); // able with setKeepTogether(true):"));
-//        table = new Table(2);
+//        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setKeepTogether(true);
 //        table.setMarginTop(10);
 //        cell = new Cell().add("GROUPS");
@@ -72,7 +73,7 @@ public class SplittingNestedTable2 extends GenericTest {
 //        cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
 //        cell.setHorizontalAlignment(HorizontalAlignment.CENTER);
 //        table.addCell(cell);
-//        inner = new Table(1);
+//        inner = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
 //        inner.addCell("row 1");
 //        inner.addCell("row 2");
 //        inner.addCell("row 3");

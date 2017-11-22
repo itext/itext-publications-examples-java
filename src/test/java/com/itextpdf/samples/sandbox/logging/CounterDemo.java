@@ -8,9 +8,9 @@
  */
 package com.itextpdf.samples.sandbox.logging;
 
-import com.itextpdf.kernel.log.Counter;
-import com.itextpdf.kernel.log.CounterFactory;
-import com.itextpdf.kernel.log.DefaultCounter;
+import com.itextpdf.kernel.log.CounterManager;
+import com.itextpdf.kernel.log.ICounter;
+import com.itextpdf.kernel.log.ICounterFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -39,7 +39,7 @@ public class CounterDemo extends GenericTest {
     public static final String LOG_RESULT = "./target/test/resources/sandbox/logging/log.txt";
     public static final String CMP_LOG = "./src/test/resources/sandbox/logging/cmp_log.txt";
 
-    MyCounter myCounter;
+    MyCounterFactory myCounterFactory;
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
@@ -55,8 +55,8 @@ public class CounterDemo extends GenericTest {
 
     @Override
     public void manipulatePdf(String dest) throws IOException {
-        myCounter = new MyCounter(getClass());
-        CounterFactory.getInstance().setCounter(myCounter);
+        myCounterFactory = new MyCounterFactory(getClass());
+        CounterManager.getInstance().register(myCounterFactory);
 
         createPdf();
         PdfReader reader = new PdfReader(SRC);
@@ -64,67 +64,72 @@ public class CounterDemo extends GenericTest {
         Document document = new Document(pdfDocument).showTextAligned(new Paragraph("Stamped text"), 559, 806, TextAlignment.RIGHT);
         document.close();
 
-        myCounter.close();
-        CounterFactory.getInstance().setCounter(new DefaultCounter());
+        myCounterFactory.close();
+        CounterManager.getInstance().unregister(myCounterFactory);
 
         compareTxt(CMP_LOG, LOG_RESULT);
     }
 
-    public class MyCounter implements Counter {
+    public static class MyCounterFactory implements ICounterFactory {
 
         protected FileWriter writer;
         protected String yourClass;
-        protected String iTextClass;
 
-        public MyCounter(Class<?> klass) throws IOException {
-            this.yourClass = klass.getName();
-            writer = new FileWriter(LOG_RESULT, false);
-        }
-
-        private MyCounter(Class<?> klass, String yourClass, FileWriter writer)
-                throws IOException {
-            this.yourClass = yourClass;
-            this.iTextClass = klass.getName();
-            this.writer = writer;
-        }
-
-        @Override
-        public Counter getCounter(Class<?> klass) {
+        public MyCounterFactory(Class<?> cls) {
             try {
-                return new MyCounter(klass, yourClass, writer);
+                this.writer = new FileWriter(LOG_RESULT, false);
+                yourClass = cls.getName();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
 
         @Override
-        public void onDocumentRead(long size) {
-            if (writer == null)
-                throw new RuntimeException("No writer defined!");
-            try {
-                writer.write(String.format(
-                        "[%s:%s] %s: %s read\n", yourClass, iTextClass, new Date().toString(), size));
-                writer.flush();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        @Override
-        public void onDocumentWritten(long size) {
-            if (writer == null)
-                throw new RuntimeException("No writer defined!");
-            try {
-                writer.write(String.format(
-                        "[%s:%s] %s: %s written\n", yourClass, iTextClass, new Date().toString(), size));
-                writer.flush();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        public ICounter getCounter(Class<?> cls) {
+            return new MyCounter(cls, yourClass, writer);
         }
 
         public void close() throws IOException {
             writer.close();
+        }
+
+        private static class MyCounter implements ICounter {
+
+            protected FileWriter writer;
+            protected String yourClass;
+            protected String iTextClass;
+
+            public MyCounter(Class<?> klass, String yourClass, FileWriter writer) {
+                this.yourClass = yourClass;
+                this.iTextClass = klass.getName();
+                this.writer = writer;
+            }
+
+            @Override
+            public void onDocumentRead(long size) {
+                if (writer == null)
+                    throw new RuntimeException("No writer defined!");
+                try {
+                    writer.write(String.format(
+                            "[%s:%s] %s: %s read\n", yourClass, iTextClass, new Date().toString(), size));
+                    writer.flush();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            @Override
+            public void onDocumentWritten(long size) {
+                if (writer == null)
+                    throw new RuntimeException("No writer defined!");
+                try {
+                    writer.write(String.format(
+                            "[%s:%s] %s: %s written\n", yourClass, iTextClass, new Date().toString(), size));
+                    writer.flush();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 

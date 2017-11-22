@@ -14,7 +14,7 @@ package com.itextpdf.samples.sandbox.acroforms.reporting;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -73,7 +73,7 @@ public class FillFlattenMerge3 extends GenericTest {
 
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
-        PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE, new PaginationEventHandler(srcDoc.getFirstPage().copyAsFormXObject(pdfDoc)));
         srcDoc.close();
 

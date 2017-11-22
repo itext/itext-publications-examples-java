@@ -16,9 +16,11 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -42,9 +44,9 @@ public class TableBorder extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(4);
+        Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         for (int aw = 0; aw < 16; aw++) {
-            table.addCell(new Cell().add("hi").setBorder(Border.NO_BORDER));
+            table.addCell(new Cell().add(new Paragraph("hi")).setBorder(Border.NO_BORDER));
         }
         // Notice that one should set renderer after table completion
         table.setNextRenderer(new TableBorderRenderer(table));

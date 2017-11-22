@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.columntext;
 
-import com.itextpdf.kernel.color.ColorConstants;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDictionary;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfName;
@@ -26,6 +26,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -81,7 +82,7 @@ public class SortingTable extends GenericTest {
     }
 
     public Table createTable(int c, List<PdfLayer> options) {
-        Table table = new Table(3);
+        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         for (int j = 1; j < 4; j++) {
             table.addCell(createCell(j, options));
         }

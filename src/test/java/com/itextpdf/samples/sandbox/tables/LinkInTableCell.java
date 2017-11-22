@@ -22,6 +22,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.samples.GenericTest;
@@ -45,7 +46,7 @@ public class LinkInTableCell extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(1);
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         // Part of the content is a link:
         Paragraph phrase = new Paragraph();
         phrase.add("The founders of iText are nominated for a ");
@@ -54,7 +55,7 @@ public class LinkInTableCell extends GenericTest {
         phrase.add(chunk);
         table.addCell(phrase);
         // The complete cell is a link:
-        Cell cell = new Cell().add("Help us win a European Business Award!");
+        Cell cell = new Cell().add(new Paragraph("Help us win a European Business Award!"));
         cell.setNextRenderer(new LinkInCellRenderer(cell, "http://itextpdf.com/blog/help-us-win-european-business-award"));
         table.addCell(cell);
         doc.add(table);

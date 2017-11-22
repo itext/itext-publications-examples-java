@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -42,7 +42,7 @@ public class OrdinalNumbers extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
 
-        PdfFont font = PdfFontFactory.createFont(FontConstants.HELVETICA);
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Text st = new Text("st").setFont(font).setFontSize(6);
         st.setTextRise(7);
         Text nd = new Text("nd").setFont(font);

@@ -23,6 +23,7 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.ImageRenderer;
 import com.itextpdf.samples.GenericTest;
@@ -52,7 +53,7 @@ public class ImagesLinksTable extends GenericTest {
         Paragraph anchor = new Paragraph().add(img);
         anchor.setProperty(Property.ACTION, PdfAction.createURI("http://lowagie.com/"));
 
-        Table table = new Table(3);
+        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         table.addCell(anchor);
         table.addCell("A");
         table.addCell("B");

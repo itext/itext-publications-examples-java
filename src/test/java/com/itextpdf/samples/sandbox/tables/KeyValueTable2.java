@@ -12,15 +12,17 @@
  */
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.FontConstants;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -36,8 +38,8 @@ public class KeyValueTable2 extends GenericTest {
 
     @Override
     public void manipulatePdf(String dest) throws IOException {
-        regular = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
-        bold = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+        regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
+        bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
 
         UserObject rohit = new UserObject();
         rohit.setName("Rohit");
@@ -64,19 +66,19 @@ public class KeyValueTable2 extends GenericTest {
         if (user2 == null) {
             user2 = new UserObject();
         }
-        Table table = new Table(3);
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add("Name:"));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(user1.getName()));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(user2.getName()));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add("Id:"));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(user1.getId()));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(user2.getId()));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add("Reputation:"));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(String.valueOf(user1.getReputation())));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(String.valueOf(user2.getReputation())));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add("Job title:"));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(user1.getJobtitle()));
-        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(user2.getJobtitle()));
+        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Name:")));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user1.getName())));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user2.getName())));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Id:")));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user1.getId())));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user2.getId())));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Reputation:")));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(String.valueOf(user1.getReputation()))));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(String.valueOf(user2.getReputation()))));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Job title:")));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user1.getJobtitle())));
+        table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user2.getJobtitle())));
         return table;
     }
 

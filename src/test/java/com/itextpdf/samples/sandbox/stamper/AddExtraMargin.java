@@ -12,7 +12,7 @@
  */
 package com.itextpdf.samples.sandbox.stamper;
 
-import com.itextpdf.kernel.color.DeviceGray;
+import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.samples.GenericTest;

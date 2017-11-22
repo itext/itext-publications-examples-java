@@ -12,8 +12,8 @@
  */
 package com.itextpdf.samples.sandbox.objects;
 
-import com.itextpdf.kernel.color.ColorConstants;
-import com.itextpdf.kernel.color.DeviceGray;
+import com.itextpdf.kernel.colors.ColorConstants;
+import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;

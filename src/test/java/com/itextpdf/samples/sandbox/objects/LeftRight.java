@@ -15,10 +15,11 @@ package com.itextpdf.samples.sandbox.objects;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -47,7 +48,7 @@ public class LeftRight extends GenericTest {
         p.add("Text to the right");
         doc.add(p);
 
-        Table table = new Table(3);
+        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         table.addCell(getCell("Text to the left", TextAlignment.LEFT));
         table.addCell(getCell("Text in the middle", TextAlignment.CENTER));
         table.addCell(getCell("Text to the right", TextAlignment.RIGHT));
