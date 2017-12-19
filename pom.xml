@@ -17,11 +17,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
         <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
-        <licensekey.version>3.0.0-SNAPSHOT</licensekey.version>
-        <cleanup.version>2.0.0-SNAPSHOT</cleanup.version>
-        <zugferd.version>2.0.0-SNAPSHOT</zugferd.version>
-        <pdfCalligraph.version>2.0.0-SNAPSHOT</pdfCalligraph.version>
-        <pdfHtml.version>2.0.0-SNAPSHOT</pdfHtml.version>
+        <licensekey.version>3.0.0</licensekey.version>
+        <cleanup.version>2.0.1-SNAPSHOT</cleanup.version>
+        <zugferd.version>2.0.1-SNAPSHOT</zugferd.version>
+        <pdfCalligraph.version>2.0.1-SNAPSHOT</pdfCalligraph.version>
+        <pdfHtml.version>2.0.1-SNAPSHOT</pdfHtml.version>
         <pdfXfa.version>2.0.0-SNAPSHOT</pdfXfa.version>
     </properties>
 
