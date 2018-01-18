@@ -4,7 +4,7 @@
 
     <groupId>com.itextpdf</groupId>
     <artifactId>samples</artifactId>
-    <version>7.1.1-SNAPSHOT</version>
+    <version>7.1.2-SNAPSHOT</version>
 
     <name>iText 7 Examples: Sandbox</name>
     <url>http://itextpdf.com/</url>
@@ -21,7 +21,7 @@
         <cleanup.version>2.0.1-SNAPSHOT</cleanup.version>
         <zugferd.version>2.0.1-SNAPSHOT</zugferd.version>
         <pdfCalligraph.version>2.0.1-SNAPSHOT</pdfCalligraph.version>
-        <pdfHtml.version>2.0.1-SNAPSHOT</pdfHtml.version>
+        <pdfHtml.version>2.0.2-SNAPSHOT</pdfHtml.version>
         <pdfXfa.version>2.0.0-SNAPSHOT</pdfXfa.version>
     </properties>
 
