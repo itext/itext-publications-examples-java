@@ -9,7 +9,9 @@
 package com.itextpdf.samples;
 
 import ch.qos.logback.classic.Logger;
+import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
+import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -69,6 +71,7 @@ public class GenericTest {
     public void test() throws Exception {
         if (this.getClass().getName().equals(GenericTest.class.getName()))
             return;
+        unloadLicense();
         LOGGER.info("Starting test " + getClass().getName() + ".");
         // Getting the destination PDF file (must be there!)
         String dest = getDest();
@@ -183,6 +186,19 @@ public class GenericTest {
             }
 
             errorMessage += error;
+        }
+    }
+
+    //Workaround for unloading license. In the next licensekey version there will be public method for this
+    private void unloadLicense() {
+        try {
+            Field validators = LicenseKey.class.getDeclaredField("validators");
+            validators.setAccessible( true );
+            validators.set(null, null);
+            Field versionField = Version.class.getDeclaredField("version");
+            versionField.setAccessible(true);
+            versionField.set(null, null);
+        } catch (Exception ignored) {
         }
     }
 }
