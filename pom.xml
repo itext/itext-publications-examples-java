@@ -17,7 +17,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
         <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
-        <licensekey.version>3.0.1</licensekey.version>
+        <licensekey.version>3.0.2</licensekey.version>
         <cleanup.version>2.0.2-SNAPSHOT</cleanup.version>
         <zugferd.version>2.0.1-SNAPSHOT</zugferd.version>
         <pdfCalligraph.version>2.0.1-SNAPSHOT</pdfCalligraph.version>
