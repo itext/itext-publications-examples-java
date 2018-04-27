@@ -40,7 +40,7 @@ public class OpenAt100pct extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc, new PageSize(612, 792));
         doc.add(new Paragraph("Hello World"));
-        pdfDoc.getCatalog().setOpenAction(PdfExplicitDestination.createXYZ(1, 0, 842, 1));
+        pdfDoc.getCatalog().setOpenAction(PdfExplicitDestination.createXYZ(pdfDoc.getPage(1), 0, 842, 1));
         doc.close();
     }
 }

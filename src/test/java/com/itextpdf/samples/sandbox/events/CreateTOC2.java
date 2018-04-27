@@ -105,7 +105,7 @@ public class CreateTOC2 extends GenericTest {
             toc.add(new AbstractMap.SimpleEntry<String, AbstractMap.SimpleEntry<String, Integer>>(((Text) modelElement).getText(),
                     new AbstractMap.SimpleEntry<String, Integer>(name, page)));
             drawContext.getDocument().addNamedDestination(name,
-                    PdfExplicitDestination.createFitH(page, drawContext.getDocument().getLastPage().getPageSize().getTop()).getPdfObject());
+                    PdfExplicitDestination.createFitH(drawContext.getDocument().getPage(page), drawContext.getDocument().getLastPage().getPageSize().getTop()).getPdfObject());
         }
     }
 }

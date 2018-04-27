@@ -13,7 +13,11 @@
 package com.itextpdf.samples.sandbox.annotations;
 
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfArray;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
@@ -50,9 +54,9 @@ public class AddPolygonLink extends GenericTest {
                 .lineTo(72, 730)
                 .closePathStroke();
         Rectangle linkLocation = new Rectangle(36, 700, 144, 760);
-        PdfLinkAnnotation linkAnnotation = (PdfLinkAnnotation) new PdfLinkAnnotation(linkLocation)
+        PdfLinkAnnotation linkAnnotation = new PdfLinkAnnotation(linkLocation)
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
-                .setAction(PdfAction.createGoTo(PdfExplicitDestination.createFit(1)));
+                .setAction(PdfAction.createGoTo(PdfExplicitDestination.createFit(pdfDoc.getPage(1))));
         PdfArray arrayOfQuadPoints = new PdfArray(new int[]{72, 730, 144, 720, 72, 760, 36, 700});
         linkAnnotation.put(PdfName.QuadPoints, arrayOfQuadPoints);
 

@@ -38,7 +38,7 @@ public class AddOpenAction extends GenericTest {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         pdfDoc.getCatalog()
-                .setOpenAction(PdfExplicitDestination.createXYZ(1, 0, pdfDoc.getPage(1).getPageSize().getHeight(), 0.75f));
+                .setOpenAction(PdfExplicitDestination.createXYZ(pdfDoc.getPage(1), 0, pdfDoc.getPage(1).getPageSize().getHeight(), 0.75f));
         pdfDoc.close();
     }
 }

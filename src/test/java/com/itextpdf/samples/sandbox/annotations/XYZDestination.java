@@ -49,7 +49,7 @@ public class XYZDestination extends GenericTest {
         Paragraph c;
         for (int i = 0; i < 10; ) {
             i++;
-            d = PdfExplicitDestination.createXYZ(i, 36, 806, 0);
+            d = PdfExplicitDestination.createXYZ(pdfDoc.getPage(i), 36, 806, 0);
             c = new Paragraph(new Link("Goto page " + i, d));
             doc.add(c);
         }

@@ -47,7 +47,7 @@ public class AddLinkAnnotation5 extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
         Link link = new Link("This is a link. Click it and you'll be forwarded to another page in this document.",
-                PdfAction.createGoTo(PdfExplicitDestination.createFit(3)));
+                PdfAction.createGoTo(PdfExplicitDestination.createFit(pdfDoc.getPage(3))));
         link.setBackgroundColor(ColorConstants.RED);
         link.getLinkAnnotation().setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
 

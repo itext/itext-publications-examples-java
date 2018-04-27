@@ -13,7 +13,10 @@
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfArray;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
@@ -43,7 +46,7 @@ public class AddNavigation extends GenericTest {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
         int[] borders = {0, 0, 1};
-        PdfDestination d1 = PdfExplicitDestination.createFit(10);
+        PdfDestination d1 = PdfExplicitDestination.createFit(pdfDoc.getPage(10));
         Rectangle rect = new Rectangle(0, 806, 595, 36);
         PdfAnnotation a10 = new PdfLinkAnnotation(rect)
                 .setAction(PdfAction.createGoTo(d1))
@@ -52,7 +55,7 @@ public class AddNavigation extends GenericTest {
                 .setBorder(new PdfArray(borders))
                 .setColor(new PdfArray(new float[]{0, 1, 0}));
         pdfDoc.getPage(1).addAnnotation(a10);
-        PdfDestination d2 = PdfExplicitDestination.createFit(1);
+        PdfDestination d2 = PdfExplicitDestination.createFit(pdfDoc.getPage(1));
         PdfAnnotation a1 = new PdfLinkAnnotation(rect)
                 .setAction(PdfAction.createGoTo(d2))
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_PUSH)

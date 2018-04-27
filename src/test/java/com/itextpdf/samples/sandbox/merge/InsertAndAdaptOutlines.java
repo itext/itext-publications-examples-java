@@ -48,7 +48,7 @@ public class InsertAndAdaptOutlines extends GenericTest {
 
         PdfOutline outlines = pdfDoc.getOutlines(false);
         PdfOutline outline = outlines.getAllChildren().get(0).addOutline("Hello", 3);
-        outline.addDestination(PdfExplicitDestination.createFit(4));
+        outline.addDestination(PdfExplicitDestination.createFit(pdfDoc.getPage(4)));
         pdfDoc.close();
     }
 }
