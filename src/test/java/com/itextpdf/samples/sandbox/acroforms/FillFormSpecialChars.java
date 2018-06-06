@@ -21,6 +21,7 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 
@@ -43,6 +44,10 @@ public class FillFormSpecialChars extends GenericTest {
 
     @Override
     protected void manipulatePdf(String dest) throws Exception {
+        // License file is loaded because open type font is used and typography module is in classpath:
+        // typography module is utilized and requires license.
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
+
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
