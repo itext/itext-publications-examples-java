@@ -12,8 +12,8 @@ import com.itextpdf.html2pdf.attach.ITagWorker;
 import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.css.CssConstants;
 import com.itextpdf.html2pdf.css.apply.impl.BlockCssApplier;
-import com.itextpdf.html2pdf.html.node.IStylesContainer;
 import com.itextpdf.kernel.colors.WebColors;
+import com.itextpdf.styledxmlparser.node.IStylesContainer;
 
 import java.util.Map;
 

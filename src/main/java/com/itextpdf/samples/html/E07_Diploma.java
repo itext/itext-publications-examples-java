@@ -20,8 +20,8 @@ import com.itextpdf.html2pdf.attach.ITagWorker;
 import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.html2pdf.attach.impl.tags.SpanTagWorker;
-import com.itextpdf.html2pdf.html.node.IElementNode;
 import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.styledxmlparser.node.IElementNode;
 
 public class E07_Diploma {
 

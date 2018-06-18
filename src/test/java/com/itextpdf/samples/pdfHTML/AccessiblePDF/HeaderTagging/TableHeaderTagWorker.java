@@ -10,10 +10,10 @@ package com.itextpdf.samples.pdfHTML.AccessiblePDF.HeaderTagging;
 
 import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.attach.impl.tags.TdTagWorker;
-import com.itextpdf.html2pdf.html.node.IElementNode;
 import com.itextpdf.kernel.pdf.tagging.StandardRoles;
 import com.itextpdf.layout.IPropertyContainer;
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.styledxmlparser.node.IElementNode;
 
 public class TableHeaderTagWorker extends TdTagWorker {
     public TableHeaderTagWorker(IElementNode element, ProcessorContext context) {

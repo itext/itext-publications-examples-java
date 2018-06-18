@@ -11,7 +11,7 @@ package com.itextpdf.samples.pdfHTML.AccessiblePDF.HeaderTagging;
 import com.itextpdf.html2pdf.attach.ITagWorker;
 import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
-import com.itextpdf.html2pdf.html.node.IElementNode;
+import com.itextpdf.styledxmlparser.node.IElementNode;
 
 public class AccessibilityTagWorkerFactory extends DefaultTagWorkerFactory {
 

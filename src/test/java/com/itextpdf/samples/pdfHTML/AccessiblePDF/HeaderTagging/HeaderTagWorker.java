@@ -10,10 +10,9 @@ package com.itextpdf.samples.pdfHTML.AccessiblePDF.HeaderTagging;
 
 import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.attach.impl.tags.DivTagWorker;
-import com.itextpdf.html2pdf.html.node.IElementNode;
-import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.layout.IPropertyContainer;
 import com.itextpdf.layout.element.Div;
+import com.itextpdf.styledxmlparser.node.IElementNode;
 
 
 public class HeaderTagWorker extends DivTagWorker {

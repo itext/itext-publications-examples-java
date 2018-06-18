@@ -13,11 +13,11 @@ import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
-import com.itextpdf.html2pdf.css.media.MediaDeviceDescription;
-import com.itextpdf.html2pdf.css.media.MediaType;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.pdfHTML.ColourBlindness.ColourBlindnessCssApplierFactory;
 import com.itextpdf.samples.pdfHTML.ColourBlindness.ColourBlindnessTransforms;
+import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
+import com.itextpdf.styledxmlparser.css.media.MediaType;
 
 import java.io.File;
 import java.io.FileInputStream;

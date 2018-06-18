@@ -13,9 +13,9 @@ import com.itextpdf.barcodes.qrcode.EncodeHintType;
 import com.itextpdf.barcodes.qrcode.ErrorCorrectionLevel;
 import com.itextpdf.html2pdf.attach.ITagWorker;
 import com.itextpdf.html2pdf.attach.ProcessorContext;
-import com.itextpdf.html2pdf.html.node.IElementNode;
 import com.itextpdf.layout.IPropertyContainer;
 import com.itextpdf.layout.element.Image;
+import com.itextpdf.styledxmlparser.node.IElementNode;
 
 import java.util.HashMap;
 import java.util.Map;

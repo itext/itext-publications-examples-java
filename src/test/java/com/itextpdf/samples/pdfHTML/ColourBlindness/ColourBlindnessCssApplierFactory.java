@@ -12,7 +12,7 @@ package com.itextpdf.samples.pdfHTML.ColourBlindness;
 import com.itextpdf.html2pdf.css.apply.ICssApplier;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
 import com.itextpdf.html2pdf.html.TagConstants;
-import com.itextpdf.html2pdf.html.node.IElementNode;
+import com.itextpdf.styledxmlparser.node.IElementNode;
 
 public class ColourBlindnessCssApplierFactory extends DefaultCssApplierFactory {
 
