@@ -39,6 +39,7 @@ public class CounterDemo extends GenericTest {
     public static final String LOG_RESULT = "./target/test/resources/sandbox/logging/log.txt";
     public static final String CMP_LOG = "./src/test/resources/sandbox/logging/cmp_log.txt";
     public static final String CMP_LOG_LICENSED = "./src/test/resources/sandbox/logging/cmp_log_licensed.txt";
+    public static final String CMP_LOG_RELEASE = "./src/test/resources/sandbox/logging/cmp_log_release.txt";
 
     MyCounterFactory myCounterFactory;
 
@@ -135,7 +136,10 @@ public class CounterDemo extends GenericTest {
     }
 
     private void compareLogs() throws IOException {
-        Assert.assertTrue(fileToString(LOG_RESULT).equals(fileToString(CMP_LOG)) || fileToString(LOG_RESULT).equals(fileToString(CMP_LOG_LICENSED)));
+        boolean expectedResult = fileToString(LOG_RESULT).equals(fileToString(CMP_LOG))
+                || fileToString(LOG_RESULT).equals(fileToString(CMP_LOG_LICENSED))
+                || fileToString(LOG_RESULT).equals(fileToString(CMP_LOG_RELEASE));
+        Assert.assertTrue(expectedResult);
     }
 
     private String fileToString(String filePath) throws IOException {
