@@ -16,7 +16,6 @@
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
     <licensekey.version>3.0.4</licensekey.version>
     <cleanup.version>2.0.4-SNAPSHOT</cleanup.version>
-    <zugferd.version>2.0.2-SNAPSHOT</zugferd.version>
     <typography.version>2.0.4-SNAPSHOT</typography.version>
     <html2pdf.version>2.1.3-SNAPSHOT</html2pdf.version>
     <pdfXfa.version>2.0.1-SNAPSHOT</pdfXfa.version>
@@ -98,12 +97,6 @@
       <groupId>com.itextpdf</groupId>
       <artifactId>typography</artifactId>
       <version>${typography.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.itextpdf</groupId>
-      <artifactId>zugferd</artifactId>
-      <version>${zugferd.version}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
