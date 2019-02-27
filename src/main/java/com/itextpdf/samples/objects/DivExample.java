@@ -28,6 +28,12 @@ public class DivExample {
 	public final static String TEXT2 = "Test document which can be altered and ignored. alls ein FeTest  document which can be altered and ignored. alls ein Fe";
 	public final static String TEXT3 = "This text should come below the rectangle and there after a normal flow should happen ";
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 * @throws java.io.IOException if any.
+	 */
 	public static void main(String[] args) throws IOException {
 		PdfWriter writer = new PdfWriter("Notiz.pdf");
 		PdfDocument pdfDocument = new PdfDocument(writer);

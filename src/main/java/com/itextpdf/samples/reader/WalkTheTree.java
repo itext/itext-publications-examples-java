@@ -23,11 +23,22 @@ public class WalkTheTree {
 
 	public static final String SRC = "src/main/resources/pdf/test.pdf";
 	
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 * @throws java.io.IOException if any.
+	 */
 	public static void main(String[] args) throws IOException {
 		PdfDocument document = new PdfDocument(new PdfReader(SRC));
 		process(document.getStructTreeRoot());
 	}
 	
+	/**
+	 * <p>process.</p>
+	 *
+	 * @param elem a {@link com.itextpdf.kernel.pdf.tagging.IStructureNode} object.
+	 */
 	public static void process(IStructureNode elem) {
 		if (elem == null) return;
 		System.out.println(elem.getRole());
@@ -41,6 +52,11 @@ public class WalkTheTree {
 		}
 	}
 	
+	/**
+	 * <p>processStructElem.</p>
+	 *
+	 * @param elem a {@link com.itextpdf.kernel.pdf.tagging.PdfStructElem} object.
+	 */
 	public static void processStructElem(PdfStructElem elem) {
 		PdfDictionary page = elem.getPdfObject().getAsDictionary(PdfName.Pg);
 		if (page == null) return;
