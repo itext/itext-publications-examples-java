@@ -33,6 +33,12 @@ public class E06_MediaQuery {
             new PageSize(PageSize.A5.getWidth(), PageSize.A4.getHeight())
     };
 	
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     * @throws java.io.IOException if any.
+     */
     public static void main(String[] args) throws IOException {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
     	File file = new File(DEST);
@@ -44,6 +50,14 @@ public class E06_MediaQuery {
         }
     }
     
+    /**
+     * <p>createPdf.</p>
+     *
+     * @param src a {@link java.lang.String} object.
+     * @param dest a {@link java.lang.String} object.
+     * @param size a {@link com.itextpdf.kernel.geom.PageSize} object.
+     * @throws java.io.IOException if any.
+     */
     public void createPdf(String src, String dest, PageSize size) throws IOException {        
     	PdfWriter writer = new PdfWriter(dest);
     	PdfDocument pdf = new PdfDocument(writer);

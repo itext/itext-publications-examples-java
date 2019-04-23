@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * This rendering {@link IEventListener} looks for vertical <em>sections of use</em> on a page.
+ * This rendering {@link com.itextpdf.kernel.pdf.canvas.parser.listener.IEventListener} looks for vertical <em>sections of use</em> on a page.
  * After parsing a page it share a list of floats which contains the border y coordinates
  * between used (drawn onto) and unused vertical sections.
  *
@@ -39,6 +39,9 @@ public class PageVerticalAnalyzer implements IEventListener {
     final Set<EventType> supportedEvents;
     final List<Float> verticalFlips = new ArrayList<>();
 
+    /**
+     * <p>Constructor for PageVerticalAnalyzer.</p>
+     */
     public PageVerticalAnalyzer() {
         supportedEvents = new HashSet<>();
         supportedEvents.add(EventType.RENDER_TEXT);
@@ -46,6 +49,11 @@ public class PageVerticalAnalyzer implements IEventListener {
         supportedEvents.add(EventType.RENDER_IMAGE);
     }
 
+    /**
+     * <p>Getter for the field <code>verticalFlips</code>.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
     public List<Float> getVerticalFlips() {
         return verticalFlips;
     }
@@ -53,6 +61,7 @@ public class PageVerticalAnalyzer implements IEventListener {
     //
     // EventListener implementation
     // 
+    /** {@inheritDoc} */
     @Override
     public void eventOccurred(IEventData data, EventType type) {
         switch (type) {
@@ -109,6 +118,7 @@ public class PageVerticalAnalyzer implements IEventListener {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public Set<EventType> getSupportedEvents() {
         return supportedEvents;

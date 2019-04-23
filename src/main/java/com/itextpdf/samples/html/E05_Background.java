@@ -31,6 +31,12 @@ public class E05_Background {
 	public static final String STATIONERY = "src/main/resources/html/movie/stationery.pdf";
 	public static final String DEST = "target/results/html/5_background.pdf";
 	
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     * @throws java.io.IOException if any.
+     */
     public static void main(String[] args) throws IOException {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
     	File file = new File(DEST);
@@ -39,6 +45,14 @@ public class E05_Background {
         app.createPdf(SRC, STATIONERY, DEST);
     }
     
+    /**
+     * <p>createPdf.</p>
+     *
+     * @param src a {@link java.lang.String} object.
+     * @param stationery a {@link java.lang.String} object.
+     * @param dest a {@link java.lang.String} object.
+     * @throws java.io.IOException if any.
+     */
     public void createPdf(String src, String stationery, String dest) throws IOException {        
     	PdfWriter writer = new PdfWriter(dest);
     	PdfDocument pdf = new PdfDocument(writer);

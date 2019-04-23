@@ -26,6 +26,12 @@ public class Velocity2Pdf {
     public static final String SRC = "src/main/resources/html/templates/velocity-test.vm";
 
 
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     * @throws java.io.IOException if any.
+     */
     public static void main(String[] args) throws IOException {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
         File file = new File(TARGET);
@@ -47,6 +53,13 @@ public class Velocity2Pdf {
         new Velocity2Pdf().createPdf(writer.toString(), DEST);
     }
 
+    /**
+     * <p>createPdf.</p>
+     *
+     * @param html a {@link java.lang.String} object.
+     * @param dest a {@link java.lang.String} object.
+     * @throws java.io.IOException if any.
+     */
     public void createPdf(String html, String dest) throws IOException {
         HtmlConverter.convertToPdf(html, new FileOutputStream(dest));
     }

@@ -74,42 +74,91 @@ public class PdfDenseMerger {
     //
     // getters and setters for layout values
     //
+    /**
+     * <p>Getter for the field <code>pageSize</code>.</p>
+     *
+     * @return a {@link com.itextpdf.kernel.geom.PageSize} object.
+     */
     public PageSize getPageSize() {
         return pageSize;
     }
 
+    /**
+     * <p>Setter for the field <code>pageSize</code>.</p>
+     *
+     * @param pageSize a {@link com.itextpdf.kernel.geom.PageSize} object.
+     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     */
     public PdfDenseMerger setPageSize(PageSize pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
+    /**
+     * <p>Getter for the field <code>top</code>.</p>
+     *
+     * @return a float.
+     */
     public float getTop() {
         return top;
     }
 
+    /**
+     * <p>Setter for the field <code>top</code>.</p>
+     *
+     * @param top a float.
+     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     */
     public PdfDenseMerger setTop(float top) {
         this.top = top;
         return this;
     }
 
+    /**
+     * <p>Getter for the field <code>bottom</code>.</p>
+     *
+     * @return a float.
+     */
     public float getBottom() {
         return bottom;
     }
 
+    /**
+     * <p>Setter for the field <code>bottom</code>.</p>
+     *
+     * @param bottom a float.
+     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     */
     public PdfDenseMerger setBottom(float bottom) {
         this.bottom = bottom;
         return this;
     }
 
+    /**
+     * <p>Getter for the field <code>gap</code>.</p>
+     *
+     * @return a float.
+     */
     public float getGap() {
         return gap;
     }
 
+    /**
+     * <p>Setter for the field <code>gap</code>.</p>
+     *
+     * @param gap a float.
+     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     */
     public PdfDenseMerger setGap(float gap) {
         this.gap = gap;
         return this;
     }
 
+    /**
+     * <p>Getter for the field <code>pdfDocument</code>.</p>
+     *
+     * @return a {@link com.itextpdf.kernel.pdf.PdfDocument} object.
+     */
     public PdfDocument getPdfDocument() {
         return pdfDocument;
     }
@@ -123,7 +172,9 @@ public class PdfDenseMerger {
      *
      * @param from     - document, from which pages will be copied.
      * @param fromPage - start page in the range of pages to be copied.
+     * @param fromPage - start page in the range of pages to be copied.
      * @param toPage   - end page in the range to be copied.
+     * @throws java.io.IOException if any.
      */
     public void addPages(PdfDocument from, int fromPage, int toPage) throws IOException {
         for (int pageNum = fromPage; pageNum <= toPage; pageNum++) {
@@ -136,6 +187,7 @@ public class PdfDenseMerger {
      *
      * @param from  - document, from which pages will be copied.
      * @param pages - List of numbers of pages which will be copied.
+     * @throws java.io.IOException if any.
      */
     public void addPages(PdfDocument from, List<Integer> pages) throws IOException {
         for (Integer pageNum : pages) {

@@ -22,7 +22,7 @@ import java.util.Map;
 
 /**
  * Example of a custom tagworker implementation for pdfHTML.
- * The tagworker processes a <qr> tag using iText Barcode functionality
+ * The tagworker processes a {@code <qr>} tag using iText Barcode functionality
  */
 public class QRCodeTagWorker implements ITagWorker {
     private static String[] allowedErrorCorrection = {"L","M","Q","H"};
@@ -30,6 +30,12 @@ public class QRCodeTagWorker implements ITagWorker {
     private BarcodeQRCode qrCode;
     private Image qrCodeAsImage;
 
+    /**
+     * <p>Constructor for QRCodeTagWorker.</p>
+     *
+     * @param element a {@link com.itextpdf.styledxmlparser.node.IElementNode} object.
+     * @param context a {@link com.itextpdf.html2pdf.attach.ProcessorContext} object.
+     */
     public QRCodeTagWorker(IElementNode element, ProcessorContext context){
         //Retrieve all necessary properties to create the barcode
         Map<EncodeHintType, Object> hints = new HashMap<>();
@@ -49,6 +55,7 @@ public class QRCodeTagWorker implements ITagWorker {
 
     }
 
+    /** {@inheritDoc} */
     @Override
     public void processEnd(IElementNode element, ProcessorContext context) {
         //Transform barcode into image
@@ -56,6 +63,7 @@ public class QRCodeTagWorker implements ITagWorker {
 
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean processContent(String content, ProcessorContext context) {
         //Add content to the barcode
@@ -63,11 +71,13 @@ public class QRCodeTagWorker implements ITagWorker {
         return true;
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean processTagChild(ITagWorker childTagWorker, ProcessorContext context) {
         return false;
     }
 
+    /** {@inheritDoc} */
     @Override
     public IPropertyContainer getElementResult() {
 
