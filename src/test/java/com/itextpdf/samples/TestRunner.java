@@ -13,6 +13,7 @@ import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.utils.verapdf.VeraPdfValidator;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -22,6 +23,8 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -58,10 +61,27 @@ public class TestRunner extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.tagging.CreateTaggedDocument"
     );
 
+    /**
+     * Global map of classes with ignored areas
+     **/
+    private static Map<String, Map<Integer, List<Rectangle>>> ignoredClassesMap;
+
+    static {
+        Rectangle latinClassIgnoredArea = new Rectangle(30, 539, 250, 13);
+        List<Rectangle> rectangles = Arrays.asList(latinClassIgnoredArea);
+
+        Map<Integer, List<Rectangle>> ignoredAreasMap = new HashMap<>();
+        ignoredAreasMap.put(1, rectangles);
+
+        ignoredClassesMap = new HashMap<>();
+        ignoredClassesMap.put("com.itextpdf.samples.typography.latin.LatinSignature", ignoredAreasMap);
+    }
+
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
+        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.typography");
         searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_01_DifferentLayouts");
         searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_02_ComplexDocumentLayout");
         searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_03_ComplexElementLayout");
@@ -129,15 +149,16 @@ public class TestRunner extends WrappedSamplesRunner {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));
             addError(compareTool.compareDocumentInfo(dest, cmp));
+        } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())){
+            addError(compareTool.compareVisually(dest, cmp, outPath, "diff_",
+                    ignoredClassesMap.get(sampleClass.getName())));
         } else {
             addError(compareTool.compareByContent(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareDocumentInfo(dest, cmp));
         }
-
         if (tagCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareTagStructures(dest, cmp));
         }
-
         if (veraPdfCompareList.contains(sampleClass.getName())) {
             addError(new VeraPdfValidator().validate(dest));
         }
@@ -152,7 +173,6 @@ public class TestRunner extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
-
             // No exception handling required, because there can be no license loaded
         }
     }

@@ -1,0 +1,22 @@
+Please notice that the following fonts are used with the mentioned below licenses.
+
+* FoglihtenNo07 - SIL Open Font License v1.10
+* FreeSans - GPL license you can find following the link: https://www.gnu.org/licenses
+* KhmerOS - LGPL license you can find following the link: https://www.gnu.org/licenses
+* LobsterTwo-Regular - SIL Open Font License v1.10
+* NotoNaskhArabic-Regular - SIL Open Font License v1.10
+* NotoSansBengali-Regular - SIL Open Font License v1.10
+* NotoSansDevanagari-Regular - SIL Open Font License v1.10
+* NotoSansGujarati-Regular - SIL Open Font License v1.10
+* NotoSansGurmukhi-Regular - SIL Open Font License v1.10
+* NotoSansKannada-Regular - SIL Open Font License v1.10
+* NotoSansMalayalam-Regular - SIL Open Font License v1.10
+* NotoSansOriya-Regular - SIL Open Font License v1.10
+* NotoSansTamil-Regular - SIL Open Font License v1.10
+* NotoSansTelugu-Regular - SIL Open Font License v1.10
+* NotoSansThai-Regular - SIL Open Font License v1.10
+* NotoSerifHebrew-Regular - SIL Open Font License v1.10
+* NotoSansBengali-Bold - SIL Open Font License v1.10
+* NotoSansDevanagari-Bold - SIL Open Font License v1.10
+* NotoSerifHebrew-Bold - SIL Open Font License v1.10
+
