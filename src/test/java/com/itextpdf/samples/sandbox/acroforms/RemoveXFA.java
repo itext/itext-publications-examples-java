@@ -26,9 +26,8 @@ import java.util.Map;
 
 import org.junit.experimental.categories.Category;
 
-@Category(SampleTest.class)
-public class RemoveXFA extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/remove_xfa.pdf";
+public class RemoveXFA {
+    public static final String DEST = "./target/sandbox/acroforms/remove_xfa.pdf";
     public static final String SRC = "./src/test/resources/pdfs/reportcardinitial.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -37,7 +36,6 @@ public class RemoveXFA extends GenericTest {
         new RemoveXFA().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 
