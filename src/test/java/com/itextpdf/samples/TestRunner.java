@@ -12,6 +12,7 @@ import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.samples.utils.verapdf.VeraPdfValidator;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -30,12 +31,18 @@ import org.junit.runners.Parameterized;
 public class TestRunner extends WrappedSamplesRunner {
 
     /**
-     * List of samples, that should be validated visually and by link annotations on corresponding pages
+     * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
     private List<String> renderCompareList = Arrays.asList("com.itextpdf.samples.sandbox.tables.CellMethod");
 
+    private List<String> veraPdfCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.pdfa.HelloPdfA2a",
+            "com.itextpdf.samples.sandbox.pdfa.PdfA1a",
+            "com.itextpdf.samples.sandbox.pdfa.PdfA1a_images",
+            "com.itextpdf.samples.sandbox.pdfa.PdfA3");
+
     /**
-     * List of samples, that requires xml files comparison
+     * List of samples, which requires xml files comparison
      */
     private List<String> xmlCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.acroforms.ReadXFA",
@@ -43,7 +50,7 @@ public class TestRunner extends WrappedSamplesRunner {
     );
 
     /**
-     * List of samples, that requires tag comparison
+     * List of samples, which requires tag comparison
      */
     private List<String> tagCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.tagging.AddArtifactTable",
@@ -102,7 +109,7 @@ public class TestRunner extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Test(timeout = 120000)
+    @Test(timeout = 60000)
     public void test() throws Exception {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
         FontProgramFactory.clearRegisteredFonts();
@@ -130,6 +137,10 @@ public class TestRunner extends WrappedSamplesRunner {
         if (tagCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareTagStructures(dest, cmp));
         }
+
+        if (veraPdfCompareList.contains(sampleClass.getName())) {
+            addError(new VeraPdfValidator().validate(dest));
+        }
     }
 
     private void unloadLicense() {
@@ -141,6 +152,8 @@ public class TestRunner extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
+
+            // No exception handling required, because there can be no license loaded
         }
     }
 }
