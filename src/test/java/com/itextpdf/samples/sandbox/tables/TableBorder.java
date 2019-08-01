@@ -32,19 +32,25 @@ public class TableBorder {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TableBorder().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
+
         for (int aw = 0; aw < 16; aw++) {
             table.addCell(new Cell().add(new Paragraph("hi")).setBorder(Border.NO_BORDER));
         }
+
         // Notice that one should set renderer after table completion
         table.setNextRenderer(new TableBorderRenderer(table));
+
         doc.add(table);
+
         doc.close();
     }
 

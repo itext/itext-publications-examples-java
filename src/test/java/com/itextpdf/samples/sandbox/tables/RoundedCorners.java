@@ -31,6 +31,7 @@ public class RoundedCorners {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RoundedCorners().manipulatePdf(DEST);
     }
 
@@ -41,10 +42,13 @@ public class RoundedCorners {
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         Cell cell = getCell("These cells have rounded borders at the top.");
         table.addCell(cell);
+
         cell = getCell("These cells aren't rounded at the bottom.");
         table.addCell(cell);
+
         cell = getCell("A custom cell event was used to achieve this.");
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();
@@ -70,8 +74,10 @@ public class RoundedCorners {
             float lly = getOccupiedAreaBBox().getY() + 2;
             float urx = getOccupiedAreaBBox().getX() + getOccupiedAreaBBox().getWidth() - 2;
             float ury = getOccupiedAreaBBox().getY() + getOccupiedAreaBBox().getHeight() - 2;
+
             float r = 4;
             float b = 0.4477f;
+
             PdfCanvas canvas = drawContext.getCanvas();
             canvas.moveTo(llx, lly);
             canvas.lineTo(urx, lly);

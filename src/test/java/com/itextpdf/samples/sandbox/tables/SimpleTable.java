@@ -26,6 +26,7 @@ public class SimpleTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SimpleTable().manipulatePdf(DEST);
     }
 
@@ -34,9 +35,11 @@ public class SimpleTable {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
+
         for (int i = 0; i < 16; i++) {
             table.addCell("hi");
         }
+
         doc.add(table);
 
         doc.close();

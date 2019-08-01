@@ -31,6 +31,7 @@ public class NestedTableRoundedBorder {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new NestedTableRoundedBorder().manipulatePdf(DEST);
     }
 
@@ -38,117 +39,143 @@ public class NestedTableRoundedBorder {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Cell cell;
         // outer table
         Table outertable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
         // inner table 1
         Table innertable = new Table(UnitValue.createPercentArray(new float[]{8, 12, 1, 4, 12})).useAllAvailableWidth();
+
         // first row
         // column 1
-        cell = new Cell().add(new Paragraph("Record Ref:"));
+        Cell cell = new Cell().add(new Paragraph("Record Ref:"));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 2
         cell = new Cell().add(new Paragraph("GN Staff"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
-        // column 3
+
+        // spacing
         cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 4
         cell = new Cell().add(new Paragraph("Date: "));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 5
         cell = new Cell().add(new Paragraph("30/4/2015"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
+
         // spacing
         cell = new Cell(1, 5);
         cell.setHeight(3);
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // second row
         // column 1
         cell = new Cell().add(new Paragraph("Hospital:"));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 2
         cell = new Cell().add(new Paragraph("Derby Royal"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
-        // column 3
+
+        // spacing
         cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 4
         cell = new Cell().add(new Paragraph("Ward: "));
         cell.setBorder(Border.NO_BORDER);
         cell.setPaddingLeft(5);
         innertable.addCell(cell);
+
         // column 5
         cell = new Cell().add(new Paragraph("21"));
         cell.setPaddingLeft(2);
         innertable.addCell(cell);
+
         // spacing
         cell = new Cell(1, 5);
         cell.setHeight(3);
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // first nested table
         cell = new Cell().add(innertable);
         cell.setNextRenderer(new RoundedBorderCellRenderer(cell));
         cell.setBorder(Border.NO_BORDER);
         cell.setPadding(8);
         outertable.addCell(cell);
+
         // inner table 2
         innertable = new Table(UnitValue.createPercentArray(new float[]{3, 17, 1, 16}));
         innertable.setWidth(UnitValue.createPercentValue(100));
+
         // first row
         // column 1
         cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 2
         cell = new Cell().add(new Paragraph("Name"));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 3
         cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // column 4
         cell = new Cell().add(new Paragraph("Signature: "));
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // spacing
         cell = new Cell(1, 4);
         cell.setHeight(3);
         cell.setBorder(Border.NO_BORDER);
         innertable.addCell(cell);
+
         // subsequent rows
         for (int i = 1; i < 4; i++) {
+
             // column 1
             cell = new Cell().add(new Paragraph(String.format("%s:", i)));
             cell.setBorder(Border.NO_BORDER);
             innertable.addCell(cell);
+
             // column 2
             cell = new Cell();
             innertable.addCell(cell);
+
             // column 3
             cell = new Cell();
             cell.setBorder(Border.NO_BORDER);
             innertable.addCell(cell);
+
             // column 4
             cell = new Cell();
             innertable.addCell(cell);
+
             // spacing
             cell = new Cell(1, 4);
             cell.setHeight(3);
             cell.setBorder(Border.NO_BORDER);
             innertable.addCell(cell);
         }
+
         // second nested table
         cell = new Cell().add(innertable);
         cell.setNextRenderer(new RoundedBorderCellRenderer(cell));
@@ -158,6 +185,7 @@ public class NestedTableRoundedBorder {
         cell.setPaddingRight(8);
         cell.setPaddingBottom(8);
         outertable.addCell(cell);
+
         // add the table
         doc.add(outertable);
 

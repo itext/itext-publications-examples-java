@@ -23,57 +23,65 @@ public class ListInCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ListInCell().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
+        Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
         // This is how not to do it (but it works anyway):
-        // We create a list:
+
+        // Create a list:
         List list = new List();
         list.add(new ListItem("Item 1"));
         list.add(new ListItem("Item 2"));
         list.add(new ListItem("Item 3"));
 
-        Cell phraseCell = new Cell();
-        phraseCell.add(list);
+        // Wrap this list in a paragraph
+        Paragraph paragraph = new Paragraph();
+        paragraph.add(list);
 
-        // We add the cell to a table:
-        Table phraseTable = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        phraseTable.setMarginTop(5);
-        phraseTable.addCell("List wrapped in a phrase:");
-        phraseTable.addCell(phraseCell);
+        // Add this paragraph to a cell
+        Cell paragraphCell = new Cell();
+        paragraphCell.add(paragraph);
 
-        // We add these nested tables to the document:
-        doc.add(new Paragraph("A list, wrapped in a phrase, wrapped in a cell, " +
+        // Add the cell to a table
+        Table paragraphTable = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+        paragraphTable.setMarginTop(5);
+        paragraphTable.addCell("List wrapped in a paragraph:");
+        paragraphTable.addCell(paragraphCell);
+
+        /// Add this nested table to the document
+        doc.add(new Paragraph("A list, wrapped in a paragraph, wrapped in a cell, " +
                 "wrapped in a table, wrapped in a phrase:"));
-        phraseTable.setMarginTop(5);
-        doc.add(phraseTable);
+        paragraphTable.setMarginTop(5);
+        doc.add(paragraphTable);
 
+        // This is how to do it:
 
-        // We add the list directly to a cell:
+        // Add the list directly to a cell
         Cell cell = new Cell();
         cell.add(list);
 
-        // We add the cell to the table:
+        // Add the cell to the table
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(5);
         table.addCell("List placed directly into cell");
         table.addCell(cell);
 
-        // We add the table to the document:
+        // Add the table to the document
         doc.add(new Paragraph("A list, wrapped in a cell, wrapped in a table:"));
         doc.add(table);
 
-        // Avoid adding tables to phrase (but it works anyway):
+        // Avoid adding tables to paragraph (but it works anyway):
+        Paragraph tableWrapper = new Paragraph();
+        tableWrapper.setMarginTop(0);
+        tableWrapper.add(table);
+        doc.add(new Paragraph("A list, wrapped in a cell, wrapped in a table, wrapped in a paragraph:"));
 
-        doc.add(new Paragraph("A list, wrapped in a cell, wrapped in a table, wrapped in a phrase:"));
-        table.setMarginTop(5);
-        doc.add(table);
+        doc.add(tableWrapper);
 
         doc.close();
     }

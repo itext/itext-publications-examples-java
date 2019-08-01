@@ -30,6 +30,7 @@ public class ColoredBorder {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ColoredBorder().manipulatePdf(DEST);
     }
 
@@ -37,21 +38,23 @@ public class ColoredBorder {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table;
-        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        Cell cell;
-        cell = new Cell().add(new Paragraph("Cell 1"));
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+
+        Cell cell = new Cell().add(new Paragraph("Cell 1"));
         cell.setBorderTop(new SolidBorder(ColorConstants.RED, 1));
         cell.setBorderBottom(new SolidBorder(ColorConstants.BLUE, 1));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("Cell 2"));
         cell.setBorderLeft(new SolidBorder(ColorConstants.GREEN, 5));
         cell.setBorderTop(new SolidBorder(ColorConstants.YELLOW, 8));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("Cell 3"));
         cell.setBorderLeft(new SolidBorder(ColorConstants.RED, 1));
         cell.setBorderBottom(new SolidBorder(ColorConstants.BLUE, 1));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("Cell 4"));
         cell.setBorderLeft(new SolidBorder(ColorConstants.GREEN, 5));
         cell.setBorderTop(new SolidBorder(ColorConstants.YELLOW, 8));

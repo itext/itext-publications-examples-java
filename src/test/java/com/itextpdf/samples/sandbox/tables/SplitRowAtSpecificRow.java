@@ -29,27 +29,28 @@ public class SplitRowAtSpecificRow {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SplitRowAtSpecificRow().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
         // Notice that the width is bigger than available area (612 - 36 - 36 = 540, where 36 is the value of the left (and the right) margin
         table.setWidth(550);
-        // the number of iterations has been changed in order to provide the same as in itext5 example
+
         for (int i = 0; i < 6; i++) {
-            Cell cell;
-            if (i == 5) {
-                cell = new Cell().add(new Paragraph("Three\nLines\nHere"));
-            } else {
-                cell = new Cell().add(new Paragraph(Integer.toString(i)));
-            }
+            Cell cell = new Cell()
+                    .add(new Paragraph((i == 5) ? "Three\nLines\nHere" : Integer.toString(i)));
+
             table.addCell(cell);
         }
 
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(612, 237));
+
         doc.add(table);
+
         doc.close();
     }
 }

@@ -26,11 +26,13 @@ import java.io.File;
 
 public class SimpleTable8 {
     public static final String DEST = "./target/sandbox/tables/simple_table8.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SimpleTable8().manipulatePdf(DEST);
     }
 
@@ -39,21 +41,31 @@ public class SimpleTable8 {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
+
         PdfReader reader = new PdfReader(SRC + "header_test_file.pdf");
         PdfDocument srcDoc = new PdfDocument(reader);
+
         PdfFormXObject header = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
-        Cell cell = new Cell(1, 3).add(new Image(header).setWidth(UnitValue.createPercentValue(100)).setAutoScale(true));
+
+        Cell cell = new Cell(1, 3).add(new Image(header).setWidth(UnitValue.createPercentValue(100))
+                .setAutoScale(true));
         table.addCell(cell);
+
         for (int row = 1; row <= 50; row++) {
             for (int column = 1; column <= 3; column++) {
                 table.addCell(String.format("row %s, column %s", row, column));
             }
         }
+
         reader = new PdfReader(SRC + "footer_test_file.pdf");
         srcDoc = new PdfDocument(reader);
+
         PdfFormXObject footer = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
-        cell = new Cell(1, 3).add(new Image(footer).setWidth(UnitValue.createPercentValue(100)).setAutoScale(true));
+
+        cell = new Cell(1, 3).add(new Image(footer).setWidth(UnitValue.createPercentValue(100))
+                .setAutoScale(true));
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();

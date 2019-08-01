@@ -30,6 +30,7 @@ public class DottedLineCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DottedLineCell().manipulatePdf(DEST);
     }
 
@@ -37,7 +38,10 @@ public class DottedLineCell {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         doc.add(new Paragraph("Table event"));
+
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
+
+        // Draws dotted line borders
         table.setNextRenderer(new DottedLineTableRenderer(table, new Table.RowRange(0, 2)));
         table.addCell(new Cell().add(new Paragraph("A1")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("A2")).setBorder(Border.NO_BORDER));
@@ -48,13 +52,17 @@ public class DottedLineCell {
         table.addCell(new Cell().add(new Paragraph("C1")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("C2")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("C3")).setBorder(Border.NO_BORDER));
+
         doc.add(table);
         doc.add(new Paragraph("Cell event"));
+
         table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
         Cell cell = new Cell().add(new Paragraph("Test"));
         cell.setNextRenderer(new DottedLineCellRenderer(cell));
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell.setBorder(Border.NO_BORDER));
+
         doc.add(table);
 
         doc.close();
@@ -71,6 +79,7 @@ public class DottedLineCell {
             super.drawChildren(drawContext);
             PdfCanvas canvas = drawContext.getCanvas();
             canvas.setLineDash(3f, 3f);
+
             // first horizontal line
             CellRenderer[] cellRenderers = rows.get(0);
             canvas.moveTo(cellRenderers[0].getOccupiedArea().getBBox().getLeft(),
@@ -78,24 +87,27 @@ public class DottedLineCell {
             canvas.lineTo(cellRenderers[cellRenderers.length - 1].getOccupiedArea().getBBox().getRight(),
                     cellRenderers[cellRenderers.length - 1].getOccupiedArea().getBBox().getTop());
 
-            for (int i = 0; i < rows.size(); i++) {
-                cellRenderers = rows.get(i);
+            for (CellRenderer[] renderers : rows) {
+
                 // horizontal lines
-                canvas.moveTo(cellRenderers[0].getOccupiedArea().getBBox().getX(),
-                        cellRenderers[0].getOccupiedArea().getBBox().getY());
-                canvas.lineTo(cellRenderers[cellRenderers.length - 1].getOccupiedArea().getBBox().getRight(),
-                        cellRenderers[cellRenderers.length - 1].getOccupiedArea().getBBox().getBottom());
+                canvas.moveTo(renderers[0].getOccupiedArea().getBBox().getX(),
+                        renderers[0].getOccupiedArea().getBBox().getY());
+                canvas.lineTo(renderers[renderers.length - 1].getOccupiedArea().getBBox().getRight(),
+                        renderers[renderers.length - 1].getOccupiedArea().getBBox().getBottom());
+
                 // first vertical line
-                Rectangle cellRect = cellRenderers[0].getOccupiedArea().getBBox();
+                Rectangle cellRect = renderers[0].getOccupiedArea().getBBox();
                 canvas.moveTo(cellRect.getLeft(), cellRect.getBottom());
                 canvas.lineTo(cellRect.getLeft(), cellRect.getTop());
+
                 // vertical lines
-                for (int j = 0; j < cellRenderers.length; j++) {
-                    cellRect = cellRenderers[j].getOccupiedArea().getBBox();
+                for (CellRenderer renderer : renderers) {
+                    cellRect = renderer.getOccupiedArea().getBBox();
                     canvas.moveTo(cellRect.getRight(), cellRect.getBottom());
                     canvas.lineTo(cellRect.getRight(), cellRect.getTop());
                 }
             }
+
             canvas.stroke();
         }
     }

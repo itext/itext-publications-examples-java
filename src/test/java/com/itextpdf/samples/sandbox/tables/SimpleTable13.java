@@ -35,6 +35,7 @@ public class SimpleTable13 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SimpleTable13().manipulatePdf(DEST);
     }
 
@@ -42,16 +43,19 @@ public class SimpleTable13 {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{5, 1}));
+        Table table = new Table(UnitValue.createPercentArray(new float[] {5, 1}));
         table.setWidth(UnitValue.createPercentValue(50));
         table.setTextAlignment(TextAlignment.LEFT);
+
         table.addCell(new Cell().add(new Paragraph("Name: " + DATA[0][0])).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(DATA[0][1])).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("Surname: " + DATA[1][0])).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(DATA[1][1])).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("School: " + DATA[2][0])).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(DATA[1][1])).setBorder(Border.NO_BORDER));
+
         doc.add(table);
+
         doc.close();
     }
 }

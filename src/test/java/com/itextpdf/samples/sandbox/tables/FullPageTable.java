@@ -30,6 +30,7 @@ public class FullPageTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FullPageTable().manipulatePdf(DEST);
     }
 
@@ -41,6 +42,7 @@ public class FullPageTable {
         Table table = new Table(new float[10]).useAllAvailableWidth();
         table.setMarginTop(0);
         table.setMarginBottom(0);
+
         // first row
         Cell cell = new Cell(1, 10).add(new Paragraph("DateRange"));
         cell.setTextAlignment(TextAlignment.CENTER);
@@ -71,6 +73,7 @@ public class FullPageTable {
             table.addCell("callcost" + i);
             table.addCell("Site" + i);
         }
+
         doc.add(table);
 
         doc.close();

@@ -31,6 +31,7 @@ public class SplittingAndRowspan {
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SplittingAndRowspan().manipulatePdf(DEST);
     }
 
@@ -39,23 +40,28 @@ public class SplittingAndRowspan {
         Document doc = new Document(pdfDoc, new PageSize(300, 160));
 
         doc.add(new Paragraph("Table with setKeepTogether(true):"));
+
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setKeepTogether(true);
         table.setMarginTop(10);
+
         Cell cell = new Cell(3, 1);
         cell.add(new Paragraph("G"));
         cell.add(new Paragraph("R"));
         cell.add(new Paragraph("P"));
+
         table.addCell(cell);
         table.addCell("row 1");
         table.addCell("row 2");
         table.addCell("row 3");
+
         doc.add(table);
 
         doc.add(new AreaBreak());
 
         doc.add(new Paragraph("Table with setKeepTogether(false):"));
         table.setKeepTogether(false);
+
         doc.add(table);
 
         doc.close();

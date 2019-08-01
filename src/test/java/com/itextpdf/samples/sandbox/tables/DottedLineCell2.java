@@ -33,68 +33,73 @@ public class DottedLineCell2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DottedLineCell2().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document document = new Document(pdfDoc);
-        Table table;
-        Cell cell;
 
-        table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
-        cell = new Cell().add(new Paragraph("left border"));
+
+        Cell cell = new Cell().add(new Paragraph("left border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{false, true, false, false}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {false, true, false, false}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("right border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{false, false, false, true}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {false, false, false, true}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("top border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{true, false, false, false}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {true, false, false, false}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("bottom border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{false, false, true, false}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {false, false, true, false}));
         table.addCell(cell);
+
         document.add(table);
 
         table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
+
         cell = new Cell().add(new Paragraph("left and top border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{true, true, false, false}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {true, true, false, false}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("right and bottom border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{false, false, true, true}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {false, false, true, true}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("no border"));
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("full border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setNextRenderer(new DottedLineCellRenderer(cell,
-                new boolean[]{true, true, true, true}));
+        cell.setNextRenderer(new DottedLineCellRenderer(cell, new boolean[] {true, true, true, true}));
         table.addCell(cell);
+
         document.add(table);
+
         document.close();
     }
+
     class DottedLineCellRenderer extends CellRenderer {
         boolean[] borders;
 
         public DottedLineCellRenderer(Cell modelElement, boolean[] borders) {
             super(modelElement);
             this.borders = new boolean[borders.length];
+
             for (int i = 0; i < this.borders.length; i++) {
                 this.borders[i] = borders[i];
             }
@@ -107,22 +112,27 @@ public class DottedLineCell2 {
             Rectangle position = getOccupiedAreaBBox();
             canvas.saveState();
             canvas.setLineDash(0, 4, 2);
+
             if (borders[0]) {
                 canvas.moveTo(position.getRight(), position.getTop());
                 canvas.lineTo(position.getLeft(), position.getTop());
             }
+
             if (borders[2]) {
                 canvas.moveTo(position.getRight(), position.getBottom());
                 canvas.lineTo(position.getLeft(), position.getBottom());
             }
+
             if (borders[3]) {
                 canvas.moveTo(position.getRight(), position.getTop());
                 canvas.lineTo(position.getRight(), position.getBottom());
             }
+
             if (borders[1]) {
                 canvas.moveTo(position.getLeft(), position.getTop());
                 canvas.lineTo(position.getLeft(), position.getBottom());
             }
+
             canvas.stroke();
             canvas.restoreState();
         }

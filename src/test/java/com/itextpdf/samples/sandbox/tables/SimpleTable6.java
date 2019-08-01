@@ -33,6 +33,7 @@ public class SimpleTable6 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SimpleTable6().manipulatePdf(DEST);
     }
 
@@ -42,14 +43,18 @@ public class SimpleTable6 {
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.addCell("0123456789");
+
         PdfFont font = PdfFontFactory.createFont(FontProgramFactory.createFont(StandardFonts.HELVETICA));
         table.addCell(new Cell().add(new Paragraph("0123456789").setFont(font).setLineThrough()));
+
         Text text1 = new Text("0123456789");
         text1.setUnderline(1.5f, -1);
         table.addCell(new Paragraph(text1));
+
         Text text2 = new Text("0123456789");
         text2.setUnderline(1.5f, 3.5f);
         table.addCell(new Paragraph(text2));
+
         doc.add(table);
 
         doc.close();

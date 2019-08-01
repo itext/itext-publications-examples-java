@@ -28,6 +28,7 @@ public class SimpleRowColspan {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SimpleRowColspan().manipulatePdf(DEST);
     }
 
@@ -35,15 +36,17 @@ public class SimpleRowColspan {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 2, 2, 2, 1}));
+        Table table = new Table(UnitValue.createPercentArray(new float[] {1, 2, 2, 2, 1}));
 
-        Cell cell;
-        cell = new Cell(2, 1).add(new Paragraph("S/N"));
+        Cell cell = new Cell(2, 1).add(new Paragraph("S/N"));
         table.addCell(cell);
+
         cell = new Cell(1, 3).add(new Paragraph("Name"));
         table.addCell(cell);
+
         cell = new Cell(2, 1).add(new Paragraph("Age"));
         table.addCell(cell);
+
         table.addCell("SURNAME");
         table.addCell("FIRST NAME");
         table.addCell("MIDDLE NAME");
@@ -52,6 +55,7 @@ public class SimpleRowColspan {
         table.addCell("Fish");
         table.addCell("Stone");
         table.addCell("17");
+
         doc.add(table);
 
         doc.close();

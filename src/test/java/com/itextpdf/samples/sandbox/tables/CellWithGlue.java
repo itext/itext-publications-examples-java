@@ -31,6 +31,7 @@ public class CellWithGlue {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CellWithGlue().manipulatePdf(DEST);
     }
 
@@ -38,19 +39,20 @@ public class CellWithGlue {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table;
-        Cell cell;
-
-        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+        // By default column width is calculated automatically for the best fit.
+        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidth(UnitValue.createPercentValue(60));
         table.setMarginBottom(20);
-        cell = new Cell().add(new Paragraph("Received Rs (in Words):"));
+
+        Cell cell = new Cell().add(new Paragraph("Received Rs (in Words):"));
         cell.setBorder(Border.NO_BORDER);
         cell.setBorderLeft(new SolidBorder(1));
         cell.setBorderTop(new SolidBorder(1));
         cell.setBorderBottom(new SolidBorder(1));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("Priceless"));
         cell.setTextAlignment(TextAlignment.RIGHT);
         cell.setBorder(Border.NO_BORDER);
@@ -58,20 +60,24 @@ public class CellWithGlue {
         cell.setBorderTop(new SolidBorder(1));
         cell.setBorderBottom(new SolidBorder(1));
         table.addCell(cell);
+
         doc.add(table);
 
         table.setWidth(UnitValue.createPercentValue(50));
+
         doc.add(table);
 
         table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidth(UnitValue.createPercentValue(50));
+
         Paragraph p = new Paragraph();
         p.add(new Text("Received Rs (In Words):"));
         p.addTabStops(new TabStop(1000, TabAlignment.RIGHT));
         p.add(new Tab());
         p.add(new Text("Priceless"));
         table.addCell(new Cell().add(p));
+
         doc.add(table);
 
         doc.close();

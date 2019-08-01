@@ -30,6 +30,7 @@ public class RepeatLastRows {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RepeatLastRows().manipulatePdf(DEST);
     }
 
@@ -40,9 +41,11 @@ public class RepeatLastRows {
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setWidth(523);
         table.setNextRenderer(new RepeatTableRenderer(table, new Table.RowRange(0, 113)));
-        // the number is changed in order to provide the same as in itext5 example
-        for (int i = 1; i < 115; i++)
+
+        for (int i = 1; i < 115; i++) {
             table.addCell(new Cell().add(new Paragraph("row " + i)));
+        }
+
         doc.add(table);
 
         doc.close();
@@ -68,7 +71,9 @@ public class RepeatLastRows {
             RepeatTableRenderer splitRenderer = (RepeatTableRenderer) createSplitRenderer(
                     new Table.RowRange(rowRange.getStartRow(), rowRange.getStartRow() + row));
             splitRenderer.rows = rows.subList(0, row);
+
             RepeatTableRenderer overflowRenderer;
+
             if (rows.size() - row > 5) {
                 overflowRenderer = (RepeatTableRenderer) createOverflowRenderer(
                         new Table.RowRange(rowRange.getStartRow() + row, rowRange.getFinishRow()));
@@ -78,8 +83,10 @@ public class RepeatLastRows {
                         new Table.RowRange(rowRange.getFinishRow() - 5, rowRange.getFinishRow()));
                 overflowRenderer.rows = rows.subList(rows.size() - 5, rows.size());
             }
+
             splitRenderer.occupiedArea = occupiedArea;
-            return new TableRenderer[]{splitRenderer, overflowRenderer};
+
+            return new TableRenderer[] {splitRenderer, overflowRenderer};
         }
     }
 }

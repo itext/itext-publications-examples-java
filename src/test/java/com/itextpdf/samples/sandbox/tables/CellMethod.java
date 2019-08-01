@@ -25,48 +25,24 @@ import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.UnitValue;
 
 import java.io.File;
-import java.io.IOException;
 
 public class CellMethod {
     public static final String DEST = "./target/sandbox/tables/cell_method.pdf";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
-    private static PdfFont czechFont = null;
-    private static PdfFont defaultFont = null;
-    private static PdfFont greekFont = null;
+    private static PdfFont czechFont;
+    private static PdfFont defaultFont;
+    private static PdfFont greekFont;
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CellMethod().manipulatePdf(DEST);
     }
 
-    public static Cell getNormalCell(String string, String language, float size) throws IOException {
-        if (string != null && "".equals(string)) {
-            return new Cell();
-        }
-        PdfFont f = getFontForThisLanguage(language);
-        Cell cell = new Cell().add(new Paragraph(string).setFont(f));
-        cell.setHorizontalAlignment(HorizontalAlignment.LEFT);
-        if (size < 0) {
-            size = -size;
-            cell.setFontSize(size);
-            cell.setFontColor(ColorConstants.RED);
-        }
-        return cell;
-    }
-
-    public static PdfFont getFontForThisLanguage(String language) throws IOException {
-        if ("czech".equals(language)) {
-            return czechFont;
-        }
-        if ("greek".equals(language)) {
-            return greekFont;
-        }
-        return defaultFont;
-    }
-
     protected void manipulatePdf(String dest) throws Exception {
+
         czechFont = PdfFontFactory.createFont(FONT, "Cp1250", true);
         greekFont = PdfFontFactory.createFont(FONT, "Cp1253", true);
         defaultFont = PdfFontFactory.createFont(FONT, null, true);
@@ -74,7 +50,10 @@ public class CellMethod {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
+        // By default column width is calculated automatically for the best fit.
+        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+
         table.addCell("Winansi");
         table.addCell(getNormalCell("Test", null, 12));
         table.addCell("Winansi");
@@ -92,5 +71,42 @@ public class CellMethod {
         doc.add(table);
 
         doc.close();
+    }
+
+    public static Cell getNormalCell(String string, String language, float size) {
+        if (string != null && "".equals(string)) {
+            return new Cell();
+        }
+
+        PdfFont f = getFontForThisLanguage(language);
+
+        Cell cell = new Cell().add(new Paragraph(string).setFont(f));
+        cell.setHorizontalAlignment(HorizontalAlignment.LEFT);
+
+        if (size < 0) {
+            size = -size;
+            cell.setFontSize(size);
+            cell.setFontColor(ColorConstants.RED);
+        }
+
+        return cell;
+    }
+
+    public static PdfFont getFontForThisLanguage(String language) {
+        if (language == null) {
+            return defaultFont;
+        }
+
+        switch (language) {
+            case "czech": {
+                return czechFont;
+            }
+            case "greek": {
+                return greekFont;
+            }
+            default: {
+                return defaultFont;
+            }
+        }
     }
 }

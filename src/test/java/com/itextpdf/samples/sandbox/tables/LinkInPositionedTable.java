@@ -16,7 +16,6 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Link;
@@ -32,6 +31,7 @@ public class LinkInPositionedTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new LinkInPositionedTable().manipulatePdf(DEST);
     }
 
@@ -41,17 +41,21 @@ public class LinkInPositionedTable {
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setWidth(500);
+
         Cell cell = new Cell();
         Paragraph p = new Paragraph();
+
         Link link = new Link("link to top of next page", PdfAction.createGoTo("top"));
         p.add(link);
         cell.add(p);
         table.addCell(cell);
+
         doc.add(table);
         doc.add(new AreaBreak());
 
+        // Creates a target that the link leads to
         Paragraph target = new Paragraph("top");
-        target.setProperty(Property.DESTINATION, "top");
+        target.setDestination("top");
         doc.add(target);
 
         doc.close();

@@ -129,6 +129,24 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3224
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemo");
 
+        // TODO DEVSIX-3189
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.Tables.TableBorder");
+
+        // TODO DEVSIX-3188
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplitRowAtEndOfPage");
+
+        // TODO DEVSIX-3188
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplitRowAtSpecificRow");
+
+        // TODO DEVSIX-3189
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.RepeatLastRows");
+
+        // TODO DEVSIX-3187
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.RepeatLastRows2");
+
+        // TODO DEVSIX-3032
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
+
         return generateTestsList(searchConfig);
     }
 

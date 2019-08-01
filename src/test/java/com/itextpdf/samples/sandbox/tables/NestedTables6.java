@@ -17,7 +17,6 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 
@@ -29,6 +28,7 @@ public class NestedTables6 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new NestedTables6().manipulatePdf(DEST);
     }
 
@@ -43,13 +43,13 @@ public class NestedTables6 {
         // Notice that in itext7 there is no getDefaultCell method
         // and you should set paddings, margins and other properties exactly on the element
         // you want to handle them
-
-        Table subTable2 = new Table(new float[]{200, 100, 200, 200, 300});
+        Table subTable2 = new Table(new float[] {200, 100, 200, 200, 300});
         subTable2.addCell("test 1");
         subTable2.addCell("test 2");
         subTable2.addCell("test 3");
         subTable2.addCell("test 4");
         subTable2.addCell("test 5");
+
         Cell cell2 = new Cell().add(subTable2);
         cell2.setPadding(0);
         mainTable.addCell(cell2);

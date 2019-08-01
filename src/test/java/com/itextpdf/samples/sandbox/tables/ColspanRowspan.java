@@ -28,6 +28,7 @@ public class ColspanRowspan {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ColspanRowspan().manipulatePdf(DEST);
     }
 
@@ -38,14 +39,19 @@ public class ColspanRowspan {
         Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         Cell cell = new Cell().add(new Paragraph(" 1,1 "));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph(" 1,2 "));
         table.addCell(cell);
+
         Cell cell23 = new Cell(2, 2).add(new Paragraph("multi 1,3 and 1,4"));
         table.addCell(cell23);
+
         cell = new Cell().add(new Paragraph(" 2,1 "));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph(" 2,2 "));
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();

@@ -36,6 +36,7 @@ public class CustomBorder2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CustomBorder2().manipulatePdf(DEST);
     }
 
@@ -46,10 +47,12 @@ public class CustomBorder2 {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setWidth(500);
         table.setNextRenderer(new CustomBorder2TableRenderer(table, new Table.RowRange(0, 60)));
+
         for (int i = 1; i < 60; i++) {
             table.addCell(new Cell().add(new Paragraph("Cell " + i)).setBorder(Border.NO_BORDER));
             table.addCell(new Cell().add(new Paragraph(TEXT)).setBorder(Border.NO_BORDER));
         }
+
         doc.add(table);
 
         doc.close();
@@ -90,6 +93,7 @@ public class CustomBorder2 {
                     .lineTo(area.getLeft(), area.getTop())
                     .moveTo(area.getRight(), area.getTop())
                     .lineTo(area.getRight(), area.getBottom());
+
             if (wasSplitted) {
                 if (1 == drawContext.getDocument().getNumberOfPages()) {
                     canvas
@@ -101,6 +105,7 @@ public class CustomBorder2 {
                         .moveTo(area.getLeft(), area.getBottom())
                         .lineTo(area.getRight(), area.getBottom());
             }
+
             canvas
                     .stroke()
                     .restoreState();

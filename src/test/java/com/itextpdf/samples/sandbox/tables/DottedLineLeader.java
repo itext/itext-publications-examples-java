@@ -8,7 +8,7 @@
  */
 /**
  * Example written by Bruno Lowagie in answer to the following question:
- *http://stackoverflow.com/questions/27046352/how-to-generate-table-of-figures-dot-leaders-in-a-pdfpcell-for-the-last-line-of
+ * http://stackoverflow.com/questions/27046352/how-to-generate-table-of-figures-dot-leaders-in-a-pdfpcell-for-the-last-line-of
  */
 package com.itextpdf.samples.sandbox.tables;
 
@@ -30,6 +30,7 @@ public class DottedLineLeader {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DottedLineLeader().manipulatePdf(DEST);
     }
 
@@ -37,36 +38,33 @@ public class DottedLineLeader {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{10, 30, 10}));
+        Table table = new Table(UnitValue.createPercentArray(new float[] {10, 30, 10}));
         table.setWidth(UnitValue.createPercentValue(50));
+
+        // Creates dotted line leader
         ILineDrawer leader = new DottedLine(1.5f, 6);
 
-        Paragraph p;
         table.addCell(getCell(new Paragraph("fig 1"), VerticalAlignment.TOP));
-        p = new Paragraph("Title text");
 
+        Paragraph p = new Paragraph("Title text");
         p.addTabStops(new TabStop(150, TabAlignment.RIGHT, leader));
         p.add(new Tab());
-
         table.addCell(getCell(p, VerticalAlignment.TOP));
         table.addCell(getCell(new Paragraph("2"), VerticalAlignment.BOTTOM));
         table.addCell(getCell(new Paragraph("fig 2"), VerticalAlignment.TOP));
-        p = new Paragraph("This is a longer title text that wraps");
 
+        p = new Paragraph("This is a longer title text that wraps");
         p.addTabStops(new TabStop(150, TabAlignment.RIGHT, leader));
         p.add(new Tab());
-
         table.addCell(getCell(p, VerticalAlignment.TOP));
         table.addCell(getCell(new Paragraph("55"), VerticalAlignment.BOTTOM));
         table.addCell(getCell(new Paragraph("fig 3"), VerticalAlignment.TOP));
+
         p = new Paragraph("Another title text");
-
-
         table.addCell(getCell(p, VerticalAlignment.TOP));
         p.addTabStops(new TabStop(150, TabAlignment.RIGHT, leader));
         p.add(new Tab());
         table.addCell(getCell(new Paragraph("89"), VerticalAlignment.BOTTOM));
-
 
         doc.add(table);
 

@@ -25,6 +25,7 @@ public class KeepingTogetherInnerTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new KeepingTogetherInnerTable().manipulatePdf(DEST);
     }
 
@@ -34,6 +35,7 @@ public class KeepingTogetherInnerTable {
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(10);
+
         Cell cell = new Cell();
         cell.add(new Paragraph("G"));
         cell.add(new Paragraph("R"));
@@ -41,6 +43,7 @@ public class KeepingTogetherInnerTable {
         cell.add(new Paragraph("U"));
         cell.add(new Paragraph("P"));
         table.addCell(cell);
+
         Table inner = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         inner.setKeepTogether(true);
         inner.addCell("row 1");
@@ -48,9 +51,11 @@ public class KeepingTogetherInnerTable {
         inner.addCell("row 3");
         inner.addCell("row 4");
         inner.addCell("row 5");
+
         cell = new Cell().add(inner);
         cell.setPadding(0);
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();

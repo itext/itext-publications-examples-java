@@ -31,20 +31,21 @@ public class TableTemplate {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TableTemplate().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-
         Table table = new Table(UnitValue.createPercentArray(15)).useAllAvailableWidth();
+
         table.setWidth(1500);
-        Cell cell;
+
         for (int r = 'A'; r <= 'Z'; r++) {
             for (int c = 1; c <= 15; c++) {
-                cell = new Cell();
+                Cell cell = new Cell();
                 cell.setMinHeight(45);
-                cell.add(new Paragraph(String.valueOf((char) r) + String.valueOf(c)));
+                cell.add(new Paragraph(String.valueOf((char) r) + c));
                 table.addCell(cell);
             }
         }
@@ -52,10 +53,10 @@ public class TableTemplate {
         PdfFormXObject tableTemplate = new PdfFormXObject(new Rectangle(1500, 1300));
         Canvas canvas = new Canvas(tableTemplate, pdfDoc);
         canvas.add(table);
-        PdfFormXObject clip;
+
         for (int j = 0; j < 1500; j += 500) {
             for (int i = 1300; i > 0; i -= 650) {
-                clip = new PdfFormXObject(new Rectangle(500, 650));
+                PdfFormXObject clip = new PdfFormXObject(new Rectangle(500, 650));
                 new PdfCanvas(clip, pdfDoc).addXObject(tableTemplate, -j, 650 - i);
                 new PdfCanvas(pdfDoc.addNewPage()).addXObject(clip, 36, 156);
             }

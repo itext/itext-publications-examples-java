@@ -38,18 +38,20 @@ public class TableSplitTest {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TableSplitTest().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(595, 842));
+
         doc.setMargins(55, 15, 35, 15);
 
         ILineDrawer line = new SolidLine(2);
         line.setColor(ColorConstants.LIGHT_GRAY);
-        LineSeparator tableEndSeparator = new LineSeparator(line);
 
+        LineSeparator tableEndSeparator = new LineSeparator(line);
         tableEndSeparator.setMarginTop(10);
 
         String[] header = new String[]{"Header1", "Header2", "Header3",
@@ -57,73 +59,93 @@ public class TableSplitTest {
         String[] content = new String[]{"column 1", "column 2",
                 "some Text in column 3", "Test data ", "column 5"};
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{3, 2, 4, 3, 2}));
-        table.setWidth(UnitValue.createPercentValue(98));
+        Table table = new Table(UnitValue.createPercentArray(new float[] {3, 2, 4, 3, 2})).useAllAvailableWidth();
 
         for (String columnHeader : header) {
-            Cell headerCell = new Cell().add(new Paragraph(columnHeader).setFont(
-                    PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
-                    .setFontSize(10));
-            headerCell.setTextAlignment(TextAlignment.CENTER);
-            headerCell.setVerticalAlignment(VerticalAlignment.MIDDLE);
-            headerCell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
-            headerCell.setPadding(8);
+            Paragraph headerParagraph = new Paragraph(columnHeader)
+                    .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
+                    .setFontSize(10);
+
+            Cell headerCell = new Cell()
+                    .add(headerParagraph)
+                    .setTextAlignment(TextAlignment.CENTER)
+                    .setVerticalAlignment(VerticalAlignment.MIDDLE)
+                    .setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1))
+                    .setPadding(8);
+
             table.addHeaderCell(headerCell);
         }
+
         for (int i = 0; i < 15; i++) {
             int j = 0;
+
             for (String text : content) {
-                if (i == 13 && j == 3) {
-                    text = "Test data \n Test data \n Test data";
-                }
-                j++;
-                Cell cell = new Cell().add(new Paragraph(text).setFont(
-                        PdfFontFactory.createFont(StandardFonts.HELVETICA))
-                        .setFontSize(10));
-                cell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
-                cell.setPaddingLeft(5);
-                cell.setPaddingTop(5);
-                cell.setPaddingRight(5);
-                cell.setPaddingBottom(5);
+                Paragraph paragraph = new Paragraph((i == 13 && j == 3) ? "Test data \n Test data \n Test data" : text)
+                        .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
+                        .setFontSize(10);
+
+                Cell cell = new Cell()
+                        .add(paragraph)
+                        .setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1))
+                        .setPaddingLeft(5)
+                        .setPaddingTop(5)
+                        .setPaddingRight(5)
+                        .setPaddingBottom(5);
+
                 table.addCell(cell);
+
+                j++;
             }
         }
+
         doc.add(table);
         doc.add(tableEndSeparator);
+
         for (int k = 0; k < 5; k++) {
-            Paragraph info = new Paragraph("Some title").setFont(
-                    PdfFontFactory.createFont(StandardFonts.HELVETICA))
-                    .setFontSize(10);
-            info.setMarginTop(12f);
+            Paragraph info = new Paragraph("Some title")
+                    .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
+                    .setFontSize(10)
+                    .setMarginTop(12);
+
             doc.add(info);
-            table = new Table(UnitValue.createPercentArray(new float[]{3, 2, 4, 3, 2}));
-            table.setWidth(UnitValue.createPercentValue(98));
+
+            table = new Table(UnitValue.createPercentArray(new float[] {3, 2, 4, 3, 2})).useAllAvailableWidth();
             table.setMarginTop(15);
 
             for (String columnHeader : header) {
-                Cell headerCell = new Cell().add(new Paragraph(columnHeader).setFont(
-                        PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
-                        .setFontSize(10));
-                headerCell.setTextAlignment(TextAlignment.CENTER);
-                headerCell.setVerticalAlignment(VerticalAlignment.MIDDLE);
-                headerCell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
-                headerCell.setPaddingLeft(8);
-                headerCell.setPaddingTop(8);
-                headerCell.setPaddingRight(8);
-                headerCell.setPaddingBottom(8);
+                Paragraph paragraph = new Paragraph(columnHeader)
+                        .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD))
+                        .setFontSize(10);
+
+                Cell headerCell = new Cell()
+                        .add(paragraph)
+                        .setTextAlignment(TextAlignment.CENTER)
+                        .setVerticalAlignment(VerticalAlignment.MIDDLE)
+                        .setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1))
+                        .setPaddingLeft(8)
+                        .setPaddingTop(8)
+                        .setPaddingRight(8)
+                        .setPaddingBottom(8);
+
                 table.addHeaderCell(headerCell);
             }
+
             for (String text : content) {
-                Cell cell = new Cell().add(new Paragraph(text).setFont(
-                        PdfFontFactory.createFont(StandardFonts.HELVETICA))
-                        .setFontSize(10));
-                cell.setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1));
-                cell.setPaddingLeft(5);
-                cell.setPaddingTop(5);
-                cell.setPaddingRight(5);
-                cell.setPaddingBottom(5);
+                Paragraph paragraph = new Paragraph(text)
+                        .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
+                        .setFontSize(10);
+
+                Cell cell = new Cell()
+                        .add(paragraph)
+                        .setBorder(new SolidBorder(ColorConstants.LIGHT_GRAY, 1))
+                        .setPaddingLeft(5)
+                        .setPaddingTop(5)
+                        .setPaddingRight(5)
+                        .setPaddingBottom(5);
+
                 table.addCell(cell);
             }
+
             doc.add(table);
             doc.add(tableEndSeparator);
         }

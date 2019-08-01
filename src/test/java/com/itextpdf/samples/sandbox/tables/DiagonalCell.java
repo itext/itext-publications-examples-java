@@ -36,6 +36,7 @@ public class DiagonalCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DiagonalCell().manipulatePdf(DEST);
     }
 
@@ -43,16 +44,18 @@ public class DiagonalCell {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         Table table = new Table(UnitValue.createPercentArray(6)).useAllAvailableWidth();
-
         Cell cell = new Cell();
-        cell.setNextRenderer(new DiagonalCellRenderer(cell, "Gravity", "Occ"));
-        table.addCell(cell.setMinHeight(30));
 
+        // Draws cell content with top right text 'Gravity' and bottom left text 'Occ'
+        cell.setNextRenderer(new DiagonalCellRenderer(cell, "Gravity", "Occ"));
+
+        table.addCell(cell.setMinHeight(30));
         table.addCell(new Cell().add(new Paragraph("1")).setMinHeight(30));
         table.addCell(new Cell().add(new Paragraph("2")).setMinHeight(30));
         table.addCell(new Cell().add(new Paragraph("3")).setMinHeight(30));
         table.addCell(new Cell().add(new Paragraph("4")).setMinHeight(30));
         table.addCell(new Cell().add(new Paragraph("5")).setMinHeight(30));
+
         for (int i = 0; i < 5; ) {
             table.addCell(new Cell().add(new Paragraph(String.valueOf(++i))).setMinHeight(30));
             table.addCell(new Cell().setMinHeight(30));
@@ -63,13 +66,14 @@ public class DiagonalCell {
         }
 
         doc.add(table);
+
         doc.close();
     }
 
 
     protected class DiagonalCellRenderer extends CellRenderer {
-        protected String textTopRight;
-        protected String textBottomLeft;
+        private String textTopRight;
+        private String textBottomLeft;
 
 
         public DiagonalCellRenderer(Cell modelElement, String textTopRight, String textBottomLeft) {
@@ -82,14 +86,17 @@ public class DiagonalCell {
         public void drawBorder(DrawContext drawContext) {
             PdfCanvas canvas = drawContext.getCanvas();
             Rectangle rect = getOccupiedAreaBBox();
+
             canvas
                     .saveState()
                     .moveTo(rect.getLeft(), rect.getTop())
                     .lineTo(rect.getRight(), rect.getBottom())
                     .stroke()
                     .restoreState();
+
             new Canvas(canvas, drawContext.getDocument(), getOccupiedAreaBBox())
-                    .showTextAligned(textTopRight, rect.getRight() - 2, rect.getTop() - 2, TextAlignment.RIGHT, VerticalAlignment.TOP, 0)
+                    .showTextAligned(textTopRight, rect.getRight() - 2, rect.getTop() - 2,
+                            TextAlignment.RIGHT, VerticalAlignment.TOP, 0)
                     .showTextAligned(textBottomLeft, rect.getLeft() + 2, rect.getBottom() + 2, TextAlignment.LEFT);
         }
     }

@@ -31,6 +31,7 @@ public class ArrayToTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ArrayToTable().manipulatePdf(DEST);
     }
 
@@ -38,13 +39,17 @@ public class ArrayToTable {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
+        // By default column width is calculated automatically for the best fit.
+        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
+
         List<List<String>> dataset = getData();
         for (List<String> record : dataset) {
             for (String field : record) {
                 table.addCell(new Cell().add(new Paragraph(field)));
             }
         }
+
         doc.add(table);
 
         doc.close();
@@ -54,6 +59,7 @@ public class ArrayToTable {
         List<List<String>> data = new ArrayList<>();
         String[] tableTitleList = {" Title", " (Re)set", " Obs", " Mean", " Std.Dev", " Min", " Max", "Unit"};
         data.add(Arrays.asList(tableTitleList));
+
         for (int i = 0; i < 10; ) {
             List<String> dataLine = new ArrayList<>();
             i++;
@@ -62,6 +68,7 @@ public class ArrayToTable {
             }
             data.add(dataLine);
         }
+
         return data;
     }
 }

@@ -28,6 +28,7 @@ public class SimpleTable4 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SimpleTable4().manipulatePdf(DEST);
     }
 
@@ -35,12 +36,16 @@ public class SimpleTable4 {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        // Here in itext7 there is only one way of adding paragraph to table. See itext5 example.
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        Paragraph right = new Paragraph("This is right, because we create a paragraph with an indentation to the left and as we are adding the paragraph in composite mode, all the properties of the paragraph are preserved.");
+
+        Paragraph right = new Paragraph("This is right, because we create a paragraph with an indentation to the " +
+                "left and as we are adding the paragraph in composite mode, all the properties of the paragraph are preserved.");
+
         right.setMarginLeft(20);
+
         Cell rightCell = new Cell().add(right);
         table.addCell(rightCell);
+
         doc.add(table);
 
         doc.close();

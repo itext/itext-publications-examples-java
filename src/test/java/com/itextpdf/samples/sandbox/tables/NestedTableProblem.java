@@ -32,29 +32,35 @@ public class NestedTableProblem {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new NestedTableProblem().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(612, 792));
+
         doc.setMargins(30, 21, 35, 21);
 
-        // table 2
-        Table table2 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table2.setHorizontalAlignment(HorizontalAlignment.LEFT);
-        table2.addCell(new Cell().setBorder(new SolidBorder(ColorConstants.RED, 1)).add(new Paragraph("Goodbye World")));
-        table2.setWidth(UnitValue.createPercentValue(80));
-        // table 1
-        Table table1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table1.setHorizontalAlignment(HorizontalAlignment.LEFT);
+        // inner table
+        Table innerTable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        innerTable.setHorizontalAlignment(HorizontalAlignment.LEFT);
+        innerTable.addCell(new Cell().setBorder(new SolidBorder(ColorConstants.RED, 1))
+                .add(new Paragraph("Goodbye World")));
+        innerTable.setWidth(UnitValue.createPercentValue(80));
+
+        // outer table
+        Table outerTable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        outerTable.setHorizontalAlignment(HorizontalAlignment.LEFT);
+
         Cell cell = new Cell();
         cell.setBorder(new SolidBorder(ColorConstants.BLACK, 1));
         cell.add(new Paragraph("Hello World"));
-        cell.add(table2);
+        cell.add(innerTable);
         cell.add(new Paragraph("Hello World"));
-        table1.addCell(cell);
-        doc.add(table1);
+
+        outerTable.addCell(cell);
+        doc.add(outerTable);
 
         doc.close();
     }

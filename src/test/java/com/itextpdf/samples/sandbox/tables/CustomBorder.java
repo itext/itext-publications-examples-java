@@ -35,6 +35,7 @@ public class CustomBorder {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CustomBorder().manipulatePdf(DEST);
     }
 
@@ -48,6 +49,7 @@ public class CustomBorder {
             table.addCell(new Cell().add(new Paragraph("Cell " + i)).setBorderBottom(Border.NO_BORDER));
             table.addCell(new Cell().add(new Paragraph(TEXT)).setBorderBottom(Border.NO_BORDER));
         }
+
         // the last row
         table.addCell(new Cell().add(new Paragraph("Cell " + 60)));
         table.addCell(new Cell().add(new Paragraph(TEXT)));

@@ -34,25 +34,39 @@ public class LinkInTableCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new LinkInTableCell().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
         // Part of the content is a link:
-        Paragraph phrase = new Paragraph();
-        phrase.add("The founders of iText are nominated for a ");
-        Link chunk = new Link("European Business Award!",
-                PdfAction.createURI("http://itextpdf.com/blog/european-business-award-kick-ceremony"));
-        phrase.add(chunk);
-        table.addCell(phrase);
+        Paragraph paragraph = new Paragraph();
+        paragraph.add("iText at the ");
+        Link chunk = new Link("European Business Awards",
+                PdfAction.createURI("https://itextpdf.com/en/events/itext-european-business-awards-gala-milan"));
+        paragraph.add(chunk);
+        paragraph.add(" gala in Milan");
+        table.addCell(paragraph);
+
         // The complete cell is a link:
         Cell cell = new Cell().add(new Paragraph("Help us win a European Business Award!"));
         cell.setNextRenderer(new LinkInCellRenderer(cell, "http://itextpdf.com/blog/help-us-win-european-business-award"));
         table.addCell(cell);
+
+        // The complete cell is a link (using SetAction() directly on cell):
+        cell = new Cell().add(new Paragraph(
+                "IText becomes Belgium’s National Public Champion in the 2016 European Business Awards"));
+        cell.setAction(PdfAction.createURI(
+                "http://itextpdf.com/en/blog/itext-becomes-belgiums-national-public-champion-2016-european-business-awards"));
+        table.addCell(cell);
+
         doc.add(table);
+
         doc.close();
     }
 

@@ -33,20 +33,22 @@ public class RowBackground {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RowBackground().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-
         Table table = new Table(UnitValue.createPercentArray(7)).useAllAvailableWidth();
         table.setNextRenderer(new RowBackgroundTableRenderer(table, new Table.RowRange(0, 9), 2));
+
         for (int i = 0; i < 10; i++) {
             for (int j = 1; j < 8; j++) {
                 table.addCell(new Cell().add(new Paragraph(String.valueOf(j))).setBorder(Border.NO_BORDER));
             }
         }
+
         doc.add(table);
 
         doc.close();
@@ -54,11 +56,12 @@ public class RowBackground {
 
 
     private class RowBackgroundTableRenderer extends TableRenderer {
-        // the row number of the row that needs a background
         protected int row;
 
         public RowBackgroundTableRenderer(Table modelElement, Table.RowRange rowRange, int row) {
             super(modelElement, rowRange);
+
+            // the row number of the row that needs a background
             this.row = row;
         }
 
@@ -70,6 +73,7 @@ public class RowBackground {
             float urx = rows.get(row)[rows.get(row).length - 1].getOccupiedAreaBBox().getRight();
             float ury = rows.get(row)[0].getOccupiedAreaBBox().getTop();
             float h = ury - lly;
+
             canvas = drawContext.getCanvas();
             canvas.saveState();
             canvas.arc(llx - h / 2, lly, llx + h / 2, ury, 90, 180);
@@ -79,6 +83,7 @@ public class RowBackground {
             canvas.setFillColor(ColorConstants.LIGHT_GRAY);
             canvas.fill();
             canvas.restoreState();
+
             super.draw(drawContext);
         }
     }

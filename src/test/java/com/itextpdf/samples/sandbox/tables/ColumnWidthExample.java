@@ -34,14 +34,13 @@ public class ColumnWidthExample {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ColumnWidthExample().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
+        Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
         float[] columnWidths = {1, 5, 5};
         Table table = new Table(UnitValue.createPercentArray(columnWidths));
@@ -53,13 +52,16 @@ public class ColumnWidthExample {
                 .setFontColor(DeviceGray.WHITE)
                 .setBackgroundColor(DeviceGray.BLACK)
                 .setTextAlignment(TextAlignment.CENTER);
+
         table.addHeaderCell(cell);
+
         for (int i = 0; i < 2; i++) {
             Cell[] headerFooter = new Cell[]{
                     new Cell().setBackgroundColor(new DeviceGray(0.75f)).add(new Paragraph("#")),
                     new Cell().setBackgroundColor(new DeviceGray(0.75f)).add(new Paragraph("Key")),
                     new Cell().setBackgroundColor(new DeviceGray(0.75f)).add(new Paragraph("Value"))
             };
+
             for (Cell hfCell : headerFooter) {
                 if (i == 0) {
                     table.addHeaderCell(hfCell);
@@ -68,12 +70,15 @@ public class ColumnWidthExample {
                 }
             }
         }
+
         for (int counter = 1; counter < 101; counter++) {
             table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph(String.valueOf(counter))));
             table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("key " + counter)));
             table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("value " + counter)));
         }
+
         doc.add(table);
+
         doc.close();
     }
 }

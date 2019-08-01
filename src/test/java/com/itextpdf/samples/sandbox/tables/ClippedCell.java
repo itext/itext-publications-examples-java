@@ -29,6 +29,7 @@ public class ClippedCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ClippedCell().manipulatePdf(DEST);
     }
 
@@ -37,6 +38,7 @@ public class ClippedCell {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
         // a long phrase with newlines
         Paragraph p = new Paragraph("Dr. iText or:\nHow I Learned to Stop Worrying\nand Love PDF.");
         Cell cell = new Cell().add(p);
@@ -44,6 +46,7 @@ public class ClippedCell {
         // the phrase doesn't fits the height
         cell.setHeight(50f);
         cell.setNextRenderer(new ClipContentRenderer(cell));
+
         table.addCell(cell);
 
         doc.add(table);
@@ -60,14 +63,18 @@ public class ClippedCell {
         @Override
         public LayoutResult layout(LayoutContext layoutContext) {
             Rectangle area = layoutContext.getArea().getBBox();
+
             LayoutContext context = new LayoutContext(new LayoutArea(layoutContext.getArea().getPageNumber(),
                     new Rectangle(area.getLeft(), area.getTop() - retrieveHeight(), area.getWidth(), retrieveHeight())));
+
+            // If content doesn't fit the size of cell,
+            // it returns layout result with cell size optimized for the current clipped context
             LayoutResult result = super.layout(context);
             if (LayoutResult.FULL != result.getStatus()) {
                 return new LayoutResult(LayoutResult.FULL, result.getOccupiedArea(), null, null);
-            } else {
-                return result;
             }
+
+            return result;
         }
     }
 }

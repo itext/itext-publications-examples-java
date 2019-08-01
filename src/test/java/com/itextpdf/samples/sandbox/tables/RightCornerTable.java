@@ -19,7 +19,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.borders.SolidBorder;
-import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
@@ -33,6 +32,7 @@ public class RightCornerTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RightCornerTable().manipulatePdf(DEST);
     }
 
@@ -44,15 +44,16 @@ public class RightCornerTable {
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setHorizontalAlignment(HorizontalAlignment.RIGHT);
         table.setWidth(90);
+
         Cell cell = new Cell().add(new Paragraph(" Date").setFontColor(ColorConstants.WHITE));
         cell.setBackgroundColor(ColorConstants.BLACK);
         cell.setBorder(new SolidBorder(ColorConstants.GRAY, 2));
         table.addCell(cell);
+
         Cell cellTwo = new Cell().add(new Paragraph("10/01/2015"));
         cellTwo.setBorder(new SolidBorder(2));
         table.addCell(cellTwo);
-        doc.add(table);
-        doc.add(new AreaBreak());
+
         doc.add(table);
 
         doc.close();

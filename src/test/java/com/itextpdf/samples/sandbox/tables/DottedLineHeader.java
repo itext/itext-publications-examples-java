@@ -31,6 +31,7 @@ public class DottedLineHeader {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DottedLineHeader().manipulatePdf(DEST);
     }
 
@@ -39,8 +40,12 @@ public class DottedLineHeader {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
+
+        // Draws dotted line border in table
         table.setNextRenderer(new DottedHeaderTableRenderer(table, new Table.RowRange(0, 1)));
+
         Style noBorder = new Style().setBorder(Border.NO_BORDER);
+
         table.addHeaderCell(new Cell().add(new Paragraph("A1")).addStyle(noBorder));
         table.addHeaderCell(new Cell().add(new Paragraph("A2")).addStyle(noBorder));
         table.addHeaderCell(new Cell().add(new Paragraph("A3")).addStyle(noBorder));
@@ -50,24 +55,32 @@ public class DottedLineHeader {
         table.addCell(new Cell().add(new Paragraph("C1")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("C2")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("C3")).addStyle(noBorder));
+
         doc.add(table);
         doc.add(new Paragraph("Cell event"));
+
         table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         Cell cell = new Cell().add(new Paragraph("A1")).addStyle(noBorder);
+
+        // Draws dotted line border in cell
         cell.setNextRenderer(new DottedHeaderCellRenderer(cell));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("A2")).addStyle(noBorder);
         cell.setNextRenderer(new DottedHeaderCellRenderer(cell));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("A3")).addStyle(noBorder);
         cell.setNextRenderer(new DottedHeaderCellRenderer(cell));
         table.addCell(cell);
+
         table.addCell(new Cell().add(new Paragraph("B1")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("B2")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("B3")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("C1")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("C2")).addStyle(noBorder));
         table.addCell(new Cell().add(new Paragraph("C3")).addStyle(noBorder));
+
         doc.add(table);
 
         doc.close();
@@ -82,12 +95,12 @@ public class DottedLineHeader {
         @Override
         public void drawChildren(DrawContext drawContext) {
             super.drawChildren(drawContext);
-            PdfCanvas canvas = drawContext.getCanvas();
-            canvas.setLineDash(3f, 3f);
             Rectangle headersArea = headerRenderer.getOccupiedArea().getBBox();
+            PdfCanvas canvas = drawContext.getCanvas();
+
+            canvas.setLineDash(3f, 3f);
             canvas.moveTo(headersArea.getLeft(), headersArea.getTop());
             canvas.lineTo(headersArea.getRight(), headersArea.getTop());
-
             canvas.moveTo(headersArea.getLeft(), headersArea.getBottom());
             canvas.lineTo(headersArea.getRight(), headersArea.getBottom());
             canvas.stroke();
@@ -104,14 +117,12 @@ public class DottedLineHeader {
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
             PdfCanvas canvas = drawContext.getCanvas();
+
             canvas.setLineDash(3f, 3f);
             canvas.moveTo(this.getOccupiedArea().getBBox().getLeft(), this.getOccupiedArea().getBBox().getBottom());
-            canvas.lineTo(this.getOccupiedArea().getBBox().getRight(),
-                    this.getOccupiedArea().getBBox().getBottom());
-            canvas.moveTo(this.getOccupiedArea().getBBox().getLeft(),
-                    this.getOccupiedArea().getBBox().getTop());
-            canvas.lineTo(this.getOccupiedArea().getBBox().getRight(),
-                    this.getOccupiedArea().getBBox().getTop());
+            canvas.lineTo(this.getOccupiedArea().getBBox().getRight(), this.getOccupiedArea().getBBox().getBottom());
+            canvas.moveTo(this.getOccupiedArea().getBBox().getLeft(), this.getOccupiedArea().getBBox().getTop());
+            canvas.lineTo(this.getOccupiedArea().getBBox().getRight(), this.getOccupiedArea().getBBox().getTop());
             canvas.stroke();
         }
     }

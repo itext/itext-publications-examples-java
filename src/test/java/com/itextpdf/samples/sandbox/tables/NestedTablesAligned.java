@@ -28,37 +28,40 @@ public class NestedTablesAligned {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new NestedTablesAligned().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
+        Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
         float[] columnWidths = {200f, 200f, 200f};
+
         Table table = new Table(columnWidths);
         buildNestedTables(table);
+
         doc.add(table);
 
         doc.close();
     }
 
     private void buildNestedTables(Table outerTable) {
-        Table innerTable1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table innerTable1 = new Table(UnitValue.createPercentArray(1));
         innerTable1.setWidth(100f);
         innerTable1.setHorizontalAlignment(HorizontalAlignment.LEFT);
         innerTable1.addCell("Cell 1");
         innerTable1.addCell("Cell 2");
         outerTable.addCell(innerTable1);
-        Table innerTable2 = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+
+        Table innerTable2 = new Table(UnitValue.createPercentArray(2));
         innerTable2.setWidth(100f);
         innerTable2.setHorizontalAlignment(HorizontalAlignment.CENTER);
         innerTable2.addCell("Cell 3");
         innerTable2.addCell("Cell 4");
         outerTable.addCell(innerTable2);
-        Table innerTable3 = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+
+        Table innerTable3 = new Table(UnitValue.createPercentArray(2));
         innerTable3.setWidth(100f);
         innerTable3.setHorizontalAlignment(HorizontalAlignment.RIGHT);
         innerTable3.addCell("Cell 5");

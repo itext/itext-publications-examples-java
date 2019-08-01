@@ -34,6 +34,7 @@ public class ColoredBackground {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ColoredBackground().manipulatePdf(DEST);
     }
 
@@ -41,17 +42,17 @@ public class ColoredBackground {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table;
-        Cell cell;
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
-        table = new Table(UnitValue.createPercentArray(16)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(16)).useAllAvailableWidth();
+
         for (int aw = 0; aw < 16; aw++) {
-            cell = new Cell().add(new Paragraph("hi").setFont(font).setFontColor(ColorConstants.WHITE));
+            Cell cell = new Cell().add(new Paragraph("hi").setFont(font).setFontColor(ColorConstants.WHITE));
             cell.setBackgroundColor(ColorConstants.BLUE);
             cell.setBorder(Border.NO_BORDER);
             cell.setTextAlignment(TextAlignment.CENTER);
             table.addCell(cell);
         }
+
         doc.add(table);
 
         doc.close();

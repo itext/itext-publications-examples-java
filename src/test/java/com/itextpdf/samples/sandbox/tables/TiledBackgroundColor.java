@@ -31,29 +31,41 @@ import java.io.File;
 
 public class TiledBackgroundColor {
     public static final String DEST = "./target/sandbox/tables/tiled_background_color.pdf";
+
     public static final String IMG = "./src/test/resources/img/bulb.gif";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TiledBackgroundColor().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         ImageData img = ImageDataFactory.create(IMG);
         Image image = new Image(img);
-        PdfPattern.Tiling img_pattern = new PdfPattern.Tiling(image.getImageScaledWidth(), image.getImageScaledHeight());
-        new PdfPatternCanvas(img_pattern, pdfDoc).addImage(img, 0, 0, false);
-        Color color = new PatternColor(img_pattern);
+
+        PdfPattern.Tiling imgPattern = new PdfPattern.Tiling(image.getImageScaledWidth(),
+                image.getImageScaledHeight());
+
+        PdfPatternCanvas canvas = new PdfPatternCanvas(imgPattern, pdfDoc);
+        canvas.addImage(img, 0, 0, false);
+
+        Color color = new PatternColor(imgPattern);
+
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.addCell(new Cell().add(new Paragraph("Behold a cell with an image pattern:")));
+
         Cell cell = new Cell();
         cell.setHeight(60);
         cell.setBackgroundColor(color);
         table.addCell(cell);
+
         doc.add(table);
+
         doc.close();
     }
 }

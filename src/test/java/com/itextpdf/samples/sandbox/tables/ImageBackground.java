@@ -32,11 +32,13 @@ import java.io.File;
 
 public class ImageBackground {
     public static final String DEST = "./target/sandbox/tables/image_background.pdf";
+
     public static final String IMG = "./src/test/resources/img/bruno.jpg";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ImageBackground().manipulatePdf(DEST);
     }
 
@@ -46,16 +48,20 @@ public class ImageBackground {
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setWidth(400);
+
         Cell cell = new Cell();
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Paragraph p = new Paragraph("A cell with an image as background color.")
-                .setFont(font)
-                .setFontColor(DeviceGray.WHITE);
+                .setFont(font).setFontColor(DeviceGray.WHITE);
         cell.add(p);
+
         Image img = new Image(ImageDataFactory.create(IMG));
+
+        // Draws an image as the cell's background
         cell.setNextRenderer(new ImageBackgroundCellRenderer(cell, img));
         cell.setHeight(600 * img.getImageHeight() / img.getImageWidth());
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();
