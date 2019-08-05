@@ -18,13 +18,9 @@ import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.util.Map;
-
-import org.junit.experimental.categories.Category;
 
 public class RemoveXFA {
     public static final String DEST = "./target/sandbox/acroforms/remove_xfa.pdf";

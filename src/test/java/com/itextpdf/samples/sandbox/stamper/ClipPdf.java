@@ -14,17 +14,12 @@ package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.util.Locale;
 
-@Category(SampleTest.class)
-public class ClipPdf extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/clip_pdf.pdf";
+public class ClipPdf {
+    public static final String DEST = "./target/sandbox/stamper/clip_pdf.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hero.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -33,7 +28,6 @@ public class ClipPdf extends GenericTest {
         new ClipPdf().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         int n = pdfDoc.getNumberOfPages();

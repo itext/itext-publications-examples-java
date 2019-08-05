@@ -20,16 +20,11 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class AddImageAffineTransform extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/add_image_affine_transform.pdf";
+public class AddImageAffineTransform {
+    public static final String DEST = "./target/sandbox/stamper/add_image_affine_transform.pdf";
     public static final String IMG = "./src/test/resources/img/bruno.jpg";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
@@ -39,7 +34,6 @@ public class AddImageAffineTransform extends GenericTest {
         new AddImageAffineTransform().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         ImageData image = ImageDataFactory.create(IMG);

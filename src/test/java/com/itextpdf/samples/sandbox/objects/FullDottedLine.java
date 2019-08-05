@@ -22,17 +22,12 @@ import com.itextpdf.kernel.pdf.canvas.draw.DottedLine;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.LineSeparator;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class FullDottedLine extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/full_dotted_line.pdf";
+public class FullDottedLine {
+    public static final String DEST = "./target/sandbox/objects/full_dotted_line.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><xfa:data xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<?xml version="1.0" encoding="UTF-8"?>
+<xfa:data xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
 <Deklaracja xmlns="http://crd.gov.pl/wzor/2014/12/05/1880/" xmlns:etd="http://crd.gov.pl/xml/schematy/dziedzinowe/mf/2011/06/21/eD/DefinicjeTypy/">
 <Naglowek>
 <KodFormularza kodPodatku="PIT" kodSystemowy="PIT-8C (7)" rodzajZobowiazania="Z" wersjaSchemy="1-0E">PIT-8C</KodFormularza>

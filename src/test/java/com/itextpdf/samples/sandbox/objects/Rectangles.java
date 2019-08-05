@@ -18,17 +18,12 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class Rectangles extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/rectangles.pdf";
+public class Rectangles {
+    public static final String DEST = "./target/sandbox/objects/rectangles.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

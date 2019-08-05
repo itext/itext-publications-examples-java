@@ -15,10 +15,6 @@ import com.itextpdf.io.source.ByteArrayOutputStream;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -27,9 +23,8 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-@Category(SampleTest.class)
-public class FillFlattenMerge1 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/reporting/fill_flatten_merge1.pdf";
+public class FillFlattenMerge1 {
+    public static final String DEST = "./target/sandbox/acroforms/reporting/fill_flatten_merge1.pdf";
     public static final String DATA = "./src/test/resources/data/united_states.csv";
     public static final String SRC = "./src/test/resources/pdfs/state.pdf";
 
@@ -39,7 +34,6 @@ public class FillFlattenMerge1 extends GenericTest {
         new FillFlattenMerge1().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         PdfPageFormCopier formCopier = new PdfPageFormCopier();

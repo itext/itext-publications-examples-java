@@ -18,18 +18,13 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class TilingHero extends GenericTest {
+public class TilingHero {
     public static final String DEST
-            = "./target/test/resources/sandbox/merge/tiling_hero.pdf";
+            = "./target/sandbox/merge/tiling_hero.pdf";
     public static final String RESOURCE
             = "./src/test/resources/pdfs/hero.pdf";
 

@@ -25,16 +25,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class FlateCompressJPEG1Pass extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/flate_compress_jpeg_1pass.pdf";
+public class FlateCompressJPEG1Pass {
+    public static final String DEST = "./target/sandbox/images/flate_compress_jpeg_1pass.pdf";
     public static final String IMAGE = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
@@ -43,7 +38,6 @@ public class FlateCompressJPEG1Pass extends GenericTest {
         new FlateCompressJPEG1Pass().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 

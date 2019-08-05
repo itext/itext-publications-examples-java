@@ -18,17 +18,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class UnequalPages extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/unequal_pages.pdf";
+public class UnequalPages {
+    public static final String DEST = "./target/sandbox/objects/unequal_pages.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

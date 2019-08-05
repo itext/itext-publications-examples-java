@@ -22,16 +22,11 @@ import com.itextpdf.kernel.pdf.annot.PdfFileAttachmentAnnotation;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class FileAttachmentAnnot extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/file_attachment_annot.pdf";
+public class FileAttachmentAnnot {
+    public static final String DEST = "./target/sandbox/annotations/file_attachment_annot.pdf";
     public static final String IMG = "./src/test/resources/img/info.png";
     public static final String PATH = "./src/test/resources/txt/test.docx";
 
@@ -41,7 +36,6 @@ public class FileAttachmentAnnot extends GenericTest {
         new FileAttachmentAnnot().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Rectangle rect = new Rectangle(36, 700, 100, 100);

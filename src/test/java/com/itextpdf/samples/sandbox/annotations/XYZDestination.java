@@ -20,16 +20,11 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class XYZDestination extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/xyz_destination.pdf";
+public class XYZDestination {
+    public static final String DEST = "./target/sandbox/annotations/xyz_destination.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -37,7 +32,6 @@ public class XYZDestination extends GenericTest {
         new XYZDestination().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

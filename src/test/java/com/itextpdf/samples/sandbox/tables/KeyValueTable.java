@@ -22,20 +22,22 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
+import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class KeyValueTable extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/key_value_table.pdf";
+public class KeyValueTable {
+    public static final String DEST = "./target/sandbox/tables/key_value_table.pdf";
 
     protected PdfFont regular;
     protected PdfFont bold;
 
-    @Override
+    public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+        new KeyValueTable().manipulatePdf(DEST);
+    }
+
     public void manipulatePdf(String dest) throws IOException {
         regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
         bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);

@@ -22,18 +22,13 @@ import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class HelloPdfA2a extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/pdfa/hello_pdf_a_2a.pdf";
+public class HelloPdfA2a {
+    public static final String DEST = "./target/sandbox/pdfa/hello_pdf_a_2a.pdf";
     public static final String FONT = "./src/test/resources/font/OpenSans-Regular.ttf";
 
     public static void main(String[] args) throws Exception {

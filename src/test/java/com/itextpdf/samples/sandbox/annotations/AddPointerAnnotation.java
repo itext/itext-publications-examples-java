@@ -21,16 +21,11 @@ import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfLineAnnotation;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class AddPointerAnnotation extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/add_pointer_annotation.pdf";
+public class AddPointerAnnotation {
+    public static final String DEST = "./target/sandbox/annotations/add_pointer_annotation.pdf";
     public static final String IMG = "./src/test/resources/img/map_cic.png";
 
     public static void main(String[] args) throws Exception {
@@ -39,7 +34,6 @@ public class AddPointerAnnotation extends GenericTest {
         new AddPointerAnnotation().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         Image img = new Image(ImageDataFactory.create(IMG));
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));

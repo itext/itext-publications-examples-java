@@ -28,19 +28,18 @@ import com.itextpdf.layout.ColumnDocumentRenderer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.experimental.categories.Category;
-
+import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class AddExtraPage extends GenericTest {
-    public static String DEST = "./target/test/resources/sandbox/acroforms/add_extra_page.pdf";
+public class AddExtraPage {
+    public static String DEST = "./target/sandbox/acroforms/add_extra_page.pdf";
     public static String SRC = "./src/test/resources/pdfs/stationery.pdf";
 
     public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new AddExtraPage().manipulatePdf(DEST);
     }
 

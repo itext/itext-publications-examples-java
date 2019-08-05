@@ -23,19 +23,14 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Category(SampleTest.class)
-public class VariableHeader extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/variable_header.pdf";
+public class VariableHeader {
+    public static final String DEST = "./target/sandbox/events/variable_header.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -54,7 +49,6 @@ public class VariableHeader extends GenericTest {
         return factors;
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

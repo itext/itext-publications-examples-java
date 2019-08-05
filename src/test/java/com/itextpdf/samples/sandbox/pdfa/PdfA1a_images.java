@@ -23,20 +23,15 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-@Category(SampleTest.class)
-public class PdfA1a_images extends GenericTest {
+public class PdfA1a_images {
     public static final float MARGIN_OF_ONE_CM = 28.8f;
-    public static final String DEST = "./target/test/resources/sandbox/pdfa/pdf_a1a_images.pdf";
+    public static final String DEST = "./target/sandbox/pdfa/pdf_a1a_images.pdf";
     public static final String FONT = "./src/test/resources/font/OpenSans-Regular.ttf";
     public static final String LOGO = "./src/test/resources/img/hero.jpg";
 

@@ -28,10 +28,6 @@ import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TabAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -39,9 +35,8 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Category(SampleTest.class)
-public class MergeWithToc2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/merge/merge_with_toc2.pdf";
+public class MergeWithToc2 {
+    public static final String DEST = "./target/sandbox/merge/merge_with_toc2.pdf";
     public static final String SRC1 = "./src/test/resources/pdfs/united_states.pdf";
     public static final String SRC2 = "./src/test/resources/pdfs/hello.pdf";
     public static final String SRC3 = "./src/test/resources/pdfs/toc.pdf";
@@ -51,7 +46,7 @@ public class MergeWithToc2 extends GenericTest {
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new MergeWithToc().manipulatePdf(DEST);
+        new MergeWithToc2().manipulatePdf(DEST);
     }
 
     public MergeWithToc2() throws IOException {
@@ -60,7 +55,6 @@ public class MergeWithToc2 extends GenericTest {
         filesToMerge.put("02 Movies / Countries", new PdfDocument(new PdfReader(SRC2)));
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));

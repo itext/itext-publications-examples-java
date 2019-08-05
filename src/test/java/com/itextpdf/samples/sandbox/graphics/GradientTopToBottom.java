@@ -20,16 +20,11 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfDeviceCs;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.kernel.pdf.colorspace.PdfShading;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class GradientTopToBottom extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/graphics/gradient_top_to_bottom.pdf";
+public class GradientTopToBottom {
+    public static final String DEST = "./target/sandbox/graphics/gradient_top_to_bottom.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -37,7 +32,6 @@ public class GradientTopToBottom extends GenericTest {
         new GradientTopToBottom().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PageSize pageSize = new PageSize(150, 300);
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));

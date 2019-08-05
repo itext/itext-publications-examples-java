@@ -19,16 +19,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TengwarQuenya1 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/tengwar_quenya1.pdf";
+public class TengwarQuenya1 {
+    public static final String DEST = "./target/sandbox/fonts/tengwar_quenya1.pdf";
     public static final String FONT = "./src/test/resources/font/QUENCAP1.TTF";
 
     public static void main(String[] args) throws Exception {
@@ -37,7 +32,6 @@ public class TengwarQuenya1 extends GenericTest {
         new TengwarQuenya1().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

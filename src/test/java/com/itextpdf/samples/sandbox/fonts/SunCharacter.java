@@ -19,16 +19,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class SunCharacter extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/sun_character.pdf";
+public class SunCharacter {
+    public static final String DEST = "./target/sandbox/fonts/sun_character.pdf";
     public static final String FONT = "./src/test/resources/font/Cardo-Regular.ttf";
     public static final String TEXT = "The Cardo family of fonts supports this character: \u2609";
 
@@ -38,7 +33,6 @@ public class SunCharacter extends GenericTest {
         new SunCharacter().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

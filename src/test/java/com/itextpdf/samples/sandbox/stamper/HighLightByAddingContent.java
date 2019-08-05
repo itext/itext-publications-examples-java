@@ -17,17 +17,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class HighLightByAddingContent extends GenericTest {
+public class HighLightByAddingContent {
     public static final String DEST
-            = "./target/test/resources/sandbox/stamper/high_light_by_adding_content.pdf";
+            = "./target/sandbox/stamper/high_light_by_adding_content.pdf";
     public static final String SRC
             = "./src/test/resources/pdfs/hello.pdf";
 
@@ -37,7 +32,6 @@ public class HighLightByAddingContent extends GenericTest {
         new HighLightByAddingContent().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage().newContentStreamBefore(),

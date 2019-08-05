@@ -26,16 +26,11 @@ import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.VerticalAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TransparentWatermark extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/transparent_watermark.pdf";
+public class TransparentWatermark {
+    public static final String DEST = "./target/sandbox/stamper/transparent_watermark.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hero.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -44,7 +39,6 @@ public class TransparentWatermark extends GenericTest {
         new TransparentWatermark().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfCanvas under = new PdfCanvas(pdfDoc.getFirstPage().newContentStreamBefore(), new PdfResources(), pdfDoc);

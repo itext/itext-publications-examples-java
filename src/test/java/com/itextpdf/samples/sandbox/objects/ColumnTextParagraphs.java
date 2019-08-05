@@ -22,16 +22,12 @@ import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.layout.RootLayoutArea;
 import com.itextpdf.layout.renderer.DocumentRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ColumnTextParagraphs extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/column_text_paragraphs.pdf";
+public class ColumnTextParagraphs {
+    public static final String DEST = "./target/sandbox/objects/column_text_paragraphs.pdf";
     public static final String TEXT = "This is some long paragraph " +
             "that will be added over and over again to prove a point.";
     public static final Rectangle[] COLUMNS = {

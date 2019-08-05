@@ -19,18 +19,13 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class TileInTwo2 extends GenericTest {
+public class TileInTwo2 {
     public static final String DEST
-            = "./target/test/resources/sandbox/merge/tile_in_two2.pdf";
+            = "./target/sandbox/merge/tile_in_two2.pdf";
     public static final String SRC
             = "./src/test/resources/pdfs/united_states.pdf";
 

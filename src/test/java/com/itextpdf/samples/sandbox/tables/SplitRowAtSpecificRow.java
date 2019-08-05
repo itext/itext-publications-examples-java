@@ -20,16 +20,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class SplitRowAtSpecificRow extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/split_row_at_specific_row.pdf";
+public class SplitRowAtSpecificRow {
+    public static final String DEST = "./target/sandbox/tables/split_row_at_specific_row.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -37,7 +32,6 @@ public class SplitRowAtSpecificRow extends GenericTest {
         new SplitRowAtSpecificRow().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         // Notice that the width is bigger than available area (612 - 36 - 36 = 540, where 36 is the value of the left (and the right) margin

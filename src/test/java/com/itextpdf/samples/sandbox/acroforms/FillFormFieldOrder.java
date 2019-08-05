@@ -21,17 +21,13 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
 import com.itextpdf.layout.Document;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-@Category(SampleTest.class)
-public class FillFormFieldOrder extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/fill_form_field_order.pdf";
+public class FillFormFieldOrder {
+    public static final String DEST = "./target/sandbox/acroforms/fill_form_field_order.pdf";
     public static final String SRC = "./src/test/resources/pdfs/calendar_example.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -40,7 +36,6 @@ public class FillFormFieldOrder extends GenericTest {
         new FillFormFieldOrder().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         go2(go1());
     }

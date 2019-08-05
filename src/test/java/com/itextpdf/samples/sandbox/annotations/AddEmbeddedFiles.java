@@ -16,21 +16,16 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class AddEmbeddedFiles extends GenericTest {
+public class AddEmbeddedFiles {
     public static final String[] ATTACHMENTS = {
             "hello", "world", "what", "is", "up"
     };
-    public static final String DEST = "./target/test/resources/sandbox/annotations/add_embedded_files.pdf";
+    public static final String DEST = "./target/sandbox/annotations/add_embedded_files.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -39,7 +34,6 @@ public class AddEmbeddedFiles extends GenericTest {
         new AddEmbeddedFiles().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         for (String s : ATTACHMENTS) {

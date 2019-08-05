@@ -13,21 +13,22 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
  * Example demonstrates how to add paragraphs using floating and fixed layouts
  */
-@Category(SampleTest.class)
-public class Listing_99_01_DifferentLayouts extends GenericTest {
+public class Listing_99_01_DifferentLayouts {
 
-    public static final String DEST = "./target/test/resources/Listing_99_01_DifferentLayouts/Listing_99_01_DifferentLayouts.pdf";
+    public static final String DEST = "./target/Listing_99_01_DifferentLayouts/Listing_99_01_DifferentLayouts.pdf";
 
     public static void main(String args[]) throws IOException {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new Listing_99_01_DifferentLayouts().manipulatePdf(DEST);
     }
 

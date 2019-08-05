@@ -18,16 +18,11 @@ import com.itextpdf.kernel.events.PdfDocumentEvent;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ScaleDown extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/scale_down.pdf";
+public class ScaleDown {
+    public static final String DEST = "./target/sandbox/events/scale_down.pdf";
     public static final String SRC = "./src/test/resources/pdfs/orientations.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +31,6 @@ public class ScaleDown extends GenericTest {
         new ScaleDown().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         // Create the source document
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));

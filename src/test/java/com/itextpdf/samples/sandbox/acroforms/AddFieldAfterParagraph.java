@@ -29,17 +29,16 @@ import java.io.File;
  * This example is an answer to a StackOverflow question:
  * http://stackoverflow.com/questions/37969102/how-can-i-add-an-pdfformfield-using-itext-7-at-the-current-page-position
  */
-public class AddFieldAfterParagraph extends GenericTest {
+public class AddFieldAfterParagraph {
 
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/add_field_after_paragraph.pdf";
+    public static final String DEST = "./target/sandbox/acroforms/add_field_after_paragraph.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new AddField().manipulatePdf(DEST);
+        new AddFieldAfterParagraph().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);

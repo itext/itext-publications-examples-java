@@ -20,19 +20,12 @@ import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class ReuseFont extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/reuse_font.pdf";
+public class ReuseFont {
+    public static final String DEST = "./target/sandbox/acroforms/reuse_font.pdf";
     public static final String SRC = "./src/test/resources/pdfs/form.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -62,7 +55,6 @@ public class ReuseFont extends GenericTest {
         return null;
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 

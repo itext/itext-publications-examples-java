@@ -22,17 +22,12 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.kernel.pdf.ReaderProperties;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class MultiLineField extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/multi_line_field.pdf";
+public class MultiLineField {
+    public static final String DEST = "./target/sandbox/acroforms/multi_line_field.pdf";
     public static final String SRC = "./src/test/resources/pdfs/multinewline.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -41,7 +36,6 @@ public class MultiLineField extends GenericTest {
         new MultiLineField().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(new RandomAccessSourceFactory().createSource(createForm()),
                 new ReaderProperties()), new PdfWriter(DEST));

@@ -31,15 +31,11 @@ import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class WatermarkedImages5 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/watermarked_images5.pdf";
+public class WatermarkedImages5 {
+    public static final String DEST = "./target/sandbox/images/watermarked_images5.pdf";
     public static final String IMAGE1 = "./src/test/resources/img/bruno.jpg";
     public static final String IMAGE2 = "./src/test/resources/img/dog.bmp";
     public static final String IMAGE3 = "./src/test/resources/img/fox.bmp";
@@ -77,7 +73,6 @@ public class WatermarkedImages5 extends GenericTest {
         return new Image(template);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

@@ -16,20 +16,15 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
-import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
-import com.itextpdf.samples.GenericTest;
 
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class ReadOnlyField3 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/read_only_field3.pdf";
+public class ReadOnlyField3 {
+    public static final String DEST = "./target/sandbox/acroforms/read_only_field3.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -37,7 +32,6 @@ public class ReadOnlyField3 extends GenericTest {
         new ReadOnlyField3().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(new RandomAccessSourceFactory().createSource(createForm()),
                 new ReaderProperties()), new PdfWriter(DEST));

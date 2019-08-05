@@ -22,17 +22,12 @@ import com.itextpdf.kernel.pdf.canvas.draw.SolidLine;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.TabAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class UnderlineParagraphWithTwoParts extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/underline_paragraph_with_two_parts.pdf";
+public class UnderlineParagraphWithTwoParts {
+    public static final String DEST = "./target/sandbox/objects/underline_paragraph_with_two_parts.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

@@ -16,18 +16,12 @@ import com.itextpdf.forms.PdfPageFormCopier;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 
-@Category(SampleTest.class)
-public class MergeForms extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/merge_forms.pdf";
+public class MergeForms {
+    public static final String DEST = "./target/sandbox/acroforms/merge_forms.pdf";
     public static final String SRC1 = "./src/test/resources/pdfs/subscribe.pdf";
     public static final String SRC2 = "./src/test/resources/pdfs/state.pdf";
 
@@ -37,7 +31,6 @@ public class MergeForms extends GenericTest {
         new MergeForms().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfReader[] readers = {
                 new PdfReader(getFile1()),

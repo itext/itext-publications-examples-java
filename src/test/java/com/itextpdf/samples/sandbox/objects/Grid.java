@@ -12,22 +12,17 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class Grid extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/grid.pdf";
+public class Grid {
+    public static final String DEST = "./target/sandbox/objects/grid.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new FullDottedLine().manipulatePdf(DEST);
+        new Grid().manipulatePdf(DEST);
     }
 
     public void manipulatePdf(String dest) throws IOException {

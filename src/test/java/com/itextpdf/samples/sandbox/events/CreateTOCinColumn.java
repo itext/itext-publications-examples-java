@@ -30,25 +30,23 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TextRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.experimental.categories.Category;
-
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-@Category(SampleTest.class)
-public class CreateTOCinColumn extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/create_toc_in_column.pdf";
+public class CreateTOCinColumn {
+    public static final String DEST = "./target/sandbox/events/create_toc_in_column.pdf";
 
     protected List<TOCEntry> list = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new CreateTOCinColumn().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

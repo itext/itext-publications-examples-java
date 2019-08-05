@@ -16,16 +16,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class DecryptPdf extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/security/decrypt_pdf.pdf";
+public class DecryptPdf {
+    public static final String DEST = "./target/sandbox/security/decrypt_pdf.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello_encrypted.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -34,7 +29,6 @@ public class DecryptPdf extends GenericTest {
         new DecryptPdf().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfReader reader = new PdfReader(SRC, new ReaderProperties().setPassword("World".getBytes()));
         PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(DEST));

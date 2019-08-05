@@ -26,16 +26,11 @@ import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.ImageRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ImagesLinksTable extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/images_links_table.pdf";
+public class ImagesLinksTable {
+    public static final String DEST = "./target/sandbox/annotations/images_links_table.pdf";
     public static final String IMG = "./src/test/resources/img/info.png";
 
     public static void main(String[] args) throws Exception {
@@ -44,7 +39,6 @@ public class ImagesLinksTable extends GenericTest {
         new ImagesLinksTable().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

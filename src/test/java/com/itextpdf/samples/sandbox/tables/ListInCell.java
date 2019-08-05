@@ -14,16 +14,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ListInCell extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/list_in_cell.pdf";
+public class ListInCell {
+    public static final String DEST = "./target/sandbox/tables/list_in_cell.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -31,7 +26,6 @@ public class ListInCell extends GenericTest {
         new ListInCell().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

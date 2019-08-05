@@ -16,18 +16,11 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
-@Category(SampleTest.class)
-public class FillHybridForm extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/fill_hybrid_form.pdf";
+public class FillHybridForm {
+    public static final String DEST = "./target/sandbox/acroforms/fill_hybrid_form.pdf";
     public static final String SRC = "./src/test/resources/pdfs/f8966.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +29,6 @@ public class FillHybridForm extends GenericTest {
         new FillHybridForm().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 

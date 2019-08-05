@@ -25,16 +25,11 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class SimpleTable12 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/simple_table12.pdf";
+public class SimpleTable12 {
+    public static final String DEST = "./target/sandbox/tables/simple_table12.pdf";
 
     protected PdfFont font;
 
@@ -64,7 +59,6 @@ public class SimpleTable12 extends GenericTest {
         return cell;
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

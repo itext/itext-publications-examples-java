@@ -27,26 +27,25 @@ import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TextRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 
-@Category(SampleTest.class)
-public class CreateTOC extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/create_toc.pdf";
+public class CreateTOC {
+    public static final String DEST = "./target/sandbox/events/create_toc.pdf";
 
     List<AbstractMap.SimpleEntry<String, Integer>> toc = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new CreateTOC().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws FileNotFoundException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

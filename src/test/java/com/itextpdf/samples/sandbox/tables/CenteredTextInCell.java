@@ -24,16 +24,11 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class CenteredTextInCell extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/centered_text_in_cell.pdf";
+public class CenteredTextInCell {
+    public static final String DEST = "./target/sandbox/tables/centered_text_in_cell.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -41,7 +36,6 @@ public class CenteredTextInCell extends GenericTest {
         new CenteredTextInCell().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

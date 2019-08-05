@@ -22,17 +22,13 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class PageRotation extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/page_rotation.pdf";
-    /* Constants form itext5 */
+public class PageRotation {
+    public static final String DEST = "./target/sandbox/events/page_rotation.pdf";
+
+    /* Constants from itext5 */
     public static final PdfNumber INVERTEDPORTRAIT = new PdfNumber(180);
     public static final PdfNumber LANDSCAPE = new PdfNumber(90);
     public static final PdfNumber PORTRAIT = new PdfNumber(0);
@@ -46,7 +42,6 @@ public class PageRotation extends GenericTest {
         new PageRotation().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         PageRotationEventHandler eventHandler = new PageRotationEventHandler();

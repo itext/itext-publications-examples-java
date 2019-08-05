@@ -15,10 +15,6 @@ package com.itextpdf.samples.sandbox.images;
 import com.itextpdf.io.source.ByteArrayOutputStream;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -26,9 +22,8 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ReduceSize extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/reduce_size.pdf";
+public class ReduceSize {
+    public static final String DEST = "./target/sandbox/images/reduce_size.pdf";
     public static final String SRC = "./src/test/resources/pdfs/single_image.pdf";
     public static final float FACTOR = 0.5f;
 
@@ -38,7 +33,6 @@ public class ReduceSize extends GenericTest {
         new ReduceSize().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfWriter writer = new PdfWriter(DEST, new WriterProperties().setFullCompressionMode(true));
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), writer);

@@ -27,16 +27,11 @@ import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class RepeatImage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/repeat_image.pdf";
+public class RepeatImage {
+    public static final String DEST = "./target/sandbox/images/repeat_image.pdf";
     public static final String SRC = "./src/test/resources/pdfs/chinese.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -45,7 +40,6 @@ public class RepeatImage extends GenericTest {
         new RepeatImage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

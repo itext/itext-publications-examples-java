@@ -27,19 +27,14 @@ import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TabAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-@Category(SampleTest.class)
-public class MergeWithToc extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/merge/merge_with_toc.pdf";
+public class MergeWithToc {
+    public static final String DEST = "./target/sandbox/merge/merge_with_toc.pdf";
     public static final String SRC1 = "./src/test/resources/pdfs/united_states.pdf";
     public static final String SRC2 = "./src/test/resources/pdfs/hello.pdf";
     public static final String SRC3 = "./src/test/resources/pdfs/toc.pdf";
@@ -58,7 +53,6 @@ public class MergeWithToc extends GenericTest {
         filesToMerge.put("02 Movies / Countries", new PdfDocument(new PdfReader(SRC2)));
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         pdfDoc.initializeOutlines();

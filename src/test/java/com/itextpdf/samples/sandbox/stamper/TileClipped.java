@@ -19,17 +19,12 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TileClipped extends GenericTest {
+public class TileClipped {
     public static final String DEST =
-            "./target/test/resources/sandbox/stamper/tile_clipped.pdf";
+            "./target/sandbox/stamper/tile_clipped.pdf";
     public static final String SRC =
             "./src/test/resources/pdfs/hero.pdf";
 
@@ -39,7 +34,6 @@ public class TileClipped extends GenericTest {
         new TileClipped().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         float margin = 30;
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));

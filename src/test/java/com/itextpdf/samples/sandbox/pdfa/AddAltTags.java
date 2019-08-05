@@ -13,17 +13,12 @@
 package com.itextpdf.samples.sandbox.pdfa;
 
 import com.itextpdf.kernel.pdf.*;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class AddAltTags extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/pdfa/add_alt_tags.pdf";
+public class AddAltTags {
+    public static final String DEST = "./target/sandbox/pdfa/add_alt_tags.pdf";
     public static final String SRC = "./src/test/resources/pdfs/no_alt_attribute.pdf";
 
     public static void main(String[] args) throws Exception {

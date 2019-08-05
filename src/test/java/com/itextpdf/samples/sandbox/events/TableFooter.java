@@ -29,16 +29,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TableFooter extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/table_footer.pdf";
+public class TableFooter {
+    public static final String DEST = "./target/sandbox/events/table_footer.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -46,7 +41,6 @@ public class TableFooter extends GenericTest {
         new TableFooter().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc, PageSize.A4);

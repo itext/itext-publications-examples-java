@@ -29,17 +29,12 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class PageLabels extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/page_labels.pdf";
+public class PageLabels {
+    public static final String DEST = "./target/sandbox/objects/page_labels.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

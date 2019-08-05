@@ -23,17 +23,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class DrawRectangleAroundText extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/draw_rectangle_around_text.pdf";
+public class DrawRectangleAroundText {
+    public static final String DEST = "./target/sandbox/objects/draw_rectangle_around_text.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws IOException {

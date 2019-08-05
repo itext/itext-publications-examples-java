@@ -13,21 +13,14 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.forms.xfa.XfaForm;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
-import java.io.FileInputStream;
 
-@Category(SampleTest.class)
-public class FillForm extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/fill_form.pdf";
+public class FillForm {
+    public static final String DEST = "./target/sandbox/acroforms/fill_form.pdf";
     public static final String SRC = "./src/test/resources/pdfs/CertificateOfExcellence.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +29,6 @@ public class FillForm extends GenericTest {
         new FillForm().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 

@@ -24,29 +24,30 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
+import java.io.File;
 import java.io.IOException;
-
-import org.junit.experimental.categories.Category;
 
 /**
  * Creates a simple PDF with images and text.
  */
-@Category(SampleTest.class)
-public class C2E1_SimplePdf extends GenericTest {
+public class C2E1_SimplePdf {
     public static final String FOX = "./src/test/resources/img/fox.bmp";
     public static final String DOG = "./src/test/resources/img/dog.bmp";
 
-    public static final String DEST = "./target/test/resources/zugferd/chapter02/C2E1_SimplePdf.pdf";
+    public static final String DEST = "./target/sandbox/zugferd/chapter02/C2E1_SimplePdf.pdf";
+
+    public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+        new C2E1_SimplePdf().manipulatePdf(DEST);
+    }
 
     /**
      * Creates a simple PDF with images and text
      *
      * @throws java.io.IOException
      */
-    @Override
     protected void manipulatePdf(String dest) throws IOException, InterruptedException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, new WriterProperties().setPdfVersion(PdfVersion.PDF_1_7)));
         Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());

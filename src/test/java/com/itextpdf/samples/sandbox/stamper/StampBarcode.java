@@ -6,6 +6,10 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+/**
+ * Example written by Bruno Lowagie in answer to:
+ * http://stackoverflow.com/questions/26325712/itext-add-image-to-existing-document-using-itext-pdfstamper
+ */
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.barcodes.BarcodeEAN;
@@ -16,20 +20,11 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/26325712/itext-add-image-to-existing-document-using-itext-pdfstamper
- */
-@Category(SampleTest.class)
-public class StampBarcode extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/stamp_barcode.pdf";
+public class StampBarcode {
+    public static final String DEST = "./target/sandbox/stamper/stamp_barcode.pdf";
     public static final String SRC = "./src/test/resources/pdfs/superman.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -38,7 +33,6 @@ public class StampBarcode extends GenericTest {
         new StampBarcode().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         int n = pdfDoc.getNumberOfPages();

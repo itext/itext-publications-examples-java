@@ -20,21 +20,14 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.Ignore;
-import org.junit.experimental.categories.Category;
+import com.itextpdf.licensekey.LicenseKey;
 
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
-@Ignore
-@Category(SampleTest.class)
-public class FontTest extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/font_test.pdf";
-    public static final String FONTDIR = "./src/test/resources/font";
+public class FontTest {
+    public static final String DEST = "./target/sandbox/fonts/font_test.pdf";
     public static final String TEXT = "Quick brown fox jumps over the lazy dog; 0123456789";
     public static final String CP1250 = "Nikogar\u0161nja zemlja";
     public static final String CP1251 = "\u042f \u043b\u044e\u0431\u043b\u044e \u0442\u0435\u0431\u044f";
@@ -44,17 +37,34 @@ public class FontTest extends GenericTest {
     public static final String JAPANESE = "\u8ab0\u3082\u77e5\u3089\u306a\u3044";
     public static final String KOREAN = "\ube48\uc9d1";
 
+    public static final String[] FONTS = {
+            "./src/test/resources/font/cmr10.afm",
+            "./src/test/resources/font/cmr10.pfb",
+            "./src/test/resources/font/cmr10.pfm",
+            "./src/test/resources/font/EBGaramond12-Italic.ttf",
+            "./src/test/resources/font/EBGaramond12-Regular.ttf",
+            "./src/test/resources/font/FreeSans.ttf",
+            "./src/test/resources/font/FreeSansBold.ttf",
+            "./src/test/resources/font/NotoSans-Bold.ttf",
+            "./src/test/resources/font/NotoSans-BoldItalic.ttf",
+            "./src/test/resources/font/NotoSansCJKjp-Regular.otf",
+            "./src/test/resources/font/NotoSansCJKkr-Regular.otf",
+            "./src/test/resources/font/NotoSansCJKsc-Regular.otf"
+    };
+
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
         new FontTest().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);
-        PdfFontFactory.registerDirectory(FONTDIR);
+
+        for (String font : FONTS) {
+            PdfFontFactory.register(font);
+        }
         Set<String> fonts = new HashSet<String>(FontProgramFactory.getRegisteredFonts());
         for (String fontname : fonts) {
             showFontInfo(doc, fontname);

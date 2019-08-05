@@ -20,19 +20,14 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class MakeJpgMask extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/make_jpg_mask.pdf";
+public class MakeJpgMask {
+    public static final String DEST = "./target/sandbox/images/make_jpg_mask.pdf";
     public static final String IMAGE = "./src/test/resources/img/javaone2013.jpg";
     public static final String MASK = "./src/test/resources/img/berlin2013.jpg";
 
@@ -51,7 +46,6 @@ public class MakeJpgMask extends GenericTest {
         return ImageDataFactory.create(baos.toByteArray());
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

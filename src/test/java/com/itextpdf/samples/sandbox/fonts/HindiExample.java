@@ -24,17 +24,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class HindiExample extends GenericTest {
+public class HindiExample {
     public static final String DEST
-            = "./target/test/resources/sandbox/fonts/hindi_example.pdf";
+            = "./target/sandbox/fonts/hindi_example.pdf";
     public static final String FONT
             = "./src/test/resources/font/FreeSans.ttf";
 
@@ -44,10 +39,7 @@ public class HindiExample extends GenericTest {
         new HindiExample().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
-
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 

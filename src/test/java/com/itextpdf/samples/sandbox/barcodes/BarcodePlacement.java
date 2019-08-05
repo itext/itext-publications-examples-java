@@ -15,16 +15,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class BarcodePlacement extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/barcodes/barcode_placement.pdf";
+public class BarcodePlacement {
+    public static final String DEST = "./target/sandbox/barcodes/barcode_placement.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -39,7 +34,6 @@ public class BarcodePlacement extends GenericTest {
         return new Image(barcode.createFormXObject(ColorConstants.BLACK, pdfDoc)).scale(mw, mh);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

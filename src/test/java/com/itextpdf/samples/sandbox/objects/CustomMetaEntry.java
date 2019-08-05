@@ -16,17 +16,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class CustomMetaEntry extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/custom_meta_entry.pdf";
+public class CustomMetaEntry {
+    public static final String DEST = "./target/sandbox/objects/custom_meta_entry.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

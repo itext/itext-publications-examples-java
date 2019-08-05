@@ -23,17 +23,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class CellMethod extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/cell_method.pdf";
+public class CellMethod {
+    public static final String DEST = "./target/sandbox/tables/cell_method.pdf";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
     private static PdfFont czechFont = null;
@@ -71,10 +66,7 @@ public class CellMethod extends GenericTest {
         return defaultFont;
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
-        setCompareRenders(true);
-
         czechFont = PdfFontFactory.createFont(FONT, "Cp1250", true);
         greekFont = PdfFontFactory.createFont(FONT, "Cp1253", true);
         defaultFont = PdfFontFactory.createFont(FONT, null, true);

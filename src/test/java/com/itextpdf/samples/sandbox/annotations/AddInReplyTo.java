@@ -16,17 +16,12 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfTextAnnotation;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.util.List;
 
-@Category(SampleTest.class)
-public class AddInReplyTo extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/add_in_reply_to.pdf";
+public class AddInReplyTo {
+    public static final String DEST = "./target/sandbox/annotations/add_in_reply_to.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello_sticky_note.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -35,7 +30,6 @@ public class AddInReplyTo extends GenericTest {
         new AddInReplyTo().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfPage page = pdfDoc.getFirstPage();

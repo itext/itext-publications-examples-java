@@ -22,17 +22,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.canvas.PdfPatternCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.layout.Document;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class TextPattern extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/text_pattern.pdf";
+public class TextPattern {
+    public static final String DEST = "./target/sandbox/objects/text_pattern.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

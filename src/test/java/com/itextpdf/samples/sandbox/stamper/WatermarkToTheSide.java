@@ -18,16 +18,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class WatermarkToTheSide extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/watermark_to_the_side.pdf";
+public class WatermarkToTheSide {
+    public static final String DEST = "./target/sandbox/stamper/watermark_to_the_side.pdf";
     public static final String SRC = "./src/test/resources/pdfs/pages.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +31,6 @@ public class WatermarkToTheSide extends GenericTest {
         new WatermarkToTheSide().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 

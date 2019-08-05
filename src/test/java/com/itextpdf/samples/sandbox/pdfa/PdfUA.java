@@ -22,17 +22,12 @@ import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class PdfUA extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/pdfa/pdf_ua.pdf";
+public class PdfUA {
+    public static final String DEST = "./target/sandbox/pdfa/pdf_ua.pdf";
     public static final String DOG = "./src/test/resources/img/dog.bmp";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
     public static final String FOX = "./src/test/resources/img/fox.bmp";

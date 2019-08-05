@@ -31,10 +31,6 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.VerticalAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -44,9 +40,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-@Category(SampleTest.class)
-public class FillFlattenMerge3 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/reporting/fill_flatten_merge3.pdf";
+public class FillFlattenMerge3 {
+    public static final String DEST = "./target/sandbox/acroforms/reporting/fill_flatten_merge3.pdf";
     public static final String DATA = "./src/test/resources/data/united_states.csv";
     public static final String[] FIELDS = {
             "name", "abbr", "capital", "city", "population", "surface", "timezone1", "timezone2", "dst"
@@ -61,7 +56,6 @@ public class FillFlattenMerge3 extends GenericTest {
         new FillFlattenMerge3().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
         PdfAcroForm form = PdfAcroForm.getAcroForm(srcDoc, true);

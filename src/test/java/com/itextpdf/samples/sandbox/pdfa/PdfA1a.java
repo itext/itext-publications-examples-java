@@ -31,17 +31,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-@Category(SampleTest.class)
-public class PdfA1a extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox//pdfa/pdf_a_1a.pdf";
+public class PdfA1a {
+    public static final String DEST = "./target/sandbox//pdfa/pdf_a_1a.pdf";
     public static final String BOLD = "./src/test/resources/font/OpenSans-Bold.ttf";
     public static final String DATA = "./src/test/resources/data/united_states.csv";
     public static final String FONT = "./src/test/resources/font/OpenSans-Regular.ttf";

@@ -29,17 +29,12 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class RotatedText extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/rotated_text.pdf";
+public class RotatedText {
+    public static final String DEST = "./target/sandbox/objects/rotated_text.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

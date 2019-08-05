@@ -9,39 +9,32 @@
 package com.itextpdf.samples.sandbox.xfa;
 
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.tool.xml.xtra.xfa.MetaData;
 import com.itextpdf.tool.xml.xtra.xfa.XFAFlattener;
 import com.itextpdf.tool.xml.xtra.xfa.XFAFlattenerProperties;
 import com.itextpdf.tool.xml.xtra.xfa.font.XFAFontSettings;
-import org.junit.experimental.categories.Category;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author Michael Demey
  */
-@Category( SampleTest.class)
-public class FlattenXfaDocument extends GenericTest {
+public class FlattenXfaDocument {
     public static final String XFA = "./src/test/resources/xfa/xfa.pdf";
-    public static final String DEST = "./target/test/resources/xfa/flattened.pdf";
+    public static final String DEST = "./target/sandbox/xfa/flattened.pdf";
 
-    private List<String> javascriptEvents;
+    private List<String> javascriptEvents = Arrays.asList("click");
 
-    @Override
-    protected void beforeManipulatePdf() {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
-
-        this.javascriptEvents = new ArrayList<>();
-
-        this.javascriptEvents.add("click");
+    public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+        new FlattenXfaDocument().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         XFAFlattenerProperties flattenerProperties = new XFAFlattenerProperties()
                 .setPdfVersion(XFAFlattenerProperties.PDF_1_7)

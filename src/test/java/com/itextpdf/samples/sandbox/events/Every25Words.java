@@ -21,16 +21,11 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TextRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.*;
 
-@Category(SampleTest.class)
-public class Every25Words extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/every25words.pdf";
+public class Every25Words {
+    public static final String DEST = "./target/sandbox/events/every25words.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -49,7 +44,6 @@ public class Every25Words extends GenericTest {
         return sb.toString();
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

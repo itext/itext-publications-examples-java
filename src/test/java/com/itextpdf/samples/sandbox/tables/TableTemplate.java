@@ -22,16 +22,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TableTemplate extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/table_template.pdf";
+public class TableTemplate {
+    public static final String DEST = "./target/sandbox/tables/table_template.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -39,7 +34,6 @@ public class TableTemplate extends GenericTest {
         new TableTemplate().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 

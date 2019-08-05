@@ -21,17 +21,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class MergeForms2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/merge_forms2.pdf";
+public class MergeForms2 {
+    public static final String DEST = "./target/sandbox/acroforms/merge_forms2.pdf";
     public static final String SRC = "./src/test/resources/pdfs/state.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -40,7 +35,6 @@ public class MergeForms2 extends GenericTest {
         new MergeForms2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         pdfDoc.initializeOutlines();

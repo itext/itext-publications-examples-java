@@ -17,18 +17,13 @@ import com.itextpdf.kernel.pdf.PdfOutline;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class InsertAndAdaptOutlines extends GenericTest {
+public class InsertAndAdaptOutlines {
     public static final String DEST =
-            "./target/test/resources/sandbox/merge/insert_and_adapt_outlines.pdf";
+            "./target/sandbox/merge/insert_and_adapt_outlines.pdf";
     public static final String INSERT =
             "./src/test/resources/pdfs/hello.pdf";
     public static final String SRC =

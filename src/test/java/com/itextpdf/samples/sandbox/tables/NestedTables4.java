@@ -23,15 +23,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class NestedTables4 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/nested_tables4.pdf";
+public class NestedTables4 {
+    public static final String DEST = "./target/sandbox/tables/nested_tables4.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -39,7 +35,6 @@ public class NestedTables4 extends GenericTest {
         new NestedTables4().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

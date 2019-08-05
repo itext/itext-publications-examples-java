@@ -24,16 +24,11 @@ import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 import com.itextpdf.layout.Document;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class AddPolygonLink extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/add_polygon_link.pdf";
+public class AddPolygonLink {
+    public static final String DEST = "./target/sandbox/annotations/add_polygon_link.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -42,7 +37,6 @@ public class AddPolygonLink extends GenericTest {
         new AddPolygonLink().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

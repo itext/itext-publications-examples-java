@@ -25,34 +25,35 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.junit.experimental.categories.Category;
-
 /**
  * Creates a PDF that conforms with PDF/A-3 Level B.
  */
-@Category(SampleTest.class)
-public class C2E3_PdfA3b extends GenericTest {
+public class C2E3_PdfA3b {
     public static final String ICC = "./src/test/resources/data/sRGB_CS_profile.icm";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
     public static final String FOX = "./src/test/resources/img/fox.bmp";
     public static final String DOG = "./src/test/resources/img/dog.bmp";
 
-    public static final String DEST = "./target/test/resources/zugferd/chapter02/C2E3_PdfA3b.pdf";
+    public static final String DEST = "./target/sandbox/zugferd/chapter02/C2E3_PdfA3b.pdf";
+
+    public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+        new C2E3_PdfA3b().manipulatePdf(DEST);
+    }
 
     /**
      * Creates a PDF that conforms with PDF/A-3 Level B.
      *
      * @throws java.io.IOException
      */
-    @Override
     public void manipulatePdf(String dest) throws IOException, XMPException, InterruptedException {
         //PDF/A-3b
         //Set output intents

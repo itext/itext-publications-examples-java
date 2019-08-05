@@ -18,16 +18,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class OpenAt100pct extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/open_at_100pct.pdf";
+public class OpenAt100pct {
+    public static final String DEST = "./target/sandbox/annotations/open_at_100pct.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -35,7 +30,6 @@ public class OpenAt100pct extends GenericTest {
         new OpenAt100pct().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc, new PageSize(612, 792));

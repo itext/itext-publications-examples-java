@@ -31,12 +31,15 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * List of samples, that should be validated visually and by link annotations on corresponding pages
      */
-    private List<String> renderCompareList = Arrays.asList();
+    private List<String> renderCompareList = Arrays.asList("com.itextpdf.samples.sandbox.tables.CellMethod");
 
     /**
      * List of samples, that requires xml files comparison
      */
-    private List<String> xmlCompareList = Arrays.asList("com.itextpdf.samples.sandbox.acroforms.ReadXFA");
+    private List<String> xmlCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.acroforms.ReadXFA",
+            "com.itextpdf.samples.sandbox.stamper.AddNamedDestinations"
+    );
 
     /**
      * List of samples, that requires tag comparison
@@ -50,19 +53,59 @@ public class TestRunner extends WrappedSamplesRunner {
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.FillXFA");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.FillXFA2");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.ReadXFA");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
-        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.tagging");
+        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_01_DifferentLayouts");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_02_ComplexDocumentLayout");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_03_ComplexElementLayout");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_04_PageSizeAndMargins");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_05_BarcodeLayout");
+
+        // Samples are run by separate samples runner
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptWithCertificate");
+
+        // Not a sample classes
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.tutorial.F99_ConvertToUnicodeNotation");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
+
+        // TODO DEVSIX-3105
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles");
+
+        // TODO DEVSIX-3179
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
+
+        // TODO DEVSIX-466
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
+
+        // TODO DEVSIX-3146
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.CustomBorder");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.CustomBorder2");
+
+        // TODO DEVSIX-3099
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.CheckBoxValues");
+
+        // TODO DEVSIX-526
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.ImportXFDF");
+
+        // TODO DEVSIX-3106
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCzech");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCustom");
+
+        // TODO DEVSIX-3107
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.GetN2fromSig");
 
         return generateTestsList(searchConfig);
     }
 
     @Test(timeout = 120000)
     public void test() throws Exception {
-        unloadLicense();
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
         runSamples();
+        unloadLicense();
     }
 
     @Override

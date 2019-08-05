@@ -18,17 +18,12 @@ import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class BaseURL1 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/interactive/base_url1.pdf";
+public class BaseURL1 {
+    public static final String DEST = "./target/sandbox/interactive/base_url1.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

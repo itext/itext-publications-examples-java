@@ -21,16 +21,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class SmallCapsExample extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/small_caps_example.pdf";
+public class SmallCapsExample {
+    public static final String DEST = "./target/sandbox/fonts/small_caps_example.pdf";
     public static final String FONT = "./src/test/resources/font/Delicious-SmallCaps.otf";
 
     public static void main(String[] args) throws Exception {
@@ -39,7 +34,6 @@ public class SmallCapsExample extends GenericTest {
         new SmallCapsExample().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

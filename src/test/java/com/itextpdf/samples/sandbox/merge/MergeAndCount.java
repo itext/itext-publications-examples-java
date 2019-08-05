@@ -16,26 +16,27 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.utils.PageRange;
 import com.itextpdf.kernel.utils.PdfSplitter;
-import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.experimental.categories.Category;
-
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-@Category(SampleTest.class)
 public class MergeAndCount {
-    public static final String DESTFOLDER
-            = "./samples/target/test/resources/sandbox/merge/";
+
+    public static final String DEST = "./target/sandbox/merge/splitDocument1_<pageNumber>.pdf";
+
+    public static final String PAGE_NUMBER_TAG = "<pageNumber>";
     public static final String RESOURCE
-            = "./samples/src/test/resources/pdfs/Wrong.pdf";
+            = "./src/test/resources/pdfs/Wrong.pdf";
 
     public static void main(String[] args) throws IOException {
-        new MergeAndCount().manipulatePdf(DESTFOLDER);
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+        new MergeAndCount().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(final String destFolder) throws IOException {
+    public void manipulatePdf(final String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(RESOURCE));
 
         List<PdfDocument> splitDocuments = new PdfSplitter(pdfDoc) {
@@ -44,7 +45,7 @@ public class MergeAndCount {
             @Override
             protected PdfWriter getNextPdfWriter(PageRange documentPageRange) {
                 try {
-                    return new PdfWriter(destFolder + "splitDocument1_" + String.valueOf(partNumber++) + ".pdf");
+                    return new PdfWriter(dest.replace(PAGE_NUMBER_TAG, String.valueOf(partNumber++)));
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException();
                 }

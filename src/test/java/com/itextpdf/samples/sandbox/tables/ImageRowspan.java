@@ -21,15 +21,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ImageRowspan extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/image_rowspan.pdf";
+public class ImageRowspan {
+    public static final String DEST = "./target/sandbox/tables/image_rowspan.pdf";
     public static final String IMG = "./src/test/resources/img/bruno.jpg";
 
 
@@ -39,7 +35,6 @@ public class ImageRowspan extends GenericTest {
         new ImageRowspan().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

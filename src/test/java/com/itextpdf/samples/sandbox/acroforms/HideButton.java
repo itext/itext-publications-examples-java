@@ -16,19 +16,12 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.samples.GenericTest;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class HideButton extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/hide_button.pdf";
+public class HideButton {
+    public static final String DEST = "./target/sandbox/acroforms/hide_button.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello_button.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -37,7 +30,6 @@ public class HideButton extends GenericTest {
         new HideButton().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);

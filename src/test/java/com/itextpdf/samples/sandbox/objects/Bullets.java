@@ -22,17 +22,12 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class Bullets extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/bullets.pdf";
+public class Bullets {
+    public static final String DEST = "./target/sandbox/objects/bullets.pdf";
     public static final String[] ITEMS = {
             "Insurance system", "Agent", "Agency", "Agent Enrollment", "Agent Settings",
             "Appointment", "Continuing Education", "Hierarchy", "Recruiting", "Contract",
@@ -42,14 +37,10 @@ public class Bullets extends GenericTest {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new AddPointer().manipulatePdf(DEST);
+        new Bullets().manipulatePdf(DEST);
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        // License file is loaded because open type font is used and typography module is in classpath:
-        // typography module is utilized and requires license.
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
-
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 

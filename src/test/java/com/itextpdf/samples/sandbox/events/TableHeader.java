@@ -30,17 +30,12 @@ import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.TableRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TableHeader extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/table_header.pdf";
+public class TableHeader {
+    public static final String DEST = "./target/sandbox/events/table_header.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -48,7 +43,6 @@ public class TableHeader extends GenericTest {
         new TableHeader().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, PageSize.A4);
