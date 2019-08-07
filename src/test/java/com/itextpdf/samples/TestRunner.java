@@ -38,6 +38,15 @@ public class TestRunner extends WrappedSamplesRunner {
      */
     private List<String> xmlCompareList = Arrays.asList("com.itextpdf.samples.sandbox.acroforms.ReadXFA");
 
+    /**
+     * List of samples, that requires tag comparison
+     */
+    private List<String> tagCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.tagging.AddArtifactTable",
+            "com.itextpdf.samples.sandbox.tagging.AddStars",
+            "com.itextpdf.samples.sandbox.tagging.CreateTaggedDocument"
+    );
+
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
@@ -45,6 +54,7 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.FillXFA2");
         searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.ReadXFA");
         searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
+        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.tagging");
 
         return generateTestsList(searchConfig);
     }
@@ -70,6 +80,10 @@ public class TestRunner extends WrappedSamplesRunner {
         } else {
             addError(compareTool.compareByContent(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareDocumentInfo(dest, cmp));
+        }
+
+        if (tagCompareList.contains(sampleClass.getName())) {
+            addError(compareTool.compareTagStructures(dest, cmp));
         }
     }
 
