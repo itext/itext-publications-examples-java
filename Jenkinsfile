@@ -42,7 +42,7 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES')
             }
             steps {
-                withMaven(jdk: "${JDK_VERSION}", maven: 'M3') {
+                withMaven(jdk: "${JDK_VERSION}", maven: 'M3', mavenLocalRepo: '.repository') {
                     sh 'mvn clean'
                 }
             }
@@ -52,7 +52,7 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES')
             }
             steps {
-                withMaven(jdk: "${JDK_VERSION}", maven: 'M3') {
+                withMaven(jdk: "${JDK_VERSION}", maven: 'M3', mavenLocalRepo: '.repository') {
                     sh 'mvn compile test-compile'
                 }
             }
@@ -62,7 +62,7 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES')
             }
             steps {
-                withMaven(jdk: "${JDK_VERSION}", maven: 'M3') {
+                withMaven(jdk: "${JDK_VERSION}", maven: 'M3', mavenLocalRepo: '.repository') {
                     sh 'mvn checkstyle:checkstyle spotbugs:check pmd:pmd -Dpmd.analysisCache=true javadoc:javadoc -Dmaven.javadoc.failOnError=false'
                 }
             }
@@ -113,8 +113,8 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES')
             }
             steps {
-                withMaven(jdk: "${JDK_VERSION}", maven: 'M3') {
-                    sh 'mvn verify -DgsExec="${gsExec}" -DcompareExec="${compareExec}" -Dmaven.test.skip=false -Dmaven.test.failure.ignore=false -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true'
+                withMaven(jdk: "${JDK_VERSION}", maven: 'M3', mavenLocalRepo: '.repository') {
+                    sh 'mvn verify -DgsExec="${gsExec}" -DcompareExec="${compareExec}" -Dmaven.test.skip=false -Dmaven.test.failure.ignore=false -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true -Dspotbugs.skip=true'
                 }
             }
             post {
