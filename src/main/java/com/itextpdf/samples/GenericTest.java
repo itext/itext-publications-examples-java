@@ -71,7 +71,8 @@ public class GenericTest {
     public void test() throws Exception {
         if (this.getClass().getName().equals(GenericTest.class.getName()))
             return;
-        unloadLicense();
+        //unloadLicense();
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
         LOGGER.info("Starting test " + getClass().getName() + ".");
         // Getting the destination PDF file (must be there!)
         String dest = getDest();
