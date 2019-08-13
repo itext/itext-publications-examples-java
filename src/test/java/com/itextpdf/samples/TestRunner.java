@@ -94,6 +94,7 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptWithCertificate");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.tutorial.F99_ConvertToUnicodeNotation");
@@ -136,6 +137,7 @@ public class TestRunner extends WrappedSamplesRunner {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
+
         runSamples();
         unloadLicense();
     }

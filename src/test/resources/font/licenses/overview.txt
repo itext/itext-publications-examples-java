@@ -44,6 +44,7 @@ Support for Simplified Chinese, Traditional Chinese, Japanese, and Korean has be
 
 SIL OPEN FONT LICENSE Version 1.1: OFL.txt
 
+Greifswalder Tengwar.ttf
 AbrilFatface-Regular.ttf
 Cardo-Regular.ttf
 Cardo-Italic.ttf
@@ -99,6 +100,21 @@ Vollkorn-Italic.ttf
 Vollkorn-Bold.ttf
 Vollkorn-BoldItalic.ttf
 
+----
+
 Fonts downloaded from http://cooltext.com/
 
 cfmingeb.ttf http://cooltext.com/Download-Font-%E6%98%8E%E9%AB%94+TSC+FMing
+
+---- 
+
+1001Fonts Free For Commercial Use License (FFC)
+
+Runes.ttf
+
+----
+
+Fonts downloaded from https://www.fontspace.com
+
+New Walt Disney.ttf https://www.fontspace.com/538fonts/new-waltograph
+That font is licensed as Freeware, which means it is 100% free for both personal use and commercial use.
