@@ -14,7 +14,6 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
 import com.itextpdf.styledxmlparser.css.media.MediaType;
 import com.itextpdf.styledxmlparser.css.util.CssUtils;
@@ -35,11 +34,8 @@ public class pdfHTMLResponsiveDesign {
             new PageSize(PageSize.A5.getWidth(), PageSize.A4.getHeight())
     };
 
-    //Path to the license file
-    public static final String LICENSE = "src/test/resources/pdfHTML/itextkey-html2pdf_typography.xml";
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile(LICENSE);
         for (String name : files) {
             String htmlSource = sourceFolder + name + "/" + name + ".html";
             String resourceFolder = sourceFolder + name + "/";

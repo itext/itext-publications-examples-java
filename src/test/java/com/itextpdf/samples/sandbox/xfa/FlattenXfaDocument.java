@@ -8,7 +8,6 @@
  */
 package com.itextpdf.samples.sandbox.xfa;
 
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.tool.xml.xtra.xfa.MetaData;
@@ -34,7 +33,6 @@ public class FlattenXfaDocument extends GenericTest {
 
     @Override
     protected void beforeManipulatePdf() {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
 
         this.javascriptEvents = new ArrayList<>();
 

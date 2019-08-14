@@ -15,7 +15,6 @@ package com.itextpdf.samples.sandbox.parse;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.pdfcleanup.PdfCleanUpTool;
 import com.itextpdf.samples.GenericTest;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -37,8 +36,6 @@ public class RemoveRedactedContent extends GenericTest {
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        //Load the license file to use cleanup features
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
 
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 

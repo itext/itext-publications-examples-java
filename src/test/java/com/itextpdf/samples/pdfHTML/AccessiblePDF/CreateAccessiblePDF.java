@@ -13,13 +13,11 @@ import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
-import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.WriterProperties;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.pdfHTML.AccessiblePDF.HeaderTagging.AccessibilityTagWorkerFactory;
 
 import java.io.File;
@@ -33,12 +31,9 @@ public class CreateAccessiblePDF {
     public static final String sourceFolder = "src/test/resources/pdfHTML/AccessiblePDF/";
     public static final String destinationFolder = "target/output/pdfHTML/AccessiblePDF/";
     public static final String[] files = {"Accessibility"};
-    //License key path
-    public static final String LICENSE = "src/test/resources/pdfHTML/itextkey-html2pdf_typography.xml";
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile(LICENSE);
         for (String name : files) {
             String htmlSource = sourceFolder + name  + ".html";
             String resourceFolder = sourceFolder;
