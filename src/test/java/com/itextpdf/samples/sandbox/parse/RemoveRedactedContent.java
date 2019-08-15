@@ -15,7 +15,6 @@ package com.itextpdf.samples.sandbox.parse;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.pdfcleanup.PdfCleanUpTool;
 
 import java.io.File;

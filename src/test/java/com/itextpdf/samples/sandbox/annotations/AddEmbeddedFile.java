@@ -19,8 +19,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 public class AddEmbeddedFile {
     public static final String DEST = "./target/sandbox/annotations/add_embedded_file.pdf";

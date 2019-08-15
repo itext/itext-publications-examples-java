@@ -36,6 +36,7 @@ public class FlattenXfaDocument {
     }
 
     protected void manipulatePdf(String dest) throws Exception {
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
         XFAFlattenerProperties flattenerProperties = new XFAFlattenerProperties()
                 .setPdfVersion(XFAFlattenerProperties.PDF_1_7)
                 .createXmpMetaData()

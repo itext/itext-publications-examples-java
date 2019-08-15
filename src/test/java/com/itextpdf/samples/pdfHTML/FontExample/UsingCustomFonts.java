@@ -14,7 +14,6 @@ import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.licensekey.LicenseKey;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,16 +24,14 @@ import java.nio.file.Paths;
 
 public class UsingCustomFonts {
 
-    public static final String sourceFolder = "src/test/resources/Develop/pdfHTML/";
-    public static final String destinationFolder = "target/output/Develop/pdfHTML/";
-    public static final String LICENSE = "<Path to license key>";
+    public static final String sourceFolder = "src/test/resources/pdfHTML/FontExample/";
+    public static final String destinationFolder = "target/output/pdfHTML/FontExample/";
     public static final String[] files = {"FontExample"};
     public static final String STARWARS = "Aurebesh Bold.ttf";
     public static final String SINDARIN = "SINDAR.TTF";
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile(LICENSE);
         for (String name : files) {
             String htmlSource = sourceFolder + name + ".html";
             String resourceFolder = sourceFolder;

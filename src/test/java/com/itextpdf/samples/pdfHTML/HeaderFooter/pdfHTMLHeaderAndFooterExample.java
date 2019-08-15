@@ -22,7 +22,6 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.licensekey.LicenseKey;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,12 +31,10 @@ public class pdfHTMLHeaderAndFooterExample {
 
     public static final String sourceFolder = "src/test/resources/pdfHTML/";
     public static final String destinationFolder = "target/output/pdfHTML/";
-    public static final String LICENSE = "src/test/resources/pdfHTML/itextkey_trial.xml";
 
     public static final String[] files = {"ipsum"};
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile(LICENSE);
         for (String name : files) {
             String htmlSource = sourceFolder + name + ".html";
             String resourceFolder = sourceFolder + name + "/";
