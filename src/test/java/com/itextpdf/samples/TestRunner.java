@@ -8,6 +8,7 @@
  */
 package com.itextpdf.samples;
 
+import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
@@ -103,7 +104,8 @@ public class TestRunner extends WrappedSamplesRunner {
 
     @Test(timeout = 120000)
     public void test() throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
+        FontProgramFactory.clearRegisteredFonts();
         runSamples();
         unloadLicense();
     }
