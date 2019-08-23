@@ -20,7 +20,7 @@ public class E02_InlineCss {
 	public static final String DEST = "target/results/html/2_inline_css.pdf";
 	
     /**
-     * <p>main.</p>
+     * main.
      *
      * @param args an array of {@link java.lang.String} objects.
      * @throws java.io.IOException if any.
@@ -34,7 +34,7 @@ public class E02_InlineCss {
     }
     
     /**
-     * <p>createPdf.</p>
+     * createPdf.
      *
      * @param src a {@link java.lang.String} object.
      * @param dest a {@link java.lang.String} object.

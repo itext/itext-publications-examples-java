@@ -29,7 +29,7 @@ public class DivExample {
 	public final static String TEXT3 = "This text should come below the rectangle and there after a normal flow should happen ";
 
 	/**
-	 * <p>main.</p>
+	 * main.
 	 *
 	 * @param args an array of {@link java.lang.String} objects.
 	 * @throws java.io.IOException if any.

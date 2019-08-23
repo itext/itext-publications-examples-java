@@ -24,7 +24,7 @@ public class WalkTheTree {
 	public static final String SRC = "src/main/resources/pdf/test.pdf";
 	
 	/**
-	 * <p>main.</p>
+	 * main.
 	 *
 	 * @param args an array of {@link java.lang.String} objects.
 	 * @throws java.io.IOException if any.
@@ -35,7 +35,7 @@ public class WalkTheTree {
 	}
 	
 	/**
-	 * <p>process.</p>
+	 * process.
 	 *
 	 * @param elem a {@link com.itextpdf.kernel.pdf.tagging.IStructureNode} object.
 	 */
@@ -53,7 +53,7 @@ public class WalkTheTree {
 	}
 	
 	/**
-	 * <p>processStructElem.</p>
+	 * processStructElem.
 	 *
 	 * @param elem a {@link com.itextpdf.kernel.pdf.tagging.PdfStructElem} object.
 	 */

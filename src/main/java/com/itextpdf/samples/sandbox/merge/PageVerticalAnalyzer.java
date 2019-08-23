@@ -40,7 +40,7 @@ public class PageVerticalAnalyzer implements IEventListener {
     final List<Float> verticalFlips = new ArrayList<>();
 
     /**
-     * <p>Constructor for PageVerticalAnalyzer.</p>
+     * Constructor for PageVerticalAnalyzer.
      */
     public PageVerticalAnalyzer() {
         supportedEvents = new HashSet<>();
@@ -50,7 +50,7 @@ public class PageVerticalAnalyzer implements IEventListener {
     }
 
     /**
-     * <p>Getter for the field <code>verticalFlips</code>.</p>
+     * Getter for the field <code>verticalFlips</code>.
      *
      * @return a {@link java.util.List} object.
      */

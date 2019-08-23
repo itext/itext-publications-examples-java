@@ -34,7 +34,7 @@ public class E06_MediaQuery {
     };
 	
     /**
-     * <p>main.</p>
+     * main.
      *
      * @param args an array of {@link java.lang.String} objects.
      * @throws java.io.IOException if any.
@@ -51,7 +51,7 @@ public class E06_MediaQuery {
     }
     
     /**
-     * <p>createPdf.</p>
+     * createPdf.
      *
      * @param src a {@link java.lang.String} object.
      * @param dest a {@link java.lang.String} object.
