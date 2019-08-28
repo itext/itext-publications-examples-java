@@ -8,6 +8,7 @@
  */
 package com.itextpdf.samples;
 
+import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
@@ -132,6 +133,7 @@ public class TestRunner extends WrappedSamplesRunner {
     @Test(timeout = 60000)
     public void test() throws Exception {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
+        FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
         runSamples();
         unloadLicense();
