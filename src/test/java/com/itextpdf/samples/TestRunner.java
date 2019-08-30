@@ -127,6 +127,9 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3107
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.GetN2fromSig");
 
+        // TODO DEVSIX-3224
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemo");
+
         return generateTestsList(searchConfig);
     }
 
