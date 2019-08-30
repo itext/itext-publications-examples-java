@@ -24,17 +24,12 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class TiledBackgroundColor2 extends GenericTest {
+public class TiledBackgroundColor2 {
     public static final String DEST
-            = "./target/test/resources/sandbox/tables/tiled_background_color2.pdf";
+            = "./target/sandbox/tables/tiled_background_color2.pdf";
     public static final String IMG
             = "./src/test/resources/img/bulb.gif";
 
@@ -44,7 +39,6 @@ public class TiledBackgroundColor2 extends GenericTest {
         new TiledBackgroundColor2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

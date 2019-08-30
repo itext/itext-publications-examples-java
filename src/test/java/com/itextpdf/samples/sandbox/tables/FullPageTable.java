@@ -21,16 +21,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class FullPageTable extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/full_page_table.pdf";
+public class FullPageTable {
+    public static final String DEST = "./target/sandbox/tables/full_page_table.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -38,7 +33,6 @@ public class FullPageTable extends GenericTest {
         new FullPageTable().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(595, 842));

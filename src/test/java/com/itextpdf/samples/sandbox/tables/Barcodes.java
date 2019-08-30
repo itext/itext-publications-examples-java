@@ -16,16 +16,11 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class Barcodes extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/barcodes.pdf";
+public class Barcodes {
+    public static final String DEST = "./target/sandbox/tables/barcodes.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -33,7 +28,6 @@ public class Barcodes extends GenericTest {
         new Barcodes().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

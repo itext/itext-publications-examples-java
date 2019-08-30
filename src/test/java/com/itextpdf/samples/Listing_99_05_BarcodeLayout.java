@@ -19,14 +19,18 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Listing_99_05_BarcodeLayout extends GenericTest {
+public class Listing_99_05_BarcodeLayout {
 
-    public static final String DEST = "./target/test/resources/Listing_99_05_BarcodeLayout/Listing_99_05_BarcodeLayout.pdf";
+    public static final String DEST = "./target/Listing_99_05_BarcodeLayout/Listing_99_05_BarcodeLayout.pdf";
 
     public static void main(String args[]) throws IOException {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new Listing_99_05_BarcodeLayout().manipulatePdf(DEST);
     }
 

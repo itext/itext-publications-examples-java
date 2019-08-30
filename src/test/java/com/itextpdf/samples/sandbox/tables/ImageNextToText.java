@@ -24,17 +24,12 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.net.MalformedURLException;
 
-@Category(SampleTest.class)
-public class ImageNextToText extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/image_next_to_text.pdf";
+public class ImageNextToText {
+    public static final String DEST = "./target/sandbox/tables/image_next_to_text.pdf";
     public static final String IMG1 = "./src/test/resources/img/javaone2013.jpg";
 
     public static void main(String[] args) throws Exception {
@@ -60,7 +55,6 @@ public class ImageNextToText extends GenericTest {
         return cell;
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

@@ -19,17 +19,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfDeviceCs;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.kernel.pdf.colorspace.PdfShading;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ShadedFill extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/shaded_fill.pdf";
+public class ShadedFill {
+    public static final String DEST = "./target/sandbox/objects/shaded_fill.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

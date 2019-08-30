@@ -29,16 +29,11 @@ import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class PositionContentInCell extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/position_content_in_cell.pdf";
+public class PositionContentInCell {
+    public static final String DEST = "./target/sandbox/tables/position_content_in_cell.pdf";
     public static final String IMG = "./src/test/resources/img/info.png";
 
     public enum POSITION {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
@@ -49,7 +44,6 @@ public class PositionContentInCell extends GenericTest {
         new PositionContentInCell().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         // 1. Create a Document which contains a table:
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));

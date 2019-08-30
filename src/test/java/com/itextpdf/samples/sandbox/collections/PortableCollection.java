@@ -18,19 +18,14 @@ import com.itextpdf.kernel.pdf.collection.PdfCollection;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class PortableCollection extends GenericTest {
+public class PortableCollection {
     public static final String DATA
             = "./src/test/resources/data/united_states.csv";
     public static final String DEST
-            = "./target/test/resources/sandbox/collections/portable_collection.pdf";
+            = "./target/sandbox/collections/portable_collection.pdf";
     public static final String HELLO
             = "./src/test/resources/pdfs/hello.pdf";
     public static final String IMG =
@@ -42,7 +37,6 @@ public class PortableCollection extends GenericTest {
         new PortableCollection().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

@@ -13,17 +13,12 @@ import com.itextpdf.forms.xfa.XfaForm;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileInputStream;
 
-@Category(SampleTest.class)
-public class FillXFA extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/purchase_order_filled.pdf";
+public class FillXFA {
+    public static final String DEST = "./target/sandbox/acroforms/purchase_order_filled.pdf";
     public static final String SRC = "./src/test/resources/pdfs/purchase_order.pdf";
     public static final String XML = "./src/test/resources/xml/data.xml";
 
@@ -33,7 +28,6 @@ public class FillXFA extends GenericTest {
         new FillXFA().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfdoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 

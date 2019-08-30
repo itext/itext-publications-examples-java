@@ -13,16 +13,11 @@ import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ReuseImage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/reuse_image.pdf";
+public class ReuseImage {
+    public static final String DEST = "./target/sandbox/images/reuse_image.pdf";
     public static final String SRC = "./src/test/resources/pdfs/single_image.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -31,7 +26,6 @@ public class ReuseImage extends GenericTest {
         new ReuseImage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
 

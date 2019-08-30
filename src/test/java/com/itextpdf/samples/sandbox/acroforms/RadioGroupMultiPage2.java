@@ -15,7 +15,6 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
 import com.itextpdf.forms.fields.PdfFormField;
@@ -25,16 +24,11 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.samples.GenericTest;
 
 import java.io.File;
-import java.io.FileOutputStream;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class RadioGroupMultiPage2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/radio_group_multi_page2.pdf";
+public class RadioGroupMultiPage2 {
+    public static final String DEST = "./target/sandbox/acroforms/radio_group_multi_page2.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -42,7 +36,6 @@ public class RadioGroupMultiPage2 extends GenericTest {
         new RadioGroupMultiPage2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

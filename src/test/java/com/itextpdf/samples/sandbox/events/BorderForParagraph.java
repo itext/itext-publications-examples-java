@@ -19,16 +19,11 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class BorderForParagraph extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/border_for_paragraph.pdf";
+public class BorderForParagraph {
+    public static final String DEST = "./target/sandbox/events/border_for_paragraph.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -36,7 +31,6 @@ public class BorderForParagraph extends GenericTest {
         new BorderForParagraph().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

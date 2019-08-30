@@ -23,15 +23,11 @@ import com.itextpdf.layout.hyphenation.Hyphenation;
 import com.itextpdf.layout.hyphenation.HyphenationConfig;
 import com.itextpdf.layout.hyphenation.Hyphenator;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class HyphenationExample extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/hyphenation_example.pdf";
+public class HyphenationExample {
+    public static final String DEST = "./target/sandbox/tables/hyphenation_example.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -39,7 +35,6 @@ public class HyphenationExample extends GenericTest {
         new HyphenationExample().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         Hyphenation s = Hyphenator.hyphenate("de", "DE", "Leistungsscheinziffer", 2, 2);
         System.out.println(s);

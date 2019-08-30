@@ -25,16 +25,11 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ColumnWidthExample extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/column_width_example.pdf";
+public class ColumnWidthExample {
+    public static final String DEST = "./target/sandbox/tables/column_width_example.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -42,7 +37,6 @@ public class ColumnWidthExample extends GenericTest {
         new ColumnWidthExample().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

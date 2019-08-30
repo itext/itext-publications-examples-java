@@ -27,7 +27,7 @@ public class Velocity2Pdf {
 
 
     /**
-     * <p>main.</p>
+     * main.
      *
      * @param args an array of {@link java.lang.String} objects.
      * @throws java.io.IOException if any.
@@ -54,7 +54,7 @@ public class Velocity2Pdf {
     }
 
     /**
-     * <p>createPdf.</p>
+     * createPdf.
      *
      * @param html a {@link java.lang.String} object.
      * @param dest a {@link java.lang.String} object.

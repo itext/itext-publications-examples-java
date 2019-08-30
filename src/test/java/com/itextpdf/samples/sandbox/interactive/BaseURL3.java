@@ -13,17 +13,12 @@
 package com.itextpdf.samples.sandbox.interactive;
 
 import com.itextpdf.kernel.pdf.*;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class BaseURL3 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/interactive/base_url3.pdf";
+public class BaseURL3 {
+    public static final String DEST = "./target/sandbox/interactive/base_url3.pdf";
     public static final String SRC = "./src/test/resources/pdfs/base_url.pdf";
 
     public static void main(String[] args) throws IOException {

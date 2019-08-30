@@ -20,17 +20,12 @@ import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class LeftRight extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/left_right.pdf";
+public class LeftRight {
+    public static final String DEST = "./target/sandbox/objects/left_right.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

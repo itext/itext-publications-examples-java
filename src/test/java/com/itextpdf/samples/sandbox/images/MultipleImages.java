@@ -18,17 +18,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class MultipleImages extends GenericTest {
+public class MultipleImages {
     public static final String DEST =
-            "./target/test/resources/sandbox/images/multiple_images.pdf";
+            "./target/sandbox/images/multiple_images.pdf";
     public static final String[] IMAGES = {
             "./src/test/resources/img/berlin2013.jpg",
             "./src/test/resources/img/javaone2013.jpg",
@@ -41,7 +36,6 @@ public class MultipleImages extends GenericTest {
         new MultipleImages().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         Image image = new Image(ImageDataFactory.create(IMAGES[0]));
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));

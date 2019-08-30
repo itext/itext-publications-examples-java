@@ -20,17 +20,12 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.property.HorizontalAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ListWithLabel extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/list_with_label.pdf";
+public class ListWithLabel {
+    public static final String DEST = "./target/sandbox/objects/list_with_label.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

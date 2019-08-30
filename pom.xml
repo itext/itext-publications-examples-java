@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>7.1.7</version>
-
+  <version>7.1.8</version>
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
-
   <properties>
     <bouncycastle.version>1.49</bouncycastle.version>
     <cleanup.version>2.0.4</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
-    <html2pdf.version>2.1.4</html2pdf.version>
+    <html2pdf.version>2.1.5</html2pdf.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.7</java.version>
     <licensekey.version>3.0.5</licensekey.version>
-    <pdfXfa.version>2.0.0</pdfXfa.version>
+    <pdfXfa.version>2.0.3</pdfXfa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
@@ -26,8 +23,17 @@
     <typography.version>2.0.4</typography.version>
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
   </properties>
-
   <dependencies>
+    <dependency>
+      <groupId>org.verapdf</groupId>
+      <artifactId>validation-model</artifactId>
+      <version>1.14.102</version>
+    </dependency>
+    <dependency>
+      <groupId>org.verapdf.apps</groupId>
+      <artifactId>gui</artifactId>
+      <version>1.14.2</version>
+    </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>pdftest</artifactId>
@@ -155,7 +161,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <repositories>
     <repository>
       <releases>
@@ -180,7 +185,6 @@
       <url>https://repo.itextsupport.com/releases</url>
     </repository>
   </repositories>
-
   <build>
     <plugins>
       <plugin>
@@ -323,7 +327,6 @@
       </plugin>
     </plugins>
   </build>
-
   <reporting>
     <plugins>
       <plugin>

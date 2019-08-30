@@ -25,16 +25,11 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class CustomBorder3 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/custom_border3.pdf";
+public class CustomBorder3 {
+    public static final String DEST = "./target/sandbox/tables/custom_border3.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -42,7 +37,6 @@ public class CustomBorder3 extends GenericTest {
         new CustomBorder3().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document document = new Document(pdfDoc);

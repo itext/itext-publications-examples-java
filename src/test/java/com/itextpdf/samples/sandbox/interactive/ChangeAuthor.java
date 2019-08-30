@@ -13,17 +13,12 @@
 package com.itextpdf.samples.sandbox.interactive;
 
 import com.itextpdf.kernel.pdf.*;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ChangeAuthor extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/interactive/change_author.pdf";
+public class ChangeAuthor {
+    public static final String DEST = "./target/sandbox/interactive/change_author.pdf";
     public static final String SRC = "./src/test/resources/pdfs/page229_annotations.pdf";
 
     public static void main(String[] args) throws IOException {

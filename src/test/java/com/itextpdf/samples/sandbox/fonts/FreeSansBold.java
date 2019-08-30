@@ -19,18 +19,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class FreeSansBold extends GenericTest {
+public class FreeSansBold {
     public static final String DEST
-            = "./target/test/resources/sandbox/fonts/free_sans_bold.pdf";
+            = "./target/sandbox/fonts/free_sans_bold.pdf";
     public static final String FONT
             = "./src/test/resources/font/FreeSans.ttf";
     public static final String FONTBOLD
@@ -42,10 +36,7 @@ public class FreeSansBold extends GenericTest {
         new FreeSansBold().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-multiple-products.xml");
-
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 

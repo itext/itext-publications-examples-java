@@ -16,17 +16,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class ParagraphSpacingBefore extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/paragraph_spacing_before.pdf";
+public class ParagraphSpacingBefore {
+    public static final String DEST = "./target/sandbox/objects/paragraph_spacing_before.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

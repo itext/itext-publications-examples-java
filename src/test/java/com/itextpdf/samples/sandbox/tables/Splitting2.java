@@ -18,17 +18,13 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
 import org.junit.Ignore;
-import org.junit.experimental.categories.Category;
 
-@Category(SampleTest.class)
-public class Splitting2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/splitting2.pdf";
+public class Splitting2 {
+    public static final String DEST = "./target/sandbox/tables/splitting2.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -36,7 +32,6 @@ public class Splitting2 extends GenericTest {
         new Splitting2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

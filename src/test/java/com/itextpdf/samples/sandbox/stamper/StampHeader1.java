@@ -22,17 +22,12 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.VerticalAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
 
-@Category(SampleTest.class)
-public class StampHeader1 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/stamp_header1.pdf";
+public class StampHeader1 {
+    public static final String DEST = "./target/sandbox/stamper/stamp_header1.pdf";
     public static final String SRC = "./src/test/resources/pdfs/Right.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -41,7 +36,6 @@ public class StampHeader1 extends GenericTest {
         new StampHeader1().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

@@ -24,16 +24,11 @@ import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.*;
 
-@Category(SampleTest.class)
-public class ThreeParts extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/events/three_parts.pdf";
+public class ThreeParts {
+    public static final String DEST = "./target/sandbox/events/three_parts.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -74,7 +69,6 @@ public class ThreeParts extends GenericTest {
     }
 
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         int firstPageNumber = 1;

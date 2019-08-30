@@ -23,16 +23,11 @@ import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
 import com.itextpdf.kernel.pdf.navigation.PdfDestination;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 import com.itextpdf.layout.Document;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class AddNavigation extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/add_navigation.pdf";
+public class AddNavigation {
+    public static final String DEST = "./target/sandbox/stamper/add_navigation.pdf";
     public static final String SRC = "./src/test/resources/pdfs/primes.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -41,7 +36,6 @@ public class AddNavigation extends GenericTest {
         new AddNavigation().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

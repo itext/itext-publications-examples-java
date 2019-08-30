@@ -16,17 +16,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class CheckBoxFlatten extends GenericTest {
+public class CheckBoxFlatten {
     public static final String DEST
-            = "./target/test/resources/sandbox/acroforms/checkbox_flatten.pdf";
+            = "./target/sandbox/acroforms/checkbox_flatten.pdf";
     public static final String SRC
             = "./src/test/resources/pdfs/checkboxes.pdf";
 
@@ -36,7 +31,6 @@ public class CheckBoxFlatten extends GenericTest {
         new CheckBoxFlatten().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfAcroForm.getAcroForm(pdfDoc, true).flattenFields();

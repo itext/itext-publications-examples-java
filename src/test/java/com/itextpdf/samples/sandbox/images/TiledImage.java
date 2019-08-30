@@ -18,16 +18,11 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TiledImage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/tiled_image.pdf";
+public class TiledImage {
+    public static final String DEST = "./target/sandbox/images/tiled_image.pdf";
     public static final String IMAGE = "./src/test/resources/img/bruno_ingeborg.jpg";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +31,6 @@ public class TiledImage extends GenericTest {
         new TiledImage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         ImageData image = ImageDataFactory.create(IMAGE);
         float width = image.getWidth();

@@ -26,17 +26,12 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class RectangleInCell extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/rectangle_in_cell.pdf";
+public class RectangleInCell {
+    public static final String DEST = "./target/sandbox/objects/rectangle_in_cell.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

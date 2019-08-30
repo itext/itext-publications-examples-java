@@ -20,17 +20,12 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.net.MalformedURLException;
 
-@Category(SampleTest.class)
-public class ImagesNextToEachOther extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/image_next_to_each_other.pdf";
+public class ImagesNextToEachOther {
+    public static final String DEST = "./target/sandbox/tables/image_next_to_each_other.pdf";
     public static final String IMG1 = "./src/test/resources/img/javaone2013.jpg";
     public static final String IMG2 = "./src/test/resources/img/berlin2013.jpg";
 
@@ -45,7 +40,6 @@ public class ImagesNextToEachOther extends GenericTest {
         return new Cell().add(img.setAutoScale(true).setWidth(UnitValue.createPercentValue(100)));
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

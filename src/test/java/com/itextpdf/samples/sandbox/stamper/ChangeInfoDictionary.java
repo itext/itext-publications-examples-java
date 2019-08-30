@@ -19,27 +19,21 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-@Category(SampleTest.class)
-public class ChangeInfoDictionary extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/change_info_dictionary.pdf";
+public class ChangeInfoDictionary {
+    public static final String DEST = "./target/sandbox/stamper/change_info_dictionary.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new AddLongTable().manipulatePdf(DEST);
+        new ChangeInfoDictionary().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfDocumentInfo info = pdfDoc.getDocumentInfo();

@@ -20,10 +20,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -34,9 +30,8 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.StringReader;
 
-@Category(SampleTest.class)
-public class FillWithUnderline extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/fill_with_underline.pdf";
+public class FillWithUnderline {
+    public static final String DEST = "./target/sandbox/acroforms/fill_with_underline.pdf";
     public static final String SRC = "./src/test/resources/pdfs/form.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -45,7 +40,6 @@ public class FillWithUnderline extends GenericTest {
         new FillWithUnderline().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

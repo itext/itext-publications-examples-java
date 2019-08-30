@@ -23,17 +23,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ColumnTextPhrase extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/column_text_phrase.pdf";
+public class ColumnTextPhrase {
+    public static final String DEST = "./target/sandbox/objects/column_text_phrase.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {

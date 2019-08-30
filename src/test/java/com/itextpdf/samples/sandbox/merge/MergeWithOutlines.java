@@ -21,18 +21,13 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 import com.itextpdf.kernel.utils.PdfMerger;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class MergeWithOutlines extends GenericTest {
+public class MergeWithOutlines {
     public static final String DEST
-            = "./target/test/resources/sandbox/merge/merge_with_outlines.pdf";
+            = "./target/sandbox/merge/merge_with_outlines.pdf";
     public static final String SRC1
             = "./src/test/resources/pdfs/hello.pdf";
     public static final String SRC2

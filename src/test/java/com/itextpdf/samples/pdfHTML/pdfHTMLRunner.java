@@ -13,7 +13,6 @@ import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.pdfHTML.ColourBlindness.ColourBlindnessCssApplierFactory;
 import com.itextpdf.samples.pdfHTML.ColourBlindness.ColourBlindnessTransforms;
 import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
@@ -35,7 +34,6 @@ public class pdfHTMLRunner {
     public static final String[] files = {"rainbow", "qrcode"};
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
         for (String name : files) {
             String htmlSource = sourceFolder + name + "/" + name + ".html";
             String resourceFolder = sourceFolder + name + "/";

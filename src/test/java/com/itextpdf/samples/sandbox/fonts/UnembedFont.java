@@ -17,17 +17,12 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class UnembedFont extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/unembed_font.pdf";
-    public static final String SRC = "./target/test/resources/sandbox/fonts/withSerifFont.pdf";
+public class UnembedFont {
+    public static final String DEST = "./target/sandbox/fonts/unembed_font.pdf";
+    public static final String SRC = "./target/sandbox/fonts/withSerifFont.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -74,7 +69,6 @@ public class UnembedFont extends GenericTest {
         fontDescriptor.remove(PdfName.FontFile2);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         createPdf(SRC);
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));

@@ -17,15 +17,11 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfCircleAnnotation;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class CircleAnnotation extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/circle_annotation.pdf";
+public class CircleAnnotation {
+    public static final String DEST = "./target/sandbox/annotations/circle_annotation.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -34,7 +30,6 @@ public class CircleAnnotation extends GenericTest {
         new CircleAnnotation().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Rectangle rect = new Rectangle(150, 770, 50, 50);

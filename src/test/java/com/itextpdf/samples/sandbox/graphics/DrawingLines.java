@@ -17,16 +17,11 @@ import com.itextpdf.kernel.colors.DeviceCmyk;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class DrawingLines extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/graphics/drawing_lines.pdf";
+public class DrawingLines {
+    public static final String DEST = "./target/sandbox/graphics/drawing_lines.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -34,7 +29,6 @@ public class DrawingLines extends GenericTest {
         new DrawingLines().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());

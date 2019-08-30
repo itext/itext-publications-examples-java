@@ -13,10 +13,6 @@
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.*;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 import org.w3c.dom.Element;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -33,14 +29,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@Category(SampleTest.class)
-public class AddNamedDestinations extends GenericTest {
-    public static final String DEST
-            = "./target/test/resources/sandbox/stamper/add_named_destinations.pdf";
+public class AddNamedDestinations {
+    public static final String PDF
+            = "./target/sandbox/stamper/add_named_destinations.pdf";
     public static final String SRC
             = "./src/test/resources/pdfs/primes.pdf";
-    public static final String XML
-            = "./target/test/resources/sandbox/stamper/primes_with_destination.xml";
+    public static final String DEST
+            = "./target/xml/primes_with_destination.xml";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -93,9 +88,13 @@ public class AddNamedDestinations extends GenericTest {
         pdfDoc.close();
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
+
+        // Creates directory and new pdf file by content of the read pdf
+        File file = new File(PDF);
+        file.getParentFile().mkdirs();
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(PDF));
+
         int n = pdfDoc.getNumberOfPages();
         for (int i = 1; i < n; ) {
             if (getFactors(++i).size() > 1) {
@@ -107,11 +106,12 @@ public class AddNamedDestinations extends GenericTest {
             array.add(new PdfNumber(pdfDoc.getPage(i).getPageSize().getLeft()));
             array.add(new PdfNumber(pdfDoc.getPage(i).getPageSize().getTop()));
             array.add(new PdfNumber(1));
+
             // Notice that the document has already destinations like "Prime+i"
             pdfDoc.addNamedDestination("prime" + i, array);
         }
         pdfDoc.close();
 
-        createXml(DEST, XML);
+        createXml(PDF, dest);
     }
 }

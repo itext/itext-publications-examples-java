@@ -20,19 +20,14 @@ import com.itextpdf.kernel.pdf.ReaderProperties;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-@Category(SampleTest.class)
-public class ReorderPages extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/reorder_pages.pdf";
+public class ReorderPages {
+    public static final String DEST = "./target/sandbox/stamper/reorder_pages.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -40,7 +35,6 @@ public class ReorderPages extends GenericTest {
         new ReorderPages().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));

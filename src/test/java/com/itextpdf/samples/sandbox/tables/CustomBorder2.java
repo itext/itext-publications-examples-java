@@ -25,17 +25,11 @@ import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.Ignore;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-@Ignore("DEVSIX-1035")
-public class CustomBorder2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/custom_border2.pdf";
+public class CustomBorder2 {
+    public static final String DEST = "./target/sandbox/tables/custom_border2.pdf";
     public static final String TEXT = "This is some long paragraph that will be added over and over " +
             "again to prove a point. It should result in rows that are split and rows that aren't.";
 
@@ -45,7 +39,6 @@ public class CustomBorder2 extends GenericTest {
         new CustomBorder2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

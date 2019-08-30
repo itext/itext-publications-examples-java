@@ -14,16 +14,11 @@ import com.itextpdf.kernel.colors.DeviceCmyk;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class AddSpotColorImage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/add_spot_color_image.pdf";
+public class AddSpotColorImage {
+    public static final String DEST = "./target/sandbox/stamper/add_spot_color_image.pdf";
     public static final String SRC = "./src/test/resources/pdfs/image.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -47,7 +42,6 @@ public class AddSpotColorImage extends GenericTest {
         return array;
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
 

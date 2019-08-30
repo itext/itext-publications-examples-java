@@ -19,15 +19,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class RupeeSymbol extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/rupee_symbol.pdf";
+public class RupeeSymbol {
+    public static final String DEST = "./target/sandbox/fonts/rupee_symbol.pdf";
 
     public static final String FONT1 = "./src/test/resources/font/PlayfairDisplay-Regular.ttf";
     public static final String FONT2 = "./src/test/resources/font/PT_Sans-Web-Regular.ttf";
@@ -40,7 +36,6 @@ public class RupeeSymbol extends GenericTest {
         new RupeeSymbol().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

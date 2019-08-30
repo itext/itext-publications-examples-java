@@ -22,16 +22,11 @@ import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class AddLinkAnnotation2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/annotations/add_link_annotation2.pdf";
+public class AddLinkAnnotation2 {
+    public static final String DEST = "./target/sandbox/annotations/add_link_annotation2.pdf";
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -40,7 +35,6 @@ public class AddLinkAnnotation2 extends GenericTest {
         new AddLinkAnnotation2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

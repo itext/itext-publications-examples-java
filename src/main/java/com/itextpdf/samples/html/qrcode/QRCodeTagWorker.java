@@ -31,7 +31,7 @@ public class QRCodeTagWorker implements ITagWorker {
     private Image qrCodeAsImage;
 
     /**
-     * <p>Constructor for QRCodeTagWorker.</p>
+     * Constructor for QRCodeTagWorker.
      *
      * @param element a {@link com.itextpdf.styledxmlparser.node.IElementNode} object.
      * @param context a {@link com.itextpdf.html2pdf.attach.ProcessorContext} object.

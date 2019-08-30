@@ -17,8 +17,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,13 +28,11 @@ import java.io.InputStreamReader;
 import java.util.Date;
 
 import org.junit.Assert;
-import org.junit.experimental.categories.Category;
 
-@Category(SampleTest.class)
-public class CounterDemo extends GenericTest {
-    public static final String SRC = "./target/test/resources/sandbox/logging/hello.pdf";
-    public static final String DEST = "./target/test/resources/sandbox/logging/stamp.pdf";
-    public static final String LOG_RESULT = "./target/test/resources/sandbox/logging/log.txt";
+public class CounterDemo {
+    public static final String SRC = "./target/sandbox/logging/hello.pdf";
+    public static final String DEST = "./target/sandbox/logging/stamp.pdf";
+    public static final String LOG_RESULT = "./target/sandbox/logging/log.txt";
     public static final String CMP_LOG = "./src/test/resources/sandbox/logging/cmp_log.txt";
     public static final String CMP_LOG_LICENSED = "./src/test/resources/sandbox/logging/cmp_log_licensed.txt";
     public static final String CMP_LOG_RELEASE = "./src/test/resources/sandbox/logging/cmp_log_release.txt";
@@ -55,7 +51,6 @@ public class CounterDemo extends GenericTest {
         document.close();
     }
 
-    @Override
     public void manipulatePdf(String dest) throws IOException {
         myCounterFactory = new MyCounterFactory(getClass());
         CounterManager.getInstance().register(myCounterFactory);

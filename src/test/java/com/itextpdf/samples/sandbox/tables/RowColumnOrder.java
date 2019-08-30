@@ -18,15 +18,11 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class RowColumnOrder extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/row_column_order.pdf";
+public class RowColumnOrder {
+    public static final String DEST = "./target/sandbox/tables/row_column_order.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -34,7 +30,6 @@ public class RowColumnOrder extends GenericTest {
         new RowColumnOrder().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

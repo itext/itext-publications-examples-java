@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * <p>
  * This class is a tool for merging PDF <em>page contents</em> in a condensed manner,
  * i.e. if the source pages are only partly filled, the contents of multiple pages
  * are drawn on a single target page. If on the other hand the contents of a source
@@ -29,12 +28,10 @@ import java.util.List;
  * and as much as possible of it is added onto the current target page before a new
  * page is started. This actually allows to even copy content from larger pages onto
  * smaller ones, e.g. from A4 to A5 landscape.
- * </p>
  * <p>
  * In contrast to {@link PdfMerger}, though, this class does not copy information
  * beyond page content, in particular it completely ignores annotations and the
  * structure hierarchy of tagged PDFs.
- * </p>
  * <p>
  * Beware: Simple PDF is not particularly designed for this kind of operations. Thus,
  * there are numerous situations in which this tool may not create the desired result.
@@ -43,7 +40,6 @@ import java.util.List;
  * the middle of the page. Furthermore, water marks, text box backgrounds, etc. will
  * also be considered part of the content and, therefore, also will prevent condensed
  * merging.
- * </p>
  *
  * @author mkl
  */
@@ -75,7 +71,7 @@ public class PdfDenseMerger {
     // getters and setters for layout values
     //
     /**
-     * <p>Getter for the field <code>pageSize</code>.</p>
+     * Getter for the field <code>pageSize</code>.
      *
      * @return a {@link com.itextpdf.kernel.geom.PageSize} object.
      */
@@ -84,7 +80,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Setter for the field <code>pageSize</code>.</p>
+     * Setter for the field <code>pageSize</code>.
      *
      * @param pageSize a {@link com.itextpdf.kernel.geom.PageSize} object.
      * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
@@ -95,7 +91,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Getter for the field <code>top</code>.</p>
+     * Getter for the field <code>top</code>.
      *
      * @return a float.
      */
@@ -104,7 +100,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Setter for the field <code>top</code>.</p>
+     * Setter for the field <code>top</code>.
      *
      * @param top a float.
      * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
@@ -115,7 +111,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Getter for the field <code>bottom</code>.</p>
+     * Getter for the field <code>bottom</code>.
      *
      * @return a float.
      */
@@ -124,7 +120,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Setter for the field <code>bottom</code>.</p>
+     * Setter for the field <code>bottom</code>.
      *
      * @param bottom a float.
      * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
@@ -135,7 +131,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Getter for the field <code>gap</code>.</p>
+     * Getter for the field <code>gap</code>.
      *
      * @return a float.
      */
@@ -144,7 +140,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Setter for the field <code>gap</code>.</p>
+     * Setter for the field <code>gap</code>.
      *
      * @param gap a float.
      * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
@@ -155,7 +151,7 @@ public class PdfDenseMerger {
     }
 
     /**
-     * <p>Getter for the field <code>pdfDocument</code>.</p>
+     * Getter for the field <code>pdfDocument</code>.
      *
      * @return a {@link com.itextpdf.kernel.pdf.PdfDocument} object.
      */

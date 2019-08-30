@@ -21,25 +21,20 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.Property;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class RemoteGoto extends GenericTest {
+public class RemoteGoto {
     // !IMPORTANT We change the order of SRC and DEST because we want to check via CompareTool
     // comprehensive file rather then simple
     // So DEST file DOES NOT mean destination but DEST-file-which-we-will-check-from-GenericTest
-    public static final String SRC = "./target/test/resources/sandbox/annotations/subdir/xyz.pdf";
-    public static final String DEST = "./target/test/resources/sandbox/annotations/remote_goto.pdf";
+    public static final String SRC = "./target/sandbox/annotations/subdir/xyz.pdf";
+    public static final String DEST = "./target/sandbox/annotations/remote_goto.pdf";
 
     public static void main(String[] args) throws Exception {
         new RemoteGoto().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         File file = new File(SRC);
         file.getParentFile().mkdirs();

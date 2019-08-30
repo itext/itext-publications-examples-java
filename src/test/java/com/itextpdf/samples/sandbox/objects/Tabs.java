@@ -24,17 +24,12 @@ import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TabAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class Tabs extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/tabs.pdf";
+public class Tabs {
+    public static final String DEST = "./target/sandbox/objects/tabs.pdf";
     public static final String FONT = "./src/test/resources/font/Cardo-Regular.ttf";
 
     public static void main(String[] args) throws IOException {

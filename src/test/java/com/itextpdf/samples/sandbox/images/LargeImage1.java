@@ -14,16 +14,11 @@ import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class LargeImage1 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/large_image1.pdf";
+public class LargeImage1 {
+    public static final String DEST = "./target/sandbox/images/large_image1.pdf";
     public static final String SRC = "./src/test/resources/pdfs/large_image.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -32,7 +27,6 @@ public class LargeImage1 extends GenericTest {
         new LargeImage1().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
         Rectangle rect = srcDoc.getFirstPage().getPageSize();

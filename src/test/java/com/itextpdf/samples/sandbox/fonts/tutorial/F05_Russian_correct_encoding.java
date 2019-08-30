@@ -17,16 +17,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class F05_Russian_correct_encoding extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/tutorial/f05_russian_encoding.pdf";
+public class F05_Russian_correct_encoding {
+    public static final String DEST = "./target/sandbox/fonts/tutorial/f05_russian_encoding.pdf";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
     public static void main(String[] args) throws Exception {
@@ -35,7 +30,6 @@ public class F05_Russian_correct_encoding extends GenericTest {
         new F05_Russian_correct_encoding().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

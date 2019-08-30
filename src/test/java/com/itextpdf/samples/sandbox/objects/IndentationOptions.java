@@ -23,21 +23,16 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.List;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class IndentationOptions extends GenericTest {
+public class IndentationOptions {
     public static final String CONTENT = "test A, test B, coconut, coconut, watermelons, apple, oranges, many more " +
             "fruites, carshow, monstertrucks thing, everything is startting on the " +
             "same point in the line now";
     public static final String LABEL = "A list of stuff: ";
-    public static final String DEST = "./target/test/resources/sandbox/objects/indentation_options.pdf";
+    public static final String DEST = "./target/sandbox/objects/indentation_options.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

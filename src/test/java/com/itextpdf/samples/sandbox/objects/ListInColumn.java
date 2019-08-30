@@ -20,17 +20,12 @@ import com.itextpdf.layout.ColumnDocumentRenderer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.List;
 import com.itextpdf.layout.property.ListNumberingType;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ListInColumn extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/list_in_column.pdf";
+public class ListInColumn {
+    public static final String DEST = "./target/sandbox/objects/list_in_column.pdf";
     public static final String SRC = "./src/test/resources/pdfs/pages.pdf";
 
     public static void main(String[] args) throws IOException {

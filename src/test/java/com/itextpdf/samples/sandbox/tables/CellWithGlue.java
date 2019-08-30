@@ -22,16 +22,11 @@ import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class CellWithGlue extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/cell_with_glue.pdf";
+public class CellWithGlue {
+    public static final String DEST = "./target/sandbox/tables/cell_with_glue.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -39,7 +34,6 @@ public class CellWithGlue extends GenericTest {
         new CellWithGlue().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

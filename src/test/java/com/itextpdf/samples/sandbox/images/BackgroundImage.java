@@ -19,16 +19,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class BackgroundImage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/background_image.pdf";
+public class BackgroundImage {
+    public static final String DEST = "./target/sandbox/images/background_image.pdf";
     public static final String IMAGE = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
@@ -37,7 +32,6 @@ public class BackgroundImage extends GenericTest {
         new BackgroundImage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

@@ -16,10 +16,6 @@ import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -27,9 +23,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ReplaceImage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/replace_image.pdf";
+public class ReplaceImage {
+    public static final String DEST = "./target/sandbox/images/replace_image.pdf";
     public static final String SRC = "./src/test/resources/pdfs/image.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -55,7 +50,6 @@ public class ReplaceImage extends GenericTest {
         }
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfDictionary page = pdfDoc.getFirstPage().getPdfObject();

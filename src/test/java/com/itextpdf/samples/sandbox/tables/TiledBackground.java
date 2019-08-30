@@ -30,16 +30,11 @@ import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class TiledBackground extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/tiled_background.pdf";
+public class TiledBackground {
+    public static final String DEST = "./target/sandbox/tables/tiled_background.pdf";
     public static final String IMG1 = "./src/test/resources/img/ALxRF.png";
     public static final String IMG2 = "./src/test/resources/img/bulb.gif";
 
@@ -49,7 +44,6 @@ public class TiledBackground extends GenericTest {
         new TiledBackground().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

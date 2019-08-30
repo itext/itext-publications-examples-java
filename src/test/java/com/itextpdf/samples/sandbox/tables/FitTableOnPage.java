@@ -25,16 +25,11 @@ import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.IRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class FitTableOnPage extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/fit_table_on_page.pdf";
+public class FitTableOnPage {
+    public static final String DEST = "./target/sandbox/tables/fit_table_on_page.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -42,7 +37,6 @@ public class FitTableOnPage extends GenericTest {
         new FitTableOnPage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         for (int i = 0; i < 10; i++) {

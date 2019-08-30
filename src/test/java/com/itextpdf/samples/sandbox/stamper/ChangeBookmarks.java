@@ -13,17 +13,12 @@
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.*;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.util.List;
 
-@Category(SampleTest.class)
-public class ChangeBookmarks extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/stamper/change_bookmarks.pdf";
+public class ChangeBookmarks {
+    public static final String DEST = "./target/sandbox/stamper/change_bookmarks.pdf";
     public static final String SRC = "./src/test/resources/pdfs/bookmarks.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -45,7 +40,6 @@ public class ChangeBookmarks extends GenericTest {
         }
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfOutline outlines = pdfDoc.getOutlines(false);

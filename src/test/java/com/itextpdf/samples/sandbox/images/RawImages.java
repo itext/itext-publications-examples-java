@@ -18,16 +18,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class RawImages extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/raw_images.pdf";
+public class RawImages {
+    public static final String DEST = "./target/sandbox/images/raw_images.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -35,7 +30,6 @@ public class RawImages extends GenericTest {
         new RawImages().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         // Note that it is not necessary to create new PageSize object,

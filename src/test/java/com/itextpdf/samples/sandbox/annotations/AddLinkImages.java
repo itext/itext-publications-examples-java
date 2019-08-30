@@ -22,19 +22,14 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.Property;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.net.MalformedURLException;
 
-@Category(SampleTest.class)
-public class AddLinkImages extends GenericTest {
+public class AddLinkImages {
     public static final String sourceFolder = "./src/test/resources/img/";
     public static final String BUTTERFLY = sourceFolder + "butterfly.wmf";
-    public static final String DEST = "./target/test/resources/sandbox/annotations/add_link_images.pdf";
+    public static final String DEST = "./target/sandbox/annotations/add_link_images.pdf";
     public static final String DOG = sourceFolder + "dog.bmp";
     public static final String FOX = sourceFolder + "fox.bmp";
     public static final String INFO = sourceFolder + "info.png";
@@ -45,7 +40,6 @@ public class AddLinkImages extends GenericTest {
         new AddLinkImages().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

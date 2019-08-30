@@ -15,16 +15,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class F01_Unembedded extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/tutorial/f01_unembedded.pdf";
+public class F01_Unembedded {
+    public static final String DEST = "./target/sandbox/fonts/tutorial/f01_unembedded.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -32,7 +27,6 @@ public class F01_Unembedded extends GenericTest {
         new F01_Unembedded().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

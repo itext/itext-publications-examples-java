@@ -20,15 +20,11 @@ import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ClippedCell extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/clipped_cell.pdf";
+public class ClippedCell {
+    public static final String DEST = "./target/sandbox/tables/clipped_cell.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -36,7 +32,6 @@ public class ClippedCell extends GenericTest {
         new ClippedCell().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

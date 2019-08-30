@@ -15,17 +15,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.List;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class ListWithImageAsBullet extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/list_with_image_bullet.pdf";
+public class ListWithImageAsBullet {
+    public static final String DEST = "./target/sandbox/objects/list_with_image_bullet.pdf";
     public static final String IMG = "src/test/resources/img/bulb.gif";
 
     public static void main(String[] args) throws IOException {

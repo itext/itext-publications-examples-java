@@ -14,47 +14,42 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-@Category(SampleTest.class)
-public class MergeAndAddFont extends GenericTest {
+public class MergeAndAddFont {
     public static final String FONT =
             "./src/test/resources/font/GravitasOne.ttf";
 
     public static final String[] FILE_A = {
-            "./target/test/resources/sandbox/fonts/testA1.pdf", "./target/test/resources/sandbox/fonts/testA2.pdf",
-            "./target/test/resources/sandbox/fonts/testA3.pdf"
+            "./target/sandbox/fonts/testA1.pdf", "./target/sandbox/fonts/testA2.pdf",
+            "./target/sandbox/fonts/testA3.pdf"
     };
     public static final String[] FILE_B = {
-            "./target/test/resources/sandbox/fonts/testB1.pdf", "./target/test/resources/sandbox/fonts/testB2.pdf",
-            "./target/test/resources/sandbox/fonts/testB3.pdf"
+            "./target/sandbox/fonts/testB1.pdf", "./target/sandbox/fonts/testB2.pdf",
+            "./target/sandbox/fonts/testB3.pdf"
     };
     public static final String[] FILE_C = {
-            "./target/test/resources/sandbox/fonts/testC1.pdf", "./target/test/resources/sandbox/fonts/testC2.pdf",
-            "./target/test/resources/sandbox/fonts/testC3.pdf"
+            "./target/sandbox/fonts/testC1.pdf", "./target/sandbox/fonts/testC2.pdf",
+            "./target/sandbox/fonts/testC3.pdf"
     };
     public static final String[] CONTENT = {
             "abcdefgh", "ijklmnopq", "rstuvwxyz"
     };
     public static final String MERGED_A1 =
-            "./target/test/resources/sandbox/fonts/testA_merged1.pdf";
+            "./target/sandbox/fonts/testA_merged1.pdf";
     public static final String MERGED_A2 =
-            "./target/test/resources/sandbox/fonts/testA_merged2.pdf";
+            "./target/sandbox/fonts/testA_merged2.pdf";
     public static final String MERGED_B1 =
-            "./target/test/resources/sandbox/fonts/testB_merged1.pdf";
+            "./target/sandbox/fonts/testB_merged1.pdf";
     public static final String MERGED_B2 =
-            "./target/test/resources/sandbox/fonts/testB_merged2.pdf";
+            "./target/sandbox/fonts/testB_merged2.pdf";
     public static final String MERGED_C1 =
-            "./target/test/resources/sandbox/fonts/testC_merged1.pdf";
+            "./target/sandbox/fonts/testC_merged1.pdf";
     public static final String MERGED_C2 =
-            "./target/test/resources/sandbox/fonts/testC_merged2.pdf";
+            "./target/sandbox/fonts/testC_merged2.pdf";
 
     // we will check via CompareTool only one result file.
     public static final String DEST =
@@ -88,7 +83,6 @@ public class MergeAndAddFont extends GenericTest {
         pdfDoc.close();
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         MergeAndAddFont app = new MergeAndAddFont();
 

@@ -21,16 +21,11 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class CreateJapaneseButton extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/create_japanese_button.pdf";
+public class CreateJapaneseButton {
+    public static final String DEST = "./target/sandbox/acroforms/create_japanese_button.pdf";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
     public static final String JAPANESE = "\u3042\u304d\u3089";
 
@@ -40,7 +35,6 @@ public class CreateJapaneseButton extends GenericTest {
         new CreateJapaneseButton().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 

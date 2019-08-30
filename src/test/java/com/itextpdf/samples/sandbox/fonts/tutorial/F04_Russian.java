@@ -18,16 +18,11 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class F04_Russian extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/fonts/tutorial/f04_russian.pdf";
+public class F04_Russian {
+    public static final String DEST = "./target/sandbox/fonts/tutorial/f04_russian.pdf";
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +31,6 @@ public class F04_Russian extends GenericTest {
         new F04_Russian().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

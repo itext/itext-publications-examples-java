@@ -22,16 +22,11 @@ import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.TableRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class DottedLineHeader extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/tables/dotted_line_header.pdf";
+public class DottedLineHeader {
+    public static final String DEST = "./target/sandbox/tables/dotted_line_header.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -39,7 +34,6 @@ public class DottedLineHeader extends GenericTest {
         new DottedLineHeader().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

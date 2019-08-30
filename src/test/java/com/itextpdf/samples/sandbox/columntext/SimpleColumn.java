@@ -20,19 +20,14 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class SimpleColumn extends GenericTest {
+public class SimpleColumn {
     public static final String DEST
-            = "./target/test/resources/sandbox/columntext/simple_column.pdf";
+            = "./target/sandbox/columntext/simple_column.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -40,7 +35,6 @@ public class SimpleColumn extends GenericTest {
         new SimpleColumn().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(100, 120));

@@ -19,17 +19,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class TableSpace extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/objects/table_space.pdf";
+public class TableSpace {
+    public static final String DEST = "./target/sandbox/objects/table_space.pdf";
     public static final String FONT = "./src/test/resources/font/PTM55FT.ttf";
     public static final String[][] DATA = {
             {"John Edward Jr.", "AAA"},

@@ -16,8 +16,6 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.xfa.XfaForm;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,13 +25,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.junit.experimental.categories.Category;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-@Category(SampleTest.class)
-public class ReadXFA extends GenericTest {
-    public static final String DEST = "./target/test/resources/xml/xfa_form_poland.xml";
+public class ReadXFA {
+    public static final String DEST = "./target/xml/xfa_form_poland.xml";
     public static final String SRC = "./src/test/resources/pdfs/xfa_form_poland.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -42,9 +38,7 @@ public class ReadXFA extends GenericTest {
         new ReadXFA().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
-        compareXml = true;
 
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC));
 

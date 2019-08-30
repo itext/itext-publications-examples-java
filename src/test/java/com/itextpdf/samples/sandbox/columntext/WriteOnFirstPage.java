@@ -22,17 +22,12 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class WriteOnFirstPage extends GenericTest {
+public class WriteOnFirstPage {
     public static final String DEST
-            = "./target/test/resources/sandbox/columntext/write_on_first_page.pdf";
+            = "./target/sandbox/columntext/write_on_first_page.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -40,7 +35,6 @@ public class WriteOnFirstPage extends GenericTest {
         new WriteOnFirstPage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
         Document doc = new Document(pdfDoc);

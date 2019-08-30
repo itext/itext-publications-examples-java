@@ -15,17 +15,12 @@ package com.itextpdf.samples.sandbox.security;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
-public class DecryptPdf3 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/security/decrypt_pdf3.pdf";
+public class DecryptPdf3 {
+    public static final String DEST = "./target/sandbox/security/decrypt_pdf3.pdf";
     public static final String SRC = "./src/test/resources/pdfs/encrypt_pdf_without_user_password.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -34,7 +29,6 @@ public class DecryptPdf3 extends GenericTest {
         new DecryptPdf3().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         MyReader reader = new MyReader(SRC);
         reader.setUnethicalReading(true);

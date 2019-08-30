@@ -17,17 +17,12 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.util.Map;
 
-@Category(SampleTest.class)
-public class AlignField extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/acroforms/align_field.pdf";
+public class AlignField {
+    public static final String DEST = "./target/sandbox/acroforms/align_field.pdf";
     public static final String SRC = "./src/test/resources/pdfs/subscribe.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -36,7 +31,6 @@ public class AlignField extends GenericTest {
         new AlignField().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);

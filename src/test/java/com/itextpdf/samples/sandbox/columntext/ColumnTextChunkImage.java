@@ -21,19 +21,14 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class ColumnTextChunkImage extends GenericTest {
+public class ColumnTextChunkImage {
     public static final String DEST
-            = "./target/test/resources/sandbox/columntext/column_text_chunk_image.pdf";
+            = "./target/sandbox/columntext/column_text_chunk_image.pdf";
     public static final String DOG
             = "./src/test/resources/img/dog.bmp";
     public static final String FOX
@@ -45,7 +40,6 @@ public class ColumnTextChunkImage extends GenericTest {
         new ColumnTextChunkImage().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

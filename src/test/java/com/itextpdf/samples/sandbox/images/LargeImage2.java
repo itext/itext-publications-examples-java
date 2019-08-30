@@ -19,16 +19,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 
-import org.junit.experimental.categories.Category;
-
-@Category(SampleTest.class)
-public class LargeImage2 extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/large_image2.pdf";
+public class LargeImage2 {
+    public static final String DEST = "./target/sandbox/images/large_image2.pdf";
     public static final String SRC = "./src/test/resources/pdfs/large_image.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -37,7 +32,6 @@ public class LargeImage2 extends GenericTest {
         new LargeImage2().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfReader reader = new PdfReader(SRC);
         reader.setCloseStream(false);

@@ -21,16 +21,11 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.extgstate.PdfExtGState;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class BackgroundTransparent extends GenericTest {
-    public static final String DEST = "./target/test/resources/sandbox/images/background_transparent.pdf";
+public class BackgroundTransparent {
+    public static final String DEST = "./target/sandbox/images/background_transparent.pdf";
     public static final String IMAGE = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
@@ -39,7 +34,6 @@ public class BackgroundTransparent extends GenericTest {
         new BackgroundTransparent().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 

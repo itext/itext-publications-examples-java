@@ -22,19 +22,14 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.BaseDirection;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 
-@Category(SampleTest.class)
-public class ArabicExample extends GenericTest {
+public class ArabicExample {
     public static final String ARABIC
             = "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a";
     public static final String DEST
-            = "./target/test/resources/sandbox/fonts/arabic_example.pdf";
+            = "./target/sandbox/fonts/arabic_example.pdf";
     public static final String FONT
             = "./src/test/resources/font/NotoNaskhArabic-Regular.ttf";
 
@@ -44,11 +39,7 @@ public class ArabicExample extends GenericTest {
         new ArabicExample().manipulatePdf(DEST);
     }
 
-    @Override
     protected void manipulatePdf(String dest) throws Exception {
-        //Load the license file to use advanced typography features
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
-
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 

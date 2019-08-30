@@ -16,20 +16,15 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.samples.GenericTest;
-import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.junit.experimental.categories.Category;
+public class CounterDemoSystemOut {
 
-@Category(SampleTest.class)
-public class CounterDemoSystemOut extends GenericTest {
-
-    public static final String SRC = "./target/test/resources/sandbox/logging/hello2.pdf";
-    public static final String DEST = "./target/test/resources/sandbox/logging/stamp2.pdf";
+    public static final String SRC = "./target/sandbox/logging/hello2.pdf";
+    public static final String DEST = "./target/sandbox/logging/stamp2.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
@@ -43,7 +38,6 @@ public class CounterDemoSystemOut extends GenericTest {
         document.close();
     }
 
-    @Override
     public void manipulatePdf(String dest) throws IOException {
         SystemOutCounterFactory sysOutFactory = new SystemOutCounterFactory();
         CounterManager.getInstance().register(sysOutFactory);
