@@ -80,7 +80,7 @@ public class HebrewBoldText {
     private static Paragraph createParagraph(String text) {
         Paragraph paragraph = new Paragraph(text);
 
-        //In Hebrew text goes from right to left, that's one we need to overwrite the default iText's alignment
+        //In Hebrew text goes from right to left, that's why we need to overwrite the default iText's alignment
         paragraph.setTextAlignment(TextAlignment.RIGHT);
         return paragraph;
     }

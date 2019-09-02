@@ -77,7 +77,7 @@ public class HebrewWithEnglish {
                 .add(text3)
                 .add(text4);
         paragraph
-                //In Hebrew text goes from right to left, that's one we need to overwrite the default iText's alignment
+                //In Hebrew text goes from right to left, that's why we need to overwrite the default iText's alignment
                 //and direction
                 .setBaseDirection(BaseDirection.RIGHT_TO_LEFT)
                 .setTextAlignment(TextAlignment.RIGHT);

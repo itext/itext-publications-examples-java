@@ -62,7 +62,7 @@ public class HebrewTable {
                 .setFont(font)
                 .setFontSize(10)
 
-                //In Hebrew text goes from right to left, that's one we need to overwrite the default iText's alignment
+                //In Hebrew text goes from right to left, that's why we need to overwrite the default iText's alignment
                 .setTextAlignment(TextAlignment.RIGHT);
 
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
