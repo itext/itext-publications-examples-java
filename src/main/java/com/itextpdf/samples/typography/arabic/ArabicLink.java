@@ -64,7 +64,7 @@ public class ArabicLink {
                 .setFont(font)
                 .setFontSize(10)
 
-                //In Arabic text goes from right to left, that's why we need to overwrite the default iText's alignment
+                // In Arabic text goes from right to left, that's why we need to overwrite the default iText's alignment
                 .setTextAlignment(TextAlignment.RIGHT);
 
         document

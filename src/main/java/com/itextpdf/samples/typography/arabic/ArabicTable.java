@@ -61,7 +61,7 @@ public class ArabicTable {
                 .setFont(font)
                 .setFontSize(10)
 
-                //In Arabic text goes from right to left, that's why we need to overwrite the default iText's alignment
+                // In Arabic text goes from right to left, that's why we need to overwrite the default iText's alignment
                 .setTextAlignment(TextAlignment.RIGHT);
 
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
