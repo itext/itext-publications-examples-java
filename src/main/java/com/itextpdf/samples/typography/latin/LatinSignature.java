@@ -21,9 +21,7 @@ import com.itextpdf.signatures.DigestAlgorithms;
 import com.itextpdf.signatures.IExternalSignature;
 import com.itextpdf.signatures.PdfSigner;
 import com.itextpdf.signatures.PrivateKeySignature;
-import com.itextpdf.test.annotations.type.SampleTest;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,7 +38,6 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.util.Enumeration;
 
-@Category(SampleTest.class)
 public class LatinSignature {
 
     public static final String DEST = "./target/samples/typography/LatinSignature.pdf";
