@@ -17,7 +17,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 
-public class ImportXFDF{
+public class ImportXFDF {
     public static String DEST = "./target/test/resources/sandbox/acroforms/import_xfdf.pdf";
     public static final String SRC = "./src/test/resources/pdfs/Requisition_Fillable.pdf";
     public static final String XFDF = "./src/test/resources/sandbox/acroforms/data.xfdf";

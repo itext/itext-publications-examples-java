@@ -116,9 +116,6 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3099
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.CheckBoxValues");
 
-        // TODO DEVSIX-526
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.ImportXFDF");
-
         // TODO DEVSIX-3106
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCzech");

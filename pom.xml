@@ -158,12 +158,6 @@
       <version>3.0.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.apache.xmlgraphics</groupId>
-      <artifactId>batik-bridge</artifactId>
-      <version>1.7</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <repositories>
