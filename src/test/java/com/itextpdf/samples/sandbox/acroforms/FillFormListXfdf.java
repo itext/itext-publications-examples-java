@@ -11,21 +11,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 
-public class FillFormXfdf {
+public class FillFormListXfdf {
     public static final String sourceFolder = "./src/test/resources/pdfs/";
-    public static final String DEST = "./target/sandbox/acroforms/setFields.pdf";
+    public static final String DEST = "./target/sandbox/acroforms/listInSetField.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new FillFormXfdf().setFields(DEST);
+        new FillFormListXfdf().listInSetField(DEST);
     }
 
-    // Currently iText xfdf implementation works in the following way:
-    // the XFDF file is used to insert data from it directly into the PDF.
-    public void setFields(String dest) throws Exception {
+    // Currently iText xfdf implementation works with the fields in the following way: when the <value> tag with text
+    // contents is found, it is considered to be the value of the field. All other <value> tags are ignored.
+    public void listInSetField(String dest) throws Exception {
         String pdfForm = sourceFolder + "simpleRegistrationForm.pdf";
-        String xfdf = sourceFolder + "register.xfdf";
+        String xfdf = sourceFolder + "list_register.xfdf";
         PdfDocument pdfDocument = new PdfDocument(new PdfReader(new FileInputStream(pdfForm)),
                 new PdfWriter(new FileOutputStream(dest)));
         XfdfObjectFactory factory = new XfdfObjectFactory();

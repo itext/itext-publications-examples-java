@@ -22,23 +22,25 @@ import java.io.FileInputStream;
 
 public class CreateXfdf {
     public static final String sourceFolder = "./src/test/resources/pdfs/";
-    public static final String destinationFolder = "./target/sandbox/acroforms/";
+    public static final String DEST = "./target/sandbox/acroforms/subscribe.xfdf";
 
 
     public static void main(String[] args) throws Exception {
-        File file = new File(destinationFolder);
+        File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new CreateXfdf().createXfdf(destinationFolder);
+        new CreateXfdf().createXfdf(DEST);
     }
 
-    public void createXfdf(String destinationFolder) throws Exception {
+    // Currently iText xfdf implementation works in the following way:
+    // data from Pdf form could be received as file with the XFDF file extension.
+    public void createXfdf(String dest) throws Exception {
         String pdfDocumentName = "subscribe.pdf";
-        PdfDocument pdfDocument = new PdfDocument(new PdfReader(new FileInputStream(sourceFolder + pdfDocumentName)));
-        String xfdfFilename = destinationFolder + "subscribe.xfdf";
+        PdfDocument pdfDocument = new PdfDocument(new PdfReader(new FileInputStream
+                (sourceFolder + pdfDocumentName)));
 
         XfdfObjectFactory factory = new XfdfObjectFactory();
         XfdfObject xfdfObject = factory.createXfdfObject(pdfDocument, pdfDocumentName);
-        xfdfObject.writeToFile(xfdfFilename);
+        xfdfObject.writeToFile(dest);
 
         pdfDocument.close();
     }

@@ -50,7 +50,8 @@ public class TestRunner extends WrappedSamplesRunner {
      */
     private List<String> xmlCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.acroforms.ReadXFA",
-            "com.itextpdf.samples.sandbox.stamper.AddNamedDestinations"
+            "com.itextpdf.samples.sandbox.stamper.AddNamedDestinations",
+            "com.itextpdf.samples.sandbox.acroforms.CreateXfdf"
     );
 
     /**
