@@ -22,7 +22,7 @@ import java.io.FileInputStream;
 
 public class CreateXfdf {
     public static final String sourceFolder = "./src/test/resources/pdfs/";
-    public static final String DEST = "./target/sandbox/acroforms/subscribe.xfdf";
+    public static final String DEST = "./target/sandbox/acroforms/createXfdf.xfdf";
 
 
     public static void main(String[] args) throws Exception {
@@ -34,7 +34,7 @@ public class CreateXfdf {
     // Currently iText xfdf implementation works in the following way:
     // data from Pdf form could be received as file with the XFDF file extension.
     public void createXfdf(String dest) throws Exception {
-        String pdfDocumentName = "subscribe.pdf";
+        String pdfDocumentName = "createXfdf.pdf";
         PdfDocument pdfDocument = new PdfDocument(new PdfReader(new FileInputStream
                 (sourceFolder + pdfDocumentName)));
 
