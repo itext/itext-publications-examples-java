@@ -107,7 +107,7 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3179
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
 
-        // TODO DEVSIX-466
+        // TODO DEVSIX-3032
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
         // TODO DEVSIX-3146
