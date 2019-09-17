@@ -17,16 +17,18 @@ import java.io.File;
 
 public class FlattenForm {
     public static final String DEST = "./target/sandbox/acroforms/reporting/flatten_form.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/state.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FlattenForm().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         form.getField("name").setValue("CALIFORNIA");
@@ -39,6 +41,8 @@ public class FlattenForm {
         form.getField("timezone2").setValue("-");
         form.getField("dst").setValue("YES");
 
+        // If no fields have been explicitly included via partialFormFlattening(),
+        // then all fields are flattened. Otherwise only the included fields are flattened.
         form.flattenFields();
 
         pdfDoc.close();

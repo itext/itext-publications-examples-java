@@ -17,16 +17,18 @@ import java.io.File;
 
 public class FillForm {
     public static final String DEST = "./target/sandbox/acroforms/reporting/fill_form.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/state.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FillForm().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         form.getField("name").setValue("CALIFORNIA");
