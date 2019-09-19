@@ -8,7 +8,7 @@
   <url>https://itextpdf.com/</url>
   <properties>
     <bouncycastle.version>1.49</bouncycastle.version>
-    <cleanup.version>2.0.4</cleanup.version>
+    <cleanup.version>2.0.5-SNAPSHOT</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
     <html2pdf.version>2.1.6-SNAPSHOT</html2pdf.version>
@@ -20,7 +20,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
     <spotbugs.version>3.1.11</spotbugs.version>
-    <typography.version>2.0.4</typography.version>
+    <typography.version>2.0.5-SNAPSHOT</typography.version>
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
   </properties>
   <dependencies>
