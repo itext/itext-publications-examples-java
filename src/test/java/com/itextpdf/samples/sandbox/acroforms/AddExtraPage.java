@@ -20,6 +20,7 @@ import com.itextpdf.kernel.events.PdfDocumentEvent;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -30,10 +31,10 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 
 import java.io.File;
-import java.io.IOException;
 
 public class AddExtraPage {
     public static String DEST = "./target/sandbox/acroforms/add_extra_page.pdf";
+
     public static String SRC = "./src/test/resources/pdfs/stationery.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -47,20 +48,26 @@ public class AddExtraPage {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
         PdfAcroForm form = PdfAcroForm.getAcroForm(srcDoc, false);
 
-        Rectangle rect = form.getField("body").getWidgets().get(0).getRectangle().toRectangle();
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
-        Document doc = new Document(pdfDoc);
+        // Event handler copies content of the source pdf file on every page
+        // of the result pdf file
         pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE,
                 new PaginationEventHandler(srcDoc.getFirstPage().copyAsFormXObject(pdfDoc)));
         srcDoc.close();
 
-        doc.setRenderer(new ColumnDocumentRenderer(doc, new Rectangle[]{rect}));
+        Document doc = new Document(pdfDoc);
+        Rectangle rect = form.getField("body").getWidgets().get(0).getRectangle().toRectangle();
+
+        // The renderer will place content in columns specified with the rectangles
+        doc.setRenderer(new ColumnDocumentRenderer(doc, new Rectangle[] {rect}));
 
         Paragraph p = new Paragraph();
-        // the easiest way to add a Text object to Paragraph
+
+        // The easiest way to add a Text object to Paragraph
         p.add("Hello ");
-        // use add(Text) if you want to specify some Text characteristics, for example, font size
+
+        // Use add(Text) if you want to specify some Text characteristics, for example, font size
         p.add(new Text("World").setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD)));
 
         for (int i = 1; i < 101; i++) {
@@ -75,15 +82,17 @@ public class AddExtraPage {
     protected class PaginationEventHandler implements IEventHandler {
         protected PdfFormXObject background;
 
-        public PaginationEventHandler(PdfFormXObject background) throws IOException {
+        public PaginationEventHandler(PdfFormXObject background) {
             this.background = background;
         }
 
         @Override
         public void handleEvent(Event event) {
             PdfDocument pdfDoc = ((PdfDocumentEvent) event).getDocument();
+            PdfPage currentPage = ((PdfDocumentEvent) event).getPage();
+
             // Add the background
-            new PdfCanvas(((PdfDocumentEvent) event).getPage().newContentStreamBefore(), ((PdfDocumentEvent) event).getPage().getResources(), pdfDoc)
+            new PdfCanvas(currentPage.newContentStreamBefore(), currentPage.getResources(), pdfDoc)
                     .addXObject(background, 0, 0);
         }
     }
