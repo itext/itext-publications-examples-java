@@ -41,6 +41,7 @@ public class ComboBoxItems {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ComboBoxItems().manipulatePdf(DEST);
     }
 
@@ -49,12 +50,14 @@ public class ComboBoxItems {
         Document doc = new Document(pdfDoc, new PageSize(612, 792));
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        Cell cell;
+        table.addCell(new Cell().add(new Paragraph("Combobox:")));
+        Cell cell = new Cell();
+
         // Add rows with selectors
         String[] options = {"Choose first option", "Choose second option", "Choose third option"};
         String[] exports = {"option1", "option2", "option3"};
-        table.addCell(new Cell().add(new Paragraph("Combobox:")));
-        cell = new Cell();
+
+        // The renderer creates combobox in the current cell
         cell.setNextRenderer(new SelectCellRenderer(cell, "Choose first option", exports, options));
         cell.setHeight(20);
         table.addCell(cell);
@@ -84,13 +87,17 @@ public class ComboBoxItems {
             } catch (IOException e) {
                 throw new PdfException(e);
             }
+
             String[][] optionsArray = new String[options.length][];
             for (int i = 0; i < options.length; i++) {
                 optionsArray[i] = new String[2];
                 optionsArray[i][0] = exports[i];
                 optionsArray[i][1] = options[i];
             }
+
             PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+
+            // The 3rd parameter is the combobox name, the 4th parameter is the combobox's initial value
             PdfChoiceFormField choice = PdfFormField.createComboBox(drawContext.getDocument(), getOccupiedAreaBBox(),
                     name, name, optionsArray);
             choice.setFont(font);

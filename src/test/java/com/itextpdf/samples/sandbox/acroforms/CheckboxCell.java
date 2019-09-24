@@ -35,6 +35,7 @@ public class CheckboxCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CheckboxCell().manipulatePdf(DEST);
     }
 
@@ -43,20 +44,24 @@ public class CheckboxCell {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
-        Cell cell;
         for (int i = 0; i < 5; i++) {
-            cell = new Cell();
+            Cell cell = new Cell();
+
+            // Custom renderer creates checkbox in the current cell
             cell.setNextRenderer(new CheckboxCellRenderer(cell, "cb" + i));
             cell.setHeight(50);
             table.addCell(cell);
         }
 
         doc.add(table);
+
         doc.close();
     }
 
 
     private class CheckboxCellRenderer extends CellRenderer {
+
+        // The name of the check box field
         protected String name;
 
         public CheckboxCellRenderer(Cell modelElement, String name) {
@@ -66,11 +71,19 @@ public class CheckboxCell {
 
         @Override
         public void draw(DrawContext drawContext) {
+            PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+
+            // Define the coordinates of the middle
             float x = (getOccupiedAreaBBox().getLeft() + getOccupiedAreaBBox().getRight()) / 2;
             float y = (getOccupiedAreaBBox().getTop() + getOccupiedAreaBBox().getBottom()) / 2;
+
+            // Define the position of a check box that measures 20 by 20
             Rectangle rect = new Rectangle(x - 10, y - 10, 20, 20);
+
+            // The 4th parameter is the initial value of checkbox: 'Yes' - checked, 'Off' - unchecked
+            // By default, checkbox value type is cross.
             PdfButtonFormField checkBox = PdfFormField.createCheckBox(drawContext.getDocument(), rect, name, "Yes");
-            PdfAcroForm.getAcroForm(drawContext.getDocument(), true).addField(checkBox);
+            form.addField(checkBox);
         }
     }
 }

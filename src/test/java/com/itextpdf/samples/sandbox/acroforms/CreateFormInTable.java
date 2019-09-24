@@ -33,6 +33,7 @@ public class CreateFormInTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CreateFormInTable().manipulatePdf(DEST);
     }
 
@@ -41,27 +42,30 @@ public class CreateFormInTable {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        Cell cell;
-        cell = new Cell().add(new Paragraph("Name:"));
+        Cell cell = new Cell().add(new Paragraph("Name:"));
         table.addCell(cell);
+
         cell = new Cell();
-        cell.setNextRenderer(new MyCellRenderer(cell, "name"));
+        cell.setNextRenderer(new CreateFormFieldRenderer(cell, "name"));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("Address"));
         table.addCell(cell);
+
         cell = new Cell();
-        cell.setNextRenderer(new MyCellRenderer(cell, "address"));
+        cell.setNextRenderer(new CreateFormFieldRenderer(cell, "address"));
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();
     }
 
 
-    private class MyCellRenderer extends CellRenderer {
+    private class CreateFormFieldRenderer extends CellRenderer {
         protected String fieldName;
 
-        public MyCellRenderer(Cell modelElement, String fieldName) {
+        public CreateFormFieldRenderer(Cell modelElement, String fieldName) {
             super(modelElement);
             this.fieldName = fieldName;
         }
@@ -69,6 +73,7 @@ public class CreateFormInTable {
         @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
+
             PdfTextFormField field = PdfFormField.createText(drawContext.getDocument(), getOccupiedAreaBBox(), fieldName, "");
             PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
             form.addField(field);

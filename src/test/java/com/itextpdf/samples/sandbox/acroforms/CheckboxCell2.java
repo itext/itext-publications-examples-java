@@ -33,6 +33,7 @@ public class CheckboxCell2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CheckboxCell2().manipulatePdf(DEST);
     }
 
@@ -41,9 +42,10 @@ public class CheckboxCell2 {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(6)).useAllAvailableWidth();
-        Cell cell;
         for (int i = 0; i < 6; i++) {
-            cell = new Cell();
+            Cell cell = new Cell();
+
+            // Custom renderer creates checkbox in the current cell
             cell.setNextRenderer(new CheckboxCellRenderer(cell, "cb" + i, i));
             cell.setHeight(50);
             table.addCell(cell);
@@ -55,29 +57,36 @@ public class CheckboxCell2 {
 
 
     private class CheckboxCellRenderer extends CellRenderer {
+
         // The name of the check box field
         protected String name;
-        protected int i;
+        protected int checkboxTypeIndex;
 
-        public CheckboxCellRenderer(Cell modelElement, String name, int i) {
+        public CheckboxCellRenderer(Cell modelElement, String name, int checkboxTypeIndex) {
             super(modelElement);
             this.name = name;
-            this.i = i;
+            this.checkboxTypeIndex = checkboxTypeIndex;
         }
 
         @Override
         public void draw(DrawContext drawContext) {
             Rectangle position = getOccupiedAreaBBox();
-            // define the coordinates of the middle
+            PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+
+            // Define the coordinates of the middle
             float x = (position.getLeft() + position.getRight()) / 2;
             float y = (position.getTop() + position.getBottom()) / 2;
-            // define the position of a check box that measures 20 by 20
+
+            // Define the position of a check box that measures 20 by 20
             Rectangle rect = new Rectangle(x - 10, y - 10, 20, 20);
-            // define the check box
+
+            // The 4th parameter is the initial value of checkbox: 'Yes' - checked, 'Off' - unchecked
+            // By default, checkbox value type is cross.
             PdfButtonFormField checkBox = PdfFormField.createCheckBox(drawContext.getDocument(), rect, name, "Yes");
-            switch (i) {
+            switch (checkboxTypeIndex) {
                 case 0:
                     checkBox.setCheckType(PdfFormField.TYPE_CHECK);
+
                     // Use this method if you changed any field parameters and didn't use setValue
                     checkBox.regenerateField();
                     break;
@@ -102,8 +111,8 @@ public class CheckboxCell2 {
                     checkBox.regenerateField();
                     break;
             }
-            // add the check box as a field
-            PdfAcroForm.getAcroForm(drawContext.getDocument(), true).addField(checkBox);
+
+            form.addField(checkBox);
         }
     }
 }
