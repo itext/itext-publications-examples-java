@@ -9,7 +9,6 @@
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/31335715/cannot-show-special-character-in-acro-form-field
- * <p>
  * Sometimes you need to change the font of a field.
  */
 package com.itextpdf.samples.sandbox.acroforms;
@@ -21,31 +20,40 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.licensekey.LicenseKey;
 
 import java.io.File;
 
 public class FillFormSpecialChars2 {
     public static final String DEST = "./target/sandbox/acroforms/fill_form_special_chars2.pdf";
+
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
     public static final String SRC = "./src/test/resources/pdfs/form.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FillFormSpecialChars2().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
-
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+
+        // This method tells to generate an appearance Stream while flattening for all form fields that don't have one.
+        // Generating appearances will slow down form flattening,
+        // but otherwise the results can be unexpected in Acrobat.
         form.setGenerateAppearance(true);
 
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
+
+        // ӧ character is used here
         form.getField("Name").setValue("\u04e711111", font, 12f);
 
+        // If no fields have been explicitly included, then all fields are flattened.
+        // Otherwise only the included fields are flattened.
         form.flattenFields();
+
         pdfDoc.close();
     }
 }

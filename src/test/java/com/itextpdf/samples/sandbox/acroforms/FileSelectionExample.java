@@ -29,6 +29,7 @@ public class FileSelectionExample {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FileSelectionExample().manipulatePdf(DEST);
     }
 
@@ -38,9 +39,15 @@ public class FileSelectionExample {
 
         PdfTextFormField field = PdfFormField.createText(pdfDoc,
                 new Rectangle(36, 788, 523, 18), "myfile", "");
+
+        // If true is passed, then the text entered in the field will represent the pathname of a file
+        // whose contents are to be submitted as the value of the field.
         field.setFileSelect(true);
-        field.setAdditionalAction(PdfName.U, PdfAction.createJavaScript(
-                "this.getField('myfile').browseForFileToSubmit();"
+
+        // When the mouse is released inside the annotation's area (that's what PdfName.U stands for),
+        // then the focus will be set on the "mytitle" field.
+        field.setAdditionalAction(PdfName.U,
+                PdfAction.createJavaScript("this.getField('myfile').browseForFileToSubmit();"
                         + "this.getField('mytitle').setFocus();"));
         form.addField(field);
 
