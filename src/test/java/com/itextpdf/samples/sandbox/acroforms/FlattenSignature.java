@@ -26,13 +26,18 @@ public class FlattenSignature {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FlattenSignature().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+
+        // If no fields have been explicitly included, then all fields are flattened.
+        // Otherwise only the included fields are flattened.
         form.flattenFields();
+
         pdfDoc.close();
     }
 }
