@@ -37,7 +37,10 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
-    private List<String> renderCompareList = Arrays.asList("com.itextpdf.samples.sandbox.tables.CellMethod");
+    private List<String> renderCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.tables.CellMethod",
+            "com.itextpdf.samples.sandbox.signatures.SignatureExample"
+    );
 
     private List<String> veraPdfCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.pdfa.HelloPdfA2a",
