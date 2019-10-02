@@ -36,13 +36,33 @@ public class SplittingNestedTable1 {
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        Document doc = new Document(pdfDoc, new PageSize(300, 170));
+        Document doc = new Document(pdfDoc, new PageSize(300, 210));
 
         doc.add(new Paragraph("Table with setKeepTogether(true):"));
+        Table table = createTable(true);
+        doc.add(table);
 
+        doc.add(new AreaBreak());
+
+        doc.add(new Paragraph("Table with setKeepTogether(false):"));
+        table = createTable(false);
+        doc.add(table);
+
+        doc.close();
+    }
+
+    /**
+     * Creates a table with two cells, the second of which consists of an inner table.
+     *
+     * @param keepTableTogether defines whether to keep the table together or not
+     * @return a {@link Table table} with the format specified above
+     */
+    private Table createTable(boolean keepTableTogether) {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        table.setKeepTogether(true);
         table.setMarginTop(10);
+
+        // If true, iText will do its best trying not to split the table and process it on a single area
+        table.setKeepTogether(keepTableTogether);
 
         Cell cell = new Cell();
         cell.add(new Paragraph("G"));
@@ -50,6 +70,7 @@ public class SplittingNestedTable1 {
         cell.add(new Paragraph("O"));
         cell.add(new Paragraph("U"));
         cell.add(new Paragraph("P"));
+
 
         table.addCell(cell);
 
@@ -64,14 +85,6 @@ public class SplittingNestedTable1 {
         cell.setPadding(0);
         table.addCell(cell);
 
-        doc.add(table);
-        doc.add(new AreaBreak());
-        doc.add(new Paragraph("Table with setKeepTogether(false):"));
-
-        table.setKeepTogether(false);
-
-        doc.add(table);
-
-        doc.close();
+        return table;
     }
 }

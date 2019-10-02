@@ -111,9 +111,6 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3179
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
 
-        // TODO DEVSIX-3032
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
-
         // TODO DEVSIX-3106
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCzech");
@@ -140,7 +137,7 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3187
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.RepeatLastRows2");
 
-        // TODO DEVSIX-3032
+        // TODO DEVSIX-3326
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
         return generateTestsList(searchConfig);

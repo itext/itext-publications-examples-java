@@ -24,14 +24,14 @@ import com.itextpdf.layout.property.UnitValue;
 
 import java.io.File;
 
-public class SplittingNestedTable2 {
-    public static final String DEST = "./target/sandbox/tables/splitting_nested_table2.pdf";
+public class SplittingNestedTable3 {
+    public static final String DEST = "./target/sandbox/tables/splitting_nested_table3.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new SplittingNestedTable2().manipulatePdf(DEST);
+        new SplittingNestedTable3().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
@@ -63,8 +63,11 @@ public class SplittingNestedTable2 {
         table.setMarginTop(10);
 
         Cell cell = new Cell();
-        cell.add(new Paragraph("GROUPS"));
-        cell.setRotationAngle(Math.toRadians(90));
+        cell.add(new Paragraph("G"));
+        cell.add(new Paragraph("R"));
+        cell.add(new Paragraph("O"));
+        cell.add(new Paragraph("U"));
+        cell.add(new Paragraph("P"));
 
         // If true, iText will do its best trying not to split the cell and process it on a single area
         cell.setKeepTogether(keepFirstCellTogether);
