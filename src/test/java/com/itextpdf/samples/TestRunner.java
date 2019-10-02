@@ -111,9 +111,6 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3032
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
-        // TODO DEVSIX-3099
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.CheckBoxValues");
-
         // TODO DEVSIX-3106
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCzech");
