@@ -15,7 +15,7 @@
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.7</java.version>
     <licensekey.version>3.0.5</licensekey.version>
-    <pdfXfa.version>2.0.3</pdfXfa.version>
+    <pdfxfa.version>2.0.4-SNAPSHOT</pdfxfa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
@@ -135,7 +135,7 @@
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>pdfxfa</artifactId>
-      <version>${pdfXfa.version}</version>
+      <version>${pdfxfa.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
