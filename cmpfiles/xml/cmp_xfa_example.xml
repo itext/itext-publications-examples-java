@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><xfa:data xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<iText_XFAInvoice>
+<CustomerDetails>
+<TextField_CompanyName>HH Mining operations</TextField_CompanyName>
+<TextField_ContactPerson>The Baron</TextField_ContactPerson>
+<TextField_email>Vladimir@Harkonnen.ar</TextField_email>
+<NumericField_TelephoneNumber>(123) 456-7890</NumericField_TelephoneNumber>
+</CustomerDetails>
+<Subform_CoreDescription xfa:dataNode="dataGroup"/>
+<Subform_Order>
+<NumericField_NrLicenses>2.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Giedi Prime</TextField_CompanyName>
+<RadioButtonList_Language>1</RadioButtonList_Language>
+<DropDownList_Type>2</DropDownList_Type>
+<DropDownList_ServerDesktop>2</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias>Piter</TextField_DeveloperAlias>
+</Subform_Order>
+<Subform_pdfHTMLDescription xfa:dataNode="dataGroup"/>
+<Subform_Order>
+<NumericField_NrLicenses>1.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Giedi Prime</TextField_CompanyName>
+<RadioButtonList_Language/>
+<DropDownList_Type>2</DropDownList_Type>
+<DropDownList_ServerDesktop>2</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias>Piter</TextField_DeveloperAlias>
+</Subform_Order>
+<Subform_Order>
+<NumericField_NrLicenses>3.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Giedi Prime</TextField_CompanyName>
+<RadioButtonList_Language>1</RadioButtonList_Language>
+<DropDownList_Type>1</DropDownList_Type>
+<DropDownList_ServerDesktop>1</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias/>
+</Subform_Order>
+<Subform_Order>
+<NumericField_NrLicenses>2.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Giedi Prime</TextField_CompanyName>
+<RadioButtonList_Language/>
+<DropDownList_Type>1</DropDownList_Type>
+<DropDownList_ServerDesktop>1</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias/>
+</Subform_Order>
+</iText_XFAInvoice>
+</xfa:data>

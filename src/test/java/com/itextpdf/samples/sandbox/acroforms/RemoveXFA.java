@@ -24,25 +24,29 @@ import java.util.Map;
 
 public class RemoveXFA {
     public static final String DEST = "./target/sandbox/acroforms/remove_xfa.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/reportcardinitial.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RemoveXFA().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
-
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+
+        // Method removes the XFA stream from the document.
         form.removeXfaForm();
 
         Map<String, PdfFormField> fields = form.getFormFields();
         for (Map.Entry<String, PdfFormField> name : fields.entrySet()) {
             if (name.getKey().indexOf("Total") > 0) {
-                name.getValue().getWidgets().get(0).setColor(ColorConstants.RED);
+                name.getValue().setColor(ColorConstants.RED);
             }
+
             name.getValue().setValue("X");
         }
 
