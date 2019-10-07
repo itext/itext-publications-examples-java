@@ -19,6 +19,9 @@ import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.lang.reflect.Field;
 
 import java.util.Arrays;
@@ -49,7 +52,7 @@ public class TestRunner extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.pdfa.PdfA3");
 
     /**
-     * List of samples, which requires xml files comparison
+     * List of samples, which require xml files comparison
      */
     private List<String> xmlCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.acroforms.ReadXFA",
@@ -58,7 +61,14 @@ public class TestRunner extends WrappedSamplesRunner {
     );
 
     /**
-     * List of samples, which requires tag comparison
+     * List of samples, which require txt files comparison
+     */
+    private List<String> txtCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles"
+    );
+
+    /**
+     * List of samples, which require tag comparison
      */
     private List<String> tagCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.tagging.AddArtifactTable",
@@ -105,9 +115,6 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
-
-        // TODO DEVSIX-3105
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles");
 
         // TODO DEVSIX-3106
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
@@ -159,11 +166,13 @@ public class TestRunner extends WrappedSamplesRunner {
             if (!compareTool.compareXmls(dest, cmp)) {
                 addError("The XML structures are different.");
             }
+        } else if (txtCompareList.contains(sampleClass.getName())) {
+            addError(compareTxt(dest, cmp));
         } else if (renderCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));
             addError(compareTool.compareDocumentInfo(dest, cmp));
-        } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())){
+        } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_",
                     ignoredClassesMap.get(sampleClass.getName())));
         } else {
@@ -178,6 +187,37 @@ public class TestRunner extends WrappedSamplesRunner {
         }
     }
 
+    private String compareTxt(String dest, String cmp) throws IOException {
+        String errorMessage = null;
+
+        try (
+                BufferedReader destReader = new BufferedReader(new FileReader(dest));
+                BufferedReader cmpReader = new BufferedReader(new FileReader(cmp))
+        ) {
+            int lineNumber = 1;
+            String destLine = destReader.readLine();
+            String cmpLine = cmpReader.readLine();
+            while (destLine != null || cmpLine != null) {
+                if (destLine == null || cmpLine == null) {
+                    errorMessage = "Txt files differ at line " + lineNumber + "\n";
+                    break;
+                }
+
+                if (!destLine.equals(cmpLine)) {
+                    errorMessage = "Txt files differ at line " + lineNumber
+                            + "\n See difference: cmp file: \"" + cmpLine + "\"\n"
+                            + "target file: \"" + destLine + "\n";
+                }
+
+                destLine = destReader.readLine();
+                cmpLine = cmpReader.readLine();
+                lineNumber++;
+            }
+        }
+
+        return errorMessage;
+    }
+
     private void unloadLicense() {
         try {
             Field validators = LicenseKey.class.getDeclaredField("validators");
@@ -187,6 +227,7 @@ public class TestRunner extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
+
             // No exception handling required, because there can be no license loaded
         }
     }

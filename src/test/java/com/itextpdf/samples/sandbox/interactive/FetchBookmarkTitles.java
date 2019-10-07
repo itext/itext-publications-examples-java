@@ -15,51 +15,72 @@ package com.itextpdf.samples.sandbox.interactive;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfOutline;
 import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-
+import java.io.File;
+import java.io.Writer;
 import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
-@Category(SampleTest.class)
 public class FetchBookmarkTitles {
+    public static final String DEST = "./target/txt/bookmarks.txt";
+
     public static final String SRC = "./src/test/resources/pdfs/bookmarks.pdf";
-    public static final String RESULT = "2011-10-12\n" +
-            "2011-10-13\n" +
-            "2011-10-14\n" +
-            "2011-10-15\n" +
-            "2011-10-16\n" +
-            "2011-10-17\n" +
-            "2011-10-18\n" +
-            "2011-10-19\n";
 
-    @Test
-    public void manipulatePdf() throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC));
+    public static void main(String[] args) throws Exception {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
 
-        PdfOutline outlines = pdfDoc.getOutlines(false);
-        List<PdfOutline> bookmarks = outlines.getAllChildren().get(0).getAllChildren();
-        StringBuffer stringBuffer = new StringBuffer();
-        for (PdfOutline bookmark : bookmarks) {
-            showTitle(bookmark, stringBuffer);
-        }
-        pdfDoc.close();
-
-        System.out.println(stringBuffer.toString());
-
-        Assert.assertArrayEquals(RESULT.getBytes(), stringBuffer.toString().getBytes());
+        new FetchBookmarkTitles().manipulatePdf(DEST);
     }
 
-    public void showTitle(PdfOutline outline, StringBuffer stringBuffer) {
-        System.out.println(outline.getTitle());
-        stringBuffer.append(outline.getTitle() + "\n");
+    public void manipulatePdf(String dest) throws Exception {
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC));
+
+        // This method returns a complete outline tree of the whole document.
+        // If the flag is false, the method gets cached outline tree (if it was cached
+        // via calling getOutlines method before).
+        PdfOutline outlines = pdfDoc.getOutlines(false);
+        List<PdfOutline> bookmarks = outlines.getAllChildren().get(0).getAllChildren();
+
+        pdfDoc.close();
+
+        List<String> titles = new ArrayList<>();
+        for (PdfOutline bookmark : bookmarks) {
+            addTitle(bookmark, titles);
+        }
+
+        // See title's names in the console
+        for (String title : titles) {
+            System.out.println(title);
+        }
+
+        createResultTxt(dest, titles);
+    }
+
+    /*
+     * This recursive method calls itself if an examined bookmark entry has kids.
+     * The method writes bookmark title to the passed list
+     */
+    private void addTitle(PdfOutline outline, List<String> result) {
+        String bookmarkTitle = outline.getTitle();
+        result.add(bookmarkTitle);
+
         List<PdfOutline> kids = outline.getAllChildren();
         if (kids != null) {
             for (PdfOutline kid : kids) {
-                showTitle(kid, stringBuffer);
+                addTitle(kid, result);
+            }
+        }
+    }
+
+    private void createResultTxt(String dest, List<String> titles) throws IOException {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(dest)))) {
+            for (int i = 0; i < titles.size(); i++) {
+                writer.write("Title " + i + ": " + titles.get(i) + "\n");
             }
         }
     }
