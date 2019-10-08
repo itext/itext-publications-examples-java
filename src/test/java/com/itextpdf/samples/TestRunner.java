@@ -98,6 +98,7 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptWithCertificate");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.tutorial.F99_ConvertToUnicodeNotation");
@@ -107,9 +108,6 @@ public class TestRunner extends WrappedSamplesRunner {
 
         // TODO DEVSIX-3105
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles");
-
-        // TODO DEVSIX-3179
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
 
         // TODO DEVSIX-3106
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
