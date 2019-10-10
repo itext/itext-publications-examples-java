@@ -27,26 +27,32 @@ public class BarcodeBackground {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new BarcodeBackground().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
+
         Barcode128 code128 = new Barcode128(pdfDoc);
         code128.setCode("12345XX789XXX");
         code128.setCodeType(Barcode128.CODE128);
         PdfFormXObject xObject = code128.createFormXObject(ColorConstants.BLACK, ColorConstants.BLACK, pdfDoc);
+
         float x = 36;
         float y = 750;
-        float w = xObject.getWidth();
-        float h = xObject.getHeight();
+        float width = xObject.getWidth();
+        float height = xObject.getHeight();
+
+        // Draw the rectangle with the set background color and add the created barcode object.
+        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         canvas.saveState();
         canvas.setFillColor(ColorConstants.LIGHT_GRAY);
-        canvas.rectangle(x, y, w, h);
+        canvas.rectangle(x, y, width, height);
         canvas.fill();
         canvas.restoreState();
         canvas.addXObject(xObject, 36, 750);
+
         pdfDoc.close();
     }
 }
