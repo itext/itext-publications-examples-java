@@ -24,7 +24,7 @@ public class PdfHtmlResponsiveTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Test(timeout = 120000)
+    @Test(timeout = 60000)
     public void test() throws Exception {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
         FontProgramFactory.clearRegisteredFonts();
@@ -56,6 +56,7 @@ public class PdfHtmlResponsiveTest extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
+
             // No exception handling required, because there can be no license loaded
         }
     }

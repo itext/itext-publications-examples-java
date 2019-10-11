@@ -40,12 +40,12 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
-    private List<String> renderCompareList = Arrays.asList(
+    private static final List<String> renderCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.tables.CellMethod",
             "com.itextpdf.samples.sandbox.signatures.SignatureExample"
     );
 
-    private List<String> veraPdfCompareList = Arrays.asList(
+    private static final List<String> veraPdfCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.pdfa.HelloPdfA2a",
             "com.itextpdf.samples.sandbox.pdfa.PdfA1a",
             "com.itextpdf.samples.sandbox.pdfa.PdfA1a_images",
@@ -54,7 +54,7 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * List of samples, which require xml files comparison
      */
-    private List<String> xmlCompareList = Arrays.asList(
+    private static final List<String> xmlCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.acroforms.ReadXFA",
             "com.itextpdf.samples.sandbox.stamper.AddNamedDestinations",
             "com.itextpdf.samples.sandbox.acroforms.CreateXfdf"
@@ -64,13 +64,15 @@ public class TestRunner extends WrappedSamplesRunner {
      * List of samples, which require txt files comparison
      */
     private List<String> txtCompareList = Arrays.asList(
-            "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles"
+            "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles",
+            "com.itextpdf.samples.sandbox.parse.ParseCustom",
+            "com.itextpdf.samples.sandbox.parse.ParseCzech"
     );
 
     /**
      * List of samples, which require tag comparison
      */
-    private List<String> tagCompareList = Arrays.asList(
+    private static final List<String> tagCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.tagging.AddArtifactTable",
             "com.itextpdf.samples.sandbox.tagging.AddStars",
             "com.itextpdf.samples.sandbox.tagging.CreateTaggedDocument"
@@ -79,7 +81,7 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * Global map of classes with ignored areas
      **/
-    private static Map<String, Map<Integer, List<Rectangle>>> ignoredClassesMap;
+    private static final Map<String, Map<Integer, List<Rectangle>>> ignoredClassesMap;
 
     static {
         Rectangle latinClassIgnoredArea = new Rectangle(30, 539, 250, 13);
@@ -109,17 +111,13 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptWithCertificate");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.tutorial.F99_ConvertToUnicodeNotation");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
-
-        // TODO DEVSIX-3106
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCzech");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCustom");
 
         // TODO DEVSIX-3107
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.GetN2fromSig");
@@ -199,7 +197,7 @@ public class TestRunner extends WrappedSamplesRunner {
             String cmpLine = cmpReader.readLine();
             while (destLine != null || cmpLine != null) {
                 if (destLine == null || cmpLine == null) {
-                    errorMessage = "Txt files differ at line " + lineNumber + "\n";
+                    errorMessage = "The number of lines is different\n";
                     break;
                 }
 

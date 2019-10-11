@@ -25,7 +25,7 @@ public class EncryptPdfTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Test(timeout = 120000)
+    @Test(timeout = 60000)
     public void test() throws Exception {
         unloadLicense();
         runSamples();
@@ -49,6 +49,8 @@ public class EncryptPdfTest extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
+
+            // No exception handling required, because there can be no license loaded
         }
     }
 }
