@@ -44,7 +44,7 @@ public class FetchBookmarkTitles {
         // If the flag is false, the method gets cached outline tree (if it was cached
         // via calling getOutlines method before).
         PdfOutline outlines = pdfDoc.getOutlines(false);
-        List<PdfOutline> bookmarks = outlines.getAllChildren().get(0).getAllChildren();
+        List<PdfOutline> bookmarks = outlines.getAllChildren();
 
         pdfDoc.close();
 
