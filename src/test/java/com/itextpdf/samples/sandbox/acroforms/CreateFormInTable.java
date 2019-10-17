@@ -24,6 +24,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
@@ -68,6 +69,14 @@ public class CreateFormInTable {
         public CreateFormFieldRenderer(Cell modelElement, String fieldName) {
             super(modelElement);
             this.fieldName = fieldName;
+        }
+
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new CreateFormFieldRenderer((Cell) modelElement, fieldName);
         }
 
         @Override

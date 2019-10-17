@@ -20,6 +20,7 @@ import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
@@ -58,6 +59,14 @@ public class ClippedCell {
     private class ClipContentRenderer extends CellRenderer {
         public ClipContentRenderer(Cell modelElement) {
             super(modelElement);
+        }
+
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new ClipContentRenderer((Cell) modelElement);
         }
 
         @Override

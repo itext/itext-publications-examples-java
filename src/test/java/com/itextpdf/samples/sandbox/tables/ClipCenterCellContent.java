@@ -78,6 +78,14 @@ public class ClipCenterCellContent {
             this.content = content;
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new ClipCenterCellContentCellRenderer((Cell) modelElement, content);
+        }
+
         @Override
         public void draw(DrawContext drawContext) {
             IRenderer pr = content.createRendererSubTree().setParent(this);
