@@ -1,0 +1,7 @@
+Starting test com.itextpdf.samples.sandbox.logging.CounterDemoSystemOut
+[com.itextpdf.kernel.pdf.PdfDocument] core-process event
+[com.itextpdf.kernel.pdf.PdfDocument] core-process event
+[com.itextpdf.kernel.pdf.PdfDocument] core-process event
+[com.itextpdf.kernel.pdf.PdfDocument] core-process event
+[com.itextpdf.html2pdf.attach.impl.DefaultHtmlProcessor] html-convert event
+Test executed successfully, comparing results...

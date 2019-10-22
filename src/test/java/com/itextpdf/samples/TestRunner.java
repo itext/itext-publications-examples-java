@@ -22,6 +22,7 @@ import com.itextpdf.test.annotations.type.SampleTest;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+
 import java.lang.reflect.Field;
 
 import java.util.Arrays;
@@ -66,7 +67,8 @@ public class TestRunner extends WrappedSamplesRunner {
     private List<String> txtCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles",
             "com.itextpdf.samples.sandbox.parse.ParseCustom",
-            "com.itextpdf.samples.sandbox.parse.ParseCzech"
+            "com.itextpdf.samples.sandbox.parse.ParseCzech",
+            "com.itextpdf.samples.sandbox.logging.CounterDemo"
     );
 
     /**
@@ -114,6 +116,7 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoto");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoToPage");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemoSystemOut");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
@@ -122,9 +125,6 @@ public class TestRunner extends WrappedSamplesRunner {
 
         // TODO DEVSIX-3107
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.GetN2fromSig");
-
-        // TODO DEVSIX-3224
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemo");
 
         // TODO DEVSIX-3189
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.Tables.TableBorder");
