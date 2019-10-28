@@ -37,7 +37,7 @@ public class TableMeasurements {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(10));
         table.setWidth(millimetersToPoints(100));
         table.addCell(getCell(10));
         table.addCell(getCell(5));
@@ -52,12 +52,11 @@ public class TableMeasurements {
         doc.close();
     }
 
-    public static float millimetersToPoints(float value) {
+    private static float millimetersToPoints(float value) {
         return (value / 25.4f) * 72f;
     }
 
-
-    private Cell getCell(int cm) {
+    private static Cell getCell(int cm) {
         Cell cell = new Cell(1, cm);
         Paragraph p = new Paragraph(
                 String.format("%smm", 10 * cm)).setFontSize(8);

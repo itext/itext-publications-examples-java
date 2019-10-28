@@ -97,7 +97,7 @@ public class NestedTables3 {
         doc.close();
     }
 
-    private class InnerTableRenderer extends TableRenderer {
+    private static class InnerTableRenderer extends TableRenderer {
         public InnerTableRenderer(Table modelElement, Table.RowRange rowRange) {
             super(modelElement, rowRange);
         }

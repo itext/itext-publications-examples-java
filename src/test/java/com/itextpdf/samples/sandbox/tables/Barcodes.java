@@ -44,7 +44,7 @@ public class Barcodes {
         doc.close();
     }
 
-    public static Cell createBarcode(String code, PdfDocument pdfDoc) {
+    private static Cell createBarcode(String code, PdfDocument pdfDoc) {
         BarcodeEAN barcode = new BarcodeEAN(pdfDoc);
         barcode.setCodeType(BarcodeEAN.EAN8);
         barcode.setCode(code);

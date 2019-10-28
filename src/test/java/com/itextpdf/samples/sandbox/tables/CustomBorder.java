@@ -52,7 +52,7 @@ public class CustomBorder {
         Document doc = new Document(pdfDoc);
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
         // Fill a table with cells.
@@ -75,7 +75,7 @@ public class CustomBorder {
     }
 
 
-    private class CustomBorderTableRenderer extends TableRenderer {
+    private static class CustomBorderTableRenderer extends TableRenderer {
         private boolean bottom = true;
         private boolean top = true;
 
@@ -95,10 +95,10 @@ public class CustomBorder {
         protected TableRenderer[] split(int row, boolean hasContent, boolean cellWithBigRowspanAdded) {
             TableRenderer[] renderers = super.split(row, hasContent, cellWithBigRowspanAdded);
 
-            // the first row of the split renderer represent the first rows of the current renderer
+            // The first row of the split renderer represent the first rows of the current renderer
             ((CustomBorderTableRenderer) renderers[0]).top = top;
 
-            // if there are some split cells, we should draw top borders of the overflow renderer
+            // If there are some split cells, we should draw top borders of the overflow renderer
             // and bottom borders of the split renderer
             if (hasContent) {
                 ((CustomBorderTableRenderer) renderers[0]).bottom = false;
@@ -110,14 +110,14 @@ public class CustomBorder {
         @Override
         public void draw(DrawContext drawContext) {
 
-            // if not set, iText will omit drawing of top borders
+            // If not set, iText will omit drawing of top borders
             if (!top) {
                 for (CellRenderer cellRenderer : rows.get(0)) {
                     cellRenderer.setProperty(Property.BORDER_TOP, Border.NO_BORDER);
                 }
             }
 
-            // if set, iText will draw bottom borders
+            // If set, iText will draw bottom borders
             if (bottom) {
                 for (CellRenderer cellRenderer : rows.get(rows.size() - 1)) {
                     cellRenderer.setProperty(Property.BORDER_BOTTOM, new SolidBorder(0.5f));

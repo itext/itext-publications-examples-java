@@ -43,11 +43,11 @@ public class NestedTableProblem {
         doc.setMargins(30, 21, 35, 21);
 
         // inner table
-        Table innerTable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table innerTable = new Table(UnitValue.createPercentArray(1));
+        innerTable.setWidth(UnitValue.createPercentValue(80));
         innerTable.setHorizontalAlignment(HorizontalAlignment.LEFT);
         innerTable.addCell(new Cell().setBorder(new SolidBorder(ColorConstants.RED, 1))
                 .add(new Paragraph("Goodbye World")));
-        innerTable.setWidth(UnitValue.createPercentValue(80));
 
         // outer table
         Table outerTable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();

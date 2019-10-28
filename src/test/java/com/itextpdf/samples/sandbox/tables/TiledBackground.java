@@ -74,21 +74,12 @@ public class TiledBackground {
     }
 
 
-    private class TiledImageBackgroundCellRenderer extends CellRenderer {
+    private static class TiledImageBackgroundCellRenderer extends CellRenderer {
         protected ImageData img;
 
         public TiledImageBackgroundCellRenderer(Cell modelElement, ImageData img) {
             super(modelElement);
             this.img = img;
-        }
-
-        public void colorRectangle(PdfCanvas canvas, Color color, float x, float y, float width, float height) {
-            canvas
-                    .saveState()
-                    .setFillColor(color)
-                    .rectangle(x, y, width, height)
-                    .fillStroke()
-                    .restoreState();
         }
 
         // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
@@ -116,7 +107,17 @@ public class TiledBackground {
 
             canvas.setFillColor(new PatternColor(imgPattern));
             canvas.stroke();
+
             canvas.restoreState();
+        }
+
+        private static void colorRectangle(PdfCanvas canvas, Color color, float x, float y, float width, float height) {
+            canvas
+                    .saveState()
+                    .setFillColor(color)
+                    .rectangle(x, y, width, height)
+                    .fillStroke()
+                    .restoreState();
         }
     }
 }

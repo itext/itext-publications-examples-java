@@ -46,7 +46,7 @@ public class NestedTablesAligned {
         doc.close();
     }
 
-    private void buildNestedTables(Table outerTable) {
+    private static void buildNestedTables(Table outerTable) {
         Table innerTable1 = new Table(UnitValue.createPercentArray(1));
         innerTable1.setWidth(100f);
         innerTable1.setHorizontalAlignment(HorizontalAlignment.LEFT);

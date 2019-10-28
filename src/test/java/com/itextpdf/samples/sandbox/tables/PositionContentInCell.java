@@ -93,7 +93,7 @@ public class PositionContentInCell {
     }
 
 
-    private class ImageAndPositionRenderer extends CellRenderer {
+    private static class ImageAndPositionRenderer extends CellRenderer {
         private Image img;
         private String content;
         private POSITION position;

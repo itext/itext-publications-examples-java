@@ -94,7 +94,7 @@ public class DottedLineCell2 {
         document.close();
     }
 
-    class DottedLineCellRenderer extends CellRenderer {
+    private static class DottedLineCellRenderer extends CellRenderer {
         boolean[] borders;
 
         public DottedLineCellRenderer(Cell modelElement, boolean[] borders) {

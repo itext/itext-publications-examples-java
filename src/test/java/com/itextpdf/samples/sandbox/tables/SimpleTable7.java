@@ -61,7 +61,7 @@ public class SimpleTable7 {
         importantNotice.setFontColor(ColorConstants.RED);
         doc.add(importantNotice);
 
-        Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth().setFixedLayout().
+        Table table = new Table(UnitValue.createPercentArray(10)).setFixedLayout().
                 setWidth(UnitValue.createPercentValue(80));
 
         Cell cell = new Cell(1, 3).add(docTitle);

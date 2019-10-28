@@ -60,7 +60,7 @@ public class UnitedStates {
         doc.close();
     }
 
-    public void addRowToTable(Table table, String line, PdfFont font, boolean isHeader) {
+    private static void addRowToTable(Table table, String line, PdfFont font, boolean isHeader) {
 
         // Parses string line with specified delimiter
         StringTokenizer tokenizer = new StringTokenizer(line, ";");

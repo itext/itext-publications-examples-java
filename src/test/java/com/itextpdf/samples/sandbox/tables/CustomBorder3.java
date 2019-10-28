@@ -48,14 +48,14 @@ public class CustomBorder3 {
         ILineDash dashed = new Dashed();
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
 
         Cell cell = new Cell().add(new Paragraph("dotted left border"));
         cell.setBorder(Border.NO_BORDER);
 
-        //Draws custom borders to current cell
+        // Draws custom borders to current cell
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, dotted, null, null}));
         table.addCell(cell);
@@ -110,18 +110,18 @@ public class CustomBorder3 {
     }
 
 
-    interface ILineDash {
+    static interface ILineDash {
         void applyLineDash(PdfCanvas canvas);
     }
 
 
-    class Solid implements ILineDash {
+    static class Solid implements ILineDash {
         public void applyLineDash(PdfCanvas canvas) {
         }
     }
 
 
-    class Dotted implements ILineDash {
+    static class Dotted implements ILineDash {
         public void applyLineDash(PdfCanvas canvas) {
             canvas.setLineCapStyle(PdfCanvasConstants.LineCapStyle.ROUND);
             canvas.setLineDash(0, 4, 2);
@@ -129,14 +129,14 @@ public class CustomBorder3 {
     }
 
 
-    class Dashed implements ILineDash {
+    static class Dashed implements ILineDash {
         public void applyLineDash(PdfCanvas canvas) {
             canvas.setLineDash(3, 3);
         }
     }
 
 
-    class CustomBorder3Renderer extends CellRenderer {
+    static class CustomBorder3Renderer extends CellRenderer {
         ILineDash[] borders;
 
         public CustomBorder3Renderer(Cell modelElement, ILineDash[] borders) {

@@ -135,7 +135,7 @@ public class TestRunner extends WrappedSamplesRunner {
         // TODO DEVSIX-3188
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplitRowAtSpecificRow");
 
-        // TODO DEVSIX-3189
+        // TODO DEVSIX-3187
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.RepeatLastRows");
 
         // TODO DEVSIX-3187

@@ -53,7 +53,7 @@ public class ImageNextToText {
         doc.close();
     }
 
-    public static Cell createImageCell(String path) throws MalformedURLException {
+    private static Cell createImageCell(String path) throws MalformedURLException {
         Image img = new Image(ImageDataFactory.create(path));
         img.setWidth(UnitValue.createPercentValue(100));
         Cell cell = new Cell().add(img);
@@ -61,7 +61,7 @@ public class ImageNextToText {
         return cell;
     }
 
-    public static Cell createTextCell(String text) {
+    private static Cell createTextCell(String text) {
         Cell cell = new Cell();
         Paragraph p = new Paragraph(text);
         p.setTextAlignment(TextAlignment.RIGHT);

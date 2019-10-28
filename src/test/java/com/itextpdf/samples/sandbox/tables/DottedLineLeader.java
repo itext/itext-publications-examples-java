@@ -71,7 +71,7 @@ public class DottedLineLeader {
         doc.close();
     }
 
-    public Cell getCell(Paragraph p, VerticalAlignment verticalAlignment) {
+    private static Cell getCell(Paragraph p, VerticalAlignment verticalAlignment) {
         Cell cell = new Cell();
         cell.setVerticalAlignment(verticalAlignment);
         p.setMargin(2);

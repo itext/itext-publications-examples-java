@@ -40,7 +40,6 @@ public class RepeatLastRows2 {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table.setWidth(523);
         table.setNextRenderer(new RepeatTableRenderer(table, new Table.RowRange(0, 100)));
 
         for (int i = 1; i < 100; i++) {
@@ -53,7 +52,7 @@ public class RepeatLastRows2 {
     }
 
 
-    private class RepeatTableRenderer extends TableRenderer {
+    private static class RepeatTableRenderer extends TableRenderer {
         public RepeatTableRenderer(Table modelElement, Table.RowRange rowRange) {
             super(modelElement, rowRange);
         }

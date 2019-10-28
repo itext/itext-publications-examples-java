@@ -32,7 +32,7 @@ import java.io.File;
 public class SimpleTable12 {
     public static final String DEST = "./target/sandbox/tables/simple_table12.pdf";
 
-    protected PdfFont font;
+    protected static PdfFont font;
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -73,7 +73,7 @@ public class SimpleTable12 {
         doc.close();
     }
 
-    public Cell createCell(String content, int colspan, int rowspan, int border) {
+    private static Cell createCell(String content, int colspan, int rowspan, int border) {
         Cell cell = new Cell(rowspan, colspan).add(new Paragraph(content).setFont(font).setFontSize(10));
         cell
                 .setBorder(Border.NO_BORDER)

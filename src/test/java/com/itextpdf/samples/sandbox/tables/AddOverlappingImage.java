@@ -43,7 +43,7 @@ public class AddOverlappingImage {
         Document doc = new Document(pdfDoc);
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
 
         for (int r = 'A'; r <= 'Z'; r++) {
@@ -64,7 +64,7 @@ public class AddOverlappingImage {
     }
 
 
-    private class OverlappingImageTableRenderer extends TableRenderer {
+    private static class OverlappingImageTableRenderer extends TableRenderer {
         private ImageData image;
 
         public OverlappingImageTableRenderer(Table modelElement, ImageData img) {

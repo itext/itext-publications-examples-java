@@ -89,7 +89,7 @@ public class DottedLineHeader {
     }
 
 
-    private class DottedHeaderTableRenderer extends TableRenderer {
+    private static class DottedHeaderTableRenderer extends TableRenderer {
         public DottedHeaderTableRenderer(Table modelElement, Table.RowRange rowRange) {
             super(modelElement, rowRange);
         }
@@ -118,7 +118,7 @@ public class DottedLineHeader {
     }
 
 
-    private class DottedHeaderCellRenderer extends CellRenderer {
+    private static class DottedHeaderCellRenderer extends CellRenderer {
         public DottedHeaderCellRenderer(Cell modelElement) {
             super(modelElement);
         }
@@ -135,12 +135,13 @@ public class DottedLineHeader {
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
             PdfCanvas canvas = drawContext.getCanvas();
-
+            Rectangle bbox = getOccupiedArea().getBBox();
+            
             canvas.setLineDash(3f, 3f);
-            canvas.moveTo(this.getOccupiedArea().getBBox().getLeft(), this.getOccupiedArea().getBBox().getBottom());
-            canvas.lineTo(this.getOccupiedArea().getBBox().getRight(), this.getOccupiedArea().getBBox().getBottom());
-            canvas.moveTo(this.getOccupiedArea().getBBox().getLeft(), this.getOccupiedArea().getBBox().getTop());
-            canvas.lineTo(this.getOccupiedArea().getBBox().getRight(), this.getOccupiedArea().getBBox().getTop());
+            canvas.moveTo(bbox.getLeft(), bbox.getBottom());
+            canvas.lineTo(bbox.getRight(), bbox.getBottom());
+            canvas.moveTo(bbox.getLeft(), bbox.getTop());
+            canvas.lineTo(bbox.getRight(), bbox.getTop());
             canvas.stroke();
         }
     }

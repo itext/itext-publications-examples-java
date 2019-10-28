@@ -194,7 +194,7 @@ public class NestedTableRoundedBorder {
     }
 
 
-    private class RoundedBorderCellRenderer extends CellRenderer {
+    private static class RoundedBorderCellRenderer extends CellRenderer {
         public RoundedBorderCellRenderer(Cell modelElement) {
             super(modelElement);
         }

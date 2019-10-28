@@ -58,7 +58,7 @@ public class SplittingNestedTable2 {
      * @param keepFirstCellTogether defines whether to keep the first cell together or not
      * @return a {@link Table table} with the format specified above
      */
-    private Table createTable(boolean keepFirstCellTogether) {
+    private static Table createTable(boolean keepFirstCellTogether) {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(10);
 

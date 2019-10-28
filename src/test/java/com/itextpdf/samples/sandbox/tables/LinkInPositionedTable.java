@@ -39,7 +39,7 @@ public class LinkInPositionedTable {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(1));
         table.setWidth(500);
 
         Cell cell = new Cell();

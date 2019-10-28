@@ -46,7 +46,7 @@ public class CustomBorder2 {
         Document doc = new Document(pdfDoc);
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
         for (int i = 1; i < 60; i++) {
@@ -63,7 +63,7 @@ public class CustomBorder2 {
     }
 
 
-    private class CustomBorder2TableRenderer extends TableRenderer {
+    private static class CustomBorder2TableRenderer extends TableRenderer {
         private boolean top = true;
         private boolean bottom = true;
 
@@ -91,8 +91,8 @@ public class CustomBorder2 {
             // because there is an overflow renderer
             splitRenderer.bottom = false;
 
-            // if top is true, the split renderer is the first renderer of the document,
-            // if false, iText has already processed the first renderer
+            // If top is true, the split renderer is the first renderer of the document.
+            // If false, iText has already processed the first renderer
             splitRenderer.top = this.top;
 
             CustomBorder2TableRenderer overflowRenderer = (CustomBorder2TableRenderer) results[1];

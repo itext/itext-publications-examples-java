@@ -50,7 +50,7 @@ public class ImagesNextToEachOther {
         doc.close();
     }
 
-    public static Cell createImageCell(String path) throws MalformedURLException {
+    private static Cell createImageCell(String path) throws MalformedURLException {
         Image img = new Image(ImageDataFactory.create(path));
         return new Cell().add(img.setAutoScale(true).setWidth(UnitValue.createPercentValue(100)));
     }

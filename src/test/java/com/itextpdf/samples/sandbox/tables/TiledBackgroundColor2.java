@@ -62,7 +62,7 @@ public class TiledBackgroundColor2 {
     }
 
 
-    class TiledImageBackgroundRenderer extends CellRenderer {
+    private static class TiledImageBackgroundRenderer extends CellRenderer {
         protected ImageData img;
 
         public TiledImageBackgroundRenderer(Cell modelElement, ImageData img) {

@@ -69,7 +69,7 @@ public class SimpleTable11 {
         doc.close();
     }
 
-    public Cell createCell(String content, float borderWidth, int colspan, TextAlignment alignment) {
+    private static Cell createCell(String content, float borderWidth, int colspan, TextAlignment alignment) {
         Cell cell = new Cell(1, colspan).add(new Paragraph(content));
         cell.setTextAlignment(alignment);
         cell.setBorder(new SolidBorder(borderWidth));

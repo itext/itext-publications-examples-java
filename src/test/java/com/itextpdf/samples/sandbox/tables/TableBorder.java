@@ -48,7 +48,7 @@ public class TableBorder {
             table.addCell(new Cell().add(new Paragraph("hi")).setBorder(Border.NO_BORDER));
         }
 
-        // Notice that one should set renderer after table completion
+        // Notice that one should set renderer after cells are added to the table
         table.setNextRenderer(new TableBorderRenderer(table));
 
         doc.add(table);
@@ -57,7 +57,7 @@ public class TableBorder {
     }
 
 
-    class TableBorderRenderer extends TableRenderer {
+    private static class TableBorderRenderer extends TableRenderer {
         public TableBorderRenderer(Table modelElement) {
             super(modelElement);
         }

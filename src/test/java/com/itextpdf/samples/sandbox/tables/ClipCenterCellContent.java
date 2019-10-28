@@ -70,7 +70,7 @@ public class ClipCenterCellContent {
     }
 
 
-    private class ClipCenterCellContentCellRenderer extends CellRenderer {
+    private static class ClipCenterCellContentCellRenderer extends CellRenderer {
         private Paragraph content;
 
         public ClipCenterCellContentCellRenderer(Cell modelElement, Paragraph content) {
@@ -88,14 +88,16 @@ public class ClipCenterCellContent {
 
         @Override
         public void draw(DrawContext drawContext) {
+
+            // Fictitiously layout the renderer and find out, how much space does it require
             IRenderer pr = content.createRendererSubTree().setParent(this);
 
             LayoutResult textArea = pr.layout(new LayoutContext(
                     new LayoutArea(0, new Rectangle(getOccupiedAreaBBox().getWidth(), 1000))));
 
-            float spaceneeded = textArea.getOccupiedArea().getBBox().getHeight();
+            float spaceNeeded = textArea.getOccupiedArea().getBBox().getHeight();
             System.out.println(String.format("The content requires %s pt whereas the height is %s pt.",
-                    spaceneeded, getOccupiedAreaBBox().getHeight()));
+                    spaceNeeded, getOccupiedAreaBBox().getHeight()));
 
             float offset = (getOccupiedAreaBBox().getHeight() - textArea.getOccupiedArea().getBBox().getHeight()) / 2;
             System.out.println(String.format("The difference is %s pt; we'll need an offset of %s pt.",
@@ -104,7 +106,7 @@ public class ClipCenterCellContent {
             PdfFormXObject xObject = new PdfFormXObject(new Rectangle(getOccupiedAreaBBox().getWidth(),
                     getOccupiedAreaBBox().getHeight()));
             Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.getDocument()), drawContext.getDocument(),
-                    new Rectangle(0, offset, getOccupiedAreaBBox().getWidth(), spaceneeded));
+                    new Rectangle(0, offset, getOccupiedAreaBBox().getWidth(), spaceNeeded));
             layoutCanvas.add(content);
 
             drawContext.getCanvas().addXObject(xObject, occupiedArea.getBBox().getLeft(), occupiedArea.getBBox().getBottom());

@@ -40,25 +40,23 @@ public class CellWithGlue {
         Document doc = new Document(pdfDoc);
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
-        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
+        Table table = new Table(UnitValue.createPercentArray(2));
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidth(UnitValue.createPercentValue(60));
         table.setMarginBottom(20);
 
         Cell cell = new Cell().add(new Paragraph("Received Rs (in Words):"));
-        cell.setBorder(Border.NO_BORDER);
-        cell.setBorderLeft(new SolidBorder(1));
-        cell.setBorderTop(new SolidBorder(1));
-        cell.setBorderBottom(new SolidBorder(1));
+
+        // Set all the cell's borders except for the right one to have black color and width of 1 point
+        cell.setBorder(new SolidBorder(1));
+        cell.setBorderRight(Border.NO_BORDER);
         table.addCell(cell);
 
         cell = new Cell().add(new Paragraph("Priceless"));
         cell.setTextAlignment(TextAlignment.RIGHT);
-        cell.setBorder(Border.NO_BORDER);
-        cell.setBorderRight(new SolidBorder(1));
-        cell.setBorderTop(new SolidBorder(1));
-        cell.setBorderBottom(new SolidBorder(1));
+        cell.setBorder(new SolidBorder(1));
+        cell.setBorderLeft(Border.NO_BORDER);
         table.addCell(cell);
 
         doc.add(table);
@@ -67,7 +65,7 @@ public class CellWithGlue {
 
         doc.add(table);
 
-        table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        table = new Table(UnitValue.createPercentArray(1));
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidth(UnitValue.createPercentValue(50));
 

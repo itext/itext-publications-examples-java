@@ -15,6 +15,7 @@ package com.itextpdf.samples.sandbox.tables;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Image;
@@ -101,7 +102,7 @@ public class PositionContentInCell2 {
     }
 
 
-    private class ImageAndPositionRenderer extends CellRenderer {
+    private static class ImageAndPositionRenderer extends CellRenderer {
         private Image img;
         private String content;
         private TextAlignment alignment;
@@ -136,7 +137,8 @@ public class PositionContentInCell2 {
             float x = getOccupiedAreaBBox().getX() + wPct * getOccupiedAreaBBox().getWidth();
             float y = getOccupiedAreaBBox().getY() + hPct * (getOccupiedAreaBBox().getHeight()
                     - (fontSizeUV.isPointValue() ? fontSizeUV.getValue() : 12f) * 1.5f);
-            new Document(drawContext.getDocument()).showTextAligned(content, x, y, alignment);
+            new Canvas(drawContext.getDocument().getFirstPage(), drawContext.getDocument().getDefaultPageSize())
+                    .showTextAligned(content, x, y, alignment);
         }
     }
 }

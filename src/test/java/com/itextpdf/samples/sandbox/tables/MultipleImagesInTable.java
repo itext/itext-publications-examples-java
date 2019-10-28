@@ -50,7 +50,7 @@ public class MultipleImagesInTable {
         Image img2 = new Image(ImageDataFactory.create(IMG2));
         Image img3 = new Image(ImageDataFactory.create(IMG3));
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(1));
         table.setWidth(UnitValue.createPercentValue(20));
 
         img1.setAutoScale(true);

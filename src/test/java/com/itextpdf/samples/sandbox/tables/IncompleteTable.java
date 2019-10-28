@@ -46,8 +46,8 @@ public class IncompleteTable {
         for (int i = 0; i < 500; i++) {
             if (i % 5 == 0) {
 
-                // Moves to the new row of table
-                // Flush() and Complete() methods are required and used only for the 'large tables'
+                // Flushes the current content, e.g. places it on the document.
+                // Please bear in mind that the method (alongside complete()) make sense only for 'large tables'
                 table.flush();
             }
 
@@ -55,7 +55,7 @@ public class IncompleteTable {
                     .setMargins(0, 0, 0, 0)));
         }
 
-        // Indicates that no more content will be added to the table
+        // Flushes the rest of the content and indicates that no more content will be added to the table
         table.complete();
 
         doc.close();

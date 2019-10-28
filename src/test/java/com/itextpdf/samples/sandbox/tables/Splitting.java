@@ -66,10 +66,13 @@ public class Splitting {
 
         Cell cell = new Cell().add(table);
         cell.setBorder(Border.NO_BORDER);
-        nesting.addCell(cell.setKeepTogether(true));
+
+        // iText will make its best to process this cell on a single area
+        cell.setKeepTogether(true);
+
+        nesting.addCell(cell);
 
         doc.add(nesting);
-
         doc.close();
     }
 }

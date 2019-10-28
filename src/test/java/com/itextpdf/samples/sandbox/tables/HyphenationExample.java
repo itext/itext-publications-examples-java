@@ -39,8 +39,8 @@ public class HyphenationExample {
     protected void manipulatePdf(String dest) throws Exception {
 
         // See hyphenation example of specified word in console
-        // For the correct run of sample, please, add itext.hyph dependency
-        // which could be found on the following web-page https://mvnrepository.com/artifact/com.itextpdf/hyph
+        // For the correct run of sample, please, add an itext.hyph dependency,
+        // which could be found on the following web-page: https://mvnrepository.com/artifact/com.itextpdf/hyph
         Hyphenation s = Hyphenator.hyphenate("de", "DE", "Leistungsscheinziffer", 2, 2);
         System.out.println(s);
 
@@ -48,7 +48,7 @@ public class HyphenationExample {
         Document doc = new Document(pdfDoc);
         doc.setMargins(0, 0, 0, 0);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth().setFixedLayout();
+        Table table = new Table(UnitValue.createPercentArray(1)).setFixedLayout();
         table.setWidth(UnitValue.createPercentValue(10));
 
         Text text = new Text("Leistungsscheinziffer");

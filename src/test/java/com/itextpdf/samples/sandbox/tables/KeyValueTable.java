@@ -36,7 +36,7 @@ public class KeyValueTable {
         new KeyValueTable().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         UserObject rohit = new UserObject();
         rohit.setName("Rohit");
         rohit.setId("6633429");
@@ -60,9 +60,10 @@ public class KeyValueTable {
         document.close();
     }
 
-    public Table createTable(UserObject user, PdfFont titleFont, PdfFont defaultFont) {
-        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+    private static Table createTable(UserObject user, PdfFont titleFont, PdfFont defaultFont) {
+        Table table = new Table(UnitValue.createPercentArray(2));
         table.setWidth(UnitValue.createPercentValue(30)).setMarginBottom(10);
+
         table.addHeaderCell(new Cell().setFont(titleFont).add(new Paragraph("Key")));
         table.addHeaderCell(new Cell().setFont(titleFont).add(new Paragraph("Value")));
 
@@ -82,7 +83,7 @@ public class KeyValueTable {
     }
 
 
-    class UserObject {
+    private static class UserObject {
         protected String name;
         protected String id;
         protected int reputation;

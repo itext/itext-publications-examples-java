@@ -37,7 +37,7 @@ public class NestedTables6 {
         Document doc = new Document(pdfDoc, new PageSize(1200, 800));
 
         // Header part
-        Table mainTable = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table mainTable = new Table(UnitValue.createPercentArray(1));
         mainTable.setWidth(1000);
 
         // Notice that in itext7 there is no getDefaultCell method

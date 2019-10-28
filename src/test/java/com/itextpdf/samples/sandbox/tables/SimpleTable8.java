@@ -40,13 +40,11 @@ public class SimpleTable8 {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
-
-        PdfReader reader = new PdfReader(SRC + "header_test_file.pdf");
-        PdfDocument srcDoc = new PdfDocument(reader);
-
+        PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC + "header_test_file.pdf"));
         PdfFormXObject header = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
 
+
+        Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         Cell cell = new Cell(1, 3).add(new Image(header).setWidth(UnitValue.createPercentValue(100))
                 .setAutoScale(true));
         table.addCell(cell);
@@ -57,9 +55,7 @@ public class SimpleTable8 {
             }
         }
 
-        reader = new PdfReader(SRC + "footer_test_file.pdf");
-        srcDoc = new PdfDocument(reader);
-
+        srcDoc = new PdfDocument(new PdfReader(SRC + "footer_test_file.pdf"));
         PdfFormXObject footer = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
 
         cell = new Cell(1, 3).add(new Image(footer).setWidth(UnitValue.createPercentValue(100))

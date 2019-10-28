@@ -57,7 +57,7 @@ public class SplittingNestedTable1 {
      * @param keepTableTogether defines whether to keep the table together or not
      * @return a {@link Table table} with the format specified above
      */
-    private Table createTable(boolean keepTableTogether) {
+    private static Table createTable(boolean keepTableTogether) {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         table.setMarginTop(10);
 

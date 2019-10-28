@@ -43,7 +43,8 @@ public class DottedLineCell {
 
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
 
-        // Draws dotted line borders
+        // Draws dotted line borders.
+        // Bear in mind that now one needs to disable the default border-drawing
         table.setNextRenderer(new DottedLineTableRenderer(table, new Table.RowRange(0, 2)));
         table.addCell(new Cell().add(new Paragraph("A1")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("A2")).setBorder(Border.NO_BORDER));
@@ -63,7 +64,7 @@ public class DottedLineCell {
         Cell cell = new Cell().add(new Paragraph("Test"));
         cell.setNextRenderer(new DottedLineCellRenderer(cell));
         cell.setBorder(Border.NO_BORDER);
-        table.addCell(cell.setBorder(Border.NO_BORDER));
+        table.addCell(cell);
 
         doc.add(table);
 
@@ -71,7 +72,7 @@ public class DottedLineCell {
     }
 
 
-    private class DottedLineTableRenderer extends TableRenderer {
+    private static class DottedLineTableRenderer extends TableRenderer {
         public DottedLineTableRenderer(Table modelElement, Table.RowRange rowRange) {
             super(modelElement, rowRange);
         }
@@ -123,7 +124,7 @@ public class DottedLineCell {
     }
 
 
-    private class DottedLineCellRenderer extends CellRenderer {
+    private static class DottedLineCellRenderer extends CellRenderer {
         public DottedLineCellRenderer(Cell modelElement) {
             super(modelElement);
         }

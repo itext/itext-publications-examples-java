@@ -41,19 +41,24 @@ public class LeadingInCell {
 
         Cell cell = new Cell();
 
-        Paragraph p = new Paragraph("paragraph 1: leading 16. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(16);
+        Paragraph p = new Paragraph("paragraph 1: leading 16. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(16);
         cell.add(p);
 
-        p = new Paragraph("paragraph 2: leading 32. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(32);
+        p = new Paragraph("paragraph 2: leading 32. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(32);
         cell.add(p);
 
-        p = new Paragraph("paragraph 3: leading 10. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(10);
+        p = new Paragraph("paragraph 3: leading 10. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(10);
         cell.add(p);
 
-        p = new Paragraph("paragraph 4: leading 18. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(18);
+        p = new Paragraph("paragraph 4: leading 18. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(18);
         cell.add(p);
 
-        p = new Paragraph("paragraph 5: leading 40. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(40);
+        p = new Paragraph("paragraph 5: leading 40. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(40);
         cell.add(p);
 
         table.addCell(cell);

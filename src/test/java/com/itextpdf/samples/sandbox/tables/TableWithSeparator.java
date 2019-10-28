@@ -50,7 +50,7 @@ public class TableWithSeparator {
         doc.close();
     }
 
-    public Cell getCell1() {
+    private static Cell getCell1() {
         Cell cell = new Cell();
 
         Paragraph p1 = new Paragraph("My fantastic data");
@@ -63,7 +63,7 @@ public class TableWithSeparator {
         return cell;
     }
 
-    public Cell getCell2() {
+    private static Cell getCell2() {
         Cell cell = new Cell();
 
         Paragraph p1 = new Paragraph("My fantastic data");
@@ -78,7 +78,7 @@ public class TableWithSeparator {
         return cell;
     }
 
-    public Cell getCell3() {
+    private static Cell getCell3() {
         Cell cell = new Cell();
 
         Paragraph p1 = new Paragraph("My fantastic data");
@@ -94,7 +94,7 @@ public class TableWithSeparator {
         return cell;
     }
 
-    public Cell getCell4() {
+    private static Cell getCell4() {
         Cell cell = new Cell();
 
         Paragraph p1 = new Paragraph("My fantastic data");
@@ -110,5 +110,4 @@ public class TableWithSeparator {
 
         return cell;
     }
-
 }

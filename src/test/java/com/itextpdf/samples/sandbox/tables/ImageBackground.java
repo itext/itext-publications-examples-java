@@ -47,7 +47,7 @@ public class ImageBackground {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(1));
         table.setWidth(400);
 
         Cell cell = new Cell();
@@ -69,7 +69,7 @@ public class ImageBackground {
     }
 
 
-    private class ImageBackgroundCellRenderer extends CellRenderer {
+    private static class ImageBackgroundCellRenderer extends CellRenderer {
         protected Image img;
 
         public ImageBackgroundCellRenderer(Cell modelElement, Image img) {

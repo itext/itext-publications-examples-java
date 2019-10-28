@@ -56,7 +56,7 @@ public class ClippedCell {
     }
 
 
-    private class ClipContentRenderer extends CellRenderer {
+    private static class ClipContentRenderer extends CellRenderer {
         public ClipContentRenderer(Cell modelElement) {
             super(modelElement);
         }
@@ -76,9 +76,10 @@ public class ClippedCell {
             LayoutContext context = new LayoutContext(new LayoutArea(layoutContext.getArea().getPageNumber(),
                     new Rectangle(area.getLeft(), area.getTop() - retrieveHeight(), area.getWidth(), retrieveHeight())));
 
-            // If content doesn't fit the size of cell,
-            // it returns layout result with cell size optimized for the current clipped context
             LayoutResult result = super.layout(context);
+            // If content doesn't fit the size of a cell,
+            // iTest will still return layout result full as if everything is OK.
+            // As a result, the cell's content will be clipped.
             if (LayoutResult.FULL != result.getStatus()) {
                 return new LayoutResult(LayoutResult.FULL, result.getOccupiedArea(), null, null);
             }

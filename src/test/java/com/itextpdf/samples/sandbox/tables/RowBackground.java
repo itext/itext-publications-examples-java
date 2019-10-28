@@ -56,7 +56,7 @@ public class RowBackground {
     }
 
 
-    private class RowBackgroundTableRenderer extends TableRenderer {
+    private static class RowBackgroundTableRenderer extends TableRenderer {
         protected int row;
 
         public RowBackgroundTableRenderer(Table modelElement, Table.RowRange rowRange, int row) {

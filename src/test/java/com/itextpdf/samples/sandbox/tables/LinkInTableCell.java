@@ -72,7 +72,7 @@ public class LinkInTableCell {
     }
 
 
-    class LinkInCellRenderer extends CellRenderer {
+    private static class LinkInCellRenderer extends CellRenderer {
         protected String url;
 
         public LinkInCellRenderer(Cell modelElement, String url) {
@@ -91,11 +91,11 @@ public class LinkInTableCell {
         @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
+
             PdfLinkAnnotation linkAnnotation = new PdfLinkAnnotation(getOccupiedAreaBBox());
             linkAnnotation.setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
             linkAnnotation.setAction(PdfAction.createURI(url));
             drawContext.getDocument().getLastPage().addAnnotation(linkAnnotation);
         }
-
     }
 }

@@ -35,7 +35,7 @@ public class CellHeights {
         Document doc = new Document(pdfDoc, PageSize.A5.rotate());
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
         // a long phrase with newlines
@@ -45,6 +45,9 @@ public class CellHeights {
         // the phrase fits the fixed height
         table.addCell("set height (more than sufficient)");
         cell.setHeight(172);
+
+        // In iText7 a cell is meant to be used only once in the table.
+        // If you want to reuse it, please clone it (either including the content or not)
         table.addCell(cell.clone(true));
 
         // the phrase doesn't fit the fixed height

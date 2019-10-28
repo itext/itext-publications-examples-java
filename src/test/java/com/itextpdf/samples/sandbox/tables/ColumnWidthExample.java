@@ -44,6 +44,7 @@ public class ColumnWidthExample {
 
         float[] columnWidths = {1, 5, 5};
         Table table = new Table(UnitValue.createPercentArray(columnWidths));
+
         PdfFont f = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Cell cell = new Cell(1, 3)
                 .add(new Paragraph("This is a header"))
@@ -71,10 +72,10 @@ public class ColumnWidthExample {
             }
         }
 
-        for (int counter = 1; counter < 101; counter++) {
-            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph(String.valueOf(counter))));
-            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("key " + counter)));
-            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("value " + counter)));
+        for (int counter = 0; counter < 100; counter++) {
+            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph(String.valueOf(counter + 1))));
+            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("key " + (counter + 1))));
+            table.addCell(new Cell().setTextAlignment(TextAlignment.CENTER).add(new Paragraph("value " + (counter + 1))));
         }
 
         doc.add(table);

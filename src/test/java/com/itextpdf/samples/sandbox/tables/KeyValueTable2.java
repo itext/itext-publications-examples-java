@@ -30,10 +30,6 @@ import java.io.IOException;
 public class KeyValueTable2 {
     public static final String DEST = "./target/sandbox/tables/key_value_table2.pdf";
 
-    protected PdfFont regular;
-
-    protected PdfFont bold;
-
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
@@ -41,9 +37,9 @@ public class KeyValueTable2 {
         new KeyValueTable2().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
-        bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
+        PdfFont regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
 
         UserObject rohit = new UserObject();
         rohit.setName("Rohit");
@@ -60,12 +56,12 @@ public class KeyValueTable2 {
         PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
         Document document = new Document(pdf);
 
-        document.add(createTable(rohit, bruno));
+        document.add(createTable(rohit, bruno, bold, regular));
 
         document.close();
     }
 
-    public Table createTable(UserObject user1, UserObject user2) {
+    private static Table createTable(UserObject user1, UserObject user2, PdfFont bold, PdfFont regular) {
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
 
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Name:")));
@@ -88,7 +84,7 @@ public class KeyValueTable2 {
     }
 
 
-    class UserObject {
+    private static class UserObject {
         protected String name = "";
         protected String id = "";
         protected int reputation = 0;

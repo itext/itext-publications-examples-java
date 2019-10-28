@@ -37,7 +37,7 @@ public class TableTemplate {
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        Table table = new Table(UnitValue.createPercentArray(15)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(15));
 
         table.setWidth(1500);
 
@@ -57,7 +57,11 @@ public class TableTemplate {
         for (int j = 0; j < 1500; j += 500) {
             for (int i = 1300; i > 0; i -= 650) {
                 PdfFormXObject clip = new PdfFormXObject(new Rectangle(500, 650));
+
+                // add xObject to another xObject of shorter sizes
                 new PdfCanvas(clip, pdfDoc).addXObject(tableTemplate, -j, 650 - i);
+
+                // add xObject to the document
                 new PdfCanvas(pdfDoc.addNewPage()).addXObject(clip, 36, 156);
             }
         }

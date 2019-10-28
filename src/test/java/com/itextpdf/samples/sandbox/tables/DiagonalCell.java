@@ -72,7 +72,7 @@ public class DiagonalCell {
     }
 
 
-    protected class DiagonalCellRenderer extends CellRenderer {
+    private static class DiagonalCellRenderer extends CellRenderer {
         private String textTopRight;
         private String textBottomLeft;
 

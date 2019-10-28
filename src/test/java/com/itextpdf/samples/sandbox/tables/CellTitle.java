@@ -45,7 +45,7 @@ public class CellTitle {
         Document doc = new Document(pdfDoc);
 
         // By default column width is calculated automatically for the best fit.
-        // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         Cell cell = getCell("The title of this cell is title 1", "title 1");
         table.addCell(cell);
@@ -59,7 +59,7 @@ public class CellTitle {
     }
 
 
-    protected class CellTitleRenderer extends CellRenderer {
+    private static class CellTitleRenderer extends CellRenderer {
         protected String title;
 
         public CellTitleRenderer(Cell modelElement, String title) {
@@ -79,7 +79,8 @@ public class CellTitle {
         public void drawBorder(DrawContext drawContext) {
             PdfPage currentPage = drawContext.getDocument().getPage(getOccupiedArea().getPageNumber());
 
-            // create above canvas in order to draw above borders (notice that iText draws borders using TableRenderer)
+            // Create an above canvas in order to draw above borders.
+            // Notice: bear in mind that iText draws cell borders on its TableRenderer level.
             PdfCanvas aboveCanvas = new PdfCanvas(currentPage.newContentStreamAfter(), currentPage.getResources(),
                     drawContext.getDocument());
             new Canvas(aboveCanvas, drawContext.getDocument(), getOccupiedAreaBBox())
@@ -87,11 +88,12 @@ public class CellTitle {
                             .setMultipliedLeading(1)
                             .setMargin(0)
                             .setBackgroundColor(ColorConstants.LIGHT_GRAY)
-                            .setFixedPosition(getOccupiedAreaBBox().getLeft() + 5, getOccupiedAreaBBox().getTop() - 8, 30));
+                            .setFixedPosition(getOccupiedAreaBBox().getLeft() + 5,
+                                    getOccupiedAreaBBox().getTop() - 8, 30));
         }
     }
 
-    public Cell getCell(String content, String title) {
+    private static Cell getCell(String content, String title) {
         Cell cell = new Cell().add(new Paragraph(content));
         cell.setNextRenderer(new CellTitleRenderer(cell, title));
         cell.setPaddingTop(8).setPaddingBottom(8);

@@ -51,7 +51,7 @@ public class NestedTables {
         doc.close();
     }
 
-    private void buildNestedTables(Table outerTable) {
+    private static void buildNestedTables(Table outerTable) {
         Table innerTable1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         Table innerTable2 = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
 
