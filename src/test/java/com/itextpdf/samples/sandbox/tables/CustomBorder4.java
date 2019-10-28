@@ -7,11 +7,6 @@
     sales@itextpdf.com
  */
 
-/**
- * Example written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/34555756/one-cell-with-different-border-types
- */
-
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -28,14 +23,14 @@ import com.itextpdf.layout.property.UnitValue;
 
 import java.io.File;
 
-public class CustomBorder3 {
-    public static final String DEST = "./target/sandbox/tables/custom_border3.pdf";
+public class CustomBorder4 {
+    public static final String DEST = "./target/sandbox/tables/custom_border4.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new CustomBorder3().manipulatePdf(DEST);
+        new CustomBorder4().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
@@ -60,14 +55,14 @@ public class CustomBorder3 {
         cell.setBorderRight(new SolidBorder(0.5f));
         table.addCell(cell);
 
-        cell = new Cell().add(new Paragraph("dashed top border"));
+        cell = new Cell().add(new Paragraph("solid top border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setBorderTop(new DashedBorder(1f));
+        cell.setBorderTop(new SolidBorder(1.5f));
         table.addCell(cell);
 
-        cell = new Cell().add(new Paragraph("bottom border"));
+        cell = new Cell().add(new Paragraph("dashed bottom border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setBorderBottom(new SolidBorder(1f));
+        cell.setBorderBottom(new DashedBorder(1f));
         table.addCell(cell);
 
         document.add(table);
@@ -75,23 +70,26 @@ public class CustomBorder3 {
         table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
 
-        cell = new Cell().add(new Paragraph("dotted left and solid top border"));
+        cell = new Cell().add(new Paragraph("dotted left and dashed top border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setBorderTop(new SolidBorder(1f));
         cell.setBorderLeft(new DottedBorder(0.5f));
+        cell.setBorderTop(new DashedBorder(1f));
         table.addCell(cell);
 
-        cell = new Cell().add(new Paragraph("dashed right and dashed bottom border"));
+        cell = new Cell().add(new Paragraph("solid right and dotted bottom border"));
         cell.setBorder(Border.NO_BORDER);
-        cell.setBorderBottom(new DashedBorder(1f));
-        cell.setBorderRight(new DashedBorder(0.5f));
+        cell.setBorderBottom(new DottedBorder(0.5f));
+        cell.setBorderRight(new SolidBorder(1f));
         table.addCell(cell);
 
         cell = new Cell().add(new Paragraph("no border"));
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);
 
-        cell = new Cell().add(new Paragraph("full solid border"));
+        cell = new Cell().add(new Paragraph("full border"));
+        cell.setBorder(new DottedBorder(0.5f));
+        cell.setBorderTop(new SolidBorder(1f));
+        cell.setBorderBottom(new DashedBorder(1f));
         table.addCell(cell);
 
         document.add(table);
