@@ -14,15 +14,13 @@ package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.BorderCollapsePropertyValue;
+import com.itextpdf.layout.property.BorderRadius;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.layout.renderer.CellRenderer;
-import com.itextpdf.layout.renderer.DrawContext;
-import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
@@ -41,6 +39,15 @@ public class RoundedCorners {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
+
+        // By default iText collapses borders and draws them on table level.
+        // In this sample, however, we want each cell to draw its borders separately,
+        // that's why we need to override border collapse.
+        table.setBorderCollapse(BorderCollapsePropertyValue.SEPARATE);
+
+        // Sets horizontal spacing between all the table's cells. See css's border-spacing for more information.
+        table.setHorizontalBorderSpacing(5);
+
         Cell cell = getCell("These cells have rounded borders at the top.");
         table.addCell(cell);
 
@@ -55,48 +62,10 @@ public class RoundedCorners {
         doc.close();
     }
 
-    public Cell getCell(String content) {
+    private static Cell getCell(String content) {
         Cell cell = new Cell().add(new Paragraph(content));
-        cell.setNextRenderer(new RoundedCornersCellRenderer(cell));
-        cell.setPadding(5);
-        cell.setBorder(null);
+        cell.setBorderTopRightRadius(new BorderRadius(4));
+        cell.setBorderTopLeftRadius(new BorderRadius(4));
         return cell;
-    }
-
-
-    private class RoundedCornersCellRenderer extends CellRenderer {
-        public RoundedCornersCellRenderer(Cell modelElement) {
-            super(modelElement);
-        }
-
-        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
-        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
-        // renderer will be created
-        @Override
-        public IRenderer getNextRenderer() {
-            return new RoundedCornersCellRenderer((Cell) modelElement);
-        }
-
-        @Override
-        public void draw(DrawContext drawContext) {
-            float llx = getOccupiedAreaBBox().getX() + 2;
-            float lly = getOccupiedAreaBBox().getY() + 2;
-            float urx = getOccupiedAreaBBox().getX() + getOccupiedAreaBBox().getWidth() - 2;
-            float ury = getOccupiedAreaBBox().getY() + getOccupiedAreaBBox().getHeight() - 2;
-
-            float r = 4;
-            float b = 0.4477f;
-
-            PdfCanvas canvas = drawContext.getCanvas();
-            canvas.moveTo(llx, lly);
-            canvas.lineTo(urx, lly);
-            canvas.lineTo(urx, ury - r);
-            canvas.curveTo(urx, ury - r * b, urx - r * b, ury, urx - r, ury);
-            canvas.lineTo(llx + r, ury);
-            canvas.curveTo(llx + r * b, ury, llx, ury - r * b, llx, ury - r);
-            canvas.lineTo(llx, lly);
-            canvas.stroke();
-            super.draw(drawContext);
-        }
     }
 }
