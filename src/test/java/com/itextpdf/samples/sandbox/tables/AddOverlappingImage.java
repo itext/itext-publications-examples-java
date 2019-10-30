@@ -14,6 +14,7 @@ package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -45,10 +46,6 @@ public class AddOverlappingImage {
         // useAllAvailableWidth() method set table to use the whole page's width while placing the content.
         Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
 
-        // Adds drawn on a canvas image to the table
-        table.setNextRenderer(new OverlappingImageTableRenderer(table, new Table.RowRange(0, 25),
-                ImageDataFactory.create("./src/test/resources/img/hero.jpg")));
-
         for (int r = 'A'; r <= 'Z'; r++) {
             for (int c = 1; c <= 5; c++) {
                 Cell cell = new Cell();
@@ -56,6 +53,10 @@ public class AddOverlappingImage {
                 table.addCell(cell);
             }
         }
+
+        // Adds drawn on a canvas image to the table
+        table.setNextRenderer(new OverlappingImageTableRenderer(table,
+                ImageDataFactory.create("./src/test/resources/img/hero.jpg")));
 
         doc.add(table);
 
@@ -66,11 +67,6 @@ public class AddOverlappingImage {
     private class OverlappingImageTableRenderer extends TableRenderer {
         private ImageData image;
 
-        public OverlappingImageTableRenderer(Table modelElement, Table.RowRange rowRange, ImageData img) {
-            super(modelElement, rowRange);
-            this.image = img;
-        }
-
         public OverlappingImageTableRenderer(Table modelElement, ImageData img) {
             super(modelElement);
             this.image = img;
@@ -78,14 +74,12 @@ public class AddOverlappingImage {
 
         @Override
         public void drawChildren(DrawContext drawContext) {
+
+            // Use the coordinates of the cell in the fourth row and the second column to draw the image
+            Rectangle rect = rows.get(3)[1].getOccupiedAreaBBox();
             super.drawChildren(drawContext);
 
-            float x = Math.max(this.getOccupiedAreaBBox().getX() +
-                    this.getOccupiedAreaBBox().getWidth() / 3 - image.getWidth(), 0);
-            float y = Math.max(this.getOccupiedAreaBBox().getY() +
-                    this.getOccupiedAreaBBox().getHeight() / 3 - image.getHeight(), 0);
-
-            drawContext.getCanvas().addImage(image, x, y, false);
+            drawContext.getCanvas().addImage(image, rect.getLeft() + 10, rect.getTop() - image.getHeight(), false);
         }
 
         // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
