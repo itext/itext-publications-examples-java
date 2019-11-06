@@ -6,6 +6,7 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.geom.PageSize;
@@ -25,11 +26,12 @@ public class AddLongTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AddLongTable().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc, PageSize.A4);
         doc.setTopMargin(72);
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();

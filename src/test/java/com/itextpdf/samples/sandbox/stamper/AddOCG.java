@@ -5,11 +5,13 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/27956833/adding-comment-on-pdf-layer-created-using-itextsharp-in-adobe-reader
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -31,31 +33,31 @@ public class AddOCG {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AddOCG().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage());
 
         PdfLayer nested = new PdfLayer("Nested layers", pdfDoc);
-        PdfLayer nested_1 = new PdfLayer("Nested layer 1", pdfDoc);
-        PdfLayer nested_2 = new PdfLayer("Nested layer 2", pdfDoc);
-        nested_2.setLocked(true);
-        nested.addChild(nested_1);
-        nested.addChild(nested_2);
+        PdfLayer nested1 = new PdfLayer("Nested layer 1", pdfDoc);
+        PdfLayer nested2 = new PdfLayer("Nested layer 2", pdfDoc);
+        nested2.setLocked(true);
+        nested.addChild(nested1);
+        nested.addChild(nested2);
 
-        Canvas canvasModel;
         canvas.beginLayer(nested);
-        canvasModel = new Canvas(canvas, pdfDoc, pdfDoc.getDefaultPageSize());
+        Canvas canvasModel = new Canvas(canvas, pdfDoc, pdfDoc.getDefaultPageSize());
         canvasModel.showTextAligned("nested layers", 50, 755, TextAlignment.LEFT, 0);
         canvas.endLayer();
 
-        canvas.beginLayer(nested_1);
+        canvas.beginLayer(nested1);
         canvasModel.showTextAligned("nested layers 1", 100, 800, TextAlignment.LEFT, 0);
         canvas.endLayer();
 
-        canvas.beginLayer(nested_2);
+        canvas.beginLayer(nested2);
         canvasModel.showTextAligned("nested layers 2", 100, 750, TextAlignment.LEFT, 0);
         canvas.endLayer();
 
@@ -106,7 +108,8 @@ public class AddOCG {
         not_printed.setPrint("Print", false);
 
         canvas.beginLayer(not_printed);
-        canvasModel.showTextAligned("PRINT THIS PAGE", 300, 700, TextAlignment.CENTER, (float) Math.toRadians(90));
+        canvasModel.showTextAligned("PRINT THIS PAGE", 300, 700,
+                TextAlignment.CENTER, (float) Math.toRadians(90));
         canvas.endLayer();
 
         PdfLayer zoom = new PdfLayer("Zoom 0.75-1.25", pdfDoc);
@@ -114,7 +117,9 @@ public class AddOCG {
         zoom.setZoom(0.75f, 1.25f);
 
         canvas.beginLayer(zoom);
-        canvasModel.showTextAligned("Only visible if the zoomfactor is between 75 and 125%", 30, 530, TextAlignment.LEFT, (float) Math.toRadians(90));
+        canvasModel
+                .showTextAligned("Only visible if the zoomfactor is between 75 and 125%",
+                        30, 530, TextAlignment.LEFT, (float) Math.toRadians(90));
         canvas.endLayer();
 
         pdfDoc.close();
