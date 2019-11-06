@@ -5,11 +5,13 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/25808367/rotate-multiline-text-with-columntext-itextsharp
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.geom.Rectangle;
@@ -30,15 +32,19 @@ public class AddRotatedTemplate {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AddRotatedTemplate().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
+        // Add content to the template without rotation
         PdfFormXObject formXObject = new PdfFormXObject(new Rectangle(80, 120));
-        new Canvas(formXObject, pdfDoc).add(new Paragraph("Some long text that needs to be distributed over several lines."));
+        new Canvas(formXObject, pdfDoc)
+                .add(new Paragraph("Some long text that needs to be distributed over several lines."));
 
+        // Add template to the pdf document page applying rotation
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage());
         canvas.addXObject(formXObject, 36, 600);
         double angle = Math.PI / 4;

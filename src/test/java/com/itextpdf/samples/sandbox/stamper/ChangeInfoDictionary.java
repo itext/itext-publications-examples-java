@@ -5,7 +5,8 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/21607286/unicode-characters-in-document-info-dictionary-keys
@@ -13,6 +14,7 @@
  * A user wants to update a Document Info Dictionary (DID)
  * introducing a custom key with a Unicode character.
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -31,19 +33,24 @@ public class ChangeInfoDictionary {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ChangeInfoDictionary().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfDocumentInfo info = pdfDoc.getDocumentInfo();
+
         Map<String, String> newInfo = new HashMap<>();
         newInfo.put("Special Character: \u00e4", "\u00e4");
+
         StringBuilder buf = new StringBuilder();
         buf.append((char) 0xc3);
         buf.append((char) 0xa4);
         newInfo.put(buf.toString(), "\u00e4");
+
         info.setMoreInfo(newInfo);
+
         pdfDoc.close();
     }
 }
