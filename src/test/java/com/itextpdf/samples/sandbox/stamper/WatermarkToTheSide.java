@@ -5,10 +5,12 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * This example was written by Bruno Lowagie in answer to a question by a customer.
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.geom.Rectangle;
@@ -28,33 +30,42 @@ public class WatermarkToTheSide {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new WatermarkToTheSide().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
-        int n = pdfDoc.getNumberOfPages();
-        PdfCanvas canvas;
-        Rectangle pageSize;
-        float x, y;
-        for (int p = 1; p <= n; p++) {
-            pageSize = pdfDoc.getPage(p).getPageSize();
-            // left of the page
-            x = pageSize.getLeft();
-            // middle of the height
-            y = (pageSize.getTop() + pageSize.getBottom()) / 2;
-            // getting the canvas covering the existing content
-            canvas = new PdfCanvas(pdfDoc.getPage(p));
-            // adding some lines to the left
-            new Canvas(canvas, pdfDoc, pageSize)
-                    .showTextAligned("This is some extra text added to the left of the page", x + 18, y, TextAlignment.CENTER, (float) Math.toRadians(90));
-            new Canvas(canvas, pdfDoc, pageSize)
-                    .showTextAligned("This is some more text added to the left of the page", x + 34, y, TextAlignment.CENTER, (float) Math.toRadians(90));
-            // !!!IMPORTANT
-            // Notice, that in itext7 we do not consider the rotation while adding via Document or Canvas
-            // So the third page differs from itext5 result
+        for (int p = 1; p <= pdfDoc.getNumberOfPages(); p++) {
+            Rectangle pageSize = pdfDoc.getPage(p).getPageSize();
+
+            PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(p));
+
+            // In case the page has a rotation, then new content will be automatically rotated.
+            // Such an automatic rotation means, that we should consider page as if it's not rotated.
+            // This is the particular case for the page 3 below
+            if (p == 3) {
+
+                // The width of the page rotated by 90 degrees corresponds to the height of the unrotated one.
+                // The left side of the page rotated by 90 degrees corresponds to the bottom of the unrotated page.
+                drawText(canvas, pdfDoc, pageSize, pageSize.getWidth() / 2, 18, 180);
+                drawText(canvas, pdfDoc, pageSize, pageSize.getWidth() / 2, 34, 180);
+            } else {
+                drawText(canvas, pdfDoc, pageSize, pageSize.getLeft() + 18,
+                        (pageSize.getTop() + pageSize.getBottom()) / 2, 90);
+                drawText(canvas, pdfDoc, pageSize, pageSize.getLeft() + 34,
+                        (pageSize.getTop() + pageSize.getBottom()) / 2, 90);
+            }
         }
+
         pdfDoc.close();
+    }
+
+    private static void drawText(PdfCanvas canvas, PdfDocument pdfDoc, Rectangle pageSize, float x, float y, double rotation) {
+        Canvas canvasDrawText = new Canvas(canvas, pdfDoc, pageSize)
+                .showTextAligned("This is some extra text added to the left of the page",
+                        x, y, TextAlignment.CENTER, (float) Math.toRadians(rotation));
+        canvasDrawText.close();
     }
 }

@@ -5,20 +5,23 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * This example was written by Bruno Lowagie in answer to a question by a customer.
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
-import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.io.font.FontProgramFactory;
+import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
@@ -38,41 +41,39 @@ public class TransparentWatermark3 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TransparentWatermark3().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        int n = pdfDoc.getNumberOfPages();
         PdfFont font = PdfFontFactory.createFont(FontProgramFactory.createFont(StandardFonts.HELVETICA));
-        Paragraph p = new Paragraph("My watermark (text)").setFont(font).setFontSize(30);
-        // image watermark
+        Paragraph paragraph = new Paragraph("My watermark (text)").setFont(font).setFontSize(30);
         ImageData img = ImageDataFactory.create(IMG);
-        //  Implement transformation matrix usage in order to scale image
+
         float w = img.getWidth();
         float h = img.getHeight();
-        // transparency
-        PdfExtGState gs1 = new PdfExtGState();
-        gs1.setFillOpacity(0.5f);
-        // properties
-        PdfCanvas over;
-        Rectangle pagesize;
-        float x, y;
-        // loop over every page
-        for (int i = 1; i <= n; i++) {
-            pagesize = pdfDoc.getPage(i).getPageSize();
-            x = (pagesize.getLeft() + pagesize.getRight()) / 2;
-            y = (pagesize.getTop() + pagesize.getBottom()) / 2;
-            over = new PdfCanvas(pdfDoc.getPage(i));
+
+        PdfExtGState gs1 = new PdfExtGState().setFillOpacity(0.5f);
+
+        // Implement transformation matrix usage in order to scale image
+        for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
+            PdfPage pdfPage = pdfDoc.getPage(i);
+            Rectangle pageSize = pdfPage.getPageSize();
+            float x = (pageSize.getLeft() + pageSize.getRight()) / 2;
+            float y = (pageSize.getTop() + pageSize.getBottom()) / 2;
+            PdfCanvas over = new PdfCanvas(pdfPage);
             over.saveState();
             over.setExtGState(gs1);
-            if (i % 2 == 1)
-                doc.showTextAligned(p, x, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
-            else
+            if (i % 2 == 1) {
+                doc.showTextAligned(paragraph, x, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+            } else {
                 over.addImage(img, w, 0, 0, h, x - (w / 2), y - (h / 2), true);
+            }
             over.restoreState();
         }
+
         doc.close();
     }
 }

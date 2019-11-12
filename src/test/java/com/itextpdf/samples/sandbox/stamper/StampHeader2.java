@@ -5,15 +5,18 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/24678640/itext-pdfdocument-page-size-inaccurate
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -31,23 +34,25 @@ public class StampHeader2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new StampHeader2().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         Paragraph header = new Paragraph("Copy")
                 .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
                 .setFontSize(14);
-        for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
-            float x = pdfDoc.getPage(i).getPageSize().getWidth() / 2;
-            float y = pdfDoc.getPage(i).getPageSize().getTop() - 20;
 
-            doc.showTextAligned(header, x, y, i,
-                    TextAlignment.CENTER, VerticalAlignment.BOTTOM, 0);
+        for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
+            Rectangle pageSize = pdfDoc.getPage(i).getPageSize();
+            float x = pageSize.getWidth() / 2;
+            float y = pageSize.getTop() - 20;
+            doc.showTextAligned(header, x, y, i, TextAlignment.CENTER, VerticalAlignment.BOTTOM, 0);
         }
+
         doc.close();
     }
 }

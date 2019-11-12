@@ -5,11 +5,13 @@
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written in answer to:
  * http://stackoverflow.com/questions/33582245/extract-pdf-page-and-insert-into-existing-pdf
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -21,34 +23,33 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import java.io.File;
 
 public class SuperImpose {
-    public static final String DEST =
-            "./target/sandbox/stamper/super_impose.pdf";
+    public static final String DEST = "./target/sandbox/stamper/super_impose.pdf";
     public static final String[] EXTRA = {
             "./src/test/resources/pdfs/hello.pdf",
             "./src/test/resources/pdfs/base_url.pdf",
             "./src/test/resources/pdfs/state.pdf"
     };
-    public static final String SRC =
-            "./src/test/resources/pdfs/primes.pdf";
+    public static final String SRC = "./src/test/resources/pdfs/primes.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SuperImpose().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-        PdfDocument srcDoc;
-        PdfFormXObject page;
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage().newContentStreamBefore(),
                 pdfDoc.getFirstPage().getResources(), pdfDoc);
+
         for (String path : EXTRA) {
-            srcDoc = new PdfDocument(new PdfReader(path));
-            page = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
+            PdfDocument srcDoc = new PdfDocument(new PdfReader(path));
+            PdfFormXObject page = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
             canvas.addXObject(page, 0, 0);
             srcDoc.close();
         }
+
         pdfDoc.close();
     }
 }
