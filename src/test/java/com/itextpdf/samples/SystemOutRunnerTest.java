@@ -15,6 +15,7 @@ import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -40,6 +41,11 @@ public class SystemOutRunnerTest extends WrappedSamplesRunner {
     public void test() throws Exception {
         initClass();
         STORED_SYSTEM_OUT = System.out;
+
+        // By default target dir is created during runSamples method. In this particular case we need this
+        // action before due to overriding system out stream
+        new File(getDest()).getParentFile().mkdirs();
+
         System.setOut(new PrintStream(getStringField(sampleClass, "DEST").replace(".pdf", ".txt")));
 
         runSamples();
