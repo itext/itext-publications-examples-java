@@ -16,46 +16,38 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.canvas.parser.PdfCanvasProcessor;
 import com.itextpdf.kernel.pdf.canvas.parser.listener.LocationTextExtractionStrategy;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-@Category(SampleTest.class)
 public class ParseCzech {
-    public static final String DEST = "./target/test/resources/sandbox/parse/czech.txt";
+    public static final String DEST = "./target/txt/czech.txt";
+
     public static final String SRC = "./src/test/resources/pdfs/czech.pdf";
 
-    @BeforeClass
-    public static void beforeClass() throws IOException {
+    public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new ParseCzech().manipulatePdf();
+
+        new ParseCzech().manipulatePdf(DEST);
     }
 
-    @Test
-    public void manipulatePdf() throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC));
-        FileOutputStream fos = new FileOutputStream(DEST);
 
+        // Create a text extraction renderer
         LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
 
+        // Note: if you want to re-use the PdfCanvasProcessor, you must call PdfCanvasProcessor.reset()
         PdfCanvasProcessor parser = new PdfCanvasProcessor(strategy);
         parser.processPageContent(pdfDoc.getFirstPage());
-        byte[] array = strategy.getResultantText().getBytes("UTF-8");
-        fos.write(array);
 
-        fos.flush();
-        fos.close();
+        byte[] content = strategy.getResultantText().getBytes("UTF-8");
+        try (FileOutputStream stream = new FileOutputStream(dest)) {
+            stream.write(content);
+        }
 
         pdfDoc.close();
-
-        Assert.assertEquals(67, array.length);
     }
 }

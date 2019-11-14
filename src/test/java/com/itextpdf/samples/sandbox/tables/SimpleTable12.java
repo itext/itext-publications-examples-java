@@ -19,6 +19,7 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
@@ -31,42 +32,23 @@ import java.io.File;
 public class SimpleTable12 {
     public static final String DEST = "./target/sandbox/tables/simple_table12.pdf";
 
-    protected PdfFont font;
+    protected static PdfFont font;
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new SimpleTable12().manipulatePdf(DEST);
-    }
 
-    public Cell createCell(String content, int colspan, int rowspan, int border) {
-        Cell cell = new Cell(rowspan, colspan).add(new Paragraph(content).setFont(font).setFontSize(10));
-        cell.setBorder(null);
-        if (8 == (border & 8)) {
-            cell.setBorderRight(new SolidBorder(1));
-            cell.setBorderBottom(new SolidBorder(1));
-        }
-        if (4 == (border & 4)) {
-            cell.setBorderLeft(new SolidBorder(1));
-        }
-        if (2 == (border & 2)) {
-            cell.setBorderBottom(new SolidBorder(1));
-        }
-        if (1 == (border & 1)) {
-            cell.setBorderTop(new SolidBorder(1));
-        }
-        cell.setTextAlignment(TextAlignment.CENTER);
-        return cell;
+        new SimpleTable12().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
         Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
         font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+
         Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
+
         table.addCell(createCell("Examination", 1, 2, 15));
         table.addCell(createCell("Board", 1, 2, 15));
         table.addCell(createCell("Month and Year of Passing", 1, 2, 15));
@@ -85,8 +67,35 @@ public class SimpleTable12 {
         table.addCell(createCell("", 1, 1, 15));
         table.addCell(createCell("", 1, 1, 15));
         table.addCell(createCell("", 1, 1, 15));
+
         doc.add(table);
 
         doc.close();
+    }
+
+    private static Cell createCell(String content, int colspan, int rowspan, int border) {
+        Cell cell = new Cell(rowspan, colspan).add(new Paragraph(content).setFont(font).setFontSize(10));
+        cell
+                .setBorder(Border.NO_BORDER)
+                .setTextAlignment(TextAlignment.CENTER);
+
+        if (8 == (border & 8)) {
+            cell.setBorderRight(new SolidBorder(1));
+            cell.setBorderBottom(new SolidBorder(1));
+        }
+
+        if (4 == (border & 4)) {
+            cell.setBorderLeft(new SolidBorder(1));
+        }
+
+        if (2 == (border & 2)) {
+            cell.setBorderBottom(new SolidBorder(1));
+        }
+
+        if (1 == (border & 1)) {
+            cell.setBorderTop(new SolidBorder(1));
+        }
+
+        return cell;
     }
 }

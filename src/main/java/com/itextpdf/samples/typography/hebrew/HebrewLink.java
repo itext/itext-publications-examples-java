@@ -20,13 +20,10 @@ import com.itextpdf.layout.element.Link;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
 public class HebrewLink {
 
     public static final String DEST = "./target/samples/typography/HebrewLink.pdf";
@@ -65,7 +62,7 @@ public class HebrewLink {
                 .setFont(font)
                 .setFontSize(10)
 
-                //In Hebrew text goes from right to left, that's one we need to overwrite the default iText's alignment
+                // In Hebrew text goes from right to left, that's why we need to overwrite the default iText's alignment
                 .setTextAlignment(TextAlignment.RIGHT);
 
         document

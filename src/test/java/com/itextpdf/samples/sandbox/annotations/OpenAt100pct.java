@@ -27,14 +27,20 @@ public class OpenAt100pct {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new OpenAt100pct().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(612, 792));
         doc.add(new Paragraph("Hello World"));
-        pdfDoc.getCatalog().setOpenAction(PdfExplicitDestination.createXYZ(pdfDoc.getPage(1), 0, 842, 1));
+
+        // Set the height of a page to 842 points and zoom value to 1 (which means 100% zoom)
+        PdfExplicitDestination zoomPage = PdfExplicitDestination.createXYZ(pdfDoc.getPage(1),
+                0, 842, 1);
+        pdfDoc.getCatalog().setOpenAction(zoomPage);
+
         doc.close();
     }
 }

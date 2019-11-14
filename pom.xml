@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>7.1.8</version>
+  <version>7.1.9</version>
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
@@ -11,11 +11,11 @@
     <cleanup.version>2.0.4</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
-    <html2pdf.version>2.1.5</html2pdf.version>
+    <html2pdf.version>2.1.6</html2pdf.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.7</java.version>
     <licensekey.version>3.0.5</licensekey.version>
-    <pdfXfa.version>2.0.3</pdfXfa.version>
+    <pdfxfa.version>2.0.4</pdfxfa.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
@@ -24,16 +24,6 @@
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>org.verapdf</groupId>
-      <artifactId>validation-model</artifactId>
-      <version>1.14.102</version>
-    </dependency>
-    <dependency>
-      <groupId>org.verapdf.apps</groupId>
-      <artifactId>gui</artifactId>
-      <version>1.14.2</version>
-    </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>pdftest</artifactId>
@@ -145,19 +135,13 @@
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>pdfxfa</artifactId>
-      <version>${pdfXfa.version}</version>
+      <version>${pdfxfa.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.xmlgraphics</groupId>
-      <artifactId>batik-bridge</artifactId>
-      <version>1.7</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

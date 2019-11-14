@@ -30,6 +30,7 @@ public class TableWithTab {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TableWithTab().manipulatePdf(DEST);
     }
 
@@ -44,7 +45,9 @@ public class TableWithTab {
         p.add(new Tab());
         p.add("Right");
         table.addCell(p);
+
         doc.add(table);
+
         doc.close();
     }
 }

@@ -26,29 +26,28 @@ import java.io.File;
 
 public class CreateJapaneseButton {
     public static final String DEST = "./target/sandbox/acroforms/create_japanese_button.pdf";
+
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
-    public static final String JAPANESE = "\u3042\u304d\u3089";
+
+    // あ き ら characters
+    public static final String JAPANESE_TEXT = "\u3042\u304d\u3089";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CreateJapaneseButton().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
-
-        PdfButtonFormField pushButton = PdfFormField.createPushButton(
-                pdfDoc,
-                new Rectangle(36, 780, 108, 26),
-                "japanese",
-                JAPANESE,
-                font,
-                12f);
-
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+
+        // Define the position of a button that measures 108 by 26
+        Rectangle rect = new Rectangle(36, 780, 108, 26);
+        PdfButtonFormField pushButton = PdfFormField.createPushButton(pdfDoc, rect, "japanese",
+                JAPANESE_TEXT, font, 12f);
         form.addField(pushButton);
 
         pdfDoc.close();

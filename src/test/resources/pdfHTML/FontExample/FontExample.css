@@ -1,14 +1,14 @@
 .elven{
-    font-family: "tengwar sindarin";
+    font-family: "greifswalder tengwar";
 }
 
 .dwarven{
-    font-family: "tolkien dwarf runes";
+    font-family: "runen";
 }
 
 .starwars{
-    font-family: Aurebesh;
-    margin: 5pt;
+    font-family: "New Waltograph";
+	margin: 5pt;
 }
 .aside{
     float:right;

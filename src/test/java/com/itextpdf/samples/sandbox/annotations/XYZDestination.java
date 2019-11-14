@@ -29,24 +29,27 @@ public class XYZDestination {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new XYZDestination().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         for (int i = 0; i < 10; i++) {
             doc.add(new Paragraph("Test"));
             doc.add(new AreaBreak());
         }
-        PdfDestination d;
-        Paragraph c;
-        for (int i = 0; i < 10; ) {
-            i++;
-            d = PdfExplicitDestination.createXYZ(pdfDoc.getPage(i), 36, 806, 0);
-            c = new Paragraph(new Link("Goto page " + i, d));
+
+        for (int i = 1; i < 11; i++) {
+
+            // Create a link destination to the page, specified in the 1st argument.
+            PdfDestination d = PdfExplicitDestination.createXYZ(pdfDoc.getPage(i), 36, 806, 0);
+            Paragraph c = new Paragraph(new Link("Goto page " + i, d));
             doc.add(c);
         }
+
         doc.close();
     }
 }

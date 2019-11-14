@@ -25,6 +25,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
@@ -34,6 +35,7 @@ public class CustomBorder3 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CustomBorder3().manipulatePdf(DEST);
     }
 
@@ -45,70 +47,81 @@ public class CustomBorder3 {
         ILineDash dotted = new Dotted();
         ILineDash dashed = new Dashed();
 
-        Table table;
-        Cell cell;
-
-        table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
+        // By default column width is calculated automatically for the best fit.
+        // useAllAvailableWidth() method makes table use the whole page's width while placing the content.
+        Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
-        cell = new Cell().add(new Paragraph("dotted left border"));
+
+        Cell cell = new Cell().add(new Paragraph("dotted left border"));
         cell.setBorder(Border.NO_BORDER);
+
+        // Draws custom borders to current cell
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, dotted, null, null}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("solid right border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, null, null, solid}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("dashed top border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{dashed, null, null, null}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("bottom border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, null, solid, null}));
+
         table.addCell(cell);
         document.add(table);
 
         table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
+
         cell = new Cell().add(new Paragraph("dotted left and solid top border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{solid, dotted, null, null}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("dashed right and dashed bottom border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{null, null, dashed, dashed}));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("no border"));
         cell.setBorder(Border.NO_BORDER);
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("full solid border"));
         cell.setBorder(Border.NO_BORDER);
         cell.setNextRenderer(new CustomBorder3Renderer(cell,
                 new ILineDash[]{solid, solid, solid, solid}));
         table.addCell(cell);
+
         document.add(table);
         document.close();
     }
 
 
-    interface ILineDash {
+    static interface ILineDash {
         void applyLineDash(PdfCanvas canvas);
     }
 
 
-    class Solid implements ILineDash {
+    static class Solid implements ILineDash {
         public void applyLineDash(PdfCanvas canvas) {
         }
     }
 
 
-    class Dotted implements ILineDash {
+    static class Dotted implements ILineDash {
         public void applyLineDash(PdfCanvas canvas) {
             canvas.setLineCapStyle(PdfCanvasConstants.LineCapStyle.ROUND);
             canvas.setLineDash(0, 4, 2);
@@ -116,14 +129,14 @@ public class CustomBorder3 {
     }
 
 
-    class Dashed implements ILineDash {
+    static class Dashed implements ILineDash {
         public void applyLineDash(PdfCanvas canvas) {
             canvas.setLineDash(3, 3);
         }
     }
 
 
-    class CustomBorder3Renderer extends CellRenderer {
+    static class CustomBorder3Renderer extends CellRenderer {
         ILineDash[] borders;
 
         public CustomBorder3Renderer(Cell modelElement, ILineDash[] borders) {
@@ -134,12 +147,21 @@ public class CustomBorder3 {
             }
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new CustomBorder3Renderer((Cell) modelElement, borders);
+        }
+
         @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
             PdfCanvas canvas = drawContext.getCanvas();
             Rectangle position = getOccupiedAreaBBox();
             canvas.saveState();
+
             if (null != borders[0]) {
                 canvas.saveState();
                 borders[0].applyLineDash(canvas);
@@ -148,6 +170,7 @@ public class CustomBorder3 {
                 canvas.stroke();
                 canvas.restoreState();
             }
+
             if (null != borders[2]) {
                 canvas.saveState();
                 borders[2].applyLineDash(canvas);
@@ -156,6 +179,7 @@ public class CustomBorder3 {
                 canvas.stroke();
                 canvas.restoreState();
             }
+
             if (null != borders[3]) {
                 canvas.saveState();
                 borders[3].applyLineDash(canvas);
@@ -164,6 +188,7 @@ public class CustomBorder3 {
                 canvas.stroke();
                 canvas.restoreState();
             }
+
             if (null != borders[1]) {
                 canvas.saveState();
                 borders[1].applyLineDash(canvas);
@@ -172,6 +197,7 @@ public class CustomBorder3 {
                 canvas.stroke();
                 canvas.restoreState();
             }
+
             canvas.stroke();
             canvas.restoreState();
         }

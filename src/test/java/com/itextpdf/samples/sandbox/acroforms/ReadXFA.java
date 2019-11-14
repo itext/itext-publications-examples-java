@@ -29,22 +29,23 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class ReadXFA {
-    public static final String DEST = "./target/xml/xfa_form_poland.xml";
-    public static final String SRC = "./src/test/resources/pdfs/xfa_form_poland.pdf";
+    public static final String DEST = "./target/xml/xfa_example.xml";
+
+    public static final String SRC = "./src/test/resources/pdfs/xfa_invoice_example.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ReadXFA().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC));
-
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
         XfaForm xfa = form.getXfaForm();
 
+        // Get XFA data under datasets/data.
         Node node = xfa.getDatasetsNode();
         NodeList list = node.getChildNodes();
         for (int i = 0; i < list.getLength(); i++) {
@@ -53,20 +54,13 @@ public class ReadXFA {
                 break;
             }
         }
-        list = node.getChildNodes();
-        for (int i = 0; i < list.getLength(); i++) {
-            if ("movies".equals(list.item(i).getLocalName())) {
-                node = list.item(i);
-                break;
-            }
-        }
 
-        Transformer tf = TransformerFactory.newInstance().newTransformer();
-        tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-        tf.setOutputProperty(OutputKeys.INDENT, "yes");
-        FileOutputStream os = new FileOutputStream(DEST);
-        tf.transform(new DOMSource(node), new StreamResult(os));
-        os.close();
+        try (FileOutputStream os = new FileOutputStream(dest)) {
+            Transformer transformer = TransformerFactory.newInstance().newTransformer();
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.transform(new DOMSource(node), new StreamResult(os));
+        }
 
         pdfDoc.close();
     }

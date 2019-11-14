@@ -82,6 +82,14 @@ public class TableInColumn {
             this.rect = rect;
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new CustomTableRenderer((Table) modelElement, rect);
+        }
+
         @Override
         public LayoutResult layout(LayoutContext layoutContext) {
             return super.layout(new LayoutContext(new LayoutArea(layoutContext.getArea().getPageNumber(), rect)));

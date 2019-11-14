@@ -18,13 +18,10 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
 public class GurmukhiOpacity {
 
     public static final String DEST = "./target/samples/typography/GurmukhiOpacity.pdf";

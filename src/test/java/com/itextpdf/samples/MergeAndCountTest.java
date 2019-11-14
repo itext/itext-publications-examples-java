@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2019 iText Group NV
+    Authors: iText Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples;
 
 import com.itextpdf.kernel.Version;
@@ -25,7 +33,7 @@ public class MergeAndCountTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Test(timeout = 120000)
+    @Test(timeout = 60000)
     public void test() throws Exception {
         unloadLicense();
         runSamples();
@@ -53,6 +61,8 @@ public class MergeAndCountTest extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
+
+            // No exception handling required, because there can be no license loaded
         }
     }
 }

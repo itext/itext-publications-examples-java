@@ -12,6 +12,7 @@ import com.itextpdf.barcodes.BarcodePDF417;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
@@ -24,14 +25,16 @@ public class BarcodePlacement {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new BarcodePlacement().manipulatePdf(DEST);
     }
 
-    // We've changed the order of arguments (in comparison with itext5 example) to make it more clear
-    public Image createBarcode(float mw, float mh, PdfDocument pdfDoc) {
+    public Image createBarcode(float xScale, float yScale, PdfDocument pdfDoc) {
         BarcodePDF417 barcode = new BarcodePDF417();
         barcode.setCode("BarcodePDF417 barcode");
-        return new Image(barcode.createFormXObject(ColorConstants.BLACK, pdfDoc)).scale(mw, mh);
+        PdfFormXObject barcodeObject = barcode.createFormXObject(ColorConstants.BLACK, pdfDoc);
+        Image barcodeImage = new Image(barcodeObject).scale(xScale, yScale);
+        return barcodeImage;
     }
 
     protected void manipulatePdf(String dest) throws Exception {
@@ -42,10 +45,12 @@ public class BarcodePlacement {
         doc.add(new Paragraph(String.format("This barcode measures %s by %s user units",
                 img.getImageScaledWidth(), img.getImageScaledHeight())));
         doc.add(img);
+
         img = createBarcode(3, 3, pdfDoc);
         doc.add(new Paragraph(String.format("This barcode measures %s by %s user units",
                 img.getImageScaledWidth(), img.getImageScaledHeight())));
         doc.add(img);
+
         img = createBarcode(3, 1, pdfDoc);
         doc.add(new Paragraph(String.format("This barcode measures %s by %s user units",
                 img.getImageScaledWidth(), img.getImageScaledHeight())));

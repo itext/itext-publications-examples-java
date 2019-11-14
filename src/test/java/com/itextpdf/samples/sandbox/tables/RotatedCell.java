@@ -29,6 +29,7 @@ public class RotatedCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RotatedCell().manipulatePdf(DEST);
     }
 
@@ -37,12 +38,14 @@ public class RotatedCell {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
+
         for (int i = 0; i < 8; i++) {
             Cell cell = new Cell().add(new Paragraph(String.format("May %s, 2016", i + 15)));
             cell.setRotationAngle(Math.toRadians(90));
             cell.setVerticalAlignment(VerticalAlignment.MIDDLE);
             table.addCell(cell);
         }
+
         for (int i = 0; i < 16; i++) {
             table.addCell("hi");
         }

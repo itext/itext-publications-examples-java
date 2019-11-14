@@ -22,6 +22,7 @@ import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.layout.RootLayoutArea;
 import com.itextpdf.layout.renderer.DocumentRenderer;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,6 +49,13 @@ public class ColumnTextParagraphs {
         doc.setRenderer(new DocumentRenderer(doc) {
             int nextAreaNumber = 0;
             int currentPageNumber;
+
+            // If renderer overflows on the next area itext will use default getNextRender() method with default renderer
+            // parameters. So the method should be overrided with the parameters from the initial renderer
+            @Override
+            public IRenderer getNextRenderer() {
+                return new DocumentRenderer(document);
+            }
 
             @Override
             public LayoutArea updateCurrentArea(LayoutResult overflowResult) {

@@ -25,6 +25,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
@@ -34,30 +35,44 @@ public class LinkInTableCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new LinkInTableCell().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
         // Part of the content is a link:
-        Paragraph phrase = new Paragraph();
-        phrase.add("The founders of iText are nominated for a ");
-        Link chunk = new Link("European Business Award!",
-                PdfAction.createURI("http://itextpdf.com/blog/european-business-award-kick-ceremony"));
-        phrase.add(chunk);
-        table.addCell(phrase);
+        Paragraph paragraph = new Paragraph();
+        paragraph.add("iText at the ");
+        Link chunk = new Link("European Business Awards",
+                PdfAction.createURI("https://itextpdf.com/en/events/itext-european-business-awards-gala-milan"));
+        paragraph.add(chunk);
+        paragraph.add(" gala in Milan");
+        table.addCell(paragraph);
+
         // The complete cell is a link:
         Cell cell = new Cell().add(new Paragraph("Help us win a European Business Award!"));
         cell.setNextRenderer(new LinkInCellRenderer(cell, "http://itextpdf.com/blog/help-us-win-european-business-award"));
         table.addCell(cell);
+
+        // The complete cell is a link (using SetAction() directly on cell):
+        cell = new Cell().add(new Paragraph(
+                "IText becomes Belgium’s National Public Champion in the 2016 European Business Awards"));
+        cell.setAction(PdfAction.createURI(
+                "http://itextpdf.com/en/blog/itext-becomes-belgiums-national-public-champion-2016-european-business-awards"));
+        table.addCell(cell);
+
         doc.add(table);
+
         doc.close();
     }
 
 
-    class LinkInCellRenderer extends CellRenderer {
+    private static class LinkInCellRenderer extends CellRenderer {
         protected String url;
 
         public LinkInCellRenderer(Cell modelElement, String url) {
@@ -65,14 +80,22 @@ public class LinkInTableCell {
             this.url = url;
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new LinkInCellRenderer((Cell) modelElement, url);
+        }
+
         @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
+
             PdfLinkAnnotation linkAnnotation = new PdfLinkAnnotation(getOccupiedAreaBBox());
             linkAnnotation.setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT);
             linkAnnotation.setAction(PdfAction.createURI(url));
             drawContext.getDocument().getLastPage().addAnnotation(linkAnnotation);
         }
-
     }
 }

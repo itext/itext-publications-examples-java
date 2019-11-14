@@ -28,6 +28,7 @@ public class FixedHeightCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FixedHeightCell().manipulatePdf(DEST);
     }
 
@@ -36,11 +37,12 @@ public class FixedHeightCell {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
-        Cell cell;
+
         for (int r = 'A'; r <= 'Z'; r++) {
             for (int c = 1; c <= 5; c++) {
-                cell = new Cell();
-                cell.add(new Paragraph(String.valueOf((char) r) + String.valueOf(c)));
+                Cell cell = new Cell();
+                cell.add(new Paragraph(String.valueOf((char) r) + c));
+
                 if (r == 'D') {
                     cell.setHeight(60);
                 }
@@ -58,9 +60,11 @@ public class FixedHeightCell {
                         cell.add(new Paragraph("This cell has more content than the other cells"));
                     }
                 }
+
                 table.addCell(cell);
             }
         }
+
         doc.add(table);
 
         doc.close();

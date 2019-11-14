@@ -23,22 +23,22 @@ import java.util.Map;
 
 public class AlignField {
     public static final String DEST = "./target/sandbox/acroforms/align_field.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/subscribe.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AlignField().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
-
         Map<String, PdfFormField> fields = form.getFormFields();
-        PdfFormField field;
 
-        field = fields.get("personal.name");
+        PdfFormField field = fields.get("personal.name");
         field.setJustification(PdfFormField.ALIGN_LEFT);
         field.setValue("Test");
 

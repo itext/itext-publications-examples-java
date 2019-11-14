@@ -18,15 +18,12 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.Property;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.test.annotations.type.SampleTest;
 import com.itextpdf.typography.config.LatinScriptConfig;
 import com.itextpdf.typography.config.TypographyConfigurator;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
 public class LatinKerning {
 
     public static final String DEST = "./target/samples/typography/LatinKerning.pdf";

@@ -23,12 +23,14 @@ import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.DocumentRenderer;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 import java.util.Map;
 
 public class AddExtraTable {
     public static String DEST = "./target/sandbox/acroforms/add_extra_table.pdf";
+
     public static String SRC = "./src/test/resources/pdfs/form.pdf";
 
     public static void main(String[] args) throws Exception {
@@ -39,7 +41,7 @@ public class AddExtraTable {
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
@@ -49,7 +51,7 @@ public class AddExtraTable {
         fields.get("Country").setValue("No Man's Land");
         form.flattenFields();
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{1, 15}));
+        Table table = new Table(UnitValue.createPercentArray(new float[] {1, 15}));
         table.setWidth(UnitValue.createPercentValue(80));
         table.addHeaderCell("#");
         table.addHeaderCell("description");
@@ -58,19 +60,37 @@ public class AddExtraTable {
             table.addCell("test " + i);
         }
 
-        doc.setRenderer(new DocumentRenderer(doc) {
-            @Override
-            protected LayoutArea updateCurrentArea(LayoutResult overflowResult) {
-                LayoutArea area = super.updateCurrentArea(overflowResult);
-                if (area.getPageNumber() == 1) {
-                    area.getBBox().decreaseHeight(266);
-                }
-                return area;
-            }
-        });
-
+        // The custom renderer decreases the first page's area.
+        // As a result, there is not overlapping between the table from acroform and the new one.
+        doc.setRenderer(new ExtraTableRenderer(doc));
         doc.add(table);
 
         doc.close();
+    }
+
+    protected static class ExtraTableRenderer extends DocumentRenderer {
+
+        public ExtraTableRenderer(Document document) {
+            super(document);
+        }
+
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new ExtraTableRenderer(document);
+        }
+
+        @Override
+        protected LayoutArea updateCurrentArea(LayoutResult overflowResult) {
+            LayoutArea area = super.updateCurrentArea(overflowResult);
+            if (area.getPageNumber() == 1) {
+                area.getBBox().decreaseHeight(266);
+            }
+
+            return area;
+        }
+
     }
 }

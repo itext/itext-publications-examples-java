@@ -36,47 +36,68 @@ public class NestedTables3 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new NestedTables3().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
+        Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
+        // Creates outer table
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+
+        // Draws header for every nested table.
+        // That header will be repeated on every page.
         table.setNextRenderer(new InnerTableRenderer(table, new Table.RowRange(0, 0)));
+
         Cell cell = new Cell(1, 2).add(new Paragraph("This outer header is repeated on every page"));
         table.addHeaderCell(cell);
+
+        // Creates the first inner table
         Table inner1 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
+        // Creates an empty header cell for the header content drawn by outer table renderer
         cell = new Cell();
         cell.setHeight(20);
         inner1.addHeaderCell(cell);
+
+        // Creates header cell that will be repeated only on pages, where that table has content
         cell = new Cell().add(new Paragraph("This inner header won't be repeated on every page"));
         inner1.addHeaderCell(cell);
+
         for (int i = 0; i < 10; i++) {
             inner1.addCell(new Cell().add(new Paragraph("test")));
         }
+
         cell = new Cell().add(inner1);
         table.addCell(cell.setPadding(0));
+
+        // Creates the second inner table
         Table inner2 = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
+        // Creates an empty header cell for the header content drawn by outer table renderer
         cell = new Cell();
         cell.setHeight(20);
         inner2.addHeaderCell(cell);
-        cell = new Cell().add(new Paragraph("This inner may be repeated on every page"));
+
+        // Creates header cell that will be repeated only on pages, where that table has content
+        cell = new Cell().add(new Paragraph("This inner header may be repeated on every page"));
         inner2.addHeaderCell(cell);
+
         for (int i = 0; i < 35; i++) {
             inner2.addCell("test");
         }
+
         cell = new Cell().add(inner2);
         table.addCell(cell.setPadding(0));
+
         doc.add(table);
 
         doc.close();
     }
 
-    private class InnerTableRenderer extends TableRenderer {
+    private static class InnerTableRenderer extends TableRenderer {
         public InnerTableRenderer(Table modelElement, Table.RowRange rowRange) {
             super(modelElement, rowRange);
         }
@@ -86,21 +107,9 @@ public class NestedTables3 {
         }
 
         @Override
-        protected TableRenderer[] split(int row) {
-            InnerTableRenderer splitRenderer = (InnerTableRenderer) createSplitRenderer(
-                    new Table.RowRange(rowRange.getStartRow(), rowRange.getStartRow() + row));
-            splitRenderer.rows = rows.subList(0, row);
-            InnerTableRenderer overflowRenderer = (InnerTableRenderer) createOverflowRenderer(
-                    new Table.RowRange(rowRange.getStartRow() + row, rowRange.getFinishRow()));
-            overflowRenderer.rows = rows.subList(row, rows.size());
-            splitRenderer.occupiedArea = occupiedArea;
-
-            return new TableRenderer[]{splitRenderer, overflowRenderer};
-        }
-
-        @Override
         public void drawChildren(DrawContext drawContext) {
             super.drawChildren(drawContext);
+
             for (IRenderer renderer : childRenderers) {
                 PdfCanvas canvas = drawContext.getCanvas();
                 canvas.beginText();
@@ -115,6 +124,9 @@ public class NestedTables3 {
             }
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
         @Override
         public IRenderer getNextRenderer() {
             return new InnerTableRenderer((Table) modelElement);

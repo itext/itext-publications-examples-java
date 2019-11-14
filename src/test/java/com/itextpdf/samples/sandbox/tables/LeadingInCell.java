@@ -28,6 +28,7 @@ public class LeadingInCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new LeadingInCell().manipulatePdf(DEST);
     }
 
@@ -35,21 +36,33 @@ public class LeadingInCell {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(1));
         table.setWidth(UnitValue.createPercentValue(60));
+
         Cell cell = new Cell();
-        Paragraph p;
-        p = new Paragraph("paragraph 1: leading 16. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(16);
+
+        Paragraph p = new Paragraph("paragraph 1: leading 16. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(16);
         cell.add(p);
-        p = new Paragraph("paragraph 2: leading 32. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(32);
+
+        p = new Paragraph("paragraph 2: leading 32. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(32);
         cell.add(p);
-        p = new Paragraph("paragraph 3: leading 10. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(10);
+
+        p = new Paragraph("paragraph 3: leading 10. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(10);
         cell.add(p);
-        p = new Paragraph("paragraph 4: leading 18. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(18);
+
+        p = new Paragraph("paragraph 4: leading 18. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(18);
         cell.add(p);
-        p = new Paragraph("paragraph 5: leading 40. Text to force a wrap and check the leading. Ha-ha").setFixedLeading(40);
+
+        p = new Paragraph("paragraph 5: leading 40. Text to force a wrap and check the leading. Ha-ha")
+                .setFixedLeading(40);
         cell.add(p);
+
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();

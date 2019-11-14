@@ -38,6 +38,7 @@ public class ClipCenterCellContent {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ClipCenterCellContent().manipulatePdf(DEST);
     }
 
@@ -46,26 +47,30 @@ public class ClipCenterCellContent {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(5)).useAllAvailableWidth();
-        Cell cell;
+
         for (int r = 'A'; r <= 'Z'; r++) {
             for (int c = 1; c <= 5; c++) {
-                cell = new Cell();
+                Cell cell = new Cell();
+
                 if (r == 'D' && c == 2) {
+
+                    // Draw a content that will be clipped in the cell
                     cell.setNextRenderer(new ClipCenterCellContentCellRenderer(cell,
                             new Paragraph("D2 is a cell with more content than we can fit into the cell.")));
                 } else {
-                    cell.add(new Paragraph(String.valueOf((char) r) + String.valueOf(c)));
+                    cell.add(new Paragraph(String.valueOf((char) r) + c));
                 }
                 table.addCell(cell);
             }
         }
+
         doc.add(table);
 
         doc.close();
     }
 
 
-    private class ClipCenterCellContentCellRenderer extends CellRenderer {
+    private static class ClipCenterCellContentCellRenderer extends CellRenderer {
         private Paragraph content;
 
         public ClipCenterCellContentCellRenderer(Cell modelElement, Paragraph content) {
@@ -73,15 +78,27 @@ public class ClipCenterCellContent {
             this.content = content;
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new ClipCenterCellContentCellRenderer((Cell) modelElement, content);
+        }
+
         @Override
         public void draw(DrawContext drawContext) {
+
+            // Fictitiously layout the renderer and find out, how much space does it require
             IRenderer pr = content.createRendererSubTree().setParent(this);
+
             LayoutResult textArea = pr.layout(new LayoutContext(
                     new LayoutArea(0, new Rectangle(getOccupiedAreaBBox().getWidth(), 1000))));
 
-            float spaceneeded = textArea.getOccupiedArea().getBBox().getHeight();
+            float spaceNeeded = textArea.getOccupiedArea().getBBox().getHeight();
             System.out.println(String.format("The content requires %s pt whereas the height is %s pt.",
-                    spaceneeded, getOccupiedAreaBBox().getHeight()));
+                    spaceNeeded, getOccupiedAreaBBox().getHeight()));
+
             float offset = (getOccupiedAreaBBox().getHeight() - textArea.getOccupiedArea().getBBox().getHeight()) / 2;
             System.out.println(String.format("The difference is %s pt; we'll need an offset of %s pt.",
                     -2f * offset, offset));
@@ -89,7 +106,7 @@ public class ClipCenterCellContent {
             PdfFormXObject xObject = new PdfFormXObject(new Rectangle(getOccupiedAreaBBox().getWidth(),
                     getOccupiedAreaBBox().getHeight()));
             Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.getDocument()), drawContext.getDocument(),
-                    new Rectangle(0, offset, getOccupiedAreaBBox().getWidth(), spaceneeded));
+                    new Rectangle(0, offset, getOccupiedAreaBBox().getWidth(), spaceNeeded));
             layoutCanvas.add(content);
 
             drawContext.getCanvas().addXObject(xObject, occupiedArea.getBBox().getLeft(), occupiedArea.getBBox().getBottom());

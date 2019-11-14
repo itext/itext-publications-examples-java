@@ -25,16 +25,20 @@ import java.io.File;
 public class MultipleImagesInTable {
     public static final String DEST
             = "./target/sandbox/tables/multiple_images_in_table.pdf";
+
     public static final String IMG1
             = "./src/test/resources/img/brasil.png";
+
     public static final String IMG2
             = "./src/test/resources/img/dog.bmp";
+
     public static final String IMG3
             = "./src/test/resources/img/fox.bmp";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new MultipleImagesInTable().manipulatePdf(DEST);
     }
 
@@ -46,7 +50,7 @@ public class MultipleImagesInTable {
         Image img2 = new Image(ImageDataFactory.create(IMG2));
         Image img3 = new Image(ImageDataFactory.create(IMG3));
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(1));
         table.setWidth(UnitValue.createPercentValue(20));
 
         img1.setAutoScale(true);

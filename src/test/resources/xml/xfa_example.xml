@@ -1,0 +1,44 @@
+<iText_XFAInvoice>
+<CustomerDetails>
+<TextField_CompanyName>Test company</TextField_CompanyName>
+<TextField_ContactPerson>Test person</TextField_ContactPerson>
+<TextField_email>testemail.com</TextField_email>
+<NumericField_TelephoneNumber>(123) 456-7890</NumericField_TelephoneNumber>
+</CustomerDetails>
+<Subform_CoreDescription xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+<Subform_Order>
+<NumericField_NrLicenses>2.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Someone1</TextField_CompanyName>
+<RadioButtonList_Language>1</RadioButtonList_Language>
+<DropDownList_Type>2</DropDownList_Type>
+<DropDownList_ServerDesktop>2</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias>Someone2</TextField_DeveloperAlias>
+</Subform_Order>
+<Subform_pdfHTMLDescription xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" xfa:dataNode="dataGroup"/>
+<Subform_Order>
+<NumericField_NrLicenses>1.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Someone1</TextField_CompanyName>
+<RadioButtonList_Language/>
+<DropDownList_Type>2</DropDownList_Type>
+<DropDownList_ServerDesktop>2</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias>Someone2</TextField_DeveloperAlias>
+</Subform_Order>
+<Subform_Order>
+<NumericField_NrLicenses>3.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Someone1</TextField_CompanyName>
+<RadioButtonList_Language>1</RadioButtonList_Language>
+<DropDownList_Type>1</DropDownList_Type>
+<DropDownList_ServerDesktop>1</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias/>
+</Subform_Order>
+<Subform_Order>
+<NumericField_NrLicenses>2.00000000</NumericField_NrLicenses>
+<TextField_CompanyName>Someone1</TextField_CompanyName>
+<RadioButtonList_Language/>
+<DropDownList_Type>1</DropDownList_Type>
+<DropDownList_ServerDesktop>1</DropDownList_ServerDesktop>
+<TextField_DeveloperAlias/>
+</Subform_Order>
+</iText_XFAInvoice>
+
+                            

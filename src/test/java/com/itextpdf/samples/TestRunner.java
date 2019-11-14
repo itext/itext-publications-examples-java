@@ -13,11 +13,15 @@ import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.utils.verapdf.VeraPdfValidator;
 import com.itextpdf.kernel.geom.Rectangle;
+import com.itextpdf.test.pdfa.VeraPdfValidator;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
+
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 import java.lang.reflect.Field;
 
@@ -37,26 +41,40 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
-    private List<String> renderCompareList = Arrays.asList("com.itextpdf.samples.sandbox.tables.CellMethod");
+    private static final List<String> renderCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.tables.CellMethod",
+            "com.itextpdf.samples.sandbox.signatures.SignatureExample"
+    );
 
-    private List<String> veraPdfCompareList = Arrays.asList(
+    private static final List<String> veraPdfCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.pdfa.HelloPdfA2a",
             "com.itextpdf.samples.sandbox.pdfa.PdfA1a",
             "com.itextpdf.samples.sandbox.pdfa.PdfA1a_images",
             "com.itextpdf.samples.sandbox.pdfa.PdfA3");
 
     /**
-     * List of samples, which requires xml files comparison
+     * List of samples, which require xml files comparison
      */
-    private List<String> xmlCompareList = Arrays.asList(
+    private static final List<String> xmlCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.acroforms.ReadXFA",
-            "com.itextpdf.samples.sandbox.stamper.AddNamedDestinations"
+            "com.itextpdf.samples.sandbox.stamper.AddNamedDestinations",
+            "com.itextpdf.samples.sandbox.acroforms.CreateXfdf"
     );
 
     /**
-     * List of samples, which requires tag comparison
+     * List of samples, which require txt files comparison
      */
-    private List<String> tagCompareList = Arrays.asList(
+    private List<String> txtCompareList = Arrays.asList(
+            "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles",
+            "com.itextpdf.samples.sandbox.parse.ParseCustom",
+            "com.itextpdf.samples.sandbox.parse.ParseCzech",
+            "com.itextpdf.samples.sandbox.logging.CounterDemo"
+    );
+
+    /**
+     * List of samples, which require tag comparison
+     */
+    private static final List<String> tagCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.tagging.AddArtifactTable",
             "com.itextpdf.samples.sandbox.tagging.AddStars",
             "com.itextpdf.samples.sandbox.tagging.CreateTaggedDocument"
@@ -65,7 +83,7 @@ public class TestRunner extends WrappedSamplesRunner {
     /**
      * Global map of classes with ignored areas
      **/
-    private static Map<String, Map<Integer, List<Rectangle>>> ignoredClassesMap;
+    private static final Map<String, Map<Integer, List<Rectangle>>> ignoredClassesMap;
 
     static {
         Rectangle latinClassIgnoredArea = new Rectangle(30, 539, 250, 13);
@@ -93,42 +111,38 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptWithCertificate");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoto");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoToPage");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemoSystemOut");
 
         // Not a sample classes
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.tutorial.F99_ConvertToUnicodeNotation");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
 
-        // TODO DEVSIX-3105
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles");
-
-        // TODO DEVSIX-3179
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
-
-        // TODO DEVSIX-466
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
-
-        // TODO DEVSIX-3146
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.CustomBorder");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.CustomBorder2");
-
-        // TODO DEVSIX-3099
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.CheckBoxValues");
-
-        // TODO DEVSIX-526
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.ImportXFDF");
-
-        // TODO DEVSIX-3106
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCzech");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ParseCustom");
-
         // TODO DEVSIX-3107
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.GetN2fromSig");
 
-        // TODO DEVSIX-3224
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemo");
+        // TODO DEVSIX-3189
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.Tables.TableBorder");
+
+        // TODO DEVSIX-3188
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplitRowAtEndOfPage");
+
+        // TODO DEVSIX-3188
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplitRowAtSpecificRow");
+
+        // TODO DEVSIX-3187
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.RepeatLastRows");
+
+        // TODO DEVSIX-3187
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.RepeatLastRows2");
+
+        // TODO DEVSIX-3326
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
         return generateTestsList(searchConfig);
     }
@@ -138,6 +152,7 @@ public class TestRunner extends WrappedSamplesRunner {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
+
         runSamples();
         unloadLicense();
     }
@@ -150,11 +165,13 @@ public class TestRunner extends WrappedSamplesRunner {
             if (!compareTool.compareXmls(dest, cmp)) {
                 addError("The XML structures are different.");
             }
+        } else if (txtCompareList.contains(sampleClass.getName())) {
+            addError(compareTxt(dest, cmp));
         } else if (renderCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));
             addError(compareTool.compareDocumentInfo(dest, cmp));
-        } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())){
+        } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_",
                     ignoredClassesMap.get(sampleClass.getName())));
         } else {
@@ -169,6 +186,37 @@ public class TestRunner extends WrappedSamplesRunner {
         }
     }
 
+    private String compareTxt(String dest, String cmp) throws IOException {
+        String errorMessage = null;
+
+        try (
+                BufferedReader destReader = new BufferedReader(new FileReader(dest));
+                BufferedReader cmpReader = new BufferedReader(new FileReader(cmp))
+        ) {
+            int lineNumber = 1;
+            String destLine = destReader.readLine();
+            String cmpLine = cmpReader.readLine();
+            while (destLine != null || cmpLine != null) {
+                if (destLine == null || cmpLine == null) {
+                    errorMessage = "The number of lines is different\n";
+                    break;
+                }
+
+                if (!destLine.equals(cmpLine)) {
+                    errorMessage = "Txt files differ at line " + lineNumber
+                            + "\n See difference: cmp file: \"" + cmpLine + "\"\n"
+                            + "target file: \"" + destLine + "\n";
+                }
+
+                destLine = destReader.readLine();
+                cmpLine = cmpReader.readLine();
+                lineNumber++;
+            }
+        }
+
+        return errorMessage;
+    }
+
     private void unloadLicense() {
         try {
             Field validators = LicenseKey.class.getDeclaredField("validators");
@@ -178,6 +226,7 @@ public class TestRunner extends WrappedSamplesRunner {
             versionField.setAccessible(true);
             versionField.set(null, null);
         } catch (Exception ignored) {
+
             // No exception handling required, because there can be no license loaded
         }
     }

@@ -20,6 +20,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.layout.LayoutArea;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 
 import java.io.File;
@@ -60,6 +61,13 @@ public class ColumnTextChunkImage {
                 Rectangle rect = new Rectangle(50, 600, 350, 200);
                 areas.add(rect);
                 return areas;
+            }
+
+            // If renderer overflows on the next area itext will use default getNextRender() method with default renderer
+            // parameters. So the method should be overrided with the parameters from the initial renderer
+            @Override
+            public IRenderer getNextRenderer() {
+                return new ParagraphRenderer((Paragraph) modelElement);
             }
         });
         doc.add(p);

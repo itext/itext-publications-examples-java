@@ -14,7 +14,12 @@ package com.itextpdf.samples.sandbox.annotations;
 
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfNumber;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
@@ -24,51 +29,59 @@ import java.io.File;
 
 public class AddRotatedAnnotation {
     public static final String DEST = "./target/sandbox/annotations/add_rotated_annotation.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/hello.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AddRotatedAnnotation().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
+        PdfPage firstPage = pdfDoc.getFirstPage();
+        PdfAction linkAction = PdfAction.createURI("https://pages.itextpdf.com/ebook-stackoverflow-questions.html");
 
-        PdfAction action = PdfAction.createURI("http://pages.itextpdf.com/ebook-stackoverflow-questions.html");
-        Rectangle linkLocation1 = new Rectangle(30, 770, 90, 30);
-        PdfAnnotation link1 = new PdfLinkAnnotation(linkLocation1)
+        Rectangle annotLocation = new Rectangle(30, 770, 90, 30);
+        PdfAnnotation link = new PdfLinkAnnotation(annotLocation)
+
+                // Set highlighting type which is enabled after a click on the annotation
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
-                .setAction(action)
+                .setAction(linkAction)
                 .setColor(ColorConstants.RED.getColorValue());
-        pdfDoc.getFirstPage().addAnnotation(link1);
+        firstPage.addAnnotation(link);
 
-        Rectangle linkLocation2 = new Rectangle(30, 670, 30, 90);
-        PdfAnnotation link2 = new PdfLinkAnnotation(linkLocation2)
+        annotLocation = new Rectangle(30, 670, 30, 90);
+        link = new PdfLinkAnnotation(annotLocation)
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
-                .setAction(action)
+                .setAction(linkAction)
                 .setColor(ColorConstants.GREEN.getColorValue());
-        pdfDoc.getFirstPage().addAnnotation(link2);
+        firstPage.addAnnotation(link);
 
-        Rectangle linkLocation3 = new Rectangle(150, 770, 90, 30);
-        PdfAnnotation stamp1 = new PdfStampAnnotation(linkLocation3)
+        annotLocation = new Rectangle(150, 770, 90, 30);
+        PdfAnnotation stamp = new PdfStampAnnotation(annotLocation)
                 .setStampName(new PdfName("Confidential"))
-                .setContents("Landscape");
-        pdfDoc.getFirstPage().addAnnotation(stamp1);
 
-        Rectangle linkLocation4 = new Rectangle(150, 670, 90, 90);
-        PdfAnnotation stamp2 = new PdfStampAnnotation(linkLocation4)
+                // This method sets the text that will be displayed for the annotation or the alternate description,
+                // if this type of annotation does not display text.
+                .setContents("Landscape");
+        firstPage.addAnnotation(stamp);
+
+        annotLocation = new Rectangle(150, 670, 90, 90);
+        stamp = new PdfStampAnnotation(annotLocation)
                 .setStampName(new PdfName("Confidential"))
                 .setContents("Portrait")
                 .put(PdfName.Rotate, new PdfNumber(90));
-        pdfDoc.getFirstPage().addAnnotation(stamp2);
+        firstPage.addAnnotation(stamp);
 
-        Rectangle linkLocation5 = new Rectangle(250, 670, 90, 90);
-        PdfAnnotation stamp3 = new PdfStampAnnotation(linkLocation5)
+        annotLocation = new Rectangle(250, 670, 90, 90);
+        stamp = new PdfStampAnnotation(annotLocation)
                 .setStampName(new PdfName("Confidential"))
                 .setContents("Portrait")
                 .put(PdfName.Rotate, new PdfNumber(45));
-        pdfDoc.getFirstPage().addAnnotation(stamp3);
+        firstPage.addAnnotation(stamp);
 
         pdfDoc.close();
     }

@@ -22,23 +22,26 @@ import java.io.File;
 import java.io.FileInputStream;
 
 public class FillXFA2 {
-    public static final String DEST = "./target/sandbox/acroforms/xfa_form_poland_filled.pdf";
-    public static final String SRC = "./src/test/resources/pdfs/xfa_form_poland.pdf";
-    public static final String XML = "./src/test/resources/xml/xfa_form_poland.xml";
+    public static final String DEST = "./target/sandbox/acroforms/xfa_example_filled.pdf";
+
+    public static final String SRC = "./src/test/resources/pdfs/xfa_invoice_example.pdf";
+    public static final String XML = "./src/test/resources/xml/xfa_example.xml";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FillXFA2().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfReader reader = new PdfReader(SRC);
-        reader.setUnethicalReading(true);
-        PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(DEST));
-
+        PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+
         XfaForm xfa = form.getXfaForm();
+
+        // Method fills this object with XFA data under datasets/data.
         xfa.fillXfaForm(new FileInputStream(XML));
         xfa.write(pdfDoc);
 

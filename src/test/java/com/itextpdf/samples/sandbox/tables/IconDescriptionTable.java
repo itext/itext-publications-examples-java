@@ -29,6 +29,7 @@ public class IconDescriptionTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new IconDescriptionTable().manipulatePdf(DEST);
     }
 
@@ -36,10 +37,13 @@ public class IconDescriptionTable {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{10, 90}));
+        Table table = new Table(UnitValue.createPercentArray(new float[] {10, 90}));
         Image img = new Image(ImageDataFactory.create(IMG));
+
+        // Width and height of image are set to autoscale
         table.addCell(img.setAutoScale(true));
         table.addCell("A light bulb icon");
+
         doc.add(table);
 
         doc.close();

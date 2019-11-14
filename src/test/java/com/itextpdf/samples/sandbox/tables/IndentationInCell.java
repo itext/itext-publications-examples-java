@@ -29,6 +29,7 @@ public class IndentationInCell {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new IndentationInCell().manipulatePdf(DEST);
     }
 
@@ -37,23 +38,27 @@ public class IndentationInCell {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        Cell cell;
-        cell = new Cell().add(new Paragraph("TO:\n\n   name"));
+
+        Cell cell = new Cell().add(new Paragraph("TO:\n\n   name"));
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("TO:\n\n\u00a0\u00a0\u00a0name"));
         table.addCell(cell);
+
         cell = new Cell();
         cell.add(new Paragraph("TO:"));
         Paragraph p = new Paragraph("name");
         p.setMarginLeft(10);
         cell.add(p);
         table.addCell(cell);
+
         cell = new Cell();
         cell.add(new Paragraph("TO:"));
         p = new Paragraph("name");
         p.setTextAlignment(TextAlignment.RIGHT);
         cell.add(p);
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();

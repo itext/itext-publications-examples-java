@@ -29,17 +29,15 @@ public class TableMeasurements {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new TableMeasurements().manipulatePdf(DEST);
-    }
 
-    public static float millimetersToPoints(float value) {
-        return (value / 25.4f) * 72f;
+        new TableMeasurements().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(UnitValue.createPercentArray(10)).useAllAvailableWidth();
+
+        Table table = new Table(UnitValue.createPercentArray(10));
         table.setWidth(millimetersToPoints(100));
         table.addCell(getCell(10));
         table.addCell(getCell(5));
@@ -48,11 +46,17 @@ public class TableMeasurements {
         table.addCell(getCell(3));
         table.addCell(getCell(5));
         table.addCell(getCell(1));
+
         doc.add(table);
+
         doc.close();
     }
 
-    private Cell getCell(int cm) {
+    private static float millimetersToPoints(float value) {
+        return (value / 25.4f) * 72f;
+    }
+
+    private static Cell getCell(int cm) {
         Cell cell = new Cell(1, cm);
         Paragraph p = new Paragraph(
                 String.format("%smm", 10 * cm)).setFontSize(8);

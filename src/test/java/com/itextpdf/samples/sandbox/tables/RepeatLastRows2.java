@@ -31,6 +31,7 @@ public class RepeatLastRows2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RepeatLastRows2().manipulatePdf(DEST);
     }
 
@@ -39,17 +40,19 @@ public class RepeatLastRows2 {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table.setWidth(523);
         table.setNextRenderer(new RepeatTableRenderer(table, new Table.RowRange(0, 100)));
-        for (int i = 1; i < 100; i++)
+
+        for (int i = 1; i < 100; i++) {
             table.addCell(new Cell().add(new Paragraph("row " + i)));
+        }
+
         doc.add(table);
 
         doc.close();
     }
 
 
-    private class RepeatTableRenderer extends TableRenderer {
+    private static class RepeatTableRenderer extends TableRenderer {
         public RepeatTableRenderer(Table modelElement, Table.RowRange rowRange) {
             super(modelElement, rowRange);
         }
@@ -58,6 +61,9 @@ public class RepeatLastRows2 {
             super(modelElement);
         }
 
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
         @Override
         public IRenderer getNextRenderer() {
             return new RepeatTableRenderer((Table) modelElement);
@@ -68,7 +74,9 @@ public class RepeatLastRows2 {
             RepeatTableRenderer splitRenderer = (RepeatTableRenderer) createSplitRenderer(
                     new Table.RowRange(rowRange.getStartRow(), rowRange.getStartRow() + row));
             splitRenderer.rows = rows.subList(0, row);
+
             RepeatTableRenderer overflowRenderer;
+
             if (row > 5) {
                 overflowRenderer = (RepeatTableRenderer) createOverflowRenderer(
                         new Table.RowRange(rowRange.getStartRow() - 5 + row, rowRange.getFinishRow()));
@@ -78,8 +86,10 @@ public class RepeatLastRows2 {
                         new Table.RowRange(rowRange.getStartRow() + row, rowRange.getFinishRow()));
                 overflowRenderer.rows = rows.subList(row, rows.size());
             }
+
             splitRenderer.occupiedArea = occupiedArea;
-            return new TableRenderer[]{splitRenderer, overflowRenderer};
+
+            return new TableRenderer[] {splitRenderer, overflowRenderer};
         }
     }
 }

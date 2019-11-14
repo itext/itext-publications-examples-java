@@ -60,7 +60,7 @@ public class OrdinalNumbers {
         doc.add(second);
         Paragraph fourth = new Paragraph();
         fourth.add("The 4");
-        fourth.add(rd);
+        fourth.add(th);
         fourth.add(" of July");
         doc.add(fourth);
 

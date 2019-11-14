@@ -17,57 +17,51 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfObject;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfStream;
-import com.itextpdf.test.annotations.type.SampleTest;
-
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-@Category(SampleTest.class)
 public class ExtractStreams {
-    public static final String DEST = "./target/test/resources/sandbox/parse/extract_streams%s";
+    public static final String DEST = "./target/sandbox/parse";
+
     public static final String SRC = "./src/test/resources/pdfs/image.pdf";
 
-    @BeforeClass
     public static void before() {
         new File(DEST).getParentFile().mkdirs();
     }
 
     public static void main(String[] args) throws IOException {
-        before();
-        new ExtractStreams().manipulatePdf();
+        File file = new File(DEST);
+        file.mkdirs();
+
+        new ExtractStreams().manipulatePdf(DEST);
     }
 
-    @Test
-    public void manipulatePdf() throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC));
-        PdfObject obj;
-        List<Integer> streamLengths = new ArrayList<>();
-        for (int i = 1; i <= pdfDoc.getNumberOfPdfObjects(); i++) {
-            obj = pdfDoc.getPdfObject(i);
+
+        int numberOfPdfObjects = pdfDoc.getNumberOfPdfObjects();
+        for (int i = 1; i <= numberOfPdfObjects; i++) {
+            PdfObject obj = pdfDoc.getPdfObject(i);
             if (obj != null && obj.isStream()) {
                 byte[] b;
                 try {
+
+                    // Get decoded stream bytes.
                     b = ((PdfStream) obj).getBytes();
                 } catch (PdfException exc) {
+
+                    // Get originally encoded stream bytes
                     b = ((PdfStream) obj).getBytes(false);
                 }
-                System.out.println(b.length);
-                FileOutputStream fos = new FileOutputStream(String.format(DEST, i));
-                fos.write(b);
 
-                streamLengths.add(b.length);
-                fos.close();
+                try (FileOutputStream fos = new FileOutputStream(String.format(dest + "/extract_streams%s.dat", i))) {
+                    fos.write(b);
+                }
             }
         }
-        Assert.assertArrayEquals(new Integer[]{30965, 74}, streamLengths.toArray(new Integer[streamLengths.size()]));
+
         pdfDoc.close();
     }
 }

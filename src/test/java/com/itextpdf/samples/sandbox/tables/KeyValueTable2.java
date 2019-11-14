@@ -30,18 +30,16 @@ import java.io.IOException;
 public class KeyValueTable2 {
     public static final String DEST = "./target/sandbox/tables/key_value_table2.pdf";
 
-    protected PdfFont regular;
-    protected PdfFont bold;
-
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new KeyValueTable2().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
-        bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.TIMES_BOLD);
+        PdfFont regular = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
 
         UserObject rohit = new UserObject();
         rohit.setName("Rohit");
@@ -57,35 +55,36 @@ public class KeyValueTable2 {
 
         PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
         Document document = new Document(pdf);
-        document.add(createTable(rohit, bruno));
+
+        document.add(createTable(rohit, bruno, bold, regular));
+
         document.close();
     }
 
-    public Table createTable(UserObject user1, UserObject user2) {
-        if (user1 == null) {
-            user1 = new UserObject();
-        }
-        if (user2 == null) {
-            user2 = new UserObject();
-        }
+    private static Table createTable(UserObject user1, UserObject user2, PdfFont bold, PdfFont regular) {
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
+
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Name:")));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user1.getName())));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user2.getName())));
+
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Id:")));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user1.getId())));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user2.getId())));
+
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Reputation:")));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(String.valueOf(user1.getReputation()))));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(String.valueOf(user2.getReputation()))));
+
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(bold).add(new Paragraph("Job title:")));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user1.getJobtitle())));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).setFont(regular).add(new Paragraph(user2.getJobtitle())));
+
         return table;
     }
 
 
-    class UserObject {
+    private static class UserObject {
         protected String name = "";
         protected String id = "";
         protected int reputation = 0;

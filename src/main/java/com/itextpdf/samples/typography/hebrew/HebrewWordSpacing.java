@@ -18,13 +18,10 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.experimental.categories.Category;
 
 import java.io.File;
 import java.io.IOException;
 
-@Category(SampleTest.class)
 public class HebrewWordSpacing {
 
     public static final String DEST = "./target/samples/typography/HebrewWordSpacing.pdf";
@@ -78,7 +75,7 @@ public class HebrewWordSpacing {
     private static Paragraph createParagraph(String text) {
         Paragraph paragraph = new Paragraph(text);
 
-        //In Hebrew text goes from right to left, that's one we need to overwrite the default iText's alignment
+        // In Hebrew text goes from right to left, that's why we need to overwrite the default iText's alignment
         paragraph.setTextAlignment(TextAlignment.RIGHT);
         return paragraph;
     }

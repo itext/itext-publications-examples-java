@@ -28,17 +28,20 @@ import java.io.File;
 public class MultipleImagesInCell {
     public static final String DEST
             = "./target/sandbox/tables/multiple_images_in_cell.pdf";
+
     public static final String IMG1
             = "./src/test/resources/img/brasil.png";
+
     public static final String IMG2
             = "./src/test/resources/img/dog.bmp";
+
     public static final String IMG3
             = "./src/test/resources/img/fox.bmp";
-
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new MultipleImagesInCell().manipulatePdf(DEST);
     }
 
@@ -53,6 +56,7 @@ public class MultipleImagesInCell {
         Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.setWidth(UnitValue.createPercentValue(50));
         table.addCell("Different images, one after the other vertically:");
+
         Cell cell = new Cell();
 
         // There's no image autoscaling by default
@@ -68,9 +72,9 @@ public class MultipleImagesInCell {
         img1.setAutoScale(false);
         img2.setAutoScale(false);
         img3.setAutoScale(false);
-
         table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell("Different images, one after the other vertically, but scaled:");
+
         cell = new Cell();
         img1.setWidth(UnitValue.createPercentValue(20));
         cell.add(img1);
@@ -79,13 +83,13 @@ public class MultipleImagesInCell {
         img3.setWidth(UnitValue.createPercentValue(20));
         cell.add(img3);
         table.addCell(cell);
+
         table.addCell("Different images, one after the other horizontally:");
 
         // Notice that the table is not flushed yet so it's strictly forbidden to change image properties yet
         img1 = new Image(ImageDataFactory.create(IMG1));
         img2 = new Image(ImageDataFactory.create(IMG2));
         img3 = new Image(ImageDataFactory.create(IMG3));
-
         Paragraph p = new Paragraph();
         img1.scale(0.3f, 0.3f);
         p.add(img1);
@@ -96,7 +100,6 @@ public class MultipleImagesInCell {
 
         img2 = new Image(ImageDataFactory.create(IMG2));
         img3 = new Image(ImageDataFactory.create(IMG3));
-
         p = new Paragraph("The quick brown ");
         p.add(img3);
         p.add(" jumps over the lazy ");

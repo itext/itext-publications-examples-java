@@ -26,6 +26,7 @@ public class IndentTable {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new IndentTable().manipulatePdf(DEST);
     }
 
@@ -37,13 +38,17 @@ public class IndentTable {
         cb.moveTo(36, 842);
         cb.lineTo(36, 0);
         cb.stroke();
-        Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
+
+        Table table = new Table(UnitValue.createPercentArray(8));
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
         table.setWidth(150);
+
         for (int aw = 0; aw < 16; aw++) {
             table.addCell(new Cell().add(new Paragraph("hi")));
         }
+
         table.setMarginLeft(25);
+
         doc.add(table);
 
         doc.close();

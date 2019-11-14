@@ -30,17 +30,21 @@ import com.itextpdf.layout.property.Property;
 import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
 public class TiledBackground {
     public static final String DEST = "./target/sandbox/tables/tiled_background.pdf";
+
     public static final String IMG1 = "./src/test/resources/img/ALxRF.png";
+
     public static final String IMG2 = "./src/test/resources/img/bulb.gif";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TiledBackground().manipulatePdf(DEST);
     }
 
@@ -49,25 +53,28 @@ public class TiledBackground {
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+
         Cell cell = new Cell();
         ImageData image = ImageDataFactory.create(IMG1);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
         cell.setProperty(Property.BOX_SIZING, BoxSizingPropertyValue.BORDER_BOX);
         cell.setHeight(770).setBorder(Border.NO_BORDER);
         table.addCell(cell);
+
         cell = new Cell();
         image = ImageDataFactory.create(IMG2);
         cell.setNextRenderer(new TiledImageBackgroundCellRenderer(cell, image));
         cell.setProperty(Property.BOX_SIZING, BoxSizingPropertyValue.BORDER_BOX);
         cell.setHeight(770).setBorder(Border.NO_BORDER);
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();
     }
 
 
-    private class TiledImageBackgroundCellRenderer extends CellRenderer {
+    private static class TiledImageBackgroundCellRenderer extends CellRenderer {
         protected ImageData img;
 
         public TiledImageBackgroundCellRenderer(Cell modelElement, ImageData img) {
@@ -75,22 +82,42 @@ public class TiledBackground {
             this.img = img;
         }
 
-        public void colorRectangle(PdfCanvas canvas, Color color, float x, float y, float width, float height) {
-            canvas.saveState().setFillColor(color).rectangle(x, y, width, height).fillStroke().restoreState();
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new TiledImageBackgroundCellRenderer((Cell) modelElement, img);
         }
 
         @Override
         public void draw(DrawContext drawContext) {
-            PdfPattern.Tiling img_pattern = new PdfPattern.Tiling(img.getWidth(), img.getHeight(), img.getWidth(),
+            PdfPattern.Tiling imgPattern = new PdfPattern.Tiling(img.getWidth(), img.getHeight(), img.getWidth(),
                     img.getHeight());
-            new PdfPatternCanvas(img_pattern, drawContext.getDocument()).addImage(img, 0, 0, false);
+
+            PdfPatternCanvas patternCanvas = new PdfPatternCanvas(imgPattern, drawContext.getDocument());
+            patternCanvas.addImage(img, 0, 0, false);
+
             PdfCanvas canvas = drawContext.getCanvas();
+
             canvas.saveState();
-            colorRectangle(canvas, new PatternColor(img_pattern), getOccupiedAreaBBox().getX(),
+
+            colorRectangle(canvas, new PatternColor(imgPattern), getOccupiedAreaBBox().getX(),
                     getOccupiedAreaBBox().getY(), getOccupiedAreaBBox().getWidth(), getOccupiedAreaBBox().getHeight());
-            canvas.setFillColor(new PatternColor(img_pattern));
+
+            canvas.setFillColor(new PatternColor(imgPattern));
             canvas.stroke();
+
             canvas.restoreState();
+        }
+
+        private static void colorRectangle(PdfCanvas canvas, Color color, float x, float y, float width, float height) {
+            canvas
+                    .saveState()
+                    .setFillColor(color)
+                    .rectangle(x, y, width, height)
+                    .fillStroke()
+                    .restoreState();
         }
     }
 }

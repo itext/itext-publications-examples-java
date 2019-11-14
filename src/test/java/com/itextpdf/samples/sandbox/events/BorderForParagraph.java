@@ -18,6 +18,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.renderer.DrawContext;
+import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 
 import java.io.File;
@@ -51,6 +52,14 @@ public class BorderForParagraph {
     private class BorderParagraphRenderer extends ParagraphRenderer {
         public BorderParagraphRenderer(Paragraph modelElement) {
             super(modelElement);
+        }
+
+        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
+        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // renderer will be created
+        @Override
+        public IRenderer getNextRenderer() {
+            return new BorderParagraphRenderer((Paragraph) modelElement);
         }
 
         @Override
