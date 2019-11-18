@@ -50,7 +50,7 @@ public class AddOCG {
 
         canvas.beginLayer(nested);
         Canvas canvasModel = new Canvas(canvas, pdfDoc, pdfDoc.getDefaultPageSize());
-        canvasModel.showTextAligned("nested layers", 50, 755, TextAlignment.LEFT, 0);
+        canvasModel.showTextAligned("nested layers", 50, 765, TextAlignment.LEFT, 0);
         canvas.endLayer();
 
         canvas.beginLayer(nested1);
