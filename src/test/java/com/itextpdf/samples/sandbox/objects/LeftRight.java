@@ -33,8 +33,8 @@ public class LeftRight {
         new LeftRight().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         Paragraph p = new Paragraph("Text to the left");
@@ -52,7 +52,7 @@ public class LeftRight {
         doc.close();
     }
 
-    public Cell getCell(String text, TextAlignment alignment) {
+    private static Cell getCell(String text, TextAlignment alignment) {
         Cell cell = new Cell().add(new Paragraph(text));
         cell.setPadding(0);
         cell.setTextAlignment(alignment);

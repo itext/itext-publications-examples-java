@@ -38,16 +38,8 @@ public class TableSpace {
         new TableSpace().manipulatePdf(DEST);
     }
 
-    public Paragraph createParagraphWithSpaces(PdfFont font, String value1, String value2) {
-        Paragraph p = new Paragraph();
-        p.setFont(font);
-        p.add(String.format("%-35s", value1));
-        p.add(value2);
-        return p;
-    }
-
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.CP1250, true);
 
@@ -56,5 +48,13 @@ public class TableSpace {
         doc.add(createParagraphWithSpaces(font, String.format("%s: %s", "School", DATA[2][0]), DATA[2][1]));
 
         doc.close();
+    }
+
+    private static Paragraph createParagraphWithSpaces(PdfFont font, String value1, String value2) {
+        Paragraph p = new Paragraph();
+        p.setFont(font);
+        p.add(String.format("%-35s", value1));
+        p.add(value2);
+        return p;
     }
 }

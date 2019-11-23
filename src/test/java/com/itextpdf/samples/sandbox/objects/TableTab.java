@@ -25,7 +25,6 @@ import java.io.IOException;
 
 public class TableTab {
     public static final String DEST = "./target/sandbox/objects/table_tab.pdf";
-    public static final String FONT = "./src/test/resources/font/PTM55FT.ttf";
     public static final String[][] DATA = {
             {"John Edward Jr.", "AAA"},
             {"Pascal Einstein W. Alfi", "BBB"},
@@ -38,18 +37,8 @@ public class TableTab {
         new TableTab().manipulatePdf(DEST);
     }
 
-    public Paragraph createParagraphWithTab(String key, String value1, String value2) {
-        Paragraph p = new Paragraph();
-        p.addTabStops(new TabStop(200f, TabAlignment.LEFT));
-        p.add(key);
-        p.add(value1);
-        p.add(new Tab());
-        p.add(value2);
-        return p;
-    }
-
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         doc.add(createParagraphWithTab("Name: ", DATA[0][0], DATA[0][1]));
@@ -57,5 +46,15 @@ public class TableTab {
         doc.add(createParagraphWithTab("School: ", DATA[2][0], DATA[2][1]));
 
         doc.close();
+    }
+
+    private static Paragraph createParagraphWithTab(String key, String value1, String value2) {
+        Paragraph p = new Paragraph();
+        p.addTabStops(new TabStop(200f, TabAlignment.LEFT));
+        p.add(key);
+        p.add(value1);
+        p.add(new Tab());
+        p.add(value2);
+        return p;
     }
 }

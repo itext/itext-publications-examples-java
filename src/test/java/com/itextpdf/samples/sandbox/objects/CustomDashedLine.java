@@ -33,33 +33,26 @@ public class CustomDashedLine {
         new CustomDashedLine().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         doc.add(new Paragraph("Before dashed line"));
-        CustomDashedLineSeparator separator = new CustomDashedLineSeparator();
-        separator.setDash(10);
-        separator.setGap(7);
-        separator.setLineWidth(3);
-        doc.add(new LineSeparator(separator));
+
+        CustomDashedLineSeparator dashedLine = new CustomDashedLineSeparator();
+        dashedLine.setDash(10f);
+        dashedLine.setPhase(2.5f);
+        dashedLine.setGap(7f);
+        dashedLine.setLineWidth(3f);
+        doc.add(new LineSeparator(dashedLine));
         doc.add(new Paragraph("After dashed line"));
 
         doc.close();
     }
 
-
-    class CustomDashedLineSeparator extends DottedLine {
-        protected float dash = 5;
-        protected float phase = 2.5f;
-
-        public float getDash() {
-            return dash;
-        }
-
-        public float getPhase() {
-            return phase;
-        }
+    protected class CustomDashedLineSeparator extends DottedLine {
+        private float dash;
+        private float phase;
 
         public void setDash(float dash) {
             this.dash = dash;

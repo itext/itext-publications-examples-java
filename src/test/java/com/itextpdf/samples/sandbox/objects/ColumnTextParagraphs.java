@@ -42,39 +42,47 @@ public class ColumnTextParagraphs {
         new ColumnTextParagraphs().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        doc.setRenderer(new DocumentRenderer(doc) {
-            int nextAreaNumber = 0;
-            int currentPageNumber;
+        doc.setRenderer(new CustomDocumentRenderer(doc));
 
-            // If renderer overflows on the next area itext will use default getNextRender() method with default renderer
-            // parameters. So the method should be overrided with the parameters from the initial renderer
-            @Override
-            public IRenderer getNextRenderer() {
-                return new DocumentRenderer(document);
-            }
-
-            @Override
-            public LayoutArea updateCurrentArea(LayoutResult overflowResult) {
-                if (nextAreaNumber % 2 == 0) {
-                    currentPageNumber = super.updateCurrentArea(overflowResult).getPageNumber();
-                } else {
-                    new PdfCanvas(document.getPdfDocument(), document.getPdfDocument().getNumberOfPages())
-                            .moveTo(297.5f, 36)
-                            .lineTo(297.5f, 806)
-                            .stroke();
-                }
-                return (currentArea = new RootLayoutArea(currentPageNumber, COLUMNS[nextAreaNumber++ % 2].clone()));
-            }
-        });
-
-        int paragraphs = 0;
-        while (paragraphs < 30) {
-            doc.add(new Paragraph(String.format("Paragraph %s: %s", ++paragraphs, TEXT)));
+        int pCounter = 0;
+        while (pCounter < 30) {
+            doc.add(new Paragraph(String.format("Paragraph %s: %s", ++pCounter, TEXT)));
         }
         doc.close();
+    }
+
+    protected class CustomDocumentRenderer extends DocumentRenderer {
+        int nextAreaNumber = 0;
+        int currentPageNumber;
+
+        public CustomDocumentRenderer(Document document) {
+            super(document);
+        }
+
+        // If renderer overflows on the next area iText will use default getNextRender() method with default renderer
+        // parameters. So the method should be overridden with the parameters from the initial renderer
+        @Override
+        public IRenderer getNextRenderer() {
+            return new DocumentRenderer(document);
+        }
+
+        @Override
+        public LayoutArea updateCurrentArea(LayoutResult overflowResult) {
+            if (nextAreaNumber % 2 == 0) {
+                currentPageNumber = super.updateCurrentArea(overflowResult).getPageNumber();
+            } else {
+                new PdfCanvas(document.getPdfDocument(), document.getPdfDocument().getNumberOfPages())
+                        .moveTo(297.5f, 36)
+                        .lineTo(297.5f, 806)
+                        .stroke();
+            }
+            currentArea = new RootLayoutArea(currentPageNumber, COLUMNS[nextAreaNumber % 2].clone());
+            nextAreaNumber++;
+            return currentArea;
+        }
     }
 }

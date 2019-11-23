@@ -34,8 +34,8 @@ public class ListInColumn {
         new ListInColumn().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         while (pdfDoc.getNumberOfPages() > 2) {
             pdfDoc.removePage(pdfDoc.getLastPage());
         }

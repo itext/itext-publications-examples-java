@@ -35,19 +35,25 @@ public class ChapterAndTitle {
         new ChapterAndTitle().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont chapterFont = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLDOBLIQUE);
-        Paragraph title = new Paragraph("This is the title").setFont(chapterFont).setFontSize(16);
-        title.setDestination("title");
+        String titleDestination = "title";
+
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLDOBLIQUE);
+        Paragraph title = new Paragraph("This is the title with the font HELVETICA 16")
+                .setFont(font).setFontSize(16);
+        title.setDestination(titleDestination);
         doc.add(title);
 
+        // It is an alternative for iText5 Chapter class, because
+        // iText5 Chapter class also creates bookmarks automatically.
         PdfOutline root = pdfDoc.getOutlines(false);
-        root.addOutline("This is the title").addDestination(PdfDestination.makeDestination(new PdfString("title")));
+        root.addOutline("This is the title")
+                .addDestination(PdfDestination.makeDestination(new PdfString(titleDestination)));
 
-        Paragraph p = new Paragraph("This is the paragraph");
+        Paragraph p = new Paragraph("This is the paragraph with the default font");
         doc.add(p);
 
         doc.close();

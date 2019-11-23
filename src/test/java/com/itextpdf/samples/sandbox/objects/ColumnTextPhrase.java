@@ -37,16 +37,18 @@ public class ColumnTextPhrase {
         new ColumnTextPhrase().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
-        PdfFont f = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-        Paragraph pz = new Paragraph("Hello World!").setFont(f).setFixedLeading(20);
-        new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 480))
-                .add(pz);
-        f = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, true);
-        pz = new Paragraph("Hello World!").setFont(f).setFontSize(13);
+        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, true);
+        Paragraph pz = new Paragraph("Hello World!").setFont(font).setFontSize(13);
         new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 580))
+                .add(pz);
+
+        // The Leading is used in this paragraph, the Leading is a spacing between lines of text
+        font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+        pz = new Paragraph("Hello World!").setFont(font).setFixedLeading(20);
+        new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 480))
                 .add(pz);
 
         pdfDoc.close();

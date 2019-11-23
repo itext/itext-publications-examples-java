@@ -29,14 +29,17 @@ public class ParagraphSpacingBefore {
         new ParagraphSpacingBefore().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         Paragraph paragraph1 = new Paragraph("First paragraph");
+        doc.add(paragraph1);
+
         Paragraph paragraph2 = new Paragraph("Second paragraph");
         paragraph2.setMarginTop(380f);
-        doc.add(paragraph1);
         doc.add(paragraph2);
+
         doc.close();
     }
 }

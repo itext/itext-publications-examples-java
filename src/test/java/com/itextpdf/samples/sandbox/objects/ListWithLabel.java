@@ -33,18 +33,19 @@ public class ListWithLabel {
         new ListWithLabel().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         Table table = new Table(new float[]{1, 10});
         table.setWidth(200);
         table.setHorizontalAlignment(HorizontalAlignment.LEFT);
-        Cell cell;
-        cell = new Cell();
+
+        Cell cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         cell.add(new Paragraph("Label"));
         table.addCell(cell);
+
         cell = new Cell();
         cell.setBorder(Border.NO_BORDER);
         List list = new List();
@@ -53,6 +54,7 @@ public class ListWithLabel {
         list.add(new ListItem("Value 3"));
         cell.add(list);
         table.addCell(cell);
+
         doc.add(table);
 
         doc.close();

@@ -9,8 +9,6 @@
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/20233630/itextsharp-how-to-add-a-full-line-break
- * <p>
- * We create a Chunk and add a background color.
  */
 package com.itextpdf.samples.sandbox.objects;
 
@@ -35,8 +33,8 @@ public class FullDottedLine {
         new FullDottedLine().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         doc.add(new Paragraph("Before dotted line"));
@@ -47,8 +45,8 @@ public class FullDottedLine {
     }
 
 
-    class CustomDottedLine extends DottedLine {
-        protected Rectangle pageSize;
+    protected class CustomDottedLine extends DottedLine {
+        private Rectangle pageSize;
 
         public CustomDottedLine(Rectangle pageSize) {
             this.pageSize = pageSize;
@@ -56,6 +54,7 @@ public class FullDottedLine {
 
         @Override
         public void draw(PdfCanvas canvas, Rectangle drawArea) {
+            // Dotted line from the left edge of the page to the right edge.
             super.draw(canvas, new Rectangle(pageSize.getLeft(), drawArea.getBottom(), pageSize.getWidth(), drawArea.getHeight()));
         }
     }

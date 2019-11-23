@@ -33,7 +33,7 @@ public class DottedLineEnder {
         new DottedLineEnder().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
@@ -41,6 +41,7 @@ public class DottedLineEnder {
         p.addTabStops(new TabStop(523, TabAlignment.RIGHT, new DottedLine()));
         p.add(new Tab());
         doc.add(p);
+
         p = new Paragraph("This is a much longer paragraph that spans "
                 + "several lines. The String used to create this paragraph "
                 + "will be split automatically at the end of the line. The "

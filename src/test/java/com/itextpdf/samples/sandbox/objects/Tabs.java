@@ -13,6 +13,7 @@
  * 1. Without a tab
  * 2. With a leading tab
  * 3. With an inline tab
+ * 4. With a leading tab and with an inline tab
  */
 package com.itextpdf.samples.sandbox.objects;
 
@@ -30,7 +31,6 @@ import java.io.IOException;
 
 public class Tabs {
     public static final String DEST = "./target/sandbox/objects/tabs.pdf";
-    public static final String FONT = "./src/test/resources/font/Cardo-Regular.ttf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
@@ -38,21 +38,30 @@ public class Tabs {
         new Tabs().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         Paragraph p = new Paragraph("Hello World.");
         doc.add(p);
 
         p = new Paragraph();
-        p.addTabStops(new TabStop(56f, TabAlignment.LEFT));
+        p.addTabStops(new TabStop(60f, TabAlignment.LEFT));
         p.add(new Tab());
         p.add("Hello World with tab.");
         doc.add(p);
 
         p = new Paragraph();
-        p.addTabStops(new TabStop(56f, TabAlignment.LEFT));
+        p.addTabStops(new TabStop(200f, TabAlignment.LEFT));
+        p.add(new Text("Hello World with"));
+        p.add(new Tab());
+        p.add(new Text("an inline tab."));
+        doc.add(p);
+
+        p = new Paragraph();
+        p.addTabStops(new TabStop(60f, TabAlignment.LEFT));
+        p.add(new Tab());
+        p.addTabStops(new TabStop(200f, TabAlignment.LEFT));
         p.add(new Text("Hello World with"));
         p.add(new Tab());
         p.add(new Text("an inline tab."));

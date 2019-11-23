@@ -37,8 +37,8 @@ public class DrawRectangleAroundText {
         new DrawRectangleAroundText().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage());
@@ -47,22 +47,25 @@ public class DrawRectangleAroundText {
                 + "ColumnText object, so it will be distributed over several"
                 + "lines (and we don't know in advance how many).");
 
-        new Canvas(canvas, pdfDoc, new Rectangle(120, 500, 130, 280))
+        Rectangle firstRect = new Rectangle(120, 500, 130, 280);
+        new Canvas(canvas, pdfDoc, firstRect)
                 .add(p);
-        canvas.rectangle(120, 500, 130, 280);
+        canvas.rectangle(firstRect);
         canvas.stroke();
 
-        // In the lines below the comment we try to reproduce the itext5 method to achieve the result
+        // In the lines below the comment we try to reproduce the iText5 method to achieve the result
         // However it's much more simple to use the next line
         // p.setBorder(new SolidBorder(1));
         // Or you can implement your own ParagraphRenderer and change the behaviour of drawBorder(DrawContext)
         // or draw(DrawContext)
+        Rectangle secRect = new Rectangle(300, 500, 130, 280);
         ParagraphRenderer renderer = (ParagraphRenderer) p.createRendererSubTree().setParent(doc.getRenderer());
-        float height = renderer.layout(new LayoutContext(new LayoutArea(0, new Rectangle(300, 500, 130, 280)))).getOccupiedArea().getBBox().getHeight();
+        float height = renderer.layout(new LayoutContext(new LayoutArea(0, secRect)))
+                .getOccupiedArea().getBBox().getHeight();
 
-        new Canvas(canvas, pdfDoc, new Rectangle(300, 500, 130, 280))
+        new Canvas(canvas, pdfDoc, secRect)
                 .add(p);
-        canvas.rectangle(300, 500 + 280 - height, 130, height);
+        canvas.rectangle(secRect.getX(), secRect.getY() + secRect.getHeight() - height, secRect.getWidth(), height);
         canvas.stroke();
 
         doc.close();

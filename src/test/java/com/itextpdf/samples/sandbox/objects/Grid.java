@@ -25,18 +25,17 @@ public class Grid {
         new Grid().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
+
         PageSize pageSize = new PageSize(612, 792);
         pdfDoc.setDefaultPageSize(pageSize);
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-        for (float x = 0; x < pageSize.getWidth(); ) {
-            for (float y = 0; y < pageSize.getHeight(); ) {
+        for (float x = 0; x < pageSize.getWidth(); x += 72f) {
+            for (float y = 0; y < pageSize.getHeight(); y += 72f) {
                 canvas.circle(x, y, 1f);
-                y += 72f;
             }
-            x += 72f;
         }
         canvas.fill();
 

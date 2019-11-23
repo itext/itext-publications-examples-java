@@ -30,19 +30,22 @@ public class ColumnTextChunkImage {
         new ColumnTextChunkImage().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfImageXObject dog = new PdfImageXObject(ImageDataFactory.create(DOG));
         PdfImageXObject fox = new PdfImageXObject(ImageDataFactory.create(FOX));
-        Paragraph p = new Paragraph("quick brown fox jumps over the lazy dog.").
-                add("Or, to say it in a more colorful way: quick brown ").
-                add(new Image(fox)).
-                add(" jumps over the lazy ").
-                add(new Image(dog)).
-                add(".").
-                setMultipliedLeading(1);
+        Paragraph p = new Paragraph("quick brown fox jumps over the lazy dog.")
+                .add("Or, to say it in a more colorful way: quick brown ")
+                .add(new Image(fox))
+                .add(" jumps over the lazy ")
+                .add(new Image(dog))
+                .add(".")
+
+                // The Leading is a spacing between lines of text
+                .setMultipliedLeading(1);
+
         doc.add(p);
 
         doc.close();

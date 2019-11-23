@@ -6,7 +6,7 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-/*
+/**
  * This example was written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/30369587/how-to-write-bulleted-list-in-pdf-using-itext-jar-but-item-should-not-in-next-li
  */
@@ -39,34 +39,39 @@ public class Bullets {
         new Bullets().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont zapfdingbats = PdfFontFactory.createFont(StandardFonts.ZAPFDINGBATS);
-        Text bullet = new Text(String.valueOf((char) 108)).setFont(zapfdingbats);
-        PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+        PdfFont zapfdingbatsFont = PdfFontFactory.createFont(StandardFonts.ZAPFDINGBATS);
+        Text bullet = new Text(String.valueOf((char) 108)).setFont(zapfdingbatsFont);
+        PdfFont helveticaFont = PdfFontFactory.createFont(StandardFonts.HELVETICA);
 
-        Paragraph p = new Paragraph("Items can be split if they don't fit at the end: ").setFont(font);
+        // No-Break Space prevents breaking a text in this place
+        char space = '\u00a0';
+
+        Paragraph p = new Paragraph("Items can be split if they don't fit at the end: ").setFont(helveticaFont);
         for (String item : ITEMS) {
             p.add(bullet);
-            p.add(new Text(" " + item + " ")).setFont(font);
+            p.add(new Text(" " + item + " ")).setFont(helveticaFont);
         }
         doc.add(p);
         doc.add(new Paragraph("\n"));
 
-        p = new Paragraph("Items can't be split if they don't fit at the end: ").setFont(font);
+        p = new Paragraph("Items can't be split if they don't fit at the end: ").setFont(helveticaFont);
         for (String item : ITEMS) {
             p.add(bullet);
-            p.add(new Text("\u00a0" + item.replace(' ', '\u00a0') + " ")).setFont(font);
+            p.add(new Text(space + item.replace(' ', space) + " ")).setFont(helveticaFont);
         }
         doc.add(p);
         doc.add(new Paragraph("\n"));
 
-        PdfFont f = PdfFontFactory.createFont("./src/test/resources/font/FreeSans.ttf", PdfEncodings.IDENTITY_H);
-        p = new Paragraph("Items can't be split if they don't fit at the end: ").setFont(f);
+        PdfFont freeSansFont = PdfFontFactory.createFont("./src/test/resources/font/FreeSans.ttf", PdfEncodings.IDENTITY_H);
+        p = new Paragraph("Items can't be split if they don't fit at the end: ").setFont(freeSansFont);
         for (String item : ITEMS) {
-            p.add(new Text("\u2022\u00a0" + item.replace(' ', '\u00a0') + " "));
+
+            // Paste unicode Bullet symbol
+            p.add(new Text("\u2022" + space + item.replace(' ', space) + " "));
         }
         doc.add(p);
 

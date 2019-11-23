@@ -29,8 +29,7 @@ import java.io.IOException;
 
 public class IndentationOptions {
     public static final String CONTENT = "test A, test B, coconut, coconut, watermelons, apple, oranges, many more " +
-            "fruites, carshow, monstertrucks thing, everything is startting on the " +
-            "same point in the line now";
+            "fruites, carshow, monstertrucks thing, everything is startting on the same point in the line now";
     public static final String LABEL = "A list of stuff: ";
     public static final String DEST = "./target/sandbox/objects/indentation_options.pdf";
 
@@ -40,7 +39,7 @@ public class IndentationOptions {
         new IndentationOptions().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
@@ -50,13 +49,15 @@ public class IndentationOptions {
         doc.add(list);
 
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-        Paragraph p = new Paragraph(LABEL + CONTENT).setFont(font);
+        Paragraph paragraph = new Paragraph(LABEL + CONTENT).setFont(font);
         float indentation = font.getWidth(LABEL, 12);
-        p
-                .setMarginLeft(indentation)
-                .setFirstLineIndent(-indentation);
-        doc.add(p);
 
+        // Shift all lines except the first one to the width of the label
+        paragraph.setMarginLeft(indentation)
+                .setFirstLineIndent(-indentation);
+        doc.add(paragraph);
+
+        // Add 4, because the default padding (left and right) of a cell equals 2
         Table table = new Table(new float[]{indentation + 4, 519 - indentation});
         table.addCell(new Cell().setBorder(Border.NO_BORDER).add(new Paragraph(LABEL)));
         table.addCell(new Cell().setBorder(Border.NO_BORDER).add(new Paragraph(CONTENT)));

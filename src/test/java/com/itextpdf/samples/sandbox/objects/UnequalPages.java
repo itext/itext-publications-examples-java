@@ -31,23 +31,21 @@ public class UnequalPages {
         new UnequalPages().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PageSize one = new PageSize(70, 140);
-        PageSize two = new PageSize(700, 400);
-
-        pdfDoc.setDefaultPageSize(one);
-        doc.setMargins(2, 2, 2, 2);
-
+        PageSize pageSizeOne = new PageSize(70, 140);
+        PageSize pageSizeTwo = new PageSize(700, 400);
         Paragraph p = new Paragraph("Hi");
+
+        pdfDoc.setDefaultPageSize(pageSizeOne);
+        doc.setMargins(2, 2, 2, 2);
         doc.add(p);
 
-        pdfDoc.setDefaultPageSize(two);
+        pdfDoc.setDefaultPageSize(pageSizeTwo);
         doc.setMargins(20, 20, 20, 20);
         doc.add(new AreaBreak());
-
         doc.add(p);
 
         doc.close();

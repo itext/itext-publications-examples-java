@@ -29,7 +29,7 @@ public class DrawRectangle {
         new DrawRectangle().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());

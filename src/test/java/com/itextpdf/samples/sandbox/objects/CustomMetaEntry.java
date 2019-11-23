@@ -29,15 +29,16 @@ public class CustomMetaEntry {
         new CustomMetaEntry().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         pdfDoc.getDocumentInfo().setTitle("Some example");
-        pdfDoc.getDocumentInfo().setMoreInfo("Test", "test");
+
+        // Add metadata to pdf document
+        pdfDoc.getDocumentInfo().setMoreInfo("MetadataName", "metadataValue");
 
         Paragraph p = new Paragraph("Hello World");
-
         doc.add(p);
 
         doc.close();

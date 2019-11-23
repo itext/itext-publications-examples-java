@@ -33,11 +33,12 @@ public class OrdinalNumbers {
         new OrdinalNumbers().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+
         Text st = new Text("st").setFont(font).setFontSize(6);
         st.setTextRise(7);
         Text nd = new Text("nd").setFont(font);
@@ -46,11 +47,13 @@ public class OrdinalNumbers {
         rd.setTextRise(7);
         Text th = new Text("th").setFont(font);
         th.setTextRise(7);
+
         Paragraph first = new Paragraph();
         first.add("The 1");
         first.add(st);
         first.add(" of May");
         doc.add(first);
+
         Paragraph second = new Paragraph();
         second.add("The 2");
         second.add(nd);
@@ -58,11 +61,12 @@ public class OrdinalNumbers {
         second.add(rd);
         second.add(" of June");
         doc.add(second);
-        Paragraph fourth = new Paragraph();
-        fourth.add("The 4");
-        fourth.add(th);
-        fourth.add(" of July");
-        doc.add(fourth);
+
+        Paragraph third = new Paragraph();
+        third.add("The 4");
+        third.add(th);
+        third.add(" of July");
+        doc.add(third);
 
         doc.close();
     }

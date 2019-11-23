@@ -35,29 +35,29 @@ public class TextPattern {
         new TextPattern().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-        String filltext = "this is the fill text! ";
-        float filltextWidth = font.getWidth(filltext, 6);
+        String fillText = "this is the fill text! ";
+        float fillTextWidth = font.getWidth(fillText, 6);
 
-        PdfPattern.Tiling tilingPattern = new PdfPattern.Tiling(filltextWidth, 60, filltextWidth, 60);
+        PdfPattern.Tiling tilingPattern = new PdfPattern.Tiling(fillTextWidth, 60, fillTextWidth, 60);
         PdfPatternCanvas patternCanvas = new PdfPatternCanvas(tilingPattern, pdfDoc);
         patternCanvas.beginText().setFontAndSize(font, 6.f);
         float x = 0;
         for (float y = 0; y < 60; y += 10) {
-            patternCanvas.setTextMatrix(x - filltextWidth, y);
-            patternCanvas.showText(filltext);
+            patternCanvas.setTextMatrix(x - fillTextWidth, y);
+            patternCanvas.showText(fillText);
             patternCanvas.setTextMatrix(x, y);
-            patternCanvas.showText(filltext);
-            x += (filltextWidth / 6);
+            patternCanvas.showText(fillText);
+            x += (fillTextWidth / 6);
         }
         patternCanvas.endText();
 
-        canvas.rectangle(0, 0, 595, 842);
+        canvas.rectangle(10, 10, 575, 822);
         canvas.setFillColor(new PatternColor(tilingPattern));
         canvas.fill();
 
