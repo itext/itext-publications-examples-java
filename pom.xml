@@ -7,7 +7,7 @@
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
-    <bouncycastle.version>1.49</bouncycastle.version>
+    <bouncycastle.version>1.64</bouncycastle.version>
     <cleanup.version>2.0.5-SNAPSHOT</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
