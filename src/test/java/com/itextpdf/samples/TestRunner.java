@@ -109,6 +109,8 @@ public class TestRunner extends WrappedSamplesRunner {
 
         // Samples are run by separate samples runner
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf2");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptWithCertificate");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign");
