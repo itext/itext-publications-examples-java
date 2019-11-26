@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class HtmlParser {
 
-    private static final String BASE_IN = "C:\\itext\\java\\examples\\src\\test\\resources\\pdfHTML\\qrcode";
+    private static final String BASE_IN = "C:\\itext\\java\\examples\\src\\test\\resources\\pdfhtml\\qrcode";
 
     public static void main(String[] args) throws IOException {
 
@@ -27,8 +27,8 @@ public class HtmlParser {
         converterProperties.setTagWorkerFactory(new CustomTagWorkerFactory());
 
         HtmlConverter.convertToPdf(
-                new FileInputStream("C:\\itext\\java\\examples\\src\\test\\resources\\pdfHTML\\qrcode\\qrcode.html"),
-                new FileOutputStream("C:\\itext\\java\\examples\\src\\test\\resources\\pdfHTML\\qrcode\\out.pdf"),
+                new FileInputStream("C:\\itext\\java\\examples\\src\\test\\resources\\pdfhtml\\qrcode\\qrcode.html"),
+                new FileOutputStream("C:\\itext\\java\\examples\\src\\test\\resources\\pdfhtml\\qrcode\\out.pdf"),
                 converterProperties);
     }
 }

@@ -15,7 +15,7 @@ import com.itextpdf.styledxmlparser.node.IElementNode;
 
 public class ColorBlindnessCssApplierFactory extends DefaultCssApplierFactory {
 
-    // color blindness type
+    // Color blindness type
     private String colorType;
 
     public ColorBlindnessCssApplierFactory(String colorType) {

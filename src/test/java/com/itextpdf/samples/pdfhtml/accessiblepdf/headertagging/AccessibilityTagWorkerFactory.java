@@ -17,31 +17,24 @@ public class AccessibilityTagWorkerFactory extends DefaultTagWorkerFactory {
 
     @Override
     public ITagWorker getCustomTagWorker(IElementNode tag, ProcessorContext context) {
-        //This can probably replaced with a regex or string pattern
-        if(tag.name().equals("h1")){
-            return new HeaderTagWorker(tag, context,1);
+        switch (tag.name()) {
+            case "h1":
+                return new HeaderTagWorker(tag, context, 1);
+            case "h2":
+                return new HeaderTagWorker(tag, context, 2);
+            case "h3":
+                return new HeaderTagWorker(tag, context, 3);
+            case "h4":
+                return new HeaderTagWorker(tag, context, 4);
+            case "h5":
+                return new HeaderTagWorker(tag, context, 5);
+            case "h6":
+                return new HeaderTagWorker(tag, context, 6);
+            case "th":
+                return new TableHeaderTagWorker(tag, context);
+            default:
+                return null;
         }
-        if(tag.name().equals("h2")){
-            return new HeaderTagWorker(tag, context,2);
-        }
-        if(tag.name().equals("h3")){
-            return new HeaderTagWorker(tag, context,3);
-        }
-        if(tag.name().equals("h4")){
-            return new HeaderTagWorker(tag, context,4);
-        }
-        if(tag.name().equals("h5")){
-            return new HeaderTagWorker(tag, context,5);
-        }
-        if(tag.name().equals("h6")){
-            return new HeaderTagWorker(tag, context,6);
-        }
-
-        if(tag.name().equals("th")){
-            return new TableHeaderTagWorker(tag,context);
-        }
-
-        return null;
     }
 }
 

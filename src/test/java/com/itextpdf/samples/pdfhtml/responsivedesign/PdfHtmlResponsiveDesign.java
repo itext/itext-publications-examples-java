@@ -24,8 +24,8 @@ import java.io.IOException;
 
 public class PdfHtmlResponsiveDesign {
 
-    public static final String sourceFolder = "src/test/resources/pdfHTML/ResponsiveDesign/";
-    public static final String destinationFolder = "target/output/pdfHTML/ResponsiveDesign/";
+    public static final String sourceFolder = "src/test/resources/pdfhtml/ResponsiveDesign/";
+    public static final String destinationFolder = "target/output/pdfhtml/ResponsiveDesign/";
     public static final String[] files = {"responsive"};
 
     public static final PageSize[] pageSizes = {

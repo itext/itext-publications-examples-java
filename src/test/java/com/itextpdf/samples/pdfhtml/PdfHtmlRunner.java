@@ -29,8 +29,8 @@ import java.io.IOException;
 public class PdfHtmlRunner {
 
 
-    public static final String sourceFolder = "src/test/resources/pdfHTML/";
-    public static final String destinationFolder = "target/output/pdfHTML/";
+    public static final String sourceFolder = "src/test/resources/pdfhtml/";
+    public static final String destinationFolder = "target/output/pdfhtml/";
     public static final String[] files = {"rainbow", "qrcode"};
 
     public static void main(String[] args) throws IOException, InterruptedException {

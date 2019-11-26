@@ -22,7 +22,7 @@ public class TableHeaderTagWorker extends TdTagWorker {
 
     @Override
     public IPropertyContainer getElementResult() {
-        Cell cell =(Cell) super.getElementResult();
+        Cell cell = (Cell) super.getElementResult();
         cell.getAccessibilityProperties().setRole(StandardRoles.TH);
         return super.getElementResult();
     }

@@ -17,6 +17,7 @@ import com.itextpdf.styledxmlparser.node.IElementNode;
 
 public class HeaderTagWorker extends DivTagWorker {
     private int i;
+
     public HeaderTagWorker(IElementNode element, ProcessorContext context, int i) {
         super(element, context);
         this.i = i;
@@ -24,8 +25,8 @@ public class HeaderTagWorker extends DivTagWorker {
 
     @Override
     public IPropertyContainer getElementResult() {
-        Div div =(Div) super.getElementResult();
-        div.getAccessibilityProperties().setRole("H"+i);
+        Div div = (Div) super.getElementResult();
+        div.getAccessibilityProperties().setRole("H" + i);
         return super.getElementResult();
     }
 }

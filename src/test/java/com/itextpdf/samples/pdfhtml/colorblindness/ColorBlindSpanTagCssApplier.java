@@ -20,6 +20,7 @@ import java.util.Map;
 public class ColorBlindSpanTagCssApplier extends SpanTagCssApplier {
 
     private static final double RGB_MAX_VAL = 255.0;
+
     private String colorBlindness = ColorBlindnessTransforms.PROTANOPIA;
 
     /**
@@ -56,7 +57,8 @@ public class ColorBlindSpanTagCssApplier extends SpanTagCssApplier {
         float[] newColorRgb = ColorBlindnessTransforms.simulateColorBlindness(colorBlindness, rgbColor);
         float[] newColorRgba = {newColorRgb[0], newColorRgb[1], newColorRgb[2], rgbaColor[3]};
         double[] newColorArray = scaleColorFloatArray(newColorRgba);
-        String newColorString = "rgba(" + (int) newColorArray[0] + "," + (int) newColorArray[1] + "," + (int) newColorArray[2] + "," + newColorArray[3] + ")";
+        String newColorString = "rgba(" + (int) newColorArray[0] + "," + (int) newColorArray[1] + ","
+                + (int) newColorArray[2] + "," + newColorArray[3] + ")";
         return newColorString;
     }
 

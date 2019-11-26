@@ -22,6 +22,7 @@ import java.util.Map;
  */
 public class ColorBlindBlockCssApplier extends BlockCssApplier {
     private static final double RGB_MAX_VAL = 255.0;
+
     private String colorBlindness = ColorBlindnessTransforms.PROTANOPIA;
 
     /**
@@ -63,7 +64,8 @@ public class ColorBlindBlockCssApplier extends BlockCssApplier {
 
         // Scale and return changed color values
         double[] newColorArray = scaleColorFloatArray(newColourRgba);
-        String newColorString = "rgba(" + (int) newColorArray[0] + "," + (int) newColorArray[1] + "," + (int) newColorArray[2] + "," + newColorArray[3] + ")";
+        String newColorString = "rgba(" + (int) newColorArray[0] + "," + (int) newColorArray[1] + ","
+                + (int) newColorArray[2] + "," + newColorArray[3] + ")";
         return newColorString;
     }
 

@@ -19,10 +19,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class ParseHtmlQRcode {
-    public static final String SRC = "./src/test/resources/pdfHTML/qrcode/";
-    public static final String DEST = "./target/sandbox/pdfHTML/qrcode.pdf";
+    public static final String SRC = "./src/test/resources/pdfhtml/qrcode/";
+    public static final String DEST = "./target/sandbox/pdfhtml/qrcode.pdf";
 
     public static void main(String[] args) throws IOException {
         String currentSrc = SRC + "qrcode.html";
@@ -44,10 +46,11 @@ public class ParseHtmlQRcode {
         DefaultCssApplierFactory cssApplierFactory = new QRCodeTagCssApplierFactory();
 
         ConverterProperties converterProperties = new ConverterProperties()
+                // Base URI is required to resolve the path to source files
                 .setBaseUri(resourceLoc)
                 .setTagWorkerFactory(tagWorkerFactory)
                 .setCssApplierFactory(cssApplierFactory);
 
-        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
+       HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
     }
 }

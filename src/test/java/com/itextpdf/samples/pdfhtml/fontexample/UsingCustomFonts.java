@@ -24,8 +24,8 @@ import java.nio.file.Paths;
 
 public class UsingCustomFonts {
 
-    public static final String sourceFolder = "src/test/resources/pdfHTML/FontExample/";
-    public static final String destinationFolder = "target/output/pdfHTML/FontExample/";
+    public static final String sourceFolder = "src/test/resources/pdfhtml/FontExample/";
+    public static final String destinationFolder = "target/output/pdfhtml/FontExample/";
     public static final String[] files = {"FontExample"};
     public static final String STARWARS = "Aurebesh Bold.ttf";
     public static final String SINDARIN = "SINDAR.TTF";

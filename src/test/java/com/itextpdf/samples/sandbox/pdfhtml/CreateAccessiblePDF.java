@@ -24,10 +24,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class CreateAccessiblePDF {
-    public static final String SRC = "./src/test/resources/pdfHTML/AccessiblePDF/";
-    public static final String DEST = "./target/sandbox/pdfHTML/Accessibility.pdf";
+    public static final String SRC = "./src/test/resources/pdfhtml/AccessiblePDF/";
+    public static final String DEST = "./target/sandbox/pdfhtml/Accessibility.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
@@ -56,26 +57,24 @@ public class CreateAccessiblePDF {
         pdfMetaData.setCreator("iText Software");
         pdfMetaData.setKeywords("example, accessibility");
         pdfMetaData.setSubject("PDF accessibility");
-
-        //Title is derived from html
+        // Title is derived from html
 
         // pdf conversion
-        ConverterProperties props = new ConverterProperties();
         FontProvider fontProvider = new FontProvider();
         fontProvider.addStandardPdfFonts();
+        // The noto-nashk font file (.ttf extension) is placed in the resources
         fontProvider.addDirectory(SRC);
 
-        //The noto-nashk font file (.ttf extension) is placed in the resources
+        ConverterProperties props = new ConverterProperties();
         props.setFontProvider(fontProvider);
+        // Base URI is required to resolve the path to source files
         props.setBaseUri(SRC);
 
-        //Setup custom tagworker factory for better tagging of headers
+        // Setup custom tagworker factory for better tagging of headers
         DefaultTagWorkerFactory tagWorkerFactory = new AccessibilityTagWorkerFactory();
         props.setTagWorkerFactory(tagWorkerFactory);
 
-        try (FileInputStream fileInputStream = new FileInputStream(src)) {
-            HtmlConverter.convertToPdf(fileInputStream, pdfDoc, props);
-        }
+        HtmlConverter.convertToPdf(new FileInputStream(src), pdfDoc, props);
 
         pdfDoc.close();
     }

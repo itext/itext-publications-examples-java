@@ -18,10 +18,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class ParseHtmlColorBlind {
-    public static final String SRC = "./src/test/resources/pdfHTML/rainbow/";
-    public static final String DEST = "./target/sandbox/pdfHTML/rainbow_colourBlind.pdf";
+    public static final String SRC = "./src/test/resources/pdfhtml/rainbow/";
+    public static final String DEST = "./target/sandbox/pdfhtml/rainbow_colourBlind.pdf";
 
     public static void main(String[] args) throws IOException {
         String currentSrc = SRC + "rainbow.html";
@@ -32,18 +34,17 @@ public class ParseHtmlColorBlind {
     }
 
     public void manipulatePdf(String htmlSource, String pdfDest, String resourceLoc) throws IOException {
+        // Base URI is required to resolve the path to source files
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(resourceLoc);
 
         // Create custom css applier factory.
         // Current custom css applier factory handle <div> and <span> tags of html and returns corresponding css applier.
         // All of that css appliers change value of RGB colors
         // to simulate color blindness of people (like Tritanopia, Achromatopsia, etc.)
-        DefaultCssApplierFactory cssApplierFactory = new ColorBlindnessCssApplierFactory(ColorBlindnessTransforms.DEUTERANOMALY);
+        DefaultCssApplierFactory cssApplierFactory =
+                new ColorBlindnessCssApplierFactory(ColorBlindnessTransforms.DEUTERANOMALY);
         converterProperties.setCssApplierFactory(cssApplierFactory);
 
-        try (FileInputStream fileInputStream = new FileInputStream(htmlSource);
-             FileOutputStream fileOutputStream = new FileOutputStream(pdfDest)) {
-            HtmlConverter.convertToPdf(fileInputStream, fileOutputStream, converterProperties);
-        }
+        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
     }
 }
