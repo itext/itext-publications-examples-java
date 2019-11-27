@@ -19,12 +19,12 @@ import com.itextpdf.layout.property.UnitValue;
 import java.io.File;
 
 public class DropTablePart {
-    public static final String DEST
-            = "./target/sandbox/columntext/drop_table_part.pdf";
+    public static final String DEST = "./target/sandbox/columntext/drop_table_part.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DropTablePart().manipulatePdf(DEST);
     }
 
@@ -33,7 +33,8 @@ public class DropTablePart {
         Document doc = new Document(pdfDoc);
 
         for (int i = 0; i < 4; ) {
-            Table table = new Table(UnitValue.createPercentArray(new float[]{25, 25, 25, 25}));
+            Table table = new Table(UnitValue.createPercentArray(new float[] {25, 25, 25, 25}))
+                    .useAllAvailableWidth();
 
             Cell cell = new Cell(1, 4).add(new Paragraph("inner table " + (++i)));
             table.addCell(cell);
