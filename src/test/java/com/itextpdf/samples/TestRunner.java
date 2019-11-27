@@ -123,9 +123,6 @@ public class TestRunner extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
 
-        // TODO DEVSIX-3107
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.GetN2fromSig");
-
         // TODO DEVSIX-3189
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.Tables.TableBorder");
 
