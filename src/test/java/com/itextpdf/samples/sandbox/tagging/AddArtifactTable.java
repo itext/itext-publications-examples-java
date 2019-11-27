@@ -44,13 +44,13 @@ public class AddArtifactTable {
         table.addCell(new Cell().add(new Paragraph("Created as a sample document.")).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph("30.03.2016")).setBorder(Border.NO_BORDER));
 
-        // Creates area break to the end of the document,
-        // because table will be placed there in the fixed position
+        // Create area break to the end of the document in order to use the last page as the current area to draw.
         document.add(new AreaBreak(AreaBreakType.LAST_PAGE));
         table.setFixedPosition(40, 150, 500);
 
         // This marks the whole table contents as an Artifact.
-        // NOTE: Only content that is already added before this call will be marked as Artifact. New content will be tagged, unless you make this call again.
+        // NOTE: Only content that is already added before this call will be marked as Artifact.
+        // New content will be tagged, unless you make this call again.
         table.getAccessibilityProperties().setRole(StandardRoles.ARTIFACT);
         document.add(table);
 
