@@ -6,10 +6,8 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-package com.itextpdf.samples;
+package com.itextpdf.samples.sandbox.layout;
 
-import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -24,19 +22,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Listing_99_03_ComplexElementLayout {
+public class TwoColumnParagraphLayout {
 
-    public static final String DEST = "./target/Listing_99_03_ComplexElementLayout/Listing_99_03_ComplexElementLayout.pdf";
+    public static final String DEST = "./target/sandbox/layout/complexElementLayout.pdf";
 
     public static void main(String args[]) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new Listing_99_03_ComplexElementLayout().manipulatePdf(DEST);
+        new TwoColumnParagraphLayout().manipulatePdf(DEST);
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        //Initialize document
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
@@ -46,14 +43,16 @@ public class Listing_99_03_ComplexElementLayout {
         for (int i = 0; i < 200; i++) {
             text.append("A very long text is here...");
         }
+
         Paragraph twoColumnParagraph = new Paragraph();
+
+        // Set the custom renderer to create a layout consisted of two columns
         twoColumnParagraph.setNextRenderer(new TwoColumnParagraphRenderer(twoColumnParagraph));
         twoColumnParagraph.add(text.toString());
-        doc.add(twoColumnParagraph.setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA)));
+        doc.add(twoColumnParagraph);
 
         doc.add(new Paragraph("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
 
-        //Close document
         doc.close();
     }
 
@@ -68,9 +67,11 @@ public class Listing_99_03_ComplexElementLayout {
             List<Rectangle> areas = new ArrayList<>();
             Rectangle firstArea = area.getBBox().clone();
             Rectangle secondArea = area.getBBox().clone();
+
             firstArea.setWidth(firstArea.getWidth() / 2 - 5);
             secondArea.setX(secondArea.getX() + secondArea.getWidth() / 2 + 5);
             secondArea.setWidth(firstArea.getWidth());
+
             areas.add(firstArea);
             areas.add(secondArea);
             return areas;

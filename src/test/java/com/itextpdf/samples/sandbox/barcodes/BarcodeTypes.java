@@ -6,9 +6,19 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-package com.itextpdf.samples;
+package com.itextpdf.samples.sandbox.barcodes;
 
-import com.itextpdf.barcodes.*;
+import com.itextpdf.barcodes.BarcodeEAN;
+import com.itextpdf.barcodes.BarcodeQRCode;
+import com.itextpdf.barcodes.BarcodeEANSUPP;
+import com.itextpdf.barcodes.Barcode128;
+import com.itextpdf.barcodes.Barcode1D;
+import com.itextpdf.barcodes.BarcodeInter25;
+import com.itextpdf.barcodes.BarcodePostnet;
+import com.itextpdf.barcodes.Barcode39;
+import com.itextpdf.barcodes.BarcodeCodabar;
+import com.itextpdf.barcodes.BarcodePDF417;
+import com.itextpdf.barcodes.BarcodeDataMatrix;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -23,24 +33,22 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Listing_99_05_BarcodeLayout {
+public class BarcodeTypes {
 
-    public static final String DEST = "./target/Listing_99_05_BarcodeLayout/Listing_99_05_BarcodeLayout.pdf";
+    public static final String DEST = "./target/sandbox/barcodes/barcodeLayout.pdf";
 
     public static void main(String args[]) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new Listing_99_05_BarcodeLayout().manipulatePdf(DEST);
+        new BarcodeTypes().manipulatePdf(DEST);
     }
 
     public void manipulatePdf(String dest) throws FileNotFoundException {
-        //Initialize document
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-
         Document doc = new Document(pdfDoc, new PageSize(340, 842));
 
-        //EAN 13
+        // The default barcode EAN 13 type
         doc.add(new Paragraph("Barcode EAN.UCC-13"));
         BarcodeEAN codeEAN = new BarcodeEAN(pdfDoc);
         codeEAN.setCode("4512345678906");
@@ -56,13 +64,13 @@ public class Listing_99_05_BarcodeLayout {
         doc.add(new Image(codeEAN.createFormXObject(pdfDoc)));
         codeEAN.setBaseline(codeEAN.getSize());
 
-        //UPC A
+        // Barcode EAN UPC A type
         doc.add(new Paragraph("Barcode UCC-12 (UPC-A)"));
         codeEAN.setCodeType(BarcodeEAN.UPCA);
         codeEAN.setCode("785342304749");
         doc.add(new Image(codeEAN.createFormXObject(pdfDoc)));
 
-        //EAN 8
+        // Barcode EAN 8 type
         doc.add(new Paragraph("Barcode EAN.UCC-8"));
         codeEAN.setCodeType(BarcodeEAN.EAN8);
         codeEAN.setBarHeight(codeEAN.getSize() * 1.5f);
@@ -70,7 +78,7 @@ public class Listing_99_05_BarcodeLayout {
         codeEAN.fitWidth(250);
         doc.add(new Image(codeEAN.createFormXObject(pdfDoc)));
 
-        //UPC E
+        // Barcode UPC E type
         doc.add(new Paragraph("Barcode UPC-E"));
         codeEAN.setCodeType(BarcodeEAN.UPCE);
         codeEAN.setCode("03456781");
@@ -78,8 +86,7 @@ public class Listing_99_05_BarcodeLayout {
         doc.add(new Image(codeEAN.createFormXObject(pdfDoc)));
         codeEAN.setBarHeight(codeEAN.getSize() * 3);
 
-
-        //EANSUPP
+        // Barcode EANSUPP type
         doc.add(new Paragraph("Bookland - BarcodeEANSUPP"));
         doc.add(new Paragraph("ISBN 0-321-30474-8"));
         codeEAN = new BarcodeEAN(pdfDoc);
@@ -92,18 +99,20 @@ public class Listing_99_05_BarcodeLayout {
         BarcodeEANSUPP eanSupp = new BarcodeEANSUPP(codeEAN, codeSUPP);
         doc.add(new Image(eanSupp.createFormXObject(null, ColorConstants.BLUE, pdfDoc)));
 
-        // CODE 128
+        // Barcode CODE 128 type
         doc.add(new Paragraph("Barcode 128"));
         Barcode128 code128 = new Barcode128(pdfDoc);
         code128.setCode("0123456789 hello");
         code128.fitWidth(250);
-        doc.add(new Image(code128.createFormXObject(pdfDoc)).setRotationAngle(Math.PI / 2).setMargins(10, 10, 10, 10));
+        doc.add(new Image(code128.createFormXObject(pdfDoc))
+                .setRotationAngle(Math.PI / 2)
+                .setMargins(10, 10, 10, 10));
         code128.setCode("0123456789\uffffMy Raw Barcode (0 - 9)");
         code128.setCodeType(Barcode128.CODE128_RAW);
         code128.fitWidth(250);
         doc.add(new Image(code128.createFormXObject(pdfDoc)));
 
-        // Data for the barcode :
+        // Data for the barcode
         String code402 = "24132399420058289";
         String code90 = "3700000050";
         String code421 = "422356";
@@ -112,6 +121,7 @@ public class Listing_99_05_BarcodeLayout {
         data.append(code90);
         data.append(Barcode128.FNC1);
         data.append(code421);
+
         Barcode128 shipBarCode = new Barcode128(pdfDoc);
         shipBarCode.setX(0.75f);
         shipBarCode.setN(1.5f);
@@ -123,7 +133,7 @@ public class Listing_99_05_BarcodeLayout {
         shipBarCode.fitWidth(250);
         doc.add(new Image(shipBarCode.createFormXObject(ColorConstants.BLACK, ColorConstants.BLUE, pdfDoc)));
 
-        // it is composed of 3 blocks whith AI 01, 3101 and 10
+        // CODE 128 type barcode, which is composed of 3 blocks with AI 01, 3101 and 10
         Barcode128 uccEan128 = new Barcode128(pdfDoc);
         uccEan128.setCodeType(Barcode128.CODE128_UCC);
         uccEan128.setCode("(01)00000090311314(10)ABC123(15)060916");
@@ -136,8 +146,7 @@ public class Listing_99_05_BarcodeLayout {
         uccEan128.fitWidth(250);
         doc.add(new Image(uccEan128.createFormXObject(ColorConstants.BLUE, ColorConstants.BLACK, pdfDoc)));
 
-
-        // INTER25
+        // Barcode INTER25 type
         doc.add(new Paragraph("Barcode Interrevealed 2 of 5"));
         BarcodeInter25 code25 = new BarcodeInter25(pdfDoc);
         code25.setGenerateChecksum(true);
@@ -152,8 +161,7 @@ public class Listing_99_05_BarcodeLayout {
         code25.fitWidth(250);
         doc.add(new Image(code25.createFormXObject(pdfDoc)));
 
-
-        // POSTNET
+        // Barcode POSTNET type
         doc.add(new Paragraph("Barcode Postnet"));
         BarcodePostnet codePost = new BarcodePostnet(pdfDoc);
         doc.add(new Paragraph("ZIP"));
@@ -169,6 +177,7 @@ public class Listing_99_05_BarcodeLayout {
         codePost.fitWidth(250);
         doc.add(new Image(codePost.createFormXObject(pdfDoc)));
 
+        // Barcode PLANET type
         doc.add(new Paragraph("Barcode Planet"));
         BarcodePostnet codePlanet = new BarcodePostnet(pdfDoc);
         codePlanet.setCode("01234567890");
@@ -176,7 +185,7 @@ public class Listing_99_05_BarcodeLayout {
         codePlanet.fitWidth(250);
         doc.add(new Image(codePlanet.createFormXObject(pdfDoc)));
 
-        //CODE 39
+        // Barcode CODE 39 type
         doc.add(new Paragraph("Barcode 3 of 9"));
         Barcode39 code39 = new Barcode39(pdfDoc);
         code39.setCode("ITEXT IN ACTION");
@@ -191,8 +200,7 @@ public class Listing_99_05_BarcodeLayout {
         code39ext.fitWidth(250);
         doc.add(new Image(code39ext.createFormXObject(pdfDoc)));
 
-
-        //CODABAR
+        // Barcode CODABAR type
         doc.add(new Paragraph("Codabar"));
         BarcodeCodabar codabar = new BarcodeCodabar(pdfDoc);
         codabar.setCode("A123A");
@@ -202,7 +210,7 @@ public class Listing_99_05_BarcodeLayout {
 
         doc.add(new AreaBreak());
 
-        //PDF417
+        // Barcode PDF417 type
         doc.add(new Paragraph("Barcode PDF417"));
         BarcodePDF417 pdf417 = new BarcodePDF417();
         String text = "Call me Ishmael. Some years ago--never mind how long "
@@ -221,14 +229,13 @@ public class Listing_99_05_BarcodeLayout {
         Image imgDM = new Image(datamatrix.createFormXObject(pdfDoc));
         doc.add(imgDM.scaleToFit(250, 250));
 
-        //QRCode
+        // Barcode QRCode type
         doc.add(new Paragraph("Barcode QRCode"));
         BarcodeQRCode qrcode = new BarcodeQRCode("Moby Dick by Herman Melville");
         img = new Image(qrcode.createFormXObject(pdfDoc));
         doc.add(img.scaleToFit(250, 250));
 
-        //Close document
-        pdfDoc.close();
+        doc.close();
     }
 
 }

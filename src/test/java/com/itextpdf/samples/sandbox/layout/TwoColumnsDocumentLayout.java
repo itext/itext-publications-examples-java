@@ -6,10 +6,8 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-package com.itextpdf.samples;
+package com.itextpdf.samples.sandbox.layout;
 
-import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -23,34 +21,37 @@ import java.io.IOException;
 /**
  * Example demonstrates how to build complex layouts using layout manager
  */
-public class Listing_99_02_ComplexDocumentLayout {
+public class TwoColumnsDocumentLayout {
 
-    public static final String DEST = "./target/Listing_99_02_ComplexDocumentLayout/Listing_99_02_ComplexDocumentLayout.pdf";
+    public static final String DEST = "./target/sandbox/layout/complexDocumentLayout.pdf";
 
     public static void main(String args[]) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new Listing_99_02_ComplexDocumentLayout().manipulatePdf(DEST);
+        new TwoColumnsDocumentLayout().manipulatePdf(DEST);
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        //Initialize document
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        //Set up renderer. The layout consist of 2 vertical stripes.
-        Rectangle[] columns = {new Rectangle(100, 100, 100, 500), new Rectangle(400, 100, 100, 500)};
+        Rectangle[] columns = {
+                new Rectangle(100, 100, 100, 500),
+                new Rectangle(400, 100, 100, 500)
+        };
+
+        // Set a renderer to create a layout consisted of two vertical rectangles created above
         doc.setRenderer(new ColumnDocumentRenderer(doc, columns));
 
-        //Create paragraph and place it to layout
         StringBuilder text = new StringBuilder();
         for (int i = 0; i < 200; i++) {
             text.append("A very long text is here...");
         }
-        doc.add(new Paragraph(text.toString()).setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA)));
 
-        //Close document
+        Paragraph paragraph = new Paragraph(text.toString());
+        doc.add(paragraph);
+
         doc.close();
     }
 

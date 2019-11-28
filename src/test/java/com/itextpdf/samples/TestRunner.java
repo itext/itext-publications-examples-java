@@ -101,11 +101,6 @@ public class TestRunner extends WrappedSamplesRunner {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.typography");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_01_DifferentLayouts");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_02_ComplexDocumentLayout");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_03_ComplexElementLayout");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_04_PageSizeAndMargins");
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.Listing_99_05_BarcodeLayout");
 
         // Samples are run by separate samples runner
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
