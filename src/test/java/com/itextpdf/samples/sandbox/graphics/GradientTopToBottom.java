@@ -29,6 +29,7 @@ public class GradientTopToBottom {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new GradientTopToBottom().manipulatePdf(DEST);
     }
 
@@ -36,13 +37,15 @@ public class GradientTopToBottom {
         PageSize pageSize = new PageSize(150, 300);
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         pdfDoc.setDefaultPageSize(pageSize);
+
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-        PdfShading.Axial axial = new PdfShading.Axial(new PdfDeviceCs.Rgb(), 0, pageSize.getHeight(), ColorConstants.WHITE.getColorValue(),
-                0, 0, ColorConstants.GREEN.getColorValue());
+        PdfShading.Axial axial = new PdfShading.Axial(new PdfDeviceCs.Rgb(), 0, pageSize.getHeight(),
+                ColorConstants.WHITE.getColorValue(), 0, 0, ColorConstants.GREEN.getColorValue());
         PdfPattern.Shading pattern = new PdfPattern.Shading(axial);
         canvas.setFillColorShading(pattern);
         canvas.rectangle(0, 0, pageSize.getWidth(), pageSize.getHeight());
         canvas.fill();
+
         pdfDoc.close();
     }
 }
