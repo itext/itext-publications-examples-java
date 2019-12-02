@@ -11,6 +11,7 @@
  */
 package com.itextpdf.samples.sandbox.fonts;
 
+import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -27,18 +28,26 @@ public class CzechExample {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new CzechExample().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        PdfFont f1 = PdfFontFactory.createFont(FONT, "Cp1250", true);
+
+        PdfFont f1 = PdfFontFactory.createFont(FONT, PdfEncodings.CP1250, true);
+
+        // "Č,Ć,Š,Ž,Đ"
         Paragraph p1 = new Paragraph("Testing of letters \u010c,\u0106,\u0160,\u017d,\u0110").setFont(f1);
         doc.add(p1);
-        PdfFont f2 = PdfFontFactory.createFont(FONT, "Identity-H", true);
+
+        PdfFont f2 = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H, true);
+
+        // "Č,Ć,Š,Ž,Đ"
         Paragraph p2 = new Paragraph("Testing of letters \u010c,\u0106,\u0160,\u017d,\u0110").setFont(f2);
         doc.add(p2);
+
         doc.close();
     }
 }

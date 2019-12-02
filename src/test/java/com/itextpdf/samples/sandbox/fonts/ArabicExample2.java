@@ -25,32 +25,30 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.BaseDirection;
 import com.itextpdf.layout.property.TextAlignment;
 import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.licensekey.LicenseKey;
 
 import java.io.File;
 
 public class ArabicExample2 {
-    public static final String ARABIC =
-            "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a";
 
-    public static final String DEST
-            = "./target/sandbox/fonts/arabic_example2.pdf";
-    public static final String FONT
-            = "./src/test/resources/font/NotoNaskhArabic-Regular.ttf";
+    public static final String DEST = "./target/sandbox/fonts/arabic_example2.pdf";
+    public static final String FONT = "./src/test/resources/font/NotoNaskhArabic-Regular.ttf";
+
+    // "السعر الاجمالي"
+    public static final String ARABIC = "\u0627\u0644\u0633\u0639\u0631 \u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ArabicExample2().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-
+        Table table = new Table(1).useAllAvailableWidth();
         PdfFont f = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         Paragraph p = new Paragraph("test value");
         p.add(new Text(ARABIC).setFont(f));
 
@@ -58,7 +56,6 @@ public class ArabicExample2 {
         cell
                 .setBaseDirection(BaseDirection.RIGHT_TO_LEFT)
                 .setTextAlignment(TextAlignment.RIGHT);
-
         table.addCell(cell);
 
         doc.add(table);

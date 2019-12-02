@@ -25,21 +25,32 @@ import java.io.File;
 
 public class Logo {
     public static final String DEST = "./target/sandbox/fonts/logo.pdf";
+
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new Logo().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
+        /* Create a custom type 3 font.
+         * The second argument defines whether the glyph color is specified
+         * in the glyph description in the font.
+         */
+        PdfType3Font t3 = PdfFontFactory.createType3Font(pdfDoc, true);
         float linewidth = 125;
 
-        PdfType3Font t3 = PdfFontFactory.createType3Font(pdfDoc, true);
+        /* Define I letter of the custom font.
+         * If the character was already defined, addGlyph() method will return the same content.
+         * If the colorized parameter of PdfType3Font instance is set to true,
+         * then parameters of the glyph bounding box will be ignored.
+         */
         PdfCanvas i = t3.addGlyph('I', 700, 0, 0, 1200, 600);
         i.setLineWidth(10);
         i.setStrokeColor(new DeviceRgb(0xf9, 0x9d, 0x25));
@@ -49,6 +60,7 @@ public class Logo {
         i.lineTo(600, 564);
         i.stroke();
 
+        // Define T letter of the custom font
         PdfCanvas t = t3.addGlyph('T', 1170, 0, 0, 1200, 600);
         t.setLineWidth(10);
         t.setStrokeColor(new DeviceRgb(0x08, 0x49, 0x75));
@@ -60,6 +72,7 @@ public class Logo {
         t.lineTo(600, 564);
         t.stroke();
 
+        // Define E letter of the custom font
         PdfCanvas e = t3.addGlyph('E', 1150, 0, 0, 1200, 600);
         e.setLineWidth(10);
         e.setStrokeColor(new DeviceRgb(0xf8, 0x9b, 0x22));
@@ -73,6 +86,7 @@ public class Logo {
         e.lineTo(1056, 564);
         e.stroke();
 
+        // Define X letter of the custom font
         PdfCanvas x = t3.addGlyph('X', 1160, 0, 0, 1200, 600);
         x.setStrokeColor(new DeviceRgb(0x10, 0x46, 0x75));
         x.setLineWidth(10);
@@ -84,10 +98,15 @@ public class Logo {
         x.lineTo(1056, 36);
         x.stroke();
 
-        Paragraph p = new Paragraph("ITEXT").setFont(t3).setFontSize(20);
+        Paragraph p = new Paragraph("ITEXT")
+                .setFont(t3)
+                .setFontSize(20);
         doc.add(p);
 
-        p = new Paragraph("I\nT\nE\nX\nT").setFixedLeading(20).setFont(t3).setFontSize(20);
+        p = new Paragraph("I\nT\nE\nX\nT")
+                .setFixedLeading(20)
+                .setFont(t3)
+                .setFontSize(20);
         doc.add(p);
 
         doc.close();
