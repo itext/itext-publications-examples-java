@@ -9,6 +9,8 @@
 /**
  * This example was written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/31314993/how-to-set-a-default-zoom-of-100-using-itext-java
+ * <p>
+ * Formerly OpenAt100pct sample in iText 5
  */
 package com.itextpdf.samples.sandbox.annotations;
 
