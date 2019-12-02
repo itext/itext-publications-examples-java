@@ -21,14 +21,14 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
-public class OpenAt100pct {
+public class SetOpenZoom {
     public static final String DEST = "./target/sandbox/annotations/open_at_100pct.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new OpenAt100pct().manipulatePdf(DEST);
+        new SetOpenZoom().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
