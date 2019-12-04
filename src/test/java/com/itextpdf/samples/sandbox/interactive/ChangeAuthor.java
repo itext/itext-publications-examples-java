@@ -12,45 +12,38 @@
  */
 package com.itextpdf.samples.sandbox.interactive;
 
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class ChangeAuthor {
     public static final String DEST = "./target/sandbox/interactive/change_author.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/page229_annotations.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ChangeAuthor().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
-        PdfDictionary pageDict = pdfDoc.getFirstPage().getPdfObject();
-        PdfArray annots = pageDict.getAsArray(PdfName.Annots);
-        if (annots != null) {
-            for (int i = 0; i < annots.size(); i++) {
-                changeAuthor(annots.getAsDictionary(i));
+        List<PdfAnnotation> pageAnnots = pdfDoc.getFirstPage().getAnnotations();
+        for (PdfAnnotation annot : pageAnnots) {
+            if (annot.getTitle() != null) {
+                annot.setTitle(new PdfString("Bruno Lowagie"));
             }
         }
 
         pdfDoc.close();
-    }
-
-    public void changeAuthor(PdfDictionary annotation) {
-        if (annotation == null) {
-            return;
-        }
-        PdfString t = annotation.getAsString(PdfName.T);
-        if (t == null) {
-            return;
-        }
-        if ("iText".equals(t.toString())) {
-            annotation.put(PdfName.T, new PdfString("Bruno Lowagie"));
-        }
     }
 }
