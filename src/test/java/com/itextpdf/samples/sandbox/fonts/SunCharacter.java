@@ -24,17 +24,21 @@ import java.io.File;
 
 public class SunCharacter {
     public static final String DEST = "./target/sandbox/fonts/sun_character.pdf";
+
     public static final String FONT = "./src/test/resources/font/Cardo-Regular.ttf";
+
+    // "The Cardo family of fonts supports this character: ☉"
     public static final String TEXT = "The Cardo family of fonts supports this character: \u2609";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new SunCharacter().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H, true);

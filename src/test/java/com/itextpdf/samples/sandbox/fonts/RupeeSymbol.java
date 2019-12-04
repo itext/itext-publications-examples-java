@@ -28,17 +28,21 @@ public class RupeeSymbol {
     public static final String FONT1 = "./src/test/resources/font/PlayfairDisplay-Regular.ttf";
     public static final String FONT2 = "./src/test/resources/font/PT_Sans-Web-Regular.ttf";
     public static final String FONT3 = "./src/test/resources/font/FreeSans.ttf";
+
+    // "The Rupee character ₹ and the Rupee symbol ₨"
     public static final String RUPEE = "The Rupee character \u20B9 and the Rupee symbol \u20A8";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RupeeSymbol().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         PdfFont font1 = PdfFontFactory.createFont(FONT1, PdfEncodings.IDENTITY_H);
         PdfFont font2 = PdfFontFactory.createFont(FONT2, PdfEncodings.IDENTITY_H);
         PdfFont font3 = PdfFontFactory.createFont(FONT3, PdfEncodings.IDENTITY_H);
@@ -48,6 +52,7 @@ public class RupeeSymbol {
         doc.add(new Paragraph(RUPEE).setFont(font2));
         doc.add(new Paragraph(RUPEE).setFont(font3));
         doc.add(new Paragraph(RUPEE).setFont(font4));
+
         doc.close();
     }
 }

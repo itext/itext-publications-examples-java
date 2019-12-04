@@ -24,11 +24,13 @@ import java.io.File;
 
 public class MathSymbols {
     public static final String DEST = "./target/sandbox/fonts/math_symbols.pdf";
+
     public static final String FONT = "./src/test/resources/font/FreeSans.ttf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new MathSymbols().manipulatePdf(DEST);
     }
 
@@ -38,7 +40,9 @@ public class MathSymbols {
 
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H, true);
 
-        Paragraph p = new Paragraph("Testing math symbols \u2208, \u2229, \u2211, \u222b, \u2206").setFont(font);
+        // "Testing math symbols ∈, ∩, ∑, ∫, ∆"
+        Paragraph p = new Paragraph("Testing math symbols \u2208, \u2229, \u2211, \u222b, \u2206")
+                .setFont(font);
 
         doc.add(p);
         doc.close();
