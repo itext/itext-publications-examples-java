@@ -16,6 +16,7 @@ package com.itextpdf.samples.sandbox.events;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfOutline;
+import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.navigation.PdfDestination;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
@@ -33,37 +34,37 @@ import com.itextpdf.layout.renderer.IRenderer;
 import com.itextpdf.layout.renderer.TextRenderer;
 
 import java.io.File;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CreateTOCinColumn {
     public static final String DEST = "./target/sandbox/events/create_toc_in_column.pdf";
 
-    protected List<TOCEntry> list = new ArrayList<>();
+    private static List<AbstractMap.SimpleEntry<String, PdfDestination>> list = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
         new CreateTOCinColumn().manipulatePdf(DEST);
+
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         Rectangle[] columns = {
                 new Rectangle(36, 36, 173, 770),
                 new Rectangle(213, 36, 173, 770),
                 new Rectangle(389, 36, 173, 770)
         };
+
         doc.setRenderer(new ColumnDocumentRenderer(doc, columns));
         PdfOutline root = pdfDoc.getOutlines(false);
-        int start;
-        int end;
-        for (int i = 0; i <= 20; ) {
-            start = (i * 10) + 1;
-            i++;
-            end = i * 10;
+        for (int i = 0; i <= 20; i++) {
+            int start = (i * 10) + 1;
+            int end = (i + 1) * 10;
             String title = String.format("Numbers from %s to %s", start, end);
             Text c = new Text(title);
             TOCTextRenderer renderer = new TOCTextRenderer(c);
@@ -72,15 +73,17 @@ public class CreateTOCinColumn {
             doc.add(new Paragraph(c));
             doc.add(createTable(start, end));
         }
+
         doc.add(new AreaBreak());
-        for (TOCEntry entry : list) {
-            Link c = new Link(entry.title, entry.dest);
+        for (AbstractMap.SimpleEntry<String, PdfDestination> entry : list) {
+            Link c = new Link(entry.getKey(), entry.getValue());
             doc.add(new Paragraph(c));
         }
+
         doc.close();
     }
 
-    protected Table createTable(int start, int end) {
+    private static Table createTable(int start, int end) {
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         for (int i = start; i <= end; i++) {
             table.addCell(new Cell().add(new Paragraph(String.valueOf(i))));
@@ -89,19 +92,7 @@ public class CreateTOCinColumn {
         return table;
     }
 
-
-    protected class TOCEntry {
-        protected String title;
-        protected PdfDestination dest;
-
-        public TOCEntry(String title, PdfDestination dest) {
-            this.dest = dest;
-            this.title = title;
-        }
-    }
-
-
-    protected class TOCTextRenderer extends TextRenderer {
+    private static class TOCTextRenderer extends TextRenderer {
         protected PdfOutline root;
 
         public TOCTextRenderer(Text modelElement) {
@@ -124,9 +115,10 @@ public class CreateTOCinColumn {
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
             Rectangle rect = getOccupiedAreaBBox();
-            PdfDestination dest = PdfExplicitDestination.createXYZ(drawContext.getDocument().getLastPage(),
-                    rect.getLeft(), rect.getTop(), 0);
-            list.add(new TOCEntry(((Text) modelElement).getText(), dest));
+            PdfPage page = drawContext.getDocument().getPage(getOccupiedArea().getPageNumber());
+            PdfDestination dest = PdfExplicitDestination.createXYZ(page, rect.getLeft(), rect.getTop(), 0);
+
+            list.add(new AbstractMap.SimpleEntry<String, PdfDestination>(((Text) modelElement).getText(), dest));
 
             PdfOutline curOutline = root.addOutline(((Text) modelElement).getText());
             curOutline.addDestination(dest);
