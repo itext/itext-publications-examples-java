@@ -1,6 +1,5 @@
 package com.itextpdf.samples;
 
-import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.sandbox.security.EncryptWithCertificate;
@@ -14,7 +13,6 @@ import org.junit.runners.Parameterized;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.security.PrivateKey;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -27,7 +25,7 @@ import java.security.cert.X509Certificate;
 import java.util.Collection;
 
 @Category(SampleTest.class)
-public class EncryptWithCertificateTest extends WrappedSamplesRunner {
+public class EncryptWithCertificateSampleTest extends WrappedSamplesRunner {
 
     public static final String PRIVATE = "./src/test/resources/encryption/test.p12";
 

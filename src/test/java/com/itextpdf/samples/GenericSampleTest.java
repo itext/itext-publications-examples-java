@@ -36,7 +36,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
 
 @Category(SampleTest.class)
-public class TestRunner extends WrappedSamplesRunner {
+public class GenericSampleTest extends WrappedSamplesRunner {
 
     /**
      * List of samples, which should be validated visually and by link annotations on corresponding pages

@@ -1,22 +1,15 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples;
 
-import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
-import com.itextpdf.samples.sandbox.fonts.MergeAndAddFont;
+import com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign;
+import com.itextpdf.styledxmlparser.css.util.CssUtils;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
+
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -25,12 +18,12 @@ import java.lang.reflect.Field;
 import java.util.Collection;
 
 @Category(SampleTest.class)
-public class MergeAndAddFontTest extends WrappedSamplesRunner {
+public class PdfHtmlResponsiveSampleTest extends WrappedSamplesRunner {
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.fonts.MergeAndAddFont");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign");
 
         return generateTestsList(searchConfig);
     }
@@ -38,7 +31,6 @@ public class MergeAndAddFontTest extends WrappedSamplesRunner {
     @Test(timeout = 60000)
     public void test() throws Exception {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
-        FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
 
         runSamples();
@@ -49,22 +41,14 @@ public class MergeAndAddFontTest extends WrappedSamplesRunner {
     protected void comparePdf(String outPath, String dest, String cmp) throws Exception {
         CompareTool compareTool = new CompareTool();
 
-        for (String fileName : MergeAndAddFont.DEST_NAMES.values()) {
-            String currentDest = dest + fileName;
-            String currentCmp = cmp + "cmp_" + fileName;
+        for (int i = 0; i < PdfHtmlResponsiveDesign.pageSizes.length; i++) {
+            float width = CssUtils.parseAbsoluteLength(Float.toString(PdfHtmlResponsiveDesign.pageSizes[i].getWidth()));
+            String currentDest = dest.replace("<filename>", "responsive_" + width + ".pdf");
+            String currentCmp = cmp.replace("<filename>", "responsive_" + width + ".pdf");
 
             addError(compareTool.compareByContent(currentDest, currentCmp, outPath, "diff_"));
             addError(compareTool.compareDocumentInfo(currentDest, currentCmp));
         }
-    }
-
-    @Override
-    protected String getCmpPdf(String dest) {
-        if (dest == null) {
-            return null;
-        }
-
-        return "./cmpfiles/" + dest.substring(8);
     }
 
     private void unloadLicense() {

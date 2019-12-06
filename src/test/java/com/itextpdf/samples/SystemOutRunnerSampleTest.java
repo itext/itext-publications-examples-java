@@ -26,7 +26,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
 
 @Category(SampleTest.class)
-public class SystemOutRunnerTest extends WrappedSamplesRunner {
+public class SystemOutRunnerSampleTest extends WrappedSamplesRunner {
     private PrintStream STORED_SYSTEM_OUT = null;
 
     @Parameterized.Parameters(name = "{index}: {0}")
