@@ -12,15 +12,13 @@ import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
-import com.itextpdf.samples.pdfhtml.QRCodeTagCssApplierFactory;
-import com.itextpdf.samples.pdfhtml.QRCodeTagWorkerFactory;
+import com.itextpdf.samples.sandbox.pdfhtml.qrcodetag.QRCodeTagCssApplierFactory;
+import com.itextpdf.samples.sandbox.pdfhtml.qrcodetag.QRCodeTagWorkerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 public class ParseHtmlQRcode {
     public static final String SRC = "./src/test/resources/pdfhtml/qrcode/";

@@ -119,6 +119,9 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.colorblindness");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.headertagging");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.qrcodetag");
 
         // TODO DEVSIX-3189
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.Tables.TableBorder");

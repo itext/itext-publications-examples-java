@@ -11,15 +11,13 @@ package com.itextpdf.samples.sandbox.pdfhtml;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
-import com.itextpdf.samples.pdfhtml.colorblindness.ColorBlindnessCssApplierFactory;
-import com.itextpdf.samples.pdfhtml.colorblindness.ColorBlindnessTransforms;
+import com.itextpdf.samples.sandbox.pdfhtml.colorblindness.ColorBlindnessCssApplierFactory;
+import com.itextpdf.samples.sandbox.pdfhtml.colorblindness.ColorBlindnessTransforms;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 public class ParseHtmlColorBlind {
     public static final String SRC = "./src/test/resources/pdfhtml/rainbow/";

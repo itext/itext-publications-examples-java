@@ -18,13 +18,12 @@ import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.samples.pdfhtml.accessiblepdf.headertagging.AccessibilityTagWorkerFactory;
+import com.itextpdf.samples.sandbox.pdfhtml.headertagging.AccessibilityTagWorkerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class CreateAccessiblePDF {
     public static final String SRC = "./src/test/resources/pdfhtml/AccessiblePDF/";
