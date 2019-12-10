@@ -28,10 +28,10 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
-import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.layout.LayoutResult;
+import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.TableRenderer;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 public class TableHeader {
@@ -40,19 +40,25 @@ public class TableHeader {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TableHeader().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        Document doc = new Document(pdfDoc, PageSize.A4);
+        Document doc = new Document(pdfDoc);
 
         TableHeaderEventHandler handler = new TableHeaderEventHandler(doc);
         pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE, handler);
-        doc.setMargins(20 + handler.getTableHeight(), 36, 36, 36);
+
+        // Calculate top margin to be sure that the table will fit the margin.
+        float topMargin = 20 + handler.getTableHeight();
+        doc.setMargins(topMargin, 36, 36, 36);
+
         for (int i = 0; i < 50; i++) {
             doc.add(new Paragraph("Hello World!"));
         }
+
         doc.add(new AreaBreak());
         doc.add(new Paragraph("Hello World!"));
         doc.add(new AreaBreak());
@@ -62,37 +68,52 @@ public class TableHeader {
     }
 
 
-    public class TableHeaderEventHandler implements IEventHandler {
-        protected Table table;
-        protected float tableHeight;
-        protected Document doc;
+    private static class TableHeaderEventHandler implements IEventHandler {
+        private Table table;
+        private float tableHeight;
+        private Document doc;
 
         public TableHeaderEventHandler(Document doc) {
             this.doc = doc;
-            table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-            table.setWidth(523);
-            table.addCell("Header row 1");
-            table.addCell("Header row 2");
-            table.addCell("Header row 3");
+            initTable();
+
             TableRenderer renderer = (TableRenderer) table.createRendererSubTree();
-            renderer.setParent(new Document(new PdfDocument(new PdfWriter(new ByteArrayOutputStream()))).getRenderer());
-            tableHeight = renderer.layout(new LayoutContext(new LayoutArea(0, PageSize.A4))).getOccupiedArea().getBBox().getHeight();
+            renderer.setParent(new DocumentRenderer(doc));
+
+            // Simulate the positioning of the renderer to find out how much space the header table will occupy.
+            LayoutResult result = renderer.layout(new LayoutContext(new LayoutArea(0, PageSize.A4)));
+            tableHeight = result.getOccupiedArea().getBBox().getHeight();
         }
 
         @Override
-        public void handleEvent(Event event) {
-            PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
+        public void handleEvent(Event currentEvent) {
+            PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             PdfDocument pdfDoc = docEvent.getDocument();
             PdfPage page = docEvent.getPage();
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
-            Rectangle rect = new Rectangle(pdfDoc.getDefaultPageSize().getX() + doc.getLeftMargin(),
-                    pdfDoc.getDefaultPageSize().getTop() - doc.getTopMargin(), 523, getTableHeight());
+            PageSize pageSize = pdfDoc.getDefaultPageSize();
+            float coordX = pageSize.getX() + doc.getLeftMargin();
+            float coordY = pageSize.getTop() - doc.getTopMargin();
+            float width = pageSize.getWidth() - doc.getRightMargin() - doc.getLeftMargin();
+            float height = getTableHeight();
+            Rectangle rect = new Rectangle(coordX, coordY, width, height);
+
             new Canvas(canvas, pdfDoc, rect)
-                    .add(table);
+                    .add(table)
+                    .close();
         }
 
         public float getTableHeight() {
             return tableHeight;
+        }
+
+        private void initTable()
+        {
+            table = new Table(1);
+            table.useAllAvailableWidth();
+            table.addCell("Header row 1");
+            table.addCell("Header row 2");
+            table.addCell("Header row 3");
         }
     }
 }

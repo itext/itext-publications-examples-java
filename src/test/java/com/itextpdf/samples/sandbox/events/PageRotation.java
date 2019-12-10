@@ -28,10 +28,9 @@ import java.io.File;
 public class PageRotation {
     public static final String DEST = "./target/sandbox/events/page_rotation.pdf";
 
-    /* Constants from itext5 */
-    public static final PdfNumber INVERTEDPORTRAIT = new PdfNumber(180);
-    public static final PdfNumber LANDSCAPE = new PdfNumber(90);
     public static final PdfNumber PORTRAIT = new PdfNumber(0);
+    public static final PdfNumber LANDSCAPE = new PdfNumber(90);
+    public static final PdfNumber INVERTEDPORTRAIT = new PdfNumber(180);
     public static final PdfNumber SEASCAPE = new PdfNumber(270);
 
     private static final Paragraph HELLO_WORLD = new Paragraph("Hello World!");
@@ -39,41 +38,50 @@ public class PageRotation {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new PageRotation().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
+
+        // The default page rotation is set to portrait in the custom event handler.
         PageRotationEventHandler eventHandler = new PageRotationEventHandler();
         pdfDoc.addEventHandler(PdfDocumentEvent.START_PAGE, eventHandler);
         Document doc = new Document(pdfDoc);
+
         doc.add(HELLO_WORLD);
+
         eventHandler.setRotation(LANDSCAPE);
         doc.add(new AreaBreak());
         doc.add(HELLO_WORLD);
+
         eventHandler.setRotation(INVERTEDPORTRAIT);
         doc.add(new AreaBreak());
         doc.add(HELLO_WORLD);
+
         eventHandler.setRotation(SEASCAPE);
         doc.add(new AreaBreak());
         doc.add(HELLO_WORLD);
+
         eventHandler.setRotation(PORTRAIT);
         doc.add(new AreaBreak());
         doc.add(HELLO_WORLD);
+
         doc.close();
     }
 
 
-    protected class PageRotationEventHandler implements IEventHandler {
-        protected PdfNumber rotation = PORTRAIT;
+    private static class PageRotationEventHandler implements IEventHandler {
+        private PdfNumber rotation = PORTRAIT;
 
         public void setRotation(PdfNumber orientation) {
             this.rotation = orientation;
         }
 
         @Override
-        public void handleEvent(Event event) {
-            PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
+        public void handleEvent(Event currentEvent) {
+            PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             docEvent.getPage().put(PdfName.Rotate, rotation);
         }
     }
