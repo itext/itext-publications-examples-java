@@ -9,6 +9,7 @@
 package com.itextpdf.samples.reader;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import com.itextpdf.kernel.pdf.PdfArray;
 import com.itextpdf.kernel.pdf.PdfDictionary;
@@ -62,7 +63,7 @@ public class WalkTheTree {
 		if (page == null) return;
 		PdfStream contents = page.getAsStream(PdfName.Contents);
 		if (contents != null) {
-			System.out.println(new String(contents.getBytes()));
+			System.out.println(new String(contents.getBytes(), StandardCharsets.UTF_8));
 			System.exit(0);
 		}
 		PdfArray array = page.getAsArray(PdfName.Contents);
