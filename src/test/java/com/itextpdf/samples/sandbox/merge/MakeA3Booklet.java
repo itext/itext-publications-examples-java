@@ -24,35 +24,35 @@ import java.io.IOException;
 
 public class MakeA3Booklet {
     public static final String DEST = "./target/sandbox/merge/make_a3_booklet.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/primes.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new MakeA3Booklet().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        pdfDoc.setDefaultPageSize(new PageSize(PageSize.A3).rotate());
+        pdfDoc.setDefaultPageSize(PageSize.A3.rotate());
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-        float a4_width = PageSize.A4.getWidth();
-        int n = srcDoc.getNumberOfPages();
-        int p = 0;
-        PdfFormXObject page;
-        while (p++ < n) {
-            page = srcDoc.getPage(p).copyAsFormXObject(pdfDoc);
-            if (p % 2 == 1) {
+        float a4Width = PageSize.A4.getWidth();
+        int numberOfPages = srcDoc.getNumberOfPages();
+        int i = 0;
+        while (i++ < numberOfPages) {
+            PdfFormXObject page = srcDoc.getPage(i).copyAsFormXObject(pdfDoc);
+            if (i % 2 == 1) {
                 canvas.addXObject(page, 0, 0);
             } else {
-                canvas.addXObject(page, a4_width, 0);
+                canvas.addXObject(page, a4Width, 0);
                 canvas = new PdfCanvas(pdfDoc.addNewPage());
             }
         }
+
         pdfDoc.close();
         srcDoc.close();
     }

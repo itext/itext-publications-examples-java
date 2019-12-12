@@ -44,8 +44,8 @@ public class MergeAndCountSampleTest extends WrappedSamplesRunner {
         CompareTool compareTool = new CompareTool();
 
         for (int i = 1; i < 8; i++) {
-            String currentDest = dest.replace(MergeAndCount.PAGE_NUMBER_TAG, String.valueOf(i));
-            String currentCmp = cmp.replace(MergeAndCount.PAGE_NUMBER_TAG, String.valueOf(i));
+            String currentDest = String.format(dest, i);
+            String currentCmp = String.format(cmp, i);
 
             addError(compareTool.compareByContent(currentDest, currentCmp, outPath, "diff_"));
             addError(compareTool.compareDocumentInfo(currentDest, currentCmp));
