@@ -6,14 +6,15 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
-package com.itextpdf.samples.sandbox.merge;
+package com.itextpdf.samples.sandbox.merge.densemerger;
 
+import com.itextpdf.kernel.PdfException;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.canvas.parser.PdfDocumentContentParser;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
+import com.itextpdf.kernel.pdf.canvas.parser.PdfDocumentContentParser;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.kernel.utils.PdfMerger;
 
@@ -23,55 +24,51 @@ import java.util.List;
 /**
  * This class is a tool for merging PDF <em>page contents</em> in a condensed manner,
  * i.e. if the source pages are only partly filled, the contents of multiple pages
- * are drawn on a single target page. If on the other hand the contents of a source
- * page do not completely fit onto a target page, the source page contents are split
+ * are drawn on a single target page. If on the other hand the content of a source
+ * page do not completely fit onto a target page, the source page content is split
  * and as much as possible of it is added onto the current target page before a new
- * page is started. This actually allows to even copy content from larger pages onto
- * smaller ones, e.g. from A4 to A5 landscape.
+ * page is started.
  * <p>
  * In contrast to {@link PdfMerger}, though, this class does not copy information
  * beyond page content, in particular it completely ignores annotations and the
  * structure hierarchy of tagged PDFs.
  * <p>
- * Beware: Simple PDF is not particularly designed for this kind of operations. Thus,
- * there are numerous situations in which this tool may not create the desired result.
+ * Beware: There are numerous situations in which this tool may not create the desired result.
  * It e.g. should not be used to copy documents with header or footer information as
  * they will be considered part of the content and so copied and probably moved to
  * the middle of the page. Furthermore, water marks, text box backgrounds, etc. will
  * also be considered part of the content and, therefore, also will prevent condensed
- * merging.
- *
- * @author mkl
+ * merging. The page size of the source document should be equal to the page size
+ * of the resultant document.
  */
 public class PdfDenseMerger {
 
-    //
-    // hidden members
-    //
-    final PdfDocument pdfDocument;
+    private final PdfDocument pdfDocument;
 
-    PageSize pageSize = PageSize.A4;
-    float top;
-    float bottom;
-    float gap;
+    private PageSize pageSize;
+    private float top;
+    private float bottom;
+    private float gap;
 
-    PdfCanvas canvas;
-    float yPosition = 0;
+    private PdfCanvas canvas;
+    private float yPosition = 0;
 
     /**
-     * This class is used to merge a number of existing documents into one.
+     * Creates a PdfDenseMerger to merge content into the passed pdf document.
      *
      * @param pdfDocument - the document into which source documents will be merged.
      */
     public PdfDenseMerger(PdfDocument pdfDocument) {
         this.pdfDocument = pdfDocument;
+        this.pageSize = pdfDocument.getDefaultPageSize();
     }
 
     //
-    // getters and setters for layout values
+    // Getters and setters for layout values
     //
+
     /**
-     * Getter for the field <code>pageSize</code>.
+     * Gets the field <code>pageSize</code>.
      *
      * @return a {@link com.itextpdf.kernel.geom.PageSize} object.
      */
@@ -80,58 +77,47 @@ public class PdfDenseMerger {
     }
 
     /**
-     * Setter for the field <code>pageSize</code>.
-     *
-     * @param pageSize a {@link com.itextpdf.kernel.geom.PageSize} object.
-     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
-     */
-    public PdfDenseMerger setPageSize(PageSize pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-
-    /**
-     * Getter for the field <code>top</code>.
+     * Gets the top margin.
      *
      * @return a float.
      */
-    public float getTop() {
+    public float getTopMargin() {
         return top;
     }
 
     /**
-     * Setter for the field <code>top</code>.
+     * Sets the top margin.
      *
-     * @param top a float.
-     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     * @param top a top margin of the resultant document.
+     * @return this element.
      */
-    public PdfDenseMerger setTop(float top) {
+    public PdfDenseMerger setTopMargin(float top) {
         this.top = top;
         return this;
     }
 
     /**
-     * Getter for the field <code>bottom</code>.
+     * Gets the bottom margin.
      *
      * @return a float.
      */
-    public float getBottom() {
+    public float getBottomMargin() {
         return bottom;
     }
 
     /**
-     * Setter for the field <code>bottom</code>.
+     * Sets the bottom margin.
      *
-     * @param bottom a float.
-     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     * @param bottom a bottom margin of the resultant document.
+     * @return this element.
      */
-    public PdfDenseMerger setBottom(float bottom) {
+    public PdfDenseMerger setBottomMargin(float bottom) {
         this.bottom = bottom;
         return this;
     }
 
     /**
-     * Getter for the field <code>gap</code>.
+     * Gets the gap.
      *
      * @return a float.
      */
@@ -140,10 +126,10 @@ public class PdfDenseMerger {
     }
 
     /**
-     * Setter for the field <code>gap</code>.
+     * Sets the gap between the content of the documents to be merged.
      *
-     * @param gap a float.
-     * @return a {@link com.itextpdf.samples.sandbox.merge.PdfDenseMerger} object.
+     * @param gap the gap between the content of the documents to be merged.
+     * @return this element.
      */
     public PdfDenseMerger setGap(float gap) {
         this.gap = gap;
@@ -151,23 +137,24 @@ public class PdfDenseMerger {
     }
 
     /**
-     * Getter for the field <code>pdfDocument</code>.
+     * Gets the pdfDocument.
      *
-     * @return a {@link com.itextpdf.kernel.pdf.PdfDocument} object.
+     * @return this element.
      */
     public PdfDocument getPdfDocument() {
         return pdfDocument;
     }
 
     //
-    // methods controling the actual merger
+    // Methods controlling the actual merger
     //
 
     /**
-     * This method adds pages from the source document to the target document.
+     * Adds pages from the source document to the target document.
+     * Note that the page size of the source document is expected
+     * to equal the page size of the resultant document
      *
      * @param from     - document, from which pages will be copied.
-     * @param fromPage - start page in the range of pages to be copied.
      * @param fromPage - start page in the range of pages to be copied.
      * @param toPage   - end page in the range to be copied.
      * @throws java.io.IOException if any.
@@ -179,7 +166,9 @@ public class PdfDenseMerger {
     }
 
     /**
-     * This method adds pages from the source document to the target document.
+     * Adds pages from the source document to the target document.
+     * Note that the page size of the source document is expected
+     * to equal the page size of the resultant document
      *
      * @param from  - document, from which pages will be copied.
      * @param pages - List of numbers of pages which will be copied.
@@ -192,48 +181,61 @@ public class PdfDenseMerger {
     }
 
     //
-    // helper methods
+    // Helper methods
     //
-    void merge(PdfDocument from, int pageNum) throws IOException {
+
+    private void merge(PdfDocument from, int pageNum) throws IOException {
         PdfPage page = from.getPage(pageNum);
+        Rectangle pageSizeToImport = page.getPageSize();
+        if (!(pageSize.getHeight() == pageSizeToImport.getHeight())
+                || !(pageSize.getWidth() == pageSizeToImport.getWidth())) {
+            throw new PdfException("Page size of the copied page should be the same as "
+                    + "the page size of the resultant document.");
+        }
+
         PdfFormXObject formXObject = page.copyAsFormXObject(pdfDocument);
 
         PdfDocumentContentParser contentParser = new PdfDocumentContentParser(from);
         PageVerticalAnalyzer finder = contentParser.processContent(pageNum, new PageVerticalAnalyzer());
-        if (finder.verticalFlips.size() < 2)
+        List<Float> verticalFlips = finder.getVerticalFlips();
+        if (verticalFlips.size() < 2) {
             return;
-        Rectangle pageSizeToImport = page.getPageSize();
+        }
 
-        int startFlip = finder.verticalFlips.size() - 1;
+        int startFlip = verticalFlips.size() - 1;
         boolean first = true;
         while (startFlip > 0) {
-            if (!first)
+            if (!first) {
                 newPage();
+            }
 
             float freeSpace = yPosition - (pageSize.getBottom() + bottom);
             int endFlip = startFlip + 1;
-            while ((endFlip > 1) && (finder.verticalFlips.get(startFlip) - finder.verticalFlips.get(endFlip - 2) < freeSpace))
+            while ((endFlip > 1) && (verticalFlips.get(startFlip) - verticalFlips.get(endFlip - 2) < freeSpace)) {
                 endFlip -= 2;
+            }
             if (endFlip < startFlip) {
-                float height = finder.verticalFlips.get(startFlip) - finder.verticalFlips.get(endFlip);
+                float height = verticalFlips.get(startFlip) - verticalFlips.get(endFlip);
 
                 canvas.saveState();
                 canvas.rectangle(0, yPosition - height, pageSizeToImport.getWidth(), height);
                 canvas.clip();
-                canvas.newPath();
+                canvas.endPath();
 
-                canvas.addXObject(formXObject, 0, yPosition - (finder.verticalFlips.get(startFlip) - pageSizeToImport.getBottom()));
+                canvas.addXObject(formXObject, 0,
+                        yPosition - (verticalFlips.get(startFlip) - pageSizeToImport.getBottom()));
 
                 canvas.restoreState();
                 yPosition -= height + gap;
                 startFlip = endFlip - 1;
-            } else if (!first)
+            } else if (!first) {
                 throw new IllegalArgumentException(String.format("Page %s content sections too large.", page));
+            }
             first = false;
         }
     }
 
-    void newPage() {
+    private void newPage() {
         PdfPage page = pdfDocument.addNewPage(pageSize);
         canvas = new PdfCanvas(page);
         yPosition = pageSize.getTop() - top;

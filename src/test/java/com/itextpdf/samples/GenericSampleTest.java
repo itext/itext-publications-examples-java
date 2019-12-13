@@ -117,8 +117,8 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemoSystemOut");
 
         // Not a sample classes
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PageVerticalAnalyzer");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.PdfDenseMerger");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.densemerger.PageVerticalAnalyzer");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.densemerger.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.colorblindness");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.headertagging");
