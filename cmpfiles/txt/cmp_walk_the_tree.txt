@@ -1,0 +1,10780 @@
+Role: null
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructTreeRoot
+Role: /Document
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrDictionary
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrDictionary
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrDictionary
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrDictionary
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /L
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /LI
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /LBody
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /LI
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /LBody
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /LI
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /LBody
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 518.96 770 26.64 re
+f
+Q
+EMC
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 20 Tf
+36 526.15 Td
+0.97647 0.76078 0.15294 rg
+(iText)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 237.69 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 16 Tf
+36 243.44 Td
+0.97647 0.76078 0.15294 rg
+(Some filler text)Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F2 12 Tf
+37.5 214.02 Td
+(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex arcu, varius a lorem et, malesuada tempor massa. Aenean elementum)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F2 12 Tf
+37.5 198.03 Td
+(rutrum risus vel ultrices. Suspendisse lacinia elit ac purus fringilla porta. Fusce feugiat metus eget metus accumsan porta. Vestibulum ante)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 12 Tf
+37.5 182.05 Td
+(ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Cras semper mi ullamcorper velit molestie)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F2 12 Tf
+37.5 166.07 Td
+(tempus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 6>> BDC
+q
+BT
+/F2 12 Tf
+37.5 138.08 Td
+(Curabitur pulvinar tellus quis maximus tristique. Praesent id aliquet tellus. Quisque in ipsum ut metus sagittis sollicitudin et sit amet dolor.)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F2 12 Tf
+37.5 122.1 Td
+(Maecenas vitae tempor felis. Proin convallis justo ac rutrum bibendum. Suspendisse malesuada tincidunt varius. Phasellus non malesuada)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 8>> BDC
+q
+BT
+/F2 12 Tf
+37.5 106.11 Td
+(magna. Phasellus iaculis hendrerit neque, sit amet elementum velit fringilla sit amet. Suspendisse risus nunc, hendrerit id laoreet eget, tempus ut)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F2 12 Tf
+37.5 90.13 Td
+(sem. In hac habitasse platea dictumst. Aliquam erat volutpat. Maecenas iaculis augue a eros sagittis, ac lacinia metus faucibus.)Tj
+ET
+Q
+EMC
+/Span <</MCID 10>> BDC
+q
+BT
+/F2 12 Tf
+37.5 62.15 Td
+(Aenean in bibendum justo. Curabitur et mi tempus nibh aliquam congue. Praesent venenatis est sit amet mauris egestas accumsan. Proin)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F2 12 Tf
+37.5 46.16 Td
+(fringilla leo enim, sit amet euismod justo pellentesque ut. Etiam dignissim nulla id dui porta posuere. Etiam posuere pulvinar suscipit. Donec)Tj
+( )Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 465.58 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 12>> BDC
+q
+BT
+/F2 12 Tf
+42 475.89 Td
+1 1 1 rg
+(The Platform)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 432.34 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 13>> BDC
+q
+BT
+/F2 12 Tf
+42 442.65 Td
+1 1 1 rg
+(The Library)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 399.11 184.23 27.98 re
+f
+Q
+EMC
+/Span <</MCID 14>> BDC
+q
+BT
+/F2 12 Tf
+42 409.42 Td
+1 1 1 rg
+(The Company)Tj
+ET
+Q
+EMC
+/Span <</MCID 15>> BDC
+q
+BT
+/F1 20 Tf
+227.73 472.71 Td
+(The Library)Tj
+ET
+Q
+EMC
+/Span <</MCID 16>> BDC
+q
+BT
+/F2 12 Tf
+229.23 440.45 Td
+(iText is a software developer toolkit that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 17>> BDC
+q
+BT
+/F2 12 Tf
+229.23 424.46 Td
+(functionalities within their applications, processes or products.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+605.03 262.75 191.73 235.31 re
+f
+Q
+EMC
+/Span <</MCID 18>> BDC
+q
+BT
+/F1 16 Tf
+676.45 482.5 Td
+0.97647 0.76078 0.15294 rg
+(What?)Tj
+ET
+Q
+EMC
+/Span <</MCID 19>> BDC
+q
+BT
+/F2 12 Tf
+607.94 453.08 Td
+1 1 1 rg
+(iText is a software developer toolkit)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 20>> BDC
+q
+BT
+/F2 12 Tf
+611.61 437.09 Td
+1 1 1 rg
+(that allows users to integrate PDF)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 21>> BDC
+q
+BT
+/F2 12 Tf
+634.95 421.11 Td
+1 1 1 rg
+(functionalities within their)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 22>> BDC
+q
+BT
+/F2 12 Tf
+669.96 405.12 Td
+1 1 1 rg
+(applications)Tj
+ET
+Q
+EMC
+/Span <</MCID 23>> BDC
+q
+BT
+/F1 16 Tf
+679.12 381.5 Td
+0.97647 0.76078 0.15294 rg
+(How?)Tj
+ET
+Q
+EMC
+/Span <</MCID 24>> BDC
+q
+BT
+/F2 12 Tf
+613.94 352.08 Td
+1 1 1 rg
+(By providing you with the tools to)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 25>> BDC
+q
+BT
+/F2 12 Tf
+607.59 336.09 Td
+1 1 1 rg
+(create and manipulate a pdf in your)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 26>> BDC
+q
+BT
+/F2 12 Tf
+668.96 320.11 Td
+1 1 1 rg
+(source code)Tj
+ET
+Q
+EMC
+/Span <</MCID 27>> BDC
+q
+BT
+/F1 16 Tf
+672.44 296.49 Td
+0.97647 0.76078 0.15294 rg
+(Really?)Tj
+ET
+Q
+EMC
+/Span <</MCID 28>> BDC
+q
+BT
+/F2 12 Tf
+673.64 267.06 Td
+1 1 1 rg
+(Yes really!)Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfObjRef
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfObjRef
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Div
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /P
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfObjRef
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Form
+Class name: com.itextpdf.kernel.pdf.tagging.PdfObjRef
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfStructElem
+Content: 
+/Span <</MCID 0>> BDC
+q
+BT
+/F1 12 Tf
+37.5 535.33 Td
+(consectetur massa at posuere finibus. Cras sit amet enim commodo, molestie urna condimentum, vestibulum justo. Mauris viverra pulvinar)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 1>> BDC
+q
+BT
+/F1 12 Tf
+37.5 519.34 Td
+(ipsum, non sodales ligula maximus et. Mauris libero leo, ultricies sit amet est non, venenatis pellentesque urna. Vestibulum tincidunt mauris ac)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 2>> BDC
+q
+BT
+/F1 12 Tf
+37.5 503.36 Td
+(posuere laoreet. Vivamus consectetur nisl elit, id euismod neque scelerisque non. Praesent tincidunt malesuada tristique. Aliquam sed leo)Tj
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 3>> BDC
+q
+BT
+/F1 12 Tf
+37.5 487.38 Td
+(tincidunt tortor facilisis convallis. Donec quis aliquam velit.)Tj
+ET
+Q
+EMC
+/Artifact BMC
+q
+0.01961 0.33333 0.52941 rg
+36 458 770 21.31 re
+f
+Q
+EMC
+/Span <</MCID 4>> BDC
+q
+BT
+/F2 16 Tf
+36 463.75 Td
+0.97647 0.76078 0.15294 rg
+(Some small input forms)Tj
+ET
+Q
+EMC
+/Span <</MCID 5>> BDC
+q
+BT
+/F1 12 Tf
+36 438.53 Td
+(First name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+99.35 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.85 449 m
+222.85 449 l
+223.6 449.75 l
+100.1 449.75 l
+100.85 449 l
+f
+99.35 450.5 m
+224.35 450.5 l
+223.6 449.75 l
+100.1 449.75 l
+99.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 449 m
+222.85 434.18 l
+223.6 433.43 l
+223.6 449.75 l
+222.85 449 l
+f
+224.35 450.5 m
+224.35 432.68 l
+223.6 433.43 l
+223.6 449.75 l
+224.35 450.5 l
+f
+Q
+q
+0 0 0 rg
+222.85 434.18 m
+100.85 434.18 l
+100.1 433.43 l
+223.6 433.43 l
+222.85 434.18 l
+f
+224.35 432.68 m
+99.35 432.68 l
+100.1 433.43 l
+223.6 433.43 l
+224.35 432.68 l
+f
+Q
+q
+0 0 0 rg
+100.85 434.18 m
+100.85 449 l
+100.1 449.75 l
+100.1 433.43 l
+100.85 434.18 l
+f
+99.35 432.68 m
+99.35 450.5 l
+100.1 449.75 l
+100.1 433.43 l
+99.35 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 6>> BDC
+q
+BT
+/F1 12 Tf
+224.35 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 7>> BDC
+q
+BT
+/F1 12 Tf
+36 420.71 Td
+(Last name: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+98.7 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+100.2 431.18 m
+222.2 431.18 l
+222.95 431.93 l
+99.45 431.93 l
+100.2 431.18 l
+f
+98.7 432.68 m
+223.7 432.68 l
+222.95 431.93 l
+99.45 431.93 l
+98.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 431.18 m
+222.2 416.36 l
+222.95 415.61 l
+222.95 431.93 l
+222.2 431.18 l
+f
+223.7 432.68 m
+223.7 414.86 l
+222.95 415.61 l
+222.95 431.93 l
+223.7 432.68 l
+f
+Q
+q
+0 0 0 rg
+222.2 416.36 m
+100.2 416.36 l
+99.45 415.61 l
+222.95 415.61 l
+222.2 416.36 l
+f
+223.7 414.86 m
+98.7 414.86 l
+99.45 415.61 l
+222.95 415.61 l
+223.7 414.86 l
+f
+Q
+q
+0 0 0 rg
+100.2 416.36 m
+100.2 431.18 l
+99.45 431.93 l
+99.45 415.61 l
+100.2 416.36 l
+f
+98.7 414.86 m
+98.7 432.68 l
+99.45 431.93 l
+99.45 415.61 l
+98.7 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 8>> BDC
+q
+BT
+/F1 12 Tf
+223.7 420.71 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 9>> BDC
+q
+BT
+/F1 12 Tf
+413.3 438.53 Td
+(Occupation: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+480.67 432.68 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+482.17 449 m
+604.17 449 l
+604.92 449.75 l
+481.42 449.75 l
+482.17 449 l
+f
+480.67 450.5 m
+605.67 450.5 l
+604.92 449.75 l
+481.42 449.75 l
+480.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 449 m
+604.17 434.18 l
+604.92 433.43 l
+604.92 449.75 l
+604.17 449 l
+f
+605.67 450.5 m
+605.67 432.68 l
+604.92 433.43 l
+604.92 449.75 l
+605.67 450.5 l
+f
+Q
+q
+0 0 0 rg
+604.17 434.18 m
+482.17 434.18 l
+481.42 433.43 l
+604.92 433.43 l
+604.17 434.18 l
+f
+605.67 432.68 m
+480.67 432.68 l
+481.42 433.43 l
+604.92 433.43 l
+605.67 432.68 l
+f
+Q
+q
+0 0 0 rg
+482.17 434.18 m
+482.17 449 l
+481.42 449.75 l
+481.42 433.43 l
+482.17 434.18 l
+f
+480.67 432.68 m
+480.67 450.5 l
+481.42 449.75 l
+481.42 433.43 l
+480.67 432.68 l
+f
+Q
+q
+Q
+/Span <</MCID 10>> BDC
+q
+BT
+/F1 12 Tf
+605.67 438.53 Td
+( )Tj
+ET
+Q
+EMC
+/Span <</MCID 11>> BDC
+q
+BT
+/F1 12 Tf
+413.3 420.71 Td
+(Hobbies: )Tj
+ET
+Q
+EMC
+q
+1 1 1 rg
+463.99 414.86 125 17.82 re
+f
+Q
+q
+0 0 0 rg
+465.49 431.18 m
+587.49 431.18 l
+588.24 431.93 l
+464.74 431.93 l
+465.49 431.18 l
+f
+463.99 432.68 m
+588.99 432.68 l
+588.24 431.93 l
+464.74 431.93 l
+463.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 431.18 m
+587.49 416.36 l
+588.24 415.61 l
+588.24 431.93 l
+587.49 431.18 l
+f
+588.99 432.68 m
+588.99 414.86 l
+588.24 415.61 l
+588.24 431.93 l
+588.99 432.68 l
+f
+Q
+q
+0 0 0 rg
+587.49 416.36 m
+465.49 416.36 l
+464.74 415.61 l
+588.24 415.61 l
+587.49 416.36 l
+f
+588.99 414.86 m
+463.99 414.86 l
+464.74 415.61 l
+588.24 415.61 l
+588.99 414.86 l
+f
+Q
+q
+0 0 0 rg
+465.49 416.36 m
+465.49 431.18 l
+464.74 431.93 l
+464.74 415.61 l
+465.49 416.36 l
+f
+463.99 414.86 m
+463.99 432.68 l
+464.74 431.93 l
+464.74 415.61 l
+463.99 414.86 l
+f
+Q
+q
+Q
+/Span <</MCID 12>> BDC
+q
+BT
+/F1 12 Tf
+588.99 420.71 Td
+( )Tj
+ET
+Q
+EMC
+
+Role: /Span
+Class name: com.itextpdf.kernel.pdf.tagging.PdfMcrNumber

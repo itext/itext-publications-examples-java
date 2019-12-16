@@ -68,7 +68,8 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles",
             "com.itextpdf.samples.sandbox.parse.ParseCustom",
             "com.itextpdf.samples.sandbox.parse.ParseCzech",
-            "com.itextpdf.samples.sandbox.logging.CounterDemo"
+            "com.itextpdf.samples.sandbox.logging.CounterDemo",
+            "com.itextpdf.samples.sandbox.tagging.WalkTheTree"
     );
 
     /**
