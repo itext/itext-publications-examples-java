@@ -30,28 +30,25 @@ import java.io.File;
 
 public class FlateCompressJPEG1Pass {
     public static final String DEST = "./target/sandbox/images/flate_compress_jpeg_1pass.pdf";
+
     public static final String IMAGE = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new FlateCompressJPEG1Pass().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        PageSize pageSize = new PageSize(PageSize.A4).rotate();
-
+        PageSize pageSize = PageSize.A4.rotate();
         Document doc = new Document(pdfDoc, pageSize);
 
         Image image = new Image(ImageDataFactory.create(IMAGE));
         image.getXObject().getPdfObject().setCompressionLevel(CompressionConstants.BEST_COMPRESSION);
-        image.scaleToFit(PageSize.A4.rotate().getWidth(), pageSize.getHeight());
+        image.scaleAbsolute(pageSize.getWidth(), pageSize.getHeight());
         image.setFixedPosition(0, 0);
-
         doc.add(image);
 
         doc.close();

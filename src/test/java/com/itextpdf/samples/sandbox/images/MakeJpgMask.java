@@ -28,33 +28,24 @@ import java.io.IOException;
 
 public class MakeJpgMask {
     public static final String DEST = "./target/sandbox/images/make_jpg_mask.pdf";
+
     public static final String IMAGE = "./src/test/resources/img/javaone2013.jpg";
     public static final String MASK = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new MakeJpgMask().manipulatePdf(DEST);
-    }
 
-    public static ImageData makeBlackAndWhitePng(String image) throws IOException {
-        BufferedImage bi = ImageIO.read(new File(image));
-        BufferedImage newBi = new BufferedImage(bi.getWidth(), bi.getHeight(), BufferedImage.TYPE_USHORT_GRAY);
-        newBi.getGraphics().drawImage(bi, 0, 0, null);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write(newBi, "png", baos);
-        return ImageDataFactory.create(baos.toByteArray());
+        new MakeJpgMask().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        PageSize pageSize = new PageSize(PageSize.A4).rotate();
+        PageSize pageSize = PageSize.A4.rotate();
         Document doc = new Document(pdfDoc, pageSize);
 
         ImageData image = ImageDataFactory.create(IMAGE);
-        ImageData mask = makeBlackAndWhitePng(MASK);
+        ImageData mask = convertToBlackAndWhitePng(MASK);
         mask.makeMask();
         image.setImageMask(mask);
 
@@ -64,5 +55,14 @@ public class MakeJpgMask {
         doc.add(img);
 
         doc.close();
+    }
+
+    private static ImageData convertToBlackAndWhitePng(String image) throws IOException {
+        BufferedImage bi = ImageIO.read(new File(image));
+        BufferedImage newBi = new BufferedImage(bi.getWidth(), bi.getHeight(), BufferedImage.TYPE_USHORT_GRAY);
+        newBi.getGraphics().drawImage(bi, 0, 0, null);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(newBi, "png", baos);
+        return ImageDataFactory.create(baos.toByteArray());
     }
 }

@@ -24,23 +24,26 @@ import java.io.File;
 
 public class BackgroundImage {
     public static final String DEST = "./target/sandbox/images/background_image.pdf";
+
     public static final String IMAGE = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new BackgroundImage().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        PageSize pageSize = new PageSize(PageSize.A4).rotate();
+        PageSize pageSize = PageSize.A4.rotate();
         Document doc = new Document(pdfDoc, pageSize);
+
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         canvas.addImage(ImageDataFactory.create(IMAGE), pageSize, false);
+
         doc.add(new Paragraph("Berlin!"));
+
         doc.close();
     }
 }
