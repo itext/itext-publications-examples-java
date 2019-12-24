@@ -94,14 +94,13 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         ignoredAreasMap.put(1, rectangles);
 
         ignoredClassesMap = new HashMap<>();
-        ignoredClassesMap.put("com.itextpdf.samples.typography.latin.LatinSignature", ignoredAreasMap);
+        ignoredClassesMap.put("com.itextpdf.samples.sandbox.typography.latin.LatinSignature", ignoredAreasMap);
     }
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
-        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.typography");
 
         // Samples are run by separate samples runner
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
