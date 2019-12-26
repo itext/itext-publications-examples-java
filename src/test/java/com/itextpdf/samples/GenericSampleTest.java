@@ -100,6 +100,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
+        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.htmlsamples");
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
 
         // Samples are run by separate samples runner

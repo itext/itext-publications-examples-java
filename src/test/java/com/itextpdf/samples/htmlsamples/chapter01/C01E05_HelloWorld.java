@@ -1,7 +1,13 @@
 /*
- * Copyright 2016-2017, iText Group NV.
- * This example was created by Bruno Lowagie.
- * It was written in the context of the following book:
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2019 iText Group NV
+    Authors: iText Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
+/*
+ * This example was written in the context of the following book:
  * https://leanpub.com/itext7_pdfHTML
  * Go to http://developers.itextpdf.com for more info.
  */
@@ -23,25 +29,32 @@ import com.itextpdf.licensekey.LicenseKey;
  */
 public class C01E05_HelloWorld {
 
-	/** The Base URI of the HTML page. */
-	public static final String BASEURI = "src/main/resources/html/";
-	/** The path to the source HTML file. */
-	public static final String SRC = String.format("%shello.html", BASEURI);
-	/** The target folder for the result. */
-	public static final String TARGET = "target/results/ch01/";
-	/** The path to the resulting PDF file. */
-	public static final String DEST = String.format("%stest-05.pdf", TARGET);
-	
-	/**
-	 * The main method of this example.
-	 *
-	 * @param args no arguments are needed to run this example.
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
+    /**
+     * The path to the resulting PDF file.
+     */
+    public static final String DEST = "./target/htmlsamples/ch01/helloWorld05.pdf";
+
+    /**
+     * The Base URI of the HTML page.
+     */
+    public static final String BASEURI = "./src/test/resources/htmlsamples/html/";
+
+    /**
+     * The path to the source HTML file.
+     */
+    public static final String SRC = String.format("%shello.html", BASEURI);
+
+    /**
+     * The main method of this example.
+     *
+     * @param args no arguments are needed to run this example.
+     * @throws IOException signals that an I/O exception has occurred.
+     */
     public static void main(String[] args) throws IOException {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
-        File file = new File(TARGET);
-        file.mkdirs();
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new C01E05_HelloWorld().createPdf(BASEURI, SRC, DEST);
     }
 
@@ -49,14 +62,14 @@ public class C01E05_HelloWorld {
      * Creates the PDF file.
      *
      * @param baseUri the base URI
-     * @param src the path to the source HTML file
-     * @param dest the path to the resulting PDF
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @param src     the path to the source HTML file
+     * @param dest    the path to the resulting PDF
+     * @throws IOException signals that an I/O exception has occurred.
      */
-    public void createPdf(String baseUri, String src, String dest) throws IOException { 
-    	ConverterProperties properties = new ConverterProperties();
-    	properties.setBaseUri(baseUri);
-    	PdfWriter writer = new PdfWriter(dest, new WriterProperties().setFullCompressionMode(true));
+    public void createPdf(String baseUri, String src, String dest) throws IOException {
+        ConverterProperties properties = new ConverterProperties();
+        properties.setBaseUri(baseUri);
+        PdfWriter writer = new PdfWriter(dest, new WriterProperties().setFullCompressionMode(true));
         HtmlConverter.convertToPdf(new FileInputStream(src), writer, properties);
     }
 }

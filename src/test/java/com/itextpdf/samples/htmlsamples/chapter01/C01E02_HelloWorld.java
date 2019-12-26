@@ -1,7 +1,13 @@
 /*
- * Copyright 2016-2017, iText Group NV.
- * This example was created by Bruno Lowagie.
- * It was written in the context of the following book:
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2019 iText Group NV
+    Authors: iText Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
+/*
+ * This example was written in the context of the following book:
  * https://leanpub.com/itext7_pdfHTML
  * Go to http://developers.itextpdf.com for more info.
  */
@@ -20,39 +26,46 @@ import com.itextpdf.licensekey.LicenseKey;
  */
 public class C01E02_HelloWorld {
 
-	/** The Base URI of the HTML page. */
-	public static final String BASEURI = "src/main/resources/html/";
-	/** The HTML-string that we are going to convert to PDF. */
+	/**
+	 * The path to the resulting PDF file.
+	 */
+	public static final String DEST = "./target/htmlsamples/ch01/helloWorld02.pdf";
+
+	/**
+	 * The Base URI of the HTML page.
+	 */
+	public static final String BASEURI = "./src/test/resources/htmlsamples/html";
+
+	/**
+	 * The HTML-string that we are going to convert to PDF.
+	 */
 	public static final String HTML = "<h1>Test</h1><p>Hello World</p><img src=\"img/logo.png\">";
-	/** The target folder for the result. */
-	public static final String TARGET = "target/results/ch01/";
-	/** The path to the resulting PDF file. */
-	public static final String DEST = String.format("%stest-02.pdf", TARGET);
-	
+
 	/**
 	 * The main method of this example.
 	 *
 	 * @param args no arguments are needed to run this example.
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws IOException signals that an I/O exception has occurred.
 	 */
-    public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
-        File file = new File(TARGET);
-        file.mkdirs();
-        new C01E02_HelloWorld().createPdf(BASEURI, HTML, DEST);
-    }
-    
-    /**
-     * Creates the PDF file.
-     *
-     * @param baseUri the base URI
-     * @param html the HTML as a String
-     * @param dest the path to the resulting PDF
-     * @throws IOException Signals that an I/O exception has occurred.
-     */
-    public void createPdf(String baseUri, String html, String dest) throws IOException {
-    	ConverterProperties properties = new ConverterProperties();
-    	properties.setBaseUri(baseUri);
-        HtmlConverter.convertToPdf(html, new FileOutputStream(dest), properties);
-    }
+	public static void main(String[] args) throws IOException {
+		LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+		File file = new File(DEST);
+		file.getParentFile().mkdirs();
+
+		new C01E02_HelloWorld().createPdf(BASEURI, HTML, DEST);
+	}
+
+	/**
+	 * Creates the PDF file.
+	 *
+	 * @param baseUri the base URI
+	 * @param html    the HTML as a String
+	 * @param dest    the path to the resulting PDF
+	 * @throws IOException signals that an I/O exception has occurred.
+	 */
+	public void createPdf(String baseUri, String html, String dest) throws IOException {
+		ConverterProperties properties = new ConverterProperties();
+		properties.setBaseUri(baseUri);
+		HtmlConverter.convertToPdf(html, new FileOutputStream(dest), properties);
+	}
 }
