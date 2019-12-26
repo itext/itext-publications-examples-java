@@ -1,0 +1,16 @@
+.poster {
+	width: 120px;
+	float: right;
+}
+.director {
+	font-style: italic;
+}
+.description {
+	font-family: serif;
+}
+.imdb {
+	font-size: 0.8em;
+}
+a {
+	color: green;
+}
