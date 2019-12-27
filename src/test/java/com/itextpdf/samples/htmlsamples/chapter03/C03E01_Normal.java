@@ -18,37 +18,39 @@ import com.itextpdf.licensekey.LicenseKey;
  */
 public class C03E01_Normal {
 
-	/** The Base URI of the HTML page. */
-	public static final String BASEURI = "src/main/resources/html/";
-	/** The path to the source HTML file. */
-	public static final String SRC = String.format("%ssxsw.html", BASEURI);
-	/** The target folder for the result. */
-	public static final String TARGET = "target/results/ch03/";
-	/** The path to the resulting PDF file. */
-	public static final String DEST = String.format("%ssxsw_normal.pdf", TARGET);
+    /**
+     * The path to the resulting PDF file.
+     */
+    public static final String DEST = "./target/htmlsamples/ch03/sxsw_normal.pdf";
 
-	/**
-	 * The main method of this example.
-	 *
-	 * @param args no arguments are needed to run this example.
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
+    /**
+     * The path to the source HTML file.
+     */
+    public static final String SRC = "./src/test/resources/htmlsamples/html/sxsw.html";
+
+    /**
+     * The main method of this example.
+     *
+     * @param args no arguments are needed to run this example.
+     * @throws IOException signals that an I/O exception has occurred.
+     */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");        
-    	File file = new File(TARGET);
-    	file.mkdirs();
-    	C03E01_Normal app = new C03E01_Normal();
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
+        C03E01_Normal app = new C03E01_Normal();
         app.createPdf(SRC, DEST);
     }
 
     /**
      * Creates the PDF file.
      *
-     * @param src the path to the source HTML file
+     * @param src  the path to the source HTML file
      * @param dest the path to the resulting PDF
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(String src, String dest) throws IOException {
-		HtmlConverter.convertToPdf(new File(src), new File(dest));
+        HtmlConverter.convertToPdf(new File(src), new File(dest));
     }
 }
