@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017, iText Group NV.
+ * Copyright 2016-2020, iText Group NV.
  * This example was created by Bruno Lowagie.
  * It was written in the context of the following book:
  * https://leanpub.com/itext7_pdfHTML
@@ -39,55 +39,65 @@ import com.itextpdf.licensekey.LicenseKey;
  */
 public class C04E03_MovieTable3 {
 
-	/** The Base URI of the HTML page. */
-	public static final String BASEURI = "src/main/resources/html/";
-	/** The XML containing all the data. */
-	public static final String XML = "src/main/resources/xml/movies.xml";
-	/** The XSLT needed to transform the XML to HTML. */
-	public static final String XSL = "src/main/resources/xml/movies_table.xsl";
-	/** The target folder for the result. */
-	public static final String TARGET = "target/results/ch04/";
-	/** The path to the resulting PDF file. */
-	public static final String DEST = String.format("%smovie_table3.pdf", TARGET);
+    /**
+     * The path to the resulting PDF file.
+     */
+    public static final String DEST = "./target/htmlsamples/ch04/movie_table3.pdf";
 
-	/**
-	 * The main method of this example.
-	 *
-	 * @param args no arguments are needed to run this example.
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws TransformerException the transformer exception
-	 */
+    /**
+     * The Base URI of the HTML page.
+     */
+    public static final String BASEURI = "./src/test/resources/htmlsamples/html/";
+
+    /**
+     * The XML containing all the data.
+     */
+    public static final String XML = "./src/test/resources/htmlsamples/xml/movies.xml";
+
+    /**
+     * The XSLT needed to transform the XML to HTML.
+     */
+    public static final String XSL = "./src/test/resources/htmlsamples/xml/movies_table.xsl";
+
+    /**
+     * The main method of this example.
+     *
+     * @param args no arguments are needed to run this example.
+     * @throws IOException          signals that an I/O exception has occurred.
+     * @throws TransformerException the transformer exception
+     */
     public static void main(String[] args) throws IOException, TransformerException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");        
-    	File file = new File(TARGET);
-    	file.mkdirs();
-    	C04E03_MovieTable3 app = new C04E03_MovieTable3();
-    	app.createPdf(app.createHtml(XML, XSL), BASEURI, DEST);
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
+        C04E03_MovieTable3 app = new C04E03_MovieTable3();
+        app.createPdf(app.createHtml(XML, XSL), BASEURI, DEST);
     }
 
     /**
      * Creates the PDF file.
      *
-     * @param html the HTML file as a byte array
+     * @param html    the HTML file as a byte array
      * @param baseUri the base URI
-     * @param dest the path to the resulting PDF
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @param dest    the path to the resulting PDF
+     * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(byte[] html, String baseUri, String dest) throws IOException {
-    	ConverterProperties properties = new ConverterProperties();
-    	properties.setBaseUri(baseUri); 
-    	PdfWriter writer = new PdfWriter(dest);
-    	PdfDocument pdf = new PdfDocument(writer);
-    	pdf.setDefaultPageSize(new PageSize(595, 14400));
-    	Document document = HtmlConverter.convertToDocument(new ByteArrayInputStream(html), pdf, properties);
-    	EndPosition endPosition = new EndPosition();
-    	LineSeparator separator = new LineSeparator(endPosition);
-    	document.add(separator);
-    	document.getRenderer().close();
-    	PdfPage page = pdf.getPage(1);
-    	float y = endPosition.getY() - 36;
-    	page.setMediaBox(new Rectangle(0, y, 595, 14400 - y));
-    	document.close();
+        ConverterProperties properties = new ConverterProperties();
+        properties.setBaseUri(baseUri);
+        PdfWriter writer = new PdfWriter(dest);
+        PdfDocument pdf = new PdfDocument(writer);
+        pdf.setDefaultPageSize(new PageSize(595, 14400));
+        Document document = HtmlConverter.convertToDocument(new ByteArrayInputStream(html), pdf, properties);
+        EndPosition endPosition = new EndPosition();
+        LineSeparator separator = new LineSeparator(endPosition);
+        document.add(separator);
+        document.getRenderer().close();
+        PdfPage page = pdf.getPage(1);
+        float y = endPosition.getY() - 36;
+        page.setMediaBox(new Rectangle(0, y, 595, 14400 - y));
+        document.close();
     }
 
     /**
@@ -96,7 +106,7 @@ public class C04E03_MovieTable3 {
      * @param xmlPath the path to the XML file.
      * @param xslPath the path to the XSL file
      * @return the resulting HTML as a byte[]
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws IOException          signals that an I/O exception has occurred.
      * @throws TransformerException the transformer exception
      */
     public byte[] createHtml(String xmlPath, String xslPath) throws IOException, TransformerException {
@@ -118,55 +128,57 @@ public class C04E03_MovieTable3 {
      */
     class EndPosition implements ILineDrawer {
 
-    	/** A Y-position. */
-	    protected float y;
-    	
-    	/**
-	     * Gets the Y-position.
-	     *
-	     * @return the Y-position
-	     */
-	    public float getY() {
-    		return y;
-    	}
-    	
-		/* (non-Javadoc)
-		 * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#draw(com.itextpdf.kernel.pdf.canvas.PdfCanvas, com.itextpdf.kernel.geom.Rectangle)
-		 */
-		@Override
-		public void draw(PdfCanvas pdfCanvas, Rectangle rect) {
-			this.y = rect.getY();
-		}
+        /**
+         * A Y-position.
+         */
+        protected float y;
 
-		/* (non-Javadoc)
-		 * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#getColor()
-		 */
-		@Override
-		public Color getColor() {
-			return null;
-		}
+        /**
+         * Gets the Y-position.
+         *
+         * @return the Y-position
+         */
+        public float getY() {
+            return y;
+        }
 
-		/* (non-Javadoc)
-		 * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#getLineWidth()
-		 */
-		@Override
-		public float getLineWidth() {
-			return 0;
-		}
+        /* (non-Javadoc)
+         * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#draw(com.itextpdf.kernel.pdf.canvas.PdfCanvas, com.itextpdf.kernel.geom.Rectangle)
+         */
+        @Override
+        public void draw(PdfCanvas pdfCanvas, Rectangle rect) {
+            this.y = rect.getY();
+        }
 
-		/* (non-Javadoc)
-		 * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#setColor(com.itextpdf.kernel.color.Color)
-		 */
-		@Override
-		public void setColor(Color color) {
-		}
+        /* (non-Javadoc)
+         * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#getColor()
+         */
+        @Override
+        public Color getColor() {
+            return null;
+        }
 
-		/* (non-Javadoc)
-		 * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#setLineWidth(float)
-		 */
-		@Override
-		public void setLineWidth(float lineWidth) {
-		}
-    	
+        /* (non-Javadoc)
+         * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#getLineWidth()
+         */
+        @Override
+        public float getLineWidth() {
+            return 0;
+        }
+
+        /* (non-Javadoc)
+         * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#setColor(com.itextpdf.kernel.color.Color)
+         */
+        @Override
+        public void setColor(Color color) {
+        }
+
+        /* (non-Javadoc)
+         * @see com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer#setLineWidth(float)
+         */
+        @Override
+        public void setLineWidth(float lineWidth) {
+        }
+
     }
 }

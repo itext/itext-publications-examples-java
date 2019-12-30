@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017, iText Group NV.
+ * Copyright 2016-2020, iText Group NV.
  * This example was created by Bruno Lowagie.
  * It was written in the context of the following book:
  * https://leanpub.com/itext7_pdfHTML
@@ -44,51 +44,64 @@ import com.itextpdf.licensekey.LicenseKey;
  */
 public class C04E02_MovieTable2 {
 
-	/** The Base URI of the HTML page. */
-	public static final String BASEURI = "src/main/resources/html/";
-	/** The XML containing all the data. */
-	public static final String XML = "src/main/resources/xml/movies.xml";
-	/** The XSLT needed to transform the XML to HTML. */
-	public static final String XSL = "src/main/resources/xml/movies_table.xsl";
-	/** The target folder for the result. */
-	public static final String TARGET = "target/results/ch04/";
-	/** The path to the resulting PDF file. */
-	public static final String DEST = String.format("%smovie_table2.pdf", TARGET);
-	/** The path to a single-page PDF that will be used as company stationery. */
-	public static final String STATIONERY = "src/main/resources/pdf/stationery.pdf";
+    /**
+     * The path to the resulting PDF file.
+     */
+    public static final String DEST = "./target/htmlsamples/ch04/movie_table2.pdf";
 
-	/**
-	 * The main method of this example.
-	 *
-	 * @param args no arguments are needed to run this example.
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws TransformerException the transformer exception
-	 */
+    /**
+     * The Base URI of the HTML page.
+     */
+    public static final String BASEURI = "./src/test/resources/htmlsamples/html/";
+
+    /**
+     * The XML containing all the data.
+     */
+    public static final String XML = "./src/test/resources/htmlsamples/xml/movies.xml";
+
+    /**
+     * The XSLT needed to transform the XML to HTML.
+     */
+    public static final String XSL = "./src/test/resources/htmlsamples/xml/movies_table.xsl";
+
+    /**
+     * The path to a single-page PDF that will be used as company stationery.
+     */
+    public static final String STATIONERY = "./src/test/resources/htmlsamples/pdf/stationery.pdf";
+
+    /**
+     * The main method of this example.
+     *
+     * @param args no arguments are needed to run this example.
+     * @throws IOException          signals that an I/O exception has occurred.
+     * @throws TransformerException the transformer exception
+     */
     public static void main(String[] args) throws IOException, TransformerException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");        
-    	File file = new File(TARGET);
-    	file.mkdirs();
-    	C04E02_MovieTable2 app = new C04E02_MovieTable2();
-    	app.createPdf(app.createHtml(XML, XSL), BASEURI, STATIONERY, DEST);
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
+        C04E02_MovieTable2 app = new C04E02_MovieTable2();
+        app.createPdf(app.createHtml(XML, XSL), BASEURI, STATIONERY, DEST);
     }
 
     /**
      * Creates the PDF file.
      *
-     * @param html the HTML file as a byte array
-     * @param baseUri the base URI
+     * @param html       the HTML file as a byte array
+     * @param baseUri    the base URI
      * @param stationery the path to a single-page PDF file that will act as stationery
-     * @param dest the path to the resulting PDF
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @param dest       the path to the resulting PDF
+     * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(byte[] html, String baseUri, String stationery, String dest) throws IOException {
-    	ConverterProperties properties = new ConverterProperties();
-    	properties.setBaseUri(baseUri); 
-    	PdfWriter writer = new PdfWriter(dest);
-    	PdfDocument pdf = new PdfDocument(writer);
-    	IEventHandler handler = new Background(pdf, stationery);
+        ConverterProperties properties = new ConverterProperties();
+        properties.setBaseUri(baseUri);
+        PdfWriter writer = new PdfWriter(dest);
+        PdfDocument pdf = new PdfDocument(writer);
+        IEventHandler handler = new Background(pdf, stationery);
         pdf.addEventHandler(PdfDocumentEvent.START_PAGE, handler);
-    	HtmlConverter.convertToPdf(new ByteArrayInputStream(html), pdf, properties);
+        HtmlConverter.convertToPdf(new ByteArrayInputStream(html), pdf, properties);
     }
 
     /**
@@ -97,7 +110,7 @@ public class C04E02_MovieTable2 {
      * @param xmlPath the path to the XML file.
      * @param xslPath the path to the XSL file
      * @return the resulting HTML as a byte[]
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws IOException          signals that an I/O exception has occurred.
      * @throws TransformerException the transformer exception
      */
     public byte[] createHtml(String xmlPath, String xslPath) throws IOException, TransformerException {
@@ -112,34 +125,36 @@ public class C04E02_MovieTable2 {
         writer.close();
         return baos.toByteArray();
     }
-    
+
     /**
      * Implementation of the IEventHandler to add a background and a page number to every page.
      */
     class Background implements IEventHandler {
-		
-		/** The Form XObject that will be added as the background for every page. */
-		PdfXObject stationery;
-		
-		/**
-		 * Instantiates a new Background instance.
-		 *
-		 * @param pdf the PdfDocument instance of the PDF to which the background will be added
-		 * @param src the path to the single-page PDF file
-		 * @throws IOException Signals that an I/O exception has occurred.
-		 */
-		public Background(PdfDocument pdf, String src) throws IOException {
-			PdfDocument template = new PdfDocument(new PdfReader(src));
-			PdfPage page = template.getPage(1);
-			stationery = page.copyAsFormXObject(pdf);
-			template.close();
-		}
-		
-		/* (non-Javadoc)
-		 * @see com.itextpdf.kernel.events.IEventHandler#handleEvent(com.itextpdf.kernel.events.Event)
-		 */
-		@Override
-		public void handleEvent(Event event) {
+
+        /**
+         * The Form XObject that will be added as the background for every page.
+         */
+        PdfXObject stationery;
+
+        /**
+         * Instantiates a new Background instance.
+         *
+         * @param pdf the PdfDocument instance of the PDF to which the background will be added
+         * @param src the path to the single-page PDF file
+         * @throws IOException signals that an I/O exception has occurred.
+         */
+        public Background(PdfDocument pdf, String src) throws IOException {
+            PdfDocument template = new PdfDocument(new PdfReader(src));
+            PdfPage page = template.getPage(1);
+            stationery = page.copyAsFormXObject(pdf);
+            template.close();
+        }
+
+        /* (non-Javadoc)
+         * @see com.itextpdf.kernel.events.IEventHandler#handleEvent(com.itextpdf.kernel.events.Event)
+         */
+        @Override
+        public void handleEvent(Event event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfDocument pdf = docEvent.getDocument();
             PdfPage page = docEvent.getPage();
@@ -147,9 +162,10 @@ public class C04E02_MovieTable2 {
             pdfCanvas.addXObject(stationery, 0, 0);
             Rectangle rect = new Rectangle(36, 32, 36, 64);
             Canvas canvas = new Canvas(pdfCanvas, pdf, rect);
-            canvas.add(new Paragraph(String.valueOf(pdf.getNumberOfPages())).setFontSize(48).setFontColor(ColorConstants.WHITE));
+            canvas.add(new Paragraph(String.valueOf(pdf.getNumberOfPages())).setFontSize(48)
+                    .setFontColor(ColorConstants.WHITE));
             canvas.close();
-		}
-		
-	}
+        }
+
+    }
 }

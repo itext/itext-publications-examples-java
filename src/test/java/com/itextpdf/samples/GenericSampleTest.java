@@ -115,6 +115,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoto");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoToPage");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemoSystemOut");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter05.C05E03_Invitations");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.densemerger.PageVerticalAnalyzer");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017, iText Group NV.
+ * Copyright 2016-2020, iText Group NV.
  * This example was created by Bruno Lowagie.
  * It was written in the context of the following book:
  * https://leanpub.com/itext7_pdfHTML
@@ -28,51 +28,61 @@ import com.itextpdf.licensekey.LicenseKey;
 
 /**
  * Creates a PDF document from an XML file using XSLT to convert the XML to HTML,
- * introducing custimized bookmarks.
+ * introducing customized bookmarks.
  */
 public class C04E05_MovieOverview2 {
 
-	/** The Base URI of the HTML page. */
-	public static final String BASEURI = "src/main/resources/html/";
-	/** The XML containing all the data. */
-	public static final String XML = "src/main/resources/xml/movies.xml";
-	/** The XSLT needed to transform the XML to HTML. */
-	public static final String XSL = "src/main/resources/xml/movies_overview.xsl";
-	/** The target folder for the result. */
-	public static final String TARGET = "target/results/ch04/";
-	/** The path to the resulting PDF file. */
-	public static final String DEST = String.format("%smovie_overview2.pdf", TARGET);
+    /**
+     * The path to the resulting PDF file.
+     */
+    public static final String DEST = "./target/htmlsamples/ch04/movie_overview2.pdf";
 
-	/**
-	 * The main method of this example.
-	 *
-	 * @param args no arguments are needed to run this example.
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
+    /**
+     * The Base URI of the HTML page.
+     */
+    public static final String BASEURI = "./src/test/resources/htmlsamples/html/";
+
+    /**
+     * The XML containing all the data.
+     */
+    public static final String XML = "./src/test/resources/htmlsamples/xml/movies.xml";
+
+    /**
+     * The XSLT needed to transform the XML to HTML.
+     */
+    public static final String XSL = "./src/test/resources/htmlsamples/xml/movies_overview.xsl";
+
+    /**
+     * The main method of this example.
+     *
+     * @param args no arguments are needed to run this example.
+     * @throws IOException signals that an I/O exception has occurred.
+     */
     public static void main(String[] args) throws IOException, TransformerException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");        
-    	File file = new File(TARGET);
-    	file.mkdirs();
-    	C04E05_MovieOverview2 app = new C04E05_MovieOverview2();
-    	app.createPdf(app.createHtml(XML, XSL), BASEURI, DEST);
+        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
+        C04E05_MovieOverview2 app = new C04E05_MovieOverview2();
+        app.createPdf(app.createHtml(XML, XSL), BASEURI, DEST);
     }
 
     /**
      * Creates the PDF file.
      *
-     * @param html the HTML file as a byte array
+     * @param html    the HTML file as a byte array
      * @param baseUri the base URI
-     * @param dest the path to the resulting PDF
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @param dest    the path to the resulting PDF
+     * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(byte[] html, String baseUri, String dest) throws IOException {
-    	ConverterProperties properties = new ConverterProperties();
-    	properties.setBaseUri(baseUri);
-    	OutlineHandler outlineHandler = new OutlineHandler();
+        ConverterProperties properties = new ConverterProperties();
+        properties.setBaseUri(baseUri);
+        OutlineHandler outlineHandler = new OutlineHandler();
         outlineHandler.putTagPriorityMapping("h1", 1);
         outlineHandler.putTagPriorityMapping("p", 2);
-    	properties.setOutlineHandler(outlineHandler);
-    	HtmlConverter.convertToPdf(new ByteArrayInputStream(html), new FileOutputStream(dest), properties);
+        properties.setOutlineHandler(outlineHandler);
+        HtmlConverter.convertToPdf(new ByteArrayInputStream(html), new FileOutputStream(dest), properties);
     }
 
     /**
@@ -81,7 +91,7 @@ public class C04E05_MovieOverview2 {
      * @param xmlPath the path to the XML file.
      * @param xslPath the path to the XSL file
      * @return the resulting HTML as a byte[]
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws IOException          signals that an I/O exception has occurred.
      * @throws TransformerException the transformer exception
      */
     public byte[] createHtml(String xmlPath, String xslPath) throws IOException, TransformerException {
