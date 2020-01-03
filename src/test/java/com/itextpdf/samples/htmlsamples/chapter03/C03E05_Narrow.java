@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017, iText Group NV.
+ * Copyright (c) 2016-2020 iText Group NV
  * This example was created by Bruno Lowagie.
  * It was written in the context of the following book:
  * https://leanpub.com/itext7_pdfHTML

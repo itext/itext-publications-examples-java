@@ -1,11 +1,12 @@
 /*
     This file is part of the iText (R) project.
-    Copyright4 (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/22382717/write-two-itext-paragraphs-on-the-same-position
