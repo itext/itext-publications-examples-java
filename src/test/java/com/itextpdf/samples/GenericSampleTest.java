@@ -125,6 +125,14 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.headertagging");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.qrcodetag");
 
+        // TODO DEVSIX-3612
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3");
+
+        // Should not be run due to falling on different systems with different system fonts
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter06.C06E03_SystemFonts");
+
         // TODO DEVSIX-3189
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.Tables.TableBorder");
 

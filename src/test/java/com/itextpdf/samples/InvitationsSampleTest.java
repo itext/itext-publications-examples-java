@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -11,6 +11,7 @@ package com.itextpdf.samples;
 import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
@@ -18,7 +19,11 @@ import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -51,7 +56,12 @@ public class InvitationsSampleTest extends WrappedSamplesRunner {
             String currentDest = String.format(dest, i);
             String currentCmp = String.format(cmp, i);
 
-            addError(compareTool.compareByContent(currentDest, currentCmp, outPath, "diff_"));
+            Rectangle ignoredArea = new Rectangle(30, 689, 120, 18);
+            List<Rectangle> rectangles = Arrays.asList(ignoredArea);
+            Map<Integer, List<Rectangle>> ignoredAreasMap = new HashMap<>();
+            ignoredAreasMap.put(1, rectangles);
+            addError(compareTool.compareVisually(currentDest, currentCmp, outPath, "diff_",
+                    ignoredAreasMap));
             addError(compareTool.compareDocumentInfo(currentDest, currentCmp));
         }
     }
