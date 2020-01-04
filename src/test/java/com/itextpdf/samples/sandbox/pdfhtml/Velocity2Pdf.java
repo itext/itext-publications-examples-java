@@ -22,7 +22,7 @@ public class Velocity2Pdf {
 
     public static final String DEST = "./target/sandbox/pdfhtml/velocity-test.pdf";
 
-    public static final String SRC = "src/main/resources/html/templates/velocity-test.vm";
+    public static final String SRC = "./src/test/resources/pdfhtml/templates/velocity-test.vm";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);

@@ -1,0 +1,10 @@
+<HTML>
+    <HEAD>
+        <STYLE>
+            .director { font-family: serif; font-style: italic;font-size: 30px; color: gray }
+        </STYLE>
+    </HEAD>
+    <BODY>
+        <div class = "director">$message</div>
+    </BODY>
+</HTML>
