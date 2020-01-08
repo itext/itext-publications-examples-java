@@ -9,7 +9,7 @@
 /*
  * This example was written by Bruno Lowagie.
  */
-package com.itextpdf.samples.sandbox.tagging;
+package com.itextpdf.samples.sandbox.bookmarks;
 
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TableOfContents {
-    public static final String DEST = "./target/sandbox/tagging/table_of_contents.pdf";
+    public static final String DEST = "./target/sandbox/bookmarks/table_of_contents.pdf";
 
     public static final String SRC = "./src/test/resources/txt/tree.txt";
 
