@@ -20,6 +20,9 @@ import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.Appender;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.reflect.Field;
@@ -31,6 +34,7 @@ import java.util.Map;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
+import org.slf4j.LoggerFactory;
 
 @Category(SampleTest.class)
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
@@ -60,7 +64,18 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
 
-        runSamples();
+        Logger logger = (Logger) LoggerFactory.getLogger("ROOT");
+        Appender<ILoggingEvent> loggerAppender = logger.getAppender("console");
+        if (null != loggerAppender) {
+            loggerAppender.stop();
+
+            runSamples();
+
+            loggerAppender.start();
+        } else {
+            runSamples();
+        }
+
         unloadLicense();
     }
 
