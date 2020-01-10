@@ -90,7 +90,7 @@ public class C04E01_MovieTable {
      */
     public byte[] createHtml(String xmlPath, String xslPath) throws IOException, TransformerException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        Writer writer = new OutputStreamWriter(baos);
+        Writer writer = new OutputStreamWriter(baos, "UTF-8");
         StreamSource xml = new StreamSource(new File(xmlPath));
         StreamSource xsl = new StreamSource(new File(xslPath));
         TransformerFactory factory = TransformerFactory.newInstance();
