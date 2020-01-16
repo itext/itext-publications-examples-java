@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -28,7 +28,6 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.UnitValue;
 
 import java.io.File;
 
@@ -38,20 +37,21 @@ public class TableFooter {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TableFooter().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, PageSize.A4);
         doc.setMargins(36, 36, 72, 36);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        table.setWidth(523);
+        Table table = new Table(1).useAllAvailableWidth();
 
         Cell cell = new Cell().add(new Paragraph("This is a test doc"));
         cell.setBackgroundColor(ColorConstants.ORANGE);
         table.addCell(cell);
+
         cell = new Cell().add(new Paragraph("This is a copyright notice"));
         cell.setBackgroundColor(ColorConstants.LIGHT_GRAY);
         table.addCell(cell);
@@ -61,6 +61,7 @@ public class TableFooter {
         for (int i = 0; i < 150; i++) {
             doc.add(new Paragraph("Hello World!"));
         }
+
         doc.add(new AreaBreak());
         doc.add(new Paragraph("Hello World!"));
         doc.add(new AreaBreak());
@@ -70,7 +71,7 @@ public class TableFooter {
     }
 
 
-    protected class TableFooterEventHandler implements IEventHandler {
+    private static class TableFooterEventHandler implements IEventHandler {
         private Table table;
 
         public TableFooterEventHandler(Table table) {
@@ -78,13 +79,15 @@ public class TableFooter {
         }
 
         @Override
-        public void handleEvent(Event event) {
-            PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
+        public void handleEvent(Event currentEvent) {
+            PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             PdfDocument pdfDoc = docEvent.getDocument();
             PdfPage page = docEvent.getPage();
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
+
             new Canvas(canvas, pdfDoc, new Rectangle(36, 20, page.getPageSize().getWidth() - 72, 50))
-                    .add(table);
+                    .add(table)
+                    .close();
         }
     }
 }

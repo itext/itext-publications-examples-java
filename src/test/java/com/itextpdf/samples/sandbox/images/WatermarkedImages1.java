@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -27,6 +27,7 @@ import java.io.File;
 
 public class WatermarkedImages1 {
     public static final String DEST = "./target/sandbox/images/watermarked_images1.pdf";
+
     public static final String IMAGE1 = "./src/test/resources/img/bruno.jpg";
     public static final String IMAGE2 = "./src/test/resources/img/dog.bmp";
     public static final String IMAGE3 = "./src/test/resources/img/fox.bmp";
@@ -35,29 +36,40 @@ public class WatermarkedImages1 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new WatermarkedImages1().manipulatePdf(DEST);
-    }
 
-    public Image getWatermarkedImage(PdfDocument pdfDoc, Image img, String watermark) {
-        float width = img.getImageScaledWidth();
-        float height = img.getImageScaledHeight();
-        PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
-        new Canvas(template, pdfDoc).
-                add(img).
-                setFontColor(DeviceGray.WHITE).
-                showTextAligned(watermark, width / 2, height / 2, TextAlignment.CENTER, (float) Math.PI / 6);
-        return new Image(template);
+        new WatermarkedImages1().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        doc.add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno"));
-        doc.add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE2)), "Dog"));
-        doc.add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE3)), "Fox"));
-        Image image = new Image(ImageDataFactory.create(IMAGE4));
-        image.scaleToFit(400, 700);
-        doc.add(getWatermarkedImage(pdfDoc, image, "Bruno and Ingeborg"));
+
+        Image image = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno");
+        doc.add(image);
+
+        image = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE2)), "Dog");
+        doc.add(image);
+
+        image = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE3)), "Fox");
+        doc.add(image);
+
+        Image srcImage = new Image(ImageDataFactory.create(IMAGE4));
+        srcImage.scaleToFit(400, 700);
+        image = getWatermarkedImage(pdfDoc, srcImage, "Bruno and Ingeborg");
+        doc.add(image);
+
         doc.close();
+    }
+
+    private static Image getWatermarkedImage(PdfDocument pdfDoc, Image img, String watermark) {
+        float width = img.getImageScaledWidth();
+        float height = img.getImageScaledHeight();
+        PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
+        new Canvas(template, pdfDoc)
+                .add(img)
+                .setFontColor(DeviceGray.WHITE)
+                .showTextAligned(watermark, width / 2, height / 2, TextAlignment.CENTER, (float) Math.PI / 6)
+                .close();
+        return new Image(template);
     }
 }

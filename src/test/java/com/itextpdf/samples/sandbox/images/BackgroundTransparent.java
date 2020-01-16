@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -26,27 +26,25 @@ import java.io.File;
 
 public class BackgroundTransparent {
     public static final String DEST = "./target/sandbox/images/background_transparent.pdf";
+
     public static final String IMAGE = "./src/test/resources/img/berlin2013.jpg";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new BackgroundTransparent().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        PageSize pageSize = new PageSize(PageSize.A4).rotate();
+        PageSize pageSize = PageSize.A4.rotate();
         Document doc = new Document(pdfDoc, pageSize);
 
-        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         ImageData image = ImageDataFactory.create(IMAGE);
+        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         canvas.saveState();
-        PdfExtGState state = new PdfExtGState();
-        state.setFillOpacity(0.6f);
+        PdfExtGState state = new PdfExtGState().setFillOpacity(0.6f);
         canvas.setExtGState(state);
         canvas.addImage(image, 0, 0, pageSize.getWidth(), false);
         canvas.restoreState();

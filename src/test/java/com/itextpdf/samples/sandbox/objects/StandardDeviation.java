@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -33,14 +33,15 @@ public class StandardDeviation {
         new StandardDeviation().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         doc.add(new Paragraph("The standard deviation symbol doesn't exist in Helvetica."));
-        PdfFont symbol = PdfFontFactory.createFont(StandardFonts.SYMBOL);
+
+        PdfFont symbolFont = PdfFontFactory.createFont(StandardFonts.SYMBOL);
         Paragraph p = new Paragraph("So we use the Symbol font: ");
-        p.add(new Text("s").setFont(symbol));
+        p.add(new Text("s").setFont(symbolFont));
         doc.add(p);
 
         doc.close();

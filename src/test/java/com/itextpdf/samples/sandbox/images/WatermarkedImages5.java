@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -36,6 +36,7 @@ import java.io.File;
 
 public class WatermarkedImages5 {
     public static final String DEST = "./target/sandbox/images/watermarked_images5.pdf";
+
     public static final String IMAGE1 = "./src/test/resources/img/bruno.jpg";
     public static final String IMAGE2 = "./src/test/resources/img/dog.bmp";
     public static final String IMAGE3 = "./src/test/resources/img/fox.bmp";
@@ -44,47 +45,64 @@ public class WatermarkedImages5 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new WatermarkedImages5().manipulatePdf(DEST);
-    }
-
-    public Image getWatermarkedImage(PdfDocument pdfDocument, Image img) {
-        float width = img.getImageScaledWidth();
-        float height = img.getImageScaledHeight();
-        PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
-
-        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        table.setWidth(width);
-
-        table.addCell(new Cell().add(new Paragraph("Test1")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
-        table.addCell(new Cell().add(new Paragraph("Test2")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
-        table.addCell(new Cell().add(new Paragraph("Test3")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
-        table.addCell(new Cell().add(new Paragraph("Test4")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
-
-        // find the height of the table
-        TableRenderer renderer = (TableRenderer)table.createRendererSubTree();
-        renderer.setParent(new DocumentRenderer(new Document(pdfDocument)));
-        LayoutResult result = renderer.layout(new LayoutContext(new LayoutArea(1, new Rectangle(10000, 10000))));
-
-        Canvas canvas = new Canvas(template, pdfDocument);
-        canvas.add(img);
-        canvas = new Canvas(template, pdfDocument);
-        canvas.add(table.setFixedPosition(0, height-result.getOccupiedArea().getBBox().getHeight(), width));
-
-        return new Image(template);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        doc.add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1))));
-        doc.add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE2))));
-        doc.add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE3))));
+        Image img = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)));
+        doc.add(img);
 
-        Image image = new Image(ImageDataFactory.create(IMAGE4));
-        image.scaleToFit(400, 700);
-        doc.add(getWatermarkedImage(pdfDoc, image));
+        img = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE2)));
+        doc.add(img);
+
+        img = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE3)));
+        doc.add(img);
+
+        Image srcImage = new Image(ImageDataFactory.create(IMAGE4));
+        srcImage.scaleToFit(400, 700);
+        img = getWatermarkedImage(pdfDoc, srcImage);
+        doc.add(img);
 
         doc.close();
+    }
+
+    private static Image getWatermarkedImage(PdfDocument pdfDocument, Image img) {
+        float width = img.getImageScaledWidth();
+        float height = img.getImageScaledHeight();
+
+        Table table = initTable(width);
+
+        TableRenderer renderer = (TableRenderer) table.createRendererSubTree();
+        renderer.setParent(new DocumentRenderer(new Document(pdfDocument)));
+
+        // Simulate the positioning of the renderer to find out how much space the table will occupy.
+        LayoutResult result = renderer.layout(new LayoutContext(new LayoutArea(
+                1, new Rectangle(10000, 10000))));
+
+        PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
+        new Canvas(template, pdfDocument)
+                .add(img)
+                .close();
+
+        float left = 0;
+        float bottom = height - result.getOccupiedArea().getBBox().getHeight();
+        new Canvas(template, pdfDocument)
+                .add(table.setFixedPosition(left, bottom, width))
+                .close();
+
+        return new Image(template);
+    }
+
+    private static Table initTable(float width) {
+        Table table = new Table(UnitValue.createPercentArray(2)).setWidth(width);
+        table.addCell(new Cell().add(new Paragraph("Test1")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test2")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test3")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        table.addCell(new Cell().add(new Paragraph("Test4")).setBorder(new SolidBorder(ColorConstants.YELLOW, 1)));
+        return table;
     }
 }

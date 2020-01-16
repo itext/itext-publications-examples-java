@@ -1,14 +1,16 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * This example was written by Bruno Lowagie in answer to a question by a customer.
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.io.font.constants.StandardFonts;
@@ -38,46 +40,48 @@ public class TransparentWatermark2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new TransparentWatermark2().manipulatePdf(DEST);
     }
 
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        int n = pdfDoc.getNumberOfPages();
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-        Paragraph p = new Paragraph("My watermark (text)").setFont(font).setFontSize(30);
-        // image watermark
+        Paragraph paragraph = new Paragraph("My watermark (text)")
+                .setFont(font)
+                .setFontSize(30);
         ImageData img = ImageDataFactory.create(IMG);
-        //  Implement transformation matrix usage in order to scale image
+
         float w = img.getWidth();
         float h = img.getHeight();
-        // transparency
-        PdfExtGState gs1 = new PdfExtGState();
-        gs1.setFillOpacity(0.5f);
-        // properties
-        PdfCanvas over;
-        Rectangle pagesize;
-        float x, y;
-        // loop over every page
-        for (int i = 1; i <= n; i++) {
+
+        PdfExtGState gs1 = new PdfExtGState().setFillOpacity(0.5f);
+
+        // Implement transformation matrix usage in order to scale image
+        for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
+
             PdfPage pdfPage = pdfDoc.getPage(i);
-            pagesize = pdfPage.getPageSizeWithRotation();
+            Rectangle pageSize = pdfPage.getPageSizeWithRotation();
+
+            // When "true": in case the page has a rotation, then new content will be automatically rotated in the
+            // opposite direction. On the rotated page this would look as if new content ignores page rotation.
             pdfPage.setIgnorePageRotationForContent(true);
 
-            x = (pagesize.getLeft() + pagesize.getRight()) / 2;
-            y = (pagesize.getTop() + pagesize.getBottom()) / 2;
-            over = new PdfCanvas(pdfDoc.getPage(i));
+            float x = (pageSize.getLeft() + pageSize.getRight()) / 2;
+            float y = (pageSize.getTop() + pageSize.getBottom()) / 2;
+            PdfCanvas over = new PdfCanvas(pdfDoc.getPage(i));
             over.saveState();
             over.setExtGState(gs1);
             if (i % 2 == 1) {
-                doc.showTextAligned(p, x, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                doc.showTextAligned(paragraph, x, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
             } else {
                 over.addImage(img, w, 0, 0, h, x - (w / 2), y - (h / 2), false);
             }
             over.restoreState();
         }
+
         doc.close();
     }
 }

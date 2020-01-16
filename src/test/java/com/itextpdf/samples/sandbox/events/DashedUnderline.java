@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -31,24 +31,28 @@ public class DashedUnderline {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DashedUnderline().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         doc.add(new Paragraph("This text is not underlined"));
+
         Text text1 = new Text("This text is underlined with a solid line");
         text1.setUnderline(1, -3);
         doc.add(new Paragraph(text1));
+
         Text text2 = new Text("This text is underlined with a dashed line");
         text2.setNextRenderer(new DashedLineTextRenderer(text2));
         doc.add(new Paragraph(text2));
+
         doc.close();
     }
 
-
-    protected class DashedLineTextRenderer extends TextRenderer {
+    private static class DashedLineTextRenderer extends TextRenderer {
 
         public DashedLineTextRenderer(Text textElement) {
             super(textElement);

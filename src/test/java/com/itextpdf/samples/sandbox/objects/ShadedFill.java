@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -32,16 +32,20 @@ public class ShadedFill {
         new ShadedFill().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
-        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         float x = 36;
         float y = 740;
+
+        // Side of an equilateral triangle
         float side = 70;
-        PdfShading.Axial axial = new PdfShading.Axial(new PdfDeviceCs.Rgb(), x, y, ColorConstants.PINK.getColorValue(),
+
+        PdfShading.Axial axialShading = new PdfShading.Axial(new PdfDeviceCs.Rgb(), x, y, ColorConstants.PINK.getColorValue(),
                 x + side, y, ColorConstants.BLUE.getColorValue());
-        PdfPattern.Shading shading = new PdfPattern.Shading(axial);
+        PdfPattern.Shading shading = new PdfPattern.Shading(axialShading);
+
+        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         canvas.setFillColorShading(shading);
         canvas.moveTo(x, y);
         canvas.lineTo(x + side, y);

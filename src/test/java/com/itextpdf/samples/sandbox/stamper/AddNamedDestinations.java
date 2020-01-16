@@ -1,33 +1,43 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/29884833/add-named-destinations-to-an-existing-pdf-document-with-itext
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
-import com.itextpdf.kernel.pdf.*;
-import org.w3c.dom.Element;
+import com.itextpdf.kernel.geom.Rectangle;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfName;
+import com.itextpdf.kernel.pdf.PdfObject;
+import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Element;
 
 public class AddNamedDestinations {
     public static final String PDF
@@ -40,6 +50,7 @@ public class AddNamedDestinations {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AddNamedDestinations().manipulatePdf(DEST);
     }
 
@@ -61,8 +72,8 @@ public class AddNamedDestinations {
      * @param dest The path to the XML file
      * @throws java.io.IOException
      */
-    public void createXml(String src, String dest) throws IOException,
-            ParserConfigurationException, TransformerException {
+    public void createXml(String src, String dest)
+            throws IOException, ParserConfigurationException, TransformerException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(src));
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -80,11 +91,12 @@ public class AddNamedDestinations {
             root.appendChild(el);
         }
 
-        TransformerFactory tf = TransformerFactory.newInstance();
-        Transformer t = tf.newTransformer();
-        t.setOutputProperty("encoding", "ISO8859-1");
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("encoding", "ISO8859-1");
 
-        t.transform(new DOMSource(doc), new StreamResult(dest));
+        transformer.transform(new DOMSource(doc), new StreamResult(dest));
         pdfDoc.close();
     }
 
@@ -93,23 +105,23 @@ public class AddNamedDestinations {
         // Creates directory and new pdf file by content of the read pdf
         File file = new File(PDF);
         file.getParentFile().mkdirs();
+
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(PDF));
 
-        int n = pdfDoc.getNumberOfPages();
-        for (int i = 1; i < n; ) {
+        for (int i = 1; i < pdfDoc.getNumberOfPages(); ) {
             if (getFactors(++i).size() > 1) {
                 continue;
             }
-            PdfArray array = new PdfArray();
-            array.add(pdfDoc.getPage(i).getPdfObject());
-            array.add(PdfName.XYZ);
-            array.add(new PdfNumber(pdfDoc.getPage(i).getPageSize().getLeft()));
-            array.add(new PdfNumber(pdfDoc.getPage(i).getPageSize().getTop()));
-            array.add(new PdfNumber(1));
 
-            // Notice that the document has already destinations like "Prime+i"
-            pdfDoc.addNamedDestination("prime" + i, array);
+            // Adding named destinations for further usage depending on the needs
+            PdfPage pdfPage = pdfDoc.getPage(i);
+            Rectangle pageRect = pdfPage.getPageSize();
+            float getLeft = pageRect.getLeft();
+            float getTop = pageRect.getTop();
+            PdfExplicitDestination destObj = PdfExplicitDestination.createXYZ(pdfPage, getLeft, getTop, 1);
+            pdfDoc.addNamedDestination("prime" + i, destObj.getPdfObject());
         }
+
         pdfDoc.close();
 
         createXml(PDF, dest);

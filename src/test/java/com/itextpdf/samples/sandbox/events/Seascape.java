@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -31,28 +31,33 @@ public class Seascape {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new Seascape().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         pdfDoc.addEventHandler(PdfDocumentEvent.START_PAGE, new SeascapeEventHandler());
-        for (int i = 0; i < 50; i++)
+
+        for (int i = 0; i < 50; i++) {
             doc.add(new Paragraph("Hello World!"));
+        }
+
         doc.add(new AreaBreak());
         doc.add(new Paragraph("Hello World!"));
         doc.add(new AreaBreak());
         doc.add(new Paragraph("Hello World!"));
+
         doc.close();
     }
 
 
-    protected class SeascapeEventHandler implements IEventHandler {
+    private static class SeascapeEventHandler implements IEventHandler {
         @Override
-        public void handleEvent(Event event) {
-            PdfDocumentEvent documentEvent = (PdfDocumentEvent) event;
-            documentEvent.getPage().getPdfObject().put(PdfName.Rotate, new PdfNumber(270));
+        public void handleEvent(Event currentEvent) {
+            PdfDocumentEvent documentEvent = (PdfDocumentEvent) currentEvent;
+            documentEvent.getPage().setRotation(270);
         }
     }
 }

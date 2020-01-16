@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -30,25 +30,26 @@ public class RemoveListSymbol {
         new RemoveListSymbol().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
+        Paragraph paragraph = new Paragraph("A list without list symbol");
+        doc.add(paragraph);
+
         List list = new List();
+
+        // List symbol replaced, not deleted
         list.setListSymbol("");
         list.add(new ListItem("Item 1"));
         list.add(new ListItem("Item 2"));
         list.add(new ListItem("Item 3"));
 
-        Paragraph phrase = new Paragraph("A list without list symbol");
-        doc.add(phrase);
-
-        Table phraseTable = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        phraseTable.setMarginTop(5);
-        phraseTable.addCell(new Cell().add(new Paragraph("List:")));
-        phraseTable.addCell(list);
-
-        doc.add(phraseTable);
+        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
+        table.setMarginTop(5);
+        table.addCell(new Cell().add(new Paragraph("List:")));
+        table.addCell(list);
+        doc.add(table);
 
         doc.close();
     }

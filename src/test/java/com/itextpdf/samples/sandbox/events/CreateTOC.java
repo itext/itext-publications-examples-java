@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -22,8 +22,6 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.element.Text;
-import com.itextpdf.layout.layout.LayoutContext;
-import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.property.TabAlignment;
 import com.itextpdf.layout.renderer.DrawContext;
 import com.itextpdf.layout.renderer.IRenderer;
@@ -38,7 +36,7 @@ import java.util.List;
 public class CreateTOC {
     public static final String DEST = "./target/sandbox/events/create_toc.pdf";
 
-    List<AbstractMap.SimpleEntry<String, Integer>> toc = new ArrayList<>();
+    private static List<AbstractMap.SimpleEntry<String, Integer>> toc = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -60,12 +58,13 @@ public class CreateTOC {
                 doc.add(new Paragraph("Line " + j + " of title " + i));
             }
         }
+
         doc.add(new AreaBreak());
 
+        // Create a table of contents
         doc.add(new Paragraph("Table of Contents").setFontSize(16));
-        Paragraph p;
         for (AbstractMap.SimpleEntry<String, Integer> entry : toc) {
-            p = new Paragraph(entry.getKey());
+            Paragraph p = new Paragraph(entry.getKey());
             p.addTabStops(new TabStop(750, TabAlignment.RIGHT, new DottedLine()));
             p.add(new Tab());
             p.add(String.valueOf(entry.getValue()));
@@ -76,7 +75,7 @@ public class CreateTOC {
     }
 
 
-    protected class TOCTextRenderer extends TextRenderer {
+    private static class TOCTextRenderer extends TextRenderer {
         public TOCTextRenderer(Text modelElement) {
             super(modelElement);
         }
@@ -90,14 +89,12 @@ public class CreateTOC {
         }
 
         @Override
-        public LayoutResult layout(LayoutContext layoutContext) {
-            return super.layout(layoutContext);
-        }
-
-        @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
-            toc.add(new AbstractMap.SimpleEntry(((Text) modelElement).getText(), drawContext.getDocument().getNumberOfPages()));
+            String title = ((Text) modelElement).getText();
+
+            int pageNumber = getOccupiedArea().getPageNumber();
+            toc.add(new AbstractMap.SimpleEntry(title, pageNumber));
         }
     }
 }

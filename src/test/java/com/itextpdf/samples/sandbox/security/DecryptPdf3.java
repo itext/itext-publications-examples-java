@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -17,7 +17,6 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
-import java.io.IOException;
 
 public class DecryptPdf3 {
     public static final String DEST = "./target/sandbox/security/decrypt_pdf3.pdf";
@@ -26,26 +25,12 @@ public class DecryptPdf3 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new DecryptPdf3().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        MyReader reader = new MyReader(SRC);
-        reader.setUnethicalReading(true);
-        reader.decryptOnPurpose();
-        PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC).setUnethicalReading(true), new PdfWriter(dest));
         pdfDoc.close();
-        reader.close();
-    }
-
-
-    class MyReader extends PdfReader {
-        public MyReader(String filename) throws IOException {
-            super(filename);
-        }
-
-        public void decryptOnPurpose() {
-            encrypted = false;
-        }
     }
 }

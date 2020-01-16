@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -42,38 +42,40 @@ public class RotatedText {
         new RotatedText().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, new PageSize(60, 140));
         doc.setMargins(5, 5, 5, 5);
 
-        PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
-        PdfFont regular = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+        PdfFont boldFont = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
+        PdfFont regularFont = PdfFontFactory.createFont(StandardFonts.HELVETICA);
 
         Paragraph p1 = new Paragraph();
-        p1.add(new Text("23").setFont(bold).setFontSize(12));
-        p1.add(new Text("000").setFont(bold).setFontSize(6));
+        p1.add(new Text("23").setFont(boldFont).setFontSize(12));
+        p1.add(new Text("000").setFont(boldFont).setFontSize(6));
         doc.add(p1);
 
-        Paragraph p2 = new Paragraph("T.T.C.").setFont(regular).setFontSize(6);
+        Paragraph p2 = new Paragraph("T.T.C.").setFont(regularFont).setFontSize(6);
         p2.setTextAlignment(TextAlignment.RIGHT);
         doc.add(p2);
 
         BarcodeEAN barcode = new BarcodeEAN(pdfDoc);
         barcode.setCodeType(BarcodeEAN.EAN8);
         barcode.setCode("12345678");
+
         Rectangle rect = barcode.getBarcodeSize();
-        PdfFormXObject template = new PdfFormXObject(new Rectangle(rect.getWidth(), rect.getHeight() + 10));
-        PdfCanvas templateCanvas = new PdfCanvas(template, pdfDoc);
-        new Canvas(templateCanvas, pdfDoc, new Rectangle(rect.getWidth(), rect.getHeight() + 10))
-                .showTextAligned(new Paragraph("DARK GRAY").setFont(regular).setFontSize(6), 0, rect.getHeight() + 2, TextAlignment.LEFT);
-        barcode.placeBarcode(templateCanvas, ColorConstants.BLACK, ColorConstants.BLACK);
-        Image image = new Image(template);
+        PdfFormXObject formXObject = new PdfFormXObject(new Rectangle(rect.getWidth(), rect.getHeight() + 10));
+        PdfCanvas pdfCanvas = new PdfCanvas(formXObject, pdfDoc);
+        new Canvas(pdfCanvas, pdfDoc, new Rectangle(rect.getWidth(), rect.getHeight() + 10))
+                .showTextAligned(new Paragraph("DARK GRAY").setFont(regularFont).setFontSize(6), 0, rect.getHeight() + 2, TextAlignment.LEFT);
+        barcode.placeBarcode(pdfCanvas, ColorConstants.BLACK, ColorConstants.BLACK);
+
+        Image image = new Image(formXObject);
         image.setRotationAngle(Math.toRadians(90));
         image.setAutoScale(true);
         doc.add(image);
 
-        Paragraph p3 = new Paragraph("SMALL").setFont(regular).setFontSize(6);
+        Paragraph p3 = new Paragraph("SMALL").setFont(regularFont).setFontSize(6);
         p3.setTextAlignment(TextAlignment.CENTER);
         doc.add(p3);
 

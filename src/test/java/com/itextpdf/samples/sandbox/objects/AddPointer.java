@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -34,7 +34,7 @@ public class AddPointer {
         new AddPointer().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Image img = new Image(ImageDataFactory.create(IMG));
         Document doc = new Document(pdfDoc, new PageSize(img.getImageWidth(), img.getImageHeight()));
@@ -42,12 +42,13 @@ public class AddPointer {
         img.setFixedPosition(0, 0);
         doc.add(img);
 
+        // Added a custom shape on top of a image
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage());
         canvas.setStrokeColor(ColorConstants.RED)
                 .setLineWidth(3)
                 .moveTo(220, 330)
                 .lineTo(240, 370)
-                .arc(200, 350, 240, 390, 0, (float) 180)
+                .arc(200, 350, 240, 390, 0, 180)
                 .lineTo(220, 330)
                 .closePathStroke()
                 .setFillColor(ColorConstants.RED)

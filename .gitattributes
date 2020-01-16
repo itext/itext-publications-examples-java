@@ -42,3 +42,4 @@
 *.ttf binary
 *.wmf binary
 *.csv binary
+*.dat binary

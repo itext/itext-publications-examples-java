@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -41,70 +41,81 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class Watermarking {
-    public static final String DATA = "./src/test/resources/data/united_states.csv";
     public static final String DEST = "./target/sandbox/events/watermarkings.pdf";
+
+    public static final String DATA = "./src/test/resources/data/united_states.csv";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new Watermarking().manipulatePdf(DEST);
     }
 
-    public void process(Table table, String line, PdfFont font, boolean isHeader) {
-        StringTokenizer tokenizer = new StringTokenizer(line, ";");
-        int c = 0;
-        while (tokenizer.hasMoreTokens() && c++ < 3) {
-            if (isHeader) {
-                table.addHeaderCell(new Cell().add(new Paragraph(tokenizer.nextToken()).setFont(font)));
-            } else {
-                table.addCell(new Cell().add(new Paragraph(tokenizer.nextToken()).setFont(font)));
-            }
-        }
-    }
-
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
         pdfDoc.addEventHandler(PdfDocumentEvent.END_PAGE, new WatermarkingEventHandler());
 
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
 
-        Table table = new Table(UnitValue.createPercentArray(new float[]{4, 1, 3})).useAllAvailableWidth();
+        Table table = new Table(UnitValue.createPercentArray(new float[] {4, 1, 3})).useAllAvailableWidth();
 
-        BufferedReader br = new BufferedReader(new FileReader(DATA));
-        String line = br.readLine();
-        process(table, line, bold, true);
-        while ((line = br.readLine()) != null) {
-            process(table, line, font, false);
+        try (BufferedReader br = new BufferedReader(new FileReader(DATA))) {
+            String line = br.readLine();
+            parseTextLine(table, line, bold, true);
+            while ((line = br.readLine()) != null) {
+                parseTextLine(table, line, font, false);
+            }
+
         }
-        br.close();
 
         doc.add(table);
 
         doc.close();
     }
 
+    private static void parseTextLine(Table table, String line, PdfFont font, boolean isHeader) {
+        StringTokenizer tokenizer = new StringTokenizer(line, ";");
+        int c = 0;
+        while (tokenizer.hasMoreTokens() && c++ < 3) {
+            Cell cell = new Cell().add(new Paragraph(tokenizer.nextToken()).setFont(font));
+            if (isHeader) {
+                table.addHeaderCell(cell);
+            } else {
+                table.addCell(cell);
+            }
+        }
+    }
 
-    protected class WatermarkingEventHandler implements IEventHandler {
+    private static class WatermarkingEventHandler implements IEventHandler {
         @Override
-        public void handleEvent(Event event) {
-            PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
+        public void handleEvent(Event currentEvent) {
+            PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             PdfDocument pdfDoc = docEvent.getDocument();
             PdfPage page = docEvent.getPage();
             PdfFont font = null;
             try {
                 font = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
             } catch (IOException e) {
-                e.printStackTrace();
+
+                // Such an exception isn't expected to occur,
+                // because helvetica is one of standard fonts
+                System.err.println(e.getMessage());
             }
+
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
             new Canvas(canvas, pdfDoc, page.getPageSize())
                     .setFontColor(ColorConstants.LIGHT_GRAY)
                     .setFontSize(60)
+
+                    // If the exception has been thrown, the font variable is not initialized.
+                    // Therefore null will be set and iText will use the default font - Helvetica
                     .setFont(font)
                     .showTextAligned(new Paragraph("WATERMARK"), 298, 421, pdfDoc.getPageNumber(page),
-                            TextAlignment.CENTER, VerticalAlignment.MIDDLE, 45);
+                            TextAlignment.CENTER, VerticalAlignment.MIDDLE, 45)
+                    .close();
         }
     }
 }

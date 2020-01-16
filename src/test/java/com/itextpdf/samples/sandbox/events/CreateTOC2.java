@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -14,6 +14,7 @@
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.kernel.pdf.canvas.draw.DottedLine;
@@ -38,9 +39,9 @@ import java.util.List;
 
 public class CreateTOC2 {
     public static final String DEST = "./target/sandbox/events/create_toc2.pdf";
-    protected int counter = 0;
 
-    List<AbstractMap.SimpleEntry<String, AbstractMap.SimpleEntry<String, Integer>>> toc = new ArrayList<>();
+    private static int counter = 0;
+    private static List<AbstractMap.SimpleEntry<String, AbstractMap.SimpleEntry<String, Integer>>> toc = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -62,16 +63,17 @@ public class CreateTOC2 {
                 doc.add(new Paragraph("Line " + j + " of title " + i));
             }
         }
+
         doc.add(new AreaBreak());
 
+        // Create a table of contents
         doc.add(new Paragraph("Table of Contents").setFontSize(16));
-        Paragraph p;
         for (AbstractMap.SimpleEntry<String, AbstractMap.SimpleEntry<String, Integer>> entry : toc) {
             Text text = new Text(entry.getKey());
             AbstractMap.SimpleEntry<String, Integer> value = entry.getValue();
 
             text.setAction(PdfAction.createGoTo(value.getKey()));
-            p = new Paragraph(text);
+            Paragraph p = new Paragraph(text);
 
             p.addTabStops(new TabStop(750, TabAlignment.RIGHT, new DottedLine()));
             p.add(new Tab());
@@ -87,7 +89,7 @@ public class CreateTOC2 {
     }
 
 
-    protected class TOCTextRenderer extends TextRenderer {
+    private static class TOCTextRenderer extends TextRenderer {
         public TOCTextRenderer(Text modelElement) {
             super(modelElement);
         }
@@ -101,19 +103,17 @@ public class CreateTOC2 {
         }
 
         @Override
-        public LayoutResult layout(LayoutContext layoutContext) {
-            return super.layout(layoutContext);
-        }
-
-        @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
             String name = "dest" + (counter++);
-            int page = drawContext.getDocument().getNumberOfPages();
-            toc.add(new AbstractMap.SimpleEntry<String, AbstractMap.SimpleEntry<String, Integer>>(((Text) modelElement).getText(),
-                    new AbstractMap.SimpleEntry<String, Integer>(name, page)));
+
+            int pageNumber = occupiedArea.getPageNumber();
+            toc.add(new AbstractMap.SimpleEntry<String, AbstractMap.SimpleEntry<String, Integer>>(((Text) modelElement)
+                    .getText(), new AbstractMap.SimpleEntry<String, Integer>(name, pageNumber)));
+
+            PdfPage page = drawContext.getDocument().getPage(pageNumber);
             drawContext.getDocument().addNamedDestination(name,
-                    PdfExplicitDestination.createFitH(drawContext.getDocument().getPage(page), drawContext.getDocument().getLastPage().getPageSize().getTop()).getPdfObject());
+                    PdfExplicitDestination.createFitH(page, page.getPageSize().getTop()).getPdfObject());
         }
     }
 }

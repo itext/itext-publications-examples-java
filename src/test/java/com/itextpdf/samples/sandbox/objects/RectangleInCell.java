@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -39,38 +39,37 @@ public class RectangleInCell {
         new RectangleInCell().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
+        PdfFormXObject formXObject = new PdfFormXObject(new Rectangle(120, 80));
+        new PdfCanvas(formXObject, pdfDoc).setFillColor(ColorConstants.RED)
+                .rectangle(0, 0, formXObject.getWidth(), formXObject.getHeight())
+                .fill();
 
         doc.add(new Paragraph("Option 1:"));
         Table table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
-        table.addCell(new Cell().add(new Paragraph("A rectangle:)")));
-        PdfFormXObject template = new PdfFormXObject(new Rectangle(120, 80));
-        new PdfCanvas(template, pdfDoc).setFillColor(ColorConstants.RED)
-                .rectangle(0, 0, 120, 80)
-                .fill();
-        table.addCell(new Cell().add(new Image(template).setAutoScale(true)).setPadding(3));
+        table.addCell("A rectangle:");
+        table.addCell(new Cell().add(new Image(formXObject).setAutoScale(true)).setPadding(10));
         table.addCell("The rectangle is scaled to fit inside the cell, you see a padding.");
         doc.add(table);
+
         doc.add(new Paragraph("Option 2:"));
         table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         table.addCell("A rectangle:");
-        Cell cell = new Cell().add(new Image(template));
+        Cell cell = new Cell().add(new Image(formXObject));
         table.addCell(cell);
         table.addCell("The rectangle keeps its original size, but can overlap other cells in the same row.");
         doc.add(table);
+
         doc.add(new Paragraph("Option 3:"));
         table = new Table(UnitValue.createPercentArray(3)).useAllAvailableWidth();
         table.addCell("A rectangle:");
-        cell = new Cell().add(new Image(template).setAutoScale(true));
+        cell = new Cell().add(new Image(formXObject).setAutoScale(true));
         table.addCell(cell);
         table.addCell("The rectangle is scaled to fit inside the cell, no padding.");
         doc.add(table);
-        PdfCanvas cb = new PdfCanvas(pdfDoc.getLastPage());
-        cb.moveTo(228, 810);
-        cb.lineTo(338, 810);
-        cb.stroke();
 
         doc.close();
     }

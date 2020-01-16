@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -31,12 +31,14 @@ public class Rectangles {
         new Rectangles().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
+
         float llx = 36;
         float lly = 700;
         float urx = 200;
         float ury = 806;
+
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
         Rectangle rect1 = new Rectangle(llx, lly, urx - llx, ury - lly);
         canvas
@@ -45,6 +47,7 @@ public class Rectangles {
                 .setFillColor(new DeviceGray(0.9f))
                 .rectangle(rect1)
                 .fillStroke();
+
         Rectangle rect2 = new Rectangle(llx + 60, lly, urx - llx - 60, ury - 40 - lly);
         canvas
                 .setStrokeColor(ColorConstants.WHITE)
@@ -52,6 +55,7 @@ public class Rectangles {
                 .setFillColor(new DeviceGray(0.1f))
                 .rectangle(rect2)
                 .fillStroke();
+
         pdfDoc.close();
     }
 }

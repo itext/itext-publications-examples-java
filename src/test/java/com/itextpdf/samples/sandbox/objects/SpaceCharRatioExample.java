@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -30,18 +30,17 @@ public class SpaceCharRatioExample {
         new SpaceCharRatioExample().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Paragraph p = new Paragraph().
-                setSpacingRatio(1).
-                setTextAlignment(TextAlignment.JUSTIFIED).
-                setMarginLeft(20).
-                setMarginRight(20).
-                add("HelloWorld HelloWorld HelloWorld HelloWorld HelloWorld" +
-                        "HelloWorld HelloWorldHelloWorldHelloWorldHelloWorld" +
-                        "HelloWorld HelloWorld HelloWorld HelloWorldHelloWorldHelloWorld");
+        Paragraph p = new Paragraph()
+                .setSpacingRatio(1f)
+                .setTextAlignment(TextAlignment.JUSTIFIED)
+                .setMarginLeft(20f)
+                .setMarginRight(20f)
+                .add("HelloWorld HelloWorld HelloWorld HelloWorld HelloWorldHelloWorld HelloWorldHelloWorldHelloWorld" +
+                        "HelloWorldHelloWorld HelloWorld HelloWorld HelloWorldHelloWorldHelloWorld");
         doc.add(p);
 
         doc.close();

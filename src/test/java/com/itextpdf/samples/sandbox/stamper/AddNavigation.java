@@ -1,15 +1,17 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/31240828/how-navigate-one-page-to-another-page-in-pdf-file-by-using-itextsharp-c
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.geom.Rectangle;
@@ -22,7 +24,6 @@ import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
 import com.itextpdf.kernel.pdf.navigation.PdfDestination;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
-import com.itextpdf.layout.Document;
 
 import java.io.File;
 
@@ -33,21 +34,22 @@ public class AddNavigation {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new AddNavigation().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
-        Document doc = new Document(pdfDoc);
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
+
         int[] borders = {0, 0, 1};
-        PdfDestination d1 = PdfExplicitDestination.createFit(pdfDoc.getPage(10));
+        PdfDestination pdfDestination = PdfExplicitDestination.createFit(pdfDoc.getPage(10));
         Rectangle rect = new Rectangle(0, 806, 595, 36);
         PdfAnnotation a10 = new PdfLinkAnnotation(rect)
-                .setAction(PdfAction.createGoTo(d1))
+                .setAction(PdfAction.createGoTo(pdfDestination))
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_INVERT)
                 .setPage(pdfDoc.getPage(10))
                 .setBorder(new PdfArray(borders))
-                .setColor(new PdfArray(new float[]{0, 1, 0}));
+                .setColor(new PdfArray(new float[] {0, 1, 0}));
         pdfDoc.getPage(1).addAnnotation(a10);
         PdfDestination d2 = PdfExplicitDestination.createFit(pdfDoc.getPage(1));
         PdfAnnotation a1 = new PdfLinkAnnotation(rect)
@@ -55,8 +57,8 @@ public class AddNavigation {
                 .setHighlightMode(PdfAnnotation.HIGHLIGHT_PUSH)
                 .setPage(pdfDoc.getPage(1))
                 .setBorder(new PdfArray(borders))
-                .setColor(new PdfArray(new float[]{0, 1, 0}));
+                .setColor(new PdfArray(new float[] {0, 1, 0}));
         pdfDoc.getPage(10).addAnnotation(a1);
-        doc.close();
+        pdfDoc.close();
     }
 }

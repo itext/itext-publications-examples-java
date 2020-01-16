@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -52,7 +52,7 @@ public class TagStructureManipulations {
         tagPointer.addTag(StandardRoles.FIGURE);
         tagPointer.getProperties().setAlternateDescription("The green star.");
 
-        // it is important to set the page at which new content will be tagged
+        // It is important to set the page at which new content will be tagged
         tagPointer.setPageForTagging(firstPage);
 
         canvas.openTag(tagPointer.getTagReference());
@@ -71,11 +71,11 @@ public class TagStructureManipulations {
         // Using the relocateKid method, we can even change the order of the same parent's kids.
         // This could be used to change for example reading order.
 
-        // makes both tagPointer and newPositionOfStar to point at the same tag
+        // Make both tagPointer and newPositionOfStar to point at the same tag
         tagPointer.moveToRoot().moveToKid(StandardRoles.SECT);
 
 
-        // next added tag to this tag pointer will be added at the 0 position
+        // Next added tag to this tag pointer will be added at the 0 position
         newPositionOfStar.setNextNewKidIndex(0);
         indexOfTheGreenStarTag = 2;
         tagPointer.relocateKid(indexOfTheGreenStarTag, newPositionOfStar);
@@ -85,7 +85,8 @@ public class TagStructureManipulations {
 
     private void drawStar(PdfCanvas canvas, int x, int y, Color color) {
         canvas.setFillColor(color);
-        canvas.moveTo(x + 10, y)
+        canvas
+                .moveTo(x + 10, y)
                 .lineTo(x + 80, y + 60)
                 .lineTo(x, y + 60)
                 .lineTo(x + 70, y)

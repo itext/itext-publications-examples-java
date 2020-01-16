@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -27,55 +27,63 @@ public class RawImages {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new RawImages().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
+        Document doc = new Document(pdfDoc, PageSize.A4.rotate());
+        int fitWidth = 30;
+        int fitHeight = 30;
 
-        Image gray = new Image(ImageDataFactory.create(1, 1, 1, 8,
-                new byte[]{(byte) 0x80}, null));
-        gray.scaleToFit(30, 30);
+        // Add the gray square
+        Image img = new Image(ImageDataFactory.create(1, 1, 1, 8,
+                new byte[] {(byte) 0x80}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image red = new Image(ImageDataFactory.create(1, 1, 3, 8,
-                new byte[]{(byte) 255, (byte) 0, (byte) 0}, null));
-        red.scaleToFit(30, 30);
+        // Add the red square
+        img = new Image(ImageDataFactory.create(1, 1, 3, 8,
+                new byte[] {(byte) 255, (byte) 0, (byte) 0}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image green = new Image(ImageDataFactory.create(1, 1, 3, 8,
-                new byte[]{(byte) 0, (byte) 255, (byte) 0}, null));
-        green.scaleToFit(30, 30);
+        // Add the green square
+        img = new Image(ImageDataFactory.create(1, 1, 3, 8,
+                new byte[] {(byte) 0, (byte) 255, (byte) 0}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image blue = new Image(ImageDataFactory.create(1, 1, 3, 8,
-                new byte[]{(byte) 0, (byte) 0, (byte) 255}, null));
-        blue.scaleToFit(30, 30);
+        // Add the blue square
+        img = new Image(ImageDataFactory.create(1, 1, 3, 8,
+                new byte[] {(byte) 0, (byte) 0, (byte) 255}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image cyan = new Image(ImageDataFactory.create(1, 1, 4, 8,
-                new byte[]{(byte) 255, (byte) 0, (byte) 0, (byte) 0}, null));
-        cyan.scaleToFit(30, 30);
+        // Add the cyan square
+        img = new Image(ImageDataFactory.create(1, 1, 4, 8,
+                new byte[] {(byte) 255, (byte) 0, (byte) 0, (byte) 0}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image magenta = new Image(ImageDataFactory.create(1, 1, 4, 8,
-                new byte[]{(byte) 0, (byte) 255, (byte) 0, (byte) 0}, null));
-        magenta.scaleToFit(30, 30);
+        // Add the magenta square
+        img = new Image(ImageDataFactory.create(1, 1, 4, 8,
+                new byte[] {(byte) 0, (byte) 255, (byte) 0, (byte) 0}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image yellow = new Image(ImageDataFactory.create(1, 1, 4, 8,
-                new byte[]{(byte) 0, (byte) 0, (byte) 255, (byte) 0}, null));
-        yellow.scaleToFit(30, 30);
+        // Add the yellow square
+        img = new Image(ImageDataFactory.create(1, 1, 4, 8,
+                new byte[] {(byte) 0, (byte) 0, (byte) 255, (byte) 0}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
-        Image black = new Image(ImageDataFactory.create(1, 1, 4, 8,
-                new byte[]{(byte) 0, (byte) 0, (byte) 0, (byte) 255}, null));
-        black.scaleToFit(30, 30);
-
-        doc.add(gray);
-        doc.add(red);
-        doc.add(green);
-        doc.add(blue);
-        doc.add(cyan);
-        doc.add(magenta);
-        doc.add(yellow);
-        doc.add(black);
+        // Add the black square
+        img = new Image(ImageDataFactory.create(1, 1, 4, 8,
+                new byte[] {(byte) 0, (byte) 0, (byte) 0, (byte) 255}, null));
+        img.scaleToFit(fitWidth, fitHeight);
+        doc.add(img);
 
         doc.close();
     }

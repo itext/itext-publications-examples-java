@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -31,15 +31,16 @@ public class ListAlignment {
         new ListAlignment().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
+        List list = new List();
 
         String text = "test 1 2 3 ";
         for (int i = 0; i < 5; i++) {
             text = text + text;
         }
-        List list = new List();
         ListItem item = new ListItem(text);
         item.setTextAlignment(TextAlignment.JUSTIFIED);
         list.add(item);

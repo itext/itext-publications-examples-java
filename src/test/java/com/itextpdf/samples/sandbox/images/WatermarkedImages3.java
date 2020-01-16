@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -31,35 +31,48 @@ import java.io.File;
 
 public class WatermarkedImages3 {
     public static final String DEST = "./target/sandbox/images/watermarked_images3.pdf";
+
     public static final String IMAGE1 = "./src/test/resources/img/bruno.jpg";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
-        new WatermarkedImages3().manipulatePdf(DEST);
-    }
 
-    public Image getWatermarkedImage(PdfDocument pdfDoc, Image img, String watermark) {
-        float width = img.getImageScaledWidth();
-        float height = img.getImageScaledHeight();
-        PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
-        new Canvas(template, pdfDoc).
-                add(img).
-                setFontColor(DeviceGray.WHITE).
-                showTextAligned(watermark, width / 2, height / 2, TextAlignment.CENTER, (float) Math.PI * 30f / 180f);
-        return new Image(template);
+        new WatermarkedImages3().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth().setWidth(UnitValue.createPercentValue(80));
+
+        Table table = new Table(1).setWidth(UnitValue.createPercentValue(80));
         for (int i = 0; i < 35; i++) {
             table.addCell(new Cell().add(new Paragraph("rahlrokks doesn't listen to what people tell him")));
         }
-        table.addCell(new Cell().add(getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno").setAutoScale(true).setWidth(UnitValue.createPercentValue(100))));
+
+        Image img = getWatermarkedImage(pdfDoc, new Image(ImageDataFactory.create(IMAGE1)), "Bruno")
+                .setAutoScale(true);
+        table.addCell(new Cell().add(img));
         doc.add(table);
-        doc.showTextAligned("Bruno knows best", 260, 400, TextAlignment.CENTER, 45f * (float) Math.PI / 180f);
+
+        doc.showTextAligned("Bruno knows best", 260, 400,
+                TextAlignment.CENTER, 45f * (float) Math.PI / 180f);
+
         doc.close();
+    }
+
+    private static Image getWatermarkedImage(PdfDocument pdfDoc, Image img, String watermark) {
+        float width = img.getImageScaledWidth();
+        float height = img.getImageScaledHeight();
+        float coordX = width / 2;
+        float coordY = height / 2;
+        float angle = (float) Math.PI * 30f / 180f;
+        PdfFormXObject template = new PdfFormXObject(new Rectangle(width, height));
+        new Canvas(template, pdfDoc)
+                .add(img)
+                .setFontColor(DeviceGray.WHITE)
+                .showTextAligned(watermark, coordX, coordY, TextAlignment.CENTER, angle)
+                .close();
+        return new Image(template);
     }
 }

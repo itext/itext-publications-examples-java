@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -56,7 +56,7 @@ public class CreateTaggedDocument {
             "Stallone became the sixth person to be nominated for playing the same role in two different films.";
     private static final String TEXT5 = "The winners were announced during the awards ceremony on February 28, 2016. With two Oscars, Spotlight " +
             "was the first film since The Greatest Show oTagn Earth in 1952 to win Best Picture with only one other award. " +
-            "Alejandro G. I\u00F1\u00E1rritu became the only Mexican and third director to win two consecutive Oscars for Best" +
+            "Alejandro G. Iñárritu became the only Mexican and third director to win two consecutive Oscars for Best" +
             " Director after John Ford in 1940-1941 and Joseph L. Mankiewicz in 1949-1950, respectively. At the age of 87," +
             " Ennio Morricone became the oldest winner in Oscar history for a competitive award. Having previously won " +
             "for Gravity and Birdman, Emmanuel Lubezki became the first person to win three consecutive Best " +
@@ -72,12 +72,12 @@ public class CreateTaggedDocument {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDocument = new PdfDocument(new PdfWriter(dest));
 
-        // mark that this document is tagged
+        // Mark that this document is tagged
         pdfDocument.setTagged();
 
         Document document = new Document(pdfDocument);
 
-        // save some space at the beginning of pages for future additions
+        // Save some space at the beginning of pages for future additions
         document.setTopMargin(100);
 
         // Here we obtain a TagTreePointer which is used internally for auto tagging.
@@ -86,18 +86,19 @@ public class CreateTaggedDocument {
         // Auto tagging pointer is also used for tagging annotations and forms, so the same approach could be used there.
         TagTreePointer autoTaggingPointer = pdfDocument.getTagStructureContext().getAutoTaggingPointer();
 
-        // creates a new tag, which will be a kid of the root element
+        // Create a new tag, which will be a kid of the root element
         autoTaggingPointer.addTag(StandardRoles.SECT);
 
-        // add some content to the page
+        // Add some content to the page
         Paragraph p = new Paragraph().add(TEXT1).add(TEXT2).add(TEXT3);
         document.add(p);
 
-        // Creates bold font to the header text
+        // Create bold font to the header text
         PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
 
-        Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        table.setWidth(350)
+        Table table = new Table(UnitValue.createPercentArray(2));
+        table
+                .setWidth(350)
                 .setHorizontalAlignment(HorizontalAlignment.CENTER)
                 .setTextAlignment(TextAlignment.CENTER);
         table.addHeaderCell(new Paragraph("Nominations").setFont(bold));
@@ -113,7 +114,7 @@ public class CreateTaggedDocument {
         document.add(table);
 
         // From here we want to create another section of the document.
-        // Moves the root tag and creates a new 'Section' tag
+        // Move the root tag and create a new 'Section' tag
         autoTaggingPointer
                 .moveToParent()
                 .addTag(StandardRoles.SECT);
@@ -122,8 +123,9 @@ public class CreateTaggedDocument {
         p.add(TEXT5);
         document.add(p);
 
-        table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
-        table.setWidth(350)
+        table = new Table(UnitValue.createPercentArray(2));
+        table
+                .setWidth(350)
                 .setHorizontalAlignment(HorizontalAlignment.CENTER)
                 .setTextAlignment(TextAlignment.CENTER);
         table.addHeaderCell(new Paragraph("Awards").setFont(bold));
@@ -145,7 +147,7 @@ public class CreateTaggedDocument {
         document.add(caption);
 
         // By default, root tag has role of 'Document'. Let's change it to 'Part'.
-        // It moves to the root tag (here we also could have used moveToParent method)
+        // Move to the root tag (here we also could have used moveToParent method)
         // and change the role of the tag the pointer points
         autoTaggingPointer
                 .moveToRoot()

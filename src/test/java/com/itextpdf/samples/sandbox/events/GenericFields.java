@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -31,32 +31,39 @@ public class GenericFields {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new GenericFields().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+
         Paragraph p = new Paragraph();
         p.add("The Effective Date is ");
+
         Text day = new Text("     ");
         day.setNextRenderer(new FieldTextRenderer(day, "day"));
         p.add(day);
         p.add(" day of ");
+
         Text month = new Text("     ");
         month.setNextRenderer(new FieldTextRenderer(month, "month"));
         p.add(month);
         p.add(", ");
+
         Text year = new Text("            ");
         year.setNextRenderer(new FieldTextRenderer(year, "year"));
         p.add(year);
         p.add(" that this will begin.");
+
         doc.add(p);
+
         doc.close();
     }
 
 
-    protected class FieldTextRenderer extends TextRenderer {
+    private static class FieldTextRenderer extends TextRenderer {
         protected String fieldName;
 
         public FieldTextRenderer(Text textElement, String fieldName) {
@@ -74,8 +81,10 @@ public class GenericFields {
 
         @Override
         public void draw(DrawContext drawContext) {
-            PdfTextFormField field = PdfTextFormField.createText(drawContext.getDocument(), getOccupiedAreaBBox(), fieldName);
-            PdfAcroForm.getAcroForm(drawContext.getDocument(), true).addField(field);
+            PdfTextFormField field = PdfTextFormField.createText(drawContext.getDocument(),
+                    getOccupiedAreaBBox(), fieldName);
+            PdfAcroForm.getAcroForm(drawContext.getDocument(), true)
+                    .addField(field);
         }
     }
 }

@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -22,10 +22,11 @@ import com.itextpdf.styledxmlparser.css.util.CssUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class PdfHtmlResponsiveDesign {
-    public static final String SRC = "./src/test/resources/pdfHTML/ResponsiveDesign/responsive/";
-    public static final String DEST = "./target/sandbox/pdfHTML/<filename>";
+    public static final String SRC = "./src/test/resources/pdfhtml/ResponsiveDesign/responsive/";
+    public static final String DEST = "./target/sandbox/pdfhtml/<filename>";
 
     public static final PageSize[] pageSizes = {
             PageSize.A4.rotate(),
@@ -39,7 +40,7 @@ public class PdfHtmlResponsiveDesign {
         String htmlSource = SRC + "responsive.html";
         PdfHtmlResponsiveDesign runner = new PdfHtmlResponsiveDesign();
 
-        //Create a pdf for each page size
+        // Create a pdf for each page size
         for (int i = 0; i < pageSizes.length; i++) {
             float width = CssUtils.parseAbsoluteLength(Float.toString(pageSizes[i].getWidth()));
             String dest = DEST.replace("<filename>", "responsive_" + width + ".pdf");
@@ -49,35 +50,35 @@ public class PdfHtmlResponsiveDesign {
     }
 
     public void manipulatePdf(String htmlSource, String pdfDest, String resourceLoc,
-                              PageSize pageSize, float screenWidth) throws IOException {
+            PageSize pageSize, float screenWidth) throws IOException {
         PdfWriter writer = new PdfWriter(pdfDest);
         PdfDocument pdfDoc = new PdfDocument(writer);
 
-        //Set the result to be tagged
+        // Set the result to be tagged
         pdfDoc.setTagged();
         pdfDoc.setDefaultPageSize(pageSize);
 
         ConverterProperties converterProperties = new ConverterProperties();
 
-        //Set media device description details
+        // Set media device description details
         MediaDeviceDescription mediaDescription = new MediaDeviceDescription(MediaType.SCREEN);
         mediaDescription.setWidth(screenWidth);
         converterProperties.setMediaDeviceDescription(mediaDescription);
 
         FontProvider fp = new DefaultFontProvider();
 
-        //Register external font directory
+        // Register external font directory
         fp.addDirectory(resourceLoc);
 
         converterProperties.setFontProvider(fp);
+        // Base URI is required to resolve the path to source files
         converterProperties.setBaseUri(resourceLoc);
 
-        //Create acroforms from text and button input fields
+        // Create acroforms from text and button input fields
         converterProperties.setCreateAcroForm(true);
 
-        try (FileInputStream fileInputStream = new FileInputStream(htmlSource)) {
-            HtmlConverter.convertToPdf(fileInputStream, pdfDoc, converterProperties);
-        }
+        HtmlConverter.convertToPdf(new FileInputStream(htmlSource), pdfDoc, converterProperties);
+
         pdfDoc.close();
     }
 }

@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -34,26 +34,32 @@ public class ListWithLeading {
         new ListWithLeading().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-        List list1 = new List().
-                setSymbolIndent(12).
-                setListSymbol("\u2022").
-                setFont(font);
-        list1.add(new ListItem("Value 1")).
-                add(new ListItem("Value 2")).
-                add(new ListItem("Value 3"));
+        List list1 = new List()
+                .setSymbolIndent(12)
+
+                // Bullet •
+                .setListSymbol("\u2022")
+                .setFont(font);
+        list1.add(new ListItem("Value 1"))
+                .add(new ListItem("Value 2"))
+                .add(new ListItem("Value 3"));
         doc.add(list1);
 
-        List list2 = new List().
-                setSymbolIndent(12).
-                setListSymbol("\u2022");
-        list2.add((ListItem) new ListItem().add(new Paragraph("Value 1").setFixedLeading(30).setMargins(0, 0, 0, 0))).
-                add((ListItem) new ListItem().add(new Paragraph("Value 2").setFixedLeading(30).setMargins(0, 0, 0, 0))).
-                add((ListItem) new ListItem().add(new Paragraph("Value 3").setFixedLeading(30).setMargins(0, 0, 0, 0)));
+        List list2 = new List()
+                .setSymbolIndent(12)
+
+                // Bullet •
+                .setListSymbol("\u2022");
+
+        // The Leading is a spacing between lines of text
+        list2.add((ListItem) new ListItem().add(new Paragraph("Value 1").setFixedLeading(30).setMargins(0, 0, 0, 0)))
+                .add((ListItem) new ListItem().add(new Paragraph("Value 2").setFixedLeading(30).setMargins(0, 0, 0, 0)))
+                .add((ListItem) new ListItem().add(new Paragraph("Value 3").setFixedLeading(30).setMargins(0, 0, 0, 0)));
         list2.setMarginLeft(60);
         doc.add(list2);
 

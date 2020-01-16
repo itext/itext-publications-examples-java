@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -35,46 +35,47 @@ public class TableInColumn {
         new TableInColumn().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table;
         Cell cell = new Cell();
         for (int i = 1; i <= 20; i++) {
             cell.add(new Paragraph("Line " + i));
         }
-        table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
+
+        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell(cell);
-        table.setNextRenderer(new CustomTableRenderer(table, addTable(doc, table)));
+        table.setNextRenderer(new CustomTableRenderer(table, resolveTableRect(doc, table)));
         doc.add(table);
 
         doc.add(new AreaBreak());
         table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
         table.addCell(cell.clone(true));
         table.addCell(cell.clone(true));
-        table.setNextRenderer(new CustomTableRenderer(table, addTable(doc, table)));
+        table.setNextRenderer(new CustomTableRenderer(table, resolveTableRect(doc, table)));
         doc.add(table);
 
         doc.close();
     }
 
-    public Rectangle addTable(Document doc, Table table) {
+    private static Rectangle resolveTableRect(Document doc, Table table) {
         Rectangle pageDimension = new Rectangle(36, 36, 523, 770);
         IRenderer tableRenderer = table.createRendererSubTree().setParent(doc.getRenderer());
         LayoutResult tableLayoutResult = tableRenderer.layout(new LayoutContext(new LayoutArea(0, pageDimension)));
-        Rectangle rect;
+
+        Rectangle resultRect;
         if (LayoutResult.PARTIAL == tableLayoutResult.getStatus()) {
-            rect = pageDimension;
+            resultRect = pageDimension;
         } else {
-            rect = new Rectangle(36, ((tableLayoutResult.getOccupiedArea().getBBox().getBottom() + 36) / 2),
-                    523, tableLayoutResult.getOccupiedArea().getBBox().getHeight());
+            Rectangle tableBBox = tableLayoutResult.getOccupiedArea().getBBox();
+            resultRect = new Rectangle(pageDimension.getX(), ((tableBBox.getBottom() + pageDimension.getX()) / 2),
+                    pageDimension.getWidth(), tableBBox.getHeight());
         }
-        return rect;
+        return resultRect;
     }
 
-
-    class CustomTableRenderer extends TableRenderer {
+    protected class CustomTableRenderer extends TableRenderer {
         protected Rectangle rect;
 
         public CustomTableRenderer(Table modelElement, Rectangle rect) {
@@ -83,7 +84,7 @@ public class TableInColumn {
         }
 
         // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
-        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // If getNextRenderer isn't overridden, the default method will be used and thus a default rather than custom
         // renderer will be created
         @Override
         public IRenderer getNextRenderer() {

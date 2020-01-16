@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -25,68 +25,78 @@ import java.io.IOException;
 
 public class MakeBooklet {
     public static final String DEST = "./target/sandbox/merge/make_booklet.pdf";
+
     public static final String SRC = "./src/test/resources/pdfs/primes.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new MakeBooklet().manipulatePdf(DEST);
     }
 
-    public void addPage(PdfCanvas canvas, PdfDocument srcDoc, PdfDocument pdfDoc, int p, float x) throws IOException {
-        if (p > srcDoc.getNumberOfPages()) {
-            return;
-        }
-        PdfFormXObject page = srcDoc.getPage(p).copyAsFormXObject(pdfDoc);
-        canvas.addXObject(page, x, 0);
-    }
-
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
-        float a4_width = PageSize.A4.getWidth();
-        float a4_height = PageSize.A4.getHeight();
-        PageSize pagesize = new PageSize(a4_width * 4, a4_height * 2);
+        float a4Width = PageSize.A4.getWidth();
+        float a4Height = PageSize.A4.getHeight();
+        PageSize pagesize = new PageSize(a4Width * 4, a4Height * 2);
         pdfDoc.setDefaultPageSize(pagesize);
 
-        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-        int n = srcDoc.getNumberOfPages();
+        int numberOfPages = srcDoc.getNumberOfPages();
         int p = 1;
-        while ((p - 1) / 16 <= n / 16) {
-            addPage(canvas, srcDoc, pdfDoc, p + 3, 0);
-            addPage(canvas, srcDoc, pdfDoc, p + 12, a4_width);
-            addPage(canvas, srcDoc, pdfDoc, p + 15, a4_width * 2);
-            addPage(canvas, srcDoc, pdfDoc, p, a4_width * 3);
-            AffineTransform at = AffineTransform.getRotateInstance((float) -Math.PI);
-            at.concatenate(AffineTransform.getTranslateInstance(0, -a4_height * 2));
+        PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
+        while ((p - 1) <= numberOfPages) {
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 3, 0);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 12, a4Width);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 15, a4Width * 2);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p, a4Width * 3);
             canvas.saveState();
+
+            // Rotate on 180 degrees and copy pages to the top row.
+            AffineTransform at = AffineTransform.getRotateInstance((float) -Math.PI);
+            at.concatenate(AffineTransform.getTranslateInstance(0, -a4Height * 2));
             canvas.concatMatrix(at);
-            addPage(canvas, srcDoc, pdfDoc, p + 4, -a4_width);
-            addPage(canvas, srcDoc, pdfDoc, p + 11, -a4_width * 2);
-            addPage(canvas, srcDoc, pdfDoc, p + 8, -a4_width * 3);
-            addPage(canvas, srcDoc, pdfDoc, p + 7, -a4_width * 4);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 4, -a4Width);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 11, -a4Width * 2);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 8, -a4Width * 3);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 7, -a4Width * 4);
             canvas.restoreState();
 
             canvas = new PdfCanvas(pdfDoc.addNewPage());
-            addPage(canvas, srcDoc, pdfDoc, p + 1, 0);
-            addPage(canvas, srcDoc, pdfDoc, p + 14, a4_width);
-            addPage(canvas, srcDoc, pdfDoc, p + 13, a4_width * 2);
-            addPage(canvas, srcDoc, pdfDoc, p + 2, a4_width * 3);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 1, 0);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 14, a4Width);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 13, a4Width * 2);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 2, a4Width * 3);
             canvas.saveState();
+
+            // Rotate on 180 degrees and copy pages to the top row.
             canvas.concatMatrix(at);
-            addPage(canvas, srcDoc, pdfDoc, p + 6, -a4_width);
-            addPage(canvas, srcDoc, pdfDoc, p + 9, -a4_width * 2);
-            addPage(canvas, srcDoc, pdfDoc, p + 10, -a4_width * 3);
-            addPage(canvas, srcDoc, pdfDoc, p + 5, -a4_width * 4);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 6, -a4Width);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 9, -a4Width * 2);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 10, -a4Width * 3);
+            copyPageToDoc(canvas, srcDoc, pdfDoc, p + 5, -a4Width * 4);
             canvas.restoreState();
 
-            if ((p - 1) / 16 < n / 16) {
+            if ((p - 1) / 16 < numberOfPages / 16) {
                 canvas = new PdfCanvas(pdfDoc.addNewPage());
             }
+
             p += 16;
         }
+
         pdfDoc.close();
         srcDoc.close();
+    }
+
+    private static void copyPageToDoc(PdfCanvas canvas, PdfDocument srcDoc, PdfDocument pdfDoc,
+            int pageNumber, float offsetX) throws IOException {
+        if (pageNumber > srcDoc.getNumberOfPages()) {
+            return;
+        }
+
+        PdfFormXObject page = srcDoc.getPage(pageNumber).copyAsFormXObject(pdfDoc);
+        canvas.addXObject(page, offsetX, 0);
     }
 }

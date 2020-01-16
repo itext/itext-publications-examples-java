@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -23,25 +23,27 @@ import java.io.File;
 
 public class ImageOnRotatedPage {
     public static final String DEST = "./target/sandbox/images/image_on_rotated_page.pdf";
+
     public static final String IMAGE = "./src/test/resources/img/cardiogram.png";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ImageOnRotatedPage().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        // Note that it is not necessary to create new PageSize object,
-        // but for testing reasons (connected to parallelization) we call constructor here
-        Document doc = new Document(pdfDoc, new PageSize(PageSize.A4).rotate());
+        Document doc = new Document(pdfDoc, PageSize.A4.rotate());
+
         Image img = new Image(ImageDataFactory.create(IMAGE));
         img.scaleToFit(770, 523);
         float offsetX = (770 - img.getImageScaledWidth()) / 2;
         float offsetY = (523 - img.getImageScaledHeight()) / 2;
         img.setFixedPosition(36 + offsetX, 36 + offsetY);
         doc.add(img);
+
         doc.close();
     }
 }

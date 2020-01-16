@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -34,6 +34,7 @@ import java.io.File;
 
 public class WatermarkedImages2 {
     public static final String DEST = "./target/sandbox/images/watermarked_images2.pdf";
+
     public static final String IMAGE1 = "./src/test/resources/img/bruno.jpg";
     public static final String IMAGE2 = "./src/test/resources/img/dog.bmp";
     public static final String IMAGE3 = "./src/test/resources/img/fox.bmp";
@@ -42,6 +43,7 @@ public class WatermarkedImages2 {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new WatermarkedImages2().manipulatePdf(DEST);
     }
 
@@ -49,31 +51,35 @@ public class WatermarkedImages2 {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        Table table = new Table(UnitValue.createPercentArray(1)).useAllAvailableWidth();
-        Cell cell;
+        Table table = new Table(1).useAllAvailableWidth();
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE1)).setAutoScaleWidth(true).setWidth(UnitValue.createPercentValue(100)));
+        Image image = new Image(ImageDataFactory.create(IMAGE1)).setAutoScaleWidth(true);
+        Cell cell = new Cell().add(image);
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Bruno"));
         table.addCell(cell);
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE2)).setAutoScaleWidth(true).setWidth(UnitValue.createPercentValue(100)));
+        image = new Image(ImageDataFactory.create(IMAGE2)).setAutoScaleWidth(true);
+        cell = new Cell().add(image);
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Dog"));
         table.addCell(cell);
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE3)).setAutoScaleWidth(true).setWidth(UnitValue.createPercentValue(100)));
+        image = new Image(ImageDataFactory.create(IMAGE3)).setAutoScaleWidth(true);
+        cell = new Cell().add(image);
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Fox"));
         table.addCell(cell);
 
-        cell = new Cell().add(new Image(ImageDataFactory.create(IMAGE4)).setAutoScaleWidth(true).setWidth(UnitValue.createPercentValue(100)));
+        image = new Image(ImageDataFactory.create(IMAGE4)).setAutoScaleWidth(true);
+        cell = new Cell().add(image);
         cell.setNextRenderer(new WatermarkedCellRenderer(cell, "Bruno and Ingeborg"));
         table.addCell(cell);
 
         doc.add(table);
+
         doc.close();
     }
 
 
-    private class WatermarkedCellRenderer extends CellRenderer {
+    private static class WatermarkedCellRenderer extends CellRenderer {
         private String content;
 
         public WatermarkedCellRenderer(Cell modelElement, String content) {
@@ -94,9 +100,13 @@ public class WatermarkedImages2 {
             super.draw(drawContext);
             Paragraph p = new Paragraph(content).setFontColor(ColorConstants.WHITE);
             Rectangle rect = getOccupiedAreaBBox();
-            new Canvas(drawContext.getCanvas(), drawContext.getDocument(), getOccupiedAreaBBox())
-                    .showTextAligned(p, (rect.getLeft() + rect.getRight()) / 2, (rect.getBottom() + rect.getTop()) / 2,
-                            getOccupiedArea().getPageNumber(), TextAlignment.CENTER, VerticalAlignment.MIDDLE, (float) Math.PI / 6);
+            float coordX = (rect.getLeft() + rect.getRight()) / 2;
+            float coordY = (rect.getBottom() + rect.getTop()) / 2;
+            float angle = (float) Math.PI / 6;
+            new Canvas(drawContext.getCanvas(), drawContext.getDocument(), rect)
+                    .showTextAligned(p, coordX, coordY, getOccupiedArea().getPageNumber(),
+                            TextAlignment.CENTER, VerticalAlignment.MIDDLE, angle)
+                    .close();
         }
     }
 }

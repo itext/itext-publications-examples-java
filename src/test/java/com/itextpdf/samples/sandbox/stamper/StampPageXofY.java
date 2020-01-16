@@ -1,11 +1,12 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -25,17 +26,22 @@ public class StampPageXofY {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new StampPageXofY().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
-        int n = pdfDoc.getNumberOfPages();
-        for (int i = 1; i <= n; i++) {
-            doc.showTextAligned(new Paragraph(String.format("page %s of %s", i, n)),
+
+        int numberOfPages = pdfDoc.getNumberOfPages();
+        for (int i = 1; i <= numberOfPages; i++) {
+
+            // Write aligned text to the specified by parameters point
+            doc.showTextAligned(new Paragraph(String.format("page %s of %s", i, numberOfPages)),
                     559, 806, i, TextAlignment.RIGHT, VerticalAlignment.TOP, 0);
         }
+
         doc.close();
     }
 }

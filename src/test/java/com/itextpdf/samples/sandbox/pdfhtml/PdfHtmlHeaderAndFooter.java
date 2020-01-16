@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -26,10 +26,11 @@ import com.itextpdf.layout.property.TextAlignment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class PdfHtmlHeaderAndFooter {
-    public static final String SRC = "./src/test/resources/pdfHTML/";
-    public static final String DEST = "./target/sandbox/pdfHTML/ipsum.pdf";
+    public static final String SRC = "./src/test/resources/pdfhtml/";
+    public static final String DEST = "./target/sandbox/pdfhtml/ipsum.pdf";
 
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
@@ -49,15 +50,16 @@ public class PdfHtmlHeaderAndFooter {
         pdfDocument.addEventHandler(PdfDocumentEvent.START_PAGE, headerHandler);
         pdfDocument.addEventHandler(PdfDocumentEvent.END_PAGE, footerHandler);
 
+        // Base URI is required to resolve the path to source files
         ConverterProperties converterProperties = new ConverterProperties().setBaseUri(SRC);
         HtmlConverter.convertToDocument(new FileInputStream(htmlSource), pdfDocument, converterProperties);
 
-        //Write the total number of pages to the placeholder
+        // Write the total number of pages to the placeholder
         footerHandler.writeTotal(pdfDocument);
         pdfDocument.close();
     }
 
-    //Header event handler
+    // Header event handler
     protected class Header implements IEventHandler {
         private String header;
 
@@ -76,14 +78,15 @@ public class PdfHtmlHeaderAndFooter {
             Canvas canvas = new Canvas(new PdfCanvas(page), pdf, pageSize);
             canvas.setFontSize(18);
 
-            //Write text at position
+            // Write text at position
             canvas.showTextAligned(header,
                     pageSize.getWidth() / 2,
                     pageSize.getTop() - 30, TextAlignment.CENTER);
+            canvas.close();
         }
     }
 
-    //Footer event handler
+    // Footer event handler
     protected class Footer implements IEventHandler {
         protected PdfFormXObject placeholder;
         protected float side = 20;
@@ -93,8 +96,7 @@ public class PdfHtmlHeaderAndFooter {
         protected float descent = 3;
 
         public Footer() {
-            placeholder =
-                    new PdfFormXObject(new Rectangle(0, 0, side, side));
+            placeholder = new PdfFormXObject(new Rectangle(0, 0, side, side));
         }
 
         @Override
@@ -115,6 +117,7 @@ public class PdfHtmlHeaderAndFooter {
                     .add(" of");
 
             canvas.showTextAligned(p, x, y, TextAlignment.RIGHT);
+            canvas.close();
 
             // Create placeholder object to write number of pages
             pdfCanvas.addXObject(placeholder, x + space, y - descent);
@@ -125,6 +128,7 @@ public class PdfHtmlHeaderAndFooter {
             Canvas canvas = new Canvas(placeholder, pdf);
             canvas.showTextAligned(String.valueOf(pdf.getNumberOfPages()),
                     0, descent, TextAlignment.LEFT);
+            canvas.close();
         }
     }
 }

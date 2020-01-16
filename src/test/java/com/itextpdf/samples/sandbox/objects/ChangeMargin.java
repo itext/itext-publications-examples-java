@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
@@ -30,7 +30,7 @@ public class ChangeMargin {
         new ChangeMargin().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
+    protected void manipulatePdf(String dest) throws IOException {
         float left = 30;
         float right = 30;
         float top = 60;
@@ -39,7 +39,7 @@ public class ChangeMargin {
         Document doc = new Document(pdfDoc, PageSize.A4);
         doc.setMargins(top, right, bottom, left);
 
-        // Add something in order to begin the page, otherwise you will lose the initial margins
+        // Add some text in order to begin the page, otherwise you will lose the initial margins
         doc.add(new Paragraph("This is a test"));
         doc.setMargins(0, right, bottom, left);
         for (int i = 1; i < 40; i++) {

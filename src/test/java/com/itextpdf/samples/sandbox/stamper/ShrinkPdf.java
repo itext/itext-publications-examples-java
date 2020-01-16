@@ -1,19 +1,25 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
- */
+*/
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/25356302/shrink-pdf-pages-with-rotation-using-rectangle-in-existing-pdf
  */
+
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfResources;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
@@ -25,29 +31,36 @@ public class ShrinkPdf {
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+
         new ShrinkPdf().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(String dest) throws Exception {
-        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(DEST));
-        int n = pdfDoc.getNumberOfPages();
-        PdfPage page;
-        Rectangle crop;
-        Rectangle media;
-        for (int p = 1; p <= n; p++) {
-            page = pdfDoc.getPage(p);
-            media = page.getCropBox();
+        PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
+
+        for (int p = 1; p <= pdfDoc.getNumberOfPages(); p++) {
+            PdfPage page = pdfDoc.getPage(p);
+            Rectangle media = page.getCropBox();
             if (media == null) {
                 media = page.getMediaBox();
             }
-            crop = new Rectangle(0, 0, media.getWidth() / 2, media.getHeight() / 2);
+
+            // Shrink the page to 50%
+            Rectangle crop = new Rectangle(0, 0, media.getWidth() / 2, media.getHeight() / 2);
             page.setMediaBox(crop);
             page.setCropBox(crop);
-            new PdfCanvas(pdfDoc.getPage(p).newContentStreamBefore(),
-                    new PdfResources(), pdfDoc).writeLiteral("\nq 0.5 0 0 0.5 0 0 cm\nq\n");
-            new PdfCanvas(pdfDoc.getPage(p).newContentStreamAfter(),
-                    new PdfResources(), pdfDoc).writeLiteral("\nQ\nQ\n");
+
+            // The content, placed on a content stream before, will be rendered before the other content
+            // and, therefore, could be understood as a background (bottom "layer")
+            new PdfCanvas(page.newContentStreamBefore(),
+                    page.getResources(), pdfDoc).writeLiteral("\nq 0.5 0 0 0.5 0 0 cm\nq\n");
+
+            // The content, placed on a content stream after, will be rendered after the other content
+            // and, therefore, could be understood as a foreground (top "layer")
+            new PdfCanvas(page.newContentStreamAfter(),
+                    page.getResources(), pdfDoc).writeLiteral("\nQ\nQ\n");
         }
+
         pdfDoc.close();
     }
 }

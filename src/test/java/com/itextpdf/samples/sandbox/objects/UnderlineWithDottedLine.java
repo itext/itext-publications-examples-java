@@ -1,16 +1,15 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2019 iText Group NV
+    Copyright (c) 1998-2020 iText Group NV
     Authors: iText Software.
 
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+
 /**
  * Example written by Bruno Lowagie in answer to:
  * http://stackoverflow.com/questions/22382717/write-two-itext-paragraphs-on-the-same-position
- * <p>
- * We create a Chunk and add a background color.
  */
 package com.itextpdf.samples.sandbox.objects;
 
@@ -33,8 +32,8 @@ public class UnderlineWithDottedLine {
         new UnderlineWithDottedLine().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(DEST));
+    protected void manipulatePdf(String dest) throws IOException {
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
         doc.add(new Paragraph("This line will be underlined with a dotted line.").setMarginBottom(0));
