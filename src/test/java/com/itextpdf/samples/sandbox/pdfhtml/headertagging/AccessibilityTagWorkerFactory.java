@@ -19,19 +19,19 @@ public class AccessibilityTagWorkerFactory extends DefaultTagWorkerFactory {
     public ITagWorker getCustomTagWorker(IElementNode tag, ProcessorContext context) {
         switch (tag.name()) {
             case "h1":
-                return new HeaderTagWorker(tag, context, 1);
+                return new CustomHTagWorker(tag, context, 1);
             case "h2":
-                return new HeaderTagWorker(tag, context, 2);
+                return new CustomHTagWorker(tag, context, 2);
             case "h3":
-                return new HeaderTagWorker(tag, context, 3);
+                return new CustomHTagWorker(tag, context, 3);
             case "h4":
-                return new HeaderTagWorker(tag, context, 4);
+                return new CustomHTagWorker(tag, context, 4);
             case "h5":
-                return new HeaderTagWorker(tag, context, 5);
+                return new CustomHTagWorker(tag, context, 5);
             case "h6":
-                return new HeaderTagWorker(tag, context, 6);
+                return new CustomHTagWorker(tag, context, 6);
             case "th":
-                return new TableHeaderTagWorker(tag, context);
+                return new CustomThTagWorker(tag, context);
             default:
                 return null;
         }
