@@ -115,7 +115,7 @@ public class CountRows {
             Paragraph p = new Paragraph(String.valueOf(footer.addRow(pageNumber)));
             float coordX = (rect.getLeft() + rect.getRight()) / 2;
             float coordY = (rect.getBottom() + rect.getTop()) / 2;
-            Canvas canvas = new Canvas(drawContext.getCanvas(), drawContext.getDocument(), rect);
+            Canvas canvas = new Canvas(drawContext.getCanvas(), rect);
             canvas
                     .showTextAligned(p, coordX, coordY, TextAlignment.CENTER, VerticalAlignment.MIDDLE)
                     .close();

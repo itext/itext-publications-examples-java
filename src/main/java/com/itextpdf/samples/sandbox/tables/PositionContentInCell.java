@@ -162,7 +162,7 @@ public class PositionContentInCell {
                 }
             }
 
-            new Canvas(drawContext.getCanvas(), drawContext.getDocument(), area).showTextAligned(p, x, y, alignment);
+            new Canvas(drawContext.getCanvas(), area).showTextAligned(p, x, y, alignment);
         }
     }
 }

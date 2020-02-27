@@ -45,7 +45,7 @@ public class ColoredText {
         p2.add(greenText);
         doc.add(p2);
 
-        new Canvas(new PdfCanvas(pdfDoc.getLastPage()), pdfDoc, new Rectangle(36, 600, 108, 160))
+        new Canvas(new PdfCanvas(pdfDoc.getLastPage()), new Rectangle(36, 600, 108, 160))
                 .add(p1)
                 .add(p2);
 

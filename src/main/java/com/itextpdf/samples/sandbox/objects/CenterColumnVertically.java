@@ -44,7 +44,7 @@ public class CenterColumnVertically {
         Paragraph p = new Paragraph("This text is centered vertically. "
                 + "It is rendered in the middle of the red rectangle.");
         float width = resolveTextHeight(doc, rect, p);
-        new Canvas(canvas, pdfDoc, rect)
+        new Canvas(canvas, rect)
                 .add(p.setFixedPosition(llx, (ury + lly) / 2 - width / 2, urx - llx).setMargin(0));
 
         doc.close();

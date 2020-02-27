@@ -90,7 +90,7 @@ public class DiagonalCell {
                     .stroke()
                     .restoreState();
 
-            new Canvas(canvas, drawContext.getDocument(), getOccupiedAreaBBox())
+            new Canvas(canvas, getOccupiedAreaBBox())
                     .showTextAligned(textTopRight, rect.getRight() - 2, rect.getTop() - 2,
                             TextAlignment.RIGHT, VerticalAlignment.TOP, 0)
                     .showTextAligned(textBottomLeft, rect.getLeft() + 2, rect.getBottom() + 2, TextAlignment.LEFT);

@@ -30,13 +30,13 @@ public class ColumnTextPhrase {
 
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD, PdfEncodings.CP1252, true);
         Paragraph pz = new Paragraph("Hello World!").setFont(font).setFontSize(13);
-        new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 580))
+        new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), new Rectangle(120, 48, 80, 580))
                 .add(pz);
 
         // The Leading is used in this paragraph, the Leading is a spacing between lines of text
         font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         pz = new Paragraph("Hello World!").setFont(font).setFixedLeading(20);
-        new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), pdfDoc, new Rectangle(120, 48, 80, 480))
+        new Canvas(new PdfCanvas(pdfDoc.getFirstPage()), new Rectangle(120, 48, 80, 480))
                 .add(pz);
 
         pdfDoc.close();

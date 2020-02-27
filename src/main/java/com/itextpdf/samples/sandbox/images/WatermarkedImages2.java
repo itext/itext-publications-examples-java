@@ -12,7 +12,6 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.layout.property.UnitValue;
 import com.itextpdf.layout.property.VerticalAlignment;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -91,7 +90,7 @@ public class WatermarkedImages2 {
             float coordX = (rect.getLeft() + rect.getRight()) / 2;
             float coordY = (rect.getBottom() + rect.getTop()) / 2;
             float angle = (float) Math.PI / 6;
-            new Canvas(drawContext.getCanvas(), drawContext.getDocument(), rect)
+            new Canvas(drawContext.getCanvas(), rect)
                     .showTextAligned(p, coordX, coordY, getOccupiedArea().getPageNumber(),
                             TextAlignment.CENTER, VerticalAlignment.MIDDLE, angle)
                     .close();

@@ -18,7 +18,6 @@ import com.itextpdf.layout.property.TextAlignment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class PdfHtmlHeaderAndFooter {
     public static final String SRC = "./src/main/resources/pdfhtml/";
@@ -67,7 +66,7 @@ public class PdfHtmlHeaderAndFooter {
             PdfPage page = docEvent.getPage();
             Rectangle pageSize = page.getPageSize();
 
-            Canvas canvas = new Canvas(new PdfCanvas(page), pdf, pageSize);
+            Canvas canvas = new Canvas(new PdfCanvas(page), pageSize);
             canvas.setFontSize(18);
 
             // Write text at position
@@ -101,7 +100,7 @@ public class PdfHtmlHeaderAndFooter {
 
             // Creates drawing canvas
             PdfCanvas pdfCanvas = new PdfCanvas(page);
-            Canvas canvas = new Canvas(pdfCanvas, pdf, pageSize);
+            Canvas canvas = new Canvas(pdfCanvas, pageSize);
 
             Paragraph p = new Paragraph()
                     .add("Page ")

@@ -37,7 +37,7 @@ public class TransparentWatermark {
                 .setFont(font)
                 .setFontSize(15);
 
-        Canvas canvasWatermark1 = new Canvas(under, pdfDoc, pdfDoc.getDefaultPageSize())
+        Canvas canvasWatermark1 = new Canvas(under, pdfDoc.getDefaultPageSize())
                 .showTextAligned(paragraph, 297, 550, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
         canvasWatermark1.close();
         PdfCanvas over = new PdfCanvas(pdfDoc.getFirstPage());
@@ -46,7 +46,7 @@ public class TransparentWatermark {
                 .setFont(font)
                 .setFontSize(15);
 
-        Canvas canvasWatermark2 = new Canvas(over, pdfDoc, pdfDoc.getDefaultPageSize())
+        Canvas canvasWatermark2 = new Canvas(over, pdfDoc.getDefaultPageSize())
                 .showTextAligned(paragraph, 297, 500, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
         canvasWatermark2.close();
         paragraph = new Paragraph("This TRANSPARENT watermark is added ON TOP OF the existing content")
@@ -58,7 +58,7 @@ public class TransparentWatermark {
         PdfExtGState gs1 = new PdfExtGState();
         gs1.setFillOpacity(0.5f);
         over.setExtGState(gs1);
-        Canvas canvasWatermark3 = new Canvas(over, pdfDoc, pdfDoc.getDefaultPageSize())
+        Canvas canvasWatermark3 = new Canvas(over, pdfDoc.getDefaultPageSize())
                 .showTextAligned(paragraph, 297, 450, 1, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
         canvasWatermark3.close();
         over.restoreState();

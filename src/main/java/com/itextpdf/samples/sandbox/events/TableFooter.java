@@ -73,7 +73,7 @@ public class TableFooter {
             PdfPage page = docEvent.getPage();
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
 
-            new Canvas(canvas, pdfDoc, new Rectangle(36, 20, page.getPageSize().getWidth() - 72, 50))
+            new Canvas(canvas, new Rectangle(36, 20, page.getPageSize().getWidth() - 72, 50))
                     .add(table)
                     .close();
         }

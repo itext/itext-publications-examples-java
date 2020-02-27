@@ -50,7 +50,7 @@ public class WatermarkToTheSide {
     }
 
     private static void drawText(PdfCanvas canvas, PdfDocument pdfDoc, Rectangle pageSize, float x, float y, double rotation) {
-        Canvas canvasDrawText = new Canvas(canvas, pdfDoc, pageSize)
+        Canvas canvasDrawText = new Canvas(canvas, pageSize)
                 .showTextAligned("This is some extra text added to the left of the page",
                         x, y, TextAlignment.CENTER, (float) Math.toRadians(rotation));
         canvasDrawText.close();

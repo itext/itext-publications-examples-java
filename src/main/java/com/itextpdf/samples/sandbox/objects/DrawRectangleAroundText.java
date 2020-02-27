@@ -36,7 +36,7 @@ public class DrawRectangleAroundText {
                 + "lines (and we don't know in advance how many).");
 
         Rectangle firstRect = new Rectangle(120, 500, 130, 280);
-        new Canvas(canvas, pdfDoc, firstRect)
+        new Canvas(canvas, firstRect)
                 .add(p);
         canvas.rectangle(firstRect);
         canvas.stroke();
@@ -51,7 +51,7 @@ public class DrawRectangleAroundText {
         float height = renderer.layout(new LayoutContext(new LayoutArea(0, secRect)))
                 .getOccupiedArea().getBBox().getHeight();
 
-        new Canvas(canvas, pdfDoc, secRect)
+        new Canvas(canvas, secRect)
                 .add(p);
         canvas.rectangle(secRect.getX(), secRect.getY() + secRect.getHeight() - height, secRect.getWidth(), height);
         canvas.stroke();

@@ -93,7 +93,7 @@ public class ClipCenterCellContent {
 
             PdfFormXObject xObject = new PdfFormXObject(new Rectangle(getOccupiedAreaBBox().getWidth(),
                     getOccupiedAreaBBox().getHeight()));
-            Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.getDocument()), drawContext.getDocument(),
+            Canvas layoutCanvas = new Canvas(new PdfCanvas(xObject, drawContext.getDocument()),
                     new Rectangle(0, offset, getOccupiedAreaBBox().getWidth(), spaceNeeded));
             layoutCanvas.add(content);
 

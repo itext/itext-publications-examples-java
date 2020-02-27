@@ -86,7 +86,7 @@ public class TableHeader {
             float height = getTableHeight();
             Rectangle rect = new Rectangle(coordX, coordY, width, height);
 
-            new Canvas(canvas, pdfDoc, rect)
+            new Canvas(canvas, rect)
                     .add(table)
                     .close();
         }

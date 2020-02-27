@@ -95,7 +95,7 @@ public class Watermarking {
             }
 
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
-            new Canvas(canvas, pdfDoc, page.getPageSize())
+            new Canvas(canvas, page.getPageSize())
                     .setFontColor(ColorConstants.LIGHT_GRAY)
                     .setFontSize(60)
 

@@ -54,7 +54,7 @@ public class RotatedText {
         Rectangle rect = barcode.getBarcodeSize();
         PdfFormXObject formXObject = new PdfFormXObject(new Rectangle(rect.getWidth(), rect.getHeight() + 10));
         PdfCanvas pdfCanvas = new PdfCanvas(formXObject, pdfDoc);
-        new Canvas(pdfCanvas, pdfDoc, new Rectangle(rect.getWidth(), rect.getHeight() + 10))
+        new Canvas(pdfCanvas, new Rectangle(rect.getWidth(), rect.getHeight() + 10))
                 .showTextAligned(new Paragraph("DARK GRAY").setFont(regularFont).setFontSize(6), 0, rect.getHeight() + 2, TextAlignment.LEFT);
         barcode.placeBarcode(pdfCanvas, ColorConstants.BLACK, ColorConstants.BLACK);
 

@@ -117,7 +117,7 @@ public class FillFlattenMerge3 {
                     .addXObject(background, 0, 0);
 
             // Add the page number
-            new Canvas(canvas, pdfDoc, ((PdfDocumentEvent) event).getPage().getPageSize())
+            new Canvas(canvas, ((PdfDocumentEvent) event).getPage().getPageSize())
                     .showTextAligned("page " + pageNum, 550, 800, TextAlignment.RIGHT);
         }
     }

@@ -70,7 +70,7 @@ public class CellTitle {
             // Notice: bear in mind that iText draws cell borders on its TableRenderer level.
             PdfCanvas aboveCanvas = new PdfCanvas(currentPage.newContentStreamAfter(), currentPage.getResources(),
                     drawContext.getDocument());
-            new Canvas(aboveCanvas, drawContext.getDocument(), getOccupiedAreaBBox())
+            new Canvas(aboveCanvas, getOccupiedAreaBBox())
                     .add(new Paragraph(title)
                             .setMultipliedLeading(1)
                             .setMargin(0)
