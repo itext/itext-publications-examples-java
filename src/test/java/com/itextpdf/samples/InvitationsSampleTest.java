@@ -56,7 +56,7 @@ public class InvitationsSampleTest extends WrappedSamplesRunner {
             String currentDest = String.format(dest, i);
             String currentCmp = String.format(cmp, i);
 
-            Rectangle ignoredArea = new Rectangle(30, 689, 120, 18);
+            Rectangle ignoredArea = new Rectangle(30, 700, 120, 18);
             List<Rectangle> rectangles = Arrays.asList(ignoredArea);
             Map<Integer, List<Rectangle>> ignoredAreasMap = new HashMap<>();
             ignoredAreasMap.put(1, rectangles);
