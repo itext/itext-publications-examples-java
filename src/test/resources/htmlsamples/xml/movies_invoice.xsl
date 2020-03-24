@@ -9,7 +9,7 @@
 			<title>Movies</title>
 			<meta name="description" content="Invoice" />
 		</head>
-		<body style="font-family: FreeSans">
+		<body style="font-family: 'Noto Sans'">
 			<h1>INVOICE #I/2017-0456</h1>
 			<h2>August 20, 2017</h2>
 			<table width="100%">
