@@ -36,7 +36,7 @@ import java.util.Collection;
 @Category(SampleTest.class)
 public class EncryptWithCertificateSampleTest extends WrappedSamplesRunner {
 
-    public static final String PRIVATE = "./src/test/resources/encryption/test.p12";
+    public static final String PRIVATE = "./src/main/resources/encryption/test.p12";
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {

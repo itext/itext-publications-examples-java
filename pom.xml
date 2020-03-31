@@ -118,31 +118,31 @@
       <groupId>com.itextpdf</groupId>
       <artifactId>font-asian</artifactId>
       <version>${project.version}</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>pdfa</artifactId>
       <version>${project.version}</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>cleanup</artifactId>
       <version>${cleanup.version}</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>pdfxfa</artifactId>
       <version>${pdfxfa.version}</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
   <repositories>
