@@ -293,7 +293,7 @@
           <effort>Max</effort>
           <threshold>High</threshold>
           <xmlOutput>true</xmlOutput>
-          <failOnError>true</failOnError>
+          <failOnError>false</failOnError>
           <excludeFilterFile>findbugs-filter.xml</excludeFilterFile>
           <plugins>
             <plugin>
