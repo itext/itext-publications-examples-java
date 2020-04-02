@@ -6,19 +6,19 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+
 /**
  * Example written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/31263533/how-to-create-nested-column-using-itextsharp
  */
+
 package com.itextpdf.samples.sandbox.tables;
 
-import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.font.PdfFont;
-import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.Style;
 import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Cell;
@@ -32,8 +32,6 @@ import java.io.File;
 public class SimpleTable12 {
     public static final String DEST = "./target/sandbox/tables/simple_table12.pdf";
 
-    protected static PdfFont font;
-
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
@@ -45,56 +43,54 @@ public class SimpleTable12 {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc, PageSize.A4.rotate());
 
-        font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
-
         Table table = new Table(UnitValue.createPercentArray(8)).useAllAvailableWidth();
 
-        table.addCell(createCell("Examination", 1, 2, 15));
-        table.addCell(createCell("Board", 1, 2, 15));
-        table.addCell(createCell("Month and Year of Passing", 1, 2, 15));
-        table.addCell(createCell("", 1, 1, 1));
-        table.addCell(createCell("Marks", 2, 1, 1));
-        table.addCell(createCell("Percentage", 1, 2, 15));
-        table.addCell(createCell("Class / Grade", 1, 2, 15));
-        table.addCell(createCell("", 1, 1, 15));
-        table.addCell(createCell("Obtained", 1, 1, 15));
-        table.addCell(createCell("Out of", 1, 1, 15));
-        table.addCell(createCell("12th / I.B. Diploma", 1, 1, 15));
-        table.addCell(createCell("", 1, 1, 15));
-        table.addCell(createCell("", 1, 1, 15));
-        table.addCell(createCell("Aggregate (all subjects)", 1, 1, 15));
-        table.addCell(createCell("", 1, 1, 15));
-        table.addCell(createCell("", 1, 1, 15));
-        table.addCell(createCell("", 1, 1, 15));
-        table.addCell(createCell("", 1, 1, 15));
+        // The Style instance will be passed by default always until the moment we desire to specify some custom border
+        Style style = new Style();
+
+        // Default border width value is 0.5, we set it on 1 for cells borders of the table which will
+        // use the Style instance
+        style.setBorder(new SolidBorder(1));
+
+        table.addCell(createCell("Examination", 1, 2, style));
+        table.addCell(createCell("Board", 1, 2, style));
+        table.addCell(createCell("Month and Year of Passing", 1, 2, style));
+        table.addCell(createCell("", 1, 1, new Style()
+                .setBorder(Border.NO_BORDER)
+                .setBorderTop(new SolidBorder(1))
+                .setBorderBottom(new SolidBorder(1))
+                .setBorderLeft(new SolidBorder(1))));
+        table.addCell(createCell("Marks", 2, 1, new Style()
+                .setBorder(Border.NO_BORDER)
+                .setBorderTop(new SolidBorder(1))
+                .setBorderBottom(new SolidBorder(1))
+                .setBorderRight(new SolidBorder(1))));
+        table.addCell(createCell("Percentage", 1, 2, style));
+        table.addCell(createCell("Class / Grade", 1, 2, style));
+        table.addCell(createCell("", 1, 1, new Style()));
+        table.addCell(createCell("Obtained", 1, 1, style));
+        table.addCell(createCell("Out of", 1, 1, style));
+        table.addCell(createCell("12th / I.B. Diploma", 1, 1, style));
+        table.addCell(createCell("", 1, 1, style));
+        table.addCell(createCell("", 1, 1, style));
+        table.addCell(createCell("Aggregate (all subjects)", 1, 1, style));
+        table.addCell(createCell("", 1, 1, style));
+        table.addCell(createCell("", 1, 1, style));
+        table.addCell(createCell("", 1, 1, style));
+        table.addCell(createCell("", 1, 1, style));
 
         doc.add(table);
 
         doc.close();
     }
 
-    private static Cell createCell(String content, int colspan, int rowspan, int border) {
-        Cell cell = new Cell(rowspan, colspan).add(new Paragraph(content).setFont(font).setFontSize(10));
-        cell
-                .setBorder(Border.NO_BORDER)
+    private static Cell createCell(String content, int colspan, int rowspan, Style style) {
+        Paragraph paragraph = new Paragraph(content)
+                .setFontSize(10)
                 .setTextAlignment(TextAlignment.CENTER);
 
-        if (8 == (border & 8)) {
-            cell.setBorderRight(new SolidBorder(1));
-            cell.setBorderBottom(new SolidBorder(1));
-        }
-
-        if (4 == (border & 4)) {
-            cell.setBorderLeft(new SolidBorder(1));
-        }
-
-        if (2 == (border & 2)) {
-            cell.setBorderBottom(new SolidBorder(1));
-        }
-
-        if (1 == (border & 1)) {
-            cell.setBorderTop(new SolidBorder(1));
-        }
+        Cell cell = new Cell(rowspan, colspan).add(paragraph);
+        cell.addStyle(style);
 
         return cell;
     }

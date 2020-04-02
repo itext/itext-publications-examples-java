@@ -6,10 +6,12 @@
     For more information, please contact iText Software at this address:
     sales@itextpdf.com
  */
+
 /**
  * Example written by Bruno Lowagie in answer to the following question:
  * http://stackoverflow.com/questions/34555756/one-cell-with-different-border-types
  */
+
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.geom.Rectangle;
@@ -17,7 +19,10 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.Style;
 import com.itextpdf.layout.borders.Border;
+import com.itextpdf.layout.borders.DottedBorder;
+import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
@@ -42,7 +47,41 @@ public class DottedLineCell2 {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document document = new Document(pdfDoc);
 
+        Paragraph paragraph = new Paragraph("Setter approach");
+        document.add(paragraph.setFontSize(25));
+
         Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
+        table.setMarginBottom(30);
+
+        table.addCell(createCell("left border", new Style().setBorderLeft(new DottedBorder(1))));
+        table.addCell(createCell("right border", new Style().setBorderRight(new DottedBorder(1))));
+        table.addCell(createCell("top border", new Style().setBorderTop(new DottedBorder(1))));
+        table.addCell(createCell("bottom border", new Style().setBorderBottom(new DottedBorder(1))));
+
+        document.add(table);
+
+        table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
+        table.setMarginBottom(30);
+
+        table.addCell(createCell("left and top border", new Style()
+                .setBorderLeft(new DottedBorder(1))
+                .setBorderTop(new DottedBorder(1))));
+        table.addCell(createCell("right and bottom border", new Style()
+                .setBorderRight(new DottedBorder(1))
+                .setBorderBottom(new DottedBorder(1))));
+        table.addCell(createCell("no border", new Style()));
+        table.addCell(createCell("full border", new Style()
+                .setBorderBottom(new DottedBorder(1))
+                .setBorderTop(new DottedBorder(1))
+                .setBorderRight(new DottedBorder(1))
+                .setBorderLeft(new DottedBorder(1))));
+
+        document.add(table);
+
+        paragraph = new Paragraph("Custom render approach");
+        document.add(paragraph.setFontSize(25));
+
+        table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setMarginBottom(30);
 
         Cell cell = new Cell().add(new Paragraph("left border"));
@@ -120,7 +159,7 @@ public class DottedLineCell2 {
             PdfCanvas canvas = drawContext.getCanvas();
             Rectangle position = getOccupiedAreaBBox();
             canvas.saveState();
-            canvas.setLineDash(0, 4, 2);
+            canvas.setLineDash(1f,3f);
 
             if (borders[0]) {
                 canvas.moveTo(position.getRight(), position.getTop());
@@ -145,5 +184,20 @@ public class DottedLineCell2 {
             canvas.stroke();
             canvas.restoreState();
         }
+    }
+
+    private static Cell createCell(String content, Style style) {
+        Cell cell = new Cell()
+                .add(new Paragraph(content))
+
+                // By default there is a BORDER property set as SolidBorder. We want to override it
+                // and that's why this property is set to null.
+                // However, if there is a BORDER property in the passed Style instance,
+                // it will be used because it's added afterwards.
+                .addStyle(new Style().setBorder(Border.NO_BORDER));
+
+        cell.addStyle(style);
+
+        return cell;
     }
 }

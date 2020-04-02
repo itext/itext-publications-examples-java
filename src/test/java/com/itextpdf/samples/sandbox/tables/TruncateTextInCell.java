@@ -13,6 +13,7 @@
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -27,7 +28,6 @@ import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
-import java.io.IOException;
 
 public class TruncateTextInCell {
     public static final String DEST = "./target/sandbox/tables/truncate_text_in_cell.pdf";
@@ -90,19 +90,32 @@ public class TruncateTextInCell {
             int contentLength = content.length();
             int leftChar = 0;
             int rightChar = contentLength - 1;
-            float availableWidth = layoutContext.getArea().getBBox().getWidth();
 
-            availableWidth -= bf.getWidth("...", 12);
+            Rectangle rect = layoutContext.getArea().getBBox().clone();
+
+            // Cell's margins, borders and paddings should be extracted from the available width as well.
+            // Note that this part of the sample was introduced specifically for iText7.
+            // since in iText5 the approach of processing cells was different
+            applyBordersPaddingsMargins(rect, getBorders(), getPaddings());
+            float availableWidth = rect.getWidth();
+
+            UnitValue fontSizeUV = this.getPropertyAsUnitValue(Property.FONT_SIZE);
+
+            // Unit values can be of POINT or PERCENT type. In this particular sample
+            // the font size value is expected to be of POINT type.
+            float fontSize = fontSizeUV.getValue();
+
+            availableWidth -= bf.getWidth("...", fontSize);
 
             while (leftChar < contentLength && rightChar != leftChar) {
-                availableWidth -= bf.getWidth(content.charAt(leftChar), 12);
+                availableWidth -= bf.getWidth(content.charAt(leftChar), fontSize);
                 if (availableWidth > 0) {
                     leftChar++;
                 } else {
                     break;
                 }
 
-                availableWidth -= bf.getWidth(content.charAt(rightChar), 12);
+                availableWidth -= bf.getWidth(content.charAt(rightChar), fontSize);
 
                 if (availableWidth > 0) {
                     rightChar--;
@@ -111,7 +124,9 @@ public class TruncateTextInCell {
                 }
             }
 
-            String newContent = content.substring(0, leftChar) + "..." + content.substring(rightChar);
+            // left char is the first char which should not be added
+            // right char is the last char which should not be added
+            String newContent = content.substring(0, leftChar) + "..." + content.substring(rightChar + 1);
             Paragraph p = new Paragraph(newContent);
 
             // We're operating on a Renderer level here, that's why we need to process a renderer,
