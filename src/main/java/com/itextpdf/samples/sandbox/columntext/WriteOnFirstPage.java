@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * This example was written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/33873180/itext-pdf-add-text-in-absolute-position-on-top-of-the-1st-page
- */
 package com.itextpdf.samples.sandbox.columntext;
 
 import com.itextpdf.io.font.constants.StandardFonts;

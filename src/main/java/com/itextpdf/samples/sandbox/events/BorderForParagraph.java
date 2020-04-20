@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * This question was answered by Bruno Lowagie in answer to the following question on StackOverflow:
- * http://stackoverflow.com/questions/30053684/how-to-add-border-to-paragraph-in-itext-pdf-library-in-java
- */
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

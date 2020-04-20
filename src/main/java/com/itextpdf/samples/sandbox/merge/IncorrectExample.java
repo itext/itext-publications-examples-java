@@ -1,14 +1,4 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 /**
- * Example written by Bruno Lowagie in answer to
- * http://stackoverflow.com/questions/28332692/itextsharp-rotated-pdf-page-reverts-orientation-when-file-is-rasterized-at-print
  * <p>
  * This example is named IncorrectExample because this is not how the problem of rotating pages
  * or of merging documents typically should be solved.

@@ -1,16 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * This example was written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/26648462/how-to-delete-attachment-of-pdf-using-itext
- * (This is part two, there's also a part one named AddEmbeddedFile)
- */
 package com.itextpdf.samples.sandbox.annotations;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

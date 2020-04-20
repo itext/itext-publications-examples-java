@@ -1,18 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/20131610/renaming-named-destinations-in-pdf-files
- * <p>
- * Searching for all the named destinations, with the purpose to rename them.
- * Change the destination for all GoTo actions from Link annotations on the first page.
- */
 package com.itextpdf.samples.sandbox.annotations;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

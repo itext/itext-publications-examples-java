@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/27867868/how-can-i-decrypt-a-pdf-document-with-the-owner-password
- */
 package com.itextpdf.samples.sandbox.security;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

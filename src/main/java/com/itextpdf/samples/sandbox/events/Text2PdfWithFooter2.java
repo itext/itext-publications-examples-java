@@ -1,17 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written for JavaOne 2016.
- * Differences between iText 5 and iText 7 are discussed in the JavaOne talk
- * "Oops, I broke my API" by Raf Hens and Bruno Lowagie.
- * This is the iText 7 version of one of the examples.
- */
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.io.font.constants.StandardFonts;

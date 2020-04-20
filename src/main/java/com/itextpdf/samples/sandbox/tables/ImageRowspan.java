@@ -1,16 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written in answer to:
- * http://stackoverflow.com/questions/42440133/itext-cell-with-image-doesnt-apply-rowspan
- */
-
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.image.ImageDataFactory;

@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * This example is written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/32593183/itextsharp-is-it-possible-to-set-a-different-alignment-in-the-same-cell-for-te
- */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

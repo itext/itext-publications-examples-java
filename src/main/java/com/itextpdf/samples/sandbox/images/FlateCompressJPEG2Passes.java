@@ -1,14 +1,4 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 /**
- * This sample is written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/21958449/can-itextsharp-generate-pdf-with-jpeg-images-that-are-multi-stage-filtered-both
  * <p>
  * The question was about adding compression to an image that already used /DCTDecode
  */

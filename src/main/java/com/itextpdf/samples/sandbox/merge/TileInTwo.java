@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to a question on StackOverflow:
- * http://stackoverflow.com/questions/27011829/divide-one-page-pdf-file-in-two-pages-pdf-file
- */
 package com.itextpdf.samples.sandbox.merge;
 
 import com.itextpdf.kernel.geom.PageSize;

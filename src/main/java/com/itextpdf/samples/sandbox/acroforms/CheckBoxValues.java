@@ -1,22 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/19698771/checking-off-pdf-checkbox-with-itextsharp
- * <p>
- * Given a check box in a form, how do we know
- * which values to use in {@link com.itextpdf.forms.fields.PdfFormField#setValue(String)}?
- * <p>
- * This sample differs from the corresponding iText 5 sample.
- * Here it is described not only how to find out, which values can be set in a checkbox,
- * but it is also shown that values are settable and it can be verified in the resultant pdf.
- */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;

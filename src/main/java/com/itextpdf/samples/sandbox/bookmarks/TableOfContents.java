@@ -1,14 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/*
- * This example was written by Bruno Lowagie.
- */
 package com.itextpdf.samples.sandbox.bookmarks;
 
 import com.itextpdf.io.font.constants.StandardFonts;

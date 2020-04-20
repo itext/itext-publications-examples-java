@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Ramesh in the context of a question on SO:
- * http://stackoverflow.com/questions/29345454/itext-avoid-row-splitting-in-table
- */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.io.font.constants.StandardFonts;

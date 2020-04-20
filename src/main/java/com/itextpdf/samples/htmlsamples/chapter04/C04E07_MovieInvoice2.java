@@ -1,10 +1,3 @@
-/*
- * Copyright 2016-2020, iText Group NV.
- * This example was created by Bruno Lowagie.
- * It was written in the context of the following book:
- * https://leanpub.com/itext7_pdfHTML
- * Go to http://developers.itextpdf.com for more info.
- */
 package com.itextpdf.samples.htmlsamples.chapter04;
 
 import java.io.ByteArrayInputStream;

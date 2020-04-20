@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to the following question:
- * http://stackoverflow.com/questions/30286601/extracting-an-embedded-object-from-a-pdf
- */
 package com.itextpdf.samples.sandbox.parse;
 
 import com.itextpdf.kernel.PdfException;

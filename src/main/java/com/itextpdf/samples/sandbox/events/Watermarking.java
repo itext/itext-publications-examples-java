@@ -1,15 +1,4 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 /**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/21575630/adding-watermark-directly-to-the-stream
- * <p>
  * Adding a watermark to the document immediately using a page event.
  */
 package com.itextpdf.samples.sandbox.events;

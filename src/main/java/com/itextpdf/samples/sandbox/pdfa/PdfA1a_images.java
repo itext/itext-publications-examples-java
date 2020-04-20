@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/*
- * This example was written in answer to the following question:
- * http://stackoverflow.com/questions/27294392/itext-create-pdf-a-1a-with-images
- */
 package com.itextpdf.samples.sandbox.pdfa;
 
 import com.itextpdf.io.font.PdfEncodings;

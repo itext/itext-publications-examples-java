@@ -1,22 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
-*/
-
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/21617218/itext-or-itextsharp-rudimentary-text-edit
- * <p>
- * This is only a partial answer. It's a quick and dirty method showing how to
- * change a stream inside a PDF. Obviously, you'll have to detect words that are
- * stored in Form XObjects too, and you can seriously screw up the layout when
- * you manipulate the content stream as is done in this example.
- */
-
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDictionary;

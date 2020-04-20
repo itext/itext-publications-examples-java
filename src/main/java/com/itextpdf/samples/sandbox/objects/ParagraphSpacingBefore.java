@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * This question was answered by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/32945733/itext-spacingbefore-property-applied-to-paragraph-causes-new-page
- */
 package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

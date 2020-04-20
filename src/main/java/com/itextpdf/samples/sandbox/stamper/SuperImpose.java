@@ -1,17 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
-*/
-
-/**
- * Example written in answer to:
- * http://stackoverflow.com/questions/33582245/extract-pdf-page-and-insert-into-existing-pdf
- */
-
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

@@ -1,14 +1,4 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 /**
- * This code sample was written by Bruno Lowagie in answer to this question:
- * http://stackoverflow.com/questions/21720802/how-to-make-text-invisible-in-an-existing-pdf
  * <p>
  * In this example, we take an image that is present in the background,
  * and we add the same image (by its reference) to the foreground so that

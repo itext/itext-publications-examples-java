@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/27842872/finding-trouble-to-change-installed-font-using-itext-library
- */
 package com.itextpdf.samples.sandbox.fonts;
 
 import com.itextpdf.io.font.PdfEncodings;

@@ -1,20 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
-*/
-
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/21607286/unicode-characters-in-document-info-dictionary-keys
- * <p>
- * A user wants to update a Document Info Dictionary (DID)
- * introducing a custom key with a Unicode character.
- */
-
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.pdf.PdfDocument;

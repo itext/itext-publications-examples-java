@@ -1,15 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * This code sample was written by Bruno Lowagie in answer to this question:
- * http://stackoverflow.com/questions/29096314/how-to-make-an-image-a-qualified-mask-candidate-in-itext
- */
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageData;

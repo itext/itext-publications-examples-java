@@ -1,17 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
-*/
-
-/**
- * This example was written in answer to the question:
- * http://stackoverflow.com/questions/33952183
- */
-
 package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.colors.ColorConstants;

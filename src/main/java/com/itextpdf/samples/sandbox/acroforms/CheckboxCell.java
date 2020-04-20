@@ -1,17 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/21342034/resizing-a-form-field-in-itextsharp
- * <p>
- * Given a cell, how do you add a check box with a specific size at a specific position.
- */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.kernel.geom.Rectangle;

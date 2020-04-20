@@ -1,16 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-/**
- * Example written by Bruno Lowagie in answer to:
- * http://stackoverflow.com/questions/31335715/cannot-show-special-character-in-acro-form-field
- * Sometimes you need to change the font of a field.
- */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
