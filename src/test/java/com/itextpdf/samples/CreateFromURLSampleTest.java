@@ -38,14 +38,14 @@ import org.slf4j.LoggerFactory;
 
 @Category(SampleTest.class)
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
-    private static final Map<String, Integer> expectedNumbersOfPages;
+    private static final Map<String, Integer[]> expectedNumbersOfPages;
 
     static {
         expectedNumbersOfPages = new HashMap<>();
 
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", 4);
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", 2);
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", 2);
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {4 ,5});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", new Integer[] {2, 3});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", new Integer[] {2, 3});
     }
 
     @Parameterized.Parameters(name = "{index}: {0}")
@@ -84,10 +84,9 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(dest));
 
         int currentNumberOfPages = pdfDoc.getNumberOfPages();
-        int expectedNumberOfPages = expectedNumbersOfPages.get(sampleClass.getName());
-        if (currentNumberOfPages != expectedNumberOfPages) {
-            addError("Numbers of pages are not equal.\nExpected: " + expectedNumberOfPages
-                    + "\nActual: " + currentNumberOfPages);
+        List<Integer> expectedNumberOfPages = Arrays.asList(expectedNumbersOfPages.get(sampleClass.getName()));
+        if (!expectedNumberOfPages.contains(currentNumberOfPages)) {
+            addError("Number of pages is out of expected range.\nActual: " + currentNumberOfPages);
         }
 
         String compareFilePath = "./cmpfiles/txt/cmp_" + sampleClass.getSimpleName() + "_keywords.txt";
