@@ -26,11 +26,13 @@ import ch.qos.logback.core.Appender;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -89,26 +91,30 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
             addError("Number of pages is out of expected range.\nActual: " + currentNumberOfPages);
         }
 
+        // Get words to check the resultant pdf file
         String compareFilePath = "./cmpfiles/txt/cmp_" + sampleClass.getSimpleName() + "_keywords.txt";
         String compareContent = readFile(compareFilePath);
-        String[] comparePagesContent = compareContent.split(";");
+        List<String> cmpPdfWords = Arrays.asList(compareContent.split("[|]"));
 
-        // Get the content words of the first page and compare it with expected content words
-        String firstPageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getFirstPage(),
-                new LocationTextExtractionStrategy());
-        List<String> firstPageWords = Arrays.asList(firstPageContentString.split("\n"));
-        List<String> firstPageWordsToCompare = Arrays.asList(comparePagesContent[0].split("[|]"));
-        if (!firstPageWords.containsAll(firstPageWordsToCompare)) {
-            addError("Some of the expected words do not present on the first page");
+        // Get all words from all pages of the resultant pdf file
+        List<String> destPdfWords = new ArrayList<>();
+        for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
+            String pageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getPage(i),
+                    new LocationTextExtractionStrategy());
+            List<String> pageWords = Arrays.asList(pageContentString.split("\n"));
+            destPdfWords.addAll(pageWords);
         }
 
-        // Get the content words of the last page and compare it with expected content words
-        String lastPageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getLastPage(),
-                new LocationTextExtractionStrategy());
-        List<String> lastPageWords = Arrays.asList(lastPageContentString.split("\n"));
-        List<String> lastPageWordsToCompare = Arrays.asList(comparePagesContent[1].split("[|]"));
-        if (!lastPageWords.containsAll(lastPageWordsToCompare)) {
-            addError("Some of the expected words do not present on the last page");
+        List<String> origCmpPdfWords = new ArrayList<>(cmpPdfWords);
+        cmpPdfWords.retainAll(destPdfWords);
+        if (origCmpPdfWords.size() != cmpPdfWords.size()) {
+            origCmpPdfWords.removeAll(cmpPdfWords);
+            StringBuilder errorMessage = new StringBuilder().append("Some words are missing in the result pdf: ");
+            for (String missingWord : origCmpPdfWords) {
+                errorMessage.append(missingWord).append(",");
+            }
+
+            addError(errorMessage.toString());
         }
     }
 
