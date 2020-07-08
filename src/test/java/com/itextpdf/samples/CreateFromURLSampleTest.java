@@ -1,11 +1,11 @@
 /*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
+This file is part of the iText (R) project.
+Copyright (c) 1998-2020 iText Group NV
+Authors: iText Software.
 
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
+For more information, please contact iText Software at this address:
+sales@itextpdf.com
+*/
 package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
@@ -26,11 +26,13 @@ import ch.qos.logback.core.Appender;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -38,14 +40,14 @@ import org.slf4j.LoggerFactory;
 
 @Category(SampleTest.class)
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
-    private static final Map<String, Integer> expectedNumbersOfPages;
+    private static final Map<String, Integer[]> expectedNumbersOfPages;
 
     static {
         expectedNumbersOfPages = new HashMap<>();
 
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", 4);
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", 2);
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", 2);
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {4 ,5});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", new Integer[] {2, 3});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", new Integer[] {2, 3});
     }
 
     @Parameterized.Parameters(name = "{index}: {0}")
@@ -84,32 +86,35 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(dest));
 
         int currentNumberOfPages = pdfDoc.getNumberOfPages();
-        int expectedNumberOfPages = expectedNumbersOfPages.get(sampleClass.getName());
-        if (currentNumberOfPages != expectedNumberOfPages) {
-            addError("Numbers of pages are not equal.\nExpected: " + expectedNumberOfPages
-                    + "\nActual: " + currentNumberOfPages);
+        List<Integer> expectedNumberOfPages = Arrays.asList(expectedNumbersOfPages.get(sampleClass.getName()));
+        if (!expectedNumberOfPages.contains(currentNumberOfPages)) {
+            addError("Number of pages is out of expected range.\nActual: " + currentNumberOfPages);
         }
 
+        // Get words to check the resultant pdf file
         String compareFilePath = "./cmpfiles/txt/cmp_" + sampleClass.getSimpleName() + "_keywords.txt";
         String compareContent = readFile(compareFilePath);
-        String[] comparePagesContent = compareContent.split(";");
+        List<String> cmpPdfWords = Arrays.asList(compareContent.split("[|]"));
 
-        // Get the content words of the first page and compare it with expected content words
-        String firstPageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getFirstPage(),
-                new LocationTextExtractionStrategy());
-        List<String> firstPageWords = Arrays.asList(firstPageContentString.split("\n"));
-        List<String> firstPageWordsToCompare = Arrays.asList(comparePagesContent[0].split("[|]"));
-        if (!firstPageWords.containsAll(firstPageWordsToCompare)) {
-            addError("Some of the expected words do not present on the first page");
+        // Get all words from all pages of the resultant pdf file
+        List<String> destPdfWords = new ArrayList<>();
+        for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
+            String pageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getPage(i),
+                    new LocationTextExtractionStrategy());
+            List<String> pageWords = Arrays.asList(pageContentString.split("\n"));
+            destPdfWords.addAll(pageWords);
         }
 
-        // Get the content words of the last page and compare it with expected content words
-        String lastPageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getLastPage(),
-                new LocationTextExtractionStrategy());
-        List<String> lastPageWords = Arrays.asList(lastPageContentString.split("\n"));
-        List<String> lastPageWordsToCompare = Arrays.asList(comparePagesContent[1].split("[|]"));
-        if (!lastPageWords.containsAll(lastPageWordsToCompare)) {
-            addError("Some of the expected words do not present on the last page");
+        List<String> origCmpPdfWords = new ArrayList<>(cmpPdfWords);
+        cmpPdfWords.retainAll(destPdfWords);
+        if (origCmpPdfWords.size() != cmpPdfWords.size()) {
+            origCmpPdfWords.removeAll(cmpPdfWords);
+            StringBuilder errorMessage = new StringBuilder().append("Some words are missing in the result pdf: ");
+            for (String missingWord : origCmpPdfWords) {
+                errorMessage.append(missingWord).append(",");
+            }
+
+            addError(errorMessage.toString());
         }
     }
 

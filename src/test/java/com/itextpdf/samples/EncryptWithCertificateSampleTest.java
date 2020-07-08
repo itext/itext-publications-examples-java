@@ -1,12 +1,11 @@
 /*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2020 iText Group NV
-    Authors: iText Software.
+This file is part of the iText (R) project.
+Copyright (c) 1998-2020 iText Group NV
+Authors: iText Software.
 
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-
+For more information, please contact iText Software at this address:
+sales@itextpdf.com
+*/
 package com.itextpdf.samples;
 
 import com.itextpdf.kernel.utils.CompareTool;
@@ -36,7 +35,7 @@ import java.util.Collection;
 @Category(SampleTest.class)
 public class EncryptWithCertificateSampleTest extends WrappedSamplesRunner {
 
-    public static final String PRIVATE = "./src/test/resources/encryption/test.p12";
+    public static final String PRIVATE = "./src/main/resources/encryption/test.p12";
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
