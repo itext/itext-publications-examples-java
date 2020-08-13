@@ -101,20 +101,21 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         for (int i = 1; i <= pdfDoc.getNumberOfPages(); i++) {
             String pageContentString = PdfTextExtractor.getTextFromPage(pdfDoc.getPage(i),
                     new LocationTextExtractionStrategy());
-            List<String> pageWords = Arrays.asList(pageContentString.split("\n"));
+            List<String> pageWords = Arrays.asList(pageContentString.replace("\n", " ")
+                    .split(" "));
             destPdfWords.addAll(pageWords);
         }
 
-        List<String> origCmpPdfWords = new ArrayList<>(cmpPdfWords);
-        cmpPdfWords.retainAll(destPdfWords);
-        if (origCmpPdfWords.size() != cmpPdfWords.size()) {
-            origCmpPdfWords.removeAll(cmpPdfWords);
-            StringBuilder errorMessage = new StringBuilder().append("Some words are missing in the result pdf: ");
-            for (String missingWord : origCmpPdfWords) {
-                errorMessage.append(missingWord).append(",");
+        StringBuilder errorMessage = new StringBuilder();
+        for (String word : cmpPdfWords) {
+            if (!destPdfWords.contains(word)) {
+                errorMessage.append(word).append(",");
             }
+        }
 
-            addError(errorMessage.toString());
+        String errorText = errorMessage.toString();
+        if (!errorText.equals("")) {
+            addError("Some words are missing in the result pdf: " + errorText);
         }
     }
 
