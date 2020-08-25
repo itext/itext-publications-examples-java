@@ -25,7 +25,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
 
 @Category(SampleTest.class)
-public class SystemOutWithPdfSampleTest extends WrappedSamplesRunner {
+public class StandardOutWithPdfSampleTest extends WrappedSamplesRunner {
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {

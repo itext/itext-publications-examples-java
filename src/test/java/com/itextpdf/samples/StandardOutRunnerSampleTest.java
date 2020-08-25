@@ -29,13 +29,13 @@ import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
 
 @Category(SampleTest.class)
-public class SystemOutRunnerSampleTest extends WrappedSamplesRunner {
+public class StandardOutRunnerSampleTest extends WrappedSamplesRunner {
     private PrintStream STORED_SYSTEM_OUT = null;
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.logging.CounterDemoSystemOut");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.logging.CounterDemoStandardOut");
 
         return generateTestsList(searchConfig);
     }
