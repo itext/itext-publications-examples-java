@@ -85,6 +85,6 @@ public class MakeBooklet {
         }
 
         PdfFormXObject page = srcDoc.getPage(pageNumber).copyAsFormXObject(pdfDoc);
-        canvas.addXObject(page, offsetX, 0);
+        canvas.addXObjectAt(page, offsetX, 0);
     }
 }

@@ -37,7 +37,7 @@ public class StampBarcode {
 
             PdfFormXObject barcodeXObject = barcode.createFormXObject(ColorConstants.BLACK, ColorConstants.BLACK, pdfDoc);
             PdfCanvas over = new PdfCanvas(pdfPage);
-            over.addXObject(barcodeXObject, x, y);
+            over.addXObjectAt(barcodeXObject, x, y);
         }
 
         pdfDoc.close();

@@ -34,10 +34,10 @@ public class TileInTwo2 {
             PdfFormXObject page = srcDoc.getPage(i).copyAsFormXObject(pdfDoc);
 
             PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-            canvas.addXObject(page, 0, 0);
+            canvas.addXObjectAt(page, 0, 0);
 
             canvas = new PdfCanvas(pdfDoc.addNewPage());
-            canvas.addXObject(page, -mediaBox.getWidth(), 0);
+            canvas.addXObjectAt(page, -mediaBox.getWidth(), 0);
         }
 
         pdfDoc.close();

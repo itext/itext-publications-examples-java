@@ -47,7 +47,7 @@ public class FileAttachmentAnnot {
         PdfFormXObject xObject = new PdfFormXObject(rect);
         ImageData imageData = ImageDataFactory.create(IMG);
         PdfCanvas canvas = new PdfCanvas(xObject, pdfDoc);
-        canvas.addImage(imageData, rect, true);
+        canvas.addImageFittedIntoRectangle(imageData, rect, true);
         attachment.setNormalAppearance(xObject.getPdfObject());
 
         pdfDoc.addNewPage().addAnnotation(attachment);

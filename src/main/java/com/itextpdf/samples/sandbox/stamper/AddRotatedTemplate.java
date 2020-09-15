@@ -32,9 +32,9 @@ public class AddRotatedTemplate {
 
         // Add template to the pdf document page applying rotation
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getFirstPage());
-        canvas.addXObject(formXObject, 36, 600);
+        canvas.addXObjectAt(formXObject, 36, 600);
         double angle = Math.PI / 4;
-        canvas.addXObject(formXObject,
+        canvas.addXObjectWithTransformationMatrix(formXObject,
                 (float) Math.cos(angle), -(float) Math.sin(angle),
                 (float) Math.cos(angle), (float) Math.sin(angle),
                 150, 600);

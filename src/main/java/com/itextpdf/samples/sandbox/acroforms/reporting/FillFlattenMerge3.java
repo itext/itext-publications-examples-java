@@ -114,7 +114,7 @@ public class FillFlattenMerge3 {
             // Add the background
             PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(pageNum).newContentStreamBefore(),
                     ((PdfDocumentEvent) event).getPage().getResources(), pdfDoc)
-                    .addXObject(background, 0, 0);
+                    .addXObjectAt(background, 0, 0);
 
             // Add the page number
             new Canvas(canvas, ((PdfDocumentEvent) event).getPage().getPageSize())

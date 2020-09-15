@@ -152,7 +152,7 @@ public class C04E02_MovieTable2 {
             PdfDocument pdf = docEvent.getDocument();
             PdfPage page = docEvent.getPage();
             PdfCanvas pdfCanvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdf);
-            pdfCanvas.addXObject(stationery, 0, 0);
+            pdfCanvas.addXObjectAt(stationery, 0, 0);
             Rectangle rect = new Rectangle(36, 32, 36, 64);
             Canvas canvas = new Canvas(pdfCanvas, rect);
             canvas.add(new Paragraph(String.valueOf(pdf.getNumberOfPages())).setFontSize(48)

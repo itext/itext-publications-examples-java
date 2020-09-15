@@ -39,7 +39,7 @@ public class AddImageLink {
         PdfPage firstPage = pdfDoc.getFirstPage();
 
         PdfCanvas canvas = new PdfCanvas(firstPage);
-        canvas.addImage(img, x, y, false);
+        canvas.addImageAt(img, x, y, false);
 
         Rectangle linkLocation = new Rectangle(x, y, width, height);
 

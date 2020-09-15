@@ -76,7 +76,7 @@ public class ImageBackground {
         @Override
         public void draw(DrawContext drawContext) {
             img.scaleToFit(getOccupiedAreaBBox().getWidth(), getOccupiedAreaBBox().getHeight());
-            drawContext.getCanvas().addXObject(img.getXObject(), getOccupiedAreaBBox());
+            drawContext.getCanvas().addXObjectFittedIntoRectangle(img.getXObject(), getOccupiedAreaBBox());
             super.draw(drawContext);
         }
     }

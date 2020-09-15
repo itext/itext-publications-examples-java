@@ -47,10 +47,10 @@ public class TableTemplate {
                 PdfFormXObject clip = new PdfFormXObject(new Rectangle(500, 650));
 
                 // add xObject to another xObject of shorter sizes
-                new PdfCanvas(clip, pdfDoc).addXObject(tableTemplate, -j, 650 - i);
+                new PdfCanvas(clip, pdfDoc).addXObjectAt(tableTemplate, -j, 650 - i);
 
                 // add xObject to the document
-                new PdfCanvas(pdfDoc.addNewPage()).addXObject(clip, 36, 156);
+                new PdfCanvas(pdfDoc.addNewPage()).addXObjectAt(clip, 36, 156);
             }
         }
 

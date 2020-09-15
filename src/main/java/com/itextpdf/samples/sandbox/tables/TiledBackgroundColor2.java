@@ -79,7 +79,7 @@ public class TiledBackgroundColor2 {
 
             while (x + image.getImageScaledWidth() < position.getRight()) {
                 image.setFixedPosition(x, y);
-                canvas.addImage(img, x, y, image.getImageScaledWidth(), false);
+                canvas.addImageFittedIntoRectangle(img, new Rectangle(x, y, image.getImageScaledWidth(), image.getImageScaledHeight()), false);
                 x += image.getImageScaledWidth();
             }
         }

@@ -43,7 +43,7 @@ public class ScaleDown {
             // Copy and paste scaled page content as formXObject
             PdfFormXObject page = srcDoc.getPage(p).copyAsFormXObject(pdfDoc);
             PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-            canvas.addXObject(page, scale, 0f, 0f, scale, 0f, 0f);
+            canvas.addXObjectWithTransformationMatrix(page, scale, 0f, 0f, scale, 0f, 0f);
         }
 
         pdfDoc.close();

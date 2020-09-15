@@ -32,7 +32,7 @@ public class SuperImpose {
         for (String path : EXTRA) {
             PdfDocument srcDoc = new PdfDocument(new PdfReader(path));
             PdfFormXObject page = srcDoc.getFirstPage().copyAsFormXObject(pdfDoc);
-            canvas.addXObject(page, 0, 0);
+            canvas.addXObjectAt(page, 0, 0);
             srcDoc.close();
         }
 

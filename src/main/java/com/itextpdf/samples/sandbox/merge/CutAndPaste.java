@@ -42,7 +42,7 @@ public class CutAndPaste {
         // This method uses the even-odd rule to determine which regions lie inside the clipping path.
         canvas1.eoClip();
         canvas1.endPath();
-        canvas1.addXObject(pageXObject, 0, 0);
+        canvas1.addXObjectAt(pageXObject, 0, 0);
 
         // Create a formXObject of the area to move.
         PdfFormXObject formXObject2 = new PdfFormXObject(pageSize);
@@ -52,13 +52,13 @@ public class CutAndPaste {
         // This method uses the nonzero winding rule to determine which regions lie inside the clipping path.
         canvas2.clip();
         canvas2.endPath();
-        canvas2.addXObject(pageXObject, 0, 0);
+        canvas2.addXObjectAt(pageXObject, 0, 0);
 
         PdfCanvas canvas = new PdfCanvas(resultPdfDoc.getFirstPage());
-        canvas.addXObject(formXObject1, 0, 0);
+        canvas.addXObjectAt(formXObject1, 0, 0);
 
         // Add the area to move content, shifted 10 points to the left and 2 points to the bottom.
-        canvas.addXObject(formXObject2, -20, -2);
+        canvas.addXObjectAt(formXObject2, -20, -2);
 
         srcDoc.close();
         resultPdfDoc.close();
