@@ -84,7 +84,7 @@ public class TiledBackground {
                     img.getHeight());
 
             PdfPatternCanvas patternCanvas = new PdfPatternCanvas(imgPattern, drawContext.getDocument());
-            patternCanvas.addImage(img, 0, 0, false);
+            patternCanvas.addImageAt(img, 0, 0, false);
 
             PdfCanvas canvas = drawContext.getCanvas();
 

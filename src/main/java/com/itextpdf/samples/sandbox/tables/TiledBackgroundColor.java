@@ -40,7 +40,7 @@ public class TiledBackgroundColor {
                 image.getImageScaledHeight());
 
         PdfPatternCanvas canvas = new PdfPatternCanvas(imgPattern, pdfDoc);
-        canvas.addImage(img, 0, 0, false);
+        canvas.addImageAt(img, 0, 0, false);
 
         Color color = new PatternColor(imgPattern);
 

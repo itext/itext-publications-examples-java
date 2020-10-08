@@ -214,7 +214,7 @@ public class PdfDenseMerger {
                 canvas.clip();
                 canvas.endPath();
 
-                canvas.addXObject(formXObject, 0,
+                canvas.addXObjectAt(formXObject, 0,
                         yPosition - (verticalFlips.get(startFlip) - pageSizeToImport.getBottom()));
 
                 canvas.restoreState();

@@ -39,7 +39,7 @@ public class BarcodeBackground {
         canvas.rectangle(x, y, width, height);
         canvas.fill();
         canvas.restoreState();
-        canvas.addXObject(xObject, 36, 750);
+        canvas.addXObjectAt(xObject, 36, 750);
 
         pdfDoc.close();
     }

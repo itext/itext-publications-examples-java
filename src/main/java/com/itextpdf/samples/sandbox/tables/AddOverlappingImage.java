@@ -67,7 +67,7 @@ public class AddOverlappingImage {
             Rectangle rect = rows.get(3)[1].getOccupiedAreaBBox();
             super.drawChildren(drawContext);
 
-            drawContext.getCanvas().addImage(image, rect.getLeft() + 10, rect.getTop() - image.getHeight(), false);
+            drawContext.getCanvas().addImageAt(image, rect.getLeft() + 10, rect.getTop() - image.getHeight(), false);
         }
 
         // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.

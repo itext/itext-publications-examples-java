@@ -69,7 +69,7 @@ public class PageLabels {
                 .moveText(0, 7)
                 .showText("Hello People")
                 .endText();
-        canvas.addXObject(formXObject, 36, 763);
+        canvas.addXObjectAt(formXObject, 36, 763);
 
         pdfDoc.setDefaultPageSize(new PageSize(PageSize.A4).rotate());
         doc.add(new AreaBreak());

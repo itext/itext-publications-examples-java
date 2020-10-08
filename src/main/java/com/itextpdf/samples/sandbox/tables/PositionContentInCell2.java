@@ -118,7 +118,7 @@ public class PositionContentInCell2 {
         @Override
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
-            drawContext.getCanvas().addXObject(img.getXObject(), getOccupiedAreaBBox());
+            drawContext.getCanvas().addXObjectFittedIntoRectangle(img.getXObject(), getOccupiedAreaBBox());
             drawContext.getCanvas().stroke();
 
             UnitValue fontSizeUV = getPropertyAsUnitValue(Property.FONT_SIZE);

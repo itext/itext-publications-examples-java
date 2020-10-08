@@ -42,7 +42,7 @@ public class TileClipped {
             content.rectangle(margin, margin, rect.getWidth(), rect.getHeight());
             content.clip();
             content.endPath();
-            content.addXObject(page, 4, 0, 0, 4, x, y);
+            content.addXObjectWithTransformationMatrix(page, 4, 0, 0, 4, x, y);
             if (15 != i) {
                 content = new PdfCanvas(pdfDoc.addNewPage());
             }

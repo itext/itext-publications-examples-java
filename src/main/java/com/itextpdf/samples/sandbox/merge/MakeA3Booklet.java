@@ -34,9 +34,9 @@ public class MakeA3Booklet {
         while (i++ < numberOfPages) {
             PdfFormXObject page = srcDoc.getPage(i).copyAsFormXObject(pdfDoc);
             if (i % 2 == 1) {
-                canvas.addXObject(page, 0, 0);
+                canvas.addXObjectAt(page, 0, 0);
             } else {
-                canvas.addXObject(page, a4Width, 0);
+                canvas.addXObjectAt(page, a4Width, 0);
                 canvas = new PdfCanvas(pdfDoc.addNewPage());
             }
         }

@@ -81,7 +81,7 @@ public class AddExtraPage {
 
             // Add the background
             new PdfCanvas(currentPage.newContentStreamBefore(), currentPage.getResources(), pdfDoc)
-                    .addXObject(background, 0, 0);
+                    .addXObjectAt(background, 0, 0);
         }
     }
 }

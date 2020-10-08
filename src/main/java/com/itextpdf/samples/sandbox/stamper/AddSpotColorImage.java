@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.stamper;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.DeviceCmyk;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfArray;
 import com.itextpdf.kernel.pdf.PdfDictionary;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -15,6 +16,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfSpecialCs;
 import com.itextpdf.kernel.pdf.function.PdfFunction;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
+import com.itextpdf.kernel.pdf.xobject.PdfXObject;
 
 import java.io.File;
 
@@ -63,7 +65,8 @@ public class AddSpotColorImage {
         PdfPage pdfPage = pdfDoc.getFirstPage();
         pdfPage.setIgnorePageRotationForContent(true);
         PdfCanvas canvas = new PdfCanvas(pdfPage);
-        canvas.addXObject(imageXObject, 100, 200, 100);
+        Rectangle rect = PdfXObject.calculateProportionallyFitRectangleWithWidth(imageXObject, 100, 200, 100);
+        canvas.addXObjectFittedIntoRectangle(imageXObject, rect);
 
         pdfDoc.close();
     }

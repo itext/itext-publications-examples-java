@@ -107,12 +107,13 @@ public class PositionContentInCell {
             Rectangle area = getOccupiedAreaBBox();
             img.scaleToFit(area.getWidth(), area.getHeight());
 
-            drawContext.getCanvas().addXObject(img.getXObject(),
+            drawContext.getCanvas().addXObjectFittedIntoRectangle(img.getXObject(), new Rectangle(
                     area.getX() + (area.getWidth() - img.getImageWidth()
                             * (float) img.getProperty(Property.HORIZONTAL_SCALING)) / 2,
                     area.getY() + (area.getHeight() - img.getImageHeight()
                             * (float) img.getProperty(Property.VERTICAL_SCALING)) / 2,
-                    img.getImageWidth() * (float) img.getProperty(Property.HORIZONTAL_SCALING));
+                    img.getImageWidth() * (float) img.getProperty(Property.HORIZONTAL_SCALING),
+                    img.getImageHeight() * (float) img.getProperty(Property.VERTICAL_SCALING)));
 
             drawContext.getCanvas().stroke();
 

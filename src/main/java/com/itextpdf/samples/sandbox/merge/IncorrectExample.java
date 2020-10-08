@@ -42,11 +42,11 @@ public class IncorrectExample {
             PdfFormXObject page = srcDoc.getPage(i).copyAsFormXObject(pdfDoc);
 
             if (isPortrait(srcDoc, i)) {
-                canvas.addXObject(page, 0, 0);
+                canvas.addXObjectAt(page, 0, 0);
             } else {
 
                 // Add page content as formXObject, rotated counterclockwise.
-                canvas.addXObject(page, 0, 1, -1, 0, pageSize.getWidth(), 0);
+                canvas.addXObjectWithTransformationMatrix(page, 0, 1, -1, 0, pageSize.getWidth(), 0);
             }
         }
 

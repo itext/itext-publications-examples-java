@@ -28,7 +28,7 @@ public class BackgroundImage {
         Document doc = new Document(pdfDoc, pageSize);
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-        canvas.addImage(ImageDataFactory.create(IMAGE), pageSize, false);
+        canvas.addImageFittedIntoRectangle(ImageDataFactory.create(IMAGE), pageSize, false);
 
         doc.add(new Paragraph("Berlin!"));
 

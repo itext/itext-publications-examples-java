@@ -56,7 +56,7 @@ public class TransparentWatermark3 {
             if (i % 2 == 1) {
                 doc.showTextAligned(paragraph, x, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
             } else {
-                over.addImage(img, w, 0, 0, h, x - (w / 2), y - (h / 2), true);
+                over.addImageWithTransformationMatrix(img, w, 0, 0, h, x - (w / 2), y - (h / 2), true);
             }
             over.restoreState();
         }

@@ -111,7 +111,7 @@ public class PdfHtmlHeaderAndFooter {
             canvas.close();
 
             // Create placeholder object to write number of pages
-            pdfCanvas.addXObject(placeholder, x + space, y - descent);
+            pdfCanvas.addXObjectAt(placeholder, x + space, y - descent);
             pdfCanvas.release();
         }
 
