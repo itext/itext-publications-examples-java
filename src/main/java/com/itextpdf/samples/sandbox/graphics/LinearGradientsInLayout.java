@@ -47,7 +47,9 @@ public class LinearGradientsInLayout {
                 .addColorStop(new GradientColorStop(ColorConstants.RED.getColorValue()))
                 .addColorStop(new GradientColorStop(ColorConstants.GREEN.getColorValue()))
                 .addColorStop(new GradientColorStop(ColorConstants.BLUE.getColorValue()));
-        BackgroundImage backgroundImage = new BackgroundImage(gradientBuilder);
+
+        BackgroundImage backgroundImage = new BackgroundImage.Builder()
+                .setLinearGradientBuilder(gradientBuilder).build();
 
         if (backgroundImage.isBackgroundSpecified()) {
             String text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
