@@ -7,7 +7,6 @@
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
-    <bouncycastle.version>1.66</bouncycastle.version>
     <cleanup.version>2.0.6-SNAPSHOT</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
@@ -68,23 +67,6 @@
       <groupId>com.itextpdf</groupId>
       <artifactId>html2pdf</artifactId>
       <version>${html2pdf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcpkix-jdk15on</artifactId>
-      <version>${bouncycastle.version}</version>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15on</artifactId>
-      <version>${bouncycastle.version}</version>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.jfree</groupId>
-      <artifactId>jfreechart</artifactId>
-      <version>1.0.19</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
