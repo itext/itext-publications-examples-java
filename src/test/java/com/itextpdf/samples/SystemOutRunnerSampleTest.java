@@ -8,7 +8,10 @@
  */
 package com.itextpdf.samples;
 
+import com.itextpdf.io.util.UrlUtil;
 import com.itextpdf.kernel.Version;
+import com.itextpdf.kernel.utils.CompareTool;
+import com.itextpdf.kernel.utils.CompareTool.CompareResult;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
@@ -53,7 +56,7 @@ public class SystemOutRunnerSampleTest extends WrappedSamplesRunner {
     }
 
     @Override
-    protected void comparePdf(String outPath, String dest, String cmp) throws IOException {
+    protected void comparePdf(String outPath, String dest, String cmp) throws IOException, InterruptedException {
 
         // Make sure that the stream's content is flushed
         System.out.flush();
@@ -61,6 +64,10 @@ public class SystemOutRunnerSampleTest extends WrappedSamplesRunner {
         System.setOut(STORED_SYSTEM_OUT);
         String dest_txt = dest.replace(".pdf", ".txt");
         String cmp_txt = cmp.replace(".pdf", ".txt");
+
+        System.out.println("Out txt file: " + UrlUtil.getNormalizedFileUriString(dest_txt));
+        System.out.println("Cmp txt file: " + UrlUtil.getNormalizedFileUriString(cmp_txt)+ "\n");
+
         addError(compareTxt(dest_txt, cmp_txt));
     }
 

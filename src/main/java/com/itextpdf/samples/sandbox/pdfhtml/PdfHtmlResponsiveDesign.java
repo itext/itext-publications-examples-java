@@ -9,12 +9,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
 import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
 import com.itextpdf.styledxmlparser.css.media.MediaType;
-import com.itextpdf.styledxmlparser.css.util.CssUtils;
+import com.itextpdf.styledxmlparser.css.util.CssDimensionParsingUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class PdfHtmlResponsiveDesign {
     public static final String SRC = "./src/main/resources/pdfhtml/ResponsiveDesign/responsive/";
@@ -34,7 +33,7 @@ public class PdfHtmlResponsiveDesign {
 
         // Create a pdf for each page size
         for (int i = 0; i < pageSizes.length; i++) {
-            float width = CssUtils.parseAbsoluteLength(Float.toString(pageSizes[i].getWidth()));
+            float width = CssDimensionParsingUtils.parseAbsoluteLength(Float.toString(pageSizes[i].getWidth()));
             String dest = DEST.replace("<filename>", "responsive_" + width + ".pdf");
 
             runner.manipulatePdf(htmlSource, dest, SRC, pageSizes[i], width);

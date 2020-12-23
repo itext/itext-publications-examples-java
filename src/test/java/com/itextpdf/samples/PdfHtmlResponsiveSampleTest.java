@@ -13,7 +13,7 @@ import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.samples.sandbox.pdfhtml.PdfHtmlResponsiveDesign;
-import com.itextpdf.styledxmlparser.css.util.CssUtils;
+import com.itextpdf.styledxmlparser.css.util.CssDimensionParsingUtils;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
@@ -50,7 +50,7 @@ public class PdfHtmlResponsiveSampleTest extends WrappedSamplesRunner {
         CompareTool compareTool = new CompareTool();
 
         for (int i = 0; i < PdfHtmlResponsiveDesign.pageSizes.length; i++) {
-            float width = CssUtils.parseAbsoluteLength(Float.toString(PdfHtmlResponsiveDesign.pageSizes[i].getWidth()));
+            float width = CssDimensionParsingUtils.parseAbsoluteLength(Float.toString(PdfHtmlResponsiveDesign.pageSizes[i].getWidth()));
             String currentDest = dest.replace("<filename>", "responsive_" + width + ".pdf");
             String currentCmp = cmp.replace("<filename>", "responsive_" + width + ".pdf");
 
