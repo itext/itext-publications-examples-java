@@ -8,6 +8,9 @@ sales@itextpdf.com
 */
 package com.itextpdf.samples;
 
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.Appender;
 import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.kernel.Version;
@@ -19,10 +22,11 @@ import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.runners.Parameterized;
+import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.Appender;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.reflect.Field;
@@ -32,11 +36,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-import org.junit.runners.Parameterized;
-import org.slf4j.LoggerFactory;
 
 @Category(SampleTest.class)
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
@@ -60,6 +59,10 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
+    /**
+     * This test is expected to be flaky, because its output depends on the content of the site page,
+     * which could be changed at any time
+     */
     @Test(timeout = 60000)
     public void test() throws Exception {
         LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
