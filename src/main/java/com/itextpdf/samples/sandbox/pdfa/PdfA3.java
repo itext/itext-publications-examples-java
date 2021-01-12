@@ -45,7 +45,7 @@ public class PdfA3 {
         new PdfA3().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException, XMPException {
+    public void manipulatePdf(String dest) throws IOException {
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
         PdfFont bold = PdfFontFactory.createFont(BOLD, PdfEncodings.IDENTITY_H);
 

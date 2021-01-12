@@ -102,7 +102,7 @@ public class FillFlattenMerge3 {
     protected class PaginationEventHandler implements IEventHandler {
         PdfFormXObject background;
 
-        public PaginationEventHandler(PdfFormXObject background) throws IOException {
+        public PaginationEventHandler(PdfFormXObject background) {
             this.background = background;
         }
 

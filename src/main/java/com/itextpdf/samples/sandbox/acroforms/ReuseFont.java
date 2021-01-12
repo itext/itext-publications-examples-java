@@ -27,7 +27,7 @@ public class ReuseFont {
     /*
      * Method searches and returns font object by the passed font name.
      */
-    public PdfFont findFontInForm(PdfDocument pdfDoc, PdfName fontName) throws IOException {
+    public PdfFont findFontInForm(PdfDocument pdfDoc, PdfName fontName) {
         PdfDictionary acroformDict = pdfDoc.getCatalog().getPdfObject().getAsDictionary(PdfName.AcroForm);
         if (acroformDict == null) {
             return null;

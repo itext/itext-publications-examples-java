@@ -56,7 +56,7 @@ public class StandardOutRunnerSampleTest extends WrappedSamplesRunner {
     }
 
     @Override
-    protected void comparePdf(String outPath, String dest, String cmp) throws IOException, InterruptedException {
+    protected void comparePdf(String outPath, String dest, String cmp) throws IOException {
 
         // Make sure that the stream's content is flushed
         System.out.flush();
