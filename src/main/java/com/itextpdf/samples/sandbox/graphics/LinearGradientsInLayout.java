@@ -61,7 +61,7 @@ public class LinearGradientsInLayout {
                     "officia deserunt mollit anim id est laborum. ";
 
             Div div = new Div().add(new Paragraph(text + text + text));
-            div.setProperty(Property.BACKGROUND_IMAGE, backgroundImage);
+            div.setBackgroundImage(backgroundImage);
             doc.add(div);
 
         } else {
