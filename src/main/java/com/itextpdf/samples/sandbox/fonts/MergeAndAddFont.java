@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.fonts;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -66,12 +67,12 @@ public class MergeAndAddFont {
         new MergeAndAddFont().manipulatePdf(DEST);
     }
 
-    public void createPdf(String filename, String text, boolean embedded, boolean subset) throws IOException {
+    public void createPdf(String filename, String text, EmbeddingStrategy embeddingStrategy, boolean subset) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(filename));
         Document doc = new Document(pdfDoc);
 
         // The 3rd parameter indicates whether the font is to be embedded into the target document.
-        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI, embedded);
+        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI, embeddingStrategy);
 
         // When set to true, only the used glyphs will be included in the font.
         // When set to false, the full font will be included and all subset ranges will be removed.
@@ -107,7 +108,7 @@ public class MergeAndAddFont {
 
             // Create pdf files with font, which will be embedded into the target document,
             // and only the used glyphs will be included in the font.
-            createPdf(FILE_A[i], CONTENT[i], true, true);
+            createPdf(FILE_A[i], CONTENT[i], EmbeddingStrategy.FORCE_EMBEDDED, true);
         }
 
         mergeFiles(FILE_A, dest + DEST_NAMES.get("A1"), false);
@@ -117,7 +118,7 @@ public class MergeAndAddFont {
 
             // Create pdf files with font, which will embedded into the target document.
             // Full font will be included and all subset ranges will be removed
-            createPdf(FILE_B[i], CONTENT[i], true, false);
+            createPdf(FILE_B[i], CONTENT[i], EmbeddingStrategy.FORCE_EMBEDDED, false);
         }
 
         mergeFiles(FILE_B, dest + DEST_NAMES.get("B1"), false);
@@ -127,7 +128,7 @@ public class MergeAndAddFont {
 
             // Create pdf files with font, which won't be embedded into the target document.
             // Full font will be included and all subset ranges will be removed
-            createPdf(FILE_C[i], CONTENT[i], false, false);
+            createPdf(FILE_C[i], CONTENT[i], EmbeddingStrategy.FORCE_NOT_EMBEDDED, false);
         }
 
         mergeFiles(FILE_C, dest + DEST_NAMES.get("C1"), true);

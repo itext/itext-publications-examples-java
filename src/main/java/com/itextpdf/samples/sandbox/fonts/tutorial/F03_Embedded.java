@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.fonts.tutorial;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -26,7 +27,7 @@ public class F03_Embedded {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.CP1250, true);
+        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.CP1250, EmbeddingStrategy.PREFER_EMBEDDED);
 
         // Font is an inheritable property, setting it on a document implies that this font
         // will be used for document's children, unless they have this property overwritten.

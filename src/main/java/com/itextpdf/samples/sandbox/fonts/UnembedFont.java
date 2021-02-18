@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.fonts;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.PdfDictionary;
@@ -59,7 +60,7 @@ public class UnembedFont {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(resultFile));
         Document doc = new Document(pdfDoc);
 
-        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI, true);
+        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI, EmbeddingStrategy.PREFER_EMBEDDED);
         doc.add(new Paragraph("This is a test with Times New Roman.").setFont(font));
 
         doc.close();

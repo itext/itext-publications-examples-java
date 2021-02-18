@@ -6,6 +6,7 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -38,7 +39,7 @@ public class MalayalamPushButton {
         // Embedded parameter indicates whether the font is to be embedded into the target document.
         // We set it to make sure that the resultant document looks the same within different environments.
         PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansMalayalam-Regular.ttf",
-                PdfEncodings.IDENTITY_H, true);
+                PdfEncodings.IDENTITY_H, EmbeddingStrategy.PREFER_EMBEDDED);
 
         // എന്നെ തള്ളൂ
         String text = "\u0D0E\u0D28\u0D4D\u0D28\u0D46\u0020\u0D24\u0D33\u0D4D\u0D33\u0D42";

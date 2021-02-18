@@ -6,6 +6,7 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -38,7 +39,7 @@ public class TamilPushButton {
         // Embedded parameter indicates whether the font is to be embedded into the target document.
         // We set it to make sure that the resultant document looks the same within different environments
         PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansTamil-Regular.ttf",
-                PdfEncodings.IDENTITY_H, true);
+                PdfEncodings.IDENTITY_H, EmbeddingStrategy.PREFER_EMBEDDED);
 
         // என்னை தள்ளி விடு
         String text = "\u0B8E\u0BA9\u0BCD\u0BA9\u0BC8\u0020\u0BA4\u0BB3\u0BCD\u0BB3\u0BBF\u0020\u0BB5\u0BBF\u0B9F\u0BC1";

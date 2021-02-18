@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.typography.khmer;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -37,7 +38,7 @@ public class KhmerList {
         // Embedded parameter indicates whether the font is to be embedded into the target document.
         // We set it to make sure that the resultant document looks the same within different environments
         PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "KhmerOS.ttf", PdfEncodings.IDENTITY_H,
-                true);
+                EmbeddingStrategy.PREFER_EMBEDDED);
 
         // Overwrite some default document font-related properties. From now on they will be used for all the elements
         // added to the document unless they are overwritten inside these elements

@@ -4,6 +4,7 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfName;
@@ -28,7 +29,7 @@ public class SetCustomFontInDefaultAppearance {
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdf = new PdfDocument(new PdfWriter(dest));
-        PdfFont font = PdfFontFactory.createFont(FONT, null, true);
+        PdfFont font = PdfFontFactory.createFont(FONT, null, EmbeddingStrategy.PREFER_EMBEDDED);
 
         // Set the full font to be included and all subset ranges to be removed.
         font.setSubset(false);

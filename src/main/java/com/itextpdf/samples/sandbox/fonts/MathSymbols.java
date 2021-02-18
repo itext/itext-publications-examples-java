@@ -26,7 +26,7 @@ public class MathSymbols {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H, true);
+        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
 
         // "Testing math symbols ∈, ∩, ∑, ∫, ∆"
         Paragraph p = new Paragraph("Testing math symbols \u2208, \u2229, \u2211, \u222b, \u2206")

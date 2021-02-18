@@ -2,6 +2,7 @@ package com.itextpdf.samples.sandbox.fonts.tutorial;
 
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -25,9 +26,9 @@ public class F06_Different_encodings {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 
-        PdfFont french = PdfFontFactory.createFont(FONT, "WINANSI", true);
-        PdfFont czech = PdfFontFactory.createFont(FONT, "Cp1250", true);
-        PdfFont russian = PdfFontFactory.createFont(FONT, "Cp1251", true);
+        PdfFont french = PdfFontFactory.createFont(FONT, "WINANSI", EmbeddingStrategy.PREFER_EMBEDDED);
+        PdfFont czech = PdfFontFactory.createFont(FONT, "Cp1250", EmbeddingStrategy.PREFER_EMBEDDED);
+        PdfFont russian = PdfFontFactory.createFont(FONT, "Cp1251", EmbeddingStrategy.PREFER_EMBEDDED);
 
         // The text line is "Vous êtes d'où?"
         doc.add(new Paragraph("Vous \u00eates d'o\u00f9?").setFont(french));

@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.fonts.tutorial;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -28,7 +29,7 @@ public class F04_Russian {
 
         // CP1250 encoding type doesn't support russian characters,
         // and because of that the text in the resultant pdf will be incorrect.
-        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.CP1250, true);
+        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.CP1250, EmbeddingStrategy.PREFER_EMBEDDED);
         doc.setFont(font);
 
         // The text line is "Откуда ты?"
