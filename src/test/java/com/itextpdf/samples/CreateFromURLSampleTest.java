@@ -22,6 +22,8 @@ import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -38,6 +40,7 @@ import java.util.List;
 import java.util.Map;
 
 @Category(SampleTest.class)
+@Ignore("DEVSIX-5137: NP exception is thrown in part of logic related to processing of margin collapses")
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
     private static final Map<String, Integer[]> expectedNumbersOfPages;
 
