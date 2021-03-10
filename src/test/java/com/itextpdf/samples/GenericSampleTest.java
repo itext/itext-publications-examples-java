@@ -148,6 +148,8 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         // TODO DEVSIX-3326
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
+        //TODO DEVSIX-5054
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.FillForm");
         return generateTestsList(searchConfig);
     }
 
