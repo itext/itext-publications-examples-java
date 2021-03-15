@@ -23,7 +23,6 @@ import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -40,14 +39,13 @@ import java.util.List;
 import java.util.Map;
 
 @Category(SampleTest.class)
-@Ignore("DEVSIX-5137: NP exception is thrown in part of logic related to processing of margin collapses")
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
     private static final Map<String, Integer[]> expectedNumbersOfPages;
 
     static {
         expectedNumbersOfPages = new HashMap<>();
 
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {4 ,5});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {3 ,5});
         expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", new Integer[] {2, 3});
         expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", new Integer[] {2, 3});
     }
