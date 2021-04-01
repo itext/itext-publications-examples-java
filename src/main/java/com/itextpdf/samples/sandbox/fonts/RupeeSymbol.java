@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.fonts;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -34,7 +35,7 @@ public class RupeeSymbol {
         PdfFont font1 = PdfFontFactory.createFont(FONT1, PdfEncodings.IDENTITY_H);
         PdfFont font2 = PdfFontFactory.createFont(FONT2, PdfEncodings.IDENTITY_H);
         PdfFont font3 = PdfFontFactory.createFont(FONT3, PdfEncodings.IDENTITY_H);
-        PdfFont font4 = PdfFontFactory.createFont(FONT3, PdfEncodings.WINANSI, true);
+        PdfFont font4 = PdfFontFactory.createFont(FONT3, PdfEncodings.WINANSI, EmbeddingStrategy.PREFER_EMBEDDED);
 
         doc.add(new Paragraph(RUPEE).setFont(font1));
         doc.add(new Paragraph(RUPEE).setFont(font2));

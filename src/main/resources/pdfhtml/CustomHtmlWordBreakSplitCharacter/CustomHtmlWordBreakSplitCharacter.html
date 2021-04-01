@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    p {
+    width: 30px;
+    border: 1px solid red;
+    }
+
+    .testspan {
+    width: 10px;
+    border: 1px solid red;
+    word-break: normal;
+    }
+
+    .normal {
+      word-break: normal;
+    }
+
+    .break_all {
+      word-break: break-all;
+    }
+    </style>
+</head>
+<body>
+    <h3>Words in paragraph with custom split character '/'</h3>
+    <p class="normal">There/are/some/words/that/should/be/split</p>
+    <h3>Words with custom split character '/' in span, nested span</h3>
+    <p>
+        <span class="testspan">There/are/some/words/in/span<span>/and/in/nested/span</span></span>
+    </p>
+    <h3>Words with other characters</h3>
+    <p class="normal">There@are#some$words(that^should?not)be{split</p>
+    <h3>Words in paragraph with custom split character '/' and 'break-all' word-break property</h3>
+    <p class="break_all">There/are/some/words/that/should/be/split</p>
+</body>
+</html>

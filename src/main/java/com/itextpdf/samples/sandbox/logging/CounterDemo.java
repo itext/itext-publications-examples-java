@@ -60,7 +60,7 @@ public class CounterDemo {
             try (FileWriter writer = new FileWriter(DEST, true)) {
                 writer.write(String.format("%s\n", event.getEventType()));
             } catch (IOException e) {
-                System.err.println("IOException occured.");
+                System.err.println("IOException occurred.");
             }
         }
     }
