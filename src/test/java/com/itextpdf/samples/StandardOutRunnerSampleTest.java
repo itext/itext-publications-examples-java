@@ -10,8 +10,6 @@ package com.itextpdf.samples;
 
 import com.itextpdf.io.util.UrlUtil;
 import com.itextpdf.kernel.Version;
-import com.itextpdf.kernel.utils.CompareTool;
-import com.itextpdf.kernel.utils.CompareTool.CompareResult;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
