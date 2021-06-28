@@ -9,8 +9,8 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.ColumnDocumentRenderer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.ParagraphOrphansControl;
-import com.itextpdf.layout.property.ParagraphWidowsControl;
+import com.itextpdf.layout.properties.ParagraphOrphansControl;
+import com.itextpdf.layout.properties.ParagraphWidowsControl;
 
 import java.io.File;
 import java.io.FileNotFoundException;

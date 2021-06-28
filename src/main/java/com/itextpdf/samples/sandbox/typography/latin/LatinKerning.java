@@ -7,7 +7,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.properties.Property;
 import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.typography.config.LatinScriptConfig;
 import com.itextpdf.typography.config.TypographyConfigurator;

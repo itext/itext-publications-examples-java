@@ -10,7 +10,7 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.hyphenation.Hyphenation;
 import com.itextpdf.layout.hyphenation.HyphenationConfig;
 import com.itextpdf.layout.hyphenation.Hyphenator;
-import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 

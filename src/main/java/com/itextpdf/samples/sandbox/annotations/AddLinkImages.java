@@ -9,7 +9,7 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.properties.Property;
 
 import java.io.File;
 import java.net.MalformedURLException;

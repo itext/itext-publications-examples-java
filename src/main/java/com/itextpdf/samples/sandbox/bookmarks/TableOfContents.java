@@ -18,8 +18,8 @@ import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
-import com.itextpdf.layout.property.TabAlignment;
-import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.properties.TabAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 
 import java.io.BufferedReader;

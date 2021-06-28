@@ -11,7 +11,7 @@ import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
 import com.itextpdf.io.font.otf.Glyph;
 import com.itextpdf.io.font.otf.GlyphLine;
 import com.itextpdf.layout.IPropertyContainer;
-import com.itextpdf.layout.property.Property;
+import com.itextpdf.layout.properties.Property;
 import com.itextpdf.layout.splitting.BreakAllSplitCharacters;
 import com.itextpdf.layout.splitting.DefaultSplitCharacters;
 import com.itextpdf.styledxmlparser.node.IElementNode;
