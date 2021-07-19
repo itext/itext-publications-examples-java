@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.tables;
 
+import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -33,7 +34,7 @@ public class CellMethod {
     protected void manipulatePdf(String dest) throws Exception {
         czechFont = PdfFontFactory.createFont(FONT, "Cp1250", EmbeddingStrategy.PREFER_EMBEDDED);
         greekFont = PdfFontFactory.createFont(FONT, "Cp1253", EmbeddingStrategy.PREFER_EMBEDDED);
-        defaultFont = PdfFontFactory.createFont(FONT, null, EmbeddingStrategy.PREFER_EMBEDDED);
+        defaultFont = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI, EmbeddingStrategy.PREFER_EMBEDDED);
 
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);

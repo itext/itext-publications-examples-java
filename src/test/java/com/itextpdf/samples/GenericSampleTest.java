@@ -42,7 +42,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
      * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
     private static final List<String> renderCompareList = Arrays.asList(
-            "com.itextpdf.samples.sandbox.tables.CellMethod",
             "com.itextpdf.samples.sandbox.signatures.SignatureExample"
     );
 
