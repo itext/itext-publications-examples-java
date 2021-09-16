@@ -19,6 +19,7 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class RotatedText {

@@ -9,7 +9,7 @@ sales@itextpdf.com
 package com.itextpdf.samples;
 
 import com.itextpdf.kernel.utils.CompareTool;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.samples.sandbox.security.EncryptWithCertificate;
 import com.itextpdf.test.ITextTest;
 import com.itextpdf.test.RunnerSearchConfig;

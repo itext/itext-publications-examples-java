@@ -6,6 +6,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class CustomMetaEntry {

@@ -14,6 +14,7 @@ import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ColumnTextPhrase {

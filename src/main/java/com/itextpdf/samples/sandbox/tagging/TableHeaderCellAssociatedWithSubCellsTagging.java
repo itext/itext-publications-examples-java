@@ -25,6 +25,7 @@ import com.itextpdf.layout.tagging.LayoutTaggingHelper;
 import com.itextpdf.layout.tagging.TaggingHintKey;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;

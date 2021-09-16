@@ -1,13 +1,11 @@
 package com.itextpdf.samples.sandbox.logging;
 
-import com.itextpdf.kernel.counter.EventCounter;
-import com.itextpdf.kernel.counter.EventCounterHandler;
-import com.itextpdf.kernel.counter.IEventCounterFactory;
-import com.itextpdf.kernel.counter.SimpleEventCounterFactory;
-import com.itextpdf.kernel.counter.context.IContext;
-import com.itextpdf.kernel.counter.context.UnknownContext;
-import com.itextpdf.kernel.counter.event.IEvent;
-import com.itextpdf.kernel.counter.event.IMetaInfo;
+import com.itextpdf.commons.actions.AbstractContextBasedEventHandler;
+import com.itextpdf.commons.actions.AbstractContextBasedITextEvent;
+import com.itextpdf.commons.actions.EventManager;
+import com.itextpdf.commons.actions.confirmations.ConfirmEvent;
+import com.itextpdf.commons.actions.contexts.IContext;
+import com.itextpdf.commons.actions.contexts.UnknownContext;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -32,15 +30,15 @@ public class CounterDemo {
     protected void manipulatePdf() throws IOException {
 
         // Implement and register custom factory
-        IEventCounterFactory myCounterFactory = new SimpleEventCounterFactory(new ToLogCounter(UnknownContext.PERMISSIVE));
-        EventCounterHandler.getInstance().register(myCounterFactory);
+        ToLogCounter logCounter = new ToLogCounter(UnknownContext.PERMISSIVE);
+        EventManager.getInstance().register(logCounter);
 
         // Generate 2 events by creating 2 pdf documents
         for (int i = 0; i < 2; i++) {
             createPdf();
         }
 
-        EventCounterHandler.getInstance().unregister(myCounterFactory);
+        EventManager.getInstance().unregister(logCounter);
     }
 
     private static void createPdf() throws FileNotFoundException {
@@ -49,16 +47,19 @@ public class CounterDemo {
         document.close();
     }
 
-    private static class ToLogCounter extends EventCounter {
+    private static class ToLogCounter extends AbstractContextBasedEventHandler {
         private ToLogCounter(IContext fallback) {
             super(fallback);
         }
 
         // Triggering registered factories to produce events and count them
         @Override
-        protected void onEvent(IEvent event, IMetaInfo metaInfo) {
+        protected void onAcceptedEvent(AbstractContextBasedITextEvent event) {
             try (FileWriter writer = new FileWriter(DEST, true)) {
-                writer.write(String.format("%s\n", event.getEventType()));
+                if (event instanceof ConfirmEvent) {
+                    ConfirmEvent confirmEvent = (ConfirmEvent) event;
+                    writer.write(String.format("%s\n", confirmEvent.getEventType()));
+                }
             } catch (IOException e) {
                 System.err.println("IOException occurred.");
             }

@@ -15,6 +15,7 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadOnlyField3 {

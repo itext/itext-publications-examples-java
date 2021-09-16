@@ -6,11 +6,12 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class XFAModify {
@@ -20,7 +21,10 @@ public class XFAModify {
     public static void main(String[] args) throws Exception{
 
         // Load the license file to use XFA features
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-xfa.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+                + "/itextkey-xfa.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
 
         File file = new File(DEST);
         file.getParentFile().mkdirs();

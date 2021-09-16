@@ -13,6 +13,7 @@ import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ColumnTextParagraphs {

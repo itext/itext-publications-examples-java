@@ -1,6 +1,0 @@
-Starting test com.itextpdf.samples.sandbox.logging.CounterDemoStandardOut
-[com.itextpdf.kernel.pdf.PdfDocument] core-process event
-[com.itextpdf.kernel.pdf.PdfDocument] core-process event
-[com.itextpdf.kernel.pdf.PdfDocument] core-process event
-[com.itextpdf.kernel.pdf.PdfDocument] core-process event
-Test executed successfully, comparing results...

@@ -1,10 +1,11 @@
 package com.itextpdf.samples.htmlsamples.chapter02;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 /**
  * Converts an HTML file consisting of images at absolute positions to PDF.
@@ -28,7 +29,10 @@ public class C02E05_PositionImages {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

@@ -9,6 +9,7 @@ import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.kernel.pdf.colorspace.PdfShading;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ShadedFill {

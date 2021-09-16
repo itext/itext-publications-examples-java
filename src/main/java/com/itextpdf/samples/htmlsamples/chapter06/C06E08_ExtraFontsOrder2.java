@@ -1,6 +1,7 @@
 package com.itextpdf.samples.htmlsamples.chapter06;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import com.itextpdf.html2pdf.ConverterProperties;
@@ -9,7 +10,7 @@ import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.io.font.FontProgram;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 public class C06E08_ExtraFontsOrder2 {
 
@@ -38,7 +39,10 @@ public class C06E08_ExtraFontsOrder2 {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

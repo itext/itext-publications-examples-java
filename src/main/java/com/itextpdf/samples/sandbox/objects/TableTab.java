@@ -9,6 +9,7 @@ import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.properties.TabAlignment;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TableTab {

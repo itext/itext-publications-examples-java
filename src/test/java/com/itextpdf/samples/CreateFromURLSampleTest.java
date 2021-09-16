@@ -8,35 +8,33 @@ sales@itextpdf.com
 */
 package com.itextpdf.samples;
 
-import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.Appender;
 import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
-import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.canvas.parser.PdfTextExtractor;
 import com.itextpdf.kernel.pdf.canvas.parser.listener.LocationTextExtractionStrategy;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-import org.junit.runners.Parameterized;
-import org.slf4j.LoggerFactory;
-
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.Appender;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.runners.Parameterized;
+import org.slf4j.LoggerFactory;
 
 @Category(SampleTest.class)
 public class CreateFromURLSampleTest extends WrappedSamplesRunner {
@@ -66,7 +64,10 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
      */
     @Test(timeout = 60000)
     public void test() throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+                + "/all-products.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
 
@@ -82,7 +83,7 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
             runSamples();
         }
 
-        unloadLicense();
+        LicenseKey.unloadLicenses();
     }
 
     @Override
@@ -134,19 +135,5 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         }
 
         return contentString.toString();
-    }
-
-    private void unloadLicense() {
-        try {
-            Field validators = LicenseKey.class.getDeclaredField("validators");
-            validators.setAccessible(true);
-            validators.set(null, null);
-            Field versionField = Version.class.getDeclaredField("version");
-            versionField.setAccessible(true);
-            versionField.set(null, null);
-        } catch (Exception ignored) {
-
-            // No exception handling required, because there can be no license loaded
-        }
     }
 }

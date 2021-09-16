@@ -8,6 +8,7 @@ import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfReader;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class BaseURL3 {

@@ -8,9 +8,10 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.UnitValue;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class DevanagariTable {
@@ -21,7 +22,10 @@ public class DevanagariTable {
     public static void main(String[] args) throws Exception {
 
         // Load the license file to use typography features
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+                + "/itextkey-typography.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
 
         File file = new File(DEST);
         file.getParentFile().mkdirs();

@@ -18,6 +18,7 @@ import com.itextpdf.styledxmlparser.node.IElementNode;
 import com.itextpdf.styledxmlparser.node.IStylesContainer;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class CustomHtmlWordBreakSplitCharacter {

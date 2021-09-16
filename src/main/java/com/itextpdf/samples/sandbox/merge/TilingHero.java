@@ -10,6 +10,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TilingHero {

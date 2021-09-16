@@ -14,6 +14,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class RectangleInCell {

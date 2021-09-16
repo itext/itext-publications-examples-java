@@ -9,6 +9,7 @@ import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class AddAltTags {

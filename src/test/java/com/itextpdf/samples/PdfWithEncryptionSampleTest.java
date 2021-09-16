@@ -9,7 +9,7 @@
 package com.itextpdf.samples;
 
 import com.itextpdf.kernel.utils.CompareTool;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;

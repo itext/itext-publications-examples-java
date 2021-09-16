@@ -10,19 +10,18 @@ package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
-import com.itextpdf.kernel.Version;
 import com.itextpdf.kernel.utils.CompareTool;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.samples.sandbox.fonts.MergeAndAddFont;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
+
+import java.io.FileInputStream;
+import java.util.Collection;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
-
-import java.lang.reflect.Field;
-import java.util.Collection;
 
 @Category(SampleTest.class)
 public class MergeAndAddFontSampleTest extends WrappedSamplesRunner {
@@ -37,12 +36,15 @@ public class MergeAndAddFontSampleTest extends WrappedSamplesRunner {
 
     @Test(timeout = 60000)
     public void test() throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+                + "/all-products.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
 
         runSamples();
-        unloadLicense();
+        LicenseKey.unloadLicenses();
     }
 
     @Override
@@ -65,19 +67,5 @@ public class MergeAndAddFontSampleTest extends WrappedSamplesRunner {
         }
 
         return "./cmpfiles/" + dest.substring(8);
-    }
-
-    private void unloadLicense() {
-        try {
-            Field validators = LicenseKey.class.getDeclaredField("validators");
-            validators.setAccessible(true);
-            validators.set(null, null);
-            Field versionField = Version.class.getDeclaredField("version");
-            versionField.setAccessible(true);
-            versionField.set(null, null);
-        } catch (Exception ignored) {
-
-            // No exception handling required, because there can be no license loaded
-        }
     }
 }

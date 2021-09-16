@@ -8,21 +8,18 @@ sales@itextpdf.com
 */
 package com.itextpdf.samples;
 
-import com.itextpdf.kernel.Version;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Collection;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
-
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.lang.reflect.Field;
-import java.util.Collection;
 
 @Category(SampleTest.class)
 public class ExtractStreamsSampleTest extends WrappedSamplesRunner {
@@ -37,7 +34,7 @@ public class ExtractStreamsSampleTest extends WrappedSamplesRunner {
 
     @Test(timeout = 60000)
     public void test() throws Exception {
-        unloadLicense();
+        LicenseKey.unloadLicenses();
         runSamples();
     }
 
@@ -80,19 +77,5 @@ public class ExtractStreamsSampleTest extends WrappedSamplesRunner {
         }
 
         return errorMessage;
-    }
-
-    private void unloadLicense() {
-        try {
-            Field validators = LicenseKey.class.getDeclaredField("validators");
-            validators.setAccessible(true);
-            validators.set(null, null);
-            Field versionField = Version.class.getDeclaredField("version");
-            versionField.setAccessible(true);
-            versionField.set(null, null);
-        } catch (Exception ignored) {
-
-            // No exception handling required, because there can be no license loaded
-        }
     }
 }

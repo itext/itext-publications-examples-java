@@ -14,7 +14,7 @@ endobj
 <</Pages 2 0 R/Type/Catalog>>
 endobj
 3 0 obj
-<</CreationDate(D:20210427134012+03'00')/ModDate(D:20210427134012+03'00')/Producer(iText® Core 7.1.15-SNAPSHOT \(AGPL version\) ©1998-2021 iText Group NV)>>
+<</CreationDate(D:20210928153247+03'00')/ModDate(D:20210928153247+03'00')/Producer(iText® Core 7.2.0-SNAPSHOT \(production version\) ©2000-2021 iText Group NV, iText)>>
 endobj
 6 0 obj
 <</BaseFont/Helvetica/Encoding/WinAnsiEncoding/Subtype/Type1/Type/Font>>
@@ -26,14 +26,14 @@ xref
 0 7
 0000000000 65535 f 
 0000000442 00000 n 
-0000000747 00000 n 
+0000000759 00000 n 
 0000000487 00000 n 
 0000000309 00000 n 
 0000000015 00000 n 
-0000000659 00000 n 
+0000000671 00000 n 
 trailer
-<</ID [<a9750e4a6fc7d991515a36821df369cb><a9750e4a6fc7d991515a36821df369cb>]/Info 3 0 R/Root 1 0 R/Size 7>>
-%TEST-LICE-NSE0-7.1.15-SNAPSHOT
+<</ID [<ca1f6151f4bd8e342c4fb65c3b8519e5><ca1f6151f4bd8e342c4fb65c3b8519e5>]/Info 3 0 R/Root 1 0 R/Size 7>>
+%iText-Core-7.2.0-SNAPSHOT
 startxref
-798
+810
 %%EOF

@@ -13,6 +13,7 @@ import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.renderer.ParagraphRenderer;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class DrawRectangleAroundText {

@@ -12,6 +12,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class MergeForms2 {

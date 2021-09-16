@@ -9,13 +9,14 @@
 package com.itextpdf.samples;
 
 import com.itextpdf.kernel.utils.CompareTool;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -37,7 +38,10 @@ public class StandardOutWithPdfSampleTest extends WrappedSamplesRunner {
 
     @Test(timeout = 60000)
     public void test() throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+                + "/all-products.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
 
         initClass();
         // By default target dir is created during runSamples method. In this particular case we need this

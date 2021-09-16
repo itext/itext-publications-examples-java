@@ -10,6 +10,7 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.List;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ListWithImageAsBullet {

@@ -10,27 +10,23 @@ package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
-import com.itextpdf.kernel.Version;
-import com.itextpdf.kernel.utils.CompareTool;
-import com.itextpdf.licensekey.LicenseKey;
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.test.pdfa.VeraPdfValidator;
+import com.itextpdf.kernel.utils.CompareTool;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
+import com.itextpdf.test.pdfa.VeraPdfValidator;
 
-import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
-
-import java.lang.reflect.Field;
-
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
@@ -113,7 +109,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.parse.ExtractStreams");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoto");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.annotations.RemoteGoToPage");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.logging.CounterDemoStandardOut");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter05.C05E03_Invitations");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2");
@@ -153,12 +148,14 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
     @Test(timeout = 60000)
     public void test() throws Exception {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.xml");
+        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.json")) {
+            LicenseKey.loadLicenseFile(allLicense);
+        }
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
 
         runSamples();
-        unloadLicense();
+        LicenseKey.unloadLicenses();
     }
 
     @Override
@@ -219,19 +216,5 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         }
 
         return errorMessage;
-    }
-
-    private void unloadLicense() {
-        try {
-            Field validators = LicenseKey.class.getDeclaredField("validators");
-            validators.setAccessible(true);
-            validators.set(null, null);
-            Field versionField = Version.class.getDeclaredField("version");
-            versionField.setAccessible(true);
-            versionField.set(null, null);
-        } catch (Exception ignored) {
-
-            // No exception handling required, because there can be no license loaded
-        }
     }
 }

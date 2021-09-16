@@ -6,6 +6,7 @@ import com.itextpdf.styledxmlparser.resolver.resource.DefaultResourceRetriever;
 import com.itextpdf.styledxmlparser.resolver.resource.IResourceRetriever;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 
