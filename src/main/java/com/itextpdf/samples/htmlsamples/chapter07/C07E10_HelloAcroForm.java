@@ -1,11 +1,12 @@
 package com.itextpdf.samples.htmlsamples.chapter07;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 /**
  * Converts an HTML file containing a form to a PDF file with AcroForm fields.
@@ -29,7 +30,10 @@ public class C07E10_HelloAcroForm {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

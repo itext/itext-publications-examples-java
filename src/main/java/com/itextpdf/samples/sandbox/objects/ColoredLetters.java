@@ -11,6 +11,7 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ColoredLetters {

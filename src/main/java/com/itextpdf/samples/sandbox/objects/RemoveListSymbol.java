@@ -4,9 +4,10 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
-import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class RemoveListSymbol {

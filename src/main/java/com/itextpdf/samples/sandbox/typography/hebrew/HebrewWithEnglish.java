@@ -8,11 +8,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
-import com.itextpdf.layout.property.BaseDirection;
-import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.layout.properties.BaseDirection;
+import com.itextpdf.layout.properties.TextAlignment;
+import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class HebrewWithEnglish {
@@ -23,7 +24,10 @@ public class HebrewWithEnglish {
     public static void main(String[] args) throws Exception {
 
         // Load the license file to use typography features
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+                + "/itextkey-typography.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
 
         File file = new File(DEST);
         file.getParentFile().mkdirs();

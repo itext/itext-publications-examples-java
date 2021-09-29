@@ -21,6 +21,7 @@ import com.itextpdf.layout.element.ListItem;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class PdfUA {
@@ -39,7 +40,7 @@ public class PdfUA {
         new PdfUA().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException, XMPException {
+    public void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest,
                 new WriterProperties().addUAXmpMetadata().setPdfVersion(PdfVersion.PDF_1_7)));
         Document document = new Document(pdfDoc, PageSize.A4.rotate());

@@ -13,12 +13,12 @@ endobj
 <</Pages 2 0 R/Type/Catalog>>
 endobj
 3 0 obj
-<</CreationDate(D:20190813140946+03'00')/ModDate(D:20190813140946+03'00')/Producer(iText® 7.1.8-SNAPSHOT ©2000-2019 iText Group NV \(iText Software Group; licensed version\))>>
-endobj
-7 0 obj
-<</BaseFont/Helvetica/Encoding/WinAnsiEncoding/Subtype/Type1/Type/Font>>
+<</CreationDate(D:20210928153246+03'00')/ModDate(D:20210928153246+03'00')/Producer(iText® Core 7.2.0-SNAPSHOT \(production version\) ©2000-2021 iText Group NV, iText)>>
 endobj
 6 0 obj
+<</BaseFont/Helvetica/Encoding/WinAnsiEncoding/Subtype/Type1/Type/Font>>
+endobj
+7 0 obj
 <</BaseFont/Helvetica/Encoding/WinAnsiEncoding/Subtype/Type1/Type/Font>>
 endobj
 2 0 obj
@@ -28,15 +28,15 @@ xref
 0 8
 0000000000 65535 f 
 0000000542 00000 n 
-0000000955 00000 n 
+0000000947 00000 n 
 0000000587 00000 n 
 0000000400 00000 n 
 0000000015 00000 n 
-0000000867 00000 n 
-0000000779 00000 n 
+0000000771 00000 n 
+0000000859 00000 n 
 trailer
-<</ID [<47c0b712fbebe8d16effd4154f1b5723><47c0b712fbebe8d16effd4154f1b5723>]/Info 3 0 R/Root 1 0 R/Size 8>>
-%TEST-LICE-NSE0-7.1.8-SNAPSHOT
+<</ID [<17bf5046a419a3627305a1b8807fd263><17bf5046a419a3627305a1b8807fd263>]/Info 3 0 R/Root 1 0 R/Size 8>>
+%iText-Core-7.2.0-SNAPSHOT
 startxref
-1006
+998
 %%EOF

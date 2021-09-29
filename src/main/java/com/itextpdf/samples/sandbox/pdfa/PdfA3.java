@@ -11,14 +11,14 @@ import com.itextpdf.kernel.pdf.PdfDictionary;
 import com.itextpdf.kernel.pdf.PdfDate;
 import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
-import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.pdfa.PdfADocument;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.FileInputStream;
 import java.io.BufferedReader;
@@ -45,7 +45,7 @@ public class PdfA3 {
         new PdfA3().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException, XMPException {
+    public void manipulatePdf(String dest) throws IOException {
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
         PdfFont bold = PdfFontFactory.createFont(BOLD, PdfEncodings.IDENTITY_H);
 

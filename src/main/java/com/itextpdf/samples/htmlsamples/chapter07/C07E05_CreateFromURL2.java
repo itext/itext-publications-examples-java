@@ -1,6 +1,7 @@
 package com.itextpdf.samples.htmlsamples.chapter07;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 
@@ -9,7 +10,7 @@ import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
 import com.itextpdf.styledxmlparser.css.media.MediaType;
 
@@ -36,7 +37,10 @@ public class C07E05_CreateFromURL2 {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

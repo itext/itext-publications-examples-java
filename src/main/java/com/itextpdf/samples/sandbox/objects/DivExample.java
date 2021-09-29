@@ -1,7 +1,6 @@
 package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -9,9 +8,10 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Div;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.HorizontalAlignment;
+import com.itextpdf.layout.properties.HorizontalAlignment;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class DivExample {

@@ -13,7 +13,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.IBlockElement;
 import com.itextpdf.layout.element.IElement;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 /**
  * Converts a simple HTML file to PDF using the convertToElements() method.
@@ -42,7 +42,10 @@ public class C01E08_HelloWorld {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

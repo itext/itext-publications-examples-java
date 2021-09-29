@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.objects;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
-import com.itextpdf.layout.property.TabAlignment;
+import com.itextpdf.layout.properties.TabAlignment;
 
 public class RightTabs {
     public static final String DEST = "./target/sandbox/objects/right_tabs.pdf";

@@ -13,6 +13,7 @@ import com.itextpdf.kernel.pdf.canvas.parser.listener.FilteredEventListener;
 import com.itextpdf.kernel.pdf.canvas.parser.listener.LocationTextExtractionStrategy;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.FileOutputStream;

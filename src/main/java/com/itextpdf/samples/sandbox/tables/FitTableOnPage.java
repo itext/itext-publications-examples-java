@@ -11,7 +11,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.layout.LayoutArea;
 import com.itextpdf.layout.layout.LayoutContext;
 import com.itextpdf.layout.layout.LayoutResult;
-import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;

@@ -6,9 +6,9 @@ import com.itextpdf.kernel.pdf.canvas.draw.DottedLine;
 import com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.*;
-import com.itextpdf.layout.property.TabAlignment;
-import com.itextpdf.layout.property.UnitValue;
-import com.itextpdf.layout.property.VerticalAlignment;
+import com.itextpdf.layout.properties.TabAlignment;
+import com.itextpdf.layout.properties.UnitValue;
+import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 

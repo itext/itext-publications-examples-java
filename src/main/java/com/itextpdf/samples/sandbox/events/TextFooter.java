@@ -13,9 +13,10 @@ import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TextFooter {

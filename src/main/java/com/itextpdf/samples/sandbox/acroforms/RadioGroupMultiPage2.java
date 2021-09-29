@@ -2,7 +2,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.property.UnitValue;
+import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
 import com.itextpdf.forms.fields.PdfFormField;
@@ -72,8 +72,8 @@ public class RadioGroupMultiPage2 {
             this.value = value;
         }
 
-        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
-        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // If a renderer overflows on the next area, iText uses #getNextRenderer() method to create a new renderer for the overflow part.
+        // If #getNextRenderer() isn't overridden, the default method will be used and thus the default rather than the custom
         // renderer will be created
         @Override
         public IRenderer getNextRenderer() {

@@ -16,7 +16,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.BufferedReader;
 import java.io.File;

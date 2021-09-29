@@ -8,7 +8,7 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 

@@ -12,8 +12,8 @@ import com.itextpdf.html2pdf.html.TagConstants;
 import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.layout.IPropertyContainer;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.layout.property.Property;
-import com.itextpdf.layout.property.RenderingMode;
+import com.itextpdf.layout.properties.Property;
+import com.itextpdf.layout.properties.RenderingMode;
 import com.itextpdf.styledxmlparser.node.IElementNode;
 import com.itextpdf.styledxmlparser.node.IStylesContainer;
 

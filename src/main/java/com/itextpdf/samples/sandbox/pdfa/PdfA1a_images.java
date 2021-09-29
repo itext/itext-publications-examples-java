@@ -36,7 +36,7 @@ public class PdfA1a_images {
         new PdfA1a_images().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException, XMPException {
+    public void manipulatePdf(String dest) throws IOException {
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
 
         InputStream inputStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");

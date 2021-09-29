@@ -11,7 +11,7 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 public class C07E13_Peace {
 
@@ -37,7 +37,10 @@ public class C07E13_Peace {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

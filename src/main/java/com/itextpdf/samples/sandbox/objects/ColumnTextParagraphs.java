@@ -13,6 +13,7 @@ import com.itextpdf.layout.renderer.DocumentRenderer;
 import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ColumnTextParagraphs {
@@ -51,8 +52,9 @@ public class ColumnTextParagraphs {
             super(document);
         }
 
-        // If renderer overflows on the next area iText will use default getNextRender() method with default renderer
-        // parameters. So the method should be overridden with the parameters from the initial renderer
+        // If a renderer overflows on the next area, iText uses #getNextRenderer() method to create a new renderer for the overflow part.
+        // If #getNextRenderer() isn't overridden, the default method will be used and thus the default rather than the custom
+        // renderer will be created
         @Override
         public IRenderer getNextRenderer() {
             return new DocumentRenderer(document);

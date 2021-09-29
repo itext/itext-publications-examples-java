@@ -3,6 +3,7 @@ package com.itextpdf.samples.htmlsamples.chapter04;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -28,7 +29,7 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.xobject.PdfXObject;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 
 /**
  * Creates a PDF document from an XML file using XSLT to convert the XML to HTML,
@@ -70,7 +71,10 @@ public class C04E02_MovieTable2 {
      * @throws TransformerException the transformer exception
      */
     public static void main(String[] args) throws IOException, TransformerException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

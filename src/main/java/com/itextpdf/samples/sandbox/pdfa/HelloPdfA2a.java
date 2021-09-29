@@ -28,7 +28,7 @@ public class HelloPdfA2a {
         new HelloPdfA2a().manipulatePdf(DEST);
     }
 
-    public void manipulatePdf(String dest) throws IOException, XMPException {
+    public void manipulatePdf(String dest) throws IOException {
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
 
         FileInputStream fileStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");

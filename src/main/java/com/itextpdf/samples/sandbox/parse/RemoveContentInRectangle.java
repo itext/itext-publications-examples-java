@@ -6,9 +6,10 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfcleanup.PdfCleanUpLocation;
-import com.itextpdf.pdfcleanup.PdfCleanUpTool;
+import com.itextpdf.pdfcleanup.PdfCleaner;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +38,7 @@ public class RemoveContentInRectangle {
                 ColorConstants.GRAY);
         cleanUpLocations.add(location);
 
-        PdfCleanUpTool cleaner = new PdfCleanUpTool(pdfDoc, cleanUpLocations);
-        cleaner.cleanUp();
+        PdfCleaner.cleanUp(pdfDoc, cleanUpLocations);
 
         pdfDoc.close();
     }

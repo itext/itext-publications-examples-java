@@ -14,6 +14,7 @@ import com.itextpdf.layout.layout.LayoutResult;
 import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class CenterColumnVertically {

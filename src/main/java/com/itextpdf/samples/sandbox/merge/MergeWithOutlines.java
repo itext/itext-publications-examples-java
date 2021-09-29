@@ -14,6 +14,7 @@ import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 import com.itextpdf.kernel.utils.PdfMerger;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class MergeWithOutlines {

@@ -19,7 +19,7 @@ import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.kernel.pdf.PdfAConformanceLevel;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.licensekey.LicenseKey;
+import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.pdfa.PdfADocument;
 
 /**
@@ -60,7 +60,10 @@ public class C04E07_MovieInvoice2 {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException, TransformerException {
-        LicenseKey.loadLicenseFile(System.getenv("ITEXT7_LICENSEKEY") + "/itextkey-html2pdf_typography.xml");
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+				+ "/itextkey-html2pdf_typography.json")) {
+			LicenseKey.loadLicenseFile(license);
+		}
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
