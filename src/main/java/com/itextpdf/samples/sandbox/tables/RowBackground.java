@@ -54,8 +54,8 @@ public class RowBackground {
             this.row = row;
         }
 
-        // If renderer overflows on the next area, iText uses getNextRender() method to create a renderer for the overflow part.
-        // If getNextRenderer isn't overriden, the default method will be used and thus a default rather than custom
+        // If a renderer overflows on the next area, iText uses #getNextRenderer() method to create a new renderer for the overflow part.
+        // If #getNextRenderer() isn't overridden, the default method will be used and thus the default rather than the custom
         // renderer will be created
         @Override
         public IRenderer getNextRenderer() {

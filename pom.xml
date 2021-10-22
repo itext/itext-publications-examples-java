@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>7.1.16</version>
+  <version>7.1.17</version>
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
@@ -13,8 +13,8 @@
     <html2pdf.version>3.0.5</html2pdf.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.8</java.version>
-    <licensekey.version>3.1.5</licensekey.version>
     <pdfxfa.version>2.0.11</pdfxfa.version>
+    <licensekey.version>3.1.5</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
