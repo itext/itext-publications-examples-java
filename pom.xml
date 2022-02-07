@@ -88,6 +88,7 @@
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
+      <classifier>jdk8</classifier>
       <version>2.6.1</version>
       <scope>runtime</scope>
     </dependency>
