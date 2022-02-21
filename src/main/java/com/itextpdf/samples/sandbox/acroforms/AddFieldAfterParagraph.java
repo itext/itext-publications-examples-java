@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -40,8 +41,9 @@ public class AddFieldAfterParagraph {
         // 1st method: calculate position and create form field, using document's root layout area
         Rectangle freeBBox = doc.getRenderer().getCurrentArea().getBBox();
         float top = freeBBox.getTop();
-        PdfTextFormField field = PdfFormField.createText(pdfDoc,
-                new Rectangle(freeBBox.getLeft(), top - fieldHeight, fieldWidth, fieldHeight), "myField", "Value");
+        PdfTextFormField field = new TextFormFieldBuilder(pdfDoc, "myField")
+                .setWidgetRectangle(new Rectangle(freeBBox.getLeft(), top - fieldHeight, fieldWidth, fieldHeight)).createText();
+        field.setValue("Value");
         form.addField(field);
 
         doc.add(new AreaBreak());
@@ -72,8 +74,9 @@ public class AddFieldAfterParagraph {
             super.draw(drawContext);
 
             PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
-            PdfTextFormField field = PdfFormField.createText(drawContext.getDocument(),
-                    occupiedArea.getBBox(), "myField2", "Another Value");
+            PdfTextFormField field = new TextFormFieldBuilder(drawContext.getDocument(), "myField2")
+                    .setWidgetRectangle(occupiedArea.getBBox()).createText();
+            field.setValue("Another Value");
             form.addField(field);
         }
     }

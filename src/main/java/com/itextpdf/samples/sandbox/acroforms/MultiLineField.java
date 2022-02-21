@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.io.source.IRandomAccessSource;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.io.source.ByteArrayOutputStream;
@@ -50,7 +51,9 @@ public class MultiLineField {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));
         Rectangle rect = new Rectangle(36, 720, 108, 86);
 
-        PdfTextFormField textFormField = PdfFormField.createText(pdfDoc, rect, FIELD_NAME, "text");
+        PdfTextFormField textFormField = new TextFormFieldBuilder(pdfDoc, FIELD_NAME)
+                .setWidgetRectangle(rect).createText();
+        textFormField.setValue("text");
 
         // Being set as true, the field can contain multiple lines of text;
         // if false, the field's text is restricted to a single line.

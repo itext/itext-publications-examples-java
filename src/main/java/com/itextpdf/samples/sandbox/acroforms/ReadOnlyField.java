@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.io.source.IRandomAccessSource;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -53,8 +54,9 @@ public class ReadOnlyField {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         Rectangle rect = new Rectangle(36, 770, 104, 36);
-        PdfTextFormField textField = PdfFormField.createText(pdfDoc, rect, "text",
-                "text", font, 20f);
+        PdfTextFormField textField = new TextFormFieldBuilder(pdfDoc, "text")
+                .setWidgetRectangle(rect).createText();
+        textField.setFont(font).setFontSize(20f).setValue("text");
 
         // Being set as true, the field can contain multiple lines of text;
         // if false, the field's text is restricted to a single line.

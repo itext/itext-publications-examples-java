@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfName;
@@ -25,8 +26,9 @@ public class FileSelectionExample {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
-        PdfTextFormField field = PdfFormField.createText(pdfDoc,
-                new Rectangle(36, 788, 523, 18), "myfile", "");
+        PdfTextFormField field = new TextFormFieldBuilder(pdfDoc, "myfile")
+                .setWidgetRectangle(new Rectangle(36, 788, 523, 18)).createText();
+        field.setValue("");
 
         // If true is passed, then the text entered in the field will represent the pathname of a file
         // whose contents are to be submitted as the value of the field.
@@ -39,8 +41,9 @@ public class FileSelectionExample {
                         + "this.getField('mytitle').setFocus();"));
         form.addField(field);
 
-        PdfTextFormField title = PdfFormField.createText(pdfDoc,
-                new Rectangle(36, 752, 523, 18), "mytitle", "");
+        PdfTextFormField title = new TextFormFieldBuilder(pdfDoc, "mytitle")
+                .setWidgetRectangle(new Rectangle(36, 752, 523, 18)).createText();
+        title.setValue("");
         form.addField(title);
 
         pdfDoc.close();

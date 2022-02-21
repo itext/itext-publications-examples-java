@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.RadioFormFieldBuilder;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -37,16 +38,18 @@ public class RadioGroupMultiPage1 {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         // Radio buttons will be added to this radio group
-        PdfButtonFormField radioGroup = PdfFormField.createRadioGroup(pdfDoc, "Language", "");
+        PdfButtonFormField radioGroup = new RadioFormFieldBuilder(pdfDoc, "Language").createRadioGroup();
+        radioGroup.setValue("");
 
         for (int page = 1; page <= LANGUAGES.length; page++) {
             pdfDoc.addNewPage();
 
             // Create a radio button that is added to a radio group.
-            PdfFormField field = PdfFormField.createRadioButton(pdfDoc, rect, radioGroup, LANGUAGES[page - 1]);
+            PdfFormField field = new RadioFormFieldBuilder(pdfDoc)
+                    .setWidgetRectangle(rect).createRadioButton(radioGroup, LANGUAGES[page - 1]);
             field.setBorderWidth(1);
             field.setBorderColor(ColorConstants.BLACK);
-            
+
             // Method specifies on which page the form field's widget must be shown.
             field.setPage(page);
             doc.showTextAligned(new Paragraph(LANGUAGES[page - 1]).setFont(font).setFontSize(18),

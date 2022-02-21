@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.CheckBoxFormFieldBuilder;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -79,7 +80,9 @@ public class CheckboxCell2 {
 
             // The 4th parameter is the initial value of checkbox: 'Yes' - checked, 'Off' - unchecked
             // By default, checkbox value type is cross.
-            PdfButtonFormField checkBox = PdfFormField.createCheckBox(drawContext.getDocument(), rect, name, "Yes");
+            PdfButtonFormField checkBox = new CheckBoxFormFieldBuilder(drawContext.getDocument(), name)
+                    .setWidgetRectangle(rect).createCheckBox();
+            checkBox.setValue("Yes");
             switch (checkboxTypeIndex) {
                 case 0:
                     checkBox.setCheckType(PdfFormField.TYPE_CHECK);

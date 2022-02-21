@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.typography.tamil;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
 import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PushButtonFormFieldBuilder;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -55,7 +56,8 @@ public class TamilPushButton {
         Rectangle rect = new Rectangle(50, 650, 140, 30);
 
         // Create a button for the form field, set its font and size
-        PdfButtonFormField pushButton = PdfFormField.createPushButton(pdfDocument, rect, "Name", text);
+        PdfButtonFormField pushButton = new PushButtonFormFieldBuilder(pdfDocument, "Name")
+                .setWidgetRectangle(rect).setCaption(text).createPushButton();
         pushButton
                 .setFont(font)
                 .setFontSize(10);

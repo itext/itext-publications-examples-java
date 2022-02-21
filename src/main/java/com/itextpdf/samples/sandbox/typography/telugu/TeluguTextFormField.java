@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.typography.telugu;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -56,15 +57,14 @@ public class TeluguTextFormField {
         font.setSubset(false);
 
         // Create a form field and set some of the properties
-        PdfFormField formField = PdfTextFormField.createText(document.getPdfDocument(),
-                new Rectangle(50, 750, 160, 25));
+        PdfFormField formField = new TextFormFieldBuilder(document.getPdfDocument(), fieldName)
+                .setWidgetRectangle(new Rectangle(50, 750, 160, 25)).createText();
         formField
                 .setValue(fieldValue)
                 .setBorderWidth(2)
                 .setFont(font)
                 .setFontSize(10)
-                .setJustification(1)
-                .setFieldName(fieldName);
+                .setJustification(1);
 
         form.addField(formField);
 
