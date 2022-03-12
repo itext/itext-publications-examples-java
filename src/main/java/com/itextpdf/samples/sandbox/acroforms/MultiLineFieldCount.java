@@ -34,12 +34,11 @@ public class MultiLineFieldCount {
     private void passData(PdfAcroForm acroForm) {
         String character = " *";
         StringBuilder sb = new StringBuilder();
-
-        for (String name : acroForm.getFormFields().keySet()) {
+        //TODO DEVSIX-6467 The parent's formField value is set to children
+        for (String name : acroForm.getAllFormFields().keySet()) {
             for (int i = 0; i < getInfo(character, acroForm, name); i++) {
                 sb.append(character);
             }
-
             String filler = sb.toString();
             PdfFormField formField = acroForm.getField(name);
             formField.setValue(name + filler);

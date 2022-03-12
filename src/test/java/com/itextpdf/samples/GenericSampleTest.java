@@ -142,7 +142,10 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
         // TODO DEVSIX-3326
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
-        
+
+        //TODO DEVSIX-6508 remove unnecessary makeFormField calls
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
+
         return generateTestsList(searchConfig);
     }
 

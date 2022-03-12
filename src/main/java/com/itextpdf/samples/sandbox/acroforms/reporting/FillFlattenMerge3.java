@@ -50,7 +50,7 @@ public class FillFlattenMerge3 {
 
         // Create a map with fields from the acroform and their names
         Map<String, Rectangle> positions = new HashMap<>();
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
         for (PdfFormField field : fields.values()) {
             positions.put(field.getFieldName().getValue(), field.getWidgets().get(0).getRectangle().toRectangle());
         }

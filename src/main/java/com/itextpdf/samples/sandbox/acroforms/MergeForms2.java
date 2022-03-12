@@ -12,7 +12,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class MergeForms2 {
@@ -57,7 +56,7 @@ public class MergeForms2 {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(baos));
 
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
-        for (PdfFormField field : form.getFormFields().values()) {
+        for (PdfFormField field : form.getAllFormFields().values()) {
             field.setFieldName(String.format("%s_%d", field.getFieldName().toString(), i));
         }
 

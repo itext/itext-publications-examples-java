@@ -58,7 +58,7 @@ public class ArabicHiddenTextForm {
         form.setNeedAppearances(false);
 
         // Update the value and some other properties of all the pdf document's form fields
-        for (Map.Entry<String, PdfFormField> entry : form.getFormFields().entrySet()) {
+        for (Map.Entry<String, PdfFormField> entry : form.getAllFormFields().entrySet()) {
             PdfFormField field = entry.getValue();
             field.setValue(text);
             field.setFont(font).setJustification(2);

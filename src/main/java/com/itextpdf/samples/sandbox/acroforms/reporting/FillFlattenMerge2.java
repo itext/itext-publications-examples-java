@@ -70,7 +70,7 @@ public class FillFlattenMerge2 {
 
     public void fillAndFlattenForm(String line, PdfAcroForm form) {
         StringTokenizer tokenizer = new StringTokenizer(line, ";");
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
 
         fields.get("name").setValue(tokenizer.nextToken());
         fields.get("abbr").setValue(tokenizer.nextToken());

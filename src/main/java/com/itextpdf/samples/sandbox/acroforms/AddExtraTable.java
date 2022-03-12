@@ -33,7 +33,7 @@ public class AddExtraTable {
         Document doc = new Document(pdfDoc);
 
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
         fields.get("Name").setValue("Jeniffer");
         fields.get("Company").setValue("iText's next customer");
         fields.get("Country").setValue("No Man's Land");

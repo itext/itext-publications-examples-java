@@ -24,7 +24,7 @@ public class AlignField {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
 
         PdfFormField field = fields.get("personal.name");
         field.setJustification(PdfFormField.ALIGN_LEFT);

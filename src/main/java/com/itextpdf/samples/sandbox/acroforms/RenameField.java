@@ -24,14 +24,13 @@ public class RenameField {
     public void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
-
         form.renameField("personal.loginname", "login");
 
         pdfDoc.close();
 
         pdfDoc = new PdfDocument(new PdfReader(dest));
         form = PdfAcroForm.getAcroForm(pdfDoc, true);
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
 
         // See the renamed field in the console
         for (String name : fields.keySet()) {

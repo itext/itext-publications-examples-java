@@ -29,7 +29,7 @@ public class RemoveXFA {
         // Method removes the XFA stream from the document.
         form.removeXfaForm();
 
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
         for (Map.Entry<String, PdfFormField> name : fields.entrySet()) {
             if (name.getKey().indexOf("Total") > 0) {
                 name.getValue().setColor(ColorConstants.RED);
