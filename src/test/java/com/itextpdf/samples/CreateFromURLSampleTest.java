@@ -47,7 +47,7 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
 
         expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {2, 4});
         expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", new Integer[] {2, 4});
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", new Integer[] {3, 4});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", new Integer[] {3, 4, 5});
     }
 
     @Parameterized.Parameters(name = "{index}: {0}")
