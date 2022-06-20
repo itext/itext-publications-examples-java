@@ -1,19 +1,17 @@
 package com.itextpdf.samples.sandbox.annotations;
 
+import com.itextpdf.kernel.pdf.PdfArray;
+import com.itextpdf.kernel.pdf.PdfDictionary;
 import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfNameTree;
 import com.itextpdf.kernel.pdf.PdfObject;
 import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.PdfDictionary;
-import com.itextpdf.kernel.pdf.PdfName;
-import com.itextpdf.kernel.pdf.PdfArray;
 import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RenameDestinations {
@@ -33,16 +31,16 @@ public class RenameDestinations {
         Map<String, PdfString> renamed = new HashMap<>();
 
         PdfNameTree nameTree = pdfDoc.getCatalog().getNameTree(PdfName.Dests);
-        Map<String, PdfObject> names = nameTree.getNames();
-        List<String> keys = new ArrayList<String>(names.keySet());
+        Map<PdfString, PdfObject> names = nameTree.getNames();
 
         // Loop over all named destinations and rename its string values with new names
-        for (String key : keys) {
-            String newName = "new" + key;
+        for (PdfString key : nameTree.getKeys()) {
+            String oldName = key.toUnicodeString();
+            PdfString newName = new PdfString("new" + oldName);
 
             names.put(newName, names.get(key));
             names.remove(key);
-            renamed.put(key, new PdfString(newName));
+            renamed.put(oldName, newName);
         }
 
         // Specify that the name tree has been modified.

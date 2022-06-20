@@ -6,6 +6,7 @@ import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfObject;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 
@@ -70,11 +71,11 @@ public class AddNamedDestinations {
         Element root = doc.createElement("Destination");
         doc.appendChild(root);
 
-        Map<String, PdfObject> names = pdfDoc.getCatalog().getNameTree(PdfName.Dests).getNames();
-        for (Map.Entry<String, PdfObject> name : names.entrySet()) {
+        Map<PdfString, PdfObject> names = pdfDoc.getCatalog().getNameTree(PdfName.Dests).getNames();
+        for (Map.Entry<PdfString, PdfObject> name : names.entrySet()) {
             Element el = doc.createElement("Name");
             el.setAttribute("Page", name.getValue().toString());
-            el.setTextContent(name.getKey());
+            el.setTextContent(name.getKey().toUnicodeString());
             root.appendChild(el);
         }
 
