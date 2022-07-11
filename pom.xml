@@ -127,6 +127,11 @@
       <artifactId>licensing-base</artifactId>
       <version>${licensekey.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.itextpdf</groupId>
+      <artifactId>bouncy-castle-adapter</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>
