@@ -2,15 +2,13 @@ package com.itextpdf.samples.sandbox.stamper;
 
 import com.itextpdf.kernel.colors.DeviceCmyk;
 import com.itextpdf.kernel.colors.Separation;
-import com.itextpdf.kernel.pdf.PdfArray;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfNumber;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfSpecialCs;
-import com.itextpdf.kernel.pdf.function.PdfFunction;
+import com.itextpdf.kernel.pdf.function.PdfType2Function;
 
 import java.io.File;
 
@@ -45,10 +43,9 @@ public class AddSpotColorShape {
     }
 
     private PdfSpecialCs.Separation createCmykColorSpace(float c, float m, float y, float k) {
-        float[] c0 = new float[] {0, 0, 0, 0};
-        float[] c1 = new float[] {c, m, y, k};
-        PdfFunction pdfFunction = new PdfFunction.Type2(new PdfArray(new float[] {0, 1}), null, new PdfArray(c0),
-                new PdfArray(c1), new PdfNumber(1));
+        double[] c0 = new double[] {0, 0, 0, 0};
+        double[] c1 = new double[] {c, m, y, k};
+        PdfType2Function pdfFunction = new PdfType2Function(new double[] {0, 1}, null, c0, c1, 1);
         PdfSpecialCs.Separation cs = new PdfSpecialCs.Separation("iTextSpotColorCMYK",
                 new DeviceCmyk(c, m, y, k).getColorSpace(), pdfFunction);
 

@@ -14,7 +14,7 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfSpecialCs;
-import com.itextpdf.kernel.pdf.function.PdfFunction;
+import com.itextpdf.kernel.pdf.function.PdfType2Function;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 import com.itextpdf.kernel.pdf.xobject.PdfXObject;
 
@@ -39,7 +39,7 @@ public class AddSpotColorImage {
         pdfDictionary.put(PdfName.C1, new PdfArray(cmyk.getColorValue()));
         pdfDictionary.put(PdfName.N, new PdfNumber(1));
 
-        PdfFunction pdfFunction = new PdfFunction.Type2(pdfDictionary);
+        PdfType2Function pdfFunction = new PdfType2Function(pdfDictionary);
 
         return new PdfSpecialCs.Separation("mySpotColor", cmyk.getColorSpace(), pdfFunction);
     }
@@ -48,7 +48,7 @@ public class AddSpotColorImage {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
 
         // Suppose that this is our image data
-        byte circleData[] = {(byte) 0x3c, (byte) 0x7e, (byte) 0xff, (byte) 0xff, (byte) 0xff,
+        byte[] circleData = {(byte) 0x3c, (byte) 0x7e, (byte) 0xff, (byte) 0xff, (byte) 0xff,
                 (byte) 0xff, (byte) 0x7e, (byte) 0x3c};
 
         PdfSpecialCs colorspace = getSeparationColorspace(pdfDoc.getWriter(),

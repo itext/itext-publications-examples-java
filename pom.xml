@@ -3,18 +3,18 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>7.2.3</version>
+  <version>7.2.4</version>
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
     <cleanup.version>3.0.1</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
-    <html2pdf.version>4.0.3</html2pdf.version>
+    <html2pdf.version>4.0.4</html2pdf.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.8</java.version>
-    <pdfxfa.version>3.0.2</pdfxfa.version>
-    <licensekey.version>4.0.3</licensekey.version>
+    <pdfxfa.version>3.0.3</pdfxfa.version>
+    <licensekey.version>4.0.4</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
