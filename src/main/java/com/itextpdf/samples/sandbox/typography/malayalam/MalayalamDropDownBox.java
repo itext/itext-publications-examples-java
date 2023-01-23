@@ -69,10 +69,10 @@ public class MalayalamDropDownBox {
                 .createComboBox();
         formField.setValue(line1);
         formField
-                .setBorderWidth(1)
                 .setJustification(1)
                 .setFont(font)
                 .setFontSizeAutoScale();
+        formField.getFirstFormAnnotation().setBorderWidth(1);
 
         form.addField(formField);
 

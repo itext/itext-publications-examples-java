@@ -2,7 +2,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
-import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PdfFormAnnotation;
 import com.itextpdf.forms.fields.PushButtonFormFieldBuilder;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -31,14 +31,14 @@ public class AddField {
 
         PdfButtonFormField button = new PushButtonFormFieldBuilder(pdfDoc, "post")
                 .setWidgetRectangle(new Rectangle(36, 700, 36, 30)).setCaption("POST").createPushButton();
-        button.setBackgroundColor(ColorConstants.GRAY);
+        button.getFirstFormAnnotation().setBackgroundColor(ColorConstants.GRAY);
         button.setValue("POST");
 
         // The second parameter is optional, it declares which fields to include in the submission or which to exclude,
         // depending on the setting of the Include/Exclude flag.
-        button.setAction(PdfAction.createSubmitForm("http://itextpdf.com:8180/book/request", null,
+        button.getFirstFormAnnotation().setAction(PdfAction.createSubmitForm("http://itextpdf.com:8180/book/request", null,
                 PdfAction.SUBMIT_HTML_FORMAT | PdfAction.SUBMIT_COORDINATES));
-        button.setVisibility(PdfFormField.VISIBLE_BUT_DOES_NOT_PRINT);
+        button.getFirstFormAnnotation().setVisibility(PdfFormAnnotation.VISIBLE_BUT_DOES_NOT_PRINT);
         form.addField(button);
 
         pdfDoc.close();

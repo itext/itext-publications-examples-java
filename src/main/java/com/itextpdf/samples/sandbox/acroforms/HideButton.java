@@ -1,6 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
-import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PdfFormAnnotation;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -26,7 +26,7 @@ public class HideButton {
 
         // Set the visibility flag of the form field annotation.
         // Options are: HIDDEN, HIDDEN_BUT_PRINTABLE, VISIBLE, VISIBLE_BUT_DOES_NOT_PRINT
-        form.getField("Test").setVisibility(PdfFormField.HIDDEN);
+        form.getField("Test").getFirstFormAnnotation().setVisibility(PdfFormAnnotation.HIDDEN);
 
         pdfDoc.close();
     }

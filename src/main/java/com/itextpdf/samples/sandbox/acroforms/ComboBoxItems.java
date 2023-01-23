@@ -4,6 +4,7 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.ChoiceFormFieldBuilder;
 import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PdfFormAnnotation;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.exceptions.PdfException;
@@ -101,8 +102,8 @@ public class ComboBoxItems {
             choice.setValue(name);
             choice.setFont(font);
             choice.getWidgets().get(0).setBorderStyle(PdfAnnotation.STYLE_BEVELED);
-            choice.setVisibility(PdfFormField.VISIBLE_BUT_DOES_NOT_PRINT);
-            choice.setBorderColor(ColorConstants.GRAY);
+            choice.getFirstFormAnnotation().setVisibility(PdfFormAnnotation.VISIBLE_BUT_DOES_NOT_PRINT);
+            choice.getFirstFormAnnotation().setBorderColor(ColorConstants.GRAY);
             choice.setJustification(PdfFormField.ALIGN_CENTER);
             form.addField(choice);
         }

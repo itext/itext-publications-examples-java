@@ -61,10 +61,10 @@ public class MalayalamTextFormField {
                 .setWidgetRectangle(new Rectangle(50, 750, 160, 25)).createText();
         formField
                 .setValue(fieldValue)
-                .setBorderWidth(2)
                 .setFont(font)
                 .setFontSize(10)
                 .setJustification(1);
+        formField.getFirstFormAnnotation().setBorderWidth(2);
 
         form.addField(formField);
 

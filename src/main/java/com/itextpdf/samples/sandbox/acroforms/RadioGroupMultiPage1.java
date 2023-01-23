@@ -47,11 +47,11 @@ public class RadioGroupMultiPage1 {
             // Create a radio button that is added to a radio group.
             PdfFormField field = new RadioFormFieldBuilder(pdfDoc)
                     .setWidgetRectangle(rect).createRadioButton(radioGroup, LANGUAGES[page - 1]);
-            field.setBorderWidth(1);
-            field.setBorderColor(ColorConstants.BLACK);
+            field.getFirstFormAnnotation().setBorderWidth(1);
+            field.getFirstFormAnnotation().setBorderColor(ColorConstants.BLACK);
 
             // Method specifies on which page the form field's widget must be shown.
-            field.setPage(page);
+            field.getFirstFormAnnotation().setPage(page);
             doc.showTextAligned(new Paragraph(LANGUAGES[page - 1]).setFont(font).setFontSize(18),
                     70, 786, page, TextAlignment.LEFT, VerticalAlignment.BOTTOM, 0);
         }

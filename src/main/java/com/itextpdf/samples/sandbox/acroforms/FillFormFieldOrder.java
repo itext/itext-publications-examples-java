@@ -70,12 +70,18 @@ public class FillFormFieldOrder {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         Map<String, PdfFormField> fields = form.getAllFormFields();
-        fields.get("sunday_1_notes").setValue("It's Sunday today, let's go to the sea").setBorderWidth(0);
-        fields.get("sunday_2_notes").setValue("It's Sunday today, let's go to the park").setBorderWidth(0);
-        fields.get("sunday_3_notes").setValue("It's Sunday today, let's go to the beach").setBorderWidth(0);
-        fields.get("sunday_4_notes").setValue("It's Sunday today, let's go to the woods").setBorderWidth(0);
-        fields.get("sunday_5_notes").setValue("It's Sunday today, let's go to the lake").setBorderWidth(0);
-        fields.get("sunday_6_notes").setValue("It's Sunday today, let's go to the river").setBorderWidth(0);
+        fields.get("sunday_1_notes").setValue("It's Sunday today, let's go to the sea")
+                .getFirstFormAnnotation().setBorderWidth(0);
+        fields.get("sunday_2_notes").setValue("It's Sunday today, let's go to the park")
+                .getFirstFormAnnotation().setBorderWidth(0);
+        fields.get("sunday_3_notes").setValue("It's Sunday today, let's go to the beach")
+                .getFirstFormAnnotation().setBorderWidth(0);
+        fields.get("sunday_4_notes").setValue("It's Sunday today, let's go to the woods")
+                .getFirstFormAnnotation().setBorderWidth(0);
+        fields.get("sunday_5_notes").setValue("It's Sunday today, let's go to the lake")
+                .getFirstFormAnnotation().setBorderWidth(0);
+        fields.get("sunday_6_notes").setValue("It's Sunday today, let's go to the river")
+                .getFirstFormAnnotation().setBorderWidth(0);
 
         // All fields will be flattened, because no fields have been explicitly included
         form.flattenFields();
