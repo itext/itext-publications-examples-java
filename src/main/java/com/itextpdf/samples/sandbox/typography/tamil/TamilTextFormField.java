@@ -61,9 +61,9 @@ public class TamilTextFormField {
                 .setWidgetRectangle(new Rectangle(50, 750, 100, 25)).createText();
         formField
                 .setValue(fieldValue)
+                .setJustification(1)
                 .setFont(font)
-                .setFontSize(10)
-                .setJustification(1);
+                .setFontSize(10);
         formField.getFirstFormAnnotation().setBorderWidth(2);
 
         form.addField(formField);

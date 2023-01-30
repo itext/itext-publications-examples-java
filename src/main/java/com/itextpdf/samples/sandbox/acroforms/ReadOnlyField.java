@@ -56,7 +56,7 @@ public class ReadOnlyField {
         Rectangle rect = new Rectangle(36, 770, 104, 36);
         PdfTextFormField textField = new TextFormFieldBuilder(pdfDoc, "text")
                 .setWidgetRectangle(rect).createText();
-        textField.setFont(font).setFontSize(20f).setValue("text");
+        textField.setValue("text").setFont(font).setFontSize(20f);
 
         // Being set as true, the field can contain multiple lines of text;
         // if false, the field's text is restricted to a single line.

@@ -12,11 +12,9 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadOnlyField2 {
@@ -68,7 +66,7 @@ public class ReadOnlyField2 {
         Rectangle rect = new Rectangle(36, 770, 108, 36);
         PdfTextFormField textField1 = new TextFormFieldBuilder(pdfDoc, "text1")
                 .setWidgetRectangle(rect).createText();
-        textField1.setFont(font).setFontSize(18f).setValue("text1");
+        textField1.setValue("text1").setFont(font).setFontSize(18f);
 
         // Being set as true, the field can contain multiple lines of text;
         // if false, the field's text is restricted to a single line.
@@ -78,21 +76,21 @@ public class ReadOnlyField2 {
         rect = new Rectangle(148, 770, 108, 36);
         PdfTextFormField textField2 = new TextFormFieldBuilder(pdfDoc, "text2")
                 .setWidgetRectangle(rect).createText();
-        textField2.setFont(font).setFontSize(18f).setValue("text2");
+        textField2.setValue("text2").setFont(font).setFontSize(18f);
         textField2.setMultiline(true);
         form.addField(textField2);
 
         rect = new Rectangle(36, 724, 108, 36);
         PdfTextFormField textField3 = new TextFormFieldBuilder(pdfDoc, "text3")
                 .setWidgetRectangle(rect).createText();
-        textField3.setFont(font).setFontSize(18f).setValue("text3");
+        textField3.setValue("text3").setFont(font).setFontSize(18f);
         textField3.setMultiline(true);
         form.addField(textField3);
 
         rect = new Rectangle(148, 727, 108, 33);
         PdfTextFormField textField4 = new TextFormFieldBuilder(pdfDoc, "text4")
                 .setWidgetRectangle(rect).createText();
-        textField4.setFont(font).setFontSize(18f).setValue("text4");
+        textField4.setValue("text4").setFont(font).setFontSize(18f);
         textField4.setMultiline(true);
         form.addField(textField4);
 

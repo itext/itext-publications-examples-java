@@ -61,9 +61,9 @@ public class KannadaTextFormField {
                 .setWidgetRectangle(new Rectangle(50, 750, 80, 25)).createText();
         formField
                 .setValue(filedValue)
+                .setJustification(1)
                 .setFont(font)
-                .setFontSize(10)
-                .setJustification(1);
+                .setFontSize(10);
         formField.getFirstFormAnnotation().setBorderWidth(2);
 
         form.addField(formField);

@@ -62,7 +62,7 @@ public class HebrewHiddenTextForm {
         for (Map.Entry<String, PdfFormField> entry : form.getAllFormFields().entrySet()) {
             PdfFormField field = entry.getValue();
             field.setValue(text);
-            field.setFont(font).setJustification(2);
+            field.setJustification(2).setFont(font);
         }
 
         pdfDocument.close();
