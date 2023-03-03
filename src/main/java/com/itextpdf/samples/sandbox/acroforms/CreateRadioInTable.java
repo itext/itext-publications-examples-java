@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormAnnotation;
 import com.itextpdf.forms.fields.RadioFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -90,8 +91,9 @@ public class CreateRadioInTable {
         public void draw(DrawContext drawContext) {
 
             // Create a radio button that is added to a radio group.
-            new RadioFormFieldBuilder(drawContext.getDocument())
-                    .setWidgetRectangle(getOccupiedAreaBBox()).createRadioButton(radioGroup, value);
+            PdfFormAnnotation radio = new RadioFormFieldBuilder(drawContext.getDocument(), this.value)
+                    .createRadioButton(value,getOccupiedAreaBBox());
+            this.radioGroup.addKid(radio);
         }
     }
 }
