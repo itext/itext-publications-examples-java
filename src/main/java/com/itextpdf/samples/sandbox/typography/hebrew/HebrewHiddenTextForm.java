@@ -8,6 +8,7 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.properties.HorizontalAlignment;
 import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
@@ -62,7 +63,7 @@ public class HebrewHiddenTextForm {
         for (Map.Entry<String, PdfFormField> entry : form.getAllFormFields().entrySet()) {
             PdfFormField field = entry.getValue();
             field.setValue(text);
-            field.setJustification(2).setFont(font);
+            field.setJustification(HorizontalAlignment.RIGHT).setFont(font);
         }
 
         pdfDocument.close();

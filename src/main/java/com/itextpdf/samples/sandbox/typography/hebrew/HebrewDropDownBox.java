@@ -11,6 +11,7 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.properties.HorizontalAlignment;
 import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
@@ -69,8 +70,7 @@ public class HebrewDropDownBox {
                 .setWidgetRectangle(new Rectangle(50, 750, 125, 15)).setOptions(comboText)
                 .createComboBox();
         formField.setValue(line1);
-        formField
-                .setJustification(2)
+        formField.setJustification(HorizontalAlignment.RIGHT)
                 .setFont(font)
                 .setFontSizeAutoScale();
         formField.getFirstFormAnnotation().setBorderWidth(1);
