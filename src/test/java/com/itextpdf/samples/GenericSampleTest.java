@@ -146,8 +146,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         //TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
-        // TODO DEVSIX-6319 Radio buttons shall be widgets instead of form fields
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RadioGroupMultiPage2");
 
         return generateTestsList(searchConfig);
     }

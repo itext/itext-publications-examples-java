@@ -95,7 +95,7 @@ public class RadioGroupMultiPage2 {
             radioGroup.addKid(field);
             // This method merges field with its annotation and place it on the given page.
             // This method won't work if the field has no or more than one widget annotations.
-            //form.addFieldAppearanceToPage(field, document.getPage(getOccupiedArea().getPageNumber()));
+            form.addFieldAppearanceToPage(field.getParentField(), document.getPage(getOccupiedArea().getPageNumber()));
         }
     }
 }
