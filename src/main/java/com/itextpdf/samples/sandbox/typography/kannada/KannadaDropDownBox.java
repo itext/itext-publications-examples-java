@@ -12,6 +12,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
@@ -69,7 +70,7 @@ public class KannadaDropDownBox {
                 .setWidgetRectangle(new Rectangle(50, 750, 80, 15)).setOptions(comboText)
                 .createComboBox();
         formField.setValue(line1);
-        formField.setJustification(HorizontalAlignment.CENTER)
+        formField.setJustification(TextAlignment.CENTER)
                 .setFont(font)
                 .setFontSizeAutoScale();
         formField.getFirstFormAnnotation().setBorderWidth(1);

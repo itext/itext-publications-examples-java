@@ -19,6 +19,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -105,7 +106,7 @@ public class ComboBoxItems {
             choice.getWidgets().get(0).setBorderStyle(PdfAnnotation.STYLE_BEVELED);
             choice.getFirstFormAnnotation().setVisibility(PdfFormAnnotation.VISIBLE_BUT_DOES_NOT_PRINT);
             choice.getFirstFormAnnotation().setBorderColor(ColorConstants.GRAY);
-            choice.setJustification(HorizontalAlignment.CENTER);
+            choice.setJustification(TextAlignment.CENTER);
             form.addField(choice);
         }
     }

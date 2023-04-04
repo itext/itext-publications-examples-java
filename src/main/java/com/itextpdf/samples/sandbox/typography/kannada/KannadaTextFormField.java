@@ -12,6 +12,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
@@ -61,7 +62,7 @@ public class KannadaTextFormField {
         PdfFormField formField = new TextFormFieldBuilder(document.getPdfDocument(), fieldName)
                 .setWidgetRectangle(new Rectangle(50, 750, 80, 25)).createText();
         formField
-                .setValue(filedValue).setJustification(HorizontalAlignment.CENTER)
+                .setValue(filedValue).setJustification(TextAlignment.CENTER)
                 .setFont(font)
                 .setFontSize(10);
         formField.getFirstFormAnnotation().setBorderWidth(2);
