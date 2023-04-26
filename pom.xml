@@ -3,23 +3,23 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>8.0.0-SNAPSHOT</version>
+  <version>8.0.1-SNAPSHOT</version>
   <name>iText 7 Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
-    <cleanup.version>4.0.0-SNAPSHOT</cleanup.version>
+    <cleanup.version>4.0.1-SNAPSHOT</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
-    <html2pdf.version>5.0.0-SNAPSHOT</html2pdf.version>
+    <html2pdf.version>5.0.1-SNAPSHOT</html2pdf.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.8</java.version>
-    <pdfxfa.version>4.0.0-SNAPSHOT</pdfxfa.version>
-    <licensekey.version>4.1.0-SNAPSHOT</licensekey.version>
+    <pdfxfa.version>4.0.1-SNAPSHOT</pdfxfa.version>
+    <licensekey.version>4.1.1-SNAPSHOT</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
     <spotbugs.version>3.1.11</spotbugs.version>
-    <typography.version>4.0.0-SNAPSHOT</typography.version>
+    <typography.version>4.0.1-SNAPSHOT</typography.version>
     <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
   </properties>
   <dependencies>
