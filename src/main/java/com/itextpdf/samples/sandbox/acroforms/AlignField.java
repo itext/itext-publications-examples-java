@@ -5,6 +5,8 @@ import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 import java.util.Map;
@@ -24,18 +26,18 @@ public class AlignField {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
 
         PdfFormField field = fields.get("personal.name");
-        field.setJustification(PdfFormField.ALIGN_LEFT);
+        field.setJustification(TextAlignment.LEFT);
         field.setValue("Test");
 
         field = fields.get("personal.loginname");
-        field.setJustification(PdfFormField.ALIGN_CENTER);
+        field.setJustification(TextAlignment.CENTER);
         field.setValue("Test");
 
         field = fields.get("personal.password");
-        field.setJustification(PdfFormField.ALIGN_RIGHT);
+        field.setJustification(TextAlignment.RIGHT);
         field.setValue("Test");
 
         field = fields.get("personal.reason");

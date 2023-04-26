@@ -15,7 +15,6 @@ import com.itextpdf.kernel.pdf.tagging.PdfStructureAttributes;
 import com.itextpdf.kernel.pdf.tagutils.TagTreePointer;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class JawsFlattenedButtonFieldsTagging {
 
         // Here we handle radio buttons and checkboxes (Button fields type) but there are also other field types
         // which can be used as well, for example they are Text fields, Choice fields, Signature fields
-        for (PdfFormField field : form.getFormFields().values()) {
+        for (PdfFormField field : form.getAllFormFields().values()) {
            if (field.getFieldFlag(PdfButtonFormField.FF_RADIO)) {
                addAttributes("rb", field, pdfDocument);
 

@@ -1,5 +1,7 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormAnnotation;
+import com.itextpdf.forms.fields.RadioFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.properties.UnitValue;
@@ -32,7 +34,9 @@ public class RadioGroupMultiPage2 {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         // Radio buttons will be added to this radio group
-        PdfButtonFormField radioGroup = PdfFormField.createRadioGroup(pdfDoc, "answer", "answer 1");
+        RadioFormFieldBuilder builder = new RadioFormFieldBuilder(pdfDoc, "answer");
+        PdfButtonFormField radioGroup = builder.createRadioGroup();
+        radioGroup.setValue("answer 1");
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         for (int i = 0; i < 25; i++) {
@@ -86,11 +90,12 @@ public class RadioGroupMultiPage2 {
             PdfAcroForm form = PdfAcroForm.getAcroForm(document, true);
 
             // Create a radio button that is added to a radio group.
-            PdfFormField field = PdfFormField.createRadioButton(document, getOccupiedAreaBBox(), radioGroup, value);
-
+            PdfFormAnnotation field = new RadioFormFieldBuilder(document, null)
+                    .createRadioButton( value, getOccupiedAreaBBox());
+            radioGroup.addKid(field);
             // This method merges field with its annotation and place it on the given page.
             // This method won't work if the field has no or more than one widget annotations.
-            form.addFieldAppearanceToPage(field, document.getPage(getOccupiedArea().getPageNumber()));
+            form.addFieldAppearanceToPage(field.getParentField(), document.getPage(getOccupiedArea().getPageNumber()));
         }
     }
 }

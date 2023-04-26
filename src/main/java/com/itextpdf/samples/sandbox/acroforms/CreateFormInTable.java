@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.forms.PdfAcroForm;
@@ -71,7 +72,9 @@ public class CreateFormInTable {
         public void draw(DrawContext drawContext) {
             super.draw(drawContext);
 
-            PdfTextFormField field = PdfFormField.createText(drawContext.getDocument(), getOccupiedAreaBBox(), fieldName, "");
+            PdfTextFormField field = new TextFormFieldBuilder(drawContext.getDocument(), fieldName)
+                    .setWidgetRectangle(getOccupiedAreaBBox()).createText();
+            field.setValue("");
             PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
             form.addField(field);
         }

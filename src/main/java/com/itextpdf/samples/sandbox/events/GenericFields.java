@@ -2,6 +2,7 @@ package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfTextFormField;
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -69,8 +70,8 @@ public class GenericFields {
 
         @Override
         public void draw(DrawContext drawContext) {
-            PdfTextFormField field = PdfTextFormField.createText(drawContext.getDocument(),
-                    getOccupiedAreaBBox(), fieldName);
+            PdfTextFormField field = new TextFormFieldBuilder(drawContext.getDocument(), fieldName)
+                    .setWidgetRectangle(getOccupiedAreaBBox()).createText();
             PdfAcroForm.getAcroForm(drawContext.getDocument(), true)
                     .addField(field);
         }

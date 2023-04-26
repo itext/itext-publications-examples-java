@@ -28,7 +28,7 @@ public class ChangeFieldPosition {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
-        Map<String, PdfFormField> fields = form.getFormFields();
+        Map<String, PdfFormField> fields = form.getAllFormFields();
         PdfFormField field = fields.get("timezone2");
         PdfWidgetAnnotation widgetAnnotation = field.getWidgets().get(0);
         PdfArray annotationRect = widgetAnnotation.getRectangle();

@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.io.source.IRandomAccessSource;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -11,11 +12,9 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.ReaderProperties;
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadOnlyField2 {
@@ -65,8 +64,9 @@ public class ReadOnlyField2 {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         Rectangle rect = new Rectangle(36, 770, 108, 36);
-        PdfTextFormField textField1 = PdfFormField.createText(pdfDoc, rect, "text1",
-                "text1", font, 18f);
+        PdfTextFormField textField1 = new TextFormFieldBuilder(pdfDoc, "text1")
+                .setWidgetRectangle(rect).createText();
+        textField1.setValue("text1").setFont(font).setFontSize(18f);
 
         // Being set as true, the field can contain multiple lines of text;
         // if false, the field's text is restricted to a single line.
@@ -74,20 +74,23 @@ public class ReadOnlyField2 {
         form.addField(textField1);
 
         rect = new Rectangle(148, 770, 108, 36);
-        PdfTextFormField textField2 = PdfFormField.createText(pdfDoc, rect, "text2",
-                "text2", font, 18f);
+        PdfTextFormField textField2 = new TextFormFieldBuilder(pdfDoc, "text2")
+                .setWidgetRectangle(rect).createText();
+        textField2.setValue("text2").setFont(font).setFontSize(18f);
         textField2.setMultiline(true);
         form.addField(textField2);
 
         rect = new Rectangle(36, 724, 108, 36);
-        PdfTextFormField textField3 = PdfFormField.createText(pdfDoc, rect, "text3",
-                "text3", font, 18f);
+        PdfTextFormField textField3 = new TextFormFieldBuilder(pdfDoc, "text3")
+                .setWidgetRectangle(rect).createText();
+        textField3.setValue("text3").setFont(font).setFontSize(18f);
         textField3.setMultiline(true);
         form.addField(textField3);
 
         rect = new Rectangle(148, 727, 108, 33);
-        PdfTextFormField textField4 = PdfFormField.createText(pdfDoc, rect, "text4",
-                "text4", font, 18f);
+        PdfTextFormField textField4 = new TextFormFieldBuilder(pdfDoc, "text4")
+                .setWidgetRectangle(rect).createText();
+        textField4.setValue("text4").setFont(font).setFontSize(18f);
         textField4.setMultiline(true);
         form.addField(textField4);
 

@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.typography.khmer;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.ChoiceFormFieldBuilder;
 import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.PdfEncodings;
@@ -65,7 +66,9 @@ public class KhmerChoiceFormField {
         Rectangle rect = new Rectangle(50, 650, 100, 80);
 
         // Create choice form field with parameters and set values
-        PdfChoiceFormField choice = PdfFormField.createList(pdfDocument, rect, "List", "Test", options);
+        PdfChoiceFormField choice = new ChoiceFormFieldBuilder(pdfDocument, "List").setWidgetRectangle(rect)
+                .setOptions(options).createList();
+        choice.setValue("Test");
         choice
                 .setMultiSelect(true)
                 .setFont(font)

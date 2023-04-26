@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.typography.gurmukhi;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
 import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PushButtonFormFieldBuilder;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -48,7 +49,8 @@ public class GurmukhiPushButton {
         Rectangle rectangle = new Rectangle(50, 650, 100, 25);
 
         // Create a button for the form field, set its font and size
-        PdfButtonFormField pushButton = PdfFormField.createPushButton(pdfDocument, rectangle, "Name", line1);
+        PdfButtonFormField pushButton = new PushButtonFormFieldBuilder(pdfDocument, "Name")
+                .setWidgetRectangle(rectangle).setCaption(line1).createPushButton();
         pushButton
                 .setFont(font)
                 .setFontSize(10);

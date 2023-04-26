@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
 import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PushButtonFormFieldBuilder;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -34,8 +35,11 @@ public class CreateJapaneseButton {
 
         // Define the position of a button that measures 108 by 26
         Rectangle rect = new Rectangle(36, 780, 108, 26);
-        PdfButtonFormField pushButton = PdfFormField.createPushButton(pdfDoc, rect, "japanese",
-                JAPANESE_TEXT, font, 12f);
+        PdfButtonFormField pushButton = new PushButtonFormFieldBuilder(pdfDoc, "japanese")
+                .setWidgetRectangle(rect).setCaption(JAPANESE_TEXT)
+                .createPushButton();
+        pushButton.setFont(font);
+        pushButton.setFontSize(12f);
         form.addField(pushButton);
 
         pdfDoc.close();

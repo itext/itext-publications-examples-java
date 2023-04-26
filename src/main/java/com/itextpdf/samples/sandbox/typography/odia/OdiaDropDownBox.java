@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.typography.odia;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.ChoiceFormFieldBuilder;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.io.font.PdfEncodings;
@@ -10,6 +11,8 @@ import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.licensing.base.LicenseKey;
 
 import java.io.File;
@@ -63,13 +66,14 @@ public class OdiaDropDownBox {
         String[] comboText = {line1, line2, line3};
 
         // Create a form field and apply the properties on it
-        PdfFormField formField = PdfTextFormField.createComboBox(document.getPdfDocument(),
-                new Rectangle(50, 750, 150, 15), "test", line1, comboText);
-        formField
-                .setBorderWidth(1)
-                .setJustification(1)
+        PdfFormField formField = new ChoiceFormFieldBuilder(document.getPdfDocument(), "test")
+                .setWidgetRectangle(new Rectangle(50, 750, 150, 15)).setOptions(comboText)
+                .createComboBox();
+        formField.setValue(line1);
+        formField.setJustification(TextAlignment.CENTER)
                 .setFont(font)
                 .setFontSizeAutoScale();
+        formField.getFirstFormAnnotation().setBorderWidth(1);
 
         form.addField(formField);
 

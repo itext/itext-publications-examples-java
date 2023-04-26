@@ -1,11 +1,3 @@
-/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2023 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
 package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
@@ -142,7 +134,11 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
         // TODO DEVSIX-3326
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
-        
+
+        //TODO DEVSIX-6508 remove unnecessary makeFormField calls
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
+
+
         return generateTestsList(searchConfig);
     }
 

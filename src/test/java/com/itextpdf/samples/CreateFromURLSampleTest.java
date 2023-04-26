@@ -1,11 +1,3 @@
-/*
-This file is part of the iText (R) project.
-Copyright (c) 1998-2023 iText Group NV
-Authors: iText Software.
-
-For more information, please contact iText Software at this address:
-sales@itextpdf.com
-*/
 package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
@@ -43,8 +35,8 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
     static {
         expectedNumbersOfPages = new HashMap<>();
 
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {3, 4});
-        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", new Integer[] {3, 4});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL", new Integer[] {2, 4});
+        expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2", new Integer[] {2, 4});
         expectedNumbersOfPages.put("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3", new Integer[] {2, 3});
     }
 

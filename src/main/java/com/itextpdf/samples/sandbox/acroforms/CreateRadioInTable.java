@@ -1,5 +1,7 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormAnnotation;
+import com.itextpdf.forms.fields.RadioFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.forms.PdfAcroForm;
@@ -32,7 +34,8 @@ public class CreateRadioInTable {
         PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
         // Radio buttons will be added to this radio group
-        PdfButtonFormField radioGroup = PdfFormField.createRadioGroup(pdfDoc, "Language", "");
+        PdfButtonFormField radioGroup = new RadioFormFieldBuilder(pdfDoc, "Language").createRadioGroup();
+        radioGroup.setValue("");
 
         Table table = new Table(UnitValue.createPercentArray(2)).useAllAvailableWidth();
         Cell cell = new Cell().add(new Paragraph("English"));
@@ -88,7 +91,9 @@ public class CreateRadioInTable {
         public void draw(DrawContext drawContext) {
 
             // Create a radio button that is added to a radio group.
-            PdfFormField.createRadioButton(drawContext.getDocument(), getOccupiedAreaBBox(), radioGroup, value);
+            PdfFormAnnotation radio = new RadioFormFieldBuilder(drawContext.getDocument(), this.value)
+                    .createRadioButton(value,getOccupiedAreaBBox());
+            this.radioGroup.addKid(radio);
         }
     }
 }

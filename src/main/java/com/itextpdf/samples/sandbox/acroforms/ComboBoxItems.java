@@ -1,8 +1,10 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.ChoiceFormFieldBuilder;
 import com.itextpdf.forms.fields.PdfChoiceFormField;
 import com.itextpdf.forms.fields.PdfFormField;
+import com.itextpdf.forms.fields.PdfFormAnnotation;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.exceptions.PdfException;
@@ -16,6 +18,8 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
@@ -95,13 +99,14 @@ public class ComboBoxItems {
             PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
 
             // The 3rd parameter is the combobox name, the 4th parameter is the combobox's initial value
-            PdfChoiceFormField choice = PdfFormField.createComboBox(drawContext.getDocument(), getOccupiedAreaBBox(),
-                    name, name, optionsArray);
+            PdfChoiceFormField choice = new ChoiceFormFieldBuilder(drawContext.getDocument(), name)
+                    .setWidgetRectangle(getOccupiedAreaBBox()).setOptions(optionsArray).createComboBox();
+            choice.setValue(name);
             choice.setFont(font);
             choice.getWidgets().get(0).setBorderStyle(PdfAnnotation.STYLE_BEVELED);
-            choice.setVisibility(PdfFormField.VISIBLE_BUT_DOES_NOT_PRINT);
-            choice.setBorderColor(ColorConstants.GRAY);
-            choice.setJustification(PdfFormField.ALIGN_CENTER);
+            choice.getFirstFormAnnotation().setVisibility(PdfFormAnnotation.VISIBLE_BUT_DOES_NOT_PRINT);
+            choice.getFirstFormAnnotation().setBorderColor(ColorConstants.GRAY);
+            choice.setJustification(TextAlignment.CENTER);
             form.addField(choice);
         }
     }
