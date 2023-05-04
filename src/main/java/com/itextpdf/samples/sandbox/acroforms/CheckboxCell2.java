@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.fields.CheckBoxFormFieldBuilder;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.properties.CheckBoxType;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -70,7 +71,7 @@ public class CheckboxCell2 {
         @Override
         public void draw(DrawContext drawContext) {
             Rectangle position = getOccupiedAreaBBox();
-            PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+            PdfAcroForm form = PdfFormCreator.getAcroForm(drawContext.getDocument(), true);
 
             // Define the coordinates of the middle
             float x = (position.getLeft() + position.getRight()) / 2;

@@ -1,6 +1,7 @@
 package com.itextpdf.samples.xfa;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.xfa.XfaForm;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -37,7 +38,7 @@ public class XFARemove {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(INPUT_PDF), new PdfWriter(DEST));
 
         // Load the DOM Document
-        XfaForm xfa = PdfAcroForm.getAcroForm(pdfDoc, false).getXfaForm();
+        XfaForm xfa = PdfFormCreator.getAcroForm(pdfDoc, false).getXfaForm();
         Document domDoc = xfa.getDomDocument();
 
         // The follwing 2 lines of code only work for the specific document

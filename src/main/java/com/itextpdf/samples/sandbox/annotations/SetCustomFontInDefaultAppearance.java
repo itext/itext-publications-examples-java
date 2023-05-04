@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.annotations;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -36,7 +37,7 @@ public class SetCustomFontInDefaultAppearance {
 
         PdfResources acroResources = new PdfResources();
         PdfName fontResourceName = acroResources.addFont(pdf, font);
-        PdfAcroForm.getAcroForm(pdf, true).setDefaultResources(acroResources.getPdfObject());
+        PdfFormCreator.getAcroForm(pdf, true).setDefaultResources(acroResources.getPdfObject());
 
         Rectangle rect = new Rectangle(100, 700, 200, 120);
         String annotationText = "Annotation text";

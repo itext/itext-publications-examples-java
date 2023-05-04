@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.events.Event;
 import com.itextpdf.kernel.events.IEventHandler;
@@ -34,7 +35,7 @@ public class AddExtraPage {
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument srcDoc = new PdfDocument(new PdfReader(SRC));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(srcDoc, false);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(srcDoc, false);
 
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 

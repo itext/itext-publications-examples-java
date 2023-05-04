@@ -2,6 +2,7 @@ package com.itextpdf.samples.sandbox.acroforms.reporting;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.PdfPageFormCopier;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.source.ByteArrayOutputStream;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -46,7 +47,7 @@ public class FillFlattenMerge1 {
                 // Create a PDF in memory
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 PdfDocument pdfInnerDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(baos));
-                PdfAcroForm form = PdfAcroForm.getAcroForm(pdfInnerDoc, true);
+                PdfAcroForm form = PdfFormCreator.getAcroForm(pdfInnerDoc, true);
 
                 // Parse text line and fill all fields of form
                 fillAndFlattenForm(line, form);

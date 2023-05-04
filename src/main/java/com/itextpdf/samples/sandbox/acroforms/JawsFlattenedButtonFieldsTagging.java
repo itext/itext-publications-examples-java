@@ -2,6 +2,7 @@ package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.kernel.pdf.PdfDictionary;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -32,7 +33,7 @@ public class JawsFlattenedButtonFieldsTagging {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDocument = initializeDocument(dest, SRC);
 
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDocument, false);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDocument, false);
 
         // Here we handle radio buttons and checkboxes (Button fields type) but there are also other field types
         // which can be used as well, for example they are Text fields, Choice fields, Signature fields

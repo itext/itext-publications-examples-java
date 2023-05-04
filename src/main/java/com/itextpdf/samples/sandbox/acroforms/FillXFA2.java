@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.xfa.XfaForm;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -25,7 +26,7 @@ public class FillXFA2 {
     protected void manipulatePdf(String dest) throws Exception {
         PdfReader reader = new PdfReader(SRC);
         PdfDocument pdfDoc = new PdfDocument(reader, new PdfWriter(dest));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
 
         XfaForm xfa = form.getXfaForm();
 

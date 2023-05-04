@@ -1,6 +1,7 @@
 package com.itextpdf.samples.sandbox.typography.devanagari;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
@@ -49,7 +50,7 @@ public class DevanagariTextFormField {
 
         String fieldName = "Field name";
 
-        PdfAcroForm form = PdfAcroForm.getAcroForm(document.getPdfDocument(), true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(document.getPdfDocument(), true);
 
         PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansDevanagari-Regular.ttf",
                 PdfEncodings.IDENTITY_H);
