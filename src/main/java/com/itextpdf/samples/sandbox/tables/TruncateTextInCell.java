@@ -90,7 +90,7 @@ public class TruncateTextInCell {
             Rectangle rect = layoutContext.getArea().getBBox().clone();
 
             // Cell's margins, borders and paddings should be extracted from the available width as well.
-            // Note that this part of the sample was introduced specifically for iText7.
+            // Note that this part of the sample was introduced specifically for iText.
             // since in iText5 the approach of processing cells was different
             applyMargins(rect, false);
             applyBorderBox(rect, false);

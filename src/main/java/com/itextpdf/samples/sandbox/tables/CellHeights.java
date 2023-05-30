@@ -46,7 +46,7 @@ public class CellHeights {
         table.addCell("set height (more than sufficient)");
         cell.setHeight(172);
 
-        // In iText7 a cell is meant to be used only once in the table.
+        // In iText a cell is meant to be used only once in the table.
         // If you want to reuse it, please clone it (either including the content or not)
         table.addCell(cell.clone(true));
 

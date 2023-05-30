@@ -4,7 +4,7 @@
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
   <version>8.0.1-SNAPSHOT</version>
-  <name>iText 7 Examples: Sandbox</name>
+  <name>iText Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
     <cleanup.version>4.0.1-SNAPSHOT</cleanup.version>

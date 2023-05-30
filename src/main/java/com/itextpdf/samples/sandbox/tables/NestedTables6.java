@@ -36,7 +36,7 @@ public class NestedTables6 {
         Table mainTable = new Table(UnitValue.createPercentArray(1));
         mainTable.setWidth(1000);
 
-        // Notice that in itext7 there is no getDefaultCell method
+        // Notice that in itext there is no getDefaultCell method
         // and you should set paddings, margins and other properties exactly on the element
         // you want to handle them
         Table subTable2 = new Table(new float[] {200, 100, 200, 200, 300});

@@ -67,7 +67,7 @@ public class RightTabs {
                 .addTabStops(tabStops)
                 .add("iText 5 is old")
                 .add(new Tab())
-                .add("iText 7 is new");
+                .add("iText is new");
         document.add(paragraph);
 
         document.close();

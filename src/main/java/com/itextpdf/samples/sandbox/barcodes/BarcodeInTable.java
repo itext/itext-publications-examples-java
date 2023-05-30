@@ -50,7 +50,7 @@ public class BarcodeInTable {
 
         // Notice that in iText5 in default PdfPCell constructor (new PdfPCell(Image img))
         // this image does not fit the cell, but it does in addCell().
-        // In iText7 there is no constructor (new Cell(Image img)),
+        // In iText there is no constructor (new Cell(Image img)),
         // so the image adding to the cell can be done only using method add().
         Cell cell = new Cell().add(code128Image);
         table.addCell(cell);
