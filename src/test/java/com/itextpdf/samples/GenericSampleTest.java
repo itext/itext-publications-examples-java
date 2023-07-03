@@ -146,6 +146,9 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         //TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.columncontainer");
+        searchConfig.ignorePackageOrClass(
+                "com.itextpdf.samples.sandbox.pdfhtml.columncount.CustomColumnRendererDivTagWorker");
 
         return generateTestsList(searchConfig);
     }
