@@ -27,7 +27,6 @@ public class CustomColumnRendererDivTagWorker {
 
     private void manipulatePdf(String src, String dest) throws IOException {
         ConverterProperties converterProperties = new ConverterProperties();
-        converterProperties.setMulticolEnabled(true);
 
         converterProperties.setTagWorkerFactory(
                 new DefaultTagWorkerFactory() {
