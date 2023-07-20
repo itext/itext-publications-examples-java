@@ -1,5 +1,14 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -24,7 +33,7 @@ public class FileSelectionExample {
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
 
         PdfTextFormField field = new TextFormFieldBuilder(pdfDoc, "myfile")
                 .setWidgetRectangle(new Rectangle(36, 788, 523, 18)).createText();

@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -25,7 +34,7 @@ public class FillFormSpecialChars2 {
 
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
 
         // This method tells to generate an appearance Stream while flattening for all form fields that don't have one.
         // Generating appearances will slow down form flattening,

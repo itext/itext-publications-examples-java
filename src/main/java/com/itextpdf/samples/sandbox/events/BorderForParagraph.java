@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -32,7 +40,7 @@ public class BorderForParagraph {
                 "change the line width of the border and many other things. Now let's deactivate the event.");
 
         // There were no method that allows you to create a border for a Paragraph, since iText5 is EOL.
-        // In iText 7 a border for a Paragraph can be created by calling setBorder() method.
+        // In iText a border for a Paragraph can be created by calling setBorder() method.
         paragraphWithBorder.setBorder(new SolidBorder(1));
         doc.add(paragraphWithBorder);
 

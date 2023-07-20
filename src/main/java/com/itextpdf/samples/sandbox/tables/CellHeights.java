@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.geom.PageSize;
@@ -38,7 +46,7 @@ public class CellHeights {
         table.addCell("set height (more than sufficient)");
         cell.setHeight(172);
 
-        // In iText7 a cell is meant to be used only once in the table.
+        // In iText a cell is meant to be used only once in the table.
         // If you want to reuse it, please clone it (either including the content or not)
         table.addCell(cell.clone(true));
 

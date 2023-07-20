@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.objects;
 
 import java.io.File;
@@ -59,7 +67,7 @@ public class RightTabs {
                 .addTabStops(tabStops)
                 .add("iText 5 is old")
                 .add(new Tab())
-                .add("iText 7 is new");
+                .add("iText is new");
         document.add(paragraph);
 
         document.close();

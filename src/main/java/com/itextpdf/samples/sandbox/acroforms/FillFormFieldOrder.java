@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.source.ByteArrayOutputStream;
 import com.itextpdf.io.source.RandomAccessSourceFactory;
@@ -37,7 +46,7 @@ public class FillFormFieldOrder {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(baos));
         Document doc = new Document(pdfDoc);
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, false);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, false);
 
         Map<String, PdfFormField> fields = form.getAllFormFields();
         fields.get("sunday_1").setValue("1");
@@ -67,7 +76,7 @@ public class FillFormFieldOrder {
     public void createResultantPdf(String dest, byte[] src) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(new RandomAccessSourceFactory().createSource(src),
                 new ReaderProperties()), new PdfWriter(dest));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
 
         Map<String, PdfFormField> fields = form.getAllFormFields();
         fields.get("sunday_1_notes").setValue("It's Sunday today, let's go to the sea")

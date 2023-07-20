@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -72,7 +81,7 @@ public class GenericFields {
         public void draw(DrawContext drawContext) {
             PdfTextFormField field = new TextFormFieldBuilder(drawContext.getDocument(), fieldName)
                     .setWidgetRectangle(getOccupiedAreaBBox()).createText();
-            PdfAcroForm.getAcroForm(drawContext.getDocument(), true)
+            PdfFormCreator.getAcroForm(drawContext.getDocument(), true)
                     .addField(field);
         }
     }

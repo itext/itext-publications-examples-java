@@ -1,8 +1,17 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.ChoiceFormFieldBuilder;
 import com.itextpdf.forms.fields.PdfChoiceFormField;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfFormAnnotation;
 import com.itextpdf.io.font.constants.StandardFonts;
@@ -96,7 +105,7 @@ public class ComboBoxItems {
                 optionsArray[i][1] = options[i];
             }
 
-            PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+            PdfAcroForm form = PdfFormCreator.getAcroForm(drawContext.getDocument(), true);
 
             // The 3rd parameter is the combobox name, the 4th parameter is the combobox's initial value
             PdfChoiceFormField choice = new ChoiceFormFieldBuilder(drawContext.getDocument(), name)

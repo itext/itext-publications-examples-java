@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.typography.tamil;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
@@ -49,7 +58,7 @@ public class TamilTextFormField {
 
         String fieldName = "Field name";
 
-        PdfAcroForm form = PdfAcroForm.getAcroForm(document.getPdfDocument(), true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(document.getPdfDocument(), true);
 
         PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansTamil-Regular.ttf",
                 PdfEncodings.IDENTITY_H);

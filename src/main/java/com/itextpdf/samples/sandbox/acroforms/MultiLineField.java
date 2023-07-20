@@ -1,5 +1,14 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.io.source.IRandomAccessSource;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -34,7 +43,7 @@ public class MultiLineField {
         byte[] content = createForm();
         IRandomAccessSource source = new RandomAccessSourceFactory().createSource(content);
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(source, new ReaderProperties()), new PdfWriter(dest));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
 
         form.getField(FIELD_NAME).setValue(
                 "A B C D E F\nG H I J K L M N\nO P Q R S T U\r\nV W X Y Z\n\nAlphabet street");
@@ -58,7 +67,7 @@ public class MultiLineField {
         // Being set as true, the field can contain multiple lines of text;
         // if false, the field's text is restricted to a single line.
         textFormField.setMultiline(true);
-        PdfAcroForm.getAcroForm(pdfDoc, true).addField(textFormField);
+        PdfFormCreator.getAcroForm(pdfDoc, true).addField(textFormField);
 
         pdfDoc.close();
 

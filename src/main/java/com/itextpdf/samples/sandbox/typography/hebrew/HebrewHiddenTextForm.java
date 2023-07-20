@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.typography.hebrew;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
@@ -55,7 +64,7 @@ public class HebrewHiddenTextForm {
         String text = "\u05E8\u05E2\u0020\u05D5\u05DE\u05E8\u0020\u05D4\u05D9\u05D4\u0020\u05DC\u05D4\u05DD" +
                 "\u0020\u05DC\u05D9\u05D4\u05D5\u05D3\u05D9\u05DD";
 
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDocument, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDocument, true);
 
         // Set needAppearance value to false in order to hide the text of the form fields
         form.setNeedAppearances(false);

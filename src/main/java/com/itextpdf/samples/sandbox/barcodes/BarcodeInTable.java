@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.barcodes;
 
 import com.itextpdf.barcodes.Barcode128;
@@ -42,7 +50,7 @@ public class BarcodeInTable {
 
         // Notice that in iText5 in default PdfPCell constructor (new PdfPCell(Image img))
         // this image does not fit the cell, but it does in addCell().
-        // In iText7 there is no constructor (new Cell(Image img)),
+        // In iText there is no constructor (new Cell(Image img)),
         // so the image adding to the cell can be done only using method add().
         Cell cell = new Cell().add(code128Image);
         table.addCell(cell);

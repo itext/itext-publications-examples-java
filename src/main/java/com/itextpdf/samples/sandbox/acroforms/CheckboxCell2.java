@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.fields.CheckBoxFormFieldBuilder;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.properties.CheckBoxType;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -70,7 +79,7 @@ public class CheckboxCell2 {
         @Override
         public void draw(DrawContext drawContext) {
             Rectangle position = getOccupiedAreaBBox();
-            PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+            PdfAcroForm form = PdfFormCreator.getAcroForm(drawContext.getDocument(), true);
 
             // Define the coordinates of the middle
             float x = (position.getLeft() + position.getRight()) / 2;

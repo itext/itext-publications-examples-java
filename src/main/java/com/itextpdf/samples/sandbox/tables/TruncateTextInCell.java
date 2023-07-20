@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.font.PdfFont;
@@ -82,7 +90,7 @@ public class TruncateTextInCell {
             Rectangle rect = layoutContext.getArea().getBBox().clone();
 
             // Cell's margins, borders and paddings should be extracted from the available width as well.
-            // Note that this part of the sample was introduced specifically for iText7.
+            // Note that this part of the sample was introduced specifically for iText.
             // since in iText5 the approach of processing cells was different
             applyMargins(rect, false);
             applyBorderBox(rect, false);

@@ -1,6 +1,15 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.typography.arabic;
 
 import com.itextpdf.forms.PdfAcroForm;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
@@ -54,7 +63,7 @@ public class ArabicHiddenTextForm {
         // في القيام بنشاط
         String text = "\u0641\u064A\u0020\u0627\u0644\u0642\u064A\u0627\u0645\u0020\u0628\u0646\u0634\u0627\u0637";
 
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDocument, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDocument, true);
 
         // Set needAppearance value to false in order to hide the text of the form fields
         form.setNeedAppearances(false);

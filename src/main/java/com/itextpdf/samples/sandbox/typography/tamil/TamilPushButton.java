@@ -1,7 +1,16 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.typography.tamil;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PushButtonFormFieldBuilder;
 import com.itextpdf.io.font.PdfEncodings;
@@ -39,7 +48,7 @@ public class TamilPushButton {
     public void createPDF(String dest) throws IOException {
         PdfDocument pdfDocument = new PdfDocument(new PdfWriter(dest));
 
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDocument, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDocument, true);
 
         // Embedded parameter indicates whether the font is to be embedded into the target document.
         // We set it to make sure that the resultant document looks the same within different environments

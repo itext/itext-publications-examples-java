@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.tables;
 
 import com.itextpdf.kernel.geom.PageSize;
@@ -28,7 +36,7 @@ public class NestedTables6 {
         Table mainTable = new Table(UnitValue.createPercentArray(1));
         mainTable.setWidth(1000);
 
-        // Notice that in itext7 there is no getDefaultCell method
+        // Notice that in itext there is no getDefaultCell method
         // and you should set paddings, margins and other properties exactly on the element
         // you want to handle them
         Table subTable2 = new Table(new float[] {200, 100, 200, 200, 300});

@@ -1,5 +1,14 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.io.source.IRandomAccessSource;
 import com.itextpdf.kernel.font.PdfFont;
@@ -36,7 +45,7 @@ public class ReadOnlyField3 {
         byte[] content = createForm();
         IRandomAccessSource source = new RandomAccessSourceFactory().createSource(content);
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(source, new ReaderProperties()), new PdfWriter(dest));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
 
         //  Set a flag specifying whether to construct appearance streams and appearance dictionaries
         //  for all widget annotations in the document.
@@ -66,7 +75,7 @@ public class ReadOnlyField3 {
     public byte[] createForm() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));
-        PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
+        PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDoc, true);
         PdfFont font = PdfFontFactory.createFont();
 
         Rectangle rect = new Rectangle(36, 770, 108, 36);

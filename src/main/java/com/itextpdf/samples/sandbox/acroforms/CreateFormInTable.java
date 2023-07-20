@@ -1,5 +1,14 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2023 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.acroforms;
 
+import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -75,7 +84,7 @@ public class CreateFormInTable {
             PdfTextFormField field = new TextFormFieldBuilder(drawContext.getDocument(), fieldName)
                     .setWidgetRectangle(getOccupiedAreaBBox()).createText();
             field.setValue("");
-            PdfAcroForm form = PdfAcroForm.getAcroForm(drawContext.getDocument(), true);
+            PdfAcroForm form = PdfFormCreator.getAcroForm(drawContext.getDocument(), true);
             form.addField(field);
         }
     }
