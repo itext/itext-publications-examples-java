@@ -11,11 +11,11 @@ package com.itextpdf.samples.sandbox.annotations;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfNumber;
+import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.action.PdfAction;
 import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfLinkAnnotation;
@@ -38,7 +38,7 @@ public class AddRotatedAnnotation {
     protected void manipulatePdf(String dest) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfReader(SRC), new PdfWriter(dest));
         PdfPage firstPage = pdfDoc.getFirstPage();
-        PdfAction linkAction = PdfAction.createURI("https://pages.itextpdf.com/ebook-stackoverflow-questions.html");
+        PdfAction linkAction = PdfAction.createURI("https://kb.itextpdf.com/home/it7kb/ebooks/best-itext-7-questions-on-stackoverflow");
 
         Rectangle annotLocation = new Rectangle(30, 770, 90, 30);
         PdfAnnotation link = new PdfLinkAnnotation(annotLocation)

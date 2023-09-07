@@ -39,7 +39,7 @@ public class AddLinkAnnotation2 {
         PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
 
         Link link = new Link("The Best iText Questions on StackOverflow",
-                PdfAction.createURI("https://pages.itextpdf.com/ebook-stackoverflow-questions.html"));
+                PdfAction.createURI("https://kb.itextpdf.com/home/it7kb/ebooks/best-itext-7-questions-on-stackoverflow"));
         link.setFont(bold);
         Paragraph p = new Paragraph("Download ")
                 .add(link)
