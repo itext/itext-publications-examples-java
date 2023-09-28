@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
@@ -35,6 +36,9 @@ public class C07E06_CreateFromURL3 {
      * The target folder for the result.
      */
     public static final String ADDRESS = "https://stackoverflow.com/help/on-topic";
+
+    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 " +
+            "(KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
 
     /**
      * The main method of this example.
@@ -64,6 +68,8 @@ public class C07E06_CreateFromURL3 {
         ConverterProperties properties = new ConverterProperties();
         MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.PRINT);
         properties.setMediaDeviceDescription(mediaDeviceDescription);
-        HtmlConverter.convertToPdf(url.openStream(), new FileOutputStream(dest), properties);
+        URLConnection urlConnection = url.openConnection();
+        urlConnection.addRequestProperty("User-Agent", USER_AGENT);
+        HtmlConverter.convertToPdf(urlConnection.getInputStream(), new FileOutputStream(dest), properties);
     }
 }
