@@ -8,6 +8,7 @@
  */
 package com.itextpdf.samples.sandbox.typography.latin;
 
+import com.itextpdf.forms.form.element.SignatureFieldAppearance;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -85,12 +86,13 @@ public class LatinSignature {
         signer.setFieldName("Field1");
 
         // Get Signature Appearance and set some of its properties
-        signer.getSignatureAppearance()
-                .setPageRect(rect)
+        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(signer.getFieldName())
                 .setReason(line1)
                 .setLocation(line2)
                 .setReasonCaption(line3)
-                .setLayer2Font(font);
+                .setFont(font);
+        signer.setPageRect(rect)
+                .setSignatureAppearance(signatureAppearance);
 
         // Sign the document
         signer.signDetached(new BouncyCastleDigest(), pks, signChain, null, null, null, 0,
