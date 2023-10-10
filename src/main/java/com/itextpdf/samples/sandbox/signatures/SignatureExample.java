@@ -75,10 +75,7 @@ public class SignatureExample {
         // the name that doesn't exist in the document or don't specify it at all) then
         // the signature is invisible by default.
         SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(pdfSigner.getFieldName())
-                .setRenderingMode(SignatureFieldAppearance.RenderingMode.GRAPHIC)
-                .setReason("")
-                .setLocationCaption("")
-                .setSignatureGraphic(clientSignatureImage);
+                .setContent(clientSignatureImage);
         pdfSigner.setPageNumber(signatureInfo.getPageNumber())
                 .setPageRect(new Rectangle(signatureInfo.getLeft(), signatureInfo.getBottom(), 25, 25))
                 .setSignatureAppearance(signatureAppearance);
