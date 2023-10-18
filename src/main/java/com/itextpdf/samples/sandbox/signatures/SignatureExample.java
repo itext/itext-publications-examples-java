@@ -8,13 +8,13 @@
  */
 package com.itextpdf.samples.sandbox.signatures;
 
+import com.itextpdf.forms.form.element.SignatureFieldAppearance;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.StampingProperties;
 import com.itextpdf.signatures.PdfSigner;
-import com.itextpdf.signatures.PdfSignatureAppearance;
 import com.itextpdf.signatures.IExternalSignature;
 import com.itextpdf.signatures.OCSPVerifier;
 import com.itextpdf.signatures.OcspClientBouncyCastle;
@@ -74,14 +74,11 @@ public class SignatureExample {
         // If you create new signature field (or use SetFieldName(System.String) with
         // the name that doesn't exist in the document or don't specify it at all) then
         // the signature is invisible by default.
-        PdfSignatureAppearance signatureAppearance = pdfSigner.getSignatureAppearance();
-        signatureAppearance.setRenderingMode(PdfSignatureAppearance.RenderingMode.GRAPHIC);
-        signatureAppearance.setReason("");
-        signatureAppearance.setLocationCaption("");
-        signatureAppearance.setSignatureGraphic(clientSignatureImage);
-        signatureAppearance.setPageNumber(signatureInfo.getPageNumber());
-        signatureAppearance.setPageRect(new Rectangle(signatureInfo.getLeft(), signatureInfo.getBottom(),
-                25, 25));
+        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(pdfSigner.getFieldName())
+                .setContent(clientSignatureImage);
+        pdfSigner.setPageNumber(signatureInfo.getPageNumber())
+                .setPageRect(new Rectangle(signatureInfo.getLeft(), signatureInfo.getBottom(), 25, 25))
+                .setSignatureAppearance(signatureAppearance);
 
         char[] password = "testpass".toCharArray();
         IExternalSignature pks = getPrivateKeySignature(CERT_PATH, password);

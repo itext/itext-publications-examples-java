@@ -44,7 +44,7 @@ public class AddLinkImages {
 
         Paragraph p = new Paragraph("Objects with links");
         p.add(createImage(INFO, "https://itextpdf.com/"));
-        p.add(createImage(DOG, "https://pages.itextpdf.com/ebook-stackoverflow-questions.html"));
+        p.add(createImage(DOG, "https://kb.itextpdf.com/home/it7kb/ebooks/best-itext-7-questions-on-stackoverflow"));
         p.add(createImage(FOX, "https://stackoverflow.com/q/29388313/1622493"));
 
         // Create PdfFormXObject object to add .wmf format image to the document,

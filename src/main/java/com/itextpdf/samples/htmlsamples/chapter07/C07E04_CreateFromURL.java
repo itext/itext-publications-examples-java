@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
 
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.licensing.base.LicenseKey;
@@ -32,6 +33,9 @@ public class C07E04_CreateFromURL {
      * The target folder for the result.
      */
     public static final String ADDRESS = "https://stackoverflow.com/help/on-topic";
+
+    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 " +
+            "(KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
 
     /**
      * The main method of this example.
@@ -58,6 +62,8 @@ public class C07E04_CreateFromURL {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(URL url, String dest) throws IOException {
-        HtmlConverter.convertToPdf(url.openStream(), new FileOutputStream(dest));
+        URLConnection urlConnection = url.openConnection();
+        urlConnection.addRequestProperty("User-Agent", USER_AGENT);
+        HtmlConverter.convertToPdf(urlConnection.getInputStream(), new FileOutputStream(dest));
     }
 }
