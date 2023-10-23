@@ -34,6 +34,7 @@ public class AddExtraPage {
 
     public static String SRC = "./src/main/resources/pdfs/stationery.pdf";
 
+    //tmp
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
