@@ -2,6 +2,6 @@
 @Library('pipeline-library')_
 
 def repoName = "Examples"
-def dependencyRegex = "(itextcore|html2pdf|typography|licensekey)"
+def dependencyRegex = "(?!(cross-module|functional)-tests).*"
 
 automaticJavaBuild(repoName, dependencyRegex)
