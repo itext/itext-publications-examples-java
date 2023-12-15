@@ -13,7 +13,7 @@
     <html2pdf.version>3.0.5</html2pdf.version>
     <integrationtests>com.itextpdf.test.annotations.type.IntegrationTest</integrationtests>
     <java.version>1.8</java.version>
-    <pdfxfa.version>2.0.9</pdfxfa.version>
+    <pdfxfa.version>2.0.12</pdfxfa.version>
     <licensekey.version>3.1.5</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
