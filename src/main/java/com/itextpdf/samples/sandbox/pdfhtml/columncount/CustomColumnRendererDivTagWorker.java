@@ -1,3 +1,11 @@
+/*
+    This file is part of the iText (R) project.
+    Copyright (c) 1998-2024 Apryse Group NV
+    Authors: Apryse Software.
+
+    For more information, please contact iText Software at this address:
+    sales@itextpdf.com
+ */
 package com.itextpdf.samples.sandbox.pdfhtml.columncount;
 
 import com.itextpdf.html2pdf.ConverterProperties;
