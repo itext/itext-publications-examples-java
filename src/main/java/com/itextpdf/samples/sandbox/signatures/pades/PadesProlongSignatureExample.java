@@ -37,7 +37,6 @@ public class PadesProlongSignatureExample {
     public static final String DEST = "./target/sandbox/signatures/pades/padesProlongSignature.pdf";
 
     private static final String ROOT = "./src/main/resources/cert/root.pem";
-    private static final String SIGN = "./src/main/resources/cert/sign.pem";
     private static final String TSA = "./src/main/resources/cert/tsaCert2.pem";
     private static final char[] PASSWORD = "testpassphrase".toCharArray();
 
