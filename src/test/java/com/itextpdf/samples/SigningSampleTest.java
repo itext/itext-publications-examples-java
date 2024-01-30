@@ -56,6 +56,7 @@ public class SigningSampleTest extends WrappedSamplesRunner {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.signatures.pades");
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.signatures.appearance");
+        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.signatures.twophase");
         return generateTestsList(searchConfig);
     }
 

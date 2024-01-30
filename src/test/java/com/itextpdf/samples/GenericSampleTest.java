@@ -115,6 +115,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.pades");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.appearance");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.twophase");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.utils");
