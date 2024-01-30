@@ -1,6 +1,6 @@
 /*
     This file is part of the iText (R) project.
-    Copyright (c) 1998-2023 Apryse Group NV
+    Copyright (c) 1998-2024 Apryse Group NV
     Authors: Apryse Software.
 
     For more information, please contact iText Software at this address:
@@ -113,8 +113,12 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E04_CreateFromURL");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E05_CreateFromURL2");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.pades");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.appearance");
 
         // Not a sample classes
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.utils");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.clients");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.densemerger.PageVerticalAnalyzer");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.densemerger.PdfDenseMerger");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.objects.PdfOnButtonClick");
