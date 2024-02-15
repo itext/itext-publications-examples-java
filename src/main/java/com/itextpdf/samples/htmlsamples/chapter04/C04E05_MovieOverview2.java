@@ -84,8 +84,8 @@ public class C04E05_MovieOverview2 {
         ConverterProperties properties = new ConverterProperties();
         properties.setBaseUri(baseUri);
         OutlineHandler outlineHandler = new OutlineHandler();
-        outlineHandler.putTagPriorityMapping("h1", 1);
-        outlineHandler.putTagPriorityMapping("p", 2);
+        outlineHandler.putMarkPriorityMapping("h1", 1);
+        outlineHandler.putMarkPriorityMapping("p", 2);
         properties.setOutlineHandler(outlineHandler);
         HtmlConverter.convertToPdf(new ByteArrayInputStream(html), new FileOutputStream(dest), properties);
     }
