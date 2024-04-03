@@ -118,6 +118,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.colorblindness");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.headertagging");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.qrcodetag");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.formtagging");
 
         // Should not be run due to falling on different systems with different system fonts
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter06.C06E03_SystemFonts");
