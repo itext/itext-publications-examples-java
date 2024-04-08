@@ -12,12 +12,12 @@ import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
 
 @Category(SampleTest.class)
-public class MergeAndCountSampleTest extends WrappedSamplesRunner {
+public class SplitAndCountSampleTest extends WrappedSamplesRunner {
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.merge.MergeAndCount");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.split.SplitAndCount");
 
         return generateTestsList(searchConfig);
     }

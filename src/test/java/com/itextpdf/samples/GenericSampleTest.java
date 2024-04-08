@@ -91,7 +91,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
 
         // Samples are run by separate samples runner
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.split.SplitAndCount");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf2");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
