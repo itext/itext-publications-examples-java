@@ -232,7 +232,7 @@ public class TwoPhasePadesSigningExample {
             helper.setTrustedCertificates(getTrustedStore());
 
             // workaround for sizing issue in PadesTwoPhaseSigningHelper
-            // TODO remove at release DEVSIX-8072
+            // TODO remove at release DEVSIX-8115
             helper.setEstimatedSize(15000);
 
             cmsContainer = helper.createCMSContainerWithoutSignature(certificateChain, digestAlgoritm, reader,
