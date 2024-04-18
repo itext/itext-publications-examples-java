@@ -1,11 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples;
 
 import com.itextpdf.kernel.utils.CompareTool;
@@ -20,12 +12,12 @@ import org.junit.experimental.categories.Category;
 import org.junit.runners.Parameterized;
 
 @Category(SampleTest.class)
-public class MergeAndCountSampleTest extends WrappedSamplesRunner {
+public class SplitAndCountSampleTest extends WrappedSamplesRunner {
 
     @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
-        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.merge.MergeAndCount");
+        searchConfig.addClassToRunnerSearchPath("com.itextpdf.samples.sandbox.split.SplitAndCount");
 
         return generateTestsList(searchConfig);
     }

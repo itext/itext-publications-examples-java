@@ -1,11 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
@@ -99,7 +91,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox");
 
         // Samples are run by separate samples runner
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.merge.MergeAndCount");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.split.SplitAndCount");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf2");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
@@ -115,6 +107,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter07.C07E06_CreateFromURL3");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.pades");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.appearance");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.twophase");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.utils");
@@ -125,6 +118,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.colorblindness");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.headertagging");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.qrcodetag");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfhtml.formtagging");
 
         // Should not be run due to falling on different systems with different system fonts
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.htmlsamples.chapter06.C06E03_SystemFonts");

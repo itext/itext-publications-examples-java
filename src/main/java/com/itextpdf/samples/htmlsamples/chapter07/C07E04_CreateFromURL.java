@@ -1,19 +1,15 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples.htmlsamples.chapter07;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
+import org.junit.Assert;
+import java.net.HttpURLConnection;
 
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.licensing.base.LicenseKey;
@@ -62,8 +58,32 @@ public class C07E04_CreateFromURL {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(URL url, String dest) throws IOException {
-        URLConnection urlConnection = url.openConnection();
-        urlConnection.addRequestProperty("User-Agent", USER_AGENT);
-        HtmlConverter.convertToPdf(urlConnection.getInputStream(), new FileOutputStream(dest));
+        int maxTries = 3;
+
+        while (maxTries != 0) {
+            int responseCode;
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.addRequestProperty("User-Agent", USER_AGENT);
+            // 15 seconds timeout
+            urlConnection.setConnectTimeout(15 * 1000);
+            try {
+                InputStream inputStream = urlConnection.getInputStream();
+                HtmlConverter.convertToPdf(inputStream, new FileOutputStream(dest));
+                break;
+            } catch (SocketTimeoutException exception) {
+                //Time-out occurred
+                responseCode = -1;
+            } catch (IOException e) {
+                try {
+                    responseCode = ((HttpURLConnection) urlConnection).getResponseCode();
+                } catch(IOException innerE) {
+                    // If we couldn't get error code we still want to retry
+                    responseCode = -1;
+                }
+            }
+            Assert.assertTrue("Http request was not successful. Error code: " + responseCode,
+                    (responseCode >= 200 && responseCode < 300) || responseCode < 0);
+            maxTries--;
+        }
     }
 }

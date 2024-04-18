@@ -1,12 +1,4 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
-package com.itextpdf.samples.sandbox.merge;
+package com.itextpdf.samples.sandbox.split;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -19,8 +11,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-public class MergeAndCount {
-    public static final String DEST = "./target/sandbox/merge/splitDocument1_%s.pdf";
+public class SplitAndCount {
+    public static final String DEST = "./target/sandbox/split/splitDocument1_%s.pdf";
 
     public static final String RESOURCE = "./src/main/resources/pdfs/Wrong.pdf";
 
@@ -28,7 +20,7 @@ public class MergeAndCount {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new MergeAndCount().manipulatePdf(DEST);
+        new SplitAndCount().manipulatePdf(DEST);
     }
 
     protected void manipulatePdf(final String dest) throws IOException {

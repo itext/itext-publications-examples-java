@@ -1,11 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples.htmlsamples.chapter04;
 
 import java.io.ByteArrayInputStream;
@@ -84,8 +76,8 @@ public class C04E05_MovieOverview2 {
         ConverterProperties properties = new ConverterProperties();
         properties.setBaseUri(baseUri);
         OutlineHandler outlineHandler = new OutlineHandler();
-        outlineHandler.putTagPriorityMapping("h1", 1);
-        outlineHandler.putTagPriorityMapping("p", 2);
+        outlineHandler.putMarkPriorityMapping("h1", 1);
+        outlineHandler.putMarkPriorityMapping("p", 2);
         properties.setOutlineHandler(outlineHandler);
         HtmlConverter.convertToPdf(new ByteArrayInputStream(html), new FileOutputStream(dest), properties);
     }

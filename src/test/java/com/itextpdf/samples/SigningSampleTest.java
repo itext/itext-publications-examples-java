@@ -1,11 +1,3 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples;
 
 import com.itextpdf.commons.bouncycastle.operator.AbstractOperatorCreationException;
@@ -56,6 +48,7 @@ public class SigningSampleTest extends WrappedSamplesRunner {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.signatures.pades");
         searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.signatures.appearance");
+        searchConfig.addPackageToRunnerSearchPath("com.itextpdf.samples.sandbox.signatures.twophase");
         return generateTestsList(searchConfig);
     }
 

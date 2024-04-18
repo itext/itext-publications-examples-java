@@ -1,18 +1,14 @@
-/*
-    This file is part of the iText (R) project.
-    Copyright (c) 1998-2024 Apryse Group NV
-    Authors: Apryse Software.
-
-    For more information, please contact iText Software at this address:
-    sales@itextpdf.com
- */
 package com.itextpdf.samples.htmlsamples.chapter07;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
+import org.junit.Assert;
+import java.net.HttpURLConnection;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
@@ -50,7 +46,7 @@ public class C07E05_CreateFromURL2 {
      */
     public static void main(String[] args) throws IOException {
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
-				+ "/itextkey-html2pdf_typography.json")) {
+                + "/itextkey-html2pdf_typography.json")) {
 			LicenseKey.loadLicenseFile(license);
 		}
         File file = new File(DEST);
@@ -75,8 +71,35 @@ public class C07E05_CreateFromURL2 {
         MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.SCREEN);
         mediaDeviceDescription.setWidth(pageSize.getWidth());
         properties.setMediaDeviceDescription(mediaDeviceDescription);
-        URLConnection urlConnection = url.openConnection();
-        urlConnection.addRequestProperty("User-Agent", USER_AGENT);
-        HtmlConverter.convertToPdf(urlConnection.getInputStream(), pdf, properties);
+
+        InputStream inputStream;
+
+        int maxTries = 3;
+
+        while (maxTries != 0) {
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.addRequestProperty("User-Agent", USER_AGENT);
+            //15 second timeout
+            urlConnection.setConnectTimeout(15 * 1000);
+            int responseCode;
+            try {
+                inputStream = urlConnection.getInputStream();
+                HtmlConverter.convertToPdf(inputStream, pdf, properties);
+                break;
+            } catch (SocketTimeoutException exception) {
+                //Time-out occurred
+                responseCode = -1;
+            }  catch (IOException e) {
+                try {
+                    responseCode = ((HttpURLConnection) urlConnection).getResponseCode();
+                } catch(IOException innerE) {
+                    // If we couldn't get error code we still want to retry
+                    responseCode = -1;
+                }
+            }
+            Assert.assertTrue("Http request was not successful. Error code: " + responseCode,
+                    (responseCode >= 200 && responseCode < 300) || responseCode < 0);
+            maxTries--;
+        }
     }
 }
