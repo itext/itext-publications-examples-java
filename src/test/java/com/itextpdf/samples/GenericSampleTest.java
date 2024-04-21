@@ -2,6 +2,7 @@ package com.itextpdf.samples;
 
 import com.itextpdf.io.font.FontCache;
 import com.itextpdf.io.font.FontProgramFactory;
+import com.itextpdf.io.util.UrlUtil;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.utils.CompareTool;
 import com.itextpdf.licensing.base.LicenseKey;
@@ -51,12 +52,14 @@ public class GenericSampleTest extends WrappedSamplesRunner {
     /**
      * List of samples, which require txt files comparison
      */
-    private List<String> txtCompareList = Arrays.asList(
+    private final List<String> txtCompareList = Arrays.asList(
             "com.itextpdf.samples.sandbox.interactive.FetchBookmarkTitles",
             "com.itextpdf.samples.sandbox.parse.ParseCustom",
             "com.itextpdf.samples.sandbox.parse.ParseCzech",
             "com.itextpdf.samples.sandbox.logging.CounterDemo",
-            "com.itextpdf.samples.sandbox.tagging.WalkTheTree"
+            "com.itextpdf.samples.sandbox.tagging.WalkTheTree",
+            "com.itextpdf.samples.sandbox.signatures.validation.ValidateChainBeforeSigningExample",
+            "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample"
     );
 
     /**
@@ -191,6 +194,8 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
     private String compareTxt(String dest, String cmp) throws IOException {
         String errorMessage = null;
+        System.out.println("Out txt: " + UrlUtil.getNormalizedFileUriString(dest));
+        System.out.println("Cmp txt: " + UrlUtil.getNormalizedFileUriString(cmp)+ "\n");
 
         try (
                 BufferedReader destReader = new BufferedReader(new FileReader(dest));
