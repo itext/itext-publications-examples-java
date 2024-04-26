@@ -8,8 +8,6 @@ import com.itextpdf.test.WrappedSamplesRunner;
 import com.itextpdf.test.annotations.type.SampleTest;
 
 import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.Appender;
 import java.io.FileInputStream;
 import java.util.Collection;
 import org.junit.Test;
@@ -29,27 +27,18 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Test(timeout = 60000)
+    @Test(timeout = 180000)
     public void test() throws Exception {
+        Logger logger = (Logger) LoggerFactory.getLogger("ROOT");
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
                 + "/all-products.json")) {
+            logger.info("Load all-products license.");
             LicenseKey.loadLicenseFile(license);
         }
         FontCache.clearSavedFonts();
         FontProgramFactory.clearRegisteredFonts();
 
-        Logger logger = (Logger) LoggerFactory.getLogger("ROOT");
-        Appender<ILoggingEvent> loggerAppender = logger.getAppender("console");
-        if (null != loggerAppender) {
-            loggerAppender.stop();
-
-            runSamples();
-
-            loggerAppender.start();
-        } else {
-            runSamples();
-        }
-
+        runSamples();
         LicenseKey.unloadLicenses();
     }
 

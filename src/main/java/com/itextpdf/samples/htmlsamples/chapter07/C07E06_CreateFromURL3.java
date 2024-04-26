@@ -1,5 +1,6 @@
 package com.itextpdf.samples.htmlsamples.chapter07;
 
+import ch.qos.logback.classic.Logger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,6 +11,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import org.junit.Assert;
 import java.net.HttpURLConnection;
+import org.slf4j.LoggerFactory;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
@@ -36,6 +38,8 @@ public class C07E06_CreateFromURL3 {
     private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 " +
             "(KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
 
+    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger("ROOT");
+
     /**
      * The main method of this example.
      *
@@ -45,6 +49,7 @@ public class C07E06_CreateFromURL3 {
     public static void main(String[] args) throws IOException {
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
 				+ "/itextkey-html2pdf_typography.json")) {
+            LOGGER.info("Load html2pdf + typography license.");
 			LicenseKey.loadLicenseFile(license);
 		}
         File file = new File(DEST);
@@ -61,6 +66,7 @@ public class C07E06_CreateFromURL3 {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(URL url, String dest) throws IOException {
+        LOGGER.info("Initializing variables.");
         ConverterProperties properties = new ConverterProperties();
         MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.PRINT);
         properties.setMediaDeviceDescription(mediaDeviceDescription);
@@ -69,23 +75,29 @@ public class C07E06_CreateFromURL3 {
         InputStream inputStream;
 
         while (maxTries != 0) {
+            LOGGER.info("Tries left " + maxTries);
+            LOGGER.info("Opening URL connection.");
             URLConnection urlConnection = url.openConnection();
+            LOGGER.info("Add request property.");
             urlConnection.addRequestProperty("User-Agent", USER_AGENT);
             //15 second timeout
             urlConnection.setConnectTimeout(15 * 1000);
             int responseCode;
             try {
+                LOGGER.info("getting URL input stream.");
                 inputStream = urlConnection.getInputStream();
+                LOGGER.info("Converting to PDF.");
                 HtmlConverter.convertToPdf(inputStream, new FileOutputStream(dest), properties);
                 break;
             } catch (SocketTimeoutException exception) {
-                //Time-out occurred
+                LOGGER.info("Timeout occurred.");
                 responseCode = -1;
             }  catch (IOException e) {
                 try {
+                    LOGGER.info("Getting response code.");
                     responseCode = ((HttpURLConnection) urlConnection).getResponseCode();
                 } catch(IOException innerE) {
-                    // If we couldn't get error code we still want to retry
+                    LOGGER.info("Couldn't get response code, retrying.");
                     responseCode = -1;
                 }
             }
