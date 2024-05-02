@@ -230,11 +230,6 @@ public class TwoPhasePadesSigningExample {
              OutputStream outputStream = new FileOutputStream(prep + ".working")) {
             PadesTwoPhaseSigningHelper helper = new PadesTwoPhaseSigningHelper();
             helper.setTrustedCertificates(getTrustedStore());
-
-            // workaround for sizing issue in PadesTwoPhaseSigningHelper
-            // TODO remove at release DEVSIX-8115
-            helper.setEstimatedSize(15000);
-
             cmsContainer = helper.createCMSContainerWithoutSignature(certificateChain, digestAlgoritm, reader,
                     outputStream, signerProperties);
         }
