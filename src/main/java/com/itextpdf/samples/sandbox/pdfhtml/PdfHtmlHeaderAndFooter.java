@@ -49,6 +49,7 @@ public class PdfHtmlHeaderAndFooter {
         // Write the total number of pages to the placeholder
         footerHandler.writeTotal(pdfDocument);
         converted.close();
+        pdfDocument.close();
     }
 
     // Header event handler
