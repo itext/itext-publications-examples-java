@@ -17,10 +17,8 @@
     <licensekey.version>4.1.5-SNAPSHOT</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <sampletests>com.itextpdf.test.annotations.type.SampleTest</sampletests>
     <spotbugs.version>3.1.11</spotbugs.version>
     <typography.version>4.0.3-SNAPSHOT</typography.version>
-    <unittests>com.itextpdf.test.annotations.type.UnitTest</unittests>
   </properties>
   <dependencies>
     <dependency>
@@ -74,9 +72,9 @@
       <version>${html2pdf.version}</version>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.2</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -196,7 +194,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M3</version>
         <configuration>
-          <groups>${unittests}</groups>
+          <groups>UnitTest,BouncyCastleUnitTest</groups>
           <argLine>${env.SUREFIRE_OPTS}</argLine>
         </configuration>
       </plugin>
@@ -216,7 +214,7 @@
           <includes>
             <include>**/*.java</include>
           </includes>
-          <groups>${sampletests},${integrationtests}</groups>
+          <groups>SampleTest,IntegrationTest,BouncyCastleIntegrationTest</groups>
           <argLine>${env.SUREFIRE_OPTS}</argLine>
         </configuration>
       </plugin>

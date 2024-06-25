@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import java.net.HttpURLConnection;
 import org.slf4j.LoggerFactory;
 
@@ -101,8 +101,8 @@ public class C07E06_CreateFromURL3 {
                     responseCode = -1;
                 }
             }
-            Assert.assertTrue("Http request was not successful. Error code: " + responseCode,
-                    (responseCode >= 200 && responseCode < 300) || responseCode < 0);
+            Assertions.assertTrue((responseCode >= 200 && responseCode < 300) || responseCode < 0,
+                    "Http request was not successful. Error code: " + responseCode);
             maxTries--;
         }
     }

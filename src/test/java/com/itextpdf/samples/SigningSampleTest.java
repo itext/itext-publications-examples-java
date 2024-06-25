@@ -8,10 +8,12 @@ import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.samples.sandbox.signatures.utils.SignaturesCompareTool;
 import com.itextpdf.test.RunnerSearchConfig;
 import com.itextpdf.test.WrappedSamplesRunner;
-import com.itextpdf.test.annotations.type.SampleTest;
-import org.junit.Test;
-import org.junit.experimental.categories.Category;
-import org.junit.runners.Parameterized;
+
+import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Category(SampleTest.class)
+@Tag("SampleTest")
 public class SigningSampleTest extends WrappedSamplesRunner {
 
     /**
@@ -42,7 +44,6 @@ public class SigningSampleTest extends WrappedSamplesRunner {
                 ignoredAreasMap);
     }
 
-    @Parameterized.Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() throws CertificateException, IOException,
             AbstractOperatorCreationException, AbstractPKCSException {
         RunnerSearchConfig searchConfig = new RunnerSearchConfig();
@@ -52,8 +53,11 @@ public class SigningSampleTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Test(timeout = 60000)
-    public void test() throws Exception {
+    @Timeout(unit = TimeUnit.MILLISECONDS, value = 60000)
+    @ParameterizedTest(name = "{index}: {0}")
+    @MethodSource("data")
+    public void test(RunnerParams data) throws Exception {
+        this.sampleClassParams = data;
         try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.json")) {
             LicenseKey.loadLicenseFile(allLicense);
         }

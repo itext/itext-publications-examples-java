@@ -19,7 +19,7 @@ import com.itextpdf.signatures.validation.v1.context.*;
 import com.itextpdf.signatures.validation.v1.report.ReportItem;
 import com.itextpdf.signatures.validation.v1.report.ValidationReport;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -108,7 +108,7 @@ public class ValidateSignatureExample {
             // Validate the signing chain. ValidationReport will contain all the validation report messages.
             report = validator.validate(report, baseContext, signingCertificate, signingDate);
         }
-        Assert.assertSame(report.getValidationResult(), ValidationReport.ValidationResult.VALID);
+        Assertions.assertSame(report.getValidationResult(), ValidationReport.ValidationResult.VALID);
 
         // Write validation report to the file.
         try (FileOutputStream fos = new FileOutputStream(dest)) {
