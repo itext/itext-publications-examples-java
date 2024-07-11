@@ -1,7 +1,6 @@
 package com.itextpdf.samples.sandbox.signatures.validation;
 
 import com.itextpdf.commons.utils.DateTimeUtil;
-import com.itextpdf.commons.utils.MessageFormatUtil;
 import com.itextpdf.kernel.exceptions.PdfException;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -10,29 +9,28 @@ import com.itextpdf.samples.sandbox.signatures.utils.PemFileHelper;
 import com.itextpdf.samples.sandbox.signatures.utils.TestOcspResponseBuilder;
 import com.itextpdf.signatures.IOcspClient;
 import com.itextpdf.signatures.IssuingCertificateRetriever;
-import com.itextpdf.signatures.PdfPKCS7;
-import com.itextpdf.signatures.SignatureUtil;
-import com.itextpdf.signatures.validation.v1.CertificateChainValidator;
 import com.itextpdf.signatures.validation.v1.SignatureValidationProperties;
+import com.itextpdf.signatures.validation.v1.SignatureValidator;
 import com.itextpdf.signatures.validation.v1.ValidatorChainBuilder;
-import com.itextpdf.signatures.validation.v1.context.*;
-import com.itextpdf.signatures.validation.v1.report.ReportItem;
+import com.itextpdf.signatures.validation.v1.context.CertificateSource;
+import com.itextpdf.signatures.validation.v1.context.CertificateSources;
+import com.itextpdf.signatures.validation.v1.context.TimeBasedContext;
+import com.itextpdf.signatures.validation.v1.context.TimeBasedContexts;
+import com.itextpdf.signatures.validation.v1.context.ValidatorContext;
+import com.itextpdf.signatures.validation.v1.context.ValidatorContexts;
 import com.itextpdf.signatures.validation.v1.report.ValidationReport;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Basic example of the existing signature validation.
@@ -40,12 +38,6 @@ import java.util.List;
 public class ValidateSignatureExample {
     public static final String SRC = "./src/main/resources/pdfs/validDocWithTimestamp.pdf";
     public static final String DEST = "./target/sandbox/signatures/validation/validateSignatureExample.txt";
-
-    private static final String SIGNATURE_VERIFICATION = "Signature verification check.";
-    private static final String CANNOT_VERIFY_SIGNATURE = "Signature {0} cannot be mathematically verified.";
-    private static final String DOCUMENT_IS_NOT_COVERED = "Signature {0} doesn't cover entire document.";
-    private static final String TIMESTAMP_VERIFICATION = "Timestamp verification check.";
-    private static final String CANNOT_VERIFY_TIMESTAMP = "Signature timestamp attribute cannot be verified";
 
     private Certificate[] certificateChain;
     private PrivateKey privateKey;
@@ -69,6 +61,7 @@ public class ValidateSignatureExample {
     public void validateExistingSignature(String src, String dest) throws Exception {
         // Set up the validator.
         SignatureValidationProperties properties = getSignatureValidationProperties();
+        properties.addOcspClient(getOcspClient());
 
         IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
         X509Certificate rootCert = (X509Certificate) getCertificateChain()[2];
@@ -78,35 +71,12 @@ public class ValidateSignatureExample {
                 .withIssuingCertificateRetriever(certificateRetriever)
                 .withSignatureValidationProperties(properties);
 
-        ValidationReport report = new ValidationReport();
+        ValidationReport report;
         try (PdfDocument document = new PdfDocument(new PdfReader(src))) {
-            CertificateChainValidator validator = validatorChainBuilder.buildCertificateChainValidator();
-            validator.addOcspClient(getOcspClient());
+            SignatureValidator validator = validatorChainBuilder.buildSignatureValidator(document);
 
-            // Validate the signature.
-            SignatureUtil signatureUtil = new SignatureUtil(document);
-            List<String> signatures = signatureUtil.getSignatureNames();
-            String latestSignatureName = signatures.get(signatures.size() - 1);
-            PdfPKCS7 pkcs7 = signatureUtil.readSignatureData(latestSignatureName);
-            validateSignature(report, signatureUtil, latestSignatureName, pkcs7);
-
-            Date signingDate = DateTimeUtil.getCurrentTimeDate();
-            if (pkcs7.getTimeStampTokenInfo() != null) {
-                // Validate timestamp.
-                validateTimestamp(certificateRetriever, report, validator, pkcs7);
-                signingDate = pkcs7.getTimeStampDate().getTime();
-            }
-
-            Certificate[] certificates = pkcs7.getCertificates();
-            certificateRetriever.addKnownCertificates(Arrays.asList(certificates));
-            X509Certificate signingCertificate = pkcs7.getSigningCertificate();
-
-            // Set up validation context related to CertificateChainValidator for the historical validation.
-            ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
-                    CertificateSource.SIGNER_CERT, TimeBasedContext.HISTORICAL);
-
-            // Validate the signing chain. ValidationReport will contain all the validation report messages.
-            report = validator.validate(report, baseContext, signingCertificate, signingDate);
+            // Validate all signatures in the document.
+            report = validator.validateSignatures();
         }
         Assertions.assertSame(report.getValidationResult(), ValidationReport.ValidationResult.VALID);
 
@@ -135,60 +105,6 @@ public class ValidateSignatureExample {
                 CertificateSources.of(CertificateSource.CRL_ISSUER, CertificateSource.OCSP_ISSUER,
                         CertificateSource.CERT_ISSUER), false);
         return properties;
-    }
-
-    /**
-     * Check if the signature covers the entire document and verify signature integrity and authenticity.
-     *
-     * @param report              validation report
-     * @param signatureUtil       signature util instance created for the signed document
-     * @param latestSignatureName signature name
-     * @param pkcs7               created {@link PdfPKCS7} instance
-     */
-    protected void validateSignature(ValidationReport report, SignatureUtil signatureUtil, String latestSignatureName,
-                                     PdfPKCS7 pkcs7) {
-        if (!signatureUtil.signatureCoversWholeDocument(latestSignatureName)) {
-            report.addReportItem(new ReportItem(SIGNATURE_VERIFICATION, MessageFormatUtil.format(
-                    DOCUMENT_IS_NOT_COVERED, latestSignatureName), ReportItem.ReportItemStatus.INVALID));
-        }
-        try {
-            if (!pkcs7.verifySignatureIntegrityAndAuthenticity()) {
-                report.addReportItem(new ReportItem(SIGNATURE_VERIFICATION, MessageFormatUtil.format(
-                        CANNOT_VERIFY_SIGNATURE, latestSignatureName), ReportItem.ReportItemStatus.INVALID));
-            }
-        } catch (GeneralSecurityException e) {
-            report.addReportItem(new ReportItem(SIGNATURE_VERIFICATION, MessageFormatUtil.format(
-                    CANNOT_VERIFY_SIGNATURE, latestSignatureName), e, ReportItem.ReportItemStatus.INVALID));
-        }
-    }
-
-    /**
-     * Verify timestamp imprint and validate timestamp certificates chain.
-     *
-     * @param certificateRetriever certificate retriever
-     * @param report               validation report
-     * @param validator            certificate chain validator instance
-     * @param pkcs7                created {@link PdfPKCS7} instance
-     */
-    protected void validateTimestamp(IssuingCertificateRetriever certificateRetriever, ValidationReport report,
-                                     CertificateChainValidator validator, PdfPKCS7 pkcs7) {
-        try {
-            if (!pkcs7.verifyTimestampImprint()) {
-                report.addReportItem(new ReportItem(TIMESTAMP_VERIFICATION, CANNOT_VERIFY_TIMESTAMP,
-                        ReportItem.ReportItemStatus.INVALID));
-            }
-        } catch (GeneralSecurityException e) {
-            report.addReportItem(new ReportItem(TIMESTAMP_VERIFICATION, CANNOT_VERIFY_TIMESTAMP, e,
-                    ReportItem.ReportItemStatus.INVALID));
-        }
-
-        // Validate timestamp certificates chain.
-        Certificate[] timestampCertificates = pkcs7.getTimestampCertificates();
-        certificateRetriever.addKnownCertificates(Arrays.asList(timestampCertificates));
-        ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
-                CertificateSource.TIMESTAMP, TimeBasedContext.PRESENT);
-        validator.validate(report, baseContext, (X509Certificate) timestampCertificates[0],
-                DateTimeUtil.getCurrentTimeDate());
     }
 
     /**

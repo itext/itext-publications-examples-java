@@ -8,7 +8,6 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.StampingProperties;
 import com.itextpdf.signatures.PdfSigner;
 import com.itextpdf.signatures.IExternalSignature;
-import com.itextpdf.signatures.OCSPVerifier;
 import com.itextpdf.signatures.OcspClientBouncyCastle;
 import com.itextpdf.signatures.ICrlClient;
 import com.itextpdf.signatures.CrlClientOnline;
@@ -75,8 +74,7 @@ public class SignatureExample {
         char[] password = "testpass".toCharArray();
         IExternalSignature pks = getPrivateKeySignature(CERT_PATH, password);
         Certificate[] chain = getCertificateChain(CERT_PATH, password);
-        OCSPVerifier ocspVerifier = new OCSPVerifier(null, null);
-        OcspClientBouncyCastle ocspClient = new OcspClientBouncyCastle(ocspVerifier);
+        OcspClientBouncyCastle ocspClient = new OcspClientBouncyCastle();
         List<ICrlClient> crlClients = Arrays.asList((ICrlClient) new CrlClientOnline());
 
         // Sign the document using the detached mode, CMS or CAdES equivalent.

@@ -1,5 +1,6 @@
 ValidationReport{validationResult=VALID
 reportItems=
+ReportItem{checkName='Signature verification check.', message='Validating signature Signature1', cause=null, status=INFO}, 
 CertificateReportItem{baseclass=
 ReportItem{checkName='Certificate check.', message='Certificate CN=iTextTestRoot, O=iText, C=BE is trusted, revocation data checks are not required.', cause=null, status=INFO}
 certificate=CN=iTextTestRoot, O=iText, C=BE}, 
