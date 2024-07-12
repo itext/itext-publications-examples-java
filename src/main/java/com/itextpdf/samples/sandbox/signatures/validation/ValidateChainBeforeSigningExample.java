@@ -71,7 +71,8 @@ public class ValidateChainBeforeSigningExample {
         X509Certificate rootCert = (X509Certificate) certificateChain[1];
 
         // Set up the validator.
-        SignatureValidationProperties properties = new SignatureValidationProperties();
+        SignatureValidationProperties properties = new SignatureValidationProperties()
+                .addOcspClient(getOcspClient());
         IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
         ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
                 .withIssuingCertificateRetriever(certificateRetriever)
@@ -79,7 +80,6 @@ public class ValidateChainBeforeSigningExample {
 
         CertificateChainValidator validator = validatorChainBuilder.buildCertificateChainValidator();
         certificateRetriever.setTrustedCertificates(Collections.singletonList(rootCert));
-        validator.addOcspClient(getOcspClient());
 
         ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
                 CertificateSource.SIGNER_CERT, TimeBasedContext.PRESENT);

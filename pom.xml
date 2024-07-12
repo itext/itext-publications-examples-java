@@ -63,11 +63,6 @@
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
-      <artifactId>pdfua</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.itextpdf</groupId>
       <artifactId>typography</artifactId>
       <version>${typography.version}</version>
     </dependency>
