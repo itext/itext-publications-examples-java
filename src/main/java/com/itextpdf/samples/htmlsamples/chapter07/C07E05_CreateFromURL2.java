@@ -1,5 +1,6 @@
 package com.itextpdf.samples.htmlsamples.chapter07;
 
+import ch.qos.logback.classic.Logger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,8 +8,9 @@ import java.io.InputStream;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import java.net.HttpURLConnection;
+import org.slf4j.LoggerFactory;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
@@ -38,6 +40,8 @@ public class C07E05_CreateFromURL2 {
     private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 " +
             "(KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
 
+    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger("ROOT");
+
     /**
      * The main method of this example.
      *
@@ -47,8 +51,9 @@ public class C07E05_CreateFromURL2 {
     public static void main(String[] args) throws IOException {
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
                 + "/itextkey-html2pdf_typography.json")) {
-			LicenseKey.loadLicenseFile(license);
-		}
+            LOGGER.info("Load html2pdf + typography license.");
+            LicenseKey.loadLicenseFile(license);
+        }
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
@@ -63,6 +68,7 @@ public class C07E05_CreateFromURL2 {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(URL url, String dest) throws IOException {
+        LOGGER.info("Initializing variables.");
         PdfWriter writer = new PdfWriter(dest);
         PdfDocument pdf = new PdfDocument(writer);
         PageSize pageSize = new PageSize(850, 1700);
@@ -77,28 +83,34 @@ public class C07E05_CreateFromURL2 {
         int maxTries = 3;
 
         while (maxTries != 0) {
+            LOGGER.info("Tries left " + maxTries);
+            LOGGER.info("Opening URL connection.");
             URLConnection urlConnection = url.openConnection();
+            LOGGER.info("Add request property.");
             urlConnection.addRequestProperty("User-Agent", USER_AGENT);
             //15 second timeout
             urlConnection.setConnectTimeout(15 * 1000);
             int responseCode;
             try {
+                LOGGER.info("getting URL input stream.");
                 inputStream = urlConnection.getInputStream();
+                LOGGER.info("Converting to PDF.");
                 HtmlConverter.convertToPdf(inputStream, pdf, properties);
                 break;
             } catch (SocketTimeoutException exception) {
-                //Time-out occurred
+                LOGGER.info("Timeout occurred.");
                 responseCode = -1;
             }  catch (IOException e) {
                 try {
+                    LOGGER.info("Getting response code.");
                     responseCode = ((HttpURLConnection) urlConnection).getResponseCode();
                 } catch(IOException innerE) {
-                    // If we couldn't get error code we still want to retry
+                    LOGGER.info("Couldn't get response code, retrying.");
                     responseCode = -1;
                 }
             }
-            Assert.assertTrue("Http request was not successful. Error code: " + responseCode,
-                    (responseCode >= 200 && responseCode < 300) || responseCode < 0);
+            Assertions.assertTrue((responseCode >= 200 && responseCode < 300) || responseCode < 0,
+                    "Http request was not successful. Error code: " + responseCode);
             maxTries--;
         }
     }
