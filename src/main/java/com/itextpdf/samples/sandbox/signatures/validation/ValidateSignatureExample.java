@@ -68,7 +68,7 @@ public class ValidateSignatureExample {
         certificateRetriever.setTrustedCertificates(Collections.singletonList(rootCert));
 
         ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
-                .withIssuingCertificateRetriever(certificateRetriever)
+                .withIssuingCertificateRetrieverFactory(() -> certificateRetriever)
                 .withSignatureValidationProperties(properties);
 
         ValidationReport report;

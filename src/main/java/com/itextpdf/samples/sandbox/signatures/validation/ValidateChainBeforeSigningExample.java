@@ -75,7 +75,7 @@ public class ValidateChainBeforeSigningExample {
                 .addOcspClient(getOcspClient());
         IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
         ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
-                .withIssuingCertificateRetriever(certificateRetriever)
+                .withIssuingCertificateRetrieverFactory(() -> certificateRetriever)
                 .withSignatureValidationProperties(properties);
 
         CertificateChainValidator validator = validatorChainBuilder.buildCertificateChainValidator();
