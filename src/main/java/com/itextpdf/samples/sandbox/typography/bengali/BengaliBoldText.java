@@ -59,10 +59,10 @@ public class BengaliBoldText {
         // Add a paragraph with a set bold font to the paragraph
         document.add(new Paragraph(bengaliText).setFont(fontBold));
 
-        // We don't suggest usage of setBold() method to reach text thickness since the result is written with the usual
+        // We don't suggest usage of simulateBold() method to reach text thickness since the result is written with the usual
         // rather than the bold font: we only emulate "thickness". It's recommended to use an actual bold font instead.
         // For example NotoSansBengali-Bold
-        document.add(new Paragraph(bengaliText).setBold());
+        document.add(new Paragraph(bengaliText).simulateBold());
 
         document.close();
     }

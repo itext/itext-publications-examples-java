@@ -38,7 +38,7 @@ public class ModifyFormFieldAppearance {
             // It is not recommended to change font preferences since those won't be preserved after appearance changes,
             // but it is still possible.
             textArea.setProperty(Property.LEADING, new Leading(Leading.MULTIPLIED, 3f));
-            textArea.setItalic();
+            textArea.setFontColor(ColorConstants.RED);
             textFormField.getFirstFormAnnotation().setFormFieldElement(textArea);
 
             PdfButtonFormField buttonFormField = new PushButtonFormFieldBuilder(document, "button")
