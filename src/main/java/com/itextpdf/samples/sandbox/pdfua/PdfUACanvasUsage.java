@@ -13,7 +13,7 @@ import com.itextpdf.kernel.pdf.WriterProperties;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.tagging.StandardRoles;
 import com.itextpdf.kernel.pdf.tagutils.TagTreePointer;
-import com.itextpdf.kernel.utils.ValidationContainer;
+import com.itextpdf.kernel.validation.ValidationContainer;
 import com.itextpdf.pdfua.checkers.PdfUA1Checker;
 import com.itextpdf.pdfua.exceptions.PdfUAConformanceException;
 

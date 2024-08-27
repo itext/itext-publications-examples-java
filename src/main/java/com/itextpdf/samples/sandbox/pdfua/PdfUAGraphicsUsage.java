@@ -8,7 +8,7 @@ import com.itextpdf.kernel.pdf.PdfVersion;
 import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.WriterProperties;
-import com.itextpdf.kernel.utils.ValidationContainer;
+import com.itextpdf.kernel.validation.ValidationContainer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.pdfua.checkers.PdfUA1Checker;
