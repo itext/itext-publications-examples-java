@@ -6,14 +6,16 @@ import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.StampingProperties;
-import com.itextpdf.signatures.PdfSigner;
+import com.itextpdf.signatures.AccessPermissions;
+import com.itextpdf.signatures.BouncyCastleDigest;
+import com.itextpdf.signatures.CrlClientOnline;
+import com.itextpdf.signatures.DigestAlgorithms;
+import com.itextpdf.signatures.ICrlClient;
 import com.itextpdf.signatures.IExternalSignature;
 import com.itextpdf.signatures.OcspClientBouncyCastle;
-import com.itextpdf.signatures.ICrlClient;
-import com.itextpdf.signatures.CrlClientOnline;
-import com.itextpdf.signatures.BouncyCastleDigest;
+import com.itextpdf.signatures.PdfSigner;
 import com.itextpdf.signatures.PrivateKeySignature;
-import com.itextpdf.signatures.DigestAlgorithms;
+import com.itextpdf.signatures.SignerProperties;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
@@ -54,20 +56,24 @@ public class SignatureExample {
             throws Exception {
         PdfSigner pdfSigner = new PdfSigner(new PdfReader(SRC), new FileOutputStream(filePath),
                 new StampingProperties());
-        pdfSigner.setCertificationLevel(PdfSigner.CERTIFIED_NO_CHANGES_ALLOWED);
+        SignerProperties signerProperties = new SignerProperties();
+        signerProperties.setCertificationLevel(AccessPermissions.NO_CHANGES_PERMITTED);
 
         // Set the name indicating the field to be signed.
         // The field can already be present in the document but shall not be signed
-        pdfSigner.setFieldName("signature");
+        signerProperties.setFieldName("signature");
+
+        pdfSigner.setSignerProperties(signerProperties);
 
         ImageData clientSignatureImage = ImageDataFactory.create(IMAGE_PATH);
 
         // If you create new signature field (or use SetFieldName(System.String) with
         // the name that doesn't exist in the document or don't specify it at all) then
         // the signature is invisible by default.
-        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(pdfSigner.getFieldName())
+        SignatureFieldAppearance signatureAppearance =
+                new SignatureFieldAppearance(pdfSigner.getSignerProperties().getFieldName())
                 .setContent(clientSignatureImage);
-        pdfSigner.setPageNumber(signatureInfo.getPageNumber())
+        signerProperties.setPageNumber(signatureInfo.getPageNumber())
                 .setPageRect(new Rectangle(signatureInfo.getLeft(), signatureInfo.getBottom(), 25, 25))
                 .setSignatureAppearance(signatureAppearance);
 

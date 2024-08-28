@@ -15,6 +15,7 @@ import com.itextpdf.signatures.DigestAlgorithms;
 import com.itextpdf.signatures.IExternalSignature;
 import com.itextpdf.signatures.PdfSigner;
 import com.itextpdf.signatures.PrivateKeySignature;
+import com.itextpdf.signatures.SignerProperties;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
@@ -78,19 +79,19 @@ public class LatinSignature {
         Rectangle rect = new Rectangle(30, 500, 500, 100);
 
         // Set the name indicating the field to be signed
-        signer.setFieldName("Field1");
+        signer.setSignerProperties(new SignerProperties().setFieldName("Field1"));
 
         // Get Signature Appearance and set some of its properties
         String signerName = CertificateInfo.getSubjectFields((X509Certificate) signChain[0]).getField("CN");
-        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(signer.getFieldName())
+        SignatureFieldAppearance signatureAppearance =
+                new SignatureFieldAppearance(signer.getSignerProperties().getFieldName())
                 .setContent(new SignedAppearanceText()
                         .setSignedBy(signerName)
                         .setReasonLine(line3 + line1)
                         .setLocationLine("Location: " + line2)
-                        .setSignDate(signer.getSignDate()))
+                        .setSignDate(signer.getSignerProperties().getClaimedSignDate()))
                 .setFont(font);
-        signer.setPageRect(rect)
-                .setSignatureAppearance(signatureAppearance);
+        signer.getSignerProperties().setPageRect(rect).setSignatureAppearance(signatureAppearance);
 
         // Sign the document
         signer.signDetached(new BouncyCastleDigest(), pks, signChain, null, null, null, 0,
