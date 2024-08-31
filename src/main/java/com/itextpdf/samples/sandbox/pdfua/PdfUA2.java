@@ -53,7 +53,7 @@ public class PdfUA2 {
             PdfFont font = PdfFontFactory.createFont(FONT, "WinAnsi", PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
 
             Paragraph paragraph = new Paragraph("Hello PdfUA2").setFont(font);
-            byte[] byteMetaData = pdfDocument.getXmpMetadata();
+            byte[] byteMetaData = pdfDocument.getXmpMetadataBytes();
             //PDF/UA
             //Get string xmp metadata representation
             String documentMetaData = new String(byteMetaData);
