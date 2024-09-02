@@ -33,15 +33,16 @@ public class SigningSampleTest extends WrappedSamplesRunner {
     private static final Map<String, Map<Integer, List<Rectangle>>> ignoredClassesMap;
 
     static {
-        Rectangle signatureIgnoredArea = new Rectangle(150, 660, 100, 80);
-        List<Rectangle> rectangles = Collections.singletonList(signatureIgnoredArea);
-
-        Map<Integer, List<Rectangle>> ignoredAreasMap = new HashMap<>();
-        ignoredAreasMap.put(1, rectangles);
+        Map<Integer, List<Rectangle>> ignoredAreasMap1 = new HashMap<>();
+        ignoredAreasMap1.put(1, Collections.singletonList(new Rectangle(150, 660, 100, 80)));
+        Map<Integer, List<Rectangle>> ignoredAreasMap2 = new HashMap<>();
+        ignoredAreasMap2.put(1, Collections.singletonList(new Rectangle(50, 450, 200, 200)));
 
         ignoredClassesMap = new HashMap<>();
         ignoredClassesMap.put("com.itextpdf.samples.sandbox.signatures.appearance.PadesSignatureAppearanceExample",
-                ignoredAreasMap);
+                ignoredAreasMap1);
+        ignoredClassesMap.put("com.itextpdf.samples.sandbox.signatures.appearance.SignatureAppearanceExample",
+                ignoredAreasMap2);
     }
 
     public static Collection<Object[]> data() throws CertificateException, IOException,
