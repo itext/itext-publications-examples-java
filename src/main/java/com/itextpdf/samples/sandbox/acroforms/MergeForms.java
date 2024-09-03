@@ -7,6 +7,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class MergeForms {
     public static final String DEST = "./target/sandbox/acroforms/merge_forms.pdf";
@@ -39,7 +40,7 @@ public class MergeForms {
         mergePdfForms(dest, readers);
     }
 
-    private void mergePdfForms(String dest, PdfReader[] readers) throws FileNotFoundException {
+    private void mergePdfForms(String dest, PdfReader[] readers) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
 
         // This method initializes an outline tree of the document and sets outline mode to true.

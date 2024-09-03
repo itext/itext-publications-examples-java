@@ -16,6 +16,7 @@ import com.itextpdf.layout.renderer.TextRenderer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class CreateTOC {
         new CreateTOC().manipulatePdf(DEST);
     }
 
-    protected void manipulatePdf(String dest) throws FileNotFoundException {
+    protected void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
 

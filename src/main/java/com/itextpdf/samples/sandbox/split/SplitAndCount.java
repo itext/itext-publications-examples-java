@@ -33,7 +33,7 @@ public class SplitAndCount {
             protected PdfWriter getNextPdfWriter(PageRange documentPageRange) {
                 try {
                     return new PdfWriter(String.format(dest, partNumber++));
-                } catch (FileNotFoundException e) {
+                } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
