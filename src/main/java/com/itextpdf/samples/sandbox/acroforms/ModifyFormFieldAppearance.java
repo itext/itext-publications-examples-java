@@ -45,9 +45,11 @@ public class ModifyFormFieldAppearance {
                     .setWidgetRectangle(new Rectangle(300, 400, 200, 200)).setCaption("Send").createPushButton();
             Button button = new Button("button");
             button.setOpacity(0.5f);
-            button.setBorderLeft(new SolidBorder(ColorConstants.RED, 10));
             button.setProperty(Property.PADDING_LEFT, UnitValue.createPointValue(50));
             button.setProperty(Property.PADDING_TOP, UnitValue.createPointValue(50));
+            // Border property will be overridden by the border specified for the buttonFormField annotation
+            button.setBorderLeft(new SolidBorder(ColorConstants.RED, 10));
+            buttonFormField.getFirstFormAnnotation().setBorderColor(ColorConstants.RED).setBorderWidth(10);
             buttonFormField.getFirstFormAnnotation().setFormFieldElement(button);
 
             PdfAcroForm acroForm = PdfFormCreator.getAcroForm(document, true);
