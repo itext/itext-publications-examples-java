@@ -4,12 +4,11 @@ import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.pdf.PdfAConformance;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.PdfAConformanceLevel;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
 import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
-import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
@@ -40,7 +39,7 @@ public class PdfA1a_images {
         PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.IDENTITY_H);
 
         InputStream inputStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");
-        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1A,
+        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_1A,
                 new PdfOutputIntent("Custom", "",
                         null, "sRGB IEC61966-2.1", inputStream));
         pdfDoc.getCatalog().setLang(new PdfString("nl-nl"));

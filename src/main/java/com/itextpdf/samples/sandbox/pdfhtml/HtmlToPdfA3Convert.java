@@ -3,7 +3,7 @@ package com.itextpdf.samples.sandbox.pdfhtml;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
-import com.itextpdf.kernel.pdf.PdfAConformanceLevel;
+import com.itextpdf.kernel.pdf.PdfAConformance;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
 
 import java.io.File;
@@ -30,7 +30,7 @@ public class HtmlToPdfA3Convert {
 
         ConverterProperties converterProperties = new ConverterProperties();
         converterProperties.setBaseUri(SRC);
-        converterProperties.setPdfAConformanceLevel(PdfAConformanceLevel.PDF_A_3B);
+        converterProperties.setPdfAConformance(PdfAConformance.PDF_A_3B);
         converterProperties.setDocumentOutputIntent(
                 new PdfOutputIntent("Custom", "", "http://www.color.org", "sRGB IEC61966-2.1",
                         inputStream));

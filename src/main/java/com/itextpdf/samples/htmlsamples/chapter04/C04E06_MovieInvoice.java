@@ -16,7 +16,7 @@ import javax.xml.transform.stream.StreamSource;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.kernel.pdf.PdfAConformanceLevel;
+import com.itextpdf.kernel.pdf.PdfAConformance;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfa.PdfADocument;
@@ -81,7 +81,7 @@ public class C04E06_MovieInvoice {
      */
     public void createPdf(byte[] html, String baseUri, String dest, String intent) throws IOException {
         PdfWriter writer = new PdfWriter(dest);
-        PdfADocument pdf = new PdfADocument(writer, PdfAConformanceLevel.PDF_A_2B,
+        PdfADocument pdf = new PdfADocument(writer, PdfAConformance.PDF_A_2B,
                 new PdfOutputIntent("Custom", "", "http://www.color.org",
                         "sRGB IEC61966-2.1", new FileInputStream(intent)));
         ConverterProperties properties = new ConverterProperties();

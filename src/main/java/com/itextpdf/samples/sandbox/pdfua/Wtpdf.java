@@ -54,7 +54,7 @@ public class Wtpdf {
 
 
         WriterProperties writerProperties = new WriterProperties().setPdfVersion(PdfVersion.PDF_2_0);
-        PdfADocument pdfDocument = new PdfADocument(new PdfWriter(dest, writerProperties), PdfAConformanceLevel.PDF_A_4, outputIntent);
+        PdfADocument pdfDocument = new PdfADocument(new PdfWriter(dest, writerProperties), PdfAConformance.PDF_A_4, outputIntent);
 
 
 	// The custom tag factory is needed because the PDF2.0 specification prohibts from a p tag being placed inside a Hn tag.

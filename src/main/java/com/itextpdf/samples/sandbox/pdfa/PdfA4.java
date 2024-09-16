@@ -4,7 +4,11 @@ import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.kernel.pdf.PdfAConformance;
+import com.itextpdf.kernel.pdf.PdfOutputIntent;
+import com.itextpdf.kernel.pdf.PdfVersion;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.WriterProperties;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
@@ -39,8 +43,8 @@ public class PdfA4 {
         PdfWriter writer = new PdfWriter(dest, new WriterProperties().setPdfVersion(PdfVersion.PDF_2_0));
         //Grab the image color matching profile
         InputStream inputStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");
-        //Create the PDF/a-4 document by instantiating a PdfADocument object and passing the PDF/a-4 conformance level
-        PdfADocument pdfDocument = new PdfADocument(writer, PdfAConformanceLevel.PDF_A_4, new PdfOutputIntent("Custom", "",
+        //Create the PDF/a-4 document by instantiating a PdfADocument object and passing the PDF/a-4 conformance
+        PdfADocument pdfDocument = new PdfADocument(writer, PdfAConformance.PDF_A_4, new PdfOutputIntent("Custom", "",
                 null, "sRGB IEC61966-2.1", inputStream));
 
         Document document = new Document(pdfDocument);

@@ -9,7 +9,7 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.PdfAConformanceLevel;
+import com.itextpdf.kernel.pdf.PdfAConformance;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
 import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfDictionary;
@@ -29,7 +29,6 @@ import com.itextpdf.pdfa.PdfADocument;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.FileInputStream;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.StringTokenizer;
@@ -64,7 +63,7 @@ public class PdfA1a {
 
         FileInputStream fileInputStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");
 
-        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_1A,
+        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_1A,
                 new PdfOutputIntent("Custom", "",
                         null, "sRGB IEC61966-2.1", fileInputStream));
 

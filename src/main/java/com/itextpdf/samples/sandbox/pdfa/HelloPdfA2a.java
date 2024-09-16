@@ -3,11 +3,10 @@ package com.itextpdf.samples.sandbox.pdfa;
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
-import com.itextpdf.kernel.pdf.PdfAConformanceLevel;
+import com.itextpdf.kernel.pdf.PdfAConformance;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
 import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.pdfa.PdfADocument;
@@ -33,7 +32,7 @@ public class HelloPdfA2a {
 
         FileInputStream fileStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");
 
-        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformanceLevel.PDF_A_2A,
+        PdfADocument pdfDoc = new PdfADocument(new PdfWriter(dest), PdfAConformance.PDF_A_2A,
                 new PdfOutputIntent("Custom", "",
                         null, "sRGB IEC61966-2.1", fileStream));
 
