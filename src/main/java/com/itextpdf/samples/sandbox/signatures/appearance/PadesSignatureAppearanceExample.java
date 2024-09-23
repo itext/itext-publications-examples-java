@@ -72,7 +72,7 @@ public class PadesSignatureAppearanceExample {
         SignerProperties signerProperties = new SignerProperties().setFieldName("Signature1");
 
         // Create the appearance instance and set the signature content to be shown and different appearance properties.
-        SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.getFieldName())
+        SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent(new SignedAppearanceText().setReasonLine("Customized reason: Reason")
                         .setLocationLine("Customized location: Location"), ImageDataFactory.create(IMAGE_PATH))
                 .setBorder(new SolidBorder(ColorConstants.DARK_GRAY, 2))

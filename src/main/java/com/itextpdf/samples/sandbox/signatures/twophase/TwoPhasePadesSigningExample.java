@@ -198,7 +198,7 @@ public class TwoPhasePadesSigningExample {
      */
     private static SignerProperties createSignerProperties(String signatureFieldName) {
         SignerProperties signerProperties = new SignerProperties().setFieldName(signatureFieldName);
-        SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.getFieldName())
+        SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent("Approval test signature.\nCreated by iText.");
         signerProperties
                 .setPageNumber(1)

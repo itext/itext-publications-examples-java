@@ -83,8 +83,7 @@ public class LatinSignature {
 
         // Get Signature Appearance and set some of its properties
         String signerName = CertificateInfo.getSubjectFields((X509Certificate) signChain[0]).getField("CN");
-        SignatureFieldAppearance signatureAppearance =
-                new SignatureFieldAppearance(signer.getSignerProperties().getFieldName())
+        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent(new SignedAppearanceText()
                         .setSignedBy(signerName)
                         .setReasonLine(line3 + line1)

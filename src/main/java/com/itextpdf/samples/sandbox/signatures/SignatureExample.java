@@ -67,11 +67,10 @@ public class SignatureExample {
 
         ImageData clientSignatureImage = ImageDataFactory.create(IMAGE_PATH);
 
-        // If you create new signature field (or use SetFieldName(System.String) with
+        // If you create new signature field (or use SignerProperties#setFieldName with
         // the name that doesn't exist in the document or don't specify it at all) then
         // the signature is invisible by default.
-        SignatureFieldAppearance signatureAppearance =
-                new SignatureFieldAppearance(pdfSigner.getSignerProperties().getFieldName())
+        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent(clientSignatureImage);
         signerProperties.setPageNumber(signatureInfo.getPageNumber())
                 .setPageRect(new Rectangle(signatureInfo.getLeft(), signatureInfo.getBottom(), 25, 25))
