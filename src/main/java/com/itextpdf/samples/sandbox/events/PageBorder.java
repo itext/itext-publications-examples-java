@@ -1,9 +1,9 @@
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.kernel.colors.ColorConstants;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -61,10 +61,10 @@ public class PageBorder {
         return factors;
     }
 
+    private static class PageBorderEventHandler extends AbstractPdfDocumentEventHandler {
 
-    private static class PageBorderEventHandler implements IEventHandler {
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             PdfCanvas canvas = new PdfCanvas(docEvent.getPage());
             Rectangle rect = docEvent.getPage().getPageSize();

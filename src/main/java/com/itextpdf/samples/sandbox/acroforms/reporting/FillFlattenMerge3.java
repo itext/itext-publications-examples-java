@@ -4,9 +4,9 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -98,8 +98,7 @@ public class FillFlattenMerge3 {
                 TextAlignment.LEFT, VerticalAlignment.BOTTOM, 0);
     }
 
-
-    protected class PaginationEventHandler implements IEventHandler {
+    protected static class PaginationEventHandler extends AbstractPdfDocumentEventHandler {
         PdfFormXObject background;
 
         public PaginationEventHandler(PdfFormXObject background) {
@@ -107,8 +106,8 @@ public class FillFlattenMerge3 {
         }
 
         @Override
-        public void handleEvent(Event event) {
-            PdfDocument pdfDoc = ((PdfDocumentEvent) event).getDocument();
+        public void onAcceptedEvent(AbstractPdfDocumentEvent event) {
+            PdfDocument pdfDoc = event.getDocument();
             int pageNum = pdfDoc.getPageNumber(((PdfDocumentEvent) event).getPage());
 
             // Add the background

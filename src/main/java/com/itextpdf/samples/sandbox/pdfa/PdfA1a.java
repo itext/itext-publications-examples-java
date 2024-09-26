@@ -1,9 +1,9 @@
 package com.itextpdf.samples.sandbox.pdfa;
 
 import com.itextpdf.io.font.PdfEncodings;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -129,9 +129,9 @@ public class PdfA1a {
     }
 
 
-    public class HeaderHandler implements IEventHandler {
+    public class HeaderHandler extends AbstractPdfDocumentEventHandler {
         @Override
-        public void handleEvent(Event event) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfPage page = docEvent.getPage();
             int pageNum = docEvent.getDocument().getPageNumber(page);

@@ -1,8 +1,8 @@
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -64,7 +64,7 @@ public class VariableHeader {
         return factors;
     }
 
-    private static class VariableHeaderEventHandler implements IEventHandler {
+    private static class VariableHeaderEventHandler extends AbstractPdfDocumentEventHandler {
         protected String header;
 
         public void setHeader(String header) {
@@ -72,7 +72,7 @@ public class VariableHeader {
         }
 
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent documentEvent = (PdfDocumentEvent) currentEvent;
             PdfPage page = documentEvent.getPage();
             new Canvas(page, page.getPageSize())

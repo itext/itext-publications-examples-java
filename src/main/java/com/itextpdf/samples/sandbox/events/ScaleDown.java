@@ -1,8 +1,8 @@
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfNumber;
@@ -50,8 +50,7 @@ public class ScaleDown {
         srcDoc.close();
     }
 
-
-    private static class ScaleDownEventHandler implements IEventHandler {
+    private static class ScaleDownEventHandler extends AbstractPdfDocumentEventHandler {
         protected float scale = 1;
         protected PdfDictionary pageDict;
 
@@ -64,7 +63,7 @@ public class ScaleDown {
         }
 
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             PdfPage page = docEvent.getPage();
 
