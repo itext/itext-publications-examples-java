@@ -7,6 +7,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.PdfUAConformance;
 import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.WriterProperties;
@@ -33,7 +34,7 @@ public class PdfUACanvasUsage {
 
     public void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(
-                    new PdfWriter(dest, new WriterProperties().addUAXmpMetadata()));
+                    new PdfWriter(dest, new WriterProperties().addPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)));
         pdfDoc.setTagged();
         pdfDoc.getCatalog().setViewerPreferences(new PdfViewerPreferences().setDisplayDocTitle(true));
         pdfDoc.getCatalog().setLang(new PdfString("en-US"));

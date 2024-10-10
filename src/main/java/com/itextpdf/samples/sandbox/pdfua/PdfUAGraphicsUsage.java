@@ -4,6 +4,7 @@ import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.PdfUAConformance;
 import com.itextpdf.kernel.pdf.PdfVersion;
 import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -30,8 +31,9 @@ public class PdfUAGraphicsUsage {
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(
-                new PdfWriter(dest, new WriterProperties().addUAXmpMetadata().setPdfVersion(PdfVersion.PDF_1_7)));
+        final WriterProperties writerProperties = new WriterProperties().addPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)
+                .setPdfVersion(PdfVersion.PDF_1_7);
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, writerProperties));
         pdfDoc.setTagged();
         pdfDoc.getCatalog().setViewerPreferences(new PdfViewerPreferences().setDisplayDocTitle(true));
         pdfDoc.getCatalog().setLang(new PdfString("en-US"));
