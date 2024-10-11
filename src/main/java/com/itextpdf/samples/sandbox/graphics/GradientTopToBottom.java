@@ -7,7 +7,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfDeviceCs;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
-import com.itextpdf.kernel.pdf.colorspace.PdfShading;
+import com.itextpdf.kernel.pdf.colorspace.shading.PdfAxialShading;
 
 import java.io.File;
 
@@ -27,7 +27,7 @@ public class GradientTopToBottom {
         pdfDoc.setDefaultPageSize(pageSize);
 
         PdfCanvas canvas = new PdfCanvas(pdfDoc.addNewPage());
-        PdfShading.Axial axial = new PdfShading.Axial(new PdfDeviceCs.Rgb(), 0, pageSize.getHeight(),
+        PdfAxialShading axial = new PdfAxialShading(new PdfDeviceCs.Rgb(), 0, pageSize.getHeight(),
                 ColorConstants.WHITE.getColorValue(), 0, 0, ColorConstants.GREEN.getColorValue());
         PdfPattern.Shading pattern = new PdfPattern.Shading(axial);
         canvas.setFillColorShading(pattern);

@@ -2,9 +2,9 @@ package com.itextpdf.samples.sandbox.pdfhtml;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
@@ -53,15 +53,15 @@ public class PdfHtmlHeaderAndFooter {
     }
 
     // Header event handler
-    protected class Header implements IEventHandler {
-        private String header;
+    protected static class Header extends AbstractPdfDocumentEventHandler {
+        private final String header;
 
         public Header(String header) {
             this.header = header;
         }
 
         @Override
-        public void handleEvent(Event event) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfDocument pdf = docEvent.getDocument();
 
@@ -80,7 +80,7 @@ public class PdfHtmlHeaderAndFooter {
     }
 
     // Footer event handler
-    protected class Footer implements IEventHandler {
+    protected static class Footer extends AbstractPdfDocumentEventHandler {
         protected PdfFormXObject placeholder;
         protected float side = 20;
         protected float x = 300;
@@ -93,7 +93,7 @@ public class PdfHtmlHeaderAndFooter {
         }
 
         @Override
-        public void handleEvent(Event event) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfDocument pdf = docEvent.getDocument();
             PdfPage page = docEvent.getPage();

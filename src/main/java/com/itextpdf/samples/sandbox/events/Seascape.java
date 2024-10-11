@@ -1,11 +1,9 @@
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfName;
-import com.itextpdf.kernel.pdf.PdfNumber;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.AreaBreak;
@@ -40,10 +38,10 @@ public class Seascape {
         doc.close();
     }
 
+    private static class SeascapeEventHandler extends AbstractPdfDocumentEventHandler {
 
-    private static class SeascapeEventHandler implements IEventHandler {
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent documentEvent = (PdfDocumentEvent) currentEvent;
             documentEvent.getPage().setRotation(270);
         }

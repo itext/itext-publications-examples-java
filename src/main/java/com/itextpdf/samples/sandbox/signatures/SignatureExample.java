@@ -3,18 +3,19 @@ package com.itextpdf.samples.sandbox.signatures;
 import com.itextpdf.forms.form.element.SignatureFieldAppearance;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.crypto.DigestAlgorithms;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.StampingProperties;
-import com.itextpdf.signatures.PdfSigner;
+import com.itextpdf.signatures.AccessPermissions;
+import com.itextpdf.signatures.BouncyCastleDigest;
+import com.itextpdf.signatures.CrlClientOnline;
+import com.itextpdf.signatures.ICrlClient;
 import com.itextpdf.signatures.IExternalSignature;
 import com.itextpdf.signatures.OcspClientBouncyCastle;
-import com.itextpdf.signatures.ICrlClient;
-import com.itextpdf.signatures.CrlClientOnline;
-import com.itextpdf.signatures.BouncyCastleDigest;
+import com.itextpdf.signatures.PdfSigner;
 import com.itextpdf.signatures.PrivateKeySignature;
-import com.itextpdf.signatures.DigestAlgorithms;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import com.itextpdf.signatures.SignerProperties;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,6 +27,7 @@ import java.security.cert.Certificate;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 public class SignatureExample {
     public static final String DEST = "./target/sandbox/signatures/signExample.pdf";
@@ -54,20 +56,23 @@ public class SignatureExample {
             throws Exception {
         PdfSigner pdfSigner = new PdfSigner(new PdfReader(SRC), new FileOutputStream(filePath),
                 new StampingProperties());
-        pdfSigner.setCertificationLevel(PdfSigner.CERTIFIED_NO_CHANGES_ALLOWED);
+        SignerProperties signerProperties = new SignerProperties();
+        signerProperties.setCertificationLevel(AccessPermissions.NO_CHANGES_PERMITTED);
 
         // Set the name indicating the field to be signed.
         // The field can already be present in the document but shall not be signed
-        pdfSigner.setFieldName("signature");
+        signerProperties.setFieldName("signature");
+
+        pdfSigner.setSignerProperties(signerProperties);
 
         ImageData clientSignatureImage = ImageDataFactory.create(IMAGE_PATH);
 
-        // If you create new signature field (or use SetFieldName(System.String) with
+        // If you create new signature field (or use SignerProperties#setFieldName with
         // the name that doesn't exist in the document or don't specify it at all) then
         // the signature is invisible by default.
-        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(pdfSigner.getFieldName())
+        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent(clientSignatureImage);
-        pdfSigner.setPageNumber(signatureInfo.getPageNumber())
+        signerProperties.setPageNumber(signatureInfo.getPageNumber())
                 .setPageRect(new Rectangle(signatureInfo.getLeft(), signatureInfo.getBottom(), 25, 25))
                 .setSignatureAppearance(signatureAppearance);
 

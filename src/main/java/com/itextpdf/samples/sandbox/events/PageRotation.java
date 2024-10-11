@@ -1,8 +1,8 @@
 package com.itextpdf.samples.sandbox.events;
 
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfNumber;
@@ -59,8 +59,7 @@ public class PageRotation {
         doc.close();
     }
 
-
-    private static class PageRotationEventHandler implements IEventHandler {
+    private static class PageRotationEventHandler extends AbstractPdfDocumentEventHandler {
         private PdfNumber rotation = PORTRAIT;
 
         public void setRotation(PdfNumber orientation) {
@@ -68,7 +67,7 @@ public class PageRotation {
         }
 
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             docEvent.getPage().put(PdfName.Rotate, rotation);
         }

@@ -10,14 +10,10 @@ import com.itextpdf.kernel.font.PdfFontFactory.EmbeddingStrategy;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfArray;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.kernel.pdf.PdfName;
 import com.itextpdf.kernel.pdf.PdfString;
-import com.itextpdf.kernel.pdf.PdfUAConformanceLevel;
-import com.itextpdf.kernel.pdf.PdfVersion;
-import com.itextpdf.kernel.pdf.PdfViewerPreferences;
+import com.itextpdf.kernel.pdf.PdfUAConformance;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.WriterProperties;
 import com.itextpdf.kernel.pdf.tagging.PdfStructureAttributes;
 import com.itextpdf.kernel.pdf.tagging.StandardRoles;
 import com.itextpdf.layout.Document;
@@ -33,9 +29,7 @@ import com.itextpdf.pdfua.PdfUAConfig;
 import com.itextpdf.pdfua.PdfUADocument;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import javax.print.Doc;
 
 public class PdfUA {
     public static final String DEST = "./target/sandbox/pdfua/pdf_ua.pdf";
@@ -55,7 +49,7 @@ public class PdfUA {
 
     public void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc =  new PdfUADocument(new PdfWriter(dest),
-                new PdfUAConfig(PdfUAConformanceLevel.PDFUA_1, "Some title", "en-US"));
+                new PdfUAConfig(PdfUAConformance.PDF_UA_1, "Some title", "en-US"));
         Document document = new Document(pdfDoc, PageSize.A4.rotate());
 
 

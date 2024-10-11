@@ -1,9 +1,9 @@
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -16,7 +16,6 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TextFooter {
@@ -44,8 +43,7 @@ public class TextFooter {
         doc.close();
     }
 
-
-    private static class TextFooterEventHandler implements IEventHandler {
+    private static class TextFooterEventHandler extends AbstractPdfDocumentEventHandler {
         protected Document doc;
 
         public TextFooterEventHandler(Document doc) {
@@ -53,7 +51,7 @@ public class TextFooter {
         }
 
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             Rectangle pageSize = docEvent.getPage().getPageSize();
             PdfFont font = null;

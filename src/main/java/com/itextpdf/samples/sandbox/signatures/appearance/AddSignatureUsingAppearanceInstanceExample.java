@@ -108,7 +108,7 @@ public class AddSignatureUsingAppearanceInstanceExample {
         SignerProperties signerProperties = new SignerProperties().setFieldName(signatureName);
 
         // Create the appearance instance and set the signature content to be shown and different appearance properties.
-        SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.getFieldName())
+        SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent("Signer", "Signature description. " +
                         "Signer is replaced to the one from the certificate.")
                 .setBackgroundColor(ColorConstants.YELLOW);

@@ -38,16 +38,18 @@ public class ModifyFormFieldAppearance {
             // It is not recommended to change font preferences since those won't be preserved after appearance changes,
             // but it is still possible.
             textArea.setProperty(Property.LEADING, new Leading(Leading.MULTIPLIED, 3f));
-            textArea.setItalic();
+            textArea.setFontColor(ColorConstants.RED);
             textFormField.getFirstFormAnnotation().setFormFieldElement(textArea);
 
             PdfButtonFormField buttonFormField = new PushButtonFormFieldBuilder(document, "button")
                     .setWidgetRectangle(new Rectangle(300, 400, 200, 200)).setCaption("Send").createPushButton();
             Button button = new Button("button");
             button.setOpacity(0.5f);
-            button.setBorderLeft(new SolidBorder(ColorConstants.RED, 10));
             button.setProperty(Property.PADDING_LEFT, UnitValue.createPointValue(50));
             button.setProperty(Property.PADDING_TOP, UnitValue.createPointValue(50));
+            // Border property will be overridden by the border specified for the buttonFormField annotation
+            button.setBorderLeft(new SolidBorder(ColorConstants.RED, 10));
+            buttonFormField.getFirstFormAnnotation().setBorderColor(ColorConstants.RED).setBorderWidth(10);
             buttonFormField.getFirstFormAnnotation().setFormFieldElement(button);
 
             PdfAcroForm acroForm = PdfFormCreator.getAcroForm(document, true);

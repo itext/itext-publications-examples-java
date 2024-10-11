@@ -1,14 +1,13 @@
 package com.itextpdf.samples.sandbox.tables;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
@@ -53,9 +52,9 @@ public class CountRows {
         document.close();
     }
 
-    private static class FooterEventHandler implements IEventHandler {
-        private Map<Integer, Integer> pageRowsCounts = new HashMap<>();
-        private Document document;
+    private static class FooterEventHandler extends AbstractPdfDocumentEventHandler {
+        private final Map<Integer, Integer> pageRowsCounts = new HashMap<>();
+        private final Document document;
 
         public FooterEventHandler(Document document) {
             this.document = document;
@@ -63,19 +62,14 @@ public class CountRows {
 
         public int addRow(int currentPageNumber) {
             int rows;
-            if (!pageRowsCounts.containsKey(currentPageNumber)) {
-                rows = 0;
-            } else {
-                rows = pageRowsCounts.get(currentPageNumber);
-            }
-
+            rows = pageRowsCounts.getOrDefault(currentPageNumber, 0);
             rows++;
             pageRowsCounts.put(currentPageNumber, rows);
             return rows;
         }
 
         @Override
-        public void handleEvent(Event currentEvent) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent currentEvent) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) currentEvent;
             PdfDocument pdfDoc = docEvent.getDocument();
             PdfPage page = docEvent.getPage();

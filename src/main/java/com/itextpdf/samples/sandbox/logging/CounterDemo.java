@@ -41,7 +41,7 @@ public class CounterDemo {
         EventManager.getInstance().unregister(logCounter);
     }
 
-    private static void createPdf() throws FileNotFoundException {
+    private static void createPdf() throws IOException {
         Document document = new Document(new PdfDocument(new PdfWriter(DEST_PDF)));
         document.add(new Paragraph("Hello World!"));
         document.close();

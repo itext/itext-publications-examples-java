@@ -9,16 +9,16 @@ import com.itextpdf.samples.sandbox.signatures.utils.PemFileHelper;
 import com.itextpdf.samples.sandbox.signatures.utils.TestOcspResponseBuilder;
 import com.itextpdf.signatures.IOcspClient;
 import com.itextpdf.signatures.IssuingCertificateRetriever;
-import com.itextpdf.signatures.validation.v1.SignatureValidationProperties;
-import com.itextpdf.signatures.validation.v1.SignatureValidator;
-import com.itextpdf.signatures.validation.v1.ValidatorChainBuilder;
-import com.itextpdf.signatures.validation.v1.context.CertificateSource;
-import com.itextpdf.signatures.validation.v1.context.CertificateSources;
-import com.itextpdf.signatures.validation.v1.context.TimeBasedContext;
-import com.itextpdf.signatures.validation.v1.context.TimeBasedContexts;
-import com.itextpdf.signatures.validation.v1.context.ValidatorContext;
-import com.itextpdf.signatures.validation.v1.context.ValidatorContexts;
-import com.itextpdf.signatures.validation.v1.report.ValidationReport;
+import com.itextpdf.signatures.validation.SignatureValidationProperties;
+import com.itextpdf.signatures.validation.SignatureValidator;
+import com.itextpdf.signatures.validation.ValidatorChainBuilder;
+import com.itextpdf.signatures.validation.context.CertificateSource;
+import com.itextpdf.signatures.validation.context.CertificateSources;
+import com.itextpdf.signatures.validation.context.TimeBasedContext;
+import com.itextpdf.signatures.validation.context.TimeBasedContexts;
+import com.itextpdf.signatures.validation.context.ValidatorContext;
+import com.itextpdf.signatures.validation.context.ValidatorContexts;
+import com.itextpdf.signatures.validation.report.ValidationReport;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.junit.jupiter.api.Assertions;
 
@@ -68,7 +68,7 @@ public class ValidateSignatureExample {
         certificateRetriever.setTrustedCertificates(Collections.singletonList(rootCert));
 
         ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
-                .withIssuingCertificateRetriever(certificateRetriever)
+                .withIssuingCertificateRetrieverFactory(() -> certificateRetriever)
                 .withSignatureValidationProperties(properties);
 
         ValidationReport report;

@@ -17,9 +17,9 @@ import javax.xml.transform.stream.StreamSource;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.kernel.colors.ColorConstants;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
@@ -96,7 +96,7 @@ public class C04E02_MovieTable2 {
         properties.setBaseUri(baseUri);
         PdfWriter writer = new PdfWriter(dest);
         PdfDocument pdf = new PdfDocument(writer);
-        IEventHandler handler = new Background(pdf, stationery);
+        AbstractPdfDocumentEventHandler handler = new Background(pdf, stationery);
         pdf.addEventHandler(PdfDocumentEvent.START_PAGE, handler);
         HtmlConverter.convertToPdf(new ByteArrayInputStream(html), pdf, properties);
     }
@@ -124,9 +124,9 @@ public class C04E02_MovieTable2 {
     }
 
     /**
-     * Implementation of the IEventHandler to add a background and a page number to every page.
+     * Implementation of the AbstractPdfDocumentEventHandler to add a background and a page number to every page.
      */
-    class Background implements IEventHandler {
+    static class Background extends AbstractPdfDocumentEventHandler {
 
         /**
          * The Form XObject that will be added as the background for every page.
@@ -138,7 +138,8 @@ public class C04E02_MovieTable2 {
          *
          * @param pdf the PdfDocument instance of the PDF to which the background will be added
          * @param src the path to the single-page PDF file
-         * @throws IOException signals that an I/O exception has occurred.
+         *
+         * @throws IOException signals that an I/O exception has occurred
          */
         public Background(PdfDocument pdf, String src) throws IOException {
             PdfDocument template = new PdfDocument(new PdfReader(src));
@@ -147,11 +148,8 @@ public class C04E02_MovieTable2 {
             template.close();
         }
 
-        /* (non-Javadoc)
-         * @see com.itextpdf.kernel.events.IEventHandler#handleEvent(com.itextpdf.kernel.events.Event)
-         */
         @Override
-        public void handleEvent(Event event) {
+        public void onAcceptedEvent(AbstractPdfDocumentEvent event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfDocument pdf = docEvent.getDocument();
             PdfPage page = docEvent.getPage();

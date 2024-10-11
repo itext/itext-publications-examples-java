@@ -11,7 +11,6 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ColoredLetters {
@@ -48,8 +47,7 @@ public class ColoredLetters {
         } else if (letter == 'g') {
             return new Text("g")
                     .setFontColor(ColorConstants.GREEN)
-                    .setFont(helveticaFont)
-                    .setItalic();
+                    .setFont(helveticaFont);
         } else {
             return new Text(String.valueOf(letter))
                     .setFontColor(ColorConstants.RED)

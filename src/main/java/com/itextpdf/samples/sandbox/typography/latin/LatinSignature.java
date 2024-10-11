@@ -3,6 +3,7 @@ package com.itextpdf.samples.sandbox.typography.latin;
 import com.itextpdf.forms.fields.properties.SignedAppearanceText;
 import com.itextpdf.forms.form.element.SignatureFieldAppearance;
 import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.kernel.crypto.DigestAlgorithms;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -11,11 +12,10 @@ import com.itextpdf.kernel.pdf.StampingProperties;
 import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.signatures.BouncyCastleDigest;
 import com.itextpdf.signatures.CertificateInfo;
-import com.itextpdf.signatures.DigestAlgorithms;
 import com.itextpdf.signatures.IExternalSignature;
 import com.itextpdf.signatures.PdfSigner;
 import com.itextpdf.signatures.PrivateKeySignature;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import com.itextpdf.signatures.SignerProperties;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,6 +32,7 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Enumeration;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 public class LatinSignature {
 
@@ -78,19 +79,18 @@ public class LatinSignature {
         Rectangle rect = new Rectangle(30, 500, 500, 100);
 
         // Set the name indicating the field to be signed
-        signer.setFieldName("Field1");
+        signer.setSignerProperties(new SignerProperties().setFieldName("Field1"));
 
         // Get Signature Appearance and set some of its properties
         String signerName = CertificateInfo.getSubjectFields((X509Certificate) signChain[0]).getField("CN");
-        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(signer.getFieldName())
+        SignatureFieldAppearance signatureAppearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent(new SignedAppearanceText()
                         .setSignedBy(signerName)
                         .setReasonLine(line3 + line1)
                         .setLocationLine("Location: " + line2)
-                        .setSignDate(signer.getSignDate()))
+                        .setSignDate(signer.getSignerProperties().getClaimedSignDate()))
                 .setFont(font);
-        signer.setPageRect(rect)
-                .setSignatureAppearance(signatureAppearance);
+        signer.getSignerProperties().setPageRect(rect).setSignatureAppearance(signatureAppearance);
 
         // Sign the document
         signer.signDetached(new BouncyCastleDigest(), pks, signChain, null, null, null, 0,

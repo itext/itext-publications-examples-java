@@ -13,14 +13,14 @@ import com.itextpdf.signatures.IOcspClient;
 import com.itextpdf.signatures.IssuingCertificateRetriever;
 import com.itextpdf.signatures.PdfPadesSigner;
 import com.itextpdf.signatures.SignerProperties;
-import com.itextpdf.signatures.validation.v1.CertificateChainValidator;
-import com.itextpdf.signatures.validation.v1.SignatureValidationProperties;
-import com.itextpdf.signatures.validation.v1.ValidatorChainBuilder;
-import com.itextpdf.signatures.validation.v1.context.CertificateSource;
-import com.itextpdf.signatures.validation.v1.context.TimeBasedContext;
-import com.itextpdf.signatures.validation.v1.context.ValidationContext;
-import com.itextpdf.signatures.validation.v1.context.ValidatorContext;
-import com.itextpdf.signatures.validation.v1.report.ValidationReport;
+import com.itextpdf.signatures.validation.CertificateChainValidator;
+import com.itextpdf.signatures.validation.SignatureValidationProperties;
+import com.itextpdf.signatures.validation.ValidatorChainBuilder;
+import com.itextpdf.signatures.validation.context.CertificateSource;
+import com.itextpdf.signatures.validation.context.TimeBasedContext;
+import com.itextpdf.signatures.validation.context.ValidationContext;
+import com.itextpdf.signatures.validation.context.ValidatorContext;
+import com.itextpdf.signatures.validation.report.ValidationReport;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.ByteArrayOutputStream;
@@ -71,15 +71,15 @@ public class ValidateChainBeforeSigningExample {
         X509Certificate rootCert = (X509Certificate) certificateChain[1];
 
         // Set up the validator.
-        SignatureValidationProperties properties = new SignatureValidationProperties();
+        SignatureValidationProperties properties = new SignatureValidationProperties()
+                .addOcspClient(getOcspClient());
         IssuingCertificateRetriever certificateRetriever = new IssuingCertificateRetriever();
         ValidatorChainBuilder validatorChainBuilder = new ValidatorChainBuilder()
-                .withIssuingCertificateRetriever(certificateRetriever)
+                .withIssuingCertificateRetrieverFactory(() -> certificateRetriever)
                 .withSignatureValidationProperties(properties);
 
         CertificateChainValidator validator = validatorChainBuilder.buildCertificateChainValidator();
         certificateRetriever.setTrustedCertificates(Collections.singletonList(rootCert));
-        validator.addOcspClient(getOcspClient());
 
         ValidationContext baseContext = new ValidationContext(ValidatorContext.CERTIFICATE_CHAIN_VALIDATOR,
                 CertificateSource.SIGNER_CERT, TimeBasedContext.PRESENT);
@@ -178,7 +178,7 @@ public class ValidateChainBeforeSigningExample {
     protected SignerProperties createSignerProperties() {
         SignerProperties signerProperties = new SignerProperties()
                 .setFieldName("Signature1");
-        SignatureFieldAppearance appearance = new SignatureFieldAppearance(signerProperties.getFieldName())
+        SignatureFieldAppearance appearance = new SignatureFieldAppearance(SignerProperties.IGNORED_ID)
                 .setContent("Approval test signature.\nCreated by iText.");
         signerProperties
                 .setPageNumber(1)

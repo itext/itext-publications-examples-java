@@ -3,9 +3,9 @@ package com.itextpdf.samples.sandbox.acroforms;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormCreator;
 import com.itextpdf.io.font.constants.StandardFonts;
-import com.itextpdf.kernel.events.Event;
-import com.itextpdf.kernel.events.IEventHandler;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEventHandler;
+import com.itextpdf.kernel.pdf.event.AbstractPdfDocumentEvent;
+import com.itextpdf.kernel.pdf.event.PdfDocumentEvent;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -68,8 +68,7 @@ public class AddExtraPage {
         doc.close();
     }
 
-
-    protected class PaginationEventHandler implements IEventHandler {
+    protected static class PaginationEventHandler extends AbstractPdfDocumentEventHandler {
         protected PdfFormXObject background;
 
         public PaginationEventHandler(PdfFormXObject background) {
@@ -77,8 +76,8 @@ public class AddExtraPage {
         }
 
         @Override
-        public void handleEvent(Event event) {
-            PdfDocument pdfDoc = ((PdfDocumentEvent) event).getDocument();
+        public void onAcceptedEvent(AbstractPdfDocumentEvent event) {
+            PdfDocument pdfDoc = event.getDocument();
             PdfPage currentPage = ((PdfDocumentEvent) event).getPage();
 
             // Add the background

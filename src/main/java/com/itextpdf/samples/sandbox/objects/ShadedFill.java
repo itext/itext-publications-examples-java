@@ -6,7 +6,7 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.colorspace.PdfDeviceCs;
 import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
-import com.itextpdf.kernel.pdf.colorspace.PdfShading;
+import com.itextpdf.kernel.pdf.colorspace.shading.PdfAxialShading;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,7 +30,7 @@ public class ShadedFill {
         // Side of an equilateral triangle
         float side = 70;
 
-        PdfShading.Axial axialShading = new PdfShading.Axial(new PdfDeviceCs.Rgb(), x, y, ColorConstants.PINK.getColorValue(),
+        PdfAxialShading axialShading = new PdfAxialShading(new PdfDeviceCs.Rgb(), x, y, ColorConstants.PINK.getColorValue(),
                 x + side, y, ColorConstants.BLUE.getColorValue());
         PdfPattern.Shading shading = new PdfPattern.Shading(axialShading);
 
