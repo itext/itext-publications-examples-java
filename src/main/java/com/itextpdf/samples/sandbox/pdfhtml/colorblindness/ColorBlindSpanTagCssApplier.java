@@ -17,10 +17,11 @@ public class ColorBlindSpanTagCssApplier extends SpanTagCssApplier {
 
     /**
      * Set the from of color blindness to simulate.
-     * Accepted values are Protanopia, Protanomaly, Deuteranopia, Deuteranomaly, Tritanopia, Tritanomaly, Achromatopsia, Achromatomaly.
+     * Accepted values are Protanopia, Protanomaly, Deuteranopia, Deuteranomaly, Tritanopia, Tritanomaly, Achromatopsia,
+     * Achromatomaly.
      * Default value is Protanopia
      *
-     * @param colorBlindness
+     * @param colorBlindness type of colorblindness
      */
     public void setColorBlindness(String colorBlindness) {
         this.colorBlindness = colorBlindness;

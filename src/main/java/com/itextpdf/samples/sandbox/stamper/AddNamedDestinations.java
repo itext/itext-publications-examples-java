@@ -58,7 +58,10 @@ public class AddNamedDestinations {
      *
      * @param src  The path to the PDF with the destinations
      * @param dest The path to the XML file
-     * @throws java.io.IOException
+     *
+     * @throws java.io.IOException          error during file creation/accessing
+     * @throws ParserConfigurationException error during document builder creation
+     * @throws TransformerException         error during transformation process
      */
     public void createXml(String src, String dest)
             throws IOException, ParserConfigurationException, TransformerException {

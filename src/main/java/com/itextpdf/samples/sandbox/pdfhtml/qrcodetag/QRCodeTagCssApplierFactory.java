@@ -7,7 +7,7 @@ import com.itextpdf.styledxmlparser.node.IElementNode;
 
 /**
  * Example of a custom CssApplier factory for pdfHTML
- * The tag <qr> is mapped on a BlockCssApplier. Every other tag is mapped to the default.
+ * The tag 'qr' is mapped on a BlockCssApplier. Every other tag is mapped to the default.
  */
 public class QRCodeTagCssApplierFactory extends DefaultCssApplierFactory {
 

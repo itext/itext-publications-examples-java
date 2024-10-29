@@ -50,13 +50,15 @@ public class C04E04_MovieOverview {
      * The main method of this example.
      *
      * @param args no arguments are needed to run this example.
-     * @throws IOException signals that an I/O exception has occurred.
+     *
+     * @throws IOException          signals that an I/O exception has occurred.
+     * @throws TransformerException error during transformation process
      */
     public static void main(String[] args) throws IOException, TransformerException {
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
-				+ "/itextkey-html2pdf_typography.json")) {
-			LicenseKey.loadLicenseFile(license);
-		}
+                + "/itextkey-html2pdf_typography.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
@@ -70,6 +72,7 @@ public class C04E04_MovieOverview {
      * @param html    the HTML file as a byte array
      * @param baseUri the base URI
      * @param dest    the path to the resulting PDF
+     *
      * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(byte[] html, String baseUri, String dest) throws IOException {
@@ -85,7 +88,9 @@ public class C04E04_MovieOverview {
      *
      * @param xmlPath the path to the XML file.
      * @param xslPath the path to the XSL file
+     *
      * @return the resulting HTML as a byte[]
+     *
      * @throws IOException          signals that an I/O exception has occurred.
      * @throws TransformerException the transformer exception
      */

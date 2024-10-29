@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * Example of a custom tagworker implementation for pdfHTML.
- * The tagworker processes a <qr> tag using iText Barcode functionality
+ * The tagworker processes a 'qr' tag using iText Barcode functionality
  */
 public class QRCodeTagWorker implements ITagWorker {
     private static String[] allowedErrorCorrection = {"L", "M", "Q", "H"};

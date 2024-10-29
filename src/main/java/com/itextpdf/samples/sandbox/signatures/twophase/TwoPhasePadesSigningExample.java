@@ -21,6 +21,7 @@ import com.itextpdf.signatures.PdfTwoPhaseSigner;
 import com.itextpdf.signatures.SignatureUtil;
 import com.itextpdf.signatures.SignerProperties;
 import com.itextpdf.signatures.cms.CMSContainer;
+
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
@@ -52,6 +53,10 @@ public class TwoPhasePadesSigningExample {
 
     /**
      * Basic example of two phase document signing with PaDES Baseline-LT Profile.
+     *
+     * @param args no arguments are needed to run this example.
+     *
+     * @throws Exception some error during file creation/accessing or during signing
      */
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -73,25 +78,112 @@ public class TwoPhasePadesSigningExample {
     }
 
     /**
+     * Complete the signing process.
+     *
+     * @param src              the path to the prepared document
+     * @param dest             the path to the signed document
+     * @param signerProperties the signerproperties used to sign
+     * @param signature        the signature
+     * @param digestAlgorithm  the used digest algorithm name
+     * @param signingAlgoritm  the used signing algorithm
+     * @param signingParams    the used signong algorithm properties
+     *
+     * @throws Exception if some exception occur.
+     */
+    public void signSignatureWithBaselineLTProfile(String src, String dest, SignerProperties signerProperties,
+            byte[] signature, String digestAlgorithm, String signingAlgoritm,
+            ISignatureMechanismParams signingParams)
+            throws Exception {
+
+        // Extract the prepared CMS container from the prepared document.
+        CMSContainer cmsContainer;
+        try (PdfReader reader = new PdfReader(src);
+                PdfDocument doc = new PdfDocument(reader)) {
+            SignatureUtil su = new SignatureUtil(doc);
+            PdfSignature preparedSignature = su.getSignature(signerProperties.getFieldName());
+            cmsContainer = new CMSContainer(preparedSignature.getContents().getValueBytes());
+        }
+
+        // Second phase of signing.
+        PadesTwoPhaseSigningHelper helper = new PadesTwoPhaseSigningHelper();
+        helper.setTrustedCertificates(getTrustedStore());
+        helper.setTSAClient(getTsaClient());
+        helper.setOcspClient(getOcspClient());
+        helper.setCrlClient(getCrlClient());
+
+        try (PdfReader reader = new PdfReader(src);
+                OutputStream outputStream = new FileOutputStream(dest)) {
+            // An external signature implementation that starts from an existing signature.
+            IExternalSignature externalSignature = new SignatureProvider(signature, digestAlgorithm, signingAlgoritm,
+                    signingParams);
+
+            helper.signCMSContainerWithBaselineTProfile(externalSignature, reader, outputStream,
+                    signerProperties.getFieldName(), cmsContainer);
+        }
+    }
+
+    /**
      * This method simulates signing outside this application.
      *
      * @param signedAttributes     the data to be signed
      * @param pk                   the private key
-     * @param signingAlgorithmName the signing algorithm name, see  <a href="https://docs.oracle.com/en/java/javase/11/docs/specs/security/standard-names.html#signature-algorithms">...</a>
+     * @param signingAlgorithmName the signing algorithm name, see  <a
+     *                             href="https://docs.oracle.com/en/java/javase/11/docs/specs/security/standard-names
+     *                             .html#signature-algorithms">...</a>
+     *
      * @return the signature of the data.
+     *
      * @throws NoSuchAlgorithmException when the signing algorithm is unknown.
      * @throws InvalidKeyException      when the private key mismatches the algorithm.
      * @throws SignatureException       if this Signature object is not initialized properly or if this
      *                                  signature algorithm is unable to process the input data provided.
      */
     protected static byte[] getSignatureForSignedAttributes(byte[] signedAttributes, PrivateKey pk,
-                                                            String signingAlgorithmName) throws NoSuchAlgorithmException,
+            String signingAlgorithmName) throws NoSuchAlgorithmException,
             InvalidKeyException, SignatureException {
 
         Signature signature = Signature.getInstance(signingAlgorithmName);
         signature.initSign(pk);
         signature.update(signedAttributes);
         return signature.sign();
+    }
+
+    /**
+     * Prepare the document and put the prepared cms container in it for later reuse.
+     *
+     * @param src              the path to the document to be signed
+     * @param prep             the path to the prepared document
+     * @param certificateChain the certificate chain
+     * @param digestAlgoritm   the name of the digest algorithm
+     * @param signerProperties the signer properties to use to prepare the document
+     *
+     * @return A prepared CMS container.
+     *
+     * @throws IOException              when a problem occurs opening or creating the source or prepared file.
+     * @throws GeneralSecurityException when a problem occurs processing the certificate chain.
+     */
+    private CMSContainer prepareDocument(String src, String prep, Certificate[] certificateChain, String digestAlgoritm,
+            SignerProperties signerProperties)
+            throws IOException, GeneralSecurityException {
+        CMSContainer cmsContainer;
+
+        try (PdfReader reader = new PdfReader(src);
+                OutputStream outputStream = new FileOutputStream(prep + ".working")) {
+            PadesTwoPhaseSigningHelper helper = new PadesTwoPhaseSigningHelper();
+            helper.setTrustedCertificates(getTrustedStore());
+            cmsContainer = helper.createCMSContainerWithoutSignature(certificateChain, digestAlgoritm, reader,
+                    outputStream, signerProperties);
+        }
+        // This is optional, the CMS container can be stored in any way.
+        // Adding the prepared CMS container to the prepared document
+        try (PdfReader reader = new PdfReader(prep + ".working");
+                PdfDocument doc = new PdfDocument(reader);
+                OutputStream outputStream = new FileOutputStream(prep)) {
+            PdfTwoPhaseSigner.addSignatureToPreparedDocument(doc, signerProperties.getFieldName(), outputStream,
+                    cmsContainer);
+        }
+        FileUtil.deleteFile(new File(prep + ".working"));
+        return cmsContainer;
     }
 
     /**
@@ -210,86 +302,6 @@ public class TwoPhasePadesSigningExample {
     }
 
     /**
-     * Prepare the document and put the prepared cms container in it for later reuse.
-     *
-     * @param src              the path to the document to be signed
-     * @param prep             the path to the prepared document
-     * @param certificateChain the certificate chain
-     * @param digestAlgoritm   the name of the digest algorithm
-     * @param signerProperties the signer properties to use to prepare the document
-     * @return A prepared CMS container.
-     * @throws IOException              when a problem occurs opening or creating the source or prepared file.
-     * @throws GeneralSecurityException when a problem occurs processing the certificate chain.
-     */
-    private CMSContainer prepareDocument(String src, String prep, Certificate[] certificateChain, String digestAlgoritm,
-                                         SignerProperties signerProperties)
-            throws IOException, GeneralSecurityException {
-        CMSContainer cmsContainer;
-
-        try (PdfReader reader = new PdfReader(src);
-             OutputStream outputStream = new FileOutputStream(prep + ".working")) {
-            PadesTwoPhaseSigningHelper helper = new PadesTwoPhaseSigningHelper();
-            helper.setTrustedCertificates(getTrustedStore());
-            cmsContainer = helper.createCMSContainerWithoutSignature(certificateChain, digestAlgoritm, reader,
-                    outputStream, signerProperties);
-        }
-        // This is optional, the CMS container can be stored in any way.
-        // Adding the prepared CMS container to the prepared document
-        try (PdfReader reader = new PdfReader(prep + ".working");
-             PdfDocument doc = new PdfDocument(reader);
-             OutputStream outputStream = new FileOutputStream(prep)) {
-            PdfTwoPhaseSigner.addSignatureToPreparedDocument(doc, signerProperties.getFieldName(), outputStream,
-                    cmsContainer);
-        }
-        FileUtil.deleteFile(new File(prep + ".working"));
-        return cmsContainer;
-    }
-
-    /**
-     * Complete the signing process.
-     *
-     * @param src              the path to the prepared document
-     * @param dest             the path to the signed document
-     * @param signerProperties the signerproperties used to sign
-     * @param signature        the signature
-     * @param digestAlgorithm  the used digest algorithm name
-     * @param signingAlgoritm  the used signing algorithm
-     * @param signingParams    the used signong algorithm properties
-     * @throws Exception if some exception occur.
-     */
-    public void signSignatureWithBaselineLTProfile(String src, String dest, SignerProperties signerProperties,
-                                                   byte[] signature, String digestAlgorithm, String signingAlgoritm,
-                                                   ISignatureMechanismParams signingParams)
-            throws Exception {
-
-        // Extract the prepared CMS container from the prepared document.
-        CMSContainer cmsContainer;
-        try (PdfReader reader = new PdfReader(src);
-             PdfDocument doc = new PdfDocument(reader)) {
-            SignatureUtil su = new SignatureUtil(doc);
-            PdfSignature preparedSignature = su.getSignature(signerProperties.getFieldName());
-            cmsContainer = new CMSContainer(preparedSignature.getContents().getValueBytes());
-        }
-
-        // Second phase of signing.
-        PadesTwoPhaseSigningHelper helper = new PadesTwoPhaseSigningHelper();
-        helper.setTrustedCertificates(getTrustedStore());
-        helper.setTSAClient(getTsaClient());
-        helper.setOcspClient(getOcspClient());
-        helper.setCrlClient(getCrlClient());
-
-        try (PdfReader reader = new PdfReader(src);
-             OutputStream outputStream = new FileOutputStream(dest)) {
-            // An external signature implementation that starts from an existing signature.
-            IExternalSignature externalSignature = new SignatureProvider(signature, digestAlgorithm, signingAlgoritm,
-                    signingParams);
-
-            helper.signCMSContainerWithBaselineTProfile(externalSignature, reader, outputStream,
-                    signerProperties.getFieldName(), cmsContainer);
-        }
-    }
-
-    /**
      * An IExternalSignature implementation that adds a previously created signature.
      */
     private static class SignatureProvider implements IExternalSignature {
@@ -299,7 +311,7 @@ public class TwoPhasePadesSigningExample {
         private ISignatureMechanismParams signatureMechanismParameters;
 
         public SignatureProvider(byte[] signature, String digestAlgorithm, String signatureAlgorithm,
-                                 ISignatureMechanismParams signatureMechanismParameters) {
+                ISignatureMechanismParams signatureMechanismParameters) {
             this.signature = Arrays.copyOf(signature, signature.length);
             this.digestAlgorithm = digestAlgorithm;
             this.signatureAlgorithm = signatureAlgorithm;
