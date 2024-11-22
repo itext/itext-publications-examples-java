@@ -177,9 +177,8 @@ public class TwoPhasePadesSigningExample {
         // This is optional, the CMS container can be stored in any way.
         // Adding the prepared CMS container to the prepared document
         try (PdfReader reader = new PdfReader(prep + ".working");
-                PdfDocument doc = new PdfDocument(reader);
                 OutputStream outputStream = new FileOutputStream(prep)) {
-            PdfTwoPhaseSigner.addSignatureToPreparedDocument(doc, signerProperties.getFieldName(), outputStream,
+            PdfTwoPhaseSigner.addSignatureToPreparedDocument(reader, signerProperties.getFieldName(), outputStream,
                     cmsContainer);
         }
         FileUtil.deleteFile(new File(prep + ".working"));
