@@ -145,7 +145,7 @@ public class BasicSample {
         XMPMetaFactory.getSchemaRegistry().registerNamespace(zugferdNamespace, zugferdPrefix);
 
         xmp.setProperty(zugferdNamespace, "DocumentType", "INVOICE");
-        xmp.setProperty(zugferdNamespace, "Version", "2p0");
+        xmp.setProperty(zugferdNamespace, "Version", "1.0");
         xmp.setProperty(zugferdNamespace, "ConformanceLevel", "BASIC");
         xmp.setProperty(zugferdNamespace, "DocumentFileName", "factur-x.xml");
 
