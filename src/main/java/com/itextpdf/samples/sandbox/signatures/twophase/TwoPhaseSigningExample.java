@@ -207,7 +207,7 @@ public class TwoPhaseSigningExample {
     public void completePreparedDocument(String preparedDocumentPath, String targetPath, String fieldName,
                                          byte[] signature) throws IOException, GeneralSecurityException {
         try (PdfReader reader = new PdfReader(preparedDocumentPath);
-             PdfDocument document = new PdfDocument(reader);
+             PdfDocument document = new PdfDocument(new PdfReader(preparedDocumentPath));
              FileOutputStream outputStream = new FileOutputStream(targetPath)) {
             // 1. Read the documents CMS container
             SignatureUtil su = new SignatureUtil(document);
@@ -219,7 +219,7 @@ public class TwoPhaseSigningExample {
             // 2. Add the signatureValue to the CMS
             cmsContainer.getSignerInfo().setSignature(signature);
 
-            PdfTwoPhaseSigner.addSignatureToPreparedDocument(document, fieldName, outputStream,
+            PdfTwoPhaseSigner.addSignatureToPreparedDocument(reader, fieldName, outputStream,
                     cmsContainer.serialize());
         }
     }
