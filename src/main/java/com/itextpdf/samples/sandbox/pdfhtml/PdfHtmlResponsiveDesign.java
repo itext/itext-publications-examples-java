@@ -2,7 +2,6 @@ package com.itextpdf.samples.sandbox.pdfhtml;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -10,6 +9,7 @@ import com.itextpdf.layout.font.FontProvider;
 import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
 import com.itextpdf.styledxmlparser.css.media.MediaType;
 import com.itextpdf.styledxmlparser.css.util.CssDimensionParsingUtils;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,7 +56,7 @@ public class PdfHtmlResponsiveDesign {
         mediaDescription.setWidth(screenWidth);
         converterProperties.setMediaDeviceDescription(mediaDescription);
 
-        FontProvider fp = new DefaultFontProvider();
+        FontProvider fp = new BasicFontProvider();
 
         // Register external font directory
         fp.addDirectory(resourceLoc);

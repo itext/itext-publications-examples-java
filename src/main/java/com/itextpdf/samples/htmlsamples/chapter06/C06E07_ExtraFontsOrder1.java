@@ -6,11 +6,11 @@ import java.io.IOException;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.io.font.FontProgram;
 import com.itextpdf.io.font.FontProgramFactory;
 import com.itextpdf.layout.font.FontProvider;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 public class C06E07_ExtraFontsOrder1 {
 
@@ -58,7 +58,7 @@ public class C06E07_ExtraFontsOrder1 {
      */
     public void createPdf(String src, String[] fonts, String dest) throws IOException {
     	ConverterProperties properties = new ConverterProperties();
-    	FontProvider fontProvider = new DefaultFontProvider(false, false, false);
+    	FontProvider fontProvider = new BasicFontProvider(false, false, false);
     	for (String font : fonts) {
     		FontProgram fontProgram = FontProgramFactory.createFont(font);
     		fontProvider.addFont(fontProgram);

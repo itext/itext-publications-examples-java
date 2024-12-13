@@ -6,7 +6,6 @@ import com.itextpdf.html2pdf.attach.ITagWorker;
 import com.itextpdf.html2pdf.attach.ProcessorContext;
 import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
 import com.itextpdf.html2pdf.attach.impl.tags.HTagWorker;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.pdf.*;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
@@ -17,6 +16,7 @@ import com.itextpdf.layout.element.IElement;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.pdfa.PdfADocument;
 import com.itextpdf.styledxmlparser.node.IElementNode;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 import com.itextpdf.test.pdfa.VeraPdfValidator;
 
 import java.io.ByteArrayInputStream;
@@ -94,7 +94,7 @@ public class Wtpdf {
         info.setTitle("Well tagged PDF document");
 
         // Use custom font provider as we only want embedded fonts
-        DefaultFontProvider fontProvider = new DefaultFontProvider(false, false, false);
+        BasicFontProvider fontProvider = new BasicFontProvider(false, false, false);
         fontProvider.addFont(SOURCE_FOLDER + "NotoSans-Regular.ttf");
         fontProvider.addFont(SOURCE_FOLDER + "NotoEmoji-Regular.ttf");
 

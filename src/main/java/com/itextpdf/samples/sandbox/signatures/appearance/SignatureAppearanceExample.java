@@ -3,7 +3,6 @@ package com.itextpdf.samples.sandbox.signatures.appearance;
 import com.itextpdf.commons.utils.DateTimeUtil;
 import com.itextpdf.commons.utils.FileUtil;
 import com.itextpdf.forms.form.element.SignatureFieldAppearance;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.io.font.constants.StandardFontFamilies;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -17,6 +16,7 @@ import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.properties.*;
 import com.itextpdf.samples.sandbox.signatures.utils.PemFileHelper;
 import com.itextpdf.signatures.*;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.io.File;
@@ -65,7 +65,7 @@ public class SignatureAppearanceExample {
                 .setFontSize(30);
         // Use setFont in order to specify the font, e.g. appearance.setFont(PdfFontFactory.createFont());
         appearance.setFontFamily(StandardFontFamilies.HELVETICA)
-                .setProperty(Property.FONT_PROVIDER, new DefaultFontProvider());
+                .setProperty(Property.FONT_PROVIDER, new BasicFontProvider());
 
         // Set signer properties
         SignerProperties signerProperties = new SignerProperties()

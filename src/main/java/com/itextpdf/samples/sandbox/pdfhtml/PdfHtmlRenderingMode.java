@@ -9,13 +9,13 @@ import com.itextpdf.html2pdf.css.apply.ICssApplierFactory;
 import com.itextpdf.html2pdf.css.apply.impl.BodyTagCssApplier;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
 import com.itextpdf.html2pdf.html.TagConstants;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.layout.IPropertyContainer;
 import com.itextpdf.layout.font.FontProvider;
 import com.itextpdf.layout.properties.Property;
 import com.itextpdf.layout.properties.RenderingMode;
 import com.itextpdf.styledxmlparser.node.IElementNode;
 import com.itextpdf.styledxmlparser.node.IStylesContainer;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,7 +47,7 @@ public class PdfHtmlRenderingMode {
         // are specified explicitly by means of iText `FontProvider` class or CSS `@font-face` rule, then pdfHTML shipped fonts covering a wide range
         // of glyphs are used instead. In order to replicate old behavior, one needs to exclude from `FontProvider` the fonts shipped by default and
         // provide GNU Free Fonts instead. GNU Free Fonts can be found at https://www.gnu.org/software/freefont/.
-        FontProvider fontProvider = new DefaultFontProvider(true, false, false);
+        FontProvider fontProvider = new BasicFontProvider(true, false, false);
         fontProvider.addDirectory(freeFontsDirectory);
 
         ConverterProperties converterProperties = new ConverterProperties()
