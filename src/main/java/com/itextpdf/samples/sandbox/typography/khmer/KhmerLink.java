@@ -43,7 +43,7 @@ public class KhmerLink {
         // ភាសាខ្មែរ
         String text = "\u1797\u17B6\u179F\u17B6\u1781\u17D2\u1798\u17C2\u179A";
 
-        PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "KhmerOS.ttf", PdfEncodings.IDENTITY_H);
+        PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansKhmer-Regular.ttf", PdfEncodings.IDENTITY_H);
 
         // Create an action with an URI. Use the action together with text to create a Link element
         Link link = new Link(text, PdfAction.createURI("http://itextpdf.com"));
