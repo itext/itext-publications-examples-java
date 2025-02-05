@@ -3,21 +3,21 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>9.1.0-SNAPSHOT</version>
+  <version>9.2.0-SNAPSHOT</version>
   <name>iText Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
-    <cleanup.version>5.0.1-SNAPSHOT</cleanup.version>
+    <cleanup.version>5.0.2-SNAPSHOT</cleanup.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
-    <html2pdf.version>6.1.0-SNAPSHOT</html2pdf.version>
+    <html2pdf.version>6.2.0-SNAPSHOT</html2pdf.version>
     <java.version>1.8</java.version>
-    <pdfxfa.version>5.0.1-SNAPSHOT</pdfxfa.version>
-    <licensekey.version>4.2.1-SNAPSHOT</licensekey.version>
+    <pdfxfa.version>5.0.2-SNAPSHOT</pdfxfa.version>
+    <licensekey.version>4.2.2-SNAPSHOT</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <spotbugs.version>3.1.11</spotbugs.version>
-    <typography.version>5.0.1-SNAPSHOT</typography.version>
+    <typography.version>5.0.2-SNAPSHOT</typography.version>
   </properties>
   <dependencies>
     <dependency>
