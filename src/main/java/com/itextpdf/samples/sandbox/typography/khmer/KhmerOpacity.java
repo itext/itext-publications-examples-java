@@ -45,7 +45,7 @@ public class KhmerOpacity {
 
         // Embedded parameter indicates whether the font is to be embedded into the target document.
         // We set it to make sure that the resultant document looks the same within different environments
-        PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "KhmerOS.ttf", PdfEncodings.IDENTITY_H,
+        PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansKhmer-Regular.ttf", PdfEncodings.IDENTITY_H,
                 EmbeddingStrategy.PREFER_EMBEDDED);
 
         // Overwrite some default document font-related properties. From now on they will be used for all the elements

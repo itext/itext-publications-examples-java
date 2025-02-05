@@ -153,9 +153,8 @@ public class TwoPhaseSigningExample {
         // 4. This step is completely optional. Add the CMS container to the document
         // to avoid having to build it again, or storing it separately from the document
         try (PdfReader reader = new PdfReader(targetPath + ".temp");
-             PdfDocument document = new PdfDocument(reader);
              FileOutputStream outputStream = new FileOutputStream(targetPath)) {
-            PdfTwoPhaseSigner.addSignatureToPreparedDocument(document, signerProperties.getFieldName(), outputStream,
+            PdfTwoPhaseSigner.addSignatureToPreparedDocument(reader, signerProperties.getFieldName(), outputStream,
                     cmsContainer.serialize());
         }
 
@@ -208,7 +207,7 @@ public class TwoPhaseSigningExample {
     public void completePreparedDocument(String preparedDocumentPath, String targetPath, String fieldName,
                                          byte[] signature) throws IOException, GeneralSecurityException {
         try (PdfReader reader = new PdfReader(preparedDocumentPath);
-             PdfDocument document = new PdfDocument(reader);
+             PdfDocument document = new PdfDocument(new PdfReader(preparedDocumentPath));
              FileOutputStream outputStream = new FileOutputStream(targetPath)) {
             // 1. Read the documents CMS container
             SignatureUtil su = new SignatureUtil(document);
@@ -220,7 +219,7 @@ public class TwoPhaseSigningExample {
             // 2. Add the signatureValue to the CMS
             cmsContainer.getSignerInfo().setSignature(signature);
 
-            PdfTwoPhaseSigner.addSignatureToPreparedDocument(document, fieldName, outputStream,
+            PdfTwoPhaseSigner.addSignatureToPreparedDocument(reader, fieldName, outputStream,
                     cmsContainer.serialize());
         }
     }

@@ -2,9 +2,9 @@ package com.itextpdf.samples.sandbox.pdfhtml;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.pdf.PdfAConformance;
 import com.itextpdf.kernel.pdf.PdfOutputIntent;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,7 +36,7 @@ public class HtmlToPdfA3Convert {
                         inputStream));
 
 
-        converterProperties.setFontProvider(new DefaultFontProvider(false, true, false));
+        converterProperties.setFontProvider(new BasicFontProvider(false, true, false));
 
         HtmlConverter.convertToPdf(new FileInputStream(htmlSource), new FileOutputStream(pdfDest), converterProperties);
     }

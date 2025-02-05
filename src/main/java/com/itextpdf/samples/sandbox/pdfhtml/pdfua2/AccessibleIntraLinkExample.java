@@ -2,7 +2,6 @@ package com.itextpdf.samples.sandbox.pdfhtml.pdfua2;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.kernel.pdf.PdfString;
@@ -14,6 +13,7 @@ import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
 import com.itextpdf.kernel.xmp.XMPMetaFactory;
 import com.itextpdf.layout.font.FontProvider;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -42,7 +42,7 @@ public class AccessibleIntraLinkExample {
         // Create pdf/ua-2 document in which content will be placed
         createSimplePdfUA2Document(pdfDocument);
         ConverterProperties converterProperties = new ConverterProperties();
-        FontProvider fontProvider = new DefaultFontProvider(false, true, false);
+        FontProvider fontProvider = new BasicFontProvider(false, true, false);
         // Base URI is required to resolve the path to source files, setting font provider which provides only embeddable fonts
         converterProperties.setFontProvider(fontProvider).setBaseUri(resourceLoc);;
         HtmlConverter.convertToPdf(new FileInputStream(htmlSource), pdfDocument, converterProperties);

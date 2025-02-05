@@ -19,8 +19,6 @@ The following fonts were found thanks to this article and link:
 http://hellohappy.org/beautiful-web-type/
 https://github.com/ubuwaits/beautiful-web-type
 
-KhmerOS - LGPL license you can find following the link: https://www.gnu.org/licenses
-
 Apache license: apache.txt
 
 OpenSans-Regular.ttf

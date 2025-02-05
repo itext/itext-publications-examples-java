@@ -64,7 +64,7 @@ public class BasicSample {
         PdfDictionary parameters = new PdfDictionary();
         parameters.put(PdfName.ModDate, new PdfDate().getPdfObject());
         PdfFileSpec fileSpec = PdfFileSpec.createEmbeddedFileSpec(pdfDoc, new FileInputStream(xmlFile),
-                "ZUGFeRD invoice", "ZUGFeRD-invoice.xml", new PdfName("application/xml"), parameters, PdfName.Alternative);
+                "ZUGFeRD invoice", "factur-x.xml", new PdfName("application/xml"), parameters, PdfName.Alternative);
         pdfDoc.addFileAttachment("ZUGFeRD invoice", fileSpec);
         PdfArray array = new PdfArray();
         array.add(fileSpec.getPdfObject().getIndirectReference());
@@ -141,7 +141,7 @@ public class BasicSample {
     private static XMPMeta createValidXmp(PdfADocument pdfDoc) throws XMPException {
         XMPMeta xmp = pdfDoc.getXmpMetadata(true);
         String zugferdNamespace = "urn:ferd:pdfa:CrossIndustryDocument:invoice:1p0#";
-        String zugferdPrefix = "zf";
+        String zugferdPrefix = "fx";
         XMPMetaFactory.getSchemaRegistry().registerNamespace(zugferdNamespace, zugferdPrefix);
 
         xmp.setProperty(zugferdNamespace, "DocumentType", "INVOICE");

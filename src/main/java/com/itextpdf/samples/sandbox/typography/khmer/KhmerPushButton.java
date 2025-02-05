@@ -41,7 +41,7 @@ public class KhmerPushButton {
 
         PdfAcroForm form = PdfFormCreator.getAcroForm(pdfDocument, true);
 
-        PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "KhmerOS.ttf",
+        PdfFont font = PdfFontFactory.createFont(FONTS_FOLDER + "NotoSansKhmer-Regular.ttf",
                 PdfEncodings.IDENTITY_H);
 
         // Embed entire font without any subsetting. Please note that without subset it's impossible to edit a form field

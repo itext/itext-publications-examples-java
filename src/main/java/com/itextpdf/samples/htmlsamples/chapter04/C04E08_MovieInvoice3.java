@@ -62,13 +62,15 @@ public class C04E08_MovieInvoice3 {
      * The main method of this example.
      *
      * @param args no arguments are needed to run this example.
-     * @throws IOException signals that an I/O exception has occurred.
+     *
+     * @throws IOException          signals that an I/O exception has occurred.
+     * @throws TransformerException error during transformation process
      */
     public static void main(String[] args) throws IOException, TransformerException {
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
-				+ "/itextkey-html2pdf_typography.json")) {
-			LicenseKey.loadLicenseFile(license);
-		}
+                + "/itextkey-html2pdf_typography.json")) {
+            LicenseKey.loadLicenseFile(license);
+        }
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
@@ -84,6 +86,7 @@ public class C04E08_MovieInvoice3 {
      * @param baseUri the base URI
      * @param dest    the path to the resulting PDF
      * @param intent  a path to the output intent
+     *
      * @throws IOException signals that an I/O exception has occurred.
      */
     public void createPdf(byte[] xml, byte[] html, String baseUri, String dest, String intent) throws IOException {
@@ -105,7 +108,9 @@ public class C04E08_MovieInvoice3 {
      *
      * @param xmlPath the path to the XML file.
      * @param xslPath the path to the XSL file
+     *
      * @return the resulting HTML as a byte[]
+     *
      * @throws IOException          signals that an I/O exception has occurred.
      * @throws TransformerException the transformer exception
      */
@@ -126,7 +131,9 @@ public class C04E08_MovieInvoice3 {
      * Gets the bytes from a file.
      *
      * @param file the path to the file
+     *
      * @return the bytes
+     *
      * @throws IOException signals that an I/O exception has occurred.
      */
     public byte[] getBytes(String file) throws IOException {

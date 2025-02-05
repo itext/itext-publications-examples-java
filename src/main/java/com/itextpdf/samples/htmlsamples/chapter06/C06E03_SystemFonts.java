@@ -6,8 +6,8 @@ import java.io.IOException;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 public class C06E03_SystemFonts {
 
@@ -48,7 +48,7 @@ public class C06E03_SystemFonts {
      */
     public void createPdf(String src, String dest) throws IOException {
         ConverterProperties properties = new ConverterProperties();
-        properties.setFontProvider(new DefaultFontProvider(true, true, true));
+        properties.setFontProvider(new BasicFontProvider(true, true, true));
         HtmlConverter.convertToPdf(new File(src), new File(dest), properties);
     }
 }

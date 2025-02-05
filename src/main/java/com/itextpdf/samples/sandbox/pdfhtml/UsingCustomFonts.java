@@ -2,15 +2,14 @@ package com.itextpdf.samples.sandbox.pdfhtml;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -35,7 +34,7 @@ public class UsingCustomFonts {
         PdfDocument pdfDoc = new PdfDocument(writer);
 
         // Default provider will register standard fonts and free fonts shipped with iText, but not system fonts
-        FontProvider provider = new DefaultFontProvider();
+        FontProvider provider = new BasicFontProvider();
 
         // 1. Register all fonts in a directory
         provider.addDirectory(FONT_FOLDER);

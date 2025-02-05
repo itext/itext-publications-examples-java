@@ -6,12 +6,12 @@ import java.io.IOException;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 
 public class C07E13_Peace {
 
@@ -61,7 +61,7 @@ public class C07E13_Peace {
         PdfDocument pdf = new PdfDocument(writer);
         pdf.setDefaultPageSize(PageSize.A4.rotate());
         ConverterProperties properties = new ConverterProperties();
-        FontProvider fontProvider = new DefaultFontProvider(false, false, false);
+        FontProvider fontProvider = new BasicFontProvider(false, false, false);
         fontProvider.addDirectory(fonts);
         properties.setFontProvider(fontProvider);
         HtmlConverter.convertToPdf(new FileInputStream(src), pdf, properties);

@@ -20,7 +20,6 @@ import com.itextpdf.signatures.validation.context.ValidatorContext;
 import com.itextpdf.signatures.validation.context.ValidatorContexts;
 import com.itextpdf.signatures.validation.report.ValidationReport;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.junit.jupiter.api.Assertions;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,6 +30,7 @@ import java.security.cert.X509Certificate;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 /**
  * Basic example of the existing signature validation.
@@ -78,7 +78,7 @@ public class ValidateSignatureExample {
             // Validate all signatures in the document.
             report = validator.validateSignatures();
         }
-        Assertions.assertSame(report.getValidationResult(), ValidationReport.ValidationResult.VALID);
+        assert(report.getValidationResult().equals(ValidationReport.ValidationResult.VALID));
 
         // Write validation report to the file.
         try (FileOutputStream fos = new FileOutputStream(dest)) {

@@ -7,7 +7,7 @@ import com.itextpdf.styledxmlparser.node.IElementNode;
 
 /**
  * Example of a custom tagworkerfactory for pdfHTML
- * The tag <qr> is mapped on a QRCode tagworker. Every other tag is mapped to the default.
+ * The tag 'qr' is mapped on a QRCode tagworker. Every other tag is mapped to the default.
  */
 public class QRCodeTagWorkerFactory extends DefaultTagWorkerFactory {
 
