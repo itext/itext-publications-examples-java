@@ -19,7 +19,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
+import java.security.Security;
 import java.security.cert.Certificate;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 public class ConvertToPdfAndSign {
 
@@ -35,6 +37,7 @@ public class ConvertToPdfAndSign {
     public static void main(String[] args) throws IOException, GeneralSecurityException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
+        Security.addProvider(new BouncyCastleProvider());
 
         new ConvertToPdfAndSign().convertHtmlToPdfAndSign(PDF_TO_SIGN, SRC);
     }
