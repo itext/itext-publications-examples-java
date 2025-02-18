@@ -5,9 +5,22 @@
         xmlns:xmp="http://ns.adobe.com/xap/1.0/"
         xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
         xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/"
+        xmlns:pdfd="http://pdfa.org/declarations/"
       dc:format="application/pdf">
       <pdfuaid:part>2</pdfuaid:part>
 	  <pdfuaid:rev>2024</pdfuaid:rev>
+	  <pdfd:declarations>
+        <rdf:Bag>
+          <!-- Usage of Tagged PDF: conformance level for reuse -->
+          <rdf:li rdf:parseType="Resource">
+            <pdfd:conformsTo>http://pdfa.org/declarations/wtpdf#reuse1.0</pdfd:conformsTo>
+          </rdf:li>
+          <!-- Usage of Tagged PDF: conformance level for accessibility -->
+          <rdf:li rdf:parseType="Resource">
+            <pdfd:conformsTo>http://pdfa.org/declarations/wtpdf#accessibility1.0</pdfd:conformsTo>
+          </rdf:li>
+        </rdf:Bag>
+      </pdfd:declarations>
     </rdf:Description>
   </rdf:RDF>
 </x:xmpmeta>
