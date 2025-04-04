@@ -8,6 +8,9 @@ import com.itextpdf.kernel.pdf.WriterProperties;
 
 import java.io.File;
 
+/**
+ * This example shows how to encrypt a PDF document using AES algorithm.
+ */
 public class EncryptPdf {
     public static final String DEST = "./target/sandbox/security/encrypt_pdf.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
@@ -29,7 +32,7 @@ public class EncryptPdf {
                         USER_PASSWORD.getBytes(),
                         OWNER_PASSWORD.getBytes(),
                         EncryptionConstants.ALLOW_PRINTING,
-                        EncryptionConstants.ENCRYPTION_AES_128 | EncryptionConstants.DO_NOT_ENCRYPT_METADATA))
+                        EncryptionConstants.ENCRYPTION_AES_256 | EncryptionConstants.DO_NOT_ENCRYPT_METADATA))
         );
         pdfDoc.close();
     }

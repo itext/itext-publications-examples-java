@@ -16,6 +16,10 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/**
+ * This example shows how to encrypt a PDF document using AES algorithm
+ * and public key certificate.
+ */
 public class EncryptWithCertificate {
     public static final String DEST
             = "./target/sandbox/security/encrypt_with_certificate.pdf";
