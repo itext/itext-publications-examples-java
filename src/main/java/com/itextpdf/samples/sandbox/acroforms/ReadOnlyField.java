@@ -20,6 +20,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ReadOnlyField.java
+ * 
+ * This example demonstrates how to create a read-only text field in a PDF form.
+ * It creates a multiline text field and sets it to read-only mode, preventing users from modifying its content.
+ */
+
 public class ReadOnlyField {
     public static final String DEST = "./target/sandbox/acroforms/read_only_field.pdf";
 

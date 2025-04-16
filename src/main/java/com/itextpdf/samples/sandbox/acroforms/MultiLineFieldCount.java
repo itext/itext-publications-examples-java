@@ -12,6 +12,13 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * MultiLineFieldCount.java
+ * 
+ * This example demonstrates how to calculate the capacity of a multiline form field
+ * and fill it with a character sequence based on the field's dimensions and font properties.
+ */
+
 public class MultiLineFieldCount {
     public static final String DEST = "./target/sandbox/acroforms/multiLineFieldCount.pdf";
     public static final String SRC = "./src/main/resources/pdfs/multiline.pdf";

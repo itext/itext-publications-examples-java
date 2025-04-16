@@ -18,6 +18,14 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * AddFieldAfterParagraph.java
+ *
+ * This example demonstrates how to add a form field to a PDF document
+ * immediately after a paragraph using two different methods: calculating
+ * the position manually and using a custom renderer.
+ */
+
 public class AddFieldAfterParagraph {
 
     public static final String DEST = "./target/sandbox/acroforms/add_field_after_paragraph.pdf";

@@ -25,6 +25,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/*
+ * BarcodeTypes.java
+ * 
+ * This class demonstrates the various barcode formats supported by iText.
+ * It creates a comprehensive catalog of different barcode types including EAN,
+ * UPC, ISBN, Code 128, Interleaved 2 of 5, POSTNET, PLANET, Code 39, Codabar,
+ * PDF417, DataMatrix, and QR Code with different configurations and styles.
+ */
+
 public class BarcodeTypes {
 
     public static final String DEST = "./target/sandbox/barcodes/barcodeLayout.pdf";

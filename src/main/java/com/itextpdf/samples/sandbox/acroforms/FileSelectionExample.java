@@ -13,6 +13,13 @@ import com.itextpdf.forms.fields.PdfTextFormField;
 
 import java.io.File;
 
+/*
+ * FileSelectionExample.java
+ * 
+ * This example demonstrates how to create a PDF form with a file selection field.
+ * The field allows users to browse and select a file, and includes JavaScript actions for enhanced interactivity.
+ */
+
 public class FileSelectionExample {
     public static final String DEST = "./target/sandbox/acroforms/file_selection_example.pdf";
 

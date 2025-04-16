@@ -13,6 +13,17 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
 
+/*
+ * FileAttachmentAnnot.java
+ * 
+ * This class demonstrates how to create a file attachment annotation in a PDF document.
+ * The code creates a new PDF file with an annotation that contains an embedded Word document.
+ * The annotation is displayed as an image (info icon) and includes a prompt message.
+ * When clicked in a PDF viewer, the annotation allows the user to open or save the 
+ * attached document. This example shows how to embed files at specific locations within
+ * a PDF document rather than as general document-level attachments.
+ */
+
 public class FileAttachmentAnnot {
     public static final String DEST = "./target/sandbox/annotations/file_attachment_annot.pdf";
 

@@ -7,6 +7,11 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
+/*
+ * FillForm.java
+ * 
+ * This example demonstrates how to fill a form with data.
+ */
 
 public class FillForm {
     public static final String DEST = "./target/sandbox/acroforms/reporting/fill_form.pdf";

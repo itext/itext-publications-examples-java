@@ -11,6 +11,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * PortableCollection.java
+ * 
+ * This class demonstrates how to create a PDF portfolio (collection) with multiple embedded files.
+ * It embeds three different file types (CSV, PDF, and JPG) into a single PDF document and
+ * configures the portfolio view to display attachments in a tile layout.
+ */
+
 public class PortableCollection {
     public static final String DEST = "./target/sandbox/collections/portable_collection.pdf";
 

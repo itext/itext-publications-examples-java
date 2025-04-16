@@ -29,6 +29,14 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * TableOfContents.java
+ * 
+ * This class demonstrates how to create a PDF with an automatically generated table of contents.
+ * It reads text from a file, creates a structured document with bookmarks and destinations,
+ * then builds a clickable table of contents with page numbers and dotted leader lines.
+ */
+
 public class TableOfContents {
     public static final String DEST = "./target/sandbox/bookmarks/table_of_contents.pdf";
 

@@ -13,6 +13,14 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * WriteOnFirstPage.java
+ * 
+ * This class demonstrates how to add dynamic content to the first page based on information
+ * determined after the document is created. It uses a PdfFormXObject as a placeholder that
+ * is populated at the end of document generation with the total page count.
+ */
+
 public class WriteOnFirstPage {
     public static final String DEST = "./target/sandbox/columntext/write_on_first_page.pdf";
 

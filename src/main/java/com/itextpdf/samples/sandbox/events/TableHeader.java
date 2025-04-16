@@ -22,6 +22,14 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/**
+ * TableHeader.java
+ * 
+ * This class demonstrates how to add a repeating table header to every page of a PDF document.
+ * It uses an event handler to automatically add a three-row table at the top of each page and
+ * adjusts document margins to accommodate the header without overlapping the page content.
+ */
+
 public class TableHeader {
     public static final String DEST = "./target/sandbox/events/table_header.pdf";
 

@@ -15,6 +15,14 @@ import com.itextpdf.layout.renderer.TextRenderer;
 
 import java.io.File;
 
+/*
+ * GenericFields.java
+ * 
+ * This class demonstrates how to create interactive form fields within flowing text.
+ * It generates a PDF with an effective date sentence containing three fillable text
+ * fields for day, month, and year using a custom text renderer approach.
+ */
+
 public class GenericFields {
     public static final String DEST = "./target/sandbox/events/generic_fields.pdf";
 

@@ -16,6 +16,13 @@ import com.itextpdf.kernel.pdf.ReaderProperties;
 
 import java.io.File;
 
+/*
+ * MultiLineField.java
+ * 
+ * This example demonstrates how to create a PDF form with a multiline text field
+ * and populate it with content that spans multiple lines before flattening the form.
+ */
+
 public class MultiLineField {
     public static final String DEST = "./target/sandbox/acroforms/multi_line_field.pdf";
 

@@ -10,6 +10,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+/*
+ * FillFormListXfdf.java
+ * 
+ * This example demonstrates how to populate a PDF form using data from an XFDF file.
+ * XFDF (XML Forms Data Format) is used to represent form data in a structured XML format.
+ */
 
 public class FillFormListXfdf {
     public static final String sourceFolder = "./src/main/resources/pdfs/";

@@ -10,6 +10,17 @@ import com.itextpdf.kernel.pdf.PdfNumber;
 
 import java.io.File;
 
+/*
+ * ChangeZoomXYZDestination.java
+ * 
+ * This class demonstrates how to modify the zoom factor in existing link annotations
+ * within a PDF document. The code opens a PDF file containing link annotations with XYZ
+ * destinations (which specify position and zoom level), then iterates through all link
+ * annotations on a specific page and changes their zoom factor to zero. This effectively
+ * modifies how the document appears when following these links, setting the view to use
+ * the default zoom level of the PDF reader.
+ */
+
 public class ChangeZoomXYZDestination {
     public static final String DEST = "./target/sandbox/annotations/change_zoom_xyz_destination.pdf";
 

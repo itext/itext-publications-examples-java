@@ -18,6 +18,17 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * AddPointerAnnotation.java
+ * 
+ * This class demonstrates how to create a PDF document with a map image and add
+ * a pointer annotation to highlight a specific location. The code creates a new PDF
+ * with an image of a map, then adds a line annotation configured as an arrow pointer
+ * with custom styling (red color, specific border style). The annotation includes a
+ * title and description that identify a specific location on the map. This example
+ * shows how to create visual indicators on PDF content.
+ */
+
 public class AddPointerAnnotation {
     public static final String DEST = "./target/sandbox/annotations/add_pointer_annotation.pdf";
 

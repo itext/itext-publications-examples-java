@@ -16,6 +16,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * PageBorder.java
+ * 
+ * This class demonstrates how to add a border around each page using event handlers.
+ * It creates a multi-page document about prime numbers and factors, with each page
+ * surrounded by a thick red border drawn through a custom page event handler.
+ */
+
 public class PageBorder {
     public static final String DEST = "./target/sandbox/events/page_border.pdf";
 

@@ -9,6 +9,14 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 
+/*
+ * SimpleColumn.java
+ * 
+ * This class demonstrates how to create text in a restricted column width.
+ * It creates a small PDF with a single paragraph of specified width and position,
+ * showing how to control text alignment and spacing in a constrained area.
+ */
+
 public class SimpleColumn {
     public static final String DEST = "./target/sandbox/columntext/simple_column.pdf";
 

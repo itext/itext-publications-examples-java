@@ -1,6 +1,3 @@
-/**
- * Adding a watermark to the document immediately using a page event.
- */
 package com.itextpdf.samples.sandbox.events;
 
 import com.itextpdf.io.font.constants.StandardFonts;
@@ -28,6 +25,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
+
+/**
+ * Watermarking.java
+ * 
+ * This class demonstrates how to add a diagonal watermark to every page of a PDF document.
+ * It creates a tabular document from CSV data and adds a light gray "WATERMARK" text rotated
+ * 45 degrees across each page using a custom page event handler.
+ */
 
 public class Watermarking {
     public static final String DEST = "./target/sandbox/events/watermarkings.pdf";

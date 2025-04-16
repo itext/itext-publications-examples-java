@@ -9,6 +9,13 @@ import com.itextpdf.forms.PdfAcroForm;
 
 import java.io.File;
 
+/*
+ * HideButton.java
+ * 
+ * This example demonstrates how to hide a button in a PDF form by setting
+ * its visibility flag to hidden.
+ */
+
 public class HideButton {
     public static final String DEST = "./target/sandbox/acroforms/hide_button.pdf";
 

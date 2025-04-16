@@ -11,6 +11,13 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * FillFormSpecialChars2.java
+ * 
+ * This example demonstrates how to fill a PDF form field with special characters
+ * using a custom font to ensure proper rendering. It also flattens the form fields.
+ */
+
 public class FillFormSpecialChars2 {
     public static final String DEST = "./target/sandbox/acroforms/fill_form_special_chars2.pdf";
 

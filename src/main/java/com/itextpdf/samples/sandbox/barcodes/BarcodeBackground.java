@@ -9,6 +9,16 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
 
+/*
+ * BarcodeBackground.java
+ * 
+ * This class demonstrates how to create a barcode with a custom background color in a PDF document.
+ * The code generates a Code 128 barcode representing the string "12345XX789XXX", converts it to 
+ * a PDF form XObject, then places it on a page with a light gray rectangular background.
+ * This example shows how to enhance barcode presentation by adding background elements
+ * to make the barcode stand out on the page.
+ */
+
 public class BarcodeBackground {
     public static final String DEST = "./target/sandbox/barcodes/barcode_background.pdf";
 

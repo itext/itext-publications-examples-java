@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * CreateFormInTable.java
+ * 
+ * This example demonstrates how to create a PDF table with interactive form fields
+ * (e.g., text fields) embedded in specific table cells using iText.
+ */
+
 public class CreateFormInTable {
     public static final String DEST = "./target/sandbox/acroforms/create_form_in_table.pdf";
 

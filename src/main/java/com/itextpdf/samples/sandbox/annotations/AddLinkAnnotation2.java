@@ -13,6 +13,16 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * AddLinkAnnotation2.java
+ * 
+ * This class demonstrates how to create a hyperlink in a PDF document using iText's high-level API.
+ * The code opens an existing PDF file and adds a paragraph containing a clickable external link
+ * with custom formatting (bold text). The link points to an external URL and is positioned at 
+ * specific coordinates on the page. This example shows a more user-friendly approach to creating
+ * links compared to working directly with PDF annotations.
+ */
+
 public class AddLinkAnnotation2 {
     public static final String DEST = "./target/sandbox/annotations/add_link_annotation2.pdf";
 

@@ -20,6 +20,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ReadOnlyField3.java
+ * 
+ * This example demonstrates how to create multiple read-only text fields in a PDF form
+ * with the needAppearances flag set to true, instructing PDF viewers to generate appearance
+ * streams automatically for the form fields.
+ */
+
 public class ReadOnlyField3 {
     public static final String DEST = "./target/sandbox/acroforms/read_only_field3.pdf";
 

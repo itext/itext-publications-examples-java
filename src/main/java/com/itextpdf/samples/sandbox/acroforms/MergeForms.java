@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/*
+ * MergeForms.java
+ * 
+ * This example demonstrates how to merge multiple PDF files containing AcroForm fields
+ * while preserving the form fields' functionality in the resulting document.
+ */
+
 public class MergeForms {
     public static final String DEST = "./target/sandbox/acroforms/merge_forms.pdf";
 

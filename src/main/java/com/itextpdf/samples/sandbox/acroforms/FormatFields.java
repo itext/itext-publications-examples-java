@@ -8,6 +8,13 @@ import com.itextpdf.forms.PdfAcroForm;
 
 import java.io.File;
 
+/*
+ * FormatFields.java
+ * 
+ * This example demonstrates how to format the display values of PDF form fields
+ * while preserving the underlying data values for calculations.
+ */
+
 public class FormatFields {
     public static final String DEST = "./target/sandbox/acroforms/format_fields.pdf";
 

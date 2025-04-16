@@ -12,6 +12,16 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * RemoteGoto.java
+ * 
+ * This class demonstrates how to create links between separate PDF documents.
+ * The code creates two PDF files: one with a clickable link and another with a named
+ * destination. When the link in the first document is clicked, it navigates to the
+ * specific named destination in the second document. This example illustrates how to
+ * implement cross-document navigation using the GoToR action in PDF documents.
+ */
+
 public class RemoteGoto {
     public static final String DEST = "./target/sandbox/annotations/";
 

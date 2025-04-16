@@ -23,6 +23,14 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Text2PdfWithFooter1.java
+ * 
+ * This class demonstrates how to convert a text file to PDF with page numbering in the footer.
+ * It reads structured text, formats titles with bold font and blue borders, and adds centered
+ * page numbers at the bottom of each page using a custom event handler.
+ */
+
 public class Text2PdfWithFooter1 {
     public static final String TEXT = "./src/main/resources/txt/tree.txt";
     public static final String DEST = "./target/sandbox/events/text2pdf_with_footer1.pdf";

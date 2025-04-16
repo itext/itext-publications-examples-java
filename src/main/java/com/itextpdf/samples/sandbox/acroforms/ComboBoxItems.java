@@ -29,6 +29,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ComboBoxItems.java
+ * 
+ * This example demonstrates how to create a PDF with a combobox form field.
+ * The combobox allows users to select one option from a predefined list of choices.
+ */
+
 public class ComboBoxItems {
     public static final String DEST = "./target/sandbox/acroforms/combo_box_items.pdf";
 

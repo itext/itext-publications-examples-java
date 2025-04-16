@@ -13,6 +13,14 @@ import com.itextpdf.layout.renderer.TextRenderer;
 
 import java.io.File;
 
+/*
+ * DashedUnderline.java
+ * 
+ * This class demonstrates how to create custom text underlining effects in PDF documents.
+ * It shows three different text styles: regular text, text with solid underlining using
+ * built-in methods, and text with dashed underlining using a custom renderer.
+ */
+
 public class DashedUnderline {
     public static final String DEST = "./target/sandbox/events/dashed_underline.pdf";
 

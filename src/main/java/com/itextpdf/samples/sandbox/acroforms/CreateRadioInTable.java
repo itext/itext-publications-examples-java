@@ -19,6 +19,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * CreateRadioInTable.java
+ * 
+ * This example demonstrates how to create a PDF table with radio buttons embedded in specific cells.
+ * The radio buttons are grouped together, allowing only one option to be selected at a time.
+ */
+
 public class CreateRadioInTable {
     public static final String DEST = "./target/sandbox/acroforms/create_radio_in_table.pdf";
 

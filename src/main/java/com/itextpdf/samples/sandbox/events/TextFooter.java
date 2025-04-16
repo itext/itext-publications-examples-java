@@ -18,6 +18,14 @@ import com.itextpdf.layout.properties.TextAlignment;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * TextFooter.java
+ * 
+ * This class demonstrates how to add both header and footer text to PDF pages using event handlers.
+ * It creates a simple three-page document with small Helvetica Oblique text at the top and bottom
+ * of each page, positioned precisely based on the document's margin settings.
+ */
+
 public class TextFooter {
     public static final String DEST = "./target/sandbox/events/text_footer.pdf";
 

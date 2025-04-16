@@ -12,6 +12,16 @@ import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 
 import java.io.File;
 
+/*
+ * AddLinkAnnotation.java
+ * 
+ * This class demonstrates how to add a link annotation to a PDF document.
+ * The code opens an existing PDF file and adds a clickable link to the first page
+ * that navigates to the third page when clicked. The link area is defined by a 
+ * rectangle, and the annotation is configured with specific visual properties
+ * including highlight mode and border appearance.
+ */
+
 public class AddLinkAnnotation {
     public static final String DEST = "./target/sandbox/annotations/add_link_annotation.pdf";
 

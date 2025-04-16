@@ -15,6 +15,13 @@ import com.itextpdf.kernel.pdf.ReaderProperties;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * MergeForms2.java
+ * 
+ * This example demonstrates how to merge multiple copies of the same PDF form while 
+ * ensuring unique form field names to prevent conflicts. It renames form fields before merging.
+ */
+
 public class MergeForms2 {
     public static final String DEST = "./target/sandbox/acroforms/merge_forms2.pdf";
 

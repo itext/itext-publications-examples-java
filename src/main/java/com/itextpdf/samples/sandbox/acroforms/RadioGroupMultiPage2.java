@@ -19,6 +19,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * RadioGroupMultiPage2.java
+ * 
+ * This example demonstrates how to create a radio button group in a table that may span 
+ * multiple pages. It uses custom cell renderers to place radio buttons in table cells.
+ */
+
 public class RadioGroupMultiPage2 {
     public static final String DEST = "./target/sandbox/acroforms/radio_group_multi_page2.pdf";
 

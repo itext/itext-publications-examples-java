@@ -20,6 +20,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * RadioGroupMultiPage1.java
+ * 
+ * This example demonstrates how to create a radio button group that spans multiple pages
+ * in a PDF document, with one radio button option per page.
+ */
+
 public class RadioGroupMultiPage1 {
     public static final String DEST = "./target/sandbox/acroforms/radio_group_multi_page1.pdf";
 

@@ -21,6 +21,14 @@ import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ * ThreeParts.java
+ * 
+ * This class demonstrates how to create a PDF with three vertical sections per page.
+ * It loads text in three languages (Latin, English, French) and arranges each language
+ * in its own section, with content flowing from page to page while maintaining the sections.
+ */
+
 public class ThreeParts {
     public static final String DEST = "./target/sandbox/events/three_parts.pdf";
 

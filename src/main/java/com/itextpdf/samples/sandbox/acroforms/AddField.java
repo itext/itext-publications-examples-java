@@ -14,6 +14,14 @@ import com.itextpdf.kernel.pdf.action.PdfAction;
 
 import java.io.File;
 
+/*
+ * AddField.java
+ * 
+ * This class demonstrates how to add a button field to an existing PDF form.
+ * The button is configured with specific properties such as size, caption, background color,
+ * and an action to submit the form to a specified URL.
+ */
+
 public class AddField {
     public static final String DEST = "./target/sandbox/acroforms/add_field.pdf";
 

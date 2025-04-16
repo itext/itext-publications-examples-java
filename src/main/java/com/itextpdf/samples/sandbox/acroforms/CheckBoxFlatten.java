@@ -8,6 +8,13 @@ import com.itextpdf.forms.PdfAcroForm;
 
 import java.io.File;
 
+/*
+ * CheckBoxFlatten.java
+ * 
+ * This example demonstrates how to flatten checkboxes in an existing PDF file.
+ * Flattening a form field means converting it into a static part of the PDF content.
+ */
+
 public class CheckBoxFlatten {
     public static final String DEST = "./target/sandbox/acroforms/checkbox_flatten.pdf";
 

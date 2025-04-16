@@ -13,6 +13,17 @@ import com.itextpdf.kernel.pdf.annot.PdfCircleAnnotation;
 
 import java.io.File;
 
+/*
+ * CircleAnnotation.java
+ * 
+ * This class demonstrates how to add a circle annotation to a PDF document.
+ * The code opens an existing PDF file and adds a customized circle annotation
+ * to the first page. The annotation features a dashed blue border, red fill color,
+ * and is configured with specific properties including title, content text, and 
+ * print behavior. This example shows how to create and customize geometric
+ * annotation shapes in PDF documents.
+ */
+
 public class CircleAnnotation {
     public static final String DEST = "./target/sandbox/annotations/circle_annotation.pdf";
 

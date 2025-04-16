@@ -16,6 +16,14 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
 
+/**
+ * ScaleDown.java
+ * 
+ * This class demonstrates how to scale down an existing PDF document to a smaller size.
+ * It reads a source PDF, creates a new document with pages at 50% scale while preserving
+ * page rotation settings, and adjusts both MediaBox and CropBox dimensions accordingly.
+ */
+
 public class ScaleDown {
     public static final String DEST = "./target/sandbox/events/scale_down.pdf";
 

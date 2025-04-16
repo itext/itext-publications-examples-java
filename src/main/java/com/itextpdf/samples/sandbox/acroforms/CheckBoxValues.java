@@ -10,6 +10,13 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import java.io.File;
 import java.util.Map;
 
+/*
+ * CheckBoxValues.java
+ * 
+ * This example demonstrates how to read and manipulate the values of checkboxes in an existing PDF file.
+ * It swaps the checked and unchecked states of two checkboxes and prints all possible states to the console.
+ */
+
 public class CheckBoxValues {
     public static final String DEST = "./target/sandbox/acroforms/check_box_values.pdf";
 

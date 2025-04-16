@@ -16,6 +16,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * VariableHeader.java
+ * 
+ * This class demonstrates how to create PDF pages with different header content on each page.
+ * It generates a document about factors of numbers from 2 to 300, with each page having a
+ * header that indicates which number's factors are being displayed on that page.
+ */
+
 public class VariableHeader {
     public static final String DEST = "./target/sandbox/events/variable_header.pdf";
 

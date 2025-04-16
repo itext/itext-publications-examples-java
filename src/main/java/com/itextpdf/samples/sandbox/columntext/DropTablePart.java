@@ -10,6 +10,14 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * DropTablePart.java
+ * 
+ * This class demonstrates how to create multiple large tables that flow across pages.
+ * It generates a PDF with four tables, each containing a header row and multiple data rows,
+ * allowing iText to automatically handle pagination when a table exceeds page boundaries.
+ */
+
 public class DropTablePart {
     public static final String DEST = "./target/sandbox/columntext/drop_table_part.pdf";
 

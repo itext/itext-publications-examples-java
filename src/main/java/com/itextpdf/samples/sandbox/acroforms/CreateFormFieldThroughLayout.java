@@ -15,6 +15,15 @@ import com.itextpdf.layout.element.Table;
 
 import java.io.File;
 
+/*
+ * CreateFormFieldThroughLayout.java
+ * 
+ * This example demonstrates how to create a PDF with various interactive form fields
+ * (e.g., input fields, text areas, radio buttons, and a submit button) using iText's layout API.
+ * 
+ * Requires iText 8.0.1 or later.
+ */
+
 public class CreateFormFieldThroughLayout {
     public static final String DEST = "./target/sandbox/acroforms/createFormFieldThroughLayout.pdf";
 

@@ -14,6 +14,17 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * RenameDestinations.java
+ * 
+ * This class demonstrates how to rename named destinations in a PDF document.
+ * The code opens a PDF with existing named destinations, creates new names by
+ * prefixing "new" to each original name, updates the name tree, and then
+ * modifies all link annotations to point to the renamed destinations.
+ * This example shows how to maintain document navigation integrity while
+ * changing the internal destination references.
+ */
+
 public class RenameDestinations {
     public static final String DEST = "./target/sandbox/annotations/rename_destinations.pdf";
 

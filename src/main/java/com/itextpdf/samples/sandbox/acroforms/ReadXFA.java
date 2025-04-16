@@ -17,6 +17,15 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+/*
+ * ReadXFA.java
+ * 
+ * This example demonstrates how to extract XFA (XML Forms Architecture) data from a PDF document
+ * and save it as a well-formatted XML file with proper encoding and indentation.
+ * 
+ * Requires pdfXFA addon.
+ */
+
 public class ReadXFA {
     public static final String DEST = "./target/xml/xfa_example.xml";
 
