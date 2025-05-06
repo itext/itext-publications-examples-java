@@ -7,6 +7,10 @@ import com.itextpdf.kernel.pdf.ReaderProperties;
 
 import java.io.File;
 
+/**
+ * This example shows how to decrypt a pdf document using owner password.
+ * To show that decryption is successful, user password is revealed.
+ */
 public class DecryptPdf {
     public static final String DEST = "./target/sandbox/security/decrypt_pdf.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello_encrypted.pdf";
