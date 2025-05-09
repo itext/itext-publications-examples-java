@@ -2,20 +2,22 @@ package com.itextpdf.samples.sandbox.pdfua;
 
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.html2pdf.attach.ITagWorker;
-import com.itextpdf.html2pdf.attach.ProcessorContext;
-import com.itextpdf.html2pdf.attach.impl.DefaultTagWorkerFactory;
-import com.itextpdf.html2pdf.attach.impl.tags.HTagWorker;
-import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.html2pdf.attach.impl.OutlineHandler;
+import com.itextpdf.kernel.pdf.PdfAConformance;
+import com.itextpdf.kernel.pdf.PdfDocumentInfo;
+import com.itextpdf.kernel.pdf.PdfOutputIntent;
+import com.itextpdf.kernel.pdf.PdfString;
+import com.itextpdf.kernel.pdf.PdfVersion;
+import com.itextpdf.kernel.pdf.PdfViewerPreferences;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.WriterProperties;
+import com.itextpdf.kernel.validation.ValidationContainer;
 import com.itextpdf.kernel.xmp.XMPException;
 import com.itextpdf.kernel.xmp.XMPMeta;
 import com.itextpdf.kernel.xmp.XMPMetaFactory;
-import com.itextpdf.layout.IPropertyContainer;
-import com.itextpdf.layout.element.Div;
-import com.itextpdf.layout.element.IElement;
-import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.tagging.ProhibitedTagRelationsResolver;
 import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.styledxmlparser.node.IElementNode;
+import com.itextpdf.pdfua.checkers.PdfUA2Checker;
 import com.itextpdf.styledxmlparser.resolver.font.BasicFontProvider;
 import com.itextpdf.test.pdfa.VeraPdfValidator;
 
@@ -25,9 +27,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Set;
-import java.util.HashSet;
 
 public class Wtpdf {
 
@@ -35,7 +34,6 @@ public class Wtpdf {
     public static final String DEST = "./target/sandbox/pdfua2/pdf_wtpdf.pdf";
     public static final String FONT = "./src/main/resources/font/FreeSans.ttf";
     private static final String SOURCE_FOLDER = "./src/main/resources/wtpdf/";
-    private static final Set<String> H_TAGS = new HashSet<>(Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6"));
 
 
     public static void main(String[] args) throws IOException, XMPException {
@@ -54,34 +52,20 @@ public class Wtpdf {
 
 
         WriterProperties writerProperties = new WriterProperties().setPdfVersion(PdfVersion.PDF_2_0);
-        PdfADocument pdfDocument = new PdfADocument(new PdfWriter(dest, writerProperties), PdfAConformance.PDF_A_4, outputIntent);
+        //If you need attachments you would PDF/A4-F
+        PdfADocument pdfDocument = new PdfADocument(new PdfWriter(dest, writerProperties), PdfAConformance.PDF_A_4,
+                outputIntent);
 
+        // By default PdfUADocument has a tag repairing mechanism under the hood, to avoid creating illegal
+        // tag structures for example from invalid html, but because PdfADocument as base we have to register it
+        // manually
 
-	// The custom tag factory is needed because the PDF2.0 specification prohibts from a p tag being placed inside a Hn tag.
-	// THis is the current default behaviour for html2pdf but will change in the future.
-        DefaultTagWorkerFactory factory = new DefaultTagWorkerFactory() {
-            @Override
-            public ITagWorker getCustomTagWorker(IElementNode tag, ProcessorContext context) {
-                if (H_TAGS.contains(tag.name())) {
-                    return new HTagWorker(tag, context) {
-
-                        @Override
-                        public IPropertyContainer getElementResult() {
-                            IPropertyContainer elementResult = super.getElementResult();
-                            if (elementResult instanceof Div) {
-                                for (IElement child : ((Div) elementResult).getChildren()) {
-                                    if (child instanceof Paragraph) {
-                                        ((Paragraph) child).setNeutralRole();
-                                    }
-                                }
-                            }
-                            return elementResult;
-                        }
-                    };
-                }
-                return super.getCustomTagWorker(tag, context);
-            }
-        };
+        pdfDocument.getDiContainer()
+                .register(ProhibitedTagRelationsResolver.class, new ProhibitedTagRelationsResolver(pdfDocument));
+        ValidationContainer container = pdfDocument.getDiContainer().getInstance(ValidationContainer.class);
+        //Because we are using PDF/A4, there will already be a pdf 2.0 checker , so we only need to add the pdf ua
+        // checker
+        container.addChecker(new PdfUA2Checker(pdfDocument));
 
         // setup the general requirements for a wtpdf document
         byte[] bytes = Files.readAllBytes(Paths.get(SOURCE_FOLDER + "simplePdfUA2.xmp"));
@@ -100,7 +84,7 @@ public class Wtpdf {
 
         ConverterProperties converterProperties = new ConverterProperties()
                 .setBaseUri(SOURCE_FOLDER)
-                .setTagWorkerFactory(factory)
+                .setOutlineHandler(OutlineHandler.createStandardHandler())
                 .setFontProvider(fontProvider);
 
 
@@ -110,6 +94,6 @@ public class Wtpdf {
         }
         pdfDocument.close();
         VeraPdfValidator validator = new VeraPdfValidator();
-         assert null == validator.validate(DEST);
+        assert null == validator.validate(DEST);
     }
 }

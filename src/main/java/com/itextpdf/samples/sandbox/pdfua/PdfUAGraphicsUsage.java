@@ -2,17 +2,13 @@ package com.itextpdf.samples.sandbox.pdfua;
 
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfDocumentInfo;
-import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfUAConformance;
-import com.itextpdf.kernel.pdf.PdfVersion;
-import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.WriterProperties;
-import com.itextpdf.kernel.validation.ValidationContainer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
-import com.itextpdf.pdfua.checkers.PdfUA1Checker;
+import com.itextpdf.pdfua.PdfUAConfig;
+import com.itextpdf.pdfua.PdfUADocument;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,18 +27,9 @@ public class PdfUAGraphicsUsage {
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        final WriterProperties writerProperties = new WriterProperties().addPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)
-                .setPdfVersion(PdfVersion.PDF_1_7);
-        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest, writerProperties));
-        pdfDoc.setTagged();
-        pdfDoc.getCatalog().setViewerPreferences(new PdfViewerPreferences().setDisplayDocTitle(true));
-        pdfDoc.getCatalog().setLang(new PdfString("en-US"));
-        PdfDocumentInfo info = pdfDoc.getDocumentInfo();
-        info.setTitle("English pangram");
-        //validation
-        ValidationContainer validationContainer = new ValidationContainer();
-        validationContainer.addChecker(new PdfUA1Checker(pdfDoc));
-        pdfDoc.getDiContainer().register(ValidationContainer.class, validationContainer);
+        final WriterProperties writerProperties = new WriterProperties();
+        PdfDocument pdfDoc = new PdfUADocument(new PdfWriter(dest, writerProperties),
+                new PdfUAConfig(PdfUAConformance.PDF_UA_1, "Some title", "en-US"));
         Document document = new Document(pdfDoc);
         Image img = new Image(ImageDataFactory.create(DOG));
         img.getAccessibilityProperties().setAlternateDescription("Alternative description");
