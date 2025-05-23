@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -112,6 +113,7 @@ public class C04E07_MovieInvoice2 {
         StreamSource xsl = new StreamSource(new File(xslPath));
         TransformerFactory factory = TransformerFactory.newInstance();
         Transformer transformer = factory.newTransformer(xsl);
+        transformer.setOutputProperty(OutputKeys.INDENT, "no");
         transformer.transform(xml, new StreamResult(writer));
         writer.flush();
         writer.close();
