@@ -13,6 +13,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/*
+ * ColumnAllowMoreRelayouts.java
+ * 
+ * This class demonstrates how to customize column handling by increasing relayout attempts.
+ * It creates a PDF with a three-column container that uses a custom renderer to allow
+ * more layout calculations, improving content distribution when working with complex text.
+ */
+
 public class ColumnAllowMoreRelayouts {
 
     public static final String DEST = "./target/sandbox/columncontainer/allow_more_re_layouts.pdf";

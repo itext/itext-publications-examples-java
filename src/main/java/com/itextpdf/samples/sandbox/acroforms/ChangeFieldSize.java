@@ -12,6 +12,13 @@ import com.itextpdf.kernel.pdf.annot.PdfWidgetAnnotation;
 
 import java.io.File;
 
+/*
+ * ChangeFieldSize.java
+ * 
+ * This class demonstrates how to modify the size of a form field in a PDF document.
+ * It adjusts the rectangle dimensions of a specific field and sets its value.
+ */
+
 public class ChangeFieldSize {
     public static final String DEST = "./target/sandbox/acroforms/change_field_size.pdf";
 

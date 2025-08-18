@@ -14,6 +14,17 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
 
+/*
+ * AddStamp.java
+ * 
+ * This class demonstrates how to add a custom image stamp annotation to a PDF document.
+ * The code opens an existing PDF file, loads an image, creates a PdfFormXObject containing
+ * the image, and then adds it to the document as a stamp annotation with a custom name.
+ * The annotation is configured to be printed when the document is printed. This example
+ * shows how to create visual stamps with custom images rather than using the built-in
+ * stamp types.
+ */
+
 public class AddStamp {
     public static final String DEST = "./target/sandbox/annotations/add_stamp.pdf";
 

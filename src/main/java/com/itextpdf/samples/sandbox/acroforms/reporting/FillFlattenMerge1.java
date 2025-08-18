@@ -16,6 +16,15 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+/*
+ * FillFlattenMerge1.java
+ * 
+ * This example demonstrates how to fill, flatten and merge forms.
+ * 
+ * The example reads a CSV file with data about US states and fills a PDF form with that data.
+ * The filled form is then flattened and merged into a single PDF document.
+ */
+
 public class FillFlattenMerge1 {
     public static final String DEST = "./target/sandbox/acroforms/reporting/fill_flatten_merge1.pdf";
 

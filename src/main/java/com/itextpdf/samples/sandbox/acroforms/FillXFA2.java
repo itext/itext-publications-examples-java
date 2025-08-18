@@ -10,6 +10,15 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileInputStream;
 
+/*
+ * FillXFA2.java
+ * 
+ * This example demonstrates how to fill an XFA (XML Forms Architecture) invoice form.
+ * It uses an external XML file to populate the form fields in the XFA document.
+ * 
+ * Requires pdfXFA addon.
+ */
+
 public class FillXFA2 {
     public static final String DEST = "./target/sandbox/acroforms/xfa_example_filled.pdf";
 

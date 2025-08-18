@@ -152,3 +152,5 @@ invoices.log
 results/
 
 .vagrant/
+# macOS custom attributes folder
+.DS_Store

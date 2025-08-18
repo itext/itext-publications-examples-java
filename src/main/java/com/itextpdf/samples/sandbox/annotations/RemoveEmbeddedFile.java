@@ -9,6 +9,16 @@ import com.itextpdf.kernel.pdf.PdfArray;
 
 import java.io.File;
 
+/*
+ * RemoveEmbeddedFile.java
+ * 
+ * This class demonstrates how to remove embedded files from a PDF document.
+ * The code opens an existing PDF that contains file attachments, navigates through
+ * the PDF dictionary structure to locate the embedded files array, and removes both
+ * the description and reference entries for the attachment. This example shows how
+ * to access and modify low-level PDF structures to remove document-level attachments.
+ */
+
 public class RemoveEmbeddedFile {
     public static final String DEST = "./target/sandbox/annotations/remove_embedded_file.pdf";
 

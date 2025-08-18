@@ -15,6 +15,16 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * AddLinkAnnotation3.java
+ * 
+ * This class demonstrates how to create a rotated hyperlink in a PDF document.
+ * The code opens an existing PDF file and adds a paragraph containing a clickable
+ * external link with custom formatting (bold text). The entire paragraph, including
+ * the link, is then rotated 30 degrees and positioned at specific coordinates on the page.
+ * This example showcases advanced text positioning and formatting with hyperlinks.
+ */
+
 public class AddLinkAnnotation3 {
     public static final String DEST = "./target/sandbox/annotations/add_link_annotation3.pdf";
 

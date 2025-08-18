@@ -21,6 +21,15 @@ import com.itextpdf.layout.element.Text;
 
 import java.io.File;
 
+/*
+ * AddExtraPage.java
+ *
+ * This example demonstrates how to add an extra page to a PDF document.
+ * The example reads a PDF file and adds an extra page with the same content.
+ *
+ * Required software: iText 9.0.0
+ */
+
 public class AddExtraPage {
     public static String DEST = "./target/sandbox/acroforms/add_extra_page.pdf";
 

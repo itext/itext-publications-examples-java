@@ -19,6 +19,15 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ModifyFormFieldAppearance.java
+ * 
+ * This example demonstrates how to customize the appearance of PDF form fields by modifying 
+ * properties such as color, leading, opacity, padding, and borders of form elements.
+ * 
+ * Requires iText 8.0.1 or later.
+ */
+
 public class ModifyFormFieldAppearance {
     public static final String DEST = "./target/sandbox/acroforms/modifyFormFieldAppearance.pdf";
 

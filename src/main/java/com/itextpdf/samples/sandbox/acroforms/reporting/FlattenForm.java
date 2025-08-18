@@ -8,6 +8,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * FlattenForm.java
+ * 
+ * This example demonstrates how to fill and flatten a form.
+ */
+
 public class FlattenForm {
     public static final String DEST = "./target/sandbox/acroforms/reporting/flatten_form.pdf";
 

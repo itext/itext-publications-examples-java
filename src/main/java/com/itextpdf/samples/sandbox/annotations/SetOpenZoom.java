@@ -12,6 +12,16 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * SetOpenZoom.java
+ * 
+ * This class demonstrates how to set the initial view of a PDF document to open
+ * at a specific zoom level. The code creates a simple PDF with a "Hello World" text
+ * and configures it to open at 100% zoom level using an explicit XYZ destination
+ * in the document catalog's open action. This ensures that when the document is opened
+ * in a PDF viewer, it will be displayed at exactly 100% magnification.
+ */
+
 public class SetOpenZoom {
     public static final String DEST = "./target/sandbox/annotations/open_at_100pct.pdf";
 

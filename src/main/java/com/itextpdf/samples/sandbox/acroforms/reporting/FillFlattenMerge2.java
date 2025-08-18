@@ -16,6 +16,16 @@ import java.io.FileReader;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+/*
+ * FillFlattenMerge2.java
+ *
+ * This example demonstrates how to fill, flatten and merge forms with enabled smartMode.
+ *
+ * The example reads a CSV file with data about US states and fills a PDF form with that data.
+ * The filled form is then flattened and merged into a single PDF document.
+ *
+ */
+
 public class FillFlattenMerge2 {
     public static final String DEST = "./target/sandbox/acroforms/reporting/fill_flatten_merge2.pdf";
 

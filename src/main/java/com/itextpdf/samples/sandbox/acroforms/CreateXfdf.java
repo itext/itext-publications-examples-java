@@ -8,6 +8,13 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import java.io.File;
 import java.io.FileInputStream;
 
+/*
+ * CreateXfdf.java
+ * 
+ * This example demonstrates how to extract form data from a PDF document and save it as an XFDF file.
+ * XFDF (XML Forms Data Format) is used to represent form data in a structured XML format.
+ */
+
 public class CreateXfdf {
     public static final String sourceFolder = "./src/main/resources/pdfs/";
     public static final String DEST = "./target/sandbox/acroforms/createXfdf.xfdf";

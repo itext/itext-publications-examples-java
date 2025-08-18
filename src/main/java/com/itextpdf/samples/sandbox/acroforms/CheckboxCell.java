@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * CheckboxCell.java
+ * 
+ * This example demonstrates how to create a PDF table where each cell contains a checkbox.
+ * It uses iText's AcroForm functionality to add interactive form fields to the PDF.
+ */
+
 public class CheckboxCell {
     public static final String DEST = "./target/sandbox/acroforms/checkbox_cell.pdf";
 

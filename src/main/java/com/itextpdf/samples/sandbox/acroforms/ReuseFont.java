@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ReuseFont.java
+ *
+ * This example demonstrates how to reuse an existing font from a PDF document
+ * and use it to add new text to the document.
+ */
+
 public class ReuseFont {
     public static final String DEST = "./target/sandbox/acroforms/reuse_font.pdf";
 

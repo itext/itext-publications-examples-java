@@ -17,6 +17,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * PageBackgrounds.java
+ * 
+ * This class demonstrates how to use event handlers to apply different background colors to pages.
+ * It creates a multi-page document about prime numbers where the first page and all even-numbered
+ * pages have colored backgrounds (blue for the first two pages, light gray for the rest).
+ */
+
 public class PageBackgrounds {
     public static final String DEST = "./target/sandbox/events/page_backgrounds.pdf";
 

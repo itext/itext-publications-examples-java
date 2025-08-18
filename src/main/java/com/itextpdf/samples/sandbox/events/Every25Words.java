@@ -14,6 +14,14 @@ import com.itextpdf.layout.renderer.TextRenderer;
 
 import java.io.*;
 
+/*
+ * Every25Words.java
+ * 
+ * This class demonstrates how to mark specific words in a text flow using custom rendering.
+ * It reads a text file, processes it word by word, and adds a dashed line around every
+ * 25th word using a custom TextRenderer implementation.
+ */
+
 public class Every25Words {
     public static final String DEST = "./target/sandbox/events/every25words.pdf";
 

@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.TextAlignment;
 import java.io.File;
 import java.util.Map;
 
+/*
+ * AlignField.java
+ * 
+ * This class demonstrates how to modify the alignment and values of fields in an existing PDF form.
+ * It sets different text alignments (left, center, right) for specific fields and updates their values.
+ */
+
 public class AlignField {
     public static final String DEST = "./target/sandbox/acroforms/align_field.pdf";
 

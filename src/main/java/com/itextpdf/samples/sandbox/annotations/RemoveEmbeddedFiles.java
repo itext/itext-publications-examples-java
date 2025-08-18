@@ -8,6 +8,16 @@ import com.itextpdf.kernel.pdf.PdfName;
 
 import java.io.File;
 
+/*
+ * RemoveEmbeddedFiles.java
+ * 
+ * This class demonstrates how to remove all embedded file attachments from a PDF document
+ * in a single operation. Unlike the RemoveEmbeddedFile class which removes individual
+ * attachments, this code completely removes the EmbeddedFiles entry from the Names
+ * dictionary in the document catalog. This approach efficiently removes all document-level
+ * attachments at once without needing to iterate through them individually.
+ */
+
 public class RemoveEmbeddedFiles {
     public static final String DEST = "./target/sandbox/annotations/remove_embedded_files.pdf";
 

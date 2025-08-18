@@ -17,6 +17,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 import java.io.File;
 import java.util.Map;
 
+/*
+ * AddExtraTable.java
+ *
+ * This example demonstrates how to add an extra table to a PDF document.
+ * The example reads a PDF file and adds an extra table with the same content.
+ */
+
 public class AddExtraTable {
     public static String DEST = "./target/sandbox/acroforms/add_extra_table.pdf";
 

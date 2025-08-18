@@ -13,7 +13,7 @@ import com.itextpdf.kernel.pdf.tagging.*;
 import com.itextpdf.kernel.pdf.tagutils.TagTreePointer;
 import com.itextpdf.kernel.pdf.xobject.PdfImageXObject;
 
-import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -23,6 +23,9 @@ public class ExtractContentBasedOnTags {
     public static final String DEST = "./target/sandbox/tagging/extracted_content.pdf";
 
     public static void main(String[] args) throws IOException {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+
         new ExtractContentBasedOnTags().extractContentText();
     }
 

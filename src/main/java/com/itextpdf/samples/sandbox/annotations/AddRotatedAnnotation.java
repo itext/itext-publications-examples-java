@@ -15,6 +15,16 @@ import com.itextpdf.kernel.pdf.annot.PdfStampAnnotation;
 
 import java.io.File;
 
+/*
+ * AddRotatedAnnotation.java
+ * 
+ * This class demonstrates how to add various annotations with different rotations to a PDF document.
+ * The code opens an existing PDF and adds multiple annotations to the first page: two link annotations
+ * with different orientations and colors, and three stamp annotations with different rotation angles
+ * (0, 90, and 45 degrees). This example illustrates how to create and customize annotations with
+ * various orientations and appearances.
+ */
+
 public class AddRotatedAnnotation {
     public static final String DEST = "./target/sandbox/annotations/add_rotated_annotation.pdf";
 

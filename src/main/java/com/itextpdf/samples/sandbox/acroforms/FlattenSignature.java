@@ -8,6 +8,13 @@ import com.itextpdf.forms.PdfAcroForm;
 
 import java.io.File;
 
+/*
+ * FlattenSignature.java
+ * 
+ * This example demonstrates how to flatten a signed PDF form, converting the signature field
+ * into a static part of the PDF content.
+ */
+
 public class FlattenSignature {
     public static final String DEST = "./target/sandbox/acroforms/flatten_signature.pdf";
     public static final String SRC = "./src/main/resources/pdfs/input_signed.pdf";

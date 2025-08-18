@@ -11,6 +11,16 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import java.io.File;
 import java.util.Map;
 
+/*
+ * RemoveXFA.java
+ * 
+ * This example demonstrates how to remove XFA (XML Forms Architecture) data from a PDF document
+ * while maintaining the AcroForm functionality, and then modify form fields by setting their values
+ * and changing some field colors.
+ * 
+ * Requires pdfXFA addon.
+ */
+
 public class RemoveXFA {
     public static final String DEST = "./target/sandbox/acroforms/remove_xfa.pdf";
 

@@ -4,18 +4,15 @@ import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfDocumentInfo;
 import com.itextpdf.kernel.pdf.PdfPage;
-import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfUAConformance;
-import com.itextpdf.kernel.pdf.PdfViewerPreferences;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.WriterProperties;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.kernel.pdf.tagging.StandardRoles;
 import com.itextpdf.kernel.pdf.tagutils.TagTreePointer;
-import com.itextpdf.kernel.validation.ValidationContainer;
-import com.itextpdf.pdfua.checkers.PdfUA1Checker;
+import com.itextpdf.pdfua.PdfUAConfig;
+import com.itextpdf.pdfua.PdfUADocument;
 import com.itextpdf.pdfua.exceptions.PdfUAConformanceException;
 
 import java.io.File;
@@ -33,18 +30,11 @@ public class PdfUACanvasUsage {
     }
 
     public void manipulatePdf(String dest) throws IOException {
-        PdfDocument pdfDoc = new PdfDocument(
-                    new PdfWriter(dest, new WriterProperties().addPdfUaXmpMetadata(PdfUAConformance.PDF_UA_1)));
-        pdfDoc.setTagged();
-        pdfDoc.getCatalog().setViewerPreferences(new PdfViewerPreferences().setDisplayDocTitle(true));
-        pdfDoc.getCatalog().setLang(new PdfString("en-US"));
-        PdfDocumentInfo info = pdfDoc.getDocumentInfo();
-        info.setTitle("English pangram");
-        //validation
-        ValidationContainer validationContainer = new ValidationContainer();
-        validationContainer.addChecker(new PdfUA1Checker(pdfDoc));
-        pdfDoc.getDiContainer().register(ValidationContainer.class, validationContainer);
-        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI, PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
+        PdfDocument pdfDoc = new PdfUADocument(
+                new PdfWriter(dest, new WriterProperties()),
+                new PdfUAConfig(PdfUAConformance.PDF_UA_1, "Some title", "en-US"));
+        PdfFont font = PdfFontFactory.createFont(FONT, PdfEncodings.WINANSI,
+                PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
 
         PdfPage page1 = pdfDoc.addNewPage();
         PdfCanvas canvas = new PdfCanvas(page1);

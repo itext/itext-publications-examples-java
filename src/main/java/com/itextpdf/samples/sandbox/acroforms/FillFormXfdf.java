@@ -10,6 +10,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+/*
+ * FillFormXfdf.java
+ * 
+ * This example demonstrates how to fill a PDF form with data from an XFDF file.
+ * It reads both the PDF form and the XFDF data file, and merges the form data into the PDF.
+ */
 
 public class FillFormXfdf {
     public static final String sourceFolder = "./src/main/resources/pdfs/";

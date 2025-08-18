@@ -22,6 +22,14 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * CreateTOC2.java
+ * 
+ * This class demonstrates how to create an interactive table of contents with clickable entries.
+ * It enhances the basic TOC example by adding PDF destinations and actions to each entry,
+ * allowing readers to navigate directly to specific sections by clicking on TOC items.
+ */
+
 public class CreateTOC2 {
     public static final String DEST = "./target/sandbox/events/create_toc2.pdf";
 

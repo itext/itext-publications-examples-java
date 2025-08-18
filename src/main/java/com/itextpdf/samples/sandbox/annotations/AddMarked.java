@@ -12,6 +12,16 @@ import com.itextpdf.kernel.pdf.annot.PdfTextAnnotation;
 
 import java.io.File;
 
+/*
+ * AddMarked.java
+ * 
+ * This class demonstrates how to add a "Marked" reply annotation to an existing sticky note
+ * in a PDF document. The code opens a PDF with an existing annotation, retrieves it, and
+ * creates a new text annotation with the "Marked" state that is linked to the original
+ * annotation. The reply annotation includes specific settings for appearance, visibility,
+ * and metadata. This example illustrates how to implement annotation-based review workflows.
+ */
+
 public class AddMarked {
     public static final String DEST = "./target/sandbox/annotations/add_marked.pdf";
 

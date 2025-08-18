@@ -19,6 +19,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+/*
+ * JawsFlattenedButtonFieldsTagging.java
+ * 
+ * This example demonstrates how to enhance accessibility in PDF forms by adding 
+ * appropriate structure attributes to radio buttons and checkboxes before flattening.
+ * The added attributes help screen readers like JAWS to correctly interpret form elements.
+ */
+
 public class JawsFlattenedButtonFieldsTagging {
     public static final String DEST = "./target/sandbox/acroforms/jawsRecognition.pdf";
     public static final String SRC = "./src/main/resources/pdfs/jawsRecognition.pdf";

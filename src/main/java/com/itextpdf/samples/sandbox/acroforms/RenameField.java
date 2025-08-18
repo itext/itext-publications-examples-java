@@ -10,6 +10,14 @@ import com.itextpdf.forms.fields.PdfFormField;
 import java.io.File;
 import java.util.Map;
 
+/*
+ * RenameField.java
+ * 
+ * This example demonstrates how to rename a form field in a PDF document.
+ * It changes the field name from "personal.loginname" to "login" and then verifies 
+ * the change by reopening the document and printing all field names to the console.
+ */
+
 public class RenameField {
     public static final String DEST = "./target/sandbox/acroforms/rename_field.pdf";
 

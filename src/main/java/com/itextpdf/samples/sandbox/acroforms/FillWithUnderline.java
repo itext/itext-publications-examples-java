@@ -19,6 +19,13 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.StringReader;
 
+/*
+ * FillWithUnderline.java
+ * 
+ * This example demonstrates how to fill a PDF form with formatted text, specifically text with underlining.
+ * It flattens form fields and then uses SAX parsing to process XML-formatted input that includes formatting tags.
+ */
+
 public class FillWithUnderline {
     public static final String DEST = "./target/sandbox/acroforms/fill_with_underline.pdf";
 

@@ -13,6 +13,15 @@ import com.itextpdf.kernel.pdf.annot.PdfTextAnnotation;
 import java.io.File;
 import java.util.List;
 
+/*
+ * AddInReplyTo.java
+ * 
+ * This class demonstrates how to add a reply annotation to an existing annotation in a PDF document.
+ * The code opens a PDF containing a sticky note annotation, retrieves it, and creates a new text
+ * annotation that is linked to the original one through the "in reply to" relationship. This example
+ * shows how to create threaded annotations for comment-reply interactions in PDF documents.
+ */
+
 public class AddInReplyTo {
     public static final String DEST = "./target/sandbox/annotations/add_in_reply_to.pdf";
 

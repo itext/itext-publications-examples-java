@@ -16,6 +16,16 @@ import com.itextpdf.layout.Document;
 
 import java.io.File;
 
+/*
+ * AddPolygonLink.java
+ * 
+ * This class demonstrates how to create a polygon-shaped clickable link in a PDF document.
+ * The code opens an existing PDF, draws a polygon shape on the first page, and then
+ * adds a link annotation that follows the polygon's shape using the QuadPoints array.
+ * When clicked, this irregularly shaped link will navigate to the first page of the 
+ * document. This example shows how to create non-rectangular interactive areas in PDFs.
+ */
+
 public class AddPolygonLink {
     public static final String DEST = "./target/sandbox/annotations/add_polygon_link.pdf";
 

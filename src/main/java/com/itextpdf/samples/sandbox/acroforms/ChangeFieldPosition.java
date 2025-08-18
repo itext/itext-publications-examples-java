@@ -13,6 +13,13 @@ import com.itextpdf.kernel.pdf.annot.PdfWidgetAnnotation;
 import java.io.File;
 import java.util.Map;
 
+/*
+ * ChangeFieldPosition.java
+ * 
+ * This example demonstrates how to modify the position of a form field in a PDF document.
+ * Specifically, it adjusts the right coordinate of the rectangle defining the field's position.
+ */
+
 public class ChangeFieldPosition {
     public static final String DEST = "./target/sandbox/acroforms/change_field_position.pdf";
 

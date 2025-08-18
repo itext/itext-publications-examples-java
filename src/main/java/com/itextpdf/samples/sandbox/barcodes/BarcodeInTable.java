@@ -12,6 +12,17 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * BarcodeInTable.java
+ * 
+ * This class demonstrates how to add barcodes to table cells in a PDF document.
+ * The code creates a two-column table and shows two different approaches for 
+ * incorporating Code 128 barcodes: first by changing the baseline position of 
+ * barcode text, and second by adding barcode and text as separate elements in
+ * the same cell. The example illustrates techniques for controlling barcode 
+ * appearance and positioning when used within tabular layouts.
+ */
+
 public class BarcodeInTable {
     public static final String DEST = "./target/sandbox/barcodes/barcode_in_table.pdf";
 

@@ -10,6 +10,17 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * RemoteGoToPage.java
+ * 
+ * This class demonstrates how to create a link in one PDF document that navigates to a 
+ * specific page in another PDF document. The code creates two files: a multi-page 
+ * destination document with seven pages, and a source document containing a link that, 
+ * when clicked, opens the destination document and navigates directly to page 6.
+ * This example shows how to implement cross-document page navigation using page numbers
+ * rather than named destinations.
+ */
+
 public class RemoteGoToPage {
     public static final String DEST = "./target/sandbox/annotations/";
 

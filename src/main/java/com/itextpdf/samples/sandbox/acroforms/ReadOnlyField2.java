@@ -18,6 +18,14 @@ import com.itextpdf.forms.fields.PdfTextFormField;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ReadOnlyField2.java
+ * 
+ * This example demonstrates how to create multiple read-only text fields in a PDF form.
+ * It creates four different multiline text fields with various positions and sets them 
+ * all to read-only mode, preventing users from modifying their content.
+ */
+
 public class ReadOnlyField2 {
     public static final String DEST = "./target/sandbox/acroforms/read_only_field2.pdf";
 

@@ -14,6 +14,13 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * CreateJapaneseButton.java
+ * 
+ * This example demonstrates how to create a PDF with a push button containing Japanese text.
+ * It uses a custom font to ensure proper rendering of the Japanese characters.
+ */
+
 public class CreateJapaneseButton {
     public static final String DEST = "./target/sandbox/acroforms/create_japanese_button.pdf";
 

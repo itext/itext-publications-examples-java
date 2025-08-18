@@ -44,7 +44,7 @@ public class AccessibleIntraLinkExample {
         ConverterProperties converterProperties = new ConverterProperties();
         FontProvider fontProvider = new BasicFontProvider(false, true, false);
         // Base URI is required to resolve the path to source files, setting font provider which provides only embeddable fonts
-        converterProperties.setFontProvider(fontProvider).setBaseUri(resourceLoc);;
+        converterProperties.setFontProvider(fontProvider).setBaseUri(resourceLoc);
         HtmlConverter.convertToPdf(new FileInputStream(htmlSource), pdfDocument, converterProperties);
     }
 

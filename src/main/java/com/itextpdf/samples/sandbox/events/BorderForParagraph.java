@@ -8,6 +8,14 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * BorderForParagraph.java
+ * 
+ * This class demonstrates how to add borders to specific paragraphs in a PDF document.
+ * It creates a PDF with three paragraphs, applies a solid border to only the middle paragraph,
+ * and shows how iText's border functionality can be used to highlight content.
+ */
+
 public class BorderForParagraph {
     public static final String DEST = "./target/sandbox/events/border_for_paragraph.pdf";
 

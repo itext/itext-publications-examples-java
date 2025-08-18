@@ -19,6 +19,14 @@ import com.itextpdf.layout.element.Table;
 
 import java.io.File;
 
+/**
+ * TableFooter.java
+ * 
+ * This class demonstrates how to add a consistent table footer to every page of a PDF document.
+ * It uses an event handler to automatically add a formatted table with test document information
+ * and a copyright notice at the bottom of each page when the page is completed.
+ */
+
 public class TableFooter {
     public static final String DEST = "./target/sandbox/events/table_footer.pdf";
 

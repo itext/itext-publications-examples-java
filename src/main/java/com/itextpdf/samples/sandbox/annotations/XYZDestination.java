@@ -11,6 +11,16 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * XYZDestination.java
+ * 
+ * This class demonstrates how to create internal navigation links in a PDF document 
+ * using XYZ destinations. The code creates a multi-page document with test content,
+ * then adds a set of links on the last page that navigate to specific coordinates
+ * on each of the preceding pages. This example shows how to implement precise
+ * internal navigation with custom zoom levels using explicit destinations.
+ */
+
 public class XYZDestination {
     public static final String DEST = "./target/sandbox/annotations/xyz_destination.pdf";
 

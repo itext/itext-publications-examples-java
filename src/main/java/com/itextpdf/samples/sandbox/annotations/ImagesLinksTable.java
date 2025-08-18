@@ -18,6 +18,16 @@ import com.itextpdf.layout.renderer.ImageRenderer;
 
 import java.io.File;
 
+/*
+ * ImagesLinksTable.java
+ * 
+ * This class demonstrates two different approaches to create clickable image links within 
+ * a table in a PDF document. The first approach uses the high-level API by setting an action 
+ * property on a paragraph containing an image. The second approach uses a custom renderer 
+ * that adds a link annotation during the drawing process. This example illustrates how to 
+ * create interactive table cells with images that function as hyperlinks to external websites.
+ */
+
 public class ImagesLinksTable {
     public static final String DEST = "./target/sandbox/annotations/images_links_table.pdf";
 

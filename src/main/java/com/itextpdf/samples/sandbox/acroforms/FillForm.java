@@ -8,6 +8,13 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * FillForm.java
+ * 
+ * This example demonstrates how to fill out an existing PDF form with specific values.
+ * It also shows how to flatten the form fields to make them part of the static PDF content.
+ */
+
 public class FillForm {
     public static final String DEST = "./target/sandbox/acroforms/fill_form.pdf";
 

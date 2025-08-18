@@ -20,6 +20,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * SortingTable.java
+ * 
+ * This class demonstrates how to create an interactive table with column sorting using PDF layers.
+ * It generates a PDF with three overlapping tables where only one is visible at a time, creating
+ * the effect of sorting by different columns when the user clicks the column headers.
+ */
+
 public class SortingTable {
     public static final String DEST = "./target/sandbox/columntext/sorting_table.pdf";
 

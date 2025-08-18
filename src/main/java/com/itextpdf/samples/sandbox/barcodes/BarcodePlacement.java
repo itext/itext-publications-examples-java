@@ -11,6 +11,16 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * BarcodePlacement.java
+ * 
+ * This class demonstrates how to create and scale PDF417 barcodes in a PDF document.
+ * The code generates three different instances of the same barcode with different scaling
+ * factors: (1,1), (3,3), and (3,1). Each barcode is added to the document along with a 
+ * paragraph displaying its dimensions in user units. This example illustrates techniques
+ * for controlling the size and aspect ratio of barcodes for different presentation needs.
+ */
+
 public class BarcodePlacement {
     public static final String DEST = "./target/sandbox/barcodes/barcode_placement.pdf";
 
