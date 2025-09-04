@@ -55,17 +55,13 @@ public class PdfOcrTesseractExample {
         Tesseract4LibOcrEngine libOcrEngine = new Tesseract4LibOcrEngine(new Tesseract4OcrEngineProperties()
                 .setPathToTessData(getTessDataDirectory()));
         OcrPdfCreator pdfCreator = new OcrPdfCreator(libOcrEngine);
-        try (PdfWriter writer = new PdfWriter(LIB_DEST)) {
-            pdfCreator.createPdf(images, writer).close();
-        }
+        pdfCreator.createPdf(images, new PdfWriter(LIB_DEST)).close();
 
         // Create PDF with Tesseract executable.
         Tesseract4ExecutableOcrEngine exeOcrEngine = new Tesseract4ExecutableOcrEngine(getTesseractExecutableCommand(),
                 new Tesseract4OcrEngineProperties().setPathToTessData(getTessDataDirectory()));
         pdfCreator = new OcrPdfCreator(exeOcrEngine);
-        try (PdfWriter writer = new PdfWriter(EXE_DEST)) {
-            pdfCreator.createPdf(images, writer).close();
-        }
+        pdfCreator.createPdf(images, new PdfWriter(EXE_DEST)).close();
     }
 
     protected static String getTesseractExecutableCommand() {

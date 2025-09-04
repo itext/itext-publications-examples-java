@@ -70,9 +70,7 @@ public class PdfOcrOnnxTrMultilingualExample {
                     .setTextColor(ColorConstants.GREEN);
 
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine, ocrPdfCreatorProperties);
-            try (PdfWriter writer = new PdfWriter(DEST)) {
-                pdfCreator.createPdf(images, writer).close();
-            }
+            pdfCreator.createPdf(images, new PdfWriter(DEST)).close();
         }
     }
 }

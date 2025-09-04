@@ -55,9 +55,7 @@ public class PdfOcrOnnxTrExample {
         try (OnnxTrOcrEngine ocrEngine =
                      new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
-            try (PdfWriter writer = new PdfWriter(DEST)) {
-                pdfCreator.createPdf(images, writer).close();
-            }
+            pdfCreator.createPdf(images, new PdfWriter(DEST)).close();
         }
     }
 }
