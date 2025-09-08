@@ -1,5 +1,6 @@
 package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
 
+import com.itextpdf.commons.utils.FileUtil;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
@@ -11,6 +12,7 @@ import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
 import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
 
 import java.io.File;
+import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,10 +42,10 @@ public class PdfOcrOnnxTrExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrExample().manipulate();
+        new PdfOcrOnnxTrExample().manipulate(DEST);
     }
 
-    protected void manipulate() throws Exception {
+    protected void manipulate(String destination) throws Exception {
         List<File> images = Arrays.asList(new File(BASIC_IMAGE), new File(ROTATED_IMAGE));
 
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
@@ -53,9 +55,10 @@ public class PdfOcrOnnxTrExample {
         // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
         // It will also close all predictors used for its creation.
         try (OnnxTrOcrEngine ocrEngine =
-                     new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
+                     new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor);
+             OutputStream output = FileUtil.getFileOutputStream(destination)) {
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
-            pdfCreator.createPdf(images, new PdfWriter(DEST)).close();
+            pdfCreator.createPdf(images, new PdfWriter(output)).close();
         }
     }
 }
