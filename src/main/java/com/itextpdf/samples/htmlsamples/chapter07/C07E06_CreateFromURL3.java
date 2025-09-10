@@ -34,8 +34,10 @@ public class C07E06_CreateFromURL3 {
      */
     public static final String ADDRESS = "https://stackoverflow.com/help/on-topic";
 
-    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 " +
-            "(KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
+    private static final String USER_AGENT = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; WOW64; " +
+            "Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; " +
+            ".NET CLR 3.5.21022; .NET CLR 3.5.30729; .NET CLR 3.0.30618; " +
+            "InfoPath.2; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)";
 
     private static final Logger LOGGER = (Logger) LoggerFactory.getLogger("ROOT");
 
@@ -70,38 +72,29 @@ public class C07E06_CreateFromURL3 {
         MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.PRINT);
         properties.setMediaDeviceDescription(mediaDeviceDescription);
 
-        int maxTries = 3;
         InputStream inputStream;
 
-        while (maxTries != 0) {
-            LOGGER.info("Tries left " + maxTries);
-            LOGGER.info("Opening URL connection.");
-            URLConnection urlConnection = url.openConnection();
-            LOGGER.info("Add request property.");
-            urlConnection.addRequestProperty("User-Agent", USER_AGENT);
-            //15 second timeout
-            urlConnection.setConnectTimeout(15 * 1000);
-            int responseCode;
+        LOGGER.info("Opening URL connection.");
+        URLConnection urlConnection = url.openConnection();
+        LOGGER.info("Add request property.");
+        urlConnection.addRequestProperty("User-Agent", USER_AGENT);
+        //15 second timeout
+        urlConnection.setConnectTimeout(15 * 1000);
+
+        try {
+            LOGGER.info("getting URL input stream.");
+            inputStream = urlConnection.getInputStream();
+            LOGGER.info("Converting to PDF.");
+            HtmlConverter.convertToPdf(inputStream, new FileOutputStream(dest), properties);
+        } catch (SocketTimeoutException exception) {
+            LOGGER.info("Timeout occurred.");
+        }  catch (IOException e) {
             try {
-                LOGGER.info("getting URL input stream.");
-                inputStream = urlConnection.getInputStream();
-                LOGGER.info("Converting to PDF.");
-                HtmlConverter.convertToPdf(inputStream, new FileOutputStream(dest), properties);
-                break;
-            } catch (SocketTimeoutException exception) {
-                LOGGER.info("Timeout occurred.");
-                responseCode = -1;
-            }  catch (IOException e) {
-                try {
-                    LOGGER.info("Getting response code.");
-                    responseCode = ((HttpURLConnection) urlConnection).getResponseCode();
-                } catch(IOException innerE) {
-                    LOGGER.info("Couldn't get response code, retrying.");
-                    responseCode = -1;
-                }
+                LOGGER.info("Getting response code.");
+                ((HttpURLConnection) urlConnection).getResponseCode();
+            } catch(IOException innerE) {
+                LOGGER.info("Couldn't get response code, retrying.");
             }
-            assert((responseCode >= 200 && responseCode < 300) || responseCode < 0);
-            maxTries--;
         }
     }
 }
