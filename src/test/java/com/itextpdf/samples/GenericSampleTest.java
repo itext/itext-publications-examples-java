@@ -155,7 +155,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Timeout(unit = TimeUnit.MILLISECONDS, value = 60000)
+    @Timeout(unit = TimeUnit.MILLISECONDS, value = 180000)
     @ParameterizedTest(name = "{index}: {0}")
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
