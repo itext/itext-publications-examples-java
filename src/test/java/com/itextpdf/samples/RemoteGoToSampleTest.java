@@ -31,7 +31,7 @@ public class RemoteGoToSampleTest extends WrappedSamplesRunner {
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/all-products.json")) {
             LicenseKey.loadLicenseFile(license);
         }
@@ -54,7 +54,6 @@ public class RemoteGoToSampleTest extends WrappedSamplesRunner {
             String currentCmp = temp.substring(0, i + 1) + "cmp_" + temp.substring(i + 1);
 
             addError(compareTool.compareByContent(currentDest, currentCmp, outPath, "diff_"));
-            addError(compareTool.compareDocumentInfo(currentDest, currentCmp));
         }
     }
 

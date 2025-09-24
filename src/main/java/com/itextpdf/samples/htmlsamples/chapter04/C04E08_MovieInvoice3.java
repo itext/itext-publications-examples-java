@@ -68,7 +68,7 @@ public class C04E08_MovieInvoice3 {
      * @throws TransformerException error during transformation process
      */
     public static void main(String[] args) throws IOException, TransformerException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/itextkey-html2pdf_typography.json")) {
             LicenseKey.loadLicenseFile(license);
         }

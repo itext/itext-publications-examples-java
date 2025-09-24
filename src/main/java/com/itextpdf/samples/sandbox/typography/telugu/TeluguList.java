@@ -21,7 +21,7 @@ public class TeluguList {
     public static void main(String[] args) throws Exception {
 
         // Load the license file to use typography features
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/itextkey-typography.json")) {
             LicenseKey.loadLicenseFile(license);
         }

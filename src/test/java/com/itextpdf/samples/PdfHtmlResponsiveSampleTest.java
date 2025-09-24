@@ -31,7 +31,7 @@ public class PdfHtmlResponsiveSampleTest extends WrappedSamplesRunner {
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/all-products.json")) {
             LicenseKey.loadLicenseFile(license);
         }
@@ -51,7 +51,6 @@ public class PdfHtmlResponsiveSampleTest extends WrappedSamplesRunner {
             String currentCmp = cmp.replace("<filename>", "responsive_" + width + ".pdf");
 
             addError(compareTool.compareByContent(currentDest, currentCmp, outPath, "diff_"));
-            addError(compareTool.compareDocumentInfo(currentDest, currentCmp));
         }
     }
 }

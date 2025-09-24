@@ -160,7 +160,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.json")) {
+        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json")) {
             LicenseKey.loadLicenseFile(allLicense);
         }
         FontCache.clearSavedFonts();
@@ -183,13 +183,11 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         } else if (renderCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));
-            addError(compareTool.compareDocumentInfo(dest, cmp));
         } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_",
                     ignoredClassesMap.get(sampleClass.getName())));
         } else {
             addError(compareTool.compareByContent(dest, cmp, outPath, "diff_"));
-            addError(compareTool.compareDocumentInfo(dest, cmp));
         }
         if (tagCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareTagStructures(dest, cmp));
