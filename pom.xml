@@ -11,7 +11,7 @@
     <ocr.version>4.1.1-SNAPSHOT</ocr.version>
     <fb-contrib.version>7.4.3</fb-contrib.version>
     <findsecbugs.version>1.8.0</findsecbugs.version>
-    <html2pdf.version>6.2.2-SNAPSHOT</html2pdf.version>
+    <html2pdf.version>6.3.0-SNAPSHOT</html2pdf.version>
     <java.version>1.8</java.version>
     <pdfxfa.version>5.0.4-SNAPSHOT</pdfxfa.version>
     <licensekey.version>4.2.4-SNAPSHOT</licensekey.version>
