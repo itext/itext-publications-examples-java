@@ -88,6 +88,8 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
         ignoredClassesMap = new HashMap<>();
         ignoredClassesMap.put("com.itextpdf.samples.sandbox.typography.latin.LatinSignature", ignoredAreasMap);
+        ignoredClassesMap.put("com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTextPositioningExample",
+                new HashMap<>());
     }
 
     public static Collection<Object[]> data() {

@@ -3,7 +3,6 @@ package com.itextpdf.samples.sandbox.pdfocr.tesseract4;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.tesseract4.AbstractTesseract4OcrEngine;
 import com.itextpdf.pdfocr.tesseract4.Tesseract4ExecutableOcrEngine;
-import com.itextpdf.pdfocr.tesseract4.Tesseract4LibOcrEngine;
 import com.itextpdf.pdfocr.tesseract4.Tesseract4OcrEngineProperties;
 import com.itextpdf.pdfocr.tesseract4.TextPositioning;
 
