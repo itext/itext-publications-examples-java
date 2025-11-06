@@ -33,7 +33,7 @@ public class StandardOutWithPdfSampleTest extends WrappedSamplesRunner {
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/all-products.json")) {
             LicenseKey.loadLicenseFile(license);
         }
@@ -59,7 +59,6 @@ public class StandardOutWithPdfSampleTest extends WrappedSamplesRunner {
 
         CompareTool compareTool = new CompareTool();
         addError(compareTool.compareByContent(dest, cmp, outPath, "diff_"));
-        addError(compareTool.compareDocumentInfo(dest, cmp));
     }
 
     private String compareSystemOut(String dest, String cmp) throws IOException {

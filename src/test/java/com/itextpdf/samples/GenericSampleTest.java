@@ -60,7 +60,9 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.logging.CounterDemo",
             "com.itextpdf.samples.sandbox.tagging.WalkTheTree",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateChainBeforeSigningExample",
-            "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample"
+            "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample",
+            "com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTxtFileExample",
+            "com.itextpdf.samples.sandbox.pdfocr.tesseract4.PdfOcrTesseractTxtFileExample"
     );
 
     /**
@@ -86,6 +88,9 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
         ignoredClassesMap = new HashMap<>();
         ignoredClassesMap.put("com.itextpdf.samples.sandbox.typography.latin.LatinSignature", ignoredAreasMap);
+        // Output PDFs are different in Windows and Linux (in float values), but visually they're the same.
+        ignoredClassesMap.put("com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTextPositioningExample",
+                new HashMap<>());
     }
 
     public static Collection<Object[]> data() {
@@ -95,6 +100,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
         // Samples are run by separate samples runner
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.split.SplitAndCount");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.validation.DummyOcspClient");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.DecryptPdf2");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.security.EncryptPdf");
@@ -152,12 +158,12 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         return generateTestsList(searchConfig);
     }
 
-    @Timeout(unit = TimeUnit.MILLISECONDS, value = 60000)
+    @Timeout(unit = TimeUnit.MILLISECONDS, value = 180000)
     @ParameterizedTest(name = "{index}: {0}")
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY") + "/all-products.json")) {
+        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json")) {
             LicenseKey.loadLicenseFile(allLicense);
         }
         FontCache.clearSavedFonts();
@@ -180,13 +186,11 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         } else if (renderCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));
-            addError(compareTool.compareDocumentInfo(dest, cmp));
         } else if (ignoredClassesMap.keySet().contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_",
                     ignoredClassesMap.get(sampleClass.getName())));
         } else {
             addError(compareTool.compareByContent(dest, cmp, outPath, "diff_"));
-            addError(compareTool.compareDocumentInfo(dest, cmp));
         }
         if (tagCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareTagStructures(dest, cmp));

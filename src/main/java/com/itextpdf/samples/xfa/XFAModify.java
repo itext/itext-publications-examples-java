@@ -22,7 +22,7 @@ public class XFAModify {
     public static void main(String[] args) throws Exception{
 
         // Load the license file to use XFA features
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/itextkey-xfa.json")) {
             LicenseKey.loadLicenseFile(license);
         }

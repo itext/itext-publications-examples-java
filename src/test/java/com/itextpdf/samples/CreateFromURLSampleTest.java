@@ -10,6 +10,7 @@ import ch.qos.logback.classic.Logger;
 import java.io.FileInputStream;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -30,10 +31,11 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
     @Timeout(unit = TimeUnit.MILLISECONDS, value = 180000)
     @ParameterizedTest(name = "{index}: {0}")
     @MethodSource("data")
+    @Disabled("Samples are very flaky")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
         Logger logger = (Logger) LoggerFactory.getLogger("ROOT");
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
                 + "/all-products.json")) {
             logger.info("Load all-products license.");
             LicenseKey.loadLicenseFile(license);

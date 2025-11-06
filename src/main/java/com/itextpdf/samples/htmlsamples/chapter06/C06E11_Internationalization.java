@@ -44,7 +44,7 @@ public class C06E11_Internationalization {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT7_LICENSEKEY")
+        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
 				+ "/itextkey-html2pdf_typography.json")) {
 			LicenseKey.loadLicenseFile(license);
 		}

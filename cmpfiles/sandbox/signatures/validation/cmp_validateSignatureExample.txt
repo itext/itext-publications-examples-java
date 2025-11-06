@@ -8,6 +8,9 @@ CertificateReportItem{baseclass=
 ReportItem{checkName='Certificate check.', message='Certificate CN=iTextTestRoot, O=iText, C=BE is trusted, revocation data checks are not required.', cause=null, status=INFO}
 certificate=CN=iTextTestRoot, O=iText, C=BE}, 
 CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Trusted Certificate is taken from manually configured Trust List.', cause=null, status=INFO}
+certificate=CN=iTextTestRoot, O=iText, C=BE}, 
+CertificateReportItem{baseclass=
 ReportItem{checkName='OCSP response check.', message='Responder certificate is a trusted certificate.', cause=null, status=INFO}
 certificate=CN=iTextTestRoot, O=iText, C=BE}, 
 CertificateReportItem{baseclass=
@@ -15,4 +18,7 @@ ReportItem{checkName='OCSP response check.', message='Responder certificate is t
 certificate=CN=iTextTestRoot, O=iText, C=BE}, 
 CertificateReportItem{baseclass=
 ReportItem{checkName='Certificate check.', message='Certificate CN=iTextTestRoot, O=iText, C=BE is trusted, revocation data checks are not required.', cause=null, status=INFO}
+certificate=CN=iTextTestRoot, O=iText, C=BE}, 
+CertificateReportItem{baseclass=
+ReportItem{checkName='Certificate check.', message='Trusted Certificate is taken from manually configured Trust List.', cause=null, status=INFO}
 certificate=CN=iTextTestRoot, O=iText, C=BE}, }
