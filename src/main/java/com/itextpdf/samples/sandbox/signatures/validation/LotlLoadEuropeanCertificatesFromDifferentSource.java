@@ -44,7 +44,6 @@ public class LotlLoadEuropeanCertificatesFromDifferentSource {
     public void loadEuropeanCertificatesFromPemFiles() {
         ValidatorChainBuilder builder = new ValidatorChainBuilder();
 
-        builder.withOcspClient(() -> new DummyOcspClient());
         builder.trustEuropeanLotl(true);
         LotlFetchingProperties fetchingProperties = new LotlFetchingProperties(new RemoveOnFailingCountryData());
         fetchingProperties.setCountryNames(LotlCountryCodeConstants.PORTUGAL);

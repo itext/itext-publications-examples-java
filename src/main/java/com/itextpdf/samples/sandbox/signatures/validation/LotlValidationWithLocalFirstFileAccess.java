@@ -37,7 +37,6 @@ public class LotlValidationWithLocalFirstFileAccess {
 
     public void useLocalFirstAccess() {
         ValidatorChainBuilder builder = new ValidatorChainBuilder();
-        builder.withOcspClient(() -> new DummyOcspClient());
         // We want to use LOTL as a source of trusted certificates
         builder.trustEuropeanLotl(true);
 
