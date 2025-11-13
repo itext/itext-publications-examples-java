@@ -61,6 +61,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.tagging.WalkTheTree",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateChainBeforeSigningExample",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample",
+            "com.itextpdf.samples.sandbox.signatures.validation.LotlValidationThirdCountryTL",
             "com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTxtFileExample",
             "com.itextpdf.samples.sandbox.pdfocr.tesseract4.PdfOcrTesseractTxtFileExample"
     );
