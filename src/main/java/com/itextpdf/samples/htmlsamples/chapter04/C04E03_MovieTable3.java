@@ -1,20 +1,5 @@
 package com.itextpdf.samples.htmlsamples.chapter04;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.kernel.colors.Color;
@@ -28,6 +13,15 @@ import com.itextpdf.kernel.pdf.canvas.draw.ILineDrawer;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.LineSeparator;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+import java.io.*;
 
 /**
  * Converts an HTML page to a PDF that consists of a single page.
@@ -62,8 +56,8 @@ public class C04E03_MovieTable3 {
      * @throws TransformerException the transformer exception
      */
     public static void main(String[] args) throws IOException, TransformerException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-				+ "/itextkey-html2pdf_typography.json")) {
+        String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+        try (FileInputStream license = new FileInputStream(licensePath)) {
 			LicenseKey.loadLicenseFile(license);
 		}
         File file = new File(DEST);

@@ -10,6 +10,7 @@ import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
 import com.itextpdf.styledxmlparser.css.media.MediaDeviceDescription;
 import com.itextpdf.styledxmlparser.css.media.MediaType;
 
@@ -40,8 +41,8 @@ public class C03E03_Wide {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-				+ "/itextkey-html2pdf_typography.json")) {
+        String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+        try (FileInputStream license = new FileInputStream(licensePath)) {
 			LicenseKey.loadLicenseFile(license);
 		}
         File file = new File(DEST);

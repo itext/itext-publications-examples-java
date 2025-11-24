@@ -10,6 +10,8 @@ import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.HttpURLConnection;
+
+import com.itextpdf.samples.util.LicenseUtil;
 import org.slf4j.LoggerFactory;
 
 import com.itextpdf.html2pdf.ConverterProperties;
@@ -48,8 +50,8 @@ public class C07E06_CreateFromURL3 {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-				+ "/itextkey-html2pdf_typography.json")) {
+        String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+        try (FileInputStream license = new FileInputStream(licensePath)) {
             LOGGER.info("Load html2pdf + typography license.");
 			LicenseKey.loadLicenseFile(license);
 		}

@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
 
 /**
  * Converts an HTML file with a Base64 image to PDF document.
@@ -29,10 +30,11 @@ public class C07E03_Base64Image {
 	 * @throws IOException signals that an I/O exception has occurred.
 	 */
     public static void main(String[] args) throws IOException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-				+ "/itextkey-html2pdf_typography.json")) {
+		String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+		try (FileInputStream license = new FileInputStream(licensePath)) {
 			LicenseKey.loadLicenseFile(license);
 		}
+		
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 

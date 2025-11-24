@@ -20,6 +20,7 @@ import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.attach.impl.OutlineHandler;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
 
 /**
  * Creates a PDF document from an XML file using XSLT to convert the XML to HTML,
@@ -56,8 +57,8 @@ public class C04E05_MovieOverview2 {
      * @throws TransformerException error during transformation process
      */
     public static void main(String[] args) throws IOException, TransformerException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-                + "/itextkey-html2pdf_typography.json")) {
+        String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+        try (FileInputStream license = new FileInputStream(licensePath)) {
             LicenseKey.loadLicenseFile(license);
         }
         File file = new File(DEST);
