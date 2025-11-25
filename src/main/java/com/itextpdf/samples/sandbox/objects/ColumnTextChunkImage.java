@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ColumnTextChunkImage.java
+ *
+ * Example showing how to inline images within text paragraphs.
+ * Demonstrates mixing text and images seamlessly in a single line.
+ */
+
 public class ColumnTextChunkImage {
     public static final String DOG = "src/main/resources/img/dog.bmp";
     public static final String FOX = "src/main/resources/img/fox.bmp";

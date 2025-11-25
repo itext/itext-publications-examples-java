@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ColoredText.java
+ *
+ * Example showing how to create colored text with different fonts.
+ * Demonstrates text styling and positioning with Canvas element.
+ */
+
 public class ColoredText {
     public static final String DEST = "./target/sandbox/objects/colored_text.pdf";
 

@@ -1,7 +1,3 @@
-/**
- * <p>
- * The question was about adding compression to an image that already used /DCTDecode
- */
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -14,6 +10,12 @@ import com.itextpdf.kernel.pdf.PdfArray;
 
 import java.io.File;
 
+/*
+ * FlateCompressJPEG2Passes.java
+ *
+ * Example showing how to add Flate compression to existing JPEG images.
+ * Demonstrates post-processing a PDF to apply dual-filter compression.
+ */
 public class FlateCompressJPEG2Passes {
     public static final String DEST = "./target/sandbox/images/flate_compress_jpeg_2passes.pdf";
 

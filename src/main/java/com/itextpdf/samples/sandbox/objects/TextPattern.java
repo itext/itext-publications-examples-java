@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TextPattern.java
+ *
+ * Example showing how to create a tiling text pattern as fill color.
+ * Demonstrates using repeating text as a pattern for filling rectangles.
+ */
+
 public class TextPattern {
     public static final String DEST = "./target/sandbox/objects/text_pattern.pdf";
 

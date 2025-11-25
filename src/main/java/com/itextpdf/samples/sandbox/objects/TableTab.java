@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TableTab.java
+ *
+ * Example showing how to align text columns using tab stops.
+ * Demonstrates creating fixed-width formatted text with tab alignment.
+ */
+
 public class TableTab {
     public static final String DEST = "./target/sandbox/objects/table_tab.pdf";
     public static final String[][] DATA = {

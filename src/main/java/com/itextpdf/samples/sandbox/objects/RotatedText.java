@@ -22,6 +22,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * RotatedText.java
+ *
+ * Example showing how to rotate text and barcode elements in a document.
+ * Demonstrates creating a rotated barcode with text on a narrow page.
+ */
+
 public class RotatedText {
     public static final String DEST = "./target/sandbox/objects/rotated_text.pdf";
 

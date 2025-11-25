@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HelloPdfA2a.java
+ *
+ * Example showing how to create a tagged PDF/A-2a compliant document.
+ * Demonstrates using embedded fonts, color profile, and document tagging.
+ */
+
 public class HelloPdfA2a {
     public static final String DEST = "./target/sandbox/pdfa/hello_pdf_a_2a.pdf";
 

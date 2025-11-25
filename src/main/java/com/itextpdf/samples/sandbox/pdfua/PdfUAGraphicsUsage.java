@@ -13,6 +13,13 @@ import com.itextpdf.pdfua.PdfUADocument;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * PdfUAGraphicsUsage.java
+ *
+ * Example showing how to add images with alt text in PDF/UA documents.
+ * Demonstrates setting alternative descriptions for accessibility compliance.
+ */
+
 public class PdfUAGraphicsUsage {
     public static final String DEST = "./target/sandbox/pdfua/pdf_ua_graphics.pdf";
 

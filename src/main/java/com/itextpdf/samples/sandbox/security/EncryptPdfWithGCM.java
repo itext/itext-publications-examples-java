@@ -4,9 +4,11 @@ import com.itextpdf.kernel.pdf.*;
 
 import java.io.File;
 
-/**
- * This example shows how to encrypt a PDF document using AES algorithm with GCM mode.
- * Note, that AES_GCM can only be used with pdf version 2.0.
+/*
+ * EncryptPdfWithGCM.java
+ *
+ * Example showing how to encrypt PDF using AES-GCM mode with PDF 2.0.
+ * Demonstrates modern encryption requiring PDF 2.0 specification.
  */
 public class EncryptPdfWithGCM {
     public static final String DEST = "./target/sandbox/security/encrypt_pdf_with_GCM.pdf";

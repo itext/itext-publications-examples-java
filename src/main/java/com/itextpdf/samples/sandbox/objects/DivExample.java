@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DivExample.java
+ *
+ * Example showing how to use Div elements for grouping content.
+ * Demonstrates creating bordered, centered containers with multiple elements.
+ */
+
 public class DivExample {
     public final static String DEST = "./target/sandbox/objects/divExample.pdf";
 

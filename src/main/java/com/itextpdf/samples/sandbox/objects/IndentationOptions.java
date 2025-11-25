@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * IndentationOptions.java
+ *
+ * Example showing different approaches to create hanging indentations.
+ * Demonstrates using List, Paragraph margins, and Table for indented text.
+ */
+
 public class IndentationOptions {
     public static final String CONTENT = "test A, test B, coconut, coconut, watermelons, apple, oranges, many more " +
             "fruites, carshow, monstertrucks thing, everything is startting on the same point in the line now";

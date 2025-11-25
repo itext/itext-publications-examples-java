@@ -12,6 +12,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/*
+ * HtmlToPdfA3Convert.java
+ *
+ * Example showing how to convert HTML to PDF/A-3B compliant document.
+ * Demonstrates setting output intent and embedded font requirements.
+ */
+
 public class HtmlToPdfA3Convert {
     public static final String SRC = "./src/main/resources/pdfhtml/HtmlToPdfA3Convert/";
     public static final String DEST = "./target/sandbox/pdfhtml/HtmlToPdfA3Convert.pdf";

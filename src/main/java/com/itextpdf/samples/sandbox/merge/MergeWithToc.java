@@ -1,9 +1,3 @@
-/**
- * <p>
- * When concatenating documents, we add a named destination every time
- * a new document is started. After we've finished merging, we add an extra
- * page with the table of contents and links to the named destinations.
- */
 package com.itextpdf.samples.sandbox.merge;
 
 import com.itextpdf.forms.PdfPageFormCopier;
@@ -24,6 +18,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
+
+/*
+ * MergeWithToc.java
+ *
+ * Example showing how to merge PDFs and generate a table of contents.
+ * Demonstrates creating TOC with links to named destinations in merged docs.
+ */
 
 public class MergeWithToc {
     public static final String DEST = "./target/sandbox/merge/merge_with_toc.pdf";

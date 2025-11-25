@@ -16,6 +16,13 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
+/*
+ * LargeImage2.java
+ *
+ * Example showing how to process and copy large images via temp memory.
+ * Demonstrates extracting, scaling, and transferring huge images in PDF.
+ */
+
 public class LargeImage2 {
     public static final String DEST = "./target/sandbox/images/large_image2.pdf";
 

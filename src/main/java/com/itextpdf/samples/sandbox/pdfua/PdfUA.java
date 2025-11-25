@@ -31,6 +31,13 @@ import com.itextpdf.pdfua.PdfUADocument;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * PdfUA.java
+ *
+ * Example showing how to create PDF/UA-1 accessible documents.
+ * Demonstrates images, lists, tables, headings, and form fields with tags.
+ */
+
 public class PdfUA {
     public static final String DEST = "./target/sandbox/pdfua/pdf_ua.pdf";
 

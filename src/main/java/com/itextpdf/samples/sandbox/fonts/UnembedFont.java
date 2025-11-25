@@ -17,6 +17,13 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
+/*
+ * UnembedFont.java
+ *
+ * This example demonstrates removing embedded TrueType fonts from an existing PDF document to reduce file size.
+ * The sample creates a PDF with an embedded font, then processes it to remove font file data while preserving font references.
+ */
+
 public class UnembedFont {
     public static final String DEST = "./target/sandbox/fonts/unembed_font.pdf";
 

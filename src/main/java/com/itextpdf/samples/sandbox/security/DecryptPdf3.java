@@ -6,8 +6,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
-/**
- * This example shows how to open a pdf document that is encrypted without user password.
+/*
+ * DecryptPdf3.java
+ *
+ * Example showing how to open PDF encrypted without user password.
+ * Demonstrates unethical reading to access encrypted documents.
  * Note, that it is required to use UnethicalReading in this case.
  */
 public class DecryptPdf3 {

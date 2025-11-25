@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * CenterVertically.java
+ *
+ * Example showing how to vertically center a table on a page.
+ * Demonstrates using custom renderer to position table in page center.
+ */
+
 public class CenterVertically {
     public static final String DEST = "./target/sandbox/objects/center_vertically.pdf";
 

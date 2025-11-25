@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * CenterColumnVertically.java
+ *
+ * Example showing how to vertically center text within a rectangle.
+ * Demonstrates calculating text height and positioning it in the middle.
+ */
+
 public class CenterColumnVertically {
     public static final String DEST = "./target/sandbox/objects/center_column_vertically.pdf";
 

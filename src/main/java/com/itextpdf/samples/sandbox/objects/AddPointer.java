@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * AddPointer.java
+ *
+ * Example showing how to add a custom pointer shape over an image.
+ * Demonstrates drawing vector graphics on top of a background image.
+ */
+
 public class AddPointer {
     public static final String DEST = "./target/sandbox/objects/add_pointer.pdf";
     public static final String IMG = "./src/main/resources/img/map_cic.png";

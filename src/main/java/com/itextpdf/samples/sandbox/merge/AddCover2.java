@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * AddCover2.java
+ *
+ * Example showing how to insert a cover page into existing PDF document.
+ * Demonstrates copying pages with form fields using PdfPageFormCopier.
+ */
+
 public class AddCover2 {
     public static final String DEST = "./target/sandbox/merge/add_cover2.pdf";
 

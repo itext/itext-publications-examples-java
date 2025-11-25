@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * CustomDashedLine.java
+ *
+ * Example showing how to create a custom dashed line separator.
+ * Demonstrates extending DottedLine with custom dash and phase patterns.
+ */
+
 public class CustomDashedLine {
     public static final String DEST = "./target/sandbox/objects/custom_dashed_line.pdf";
 

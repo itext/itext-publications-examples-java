@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ReplaceImage.java
+ *
+ * Example showing how to replace an existing image in a PDF.
+ * Demonstrates converting an image to grayscale and substituting it.
+ */
+
 public class ReplaceImage {
     public static final String DEST = "./target/sandbox/images/replace_image.pdf";
 

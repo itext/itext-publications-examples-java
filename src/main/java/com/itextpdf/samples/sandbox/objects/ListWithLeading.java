@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ListWithLeading.java
+ *
+ * Example showing how to control spacing between list items using leading.
+ * Demonstrates fixed leading for custom vertical spacing in lists.
+ */
+
 public class ListWithLeading {
     public static final String DEST = "./target/sandbox/objects/list_with_leading.pdf";
 

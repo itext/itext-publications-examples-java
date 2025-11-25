@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * Html2UA2CompliantPdf.java
+ *
+ * Example showing how to convert HTML to PDF/UA-2 compliant document.
+ * Demonstrates setting PDF 2.0 version with universal accessibility.
+ */
+
 public class Html2UA2CompliantPdf {
 
     public static final String DEST = "./target/sandbox/pdfua2/html2UA2CompliantPdf.pdf";

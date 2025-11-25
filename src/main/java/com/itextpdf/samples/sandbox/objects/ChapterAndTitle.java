@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ChapterAndTitle.java
+ *
+ * Example showing how to create a title with bookmarks and destinations.
+ * Demonstrates adding outline entries linked to document sections.
+ */
+
 public class ChapterAndTitle {
     public static final String DEST = "./target/sandbox/objects/chapter_and_title.pdf";
 

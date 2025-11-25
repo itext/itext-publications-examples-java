@@ -10,6 +10,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * FreeSansBold.java
+ *
+ * Example showing FreeSans regular and bold font variants comparison.
+ * Demonstrates rendering the same character in different font weights.
+ */
+
 public class FreeSansBold {
     public static final String DEST = "./target/sandbox/fonts/free_sans_bold.pdf";
 

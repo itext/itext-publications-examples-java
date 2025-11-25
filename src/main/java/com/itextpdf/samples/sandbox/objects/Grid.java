@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * Grid.java
+ *
+ * Example showing how to create a grid of dots on a PDF page.
+ * Demonstrates drawing regularly spaced circle markers using PdfCanvas.
+ */
+
 public class Grid {
     public static final String DEST = "./target/sandbox/objects/grid.pdf";
 

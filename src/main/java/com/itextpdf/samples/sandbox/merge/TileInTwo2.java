@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TileInTwo2.java
+ *
+ * Example showing how to split each page horizontally into two halves.
+ * Demonstrates creating two pages from each original page by halving width.
+ */
+
 public class TileInTwo2 {
     public static final String DEST = "./target/sandbox/merge/tile_in_two2.pdf";
 

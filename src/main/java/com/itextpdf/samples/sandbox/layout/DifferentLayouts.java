@@ -11,9 +11,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * Example demonstrates how to add paragraphs using floating and fixed layouts
+/*
+ * DifferentLayouts.java
+ *
+ * Example showing floating vs fixed layout positioning for paragraphs.
+ * Demonstrates normal flow layout and absolute positioned elements.
  */
+
 public class DifferentLayouts {
 
     public static final String DEST = "./target/sandbox/layout/differentLayouts.pdf";

@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F04_Russian.java
+ *
+ * Example showing incorrect Russian text rendering with wrong encoding.
+ * Demonstrates why CP1250 encoding fails for Cyrillic characters.
+ */
+
 public class F04_Russian {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f04_russian.pdf";
 

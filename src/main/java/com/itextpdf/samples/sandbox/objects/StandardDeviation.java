@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * StandardDeviation.java
+ *
+ * Example showing how to display the standard deviation symbol (σ).
+ * Demonstrates using Symbol font for mathematical symbols in text.
+ */
+
 public class StandardDeviation {
     public static final String DEST = "./target/sandbox/objects/standard_deviation.pdf";
 

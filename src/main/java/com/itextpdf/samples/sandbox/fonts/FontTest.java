@@ -15,6 +15,13 @@ import java.nio.charset.UnsupportedCharsetException;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+ * FontTest.java
+ *
+ * Example showing font testing across multiple scripts and encodings.
+ * Demonstrates Unicode support for various languages in registered fonts.
+ */
+
 public class FontTest {
     public static final String DEST = "./target/sandbox/fonts/font_test.pdf";
 

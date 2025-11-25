@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ListInColumn.java
+ *
+ * Example showing how to add a numbered list within a column layout.
+ * Demonstrates using ColumnDocumentRenderer for constrained list placement.
+ */
+
 public class ListInColumn {
     public static final String DEST = "./target/sandbox/objects/list_in_column.pdf";
     public static final String SRC = "./src/main/resources/pdfs/pages.pdf";

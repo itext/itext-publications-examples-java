@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * SubSuperScript.java
+ *
+ * Example showing how to display subscript and superscript characters.
+ * Demonstrates using Unicode subscript/superscript characters in text.
+ */
+
 public class SubSuperScript {
     public static final String DEST = "./target/sandbox/objects/sub_super_script.pdf";
     public static final String FONT = "./src/main/resources/font/Cardo-Regular.ttf";

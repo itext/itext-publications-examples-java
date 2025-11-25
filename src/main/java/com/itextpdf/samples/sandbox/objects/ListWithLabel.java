@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ListWithLabel.java
+ *
+ * Example showing how to create a labeled list using table layout.
+ * Demonstrates placing a text label next to a bulleted list.
+ */
+
 public class ListWithLabel {
     public static final String DEST = "./target/sandbox/objects/list_with_label.pdf";
 

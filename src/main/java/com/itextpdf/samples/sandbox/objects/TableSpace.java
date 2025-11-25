@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TableSpace.java
+ *
+ * Example showing how to create fixed-width formatted text with spacing.
+ * Demonstrates aligning text columns using string formatting with spaces.
+ */
+
 public class TableSpace {
     public static final String DEST = "./target/sandbox/objects/table_space.pdf";
     public static final String FONT = "./src/main/resources/font/PTM55FT.ttf";

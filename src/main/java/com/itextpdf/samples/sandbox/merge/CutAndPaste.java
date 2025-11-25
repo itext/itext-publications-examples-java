@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * CutAndPaste.java
+ *
+ * Example showing how to cut and reposition a rectangular area from a page.
+ * Demonstrates clipping paths and XObject manipulation for content movement.
+ */
+
 public class CutAndPaste {
     public static final String DEST = "./target/sandbox/merge/page229_cut_paste.pdf";
 

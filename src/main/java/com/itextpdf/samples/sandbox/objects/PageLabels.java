@@ -26,6 +26,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * PageLabels.java
+ *
+ * Example showing how to set custom page labels and numbering styles.
+ * Demonstrates various page configurations, boxes, and viewer preferences.
+ */
+
 public class PageLabels {
     public static final String DEST = "./target/sandbox/objects/page_labels.pdf";
 

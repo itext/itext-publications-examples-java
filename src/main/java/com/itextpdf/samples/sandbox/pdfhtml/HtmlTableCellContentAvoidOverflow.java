@@ -21,6 +21,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HtmlTableCellContentAvoidOverflow.java
+ *
+ * Example showing how to prevent table cell content overflow in HTML to PDF.
+ * Demonstrates custom CSS applier setting overflow property to FIT.
+ */
 
 public class HtmlTableCellContentAvoidOverflow {
         public static final String DEST = "./target/sandbox/pdfhtml/htmlTableCellContentAvoidOverflow.pdf";

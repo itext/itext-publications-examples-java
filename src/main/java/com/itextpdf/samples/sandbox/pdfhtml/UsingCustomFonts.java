@@ -14,6 +14,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/*
+ * UsingCustomFonts.java
+ *
+ * Example showing different ways to register custom fonts for HTML to PDF.
+ * Demonstrates directory, file path, and byte array font registration.
+ */
+
 public class UsingCustomFonts {
     public static final String SRC = "./src/main/resources/pdfhtml/FontExample/";
     public static final String DEST = "./target/sandbox/pdfhtml/FontExample.pdf";

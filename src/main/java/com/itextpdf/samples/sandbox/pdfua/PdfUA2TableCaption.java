@@ -20,6 +20,13 @@ import com.itextpdf.pdfua.PdfUADocument;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * PdfUA2TableCaption.java
+ *
+ * Example showing how to add table captions in PDF/UA-2 documents.
+ * Demonstrates positioning captions at top and bottom of tables.
+ */
+
 public class PdfUA2TableCaption {
 
     public static final String DEST = "./target/sandbox/pdfua2/pdf_ua_table_caption.pdf";

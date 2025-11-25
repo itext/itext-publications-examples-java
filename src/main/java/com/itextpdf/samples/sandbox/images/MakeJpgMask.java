@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MakeJpgMask.java
+ *
+ * Example showing how to apply an image mask to a JPEG image.
+ * Demonstrates converting an image to grayscale and using it as a mask.
+ */
+
 public class MakeJpgMask {
     public static final String DEST = "./target/sandbox/images/make_jpg_mask.pdf";
 

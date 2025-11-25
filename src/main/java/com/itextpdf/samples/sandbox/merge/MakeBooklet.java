@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MakeBooklet.java
+ *
+ * Example showing how to create a booklet with 16-page signatures.
+ * Demonstrates arranging pages for printing and folding into booklets.
+ */
+
 public class MakeBooklet {
     public static final String DEST = "./target/sandbox/merge/make_booklet.pdf";
 

@@ -11,6 +11,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MakeBookletA3.java
+ *
+ * Example showing how to create an A3 booklet from A4 pages.
+ */
+
 public class MakeBookletA3 {
     public static final String DEST = "./target/sandbox/merge/make_booklet_a3.pdf";
 

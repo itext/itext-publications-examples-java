@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * PdfHtmlFormTagging.java
+ *
+ * Example showing how to convert HTML forms to tagged PDF with custom roles.
+ * Demonstrates using custom tag worker factory for form element tagging.
+ */
+
 public class PdfHtmlFormTagging {
     public static final String SRC = "./src/main/resources/pdfhtml/PdfHtmlFormTagging/changeFormRole.html";
     public static final String DEST = "./target/sandbox/pdfhtml/changeFormRole.pdf";

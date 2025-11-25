@@ -10,6 +10,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ChangeMargin.java
+ *
+ * Example showing how to set and modify document margins dynamically.
+ * Demonstrates changing margins during document creation.
+ */
+
 public class ChangeMargin {
     public static final String DEST = "./target/sandbox/objects/change_margin.pdf";
 

@@ -10,6 +10,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * SpaceCharRatioExample.java
+ *
+ * Example showing how to control word spacing in justified text.
+ * Demonstrates using spacing ratio for text justification adjustment.
+ */
+
 public class SpaceCharRatioExample {
     public static final String DEST = "./target/sandbox/objects/space_char_ratio.pdf";
 

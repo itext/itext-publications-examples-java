@@ -10,6 +10,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * MathSymbols.java
+ *
+ * This example demonstrates rendering mathematical symbols in a PDF document using Unicode characters.
+ * The sample displays common math symbols including ∈, ∩, ∑, ∫ and ∆ using FreeSans.ttf font with Unicode encoding.
+ */
+
 public class MathSymbols {
     public static final String DEST = "./target/sandbox/fonts/math_symbols.pdf";
 

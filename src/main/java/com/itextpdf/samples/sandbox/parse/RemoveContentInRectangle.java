@@ -14,6 +14,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * RemoveContentInRectangle.java
+ *
+ * Example showing how to remove content from a specific rectangular area.
+ * Demonstrates using PdfCleaner to redact content and fill with color.
+ */
+
 public class RemoveContentInRectangle {
     public static final String DEST = "./target/sandbox/parse/remove_content_in_rectangle.pdf";
 

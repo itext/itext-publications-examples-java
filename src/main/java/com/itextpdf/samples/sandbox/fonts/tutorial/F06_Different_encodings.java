@@ -10,6 +10,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F06_Different_encodings.java
+ *
+ * Example showing multilingual text with different character encodings.
+ * Demonstrates WINANSI for French, CP1250 for Czech, CP1251 for Russian.
+ */
+
 public class F06_Different_encodings {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f06_different_encodings.pdf";
 

@@ -10,6 +10,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * ExtractStreams.java
+ *
+ * Example showing how to extract all stream objects from a PDF document.
+ * Demonstrates iterating through PDF objects and saving stream data to files.
+ */
+
 public class ExtractStreams {
     public static final String DEST = "./target/sandbox/parse";
 

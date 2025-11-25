@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Text;
 
 import java.io.File;
 
+/*
+ * ArabicExample.java
+ *
+ * Example showing Arabic text rendering with proper font and encoding.
+ * Demonstrates combining Arabic and English text with Unicode support.
+ */
+
 public class ArabicExample {
     public static final String DEST = "./target/sandbox/fonts/arabic_example.pdf";
     public static final String FONT = "./src/main/resources/font/NotoNaskhArabic-Regular.ttf";

@@ -13,6 +13,13 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * WatermarkedImages4.java
+ *
+ * Example showing how to add graphic watermarks to images with shapes.
+ * Demonstrates drawing lines and ellipses as watermarks using PdfCanvas.
+ */
+
 public class WatermarkedImages4 {
     public static final String DEST = "./target/sandbox/images/watermarked_images4.pdf";
 

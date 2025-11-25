@@ -11,6 +11,13 @@ import com.itextpdf.kernel.pdf.colorspace.shading.PdfAxialShading;
 
 import java.io.File;
 
+/*
+ * GradientTopToBottom.java
+ *
+ * Example showing how to create an axial gradient from top to bottom.
+ * Demonstrates shading patterns with color transition on a PDF page.
+ */
+
 public class GradientTopToBottom {
     public static final String DEST = "./target/sandbox/graphics/gradient_top_to_bottom.pdf";
 

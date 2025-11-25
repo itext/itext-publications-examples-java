@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ChunkBackground.java
+ *
+ * Example showing how to add background color to text segments.
+ * Demonstrates styling text with custom font and background colors.
+ */
+
 public class ChunkBackground {
     public static final String DEST = "./target/sandbox/objects/chunk_background.pdf";
 

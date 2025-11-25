@@ -1,9 +1,3 @@
-/**
- * <p>
- * In this example, we take an image that is present in the background,
- * and we add the same image (by its reference) to the foreground so that
- * it covers the OCR'd text.
- */
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.kernel.colors.ColorConstants;
@@ -21,6 +15,13 @@ import com.itextpdf.layout.borders.SolidBorder;
 import com.itextpdf.layout.element.Image;
 
 import java.io.File;
+
+/*
+ * RepeatImage.java
+ *
+ * Example showing how to reuse an existing image by reference.
+ * Demonstrates extracting and overlaying an image to cover text.
+ */
 
 public class RepeatImage {
     public static final String DEST = "./target/sandbox/images/repeat_image.pdf";

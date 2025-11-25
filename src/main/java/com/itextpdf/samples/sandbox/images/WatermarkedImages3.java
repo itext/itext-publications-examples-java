@@ -17,6 +17,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * WatermarkedImages3.java
+ *
+ * Example showing watermarked images in tables with rotated text overlay.
+ * Demonstrates combining image watermarks with document-level text rotation.
+ */
+
 public class WatermarkedImages3 {
     public static final String DEST = "./target/sandbox/images/watermarked_images3.pdf";
 

@@ -17,6 +17,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * CreateAccessiblePDF.java
+ *
+ * Example showing how to create accessible tagged PDF from HTML content.
+ * Demonstrates setting metadata, language, and custom tag worker factory.
+ */
+
 public class CreateAccessiblePDF {
     public static final String SRC = "./src/main/resources/pdfhtml/AccessiblePDF/";
     public static final String DEST = "./target/sandbox/pdfhtml/Accessibility.pdf";

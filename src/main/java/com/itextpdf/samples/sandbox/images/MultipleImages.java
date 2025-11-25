@@ -9,6 +9,13 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * MultipleImages.java
+ *
+ * Example showing how to add multiple images to separate PDF pages.
+ * Demonstrates creating custom page sizes matching each image dimension.
+ */
+
 public class MultipleImages {
     public static final String DEST = "./target/sandbox/images/multiple_images.pdf";
 

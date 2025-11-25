@@ -13,6 +13,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * BackgroundTransparent.java
+ *
+ * Example showing how to add a semi-transparent image as background.
+ * Demonstrates using extended graphics state for opacity control.
+ */
+
 public class BackgroundTransparent {
     public static final String DEST = "./target/sandbox/images/background_transparent.pdf";
 

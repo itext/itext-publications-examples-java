@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ListWithImageAsBullet.java
+ *
+ * Example showing how to use an image as a custom list bullet symbol.
+ * Demonstrates replacing standard bullets with image-based list markers.
+ */
+
 public class ListWithImageAsBullet {
     public static final String DEST = "./target/sandbox/objects/list_with_image_bullet.pdf";
     public static final String IMG = "src/main/resources/img/bulb.gif";

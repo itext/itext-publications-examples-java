@@ -16,6 +16,13 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/*
+ * CounterDemo.java
+ *
+ * Example showing custom event handling and counting in iText.
+ * Demonstrates registering event handlers to log document creation events.
+ */
+
 public class CounterDemo {
     public static final String DEST_PDF = "./target/sandbox/logging/helloCounterDemo.pdf";
     public static final String DEST = "./target/sandbox/logging/CounterDemo.txt";

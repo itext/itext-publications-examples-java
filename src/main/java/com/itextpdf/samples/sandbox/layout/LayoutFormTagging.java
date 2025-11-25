@@ -21,6 +21,13 @@ import com.itextpdf.layout.element.Paragraph;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * LayoutFormTagging.java
+ *
+ * Example showing how to assign custom accessibility roles to form fields.
+ * Demonstrates overriding default roles for tagged PDF compliance.
+ */
+
 public class LayoutFormTagging {
 
     public static final String DEST = "./target/sandbox/layout/changeFormRole.pdf";

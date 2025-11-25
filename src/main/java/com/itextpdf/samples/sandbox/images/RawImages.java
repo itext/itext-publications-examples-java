@@ -9,6 +9,13 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * RawImages.java
+ *
+ * Example showing how to create images from raw byte data in memory.
+ * Demonstrates generating colored squares using RGB and CMYK color spaces.
+ */
+
 public class RawImages {
     public static final String DEST = "./target/sandbox/images/raw_images.pdf";
 

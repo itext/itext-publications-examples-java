@@ -15,6 +15,13 @@ import com.itextpdf.layout.element.Tab;
 import com.itextpdf.layout.element.TabStop;
 import com.itextpdf.layout.properties.TabAlignment;
 
+/*
+ * RightTabs.java
+ *
+ * Example showing how to use right-aligned tabs for text positioning.
+ * Demonstrates aligning text to left and right on the same line with tabs.
+ */
+
 public class RightTabs {
     public static final String DEST = "./target/sandbox/objects/right_tabs.pdf";
 

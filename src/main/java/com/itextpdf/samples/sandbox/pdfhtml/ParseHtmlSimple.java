@@ -10,6 +10,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/*
+ * ParseHtmlSimple.java
+ *
+ * Example showing basic HTML to PDF conversion with resource resolution.
+ * Demonstrates simple HtmlConverter usage with base URI configuration.
+ */
+
 public class ParseHtmlSimple {
     public static final String SRC = "./src/main/resources/pdfhtml/rainbow/";
     public static final String DEST = "./target/sandbox/pdfhtml/rainbow_simple.pdf";

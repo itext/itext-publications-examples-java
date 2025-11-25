@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * AddCover1.java
+ *
+ * Example showing how to add a cover page to an existing PDF document.
+ * Demonstrates merging a single cover page with a multi-page document.
+ */
+
 public class AddCover1 {
     public static final String DEST = "./target/sandbox/merge/add_cover.pdf";
 

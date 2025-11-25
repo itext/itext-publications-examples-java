@@ -12,6 +12,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+/*
+ * AddDefaultImagesCustomRetriever.java
+ *
+ * Example showing how to replace images with default ones during retrieval.
+ * Demonstrates custom IResourceRetriever for conditional image substitution.
+ */
+
 public class AddDefaultImagesCustomRetriever {
     public static final String SRC = "./src/main/resources/pdfhtml/";
     public static final String DEST = "./target/sandbox/pdfhtml/AddDefaultImagesCustomRetriever.pdf";

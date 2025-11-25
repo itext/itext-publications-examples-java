@@ -22,6 +22,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/*
+ * AccessibleIntraLinkExample.java
+ *
+ * Example showing how to create accessible PDF/UA-2 with internal links.
+ * Demonstrates converting HTML with links to tagged PDF 2.0 document.
+ */
+
 public class AccessibleIntraLinkExample {
 
     public static final String DEST = "./target/sandbox/pdfua2/pdf_ua_links.pdf";

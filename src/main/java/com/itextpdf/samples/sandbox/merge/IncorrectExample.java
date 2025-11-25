@@ -1,10 +1,3 @@
-/**
- * <p>
- * This example is named IncorrectExample because this is not how the problem of rotating pages
- * or of merging documents typically should be solved.
- * However: in the question mentioned above, the use case is very specific
- * and the usage of this example in those circumstances is justified.
- */
 package com.itextpdf.samples.sandbox.merge;
 
 import com.itextpdf.kernel.geom.PageSize;
@@ -19,6 +12,15 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
+/*
+ * IncorrectExample.java
+ *
+ * Example showing non-standard approach to rotating pages during merge.
+ * Demonstrates specific use case; not typical best practice solution.
+ * This example is named IncorrectExample because this is not how the problem of rotating pages
+ * or of merging documents typically should be solved.
+ */
 
 public class IncorrectExample {
     public static final String DEST = "./target/sandbox/merge/incorrect_example.pdf";

@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ParagraphSpacingBefore.java
+ *
+ * Example showing how to add vertical spacing before a paragraph.
+ * Demonstrates using margin-top to control spacing between paragraphs.
+ */
+
 public class ParagraphSpacingBefore {
     public static final String DEST = "./target/sandbox/objects/paragraph_spacing_before.pdf";
 

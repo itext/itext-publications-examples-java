@@ -23,6 +23,13 @@ import java.io.RandomAccessFile;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * MergeAndAddFont.java
+ *
+ * Example showing PDF merging with various font embedding strategies.
+ * Demonstrates subset fonts, full fonts, and manual font embedding.
+ */
+
 public class MergeAndAddFont {
     public static final String FONT = "./src/main/resources/font/GravitasOne.ttf";
 
