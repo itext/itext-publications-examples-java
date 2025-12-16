@@ -2,6 +2,7 @@ package com.itextpdf.samples.sandbox.signatures.validation;
 
 import com.itextpdf.commons.bouncycastle.asn1.IASN1Encodable;
 import com.itextpdf.commons.bouncycastle.asn1.IASN1ObjectIdentifier;
+import com.itextpdf.commons.bouncycastle.asn1.x509.IAlgorithmIdentifier;
 import com.itextpdf.commons.bouncycastle.cert.IX509CertificateHolder;
 import com.itextpdf.commons.bouncycastle.cert.ocsp.AbstractOCSPException;
 import com.itextpdf.commons.bouncycastle.cert.ocsp.IBasicOCSPResp;
@@ -55,6 +56,11 @@ public class DummyOcspClient extends OcspClientBouncyCastle {
 
             @Override
             public IRespID getResponderId() {
+                return null;
+            }
+
+            @Override
+            public IAlgorithmIdentifier getSignatureAlgorithmID() {
                 return null;
             }
         };
