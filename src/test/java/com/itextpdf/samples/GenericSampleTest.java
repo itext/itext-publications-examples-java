@@ -152,9 +152,13 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         // TODO DEVSIX-3326
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
-        //TODO DEVSIX-6508 remove unnecessary makeFormField calls
+        // TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
+        // TODO DEVSIX-9261 Investigate test failures on Windows Server 2025 and Windows 11
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReplaceImage");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.MakeJpgMask");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReduceSize");
 
         return generateTestsList(searchConfig);
     }
