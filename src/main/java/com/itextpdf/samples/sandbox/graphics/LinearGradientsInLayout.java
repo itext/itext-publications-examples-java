@@ -20,6 +20,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * LinearGradientsInLayout.java
+ *
+ * Example showing linear gradients as backgrounds and colors in layout.
+ * Demonstrates gradient backgrounds and position-based gradient colors.
+ */
+
 public class LinearGradientsInLayout {
     public static final String DEST = "./target/sandbox/graphics/linearGradientsInLayout.pdf";
 

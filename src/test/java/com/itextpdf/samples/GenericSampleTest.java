@@ -61,6 +61,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.tagging.WalkTheTree",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateChainBeforeSigningExample",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample",
+            "com.itextpdf.samples.sandbox.signatures.validation.LotlValidationThirdCountryTL",
             "com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTxtFileExample",
             "com.itextpdf.samples.sandbox.pdfocr.tesseract4.PdfOcrTesseractTxtFileExample"
     );
@@ -151,9 +152,13 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         // TODO DEVSIX-3326
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.tables.SplittingNestedTable2");
 
-        //TODO DEVSIX-6508 remove unnecessary makeFormField calls
+        // TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
+        // TODO DEVSIX-9261 Investigate test failures on Windows Server 2025 and Windows 11
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReplaceImage");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.MakeJpgMask");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReduceSize");
 
         return generateTestsList(searchConfig);
     }
@@ -163,7 +168,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json")) {
+        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/dev_all_products.json")) {
             LicenseKey.loadLicenseFile(allLicense);
         }
         FontCache.clearSavedFonts();

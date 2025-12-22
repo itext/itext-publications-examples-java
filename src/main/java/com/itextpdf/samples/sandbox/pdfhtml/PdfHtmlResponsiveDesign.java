@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * PdfHtmlResponsiveDesign.java
+ *
+ * Example showing how to convert responsive HTML to PDFs at different widths.
+ * Demonstrates media device description for responsive design rendering.
+ */
+
 public class PdfHtmlResponsiveDesign {
     public static final String SRC = "./src/main/resources/pdfhtml/ResponsiveDesign/responsive/";
     public static final String DEST = "./target/sandbox/pdfhtml/<filename>";

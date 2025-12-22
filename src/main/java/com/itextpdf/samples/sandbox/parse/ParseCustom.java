@@ -20,6 +20,13 @@ import java.io.FileOutputStream;
 import java.io.Writer;
 import java.io.BufferedWriter;
 
+/*
+ * ParseCustom.java
+ *
+ * Example showing custom text extraction with font-based filtering.
+ * Demonstrates extracting only bold and oblique text from a region.
+ */
+
 public class ParseCustom {
     public static final String DEST = "./target/txt/parse_custom.txt";
 

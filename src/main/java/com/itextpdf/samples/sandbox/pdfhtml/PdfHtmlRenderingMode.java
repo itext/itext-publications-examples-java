@@ -22,6 +22,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * PdfHtmlRenderingMode.java
+ *
+ * Example showing how to switch HTML rendering to default layout mode.
+ * Demonstrates custom CSS applier for legacy line spacing behavior.
+ */
+
 public class PdfHtmlRenderingMode {
     public static final String SRC = "./src/main/resources/pdfhtml/PdfHtmlRenderingMode/";
     public static final String DEST = "./target/sandbox/pdfhtml/PdfHtmlRenderingMode.pdf";

@@ -10,6 +10,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * RemoveListSymbol.java
+ *
+ * Example showing how to create a list without visible bullet symbols.
+ * Demonstrates setting an empty string as the list symbol to hide markers.
+ */
+
 public class RemoveListSymbol {
     public static final String DEST = "./target/sandbox/objects/remove_list_symbol.pdf";
 

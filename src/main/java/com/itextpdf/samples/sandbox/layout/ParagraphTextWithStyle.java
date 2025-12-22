@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ParagraphTextWithStyle.java
+ *
+ * Example showing how to apply reusable styles to text segments.
+ * Demonstrates creating and applying Style objects for consistent formatting.
+ */
+
 public class ParagraphTextWithStyle {
     public static final String DEST = "./target/sandbox/layout/paragraphTextWithStyle.pdf";
 

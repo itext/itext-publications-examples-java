@@ -16,6 +16,7 @@ import com.itextpdf.html2pdf.css.apply.impl.BlockCssApplier;
 import com.itextpdf.html2pdf.css.apply.impl.DefaultCssApplierFactory;
 import com.itextpdf.html2pdf.html.TagConstants;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
 import com.itextpdf.styledxmlparser.node.IElementNode;
 import com.itextpdf.styledxmlparser.node.IStylesContainer;
 
@@ -51,8 +52,8 @@ public class C05E06_DutchCss {
      * @throws IOException signals that an I/O exception has occurred.
      */
     public static void main(String[] args) throws IOException {
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-				+ "/itextkey-html2pdf_typography.json")) {
+        String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+        try (FileInputStream license = new FileInputStream(licensePath)) {
 			LicenseKey.loadLicenseFile(license);
 		}
         File file = new File(DEST);

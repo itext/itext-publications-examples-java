@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * SunCharacter.java
+ *
+ * This example demonstrates rendering a special Unicode character (sun symbol ☉) in a PDF document using the Cardo font.
+ * The sample shows how to embed a TrueType font that supports specific Unicode glyphs not available in standard fonts.
+ */
+
 public class SunCharacter {
     public static final String DEST = "./target/sandbox/fonts/sun_character.pdf";
 

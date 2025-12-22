@@ -33,6 +33,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.StringTokenizer;
 
+/*
+ * PdfA1a.java
+ *
+ * Example showing how to create a tagged PDF/A-1a document with table.
+ * Demonstrates CSV import, custom headers, and page numbering.
+ */
+
 public class PdfA1a {
     public static final String DEST = "./target/sandbox/pdfa/pdf_a_1a.pdf";
 

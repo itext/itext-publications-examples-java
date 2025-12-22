@@ -18,9 +18,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * This example demonstrates how to enable orphans and widows processing in layout
+/*
+ * OrphansWidowsExample.java
+ *
+ * Example showing orphans and widows control in multi-column layout.
+ * Demonstrates preventing awkward paragraph breaks across columns.
  */
+
 public class OrphansWidowsExample {
 
     public static final String DEST = "./target/sandbox/layout/orphansWidows.pdf";

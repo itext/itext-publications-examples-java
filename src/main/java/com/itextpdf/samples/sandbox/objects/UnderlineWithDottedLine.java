@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * UnderlineWithDottedLine.java
+ *
+ * Example showing how to underline text with a dotted line.
+ * Demonstrates using LineSeparator for custom paragraph underlining.
+ */
+
 public class UnderlineWithDottedLine {
     public static final String DEST = "./target/sandbox/objects/underline_with_dotted_line.pdf";
 

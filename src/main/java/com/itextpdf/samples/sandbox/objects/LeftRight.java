@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * LeftRight.java
+ *
+ * Example showing how to align text to left and right on same line.
+ * Demonstrates using tabs and tables for horizontal text alignment.
+ */
+
 public class LeftRight {
     public static final String DEST = "./target/sandbox/objects/left_right.pdf";
 

@@ -9,6 +9,13 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
 
+/*
+ * TiledImage.java
+ *
+ * Example showing how to tile an image across multiple PDF pages.
+ * Demonstrates positioning image quadrants using transformation matrices.
+ */
+
 public class TiledImage {
     public static final String DEST = "./target/sandbox/images/tiled_image.pdf";
 

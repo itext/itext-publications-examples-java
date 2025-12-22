@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TableInColumn.java
+ *
+ * Example showing how to vertically center tables within a column area.
+ * Demonstrates custom table renderer for centered vertical positioning.
+ */
+
 public class TableInColumn {
     public static final String DEST = "./target/sandbox/objects/table_in_column.pdf";
 

@@ -1,11 +1,3 @@
-/**
- * <p>
- * The question was about adding compression to an image that already used /DCTDecode
- * <p>
- * IMPORTANT:
- * This sample uses kernel iText functionality that was written in answer to the question.
- * This example will only work starting with iText 5.5.1
- */
 package com.itextpdf.samples.sandbox.images;
 
 import com.itextpdf.io.image.ImageDataFactory;
@@ -18,6 +10,12 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * FlateCompressJPEG1Pass.java
+ *
+ * Example showing how to add additional compression to JPEG images.
+ * Demonstrates applying best compression level to DCT-encoded images.
+ */
 public class FlateCompressJPEG1Pass {
     public static final String DEST = "./target/sandbox/images/flate_compress_jpeg_1pass.pdf";
 

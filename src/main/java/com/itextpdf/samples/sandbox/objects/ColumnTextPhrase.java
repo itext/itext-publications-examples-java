@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ColumnTextPhrase.java
+ *
+ * Example showing how to add text in specific rectangular areas.
+ * Demonstrates using Canvas with custom fonts and leading settings.
+ */
+
 public class ColumnTextPhrase {
     public static final String DEST = "./target/sandbox/objects/column_text_phrase.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

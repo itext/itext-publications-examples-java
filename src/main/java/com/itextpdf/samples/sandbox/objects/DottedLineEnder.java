@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DottedLineEnder.java
+ *
+ * Example showing how to end paragraphs with dotted lines using tabs.
+ * Demonstrates TabStop with DottedLine for leader dot effects.
+ */
+
 public class DottedLineEnder {
     public static final String DEST = "./target/sandbox/objects/dotted_line_ender.pdf";
 

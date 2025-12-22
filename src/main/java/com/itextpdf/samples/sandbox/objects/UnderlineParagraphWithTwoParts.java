@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * UnderlineParagraphWithTwoParts.java
+ *
+ * Example showing how to underline paragraphs with two-part content.
+ * Demonstrates using tabs and line separators for split text underlining.
+ */
+
 public class UnderlineParagraphWithTwoParts {
     public static final String DEST = "./target/sandbox/objects/underline_paragraph_with_two_parts.pdf";
 

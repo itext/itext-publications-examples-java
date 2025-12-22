@@ -10,6 +10,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F05_Russian_correct_encoding.java
+ *
+ * Example showing correct Russian text rendering with CP1251 encoding.
+ * Demonstrates proper Cyrillic character display with embedded font.
+ */
+
 public class F05_Russian_correct_encoding {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f05_russian_encoding.pdf";
 

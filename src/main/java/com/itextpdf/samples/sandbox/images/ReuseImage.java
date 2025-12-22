@@ -13,6 +13,13 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * ReuseImage.java
+ *
+ * Example showing how to extract and reuse an image from an existing PDF.
+ * Demonstrates copying an image XObject and centering it on a new page.
+ */
+
 public class ReuseImage {
     public static final String DEST = "./target/sandbox/images/reuse_image.pdf";
 

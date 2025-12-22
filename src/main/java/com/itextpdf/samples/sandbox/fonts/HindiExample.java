@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * HindiExample.java
+ *
+ * Example showing Hindi (Devanagari) text rendering with Unicode.
+ * Demonstrates character breakdown and colored text in tables.
+ */
+
 public class HindiExample {
     public static final String DEST = "./target/sandbox/fonts/hindi_example.pdf";
 

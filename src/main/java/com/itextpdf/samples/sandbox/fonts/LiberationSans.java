@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * LiberationSans.java
+ *
+ * Example showing Greek text rendering with Liberation Sans font.
+ * Demonstrates font registration and CP1253 encoding for Greek script.
+ */
+
 public class LiberationSans {
     public static final String DEST = "./target/sandbox/fonts/liberation_sans.pdf";
 

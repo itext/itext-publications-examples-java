@@ -8,6 +8,13 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
 
+/*
+ * DrawingLines.java
+ *
+ * Example showing how to draw lines on a PDF canvas with custom colors.
+ * Demonstrates basic path operations and CMYK color usage.
+ */
+
 public class DrawingLines {
     public static final String DEST = "./target/sandbox/graphics/drawing_lines.pdf";
 

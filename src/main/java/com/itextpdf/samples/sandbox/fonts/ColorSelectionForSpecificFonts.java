@@ -23,6 +23,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * ColorSelectionForSpecificFonts.java
+ *
+ * Example showing automatic text coloring based on detected font.
+ * Demonstrates custom renderer for font-dependent color assignment.
+ */
+
 public class ColorSelectionForSpecificFonts {
     public static final String DEST = "./target/sandbox/fonts/color_selection_for_specific_fonts.pdf";
     public static final String FONTS_FOLDER = "./src/main/resources/font/";

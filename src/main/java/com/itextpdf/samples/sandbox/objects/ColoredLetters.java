@@ -13,6 +13,13 @@ import com.itextpdf.layout.element.Text;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ColoredLetters.java
+ *
+ * Example showing how to apply different colors to individual letters.
+ * Demonstrates character-level color and font styling in text.
+ */
+
 public class ColoredLetters {
     public static final String DEST = "./target/sandbox/objects/colored_letters.pdf";
 

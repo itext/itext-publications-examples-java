@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/*
+ * Text2PdfColumns.java
+ *
+ * Example showing how to convert text file to multi-column PDF layout.
+ * Demonstrates using ColumnDocumentRenderer for newspaper-style columns.
+ */
+
 public class Text2PdfColumns {
     public static final String TEXT = "./src/main/resources/txt/tree.txt";
     public static final String DEST = "./target/sandbox/layout/text2pdf_columns.pdf";

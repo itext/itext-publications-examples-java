@@ -19,6 +19,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * WatermarkedImages2.java
+ *
+ * Example showing how to watermark images in table cells using renderers.
+ * Demonstrates custom cell rendering with rotated text overlays on images.
+ */
+
 public class WatermarkedImages2 {
     public static final String DEST = "./target/sandbox/images/watermarked_images2.pdf";
 

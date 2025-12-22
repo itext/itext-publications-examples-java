@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/*
+ * PageSizeAndMargins.java
+ *
+ * Example showing how to set and modify page sizes and margins.
+ * Demonstrates changing page dimensions and margins during document creation.
+ */
+
 public class PageSizeAndMargins {
 
     public static final String DEST = "./target/sandbox/layout/pageSizeAndMargins.pdf";

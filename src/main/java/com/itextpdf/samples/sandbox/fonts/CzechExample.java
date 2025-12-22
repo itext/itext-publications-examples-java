@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * CzechExample.java
+ *
+ * Example showing Czech special characters with different encodings.
+ * Demonstrates CP1250 vs Unicode encoding for diacritical marks.
+ */
+
 public class CzechExample {
     public static final String DEST = "./target/sandbox/fonts/czech_example.pdf";
     public static final String FONT = "./src/main/resources/font/FreeSans.ttf";

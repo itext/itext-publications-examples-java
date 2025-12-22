@@ -1,0 +1,8 @@
+ValidationReport{validationResult=VALID
+reportItems=
+CertificateReportItem{baseclass=
+ReportItem{checkName='XML Signature verification check.', message='Certificate OID.2.5.4.97=NTRUA-43220851, L=Kyiv, C=UA, SERIALNUMBER=5, CN=Trusted List Administrator, OU=Administrator ITS CCA, O=Ministry of digital transformation of Ukraine is trusted. Validation is successful.', cause=null, status=INFO}
+certificate=OID.2.5.4.97=NTRUA-43220851, L=Kyiv, C=UA, SERIALNUMBER=5, CN=Trusted List Administrator, OU=Administrator ITS CCA, O=Ministry of digital transformation of Ukraine}, 
+CertificateReportItem{baseclass=
+ReportItem{checkName='XML Signature verification check.', message='Certificate CN=MD TL Signing Certificate 1, O=Security and Intelligence Service of the Republic of Moldova, C=MD is trusted. Validation is successful.', cause=null, status=INFO}
+certificate=CN=MD TL Signing Certificate 1, O=Security and Intelligence Service of the Republic of Moldova, C=MD}, }

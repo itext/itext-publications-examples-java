@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * ParseCzech.java
+ *
+ * Example showing how to extract text from a PDF with Czech characters.
+ * Demonstrates text extraction with proper UTF-8 encoding support.
+ */
+
 public class ParseCzech {
     public static final String DEST = "./target/txt/czech.txt";
 

@@ -12,6 +12,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * PdfDenseMergeExample.java
+ *
+ * Example showing how to merge PDFs with dense layout optimization.
+ * Demonstrates using PdfDenseMerger to minimize vertical spacing.
+ */
+
 public class PdfDenseMergeExample {
     public static final String DEST = "./target/sandbox/merge/denseMergeExample.pdf";
 

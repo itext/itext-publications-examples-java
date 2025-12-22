@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * CustomMetaEntry.java
+ *
+ * Example showing how to add custom metadata entries to a PDF document.
+ * Demonstrates setting standard and custom document information fields.
+ */
+
 public class CustomMetaEntry {
     public static final String DEST = "./target/sandbox/objects/custom_meta_entry.pdf";
 

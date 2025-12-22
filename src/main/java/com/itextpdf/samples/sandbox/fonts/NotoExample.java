@@ -10,6 +10,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * NotoExample.java
+ *
+ * This example demonstrates rendering CJK (Chinese, Japanese, Korean) text in a PDF document using Noto Sans CJK font.
+ * The sample displays text in simplified Chinese, Japanese, and Korean scripts using Unicode encoding to show proper support for East Asian languages.
+ */
+
 public class NotoExample {
     public static final String DEST = "./target/sandbox/fonts/chinese.pdf";
 

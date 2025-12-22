@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DrawRectangleAroundText.java
+ *
+ * Example showing how to draw rectangles around paragraph content areas.
+ * Demonstrates calculating text bounds and drawing custom borders.
+ */
+
 public class DrawRectangleAroundText {
     public static final String DEST = "./target/sandbox/objects/draw_rectangle_around_text.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

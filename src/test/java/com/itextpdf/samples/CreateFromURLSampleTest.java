@@ -36,7 +36,7 @@ public class CreateFromURLSampleTest extends WrappedSamplesRunner {
         this.sampleClassParams = data;
         Logger logger = (Logger) LoggerFactory.getLogger("ROOT");
         try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-                + "/all-products.json")) {
+                + "/dev_all_products.json")) {
             logger.info("Load all-products license.");
             LicenseKey.loadLicenseFile(license);
         }

@@ -18,6 +18,13 @@ import com.itextpdf.pdfua.exceptions.PdfUAConformanceException;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * PdfUACanvasUsage.java
+ *
+ * Example showing proper canvas usage in PDF/UA documents with tagging.
+ * Demonstrates handling conformance exceptions and tagged canvas operations.
+ */
+
 public class PdfUACanvasUsage {
     public static final String DEST = "./target/sandbox/pdfua/pdf_ua_canvas.pdf";
 

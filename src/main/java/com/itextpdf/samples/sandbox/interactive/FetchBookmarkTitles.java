@@ -13,6 +13,13 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * FetchBookmarkTitles.java
+ *
+ * Example showing how to extract bookmark titles from a PDF document.
+ * Demonstrates recursive traversal of outline tree and output to file.
+ */
+
 public class FetchBookmarkTitles {
     public static final String DEST = "./target/txt/bookmarks.txt";
 

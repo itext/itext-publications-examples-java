@@ -10,6 +10,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * BackgroundImage.java
+ *
+ * Example showing how to add an image as a page background.
+ * Demonstrates fitting an image into the entire page size.
+ */
+
 public class BackgroundImage {
     public static final String DEST = "./target/sandbox/images/background_image.pdf";
 

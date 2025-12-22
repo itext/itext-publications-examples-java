@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ElementsDimensionsWhileRotating.java
+ *
+ * Example showing how element dimensions behave with rotation angles.
+ * Demonstrates auto and fixed width handling for rotated paragraphs.
+ */
+
 public class ElementsDimensionsWhileRotating {
     public static final String DEST = "./target/sandbox/objects/elementsDimensionsWhileRotating.pdf";
 

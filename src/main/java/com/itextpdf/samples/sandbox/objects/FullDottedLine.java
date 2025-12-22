@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * FullDottedLine.java
+ *
+ * Example showing how to draw a dotted line spanning full page width.
+ * Demonstrates custom DottedLine extending from left to right edge.
+ */
+
 public class FullDottedLine {
     public static final String DEST = "./target/sandbox/objects/full_dotted_line.pdf";
 

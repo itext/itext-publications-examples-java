@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * Rectangles.java
+ *
+ * Example showing how to draw filled and stroked rectangles with colors.
+ * Demonstrates overlaying rectangles with different stroke and fill styles.
+ */
+
 public class Rectangles {
     public static final String DEST = "./target/sandbox/objects/rectangles.pdf";
 

@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F07_Unicode.java
+ *
+ * Example showing multilingual text using Unicode (IDENTITY_H) encoding.
+ * Demonstrates French, Czech, and Russian text with a single embedded font.
+ */
+
 public class F07_Unicode {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f07_unicode.pdf";
 

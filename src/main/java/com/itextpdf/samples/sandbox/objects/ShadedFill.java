@@ -12,6 +12,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ShadedFill.java
+ *
+ * Example showing how to fill a shape with axial gradient shading.
+ * Demonstrates drawing a triangle with a color gradient from pink to blue.
+ */
+
 public class ShadedFill {
     public static final String DEST = "./target/sandbox/objects/shaded_fill.pdf";
 

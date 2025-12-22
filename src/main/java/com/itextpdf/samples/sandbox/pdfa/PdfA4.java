@@ -20,6 +20,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/*
+ * PdfA4.java
+ *
+ * Example showing how to create a PDF/A-4 compliant document with PDF 2.0.
+ * Demonstrates embedded fonts, images, and VeraPDF validation.
+ */
+
 public class PdfA4 {
 
     public static final String DEST = "./target/sandbox/pdfa/pdf_a4.pdf";

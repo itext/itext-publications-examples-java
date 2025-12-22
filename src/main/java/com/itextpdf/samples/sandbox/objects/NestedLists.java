@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * NestedLists.java
+ *
+ * Example showing how to create multi-level nested lists.
+ * Demonstrates hierarchical list structure with sub-items.
+ */
+
 public class NestedLists {
     public static final String DEST = "./target/sandbox/objects/nested_list.pdf";
 

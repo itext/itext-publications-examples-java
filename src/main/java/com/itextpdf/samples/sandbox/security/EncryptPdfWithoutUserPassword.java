@@ -8,8 +8,10 @@ import com.itextpdf.kernel.pdf.WriterProperties;
 
 import java.io.File;
 
-/**
- * This example shows how to encrypt a PDF document using AES algorithm without
+/*
+ * EncryptPdfWithoutUserPassword.java
+ *
+ * Example shows how to encrypt a PDF document using AES algorithm without
  * user password, which means password is only required to modify the document.
  */
 public class EncryptPdfWithoutUserPassword {

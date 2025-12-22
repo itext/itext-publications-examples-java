@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TilingHero.java
+ *
+ * Example showing how to create tiled pages from a scaled-up source page.
+ * Demonstrates splitting a 4x scaled page into 16 individual tiles.
+ */
+
 public class TilingHero {
     public static final String DEST = "./target/sandbox/merge/tiling_hero.pdf";
 

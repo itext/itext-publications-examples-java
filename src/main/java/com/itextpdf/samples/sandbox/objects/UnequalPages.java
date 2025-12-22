@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * UnequalPages.java
+ *
+ * Example showing how to create pages with different sizes and margins.
+ * Demonstrates changing page dimensions dynamically within a document.
+ */
+
 public class UnequalPages {
     public static final String DEST = "./target/sandbox/objects/unequal_pages.pdf";
 

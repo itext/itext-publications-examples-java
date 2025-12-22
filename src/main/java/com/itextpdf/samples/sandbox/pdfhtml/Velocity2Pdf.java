@@ -10,6 +10,13 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
+/*
+ * Velocity2Pdf.java
+ *
+ * Example showing how to convert Velocity templates to PDF via HTML.
+ * Demonstrates rendering Velocity template and converting result to PDF.
+ */
+
 public class Velocity2Pdf {
 
     public static final String DEST = "./target/sandbox/pdfhtml/velocity-test.pdf";

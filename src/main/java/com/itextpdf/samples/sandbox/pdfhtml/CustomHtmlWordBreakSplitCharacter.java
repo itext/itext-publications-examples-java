@@ -21,6 +21,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * CustomHtmlWordBreakSplitCharacter.java
+ *
+ * Example showing custom word breaking at slash characters in HTML to PDF.
+ * Demonstrates custom CSS applier and split character implementation.
+ */
+
 public class CustomHtmlWordBreakSplitCharacter {
     public static final String SRC = "./src/main/resources/pdfhtml/CustomHtmlWordBreakSplitCharacter/CustomHtmlWordBreakSplitCharacter.html";
     public static final String DEST = "./target/sandbox/pdfhtml/CustomHtmlWordBreakSplitCharacter.pdf";

@@ -19,6 +19,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/*
+ * PdfA1a_images.java
+ *
+ * Example showing how to create PDF/A-1a document with images.
+ * Demonstrates tagged PDF with embedded fonts, metadata, and alt text.
+ */
+
 public class PdfA1a_images {
     public static final float MARGIN_OF_ONE_CM = 28.8f;
 

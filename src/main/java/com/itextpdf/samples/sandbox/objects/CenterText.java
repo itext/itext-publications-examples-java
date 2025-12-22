@@ -20,6 +20,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * CenterText.java
+ *
+ * Example showing how to center text using tabs and line drawers.
+ * Demonstrates creating centered text with decorative lines on both sides.
+ */
+
 public class CenterText {
     public static final String DEST = "./target/sandbox/objects/center_text.pdf";
 

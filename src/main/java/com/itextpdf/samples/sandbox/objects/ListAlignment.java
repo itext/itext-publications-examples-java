@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ListAlignment.java
+ *
+ * Example showing how to apply text alignment to list items.
+ * Demonstrates justified alignment for multi-line list item content.
+ */
+
 public class ListAlignment {
     public static final String DEST = "./target/sandbox/objects/list_alignment.pdf";
 

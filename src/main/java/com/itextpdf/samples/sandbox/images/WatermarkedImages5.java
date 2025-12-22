@@ -22,6 +22,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * WatermarkedImages5.java
+ *
+ * Example showing how to add table watermarks to images dynamically.
+ * Demonstrates positioning tables as overlays using layout simulation.
+ */
+
 public class WatermarkedImages5 {
     public static final String DEST = "./target/sandbox/images/watermarked_images5.pdf";
 

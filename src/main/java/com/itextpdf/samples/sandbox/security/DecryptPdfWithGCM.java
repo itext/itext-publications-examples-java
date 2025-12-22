@@ -7,8 +7,11 @@ import com.itextpdf.kernel.pdf.ReaderProperties;
 
 import java.io.File;
 
-/**
- * This example shows how to decrypt a pdf document encrypted with AES_GCM using owner password.
+/*
+ * DecryptPdfWithGCM.java
+ *
+ * Example showing how to decrypt PDF encrypted with AES-GCM algorithm.
+ * Demonstrates decryption using owner password for GCM-encrypted documents.
  */
 public class DecryptPdfWithGCM {
     public static final String DEST = "./target/sandbox/security/decrypt_pdf_with_GCM.pdf";

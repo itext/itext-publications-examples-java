@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F03_Embedded.java
+ *
+ * Example showing Czech text with embedded TrueType font and CP1250 encoding.
+ * Demonstrates proper rendering of accented characters with font embedding.
+ */
+
 public class F03_Embedded {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f03_embedded.pdf";
 

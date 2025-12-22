@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DrawRectangle.java
+ *
+ * Example showing how to draw a rectangle on a PDF page using PdfCanvas.
+ * Demonstrates basic shape drawing with custom stroke width.
+ */
+
 public class DrawRectangle {
     public static final String DEST = "./target/sandbox/objects/draw_rectangle.pdf";
 

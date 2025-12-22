@@ -1,9 +1,3 @@
-/**
- * <p>
- * When concatenating documents, we add a named destination every time
- * a new document is started. After we've finished merging, we add an extra
- * page with the table of contents and links to the named destinations.
- */
 package com.itextpdf.samples.sandbox.merge;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -16,6 +10,13 @@ import com.itextpdf.kernel.utils.PdfMerger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
+/*
+ * MergeWithOutlines.java
+ *
+ * Example showing how to merge PDFs and add bookmarks/outlines.
+ * Demonstrates creating hierarchical outline structure for merged docs.
+ */
 
 public class MergeWithOutlines {
     public static final String DEST = "./target/sandbox/merge/merge_with_outlines.pdf";

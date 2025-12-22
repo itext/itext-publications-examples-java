@@ -18,6 +18,13 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
+/*
+ * ReduceSize.java
+ *
+ * Example showing how to reduce PDF file size by downscaling images.
+ * Demonstrates scaling JPEG images and replacing them in the PDF.
+ */
+
 public class ReduceSize {
     public static final String DEST = "./target/sandbox/images/reduce_size.pdf";
 

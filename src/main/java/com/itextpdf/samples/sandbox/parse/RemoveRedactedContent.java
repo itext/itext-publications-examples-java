@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * RemoveRedactedContent.java
+ *
+ * Example showing how to apply and remove redaction annotations.
+ * Demonstrates using PdfCleaner to process redact annotation markers.
+ */
+
 public class RemoveRedactedContent {
     public static final String DEST = "./target/sandbox/parse/remove_redacted_content.pdf";
 

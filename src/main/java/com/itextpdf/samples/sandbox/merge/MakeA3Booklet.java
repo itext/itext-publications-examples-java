@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MakeA3Booklet.java
+ *
+ * Example showing how to create an A3 booklet from A4 pages.
+ * Demonstrates placing two A4 pages side-by-side on A3 landscape sheets.
+ */
+
 public class MakeA3Booklet {
     public static final String DEST = "./target/sandbox/merge/make_a3_booklet.pdf";
 

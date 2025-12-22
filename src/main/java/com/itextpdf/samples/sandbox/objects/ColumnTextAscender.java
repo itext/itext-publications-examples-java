@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ColumnTextAscender.java
+ *
+ * Example showing how to control text positioning at column top.
+ * Demonstrates using ascender and leading for precise text placement.
+ */
+
 public class ColumnTextAscender {
     public static final String DEST = "./target/sandbox/objects/column_text_ascender.pdf";
 

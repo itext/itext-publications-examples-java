@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * RectangleInCell.java
+ *
+ * Example showing different approaches to add rectangles in table cells.
+ * Demonstrates scaling, padding, and overflow behavior of cell content.
+ */
+
 public class RectangleInCell {
     public static final String DEST = "./target/sandbox/objects/rectangle_in_cell.pdf";
 

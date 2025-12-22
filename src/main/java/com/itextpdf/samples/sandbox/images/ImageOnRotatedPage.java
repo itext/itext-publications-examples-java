@@ -9,6 +9,13 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * ImageOnRotatedPage.java
+ *
+ * Example showing how to center an image on a rotated page.
+ * Demonstrates scaling and positioning images on landscape orientation.
+ */
+
 public class ImageOnRotatedPage {
     public static final String DEST = "./target/sandbox/images/image_on_rotated_page.pdf";
 

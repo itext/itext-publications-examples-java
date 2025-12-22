@@ -60,7 +60,7 @@ public class SigningSampleTest extends WrappedSamplesRunner {
     @MethodSource("data")
     public void test(RunnerParams data) throws Exception {
         this.sampleClassParams = data;
-        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/all-products.json")) {
+        try (FileInputStream allLicense = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE") + "/dev_all_products.json")) {
             LicenseKey.loadLicenseFile(allLicense);
         }
         runSamples();

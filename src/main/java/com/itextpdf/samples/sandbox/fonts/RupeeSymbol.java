@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * RupeeSymbol.java
+ *
+ * This example demonstrates rendering Indian Rupee currency symbols (₹ and ₨) using different fonts and encodings.
+ * The sample compares how various TrueType fonts display the Rupee character with both Unicode (IDENTITY_H) and WINANSI encodings.
+ */
+
 public class RupeeSymbol {
     public static final String DEST = "./target/sandbox/fonts/rupee_symbol.pdf";
 

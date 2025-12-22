@@ -15,6 +15,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * TwoColumnParagraphLayout.java
+ *
+ * Example showing custom paragraph renderer for two-column layout.
+ * Demonstrates splitting a single paragraph across two side-by-side areas.
+ */
+
 public class TwoColumnParagraphLayout {
 
     public static final String DEST = "./target/sandbox/layout/complexElementLayout.pdf";

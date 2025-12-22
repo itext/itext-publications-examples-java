@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 
+/*
+ * WatermarkedImages1.java
+ *
+ * Example showing how to add rotated text watermarks to images.
+ * Demonstrates creating form XObjects with overlaid text on images.
+ */
+
 public class WatermarkedImages1 {
     public static final String DEST = "./target/sandbox/images/watermarked_images1.pdf";
 

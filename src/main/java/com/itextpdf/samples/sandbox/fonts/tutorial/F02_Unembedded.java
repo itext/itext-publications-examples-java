@@ -7,6 +7,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F02_Unembedded.java
+ *
+ * Example showing Czech text with special characters using default fonts.
+ * Demonstrates rendering accented characters with Unicode escape sequences.
+ */
+
 public class F02_Unembedded {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f02_unembedded.pdf";
 

@@ -13,6 +13,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OrdinalNumbers.java
+ *
+ * Example showing how to create superscript ordinal number suffixes.
+ * Demonstrates using text rise for proper ordinal indicator positioning.
+ */
+
 public class OrdinalNumbers {
     public static final String DEST = "./target/sandbox/objects/ordinal_numbers.pdf";
 

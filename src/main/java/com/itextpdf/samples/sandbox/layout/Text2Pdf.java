@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/*
+ * Text2Pdf.java
+ *
+ * Example showing how to convert a text file to a PDF document.
+ * Demonstrates reading text lines and applying title/body formatting.
+ */
+
 public class Text2Pdf {
     public static final String TEXT = "./src/main/resources/txt/tree.txt";
     public static final String DEST = "./target/sandbox/layout/text2pdf.pdf";

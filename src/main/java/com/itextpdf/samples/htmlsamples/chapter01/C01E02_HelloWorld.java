@@ -1,13 +1,14 @@
 package com.itextpdf.samples.htmlsamples.chapter01;
 
+import com.itextpdf.html2pdf.ConverterProperties;
+import com.itextpdf.html2pdf.HtmlConverter;
+import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import com.itextpdf.html2pdf.ConverterProperties;
-import com.itextpdf.html2pdf.HtmlConverter;
-import com.itextpdf.licensing.base.LicenseKey;
 
 /**
  * Converts a Hello World HTML String with a reference to an external image to a PDF document.
@@ -36,10 +37,12 @@ public class C01E02_HelloWorld {
 	 * @throws IOException signals that an I/O exception has occurred.
 	 */
 	public static void main(String[] args) throws IOException {
-		try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-				+ "/itextkey-html2pdf_typography.json")) {
+		String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfHtmlAndPdfCalligraphProducts();
+		try (FileInputStream license = new FileInputStream(licensePath)) {
 			LicenseKey.loadLicenseFile(license);
 		}
+		
+
 		File file = new File(DEST);
 		file.getParentFile().mkdirs();
 

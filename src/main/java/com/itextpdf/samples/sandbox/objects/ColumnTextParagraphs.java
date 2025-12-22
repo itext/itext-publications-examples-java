@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ColumnTextParagraphs.java
+ *
+ * Example showing how to flow paragraphs through multiple columns.
+ * Demonstrates custom renderer for alternating left and right columns.
+ */
+
 public class ColumnTextParagraphs {
     public static final String DEST = "./target/sandbox/objects/column_text_paragraphs.pdf";
     public static final String TEXT = "This is some long paragraph " +

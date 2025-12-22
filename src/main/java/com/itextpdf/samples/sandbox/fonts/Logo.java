@@ -12,6 +12,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * Logo.java
+ *
+ * This example demonstrates creating a custom Type 3 font by programmatically drawing individual glyphs using vector graphics.
+ * The sample creates colorized letters I, T, E, and X with custom stroke colors and line caps to form the "ITEXT" logo.
+ */
+
 public class Logo {
     public static final String DEST = "./target/sandbox/fonts/logo.pdf";
 

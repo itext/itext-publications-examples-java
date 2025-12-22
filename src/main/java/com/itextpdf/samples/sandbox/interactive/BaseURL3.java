@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BaseURL3.java
+ *
+ * Example showing how to add a base URL to an existing PDF document.
+ * Demonstrates modifying the URI dictionary in the document catalog.
+ */
+
 public class BaseURL3 {
     public static final String DEST = "./target/sandbox/interactive/base_url3.pdf";
 

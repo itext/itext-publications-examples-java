@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F08_Unicode.java
+ *
+ * Example showing multilingual text with Unicode encoding and no embedding.
+ * Demonstrates French, Czech, and Russian with PREFER_NOT_EMBEDDED strategy.
+ */
+
 public class F08_Unicode {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f08_unicode.pdf";
 
@@ -79,7 +86,7 @@ public class F08_Unicode {
 
         // The text line is "Увидимся позже. Увидимся."
         doc.add(new Paragraph("\u0423\u0432\u0438\u0434\u0438\u043c\u0441\u044f "
-                + "\u043f\u043E\u0437\u0436\u0435. \u0423\u0432\u0438\u0434\u0438\u043c\u0441\u044f."));
+                + "\u043f\u043e\u0437\u0436\u0435. \u0423\u0432\u0438\u0434\u0438\u043c\u0441\u044f."));
 
         // The text line is "Позвольте мне представиться."
         doc.add(new Paragraph("\u041f\u043e\u0437\u0432\u043e\u043b\u044c\u0442\u0435 \u043c\u043d\u0435 "

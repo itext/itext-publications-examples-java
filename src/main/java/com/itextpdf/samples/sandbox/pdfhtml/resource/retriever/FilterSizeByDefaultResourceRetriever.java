@@ -9,6 +9,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * FilterSizeByDefaultResourceRetriever.java
+ *
+ * Example showing how to filter resources by size during HTML conversion.
+ * Demonstrates setting resource size limit to exclude large files.
+ */
+
 public class FilterSizeByDefaultResourceRetriever {
     public static final String SRC = "./src/main/resources/pdfhtml/FilterSizeByDefaultResourceRetriever/";
     public static final String DEST = "./target/sandbox/pdfhtml/FilterSizeByDefaultResourceRetriever.pdf";

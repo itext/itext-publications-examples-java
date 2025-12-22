@@ -12,6 +12,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/*
+ * ParseHtmlAsPrint.java
+ *
+ * Example showing how to parse HTML with print media type for PDF output.
+ * Demonstrates setting media device description for CSS media queries.
+ */
+
 public class ParseHtmlAsPrint {
     public static final String SRC = "./src/main/resources/pdfhtml/media/";
     public static final String DEST = "./target/sandbox/pdfhtml/rainbow_asPrint.pdf";

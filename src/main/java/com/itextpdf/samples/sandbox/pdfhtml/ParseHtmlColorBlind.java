@@ -11,6 +11,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * ParseHtmlColorBlind.java
+ *
+ * Example showing HTML to PDF conversion simulating color blindness vision.
+ * Demonstrates custom CSS applier to transform colors for accessibility.
+ */
+
 public class ParseHtmlColorBlind {
     public static final String SRC = "./src/main/resources/pdfhtml/rainbow/";
     public static final String DEST = "./target/sandbox/pdfhtml/rainbow_colourBlind.pdf";

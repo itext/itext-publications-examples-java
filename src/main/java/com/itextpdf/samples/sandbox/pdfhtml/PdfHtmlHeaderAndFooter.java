@@ -20,6 +20,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * PdfHtmlHeaderAndFooter.java
+ *
+ * Example showing how to add headers and footers to HTML-converted PDFs.
+ * Demonstrates using event handlers for page numbering and custom headers.
+ */
+
 public class PdfHtmlHeaderAndFooter {
     public static final String SRC = "./src/main/resources/pdfhtml/";
     public static final String DEST = "./target/sandbox/pdfhtml/ipsum.pdf";

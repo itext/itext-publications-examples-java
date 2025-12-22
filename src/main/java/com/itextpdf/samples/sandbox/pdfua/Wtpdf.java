@@ -28,6 +28,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/*
+ * Wtpdf.java
+ *
+ * Example showing how to create well-tagged PDF/A-4 with PDF/UA-2 compliance.
+ * Demonstrates HTML to PDF conversion with accessibility and archiving standards.
+ */
+
 public class Wtpdf {
 
 

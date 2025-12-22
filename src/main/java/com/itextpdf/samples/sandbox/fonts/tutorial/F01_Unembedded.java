@@ -7,6 +7,13 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * F01_Unembedded.java
+ *
+ * Example showing French text with special characters using default fonts.
+ * Demonstrates rendering accented characters with Unicode escape sequences.
+ */
+
 public class F01_Unembedded {
     public static final String DEST = "./target/sandbox/fonts/tutorial/f01_unembedded.pdf";
 

@@ -12,6 +12,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/*
+ * ParseHtmlQRcode.java
+ *
+ * Example showing how to convert HTML with custom QR code tags to PDF.
+ * Demonstrates custom tag worker and CSS applier for QR code generation.
+ */
+
 public class ParseHtmlQRcode {
     public static final String SRC = "./src/main/resources/pdfhtml/qrcode/";
     public static final String DEST = "./target/sandbox/pdfhtml/qrcode.pdf";

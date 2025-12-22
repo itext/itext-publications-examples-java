@@ -5,6 +5,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.licensing.base.LicenseKey;
+import com.itextpdf.samples.util.LicenseUtil;
 import com.itextpdf.svg.converter.SvgConverter;
 
 import java.io.File;
@@ -17,10 +18,11 @@ public class ConvertSvgToPdfWithPdfCalligraph {
 
     public static void main(String[] args) throws IOException {
         // Load the license file to use typography features
-        try (FileInputStream license = new FileInputStream(System.getenv("ITEXT_LICENSE_FILE_LOCAL_STORAGE")
-                + "/itextkey-typography.json")) {
+        String licensePath = LicenseUtil.getPathToLicenseFileWithITextCoreAndPdfCalligraphProducts();
+        try (FileInputStream license = new FileInputStream(licensePath)) {
             LicenseKey.loadLicenseFile(license);
         }
+        
 
         String svgImage = SRC + "cauldronWithText.svg";
         File file = new File(DEST);

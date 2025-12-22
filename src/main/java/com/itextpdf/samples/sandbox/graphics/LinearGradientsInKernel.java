@@ -17,6 +17,13 @@ import com.itextpdf.styledxmlparser.css.util.CssGradientUtil;
 
 import java.io.File;
 
+/*
+ * LinearGradientsInKernel.java
+ *
+ * Example showing three approaches to create linear gradients in PDF.
+ * Demonstrates iText API, CSS parsing, and direct coordinate methods.
+ */
+
 public class LinearGradientsInKernel {
     public static final String DEST = "./target/sandbox/graphics/linearGradientsInKernel.pdf";
 

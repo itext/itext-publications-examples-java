@@ -13,6 +13,13 @@ import com.itextpdf.layout.element.Image;
 
 import java.io.File;
 
+/*
+ * LargeImage1.java
+ *
+ * Example showing how to extract and scale a large image from a PDF.
+ * Demonstrates creating a new PDF with custom page size for the image.
+ */
+
 public class LargeImage1 {
     public static final String DEST = "./target/sandbox/images/large_image1.pdf";
 

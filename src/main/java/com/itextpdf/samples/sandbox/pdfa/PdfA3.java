@@ -27,6 +27,13 @@ import java.nio.file.Paths;
 import java.util.StringTokenizer;
 import java.io.InputStream;
 
+/*
+ * PdfA3.java
+ *
+ * Example showing how to create PDF/A-3 with embedded file attachments.
+ * Demonstrates embedding CSV data file and displaying it in a table.
+ */
+
 public class PdfA3 {
     public static final String DEST = "./target/sandbox/pdfa/pdf_a3.pdf";
 

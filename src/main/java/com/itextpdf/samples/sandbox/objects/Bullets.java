@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * Bullets.java
+ *
+ * Example showing different approaches to creating bulleted lists.
+ * Demonstrates controlling line breaking behavior with bullet points.
+ */
+
 public class Bullets {
     public static final String DEST = "./target/sandbox/objects/bullets.pdf";
     public static final String[] ITEMS = {

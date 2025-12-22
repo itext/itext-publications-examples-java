@@ -11,9 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/**
- * Example demonstrates how to build complex layouts using layout manager
+/*
+ * TwoColumnsDocumentLayout.java
+ *
+ * Example showing document-wide two-column layout using ColumnRenderer.
+ * Demonstrates defining custom column areas for automatic text flow.
  */
+
 public class TwoColumnsDocumentLayout {
 
     public static final String DEST = "./target/sandbox/layout/complexDocumentLayout.pdf";

@@ -15,6 +15,13 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 
+/*
+ * ArabicExample2.java
+ *
+ * Example showing Arabic text in table cells with RTL base direction.
+ * Demonstrates right-to-left text alignment for bidirectional content.
+ */
+
 public class ArabicExample2 {
 
     public static final String DEST = "./target/sandbox/fonts/arabic_example2.pdf";

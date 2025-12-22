@@ -11,6 +11,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * InsertAndAdaptOutlines.java
+ *
+ * Example showing how to insert a page and update document bookmarks.
+ * Demonstrates adding outlines/bookmarks for newly inserted pages.
+ */
+
 public class InsertAndAdaptOutlines {
     public static final String DEST = "./target/sandbox/merge/insert_and_adapt_outlines.pdf";
 

@@ -10,6 +10,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 
+/*
+ * FilterUrlByCustomResourceRetriever.java
+ *
+ * Example showing how to filter resources by URL path during retrieval.
+ * Demonstrates custom resource retriever with URL whitelist filtering.
+ */
+
 public class FilterUrlByCustomResourceRetriever {
     public static final String SRC = "./src/main/resources/pdfhtml/FilterUrlByCustomResourceRetriever/";
     public static final String DEST = "./target/sandbox/pdfhtml/FilterUrlByCustomResourceRetriever.pdf";

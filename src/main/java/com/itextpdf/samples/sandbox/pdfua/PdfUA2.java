@@ -15,6 +15,13 @@ import com.itextpdf.pdfua.PdfUADocument;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * PdfUA2.java
+ *
+ * Example showing how to create a PDF/UA-2 compliant document with PDF 2.0.
+ * Demonstrates basic universal accessibility setup with embedded fonts.
+ */
+
 public class PdfUA2 {
 
     public static final String DEST = "./target/sandbox/pdfua2/pdf_ua.pdf";

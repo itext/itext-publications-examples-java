@@ -11,6 +11,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
+/*
+ * ChangeAuthor.java
+ *
+ * Example showing how to modify annotation author names in a PDF.
+ * Demonstrates updating the title property of all page annotations.
+ */
+
 public class ChangeAuthor {
     public static final String DEST = "./target/sandbox/interactive/change_author.pdf";
 

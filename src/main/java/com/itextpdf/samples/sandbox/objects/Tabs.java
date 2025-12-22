@@ -1,11 +1,3 @@
-/**
- * <p>
- * The code adds three paragraphs:
- * 1. Without a tab
- * 2. With a leading tab
- * 3. With an inline tab
- * 4. With a leading tab and with an inline tab
- */
 package com.itextpdf.samples.sandbox.objects;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -20,6 +12,13 @@ import com.itextpdf.layout.properties.TabAlignment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
+/*
+ * Tabs.java
+ *
+ * Example showing different ways to use tabs in paragraphs.
+ * Demonstrates leading tabs, inline tabs, and combined tab usage.
+ */
 
 public class Tabs {
     public static final String DEST = "./target/sandbox/objects/tabs.pdf";
