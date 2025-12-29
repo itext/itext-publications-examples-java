@@ -32,7 +32,11 @@ public class GenericSampleTest extends WrappedSamplesRunner {
      * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
     private static final List<String> renderCompareList = Arrays.asList(
-            "com.itextpdf.samples.sandbox.signatures.SignatureExample"
+            "com.itextpdf.samples.sandbox.signatures.SignatureExample",
+            "com.itextpdf.samples.sandbox.signatures.pqc.MLDSA",
+            "com.itextpdf.samples.sandbox.signatures.pqc.SLHDSA",
+            "com.itextpdf.samples.sandbox.signatures.pqc.FNDSA",
+            "com.itextpdf.samples.sandbox.signatures.pqc.Picnic"
     );
 
     private static final List<String> veraPdfCompareList = Arrays.asList(
@@ -119,6 +123,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.appearance");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.twophase");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.signaturetag");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.pqc.PqcSignatureExample");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.utils");
