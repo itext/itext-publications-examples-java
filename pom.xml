@@ -72,11 +72,6 @@
       <version>${html2pdf.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.10.2</version>
-    </dependency>
-    <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>eu-trusted-lists-resources</artifactId>
       <version>1.0.0</version>
