@@ -142,7 +142,7 @@
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
-      <artifactId>pdfocr-onnxtr</artifactId>
+      <artifactId>pdfocr-onnx-cpu</artifactId>
       <version>${ocr.version}</version>
     </dependency>
     <dependency>
