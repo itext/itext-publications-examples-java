@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Malayalam text with standard
+ * and custom spacing configurations.
+ */
+
 public class MalayalamWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamWordSpacing.pdf";

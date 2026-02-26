@@ -17,6 +17,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliPushButton.java
+ *
+ * Demonstrates creating a PDF form with a push button field displaying 
+ * Bengali text. Uses NotoSansBengali font to render the button caption 
+ * properly.
+ */
+
 public class BengaliPushButton {
 
     public static final String DEST = "./target/sandbox/typography/BengaliPushButton.pdf";

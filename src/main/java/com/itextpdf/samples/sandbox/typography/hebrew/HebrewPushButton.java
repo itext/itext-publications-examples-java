@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewPushButton.java
+ *
+ * Creates PDF push button form field with Hebrew caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class HebrewPushButton {
 
     public static final String DEST = "./target/sandbox/typography/HebrewPushButton.pdf";

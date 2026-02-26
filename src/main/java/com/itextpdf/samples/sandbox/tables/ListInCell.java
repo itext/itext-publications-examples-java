@@ -9,6 +9,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ListInCell.java
+ *
+ * Demonstrates how to add bulleted or numbered lists as content within
+ * table cells for structured information display.
+ */
+
 public class ListInCell {
     public static final String DEST = "./target/sandbox/tables/list_in_cell.pdf";
 

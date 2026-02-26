@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerLink.java
+ *
+ * Creates PDF hyperlinks with Khmer text to demonstrate typography
+ * support in interactive link elements.
+ */
+
 public class KhmerLink {
 
     public static final String DEST = "./target/sandbox/typography/KhmerLink.pdf";

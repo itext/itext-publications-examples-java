@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * CenteredTextInCell.java
+ *
+ * Demonstrates how to center text both horizontally and vertically
+ * within table cells using alignment properties.
+ */
+
 public class CenteredTextInCell {
     public static final String DEST = "./target/sandbox/tables/centered_text_in_cell.pdf";
 

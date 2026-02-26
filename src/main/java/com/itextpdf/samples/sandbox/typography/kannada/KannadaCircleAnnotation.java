@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaCircleAnnotation.java
+ *
+ * Creates PDF annotations with Kannada text content to show
+ * typography support in annotation elements.
+ */
+
 public class KannadaCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/KannadaCircleAnnotation.pdf";

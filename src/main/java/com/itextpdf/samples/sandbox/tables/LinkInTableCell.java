@@ -17,6 +17,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * LinkInTableCell.java
+ *
+ * Illustrates how to add hyperlinks and action links within table
+ * cells for interactive PDF documents.
+ */
+
 public class LinkInTableCell {
     public static final String DEST = "./target/sandbox/tables/link_in_table_cell.pdf";
 

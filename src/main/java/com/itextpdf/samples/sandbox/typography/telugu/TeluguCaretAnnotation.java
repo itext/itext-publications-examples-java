@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguCaretAnnotation.java
+ *
+ * Creates PDF annotations with Telugu text content to show
+ * typography support in annotation elements.
+ */
+
 public class TeluguCaretAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/TeluguCaretAnnotation.pdf";

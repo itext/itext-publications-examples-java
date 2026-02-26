@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ThaiOpacity.java
+ *
+ * Renders Thai text with varying opacity levels to demonstrate
+ * transparency control in typography elements.
+ */
+
 public class ThaiOpacity {
 
     public static final String DEST = "./target/sandbox/typography/ThaiOpacity.pdf";

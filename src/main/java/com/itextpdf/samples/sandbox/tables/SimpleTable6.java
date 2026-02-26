@@ -15,6 +15,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable6.java
+ *
+ * Demonstrates a sixth variation of simple table creation exploring
+ * different basic table features.
+ */
+
 public class SimpleTable6 {
     public static final String DEST = "./target/sandbox/tables/simple_table6.pdf";
 

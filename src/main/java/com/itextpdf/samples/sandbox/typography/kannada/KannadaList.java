@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaList.java
+ *
+ * Generates PDF list elements containing Kannada text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class KannadaList {
 
     public static final String DEST = "./target/sandbox/typography/KannadaList.pdf";

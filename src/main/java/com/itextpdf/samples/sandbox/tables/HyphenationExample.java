@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * HyphenationExample.java
+ *
+ * Shows how to enable automatic hyphenation for text in table cells
+ * to improve text flow and layout appearance.
+ */
+
 public class HyphenationExample {
     public static final String DEST = "./target/sandbox/tables/hyphenation_example.pdf";
 

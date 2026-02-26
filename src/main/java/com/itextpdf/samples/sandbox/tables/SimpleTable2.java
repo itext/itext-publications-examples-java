@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable2.java
+ *
+ * Shows a second basic table example with variations in cell content
+ * or table configuration.
+ */
+
 public class SimpleTable2 {
     public static final String DEST = "./target/sandbox/tables/simple_table2.pdf";
 

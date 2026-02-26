@@ -18,6 +18,12 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * TransparentWatermark.java
+ *
+ * Adds transparent watermarks above and below PDF content.
+ */
+
 public class TransparentWatermark {
     public static final String DEST = "./target/sandbox/stamper/transparent_watermark.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hero.pdf";

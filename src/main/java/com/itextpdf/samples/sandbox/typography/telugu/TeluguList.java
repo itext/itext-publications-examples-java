@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguList.java
+ *
+ * Generates PDF list elements containing Telugu text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class TeluguList {
 
     public static final String DEST = "./target/sandbox/typography/TeluguList.pdf";

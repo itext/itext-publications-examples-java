@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ThaiTable.java
+ *
+ * Demonstrates rendering Thai text within PDF table cells to show
+ * typography support in tabular layouts.
+ */
+
 public class ThaiTable {
 
     public static final String DEST = "./target/sandbox/typography/ThaiTable.pdf";

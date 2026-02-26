@@ -15,6 +15,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable12.java
+ *
+ * Illustrates a twelfth simple table example focusing on fundamental
+ * table features and cell content.
+ */
+
 public class SimpleTable12 {
     public static final String DEST = "./target/sandbox/tables/simple_table12.pdf";
 

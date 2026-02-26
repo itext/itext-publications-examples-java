@@ -10,6 +10,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import java.io.File;
 import java.util.Locale;
 
+/*
+ * ClipPdf.java
+ *
+ * Clips PDF pages with custom rectangular clipping paths.
+ */
+
 public class ClipPdf {
     public static final String DEST = "./target/sandbox/stamper/clip_pdf.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hero.pdf";

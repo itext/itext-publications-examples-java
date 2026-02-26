@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable11.java
+ *
+ * Demonstrates an eleventh simple table variation exploring basic
+ * table layout options.
+ */
+
 public class SimpleTable11 {
     public static final String DEST = "./target/sandbox/tables/simple_table11.pdf";
 

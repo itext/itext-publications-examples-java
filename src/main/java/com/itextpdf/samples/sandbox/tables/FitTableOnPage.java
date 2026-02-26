@@ -16,6 +16,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * FitTableOnPage.java
+ *
+ * Demonstrates techniques for scaling and fitting a table to properly
+ * fit within a single page without splitting.
+ */
+
 public class FitTableOnPage {
     public static final String DEST = "./target/sandbox/tables/fit_table_on_page.pdf";
 

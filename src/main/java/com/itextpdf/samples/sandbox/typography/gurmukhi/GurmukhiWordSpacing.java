@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Gurmukhi text with standard
+ * and custom spacing configurations.
+ */
+
 public class GurmukhiWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiWordSpacing.pdf";

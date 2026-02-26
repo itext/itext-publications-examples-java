@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * IndentationInCell.java
+ *
+ * Demonstrates how to add indentation to paragraphs within table cells
+ * for nested or hierarchical content presentation.
+ */
+
 public class IndentationInCell {
     public static final String DEST = "./target/sandbox/tables/indentation_in_cell.pdf";
 

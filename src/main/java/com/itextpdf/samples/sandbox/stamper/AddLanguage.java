@@ -8,6 +8,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * AddLanguage.java
+ *
+ * Sets the document language metadata in PDF.
+ */
+
 public class AddLanguage {
     public static final String DEST = "./target/sandbox/stamper/add_language.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

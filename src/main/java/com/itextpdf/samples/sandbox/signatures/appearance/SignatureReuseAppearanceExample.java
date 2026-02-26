@@ -21,6 +21,12 @@ import java.security.Security;
 import java.security.cert.Certificate;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/*
+ * SignatureReuseAppearanceExample.java
+ *
+ * Signs existing signature fields while reusing their appearance.
+ */
+
 public class SignatureReuseAppearanceExample {
     private static final char[] PASSWORD = "testpassphrase".toCharArray();
 

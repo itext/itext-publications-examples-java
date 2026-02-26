@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaPushButton.java
+ *
+ * Creates PDF push button form field with Odia caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class OdiaPushButton {
 
     public static final String DEST = "./target/sandbox/typography/OdiaPushButton.pdf";

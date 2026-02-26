@@ -18,6 +18,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilPushButton.java
+ *
+ * Creates PDF push button form field with Tamil caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class TamilPushButton {
 
     public static final String DEST = "./target/sandbox/typography/TamilPushButton.pdf";

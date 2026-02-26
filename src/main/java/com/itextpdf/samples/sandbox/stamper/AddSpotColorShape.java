@@ -12,6 +12,12 @@ import com.itextpdf.kernel.pdf.function.PdfType2Function;
 
 import java.io.File;
 
+/*
+ * AddSpotColorShape.java
+ *
+ * Adds spot color shapes to PDF documents.
+ */
+
 public class AddSpotColorShape {
     public static final String DEST = "./target/sandbox/stamper/add_spot_color_shape.pdf";
     public static final String SRC = "./src/main/resources/pdfs/image.pdf";

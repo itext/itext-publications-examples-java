@@ -15,6 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariTable.java
+ *
+ * Demonstrates creating a table with Devanagari text in a PDF document. 
+ * Uses NotoSansDevanagari font to properly render Devanagari script 
+ * characters in table cells.
+ */
+
 public class DevanagariTable {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariTable.pdf";

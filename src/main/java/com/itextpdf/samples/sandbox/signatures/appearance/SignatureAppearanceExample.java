@@ -24,6 +24,12 @@ import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.Certificate;
 
+/*
+ * SignatureAppearanceExample.java
+ *
+ * Creates PDF signatures with custom appearance, images, and fonts.
+ */
+
 public class SignatureAppearanceExample {
     public static final String DEST = "./target/sandbox/signatures/appearance/signatureAppearanceExample.pdf";
 

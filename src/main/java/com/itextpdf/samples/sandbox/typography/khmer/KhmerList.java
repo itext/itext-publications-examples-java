@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerList.java
+ *
+ * Generates PDF list elements containing Khmer text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class KhmerList {
 
     public static final String DEST = "./target/sandbox/typography/KhmerList.pdf";

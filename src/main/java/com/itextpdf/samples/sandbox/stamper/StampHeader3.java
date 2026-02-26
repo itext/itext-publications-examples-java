@@ -14,6 +14,12 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * StampHeader3.java
+ *
+ * Adds headers to PDF pages respecting page rotation.
+ */
+
 public class StampHeader3 {
     public static final String DEST = "./target/sandbox/stamper/stamp_header3.pdf";
     public static final String SRC = "./src/main/resources/pdfs/Wrong.pdf";

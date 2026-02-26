@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamTable.java
+ *
+ * Demonstrates rendering Malayalam text within PDF table cells to show
+ * typography support in tabular layouts.
+ */
+
 public class MalayalamTable {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamTable.pdf";

@@ -10,6 +10,12 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * StampPageXofY.java
+ *
+ * Adds page numbers with "page X of Y" format to PDF.
+ */
+
 public class StampPageXofY {
     public static final String DEST = "./target/sandbox/stamper/stamp_page_x_of_y.pdf";
     public static final String SRC = "./src/main/resources/pdfs/nameddestinations.pdf";

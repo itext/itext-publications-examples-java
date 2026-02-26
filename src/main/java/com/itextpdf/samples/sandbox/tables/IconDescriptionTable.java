@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * IconDescriptionTable.java
+ *
+ * Demonstrates how to create a two-column table with icons in one
+ * column and corresponding descriptions in another.
+ */
+
 public class IconDescriptionTable {
     public static final String DEST = "./target/sandbox/tables/icon_description_table.pdf";
     public static final String IMG = "./src/main/resources/img/bulb.gif";

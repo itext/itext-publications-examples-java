@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KeyValueTable2.java
+ *
+ * Shows an alternative approach to creating key-value tables with
+ * different styling and formatting options.
+ */
+
 public class KeyValueTable2 {
     public static final String DEST = "./target/sandbox/tables/key_value_table2.pdf";
 

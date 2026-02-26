@@ -14,6 +14,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliCharacterSpacing.java
+ *
+ * Demonstrates rendering Bengali text with varying character spacing in a 
+ * PDF document. Creates paragraphs with default spacing, 5-point spacing, 
+ * and 10-point spacing.
+ */
+
 public class BengaliCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/BengaliCharacterSpacing.pdf";

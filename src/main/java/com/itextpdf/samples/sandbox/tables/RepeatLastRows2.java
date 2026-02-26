@@ -13,6 +13,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * RepeatLastRows2.java
+ *
+ * Shows an alternative approach to repeating footer rows in multi-page
+ * tables with additional styling options.
+ */
+
 public class RepeatLastRows2 {
     public static final String DEST = "./target/sandbox/tables/repeat_last_rows2.pdf";
 

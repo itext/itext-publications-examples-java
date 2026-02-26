@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiList.java
+ *
+ * Generates PDF list elements containing Gujarati text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class GujaratiList {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiList.pdf";

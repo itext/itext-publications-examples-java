@@ -22,9 +22,12 @@ import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.Certificate;
 
-/**
- * Basic example of the signature appearance customizing during the document signing.
+/*
+ * PadesSignatureAppearanceExample.java
+ *
+ * Customizes PAdES signature appearance with images and fonts.
  */
+
 public class PadesSignatureAppearanceExample {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DEST = "./target/sandbox/signatures/appearance/padesSignatureAppearanceExample.pdf";

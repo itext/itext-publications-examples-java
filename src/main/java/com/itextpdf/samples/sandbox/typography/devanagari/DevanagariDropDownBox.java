@@ -19,6 +19,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariDropDownBox.java
+ *
+ * Demonstrates creating a PDF form with a dropdown (combo box) field 
+ * containing Devanagari text options. Uses NotoSansDevanagari font with 
+ * center alignment.
+ */
+
 public class DevanagariDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariDropDownBox.pdf";

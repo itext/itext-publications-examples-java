@@ -13,6 +13,12 @@ import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 
 import java.io.File;
 
+/*
+ * AddNavigation.java
+ *
+ * Adds navigation links between PDF pages.
+ */
+
 public class AddNavigation {
     public static final String DEST = "./target/sandbox/stamper/add_navigation.pdf";
     public static final String SRC = "./src/main/resources/pdfs/primes.pdf";

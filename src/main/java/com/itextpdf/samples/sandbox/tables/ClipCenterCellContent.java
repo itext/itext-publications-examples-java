@@ -20,6 +20,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * ClipCenterCellContent.java
+ *
+ * Shows how to clip and center cell content that exceeds the cell's
+ * boundaries using custom rendering logic.
+ */
+
 public class ClipCenterCellContent {
     public static final String DEST = "./target/sandbox/tables/clip_center_cell_content.pdf";
 

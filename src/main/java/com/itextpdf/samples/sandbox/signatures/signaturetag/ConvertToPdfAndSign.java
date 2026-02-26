@@ -23,6 +23,12 @@ import java.security.Security;
 import java.security.cert.Certificate;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/*
+ * ConvertToPdfAndSign.java
+ *
+ * Converts HTML with signature tags to PDF and signs the document.
+ */
+
 public class ConvertToPdfAndSign {
 
     public static final String SRC = "./src/main/resources/signatures/signaturetag/ConvertToPdfAndSign/htmlWithSignatureTag.html";

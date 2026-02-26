@@ -9,6 +9,12 @@ import com.itextpdf.svg.processors.impl.SvgConverterProperties;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ConvertSvgStringToPdf.java
+ *
+ * Converts SVG string content directly to PDF documents.
+ */
+
 public class ConvertSvgStringToPdf {
     public static final String DEST = "./target/sandbox/svg/SvgStringToPdf.pdf";
 

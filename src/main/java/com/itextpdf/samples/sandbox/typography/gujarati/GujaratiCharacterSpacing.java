@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Gujarati text with
+ * standard and custom spacing values.
+ */
+
 public class GujaratiCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiCharacterSpacing.pdf";

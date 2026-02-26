@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilCaretAnnotation.java
+ *
+ * Creates PDF annotations with Tamil text content to show
+ * typography support in annotation elements.
+ */
+
 public class TamilCaretAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/TamilCaretAnnotation.pdf";

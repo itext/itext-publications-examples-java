@@ -15,6 +15,12 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/*
+ * ConvertSvgToXObject.java
+ *
+ * Converts SVG files to PDF XObjects for reuse.
+ */
+
 public class ConvertSvgToXObject {
     private static final String SRC = "./src/main/resources/svg/";
     public static final String DEST = "./target/sandbox/svg/SvgToXObject.pdf";

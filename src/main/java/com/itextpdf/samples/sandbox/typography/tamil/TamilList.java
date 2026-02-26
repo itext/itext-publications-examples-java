@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilList.java
+ *
+ * Generates PDF list elements containing Tamil text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class TamilList {
 
     public static final String DEST = "./target/sandbox/typography/TamilList.pdf";

@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ThaiCaretAnnotation.java
+ *
+ * Creates PDF annotations with Thai text content to show
+ * typography support in annotation elements.
+ */
+
 public class ThaiCaretAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/ThaiCaretAnnotation.pdf";

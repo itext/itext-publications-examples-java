@@ -9,6 +9,12 @@ import com.itextpdf.kernel.pdf.layer.PdfLayer;
 import java.io.File;
 import java.util.List;
 
+/*
+ * ChangeOCG.java
+ *
+ * Modifies optional content group (layer) visibility in PDF.
+ */
+
 public class ChangeOCG {
     public static final String DEST = "./target/sandbox/stamper/change_ocg.pdf";
     public static final String SRC = "./src/main/resources/pdfs/ocg.pdf";

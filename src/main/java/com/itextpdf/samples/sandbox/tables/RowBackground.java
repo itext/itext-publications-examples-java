@@ -16,6 +16,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * RowBackground.java
+ *
+ * Illustrates how to apply alternating or specific background colors
+ * to entire table rows for improved readability.
+ */
+
 public class RowBackground {
     public static final String DEST = "./target/sandbox/tables/row_background.pdf";
 

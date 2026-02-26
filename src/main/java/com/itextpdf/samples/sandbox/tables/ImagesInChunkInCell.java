@@ -11,6 +11,13 @@ import com.itextpdf.layout.element.Text;
 
 import java.io.File;
 
+/*
+ * ImagesInChunkInCell.java
+ *
+ * Shows how to add multiple images as chunks within a paragraph inside
+ * a table cell for inline image placement.
+ */
+
 public class ImagesInChunkInCell {
     public static final String DEST = "./target/sandbox/tables/images_in_chunk_in_cell.pdf";
 

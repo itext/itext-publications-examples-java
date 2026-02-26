@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * TableTemplate.java
+ *
+ * Demonstrates how to create a table as a template (XObject) and reuse
+ * it multiple times or clip portions for display.
+ */
+
 public class TableTemplate {
     public static final String DEST = "./target/sandbox/tables/table_template.pdf";
 

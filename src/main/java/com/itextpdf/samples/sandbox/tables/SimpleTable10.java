@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable10.java
+ *
+ * Shows a tenth simple table example with additional basic table
+ * construction techniques.
+ */
+
 public class SimpleTable10 {
     public static final String DEST = "./target/sandbox/tables/simple_table10.pdf";
 

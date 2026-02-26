@@ -33,6 +33,12 @@ import java.security.cert.X509Certificate;
 import java.util.Collections;
 import java.util.Date;
 
+/*
+ * ValidateChainBeforeSigningExample.java
+ *
+ * Validates certificate chain before signing PDF documents.
+ */
+
 /**
  * Basic example of the certificate chain validation before the document signing.
  */

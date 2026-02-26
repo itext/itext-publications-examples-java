@@ -15,6 +15,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * TableBorder.java
+ *
+ * Shows how to apply borders to the entire table versus individual
+ * cells and control border appearance.
+ */
+
 public class TableBorder {
     public static final String DEST = "./target/sandbox/tables/tables_border.pdf";
 

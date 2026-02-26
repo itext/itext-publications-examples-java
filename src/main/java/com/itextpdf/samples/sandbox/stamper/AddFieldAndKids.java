@@ -13,6 +13,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * AddFieldAndKids.java
+ *
+ * Adds form fields with parent-child relationships to PDF.
+ */
+
 public class AddFieldAndKids {
     public static final String DEST = "./target/sandbox/stamper/add_field_and_kids.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

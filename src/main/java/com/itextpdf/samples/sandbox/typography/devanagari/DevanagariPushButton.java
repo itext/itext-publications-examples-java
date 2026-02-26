@@ -17,6 +17,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariPushButton.java
+ *
+ * Demonstrates creating a PDF form with a push button field displaying 
+ * Devanagari text. Uses NotoSansDevanagari font to render the button 
+ * caption properly.
+ */
+
 public class DevanagariPushButton {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariPushButton.pdf";

@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * NestedTables.java
+ *
+ * Demonstrates how to add tables as content within cells of another
+ * table to create complex nested layouts.
+ */
+
 public class NestedTables {
     public static final String DEST = "./target/sandbox/tables/nested_tables.pdf";
 

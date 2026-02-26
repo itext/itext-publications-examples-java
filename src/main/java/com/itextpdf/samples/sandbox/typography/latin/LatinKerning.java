@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * LatinKerning.java
+ *
+ * Demonstrates kerning feature for Latin text by comparing paragraphs
+ * with kerning enabled and disabled to show spacing differences.
+ */
+
 public class LatinKerning {
 
     public static final String DEST = "./target/sandbox/typography/LatinKerning.pdf";

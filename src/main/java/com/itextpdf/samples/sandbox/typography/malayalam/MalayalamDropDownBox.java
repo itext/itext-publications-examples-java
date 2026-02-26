@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Malayalam text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class MalayalamDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamDropDownBox.pdf";

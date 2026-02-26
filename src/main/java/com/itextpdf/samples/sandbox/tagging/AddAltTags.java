@@ -12,6 +12,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * AddAltTags.java
+ *
+ * Adds Alt text descriptions to Figure elements in PDF tag structure.
+ */
 public class AddAltTags {
     public static final String DEST = "./target/sandbox/tagging/add_alt_tags.pdf";
 

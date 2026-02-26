@@ -24,6 +24,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/*
+ * SplitRowAtSpecificRow.java
+ *
+ * Demonstrates techniques for forcing a table to split at a specific
+ * row position rather than automatic page-break splitting.
+ */
+
 public class SplitRowAtSpecificRow {
     public static final String DEST = "./target/sandbox/tables/split_row_at_specific_row.pdf";
 

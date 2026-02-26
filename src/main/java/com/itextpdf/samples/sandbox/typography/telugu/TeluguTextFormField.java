@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguTextFormField.java
+ *
+ * Creates PDF text input field with Telugu placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class TeluguTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/TeluguTextFormField.pdf";

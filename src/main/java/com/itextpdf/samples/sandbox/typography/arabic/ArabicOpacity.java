@@ -15,6 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicOpacity.java
+ *
+ * Demonstrates rendering Arabic text with varying opacity levels in a PDF 
+ * document. Creates paragraphs with the same Arabic text at different 
+ * opacity values (0.1, 0.5, and default) using right-to-left alignment.
+ */
+
 public class ArabicOpacity {
 
     public static final String DEST = "./target/sandbox/typography/ArabicOpacity.pdf";

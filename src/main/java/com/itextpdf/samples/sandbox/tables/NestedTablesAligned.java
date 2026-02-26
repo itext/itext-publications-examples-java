@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * NestedTablesAligned.java
+ *
+ * Demonstrates how to properly align nested tables within parent table
+ * cells using vertical and horizontal alignment properties.
+ */
+
 public class NestedTablesAligned {
     public static final String DEST = "./target/sandbox/tables/nested_tables_aligned.pdf";
 

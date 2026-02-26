@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * KeepingTogetherInnerTable.java
+ *
+ * Shows how to use the setKeepTogether property to prevent nested
+ * tables from being split across pages.
+ */
+
 public class KeepingTogetherInnerTable {
     public static final String DEST = "./target/sandbox/tables/keeping_together_inner_table.pdf";
 

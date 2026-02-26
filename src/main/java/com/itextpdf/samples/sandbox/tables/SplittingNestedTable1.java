@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SplittingNestedTable1.java
+ *
+ * Shows how nested tables behave when splitting across pages and
+ * demonstrates control over nested table splitting.
+ */
+
 public class SplittingNestedTable1 {
     public static final String DEST = "./target/sandbox/tables/splitting_nested_table1.pdf";
 

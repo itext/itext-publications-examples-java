@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerPushButton.java
+ *
+ * Creates PDF push button form field with Khmer caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class KhmerPushButton {
 
     public static final String DEST = "./target/sandbox/typography/KhmerPushButton.pdf";

@@ -22,6 +22,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 import com.itextpdf.layout.renderer.CellRenderer;
 import com.itextpdf.layout.renderer.DrawContext;
 
+/*
+ * CountRows.java
+ *
+ * Demonstrates how to access and count the number of rows in a table
+ * programmatically using the table's internal structure.
+ */
+
 public class CountRows {
     public static final String DEST = "./target/sandbox/tables/row_count.pdf";
 

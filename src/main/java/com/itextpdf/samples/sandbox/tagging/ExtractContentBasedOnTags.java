@@ -17,6 +17,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+/*
+ * ExtractContentBasedOnTags.java
+ *
+ * Extracts and displays content from PDF based on tag structure.
+ */
 public class ExtractContentBasedOnTags {
 
     public static final String SRC = "./src/main/resources/tagging/starter_pdfua1.pdf";

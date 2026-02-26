@@ -10,6 +10,12 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * AddLongTable.java
+ *
+ * Adds a long table spanning multiple pages to PDF.
+ */
+
 public class AddLongTable {
     public static final String DEST = "./target/sandbox/stamper/add_long_table.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

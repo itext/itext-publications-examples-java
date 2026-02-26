@@ -19,9 +19,13 @@ import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.Certificate;
 
-/**
+/*
+ * CustomSignatureAppearanceExample.java
+ *
+ * Customizes PDF signature appearance using custom Div elements.
  * Basic example of the signature appearance customizing during the document signing.
  */
+
 public class CustomSignatureAppearanceExample {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DEST = "./target/sandbox/signatures/appearance/customSignatureAppearanceExample.pdf";

@@ -8,6 +8,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * NestedTables2.java
+ *
+ * Shows another variation of nested table layouts with different
+ * configuration and styling approaches.
+ */
+
 public class NestedTables2 {
     public static final String DEST = "./target/sandbox/tables/nested_tables2.pdf";
 

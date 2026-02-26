@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Hebrew text with standard
+ * and custom spacing configurations.
+ */
+
 public class HebrewWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/HebrewWordSpacing.pdf";

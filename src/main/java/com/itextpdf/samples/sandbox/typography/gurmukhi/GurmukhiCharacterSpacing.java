@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Gurmukhi text with
+ * standard and custom spacing values.
+ */
+
 public class GurmukhiCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiCharacterSpacing.pdf";

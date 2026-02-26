@@ -10,6 +10,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicBookmark.java
+ *
+ * Demonstrates creating PDF bookmarks with Arabic text using iText
+ * typography features.
+ */
+
 public class ArabicBookmark {
 
     public static final String DEST = "./target/sandbox/typography/ArabicBookmark.pdf";

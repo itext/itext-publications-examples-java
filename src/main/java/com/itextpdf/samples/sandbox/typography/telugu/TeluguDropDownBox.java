@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Telugu text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class TeluguDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/TeluguDropDownBox.pdf";

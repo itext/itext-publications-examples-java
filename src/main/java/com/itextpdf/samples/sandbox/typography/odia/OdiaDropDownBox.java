@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Odia text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class OdiaDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/OdiaDropDownBox.pdf";

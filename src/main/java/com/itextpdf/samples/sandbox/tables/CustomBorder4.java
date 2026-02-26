@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * CustomBorder4.java
+ *
+ * Illustrates yet another custom border technique for tables with
+ * specialized rendering requirements for split cells.
+ */
+
 public class CustomBorder4 {
     public static final String DEST = "./target/sandbox/tables/custom_border4.pdf";
 

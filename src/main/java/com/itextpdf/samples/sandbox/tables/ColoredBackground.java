@@ -16,6 +16,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ColoredBackground.java
+ *
+ * Shows how to set background colors for table cells and remove borders
+ * to create a styled table appearance.
+ */
+
 public class ColoredBackground {
     public static final String DEST = "./target/sandbox/tables/colored_background.pdf";
 

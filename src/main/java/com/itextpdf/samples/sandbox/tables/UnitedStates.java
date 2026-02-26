@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.StringTokenizer;
 
+/*
+ * UnitedStates.java
+ *
+ * Demonstrates reading data from a CSV file and generating a formatted
+ * table with proper headers and data rows.
+ */
+
 public class UnitedStates {
     public static final String DATA = "./src/main/resources/data/united_states.csv";
 

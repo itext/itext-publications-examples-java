@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * TableWithTab.java
+ *
+ * Demonstrates how to use tab stops within table cell content for
+ * aligned text positioning and formatting.
+ */
+
 public class TableWithTab {
     public static final String DEST = "./target/sandbox/tables/table_with_tab.pdf";
 

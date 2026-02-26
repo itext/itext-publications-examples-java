@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliList.java
+ *
+ * Demonstrates creating a bulleted list with Bengali text items in a PDF 
+ * document. Uses NotoSansBengali font to properly render Bengali script.
+ */
+
 public class BengaliList {
 
     public static final String DEST = "./target/sandbox/typography/BengaliList.pdf";

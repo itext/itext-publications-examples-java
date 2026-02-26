@@ -17,6 +17,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicLink.java
+ *
+ * Creates a hyperlink element with Arabic text in a PDF document.
+ */
+
 public class ArabicLink {
 
     public static final String DEST = "./target/sandbox/typography/ArabicLink.pdf";

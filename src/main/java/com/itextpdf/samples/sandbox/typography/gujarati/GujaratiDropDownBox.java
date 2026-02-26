@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Gujarati text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class GujaratiDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiDropDownBox.pdf";

@@ -12,6 +12,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 
+/*
+ * ReplaceStream.java
+ *
+ * Replaces text content in PDF page content streams.
+ */
+
 public class ReplaceStream {
     public static final String DEST = "./target/sandbox/stamper/replace_stream.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

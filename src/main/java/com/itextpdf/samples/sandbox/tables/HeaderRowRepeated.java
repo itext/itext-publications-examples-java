@@ -8,6 +8,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * HeaderRowRepeated.java
+ *
+ * Illustrates how to configure a table so that its header row is
+ * automatically repeated at the top of each page when the table splits.
+ */
+
 public class HeaderRowRepeated {
     public static final String DEST = "./target/sandbox/tables/header_row_repeated.pdf";
 

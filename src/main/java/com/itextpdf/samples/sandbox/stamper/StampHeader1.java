@@ -15,6 +15,12 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 import java.io.File;
 
 
+/*
+ * StampHeader1.java
+ *
+ * Adds text headers to PDF pages.
+ */
+
 public class StampHeader1 {
     public static final String DEST = "./target/sandbox/stamper/stamp_header1.pdf";
     public static final String SRC = "./src/main/resources/pdfs/Right.pdf";

@@ -15,6 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariBoldText.java
+ *
+ * Demonstrates rendering Devanagari text with bold font styling in a PDF. 
+ * Compares regular font, actual bold font, and simulated bold text to 
+ * show proper typography handling.
+ */
+
 public class DevanagariBoldText {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariBoldText.pdf";

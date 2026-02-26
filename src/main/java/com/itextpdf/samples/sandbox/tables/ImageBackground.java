@@ -19,6 +19,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * ImageBackground.java
+ *
+ * Shows how to add a background image to table cells using custom
+ * cell rendering techniques.
+ */
+
 public class ImageBackground {
     public static final String DEST = "./target/sandbox/tables/image_background.pdf";
 

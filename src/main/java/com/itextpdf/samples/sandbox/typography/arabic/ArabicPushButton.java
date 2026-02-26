@@ -17,6 +17,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicPushButton.java
+ *
+ * Demonstrates creating a PDF form with a push button field displaying 
+ * Arabic text. Uses NotoNaskhArabic font to render the button caption 
+ * properly.
+ */
+
 public class ArabicPushButton {
 
     public static final String DEST = "./target/sandbox/typography/ArabicPushButton.pdf";

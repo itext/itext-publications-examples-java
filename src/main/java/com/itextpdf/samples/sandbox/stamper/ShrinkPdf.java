@@ -10,6 +10,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
 
+/*
+ * ShrinkPdf.java
+ *
+ * Shrinks PDF page content to 50% of original size.
+ */
+
 public class ShrinkPdf {
     public static final String DEST = "./target/sandbox/stamper/shrink_pdf.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hero.pdf";

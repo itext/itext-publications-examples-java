@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Malayalam text with
+ * standard and custom spacing values.
+ */
+
 public class MalayalamCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamCharacterSpacing.pdf";

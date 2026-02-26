@@ -15,6 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliBoldText.java
+ *
+ * Demonstrates rendering Bengali text with bold font styling in a PDF. 
+ * Compares regular font, actual bold font, and simulated bold text to 
+ * show proper typography handling.
+ */
+
 public class BengaliBoldText {
 
     public static final String DEST = "./target/sandbox/typography/BengaliBoldText.pdf";

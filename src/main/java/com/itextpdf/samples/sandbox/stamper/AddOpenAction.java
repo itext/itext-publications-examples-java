@@ -9,6 +9,12 @@ import com.itextpdf.kernel.pdf.navigation.PdfExplicitDestination;
 
 import java.io.File;
 
+/*
+ * AddOpenAction.java
+ *
+ * Sets the open action/destination for PDF documents.
+ */
+
 public class AddOpenAction {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DEST = "./target/sandbox/stamper/add_open_action.pdf";

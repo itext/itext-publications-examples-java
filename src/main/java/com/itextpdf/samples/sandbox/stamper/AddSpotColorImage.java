@@ -20,6 +20,12 @@ import com.itextpdf.kernel.pdf.xobject.PdfXObject;
 
 import java.io.File;
 
+/*
+ * AddSpotColorImage.java
+ *
+ * Adds spot color images to PDF documents.
+ */
+
 public class AddSpotColorImage {
     public static final String DEST = "./target/sandbox/stamper/add_spot_color_image.pdf";
     public static final String SRC = "./src/main/resources/pdfs/image.pdf";

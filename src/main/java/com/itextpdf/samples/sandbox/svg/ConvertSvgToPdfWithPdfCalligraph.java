@@ -12,6 +12,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ConvertSvgToPdfWithPdfCalligraph.java
+ *
+ * Converts SVG to PDF using typography features.
+ */
+
 public class ConvertSvgToPdfWithPdfCalligraph {
     private static final String SRC = "./src/main/resources/svg/";
     public static final String DEST = "./target/sandbox/svg/ConvertSvgToPdfWithPdfCalligraph.pdf";

@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaCircleAnnotation.java
+ *
+ * Creates PDF annotations with Odia text content to show
+ * typography support in annotation elements.
+ */
+
 public class OdiaCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/OdiaCircleAnnotation.pdf";

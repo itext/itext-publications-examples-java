@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * MultipleImagesInTable.java
+ *
+ * Demonstrates distributing multiple images across table cells to
+ * create a grid or gallery layout.
+ */
+
 public class MultipleImagesInTable {
     public static final String DEST
             = "./target/sandbox/tables/multiple_images_in_table.pdf";

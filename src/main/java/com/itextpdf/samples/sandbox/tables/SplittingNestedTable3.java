@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SplittingNestedTable3.java
+ *
+ * Illustrates a third variation of nested table splitting behavior
+ * with specific use case scenarios.
+ */
+
 public class SplittingNestedTable3 {
     public static final String DEST = "./target/sandbox/tables/splitting_nested_table3.pdf";
 

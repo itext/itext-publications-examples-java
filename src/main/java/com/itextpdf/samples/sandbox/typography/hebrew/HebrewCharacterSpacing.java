@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Hebrew text with
+ * standard and custom spacing values.
+ */
+
 public class HebrewCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/HebrewCharacterSpacing.pdf";

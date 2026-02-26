@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * NestedTables6.java
+ *
+ * Shows yet another nested table example demonstrating specific layout
+ * and spacing requirements for complex documents.
+ */
+
 public class NestedTables6 {
     public static final String DEST = "./target/sandbox/tables/nested_tables6.pdf";
 

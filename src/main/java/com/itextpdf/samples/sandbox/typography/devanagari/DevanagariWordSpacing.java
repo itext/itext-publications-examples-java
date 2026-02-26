@@ -14,6 +14,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariWordSpacing.java
+ *
+ * Demonstrates rendering Devanagari text with different word spacing 
+ * values in a PDF. Creates paragraphs with default spacing, 10-point 
+ * spacing, and 20-point spacing.
+ */
+
 public class DevanagariWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariWordSpacing.pdf";

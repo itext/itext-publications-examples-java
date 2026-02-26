@@ -40,6 +40,12 @@ import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * TwoPhasePadesSigningExample.java
+ *
+ * Demonstrates two-phase PAdES signing with baseline-LT profile.
+ */
+
 public class TwoPhasePadesSigningExample {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String PREP = "./target/sandbox/signatures/twophase/twoPhasePadesSignatureLevelLT.temp";

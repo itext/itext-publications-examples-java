@@ -20,9 +20,12 @@ import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Basic example of document signing with PaDES Baseline-LT Profile.
+/*
+ * PadesSignatureLTLevelExample.java
+ *
+ * Creates PAdES Baseline-LT signatures with long-term validation data.
  */
+
 public class PadesSignatureLTLevelExample {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DEST = "./target/sandbox/signatures/pades/padesSignatureLevelLTTest.pdf";

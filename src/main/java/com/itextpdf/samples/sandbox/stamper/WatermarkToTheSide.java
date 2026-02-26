@@ -10,6 +10,12 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 
+/*
+ * WatermarkToTheSide.java
+ *
+ * Adds watermarks to the sides of PDF pages.
+ */
+
 public class WatermarkToTheSide {
     public static final String DEST = "./target/sandbox/stamper/watermark_to_the_side.pdf";
     public static final String SRC = "./src/main/resources/pdfs/pages.pdf";

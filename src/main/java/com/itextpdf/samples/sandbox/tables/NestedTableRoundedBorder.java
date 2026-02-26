@@ -14,6 +14,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * NestedTableRoundedBorder.java
+ *
+ * Shows how to apply rounded borders to nested tables for enhanced
+ * visual styling of complex table structures.
+ */
+
 public class NestedTableRoundedBorder {
     public static final String DEST = "./target/sandbox/tables/nested_table_rounded_border.pdf";
 

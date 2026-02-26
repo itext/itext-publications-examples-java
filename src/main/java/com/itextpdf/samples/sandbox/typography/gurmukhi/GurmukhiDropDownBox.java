@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Gurmukhi text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class GurmukhiDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiDropDownBox.pdf";

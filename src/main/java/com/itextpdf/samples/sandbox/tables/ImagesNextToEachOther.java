@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 import java.io.File;
 import java.net.MalformedURLException;
 
+/*
+ * ImagesNextToEachOther.java
+ *
+ * Demonstrates how to place multiple images side-by-side in table cells
+ * to create an image gallery layout.
+ */
+
 public class ImagesNextToEachOther {
     public static final String DEST = "./target/sandbox/tables/image_next_to_each_other.pdf";
 

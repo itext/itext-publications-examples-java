@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * SplittingAndRowspan.java
+ *
+ * Demonstrates the interaction between table splitting and cells with
+ * rowspan when tables cross page boundaries.
+ */
+
 public class SplittingAndRowspan {
     public static final String DEST = "./target/sandbox/tables/splitting_and_rowspan.pdf";
 

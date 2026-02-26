@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * TableMeasurements.java
+ *
+ * Demonstrates how to retrieve and work with table measurements like
+ * width, height, and cell dimensions.
+ */
+
 public class TableMeasurements {
     public static final String DEST = "./target/sandbox/tables/tables_measurements.pdf";
 

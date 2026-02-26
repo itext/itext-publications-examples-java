@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * RowspanAbsolutePosition.java
+ *
+ * Demonstrates how to position a table with rowspan cells at an
+ * absolute position on the page.
+ */
+
 public class RowspanAbsolutePosition {
     public static final String DEST = "./target/sandbox/tables/rowspan_absolute_position.pdf";
 

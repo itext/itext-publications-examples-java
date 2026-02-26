@@ -21,6 +21,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * PositionContentInCell.java
+ *
+ * Shows how to precisely position content within table cells using
+ * alignment and padding properties.
+ */
+
 public class PositionContentInCell {
     public static final String DEST = "./target/sandbox/tables/position_content_in_cell.pdf";
 

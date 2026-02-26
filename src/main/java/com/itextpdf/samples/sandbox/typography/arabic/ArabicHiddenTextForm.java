@@ -18,6 +18,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
+/*
+ * ArabicHiddenTextForm.java
+ *
+ * Updates form fields with Arabic text and hides field appearances.
+ */
+
 public class ArabicHiddenTextForm {
 
     public static final String DEST = "./target/sandbox/typography/ArabicHiddenTextForm.pdf";

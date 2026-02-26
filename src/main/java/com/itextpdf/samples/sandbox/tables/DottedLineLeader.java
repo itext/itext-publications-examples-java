@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * DottedLineLeader.java
+ *
+ * Shows how to use dotted line leaders to connect text elements within
+ * a cell, similar to table of contents formatting.
+ */
+
 public class DottedLineLeader {
     public static final String DEST = "./target/sandbox/tables/dotted_line_leader.pdf";
 

@@ -16,6 +16,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ColumnWidthExample.java
+ *
+ * Shows different methods for specifying column widths including
+ * absolute values, percentages, and point unit values.
+ */
+
 public class ColumnWidthExample {
     public static final String DEST = "./target/sandbox/tables/column_width_example.pdf";
 

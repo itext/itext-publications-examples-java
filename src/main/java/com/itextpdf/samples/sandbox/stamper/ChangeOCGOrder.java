@@ -12,6 +12,12 @@ import com.itextpdf.kernel.pdf.layer.PdfOCProperties;
 
 import java.io.File;
 
+/*
+ * ChangeOCGOrder.java
+ *
+ * Reorders optional content groups in PDF documents.
+ */
+
 public class ChangeOCGOrder {
     public static final String DEST = "./target/sandbox/stamper/change_ocg_order.pdf";
     public static final String SRC = "./src/main/resources/pdfs/ocg.pdf";

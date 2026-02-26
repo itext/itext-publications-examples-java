@@ -35,6 +35,13 @@ import java.security.cert.X509Certificate;
 import java.util.Enumeration;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/*
+ * LatinSignature.java
+ *
+ * Creates digital signature with custom Latin fonts in PDF, signing
+ * existing document with certificate and displaying signature info.
+ */
+
 public class LatinSignature {
 
     public static final String DEST = "./target/sandbox/typography/LatinSignature.pdf";

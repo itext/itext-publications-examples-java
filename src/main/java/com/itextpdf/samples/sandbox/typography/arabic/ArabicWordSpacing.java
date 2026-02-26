@@ -15,6 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicWordSpacing.java
+ *
+ * Demonstrates rendering Arabic text with different word spacing values in 
+ * a PDF. Creates paragraphs with default spacing, 10-point spacing, and 
+ * 20-point spacing.
+ */
+
 public class ArabicWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/ArabicWordSpacing.pdf";

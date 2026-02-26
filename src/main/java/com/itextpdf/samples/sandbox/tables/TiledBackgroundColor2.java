@@ -17,6 +17,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * TiledBackgroundColor2.java
+ *
+ * Demonstrates an alternative approach to tiled color backgrounds with
+ * different pattern and styling options.
+ */
+
 public class TiledBackgroundColor2 {
     public static final String DEST
             = "./target/sandbox/tables/tiled_background_color2.pdf";

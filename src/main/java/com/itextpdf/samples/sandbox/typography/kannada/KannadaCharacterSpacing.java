@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Kannada text with
+ * standard and custom spacing values.
+ */
+
 public class KannadaCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/KannadaCharacterSpacing.pdf";

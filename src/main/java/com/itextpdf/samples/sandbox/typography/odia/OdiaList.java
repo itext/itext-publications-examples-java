@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaList.java
+ *
+ * Generates PDF list elements containing Odia text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class OdiaList {
 
     public static final String DEST = "./target/sandbox/typography/OdiaList.pdf";

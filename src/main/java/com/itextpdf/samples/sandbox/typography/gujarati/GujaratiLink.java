@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiLink.java
+ *
+ * Creates PDF hyperlinks with Gujarati text to demonstrate typography
+ * support in interactive link elements.
+ */
+
 public class GujaratiLink {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiLink.pdf";
