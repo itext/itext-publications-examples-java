@@ -6,11 +6,11 @@ import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.OcrPdfCreatorProperties;
 import com.itextpdf.pdfocr.onnxtr.OnnxTrEngineProperties;
 import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
-import com.itextpdf.pdfocr.onnxtr.TextPositioning;
 import com.itextpdf.pdfocr.onnxtr.detection.IDetectionPredictor;
 import com.itextpdf.pdfocr.onnxtr.detection.OnnxDetectionPredictor;
 import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
 import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnxtr.text.TextPositioning;
 
 import java.io.File;
 import java.util.Collections;
@@ -54,7 +54,8 @@ public class PdfOcrOnnxTrTextPositioningExample {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        // It is possible to specify text positioning mode through OnnxTrEngineProperties. Default value is BY_LINES.
+        // It is possible to specify text positioning mode through OnnxTrEngineProperties.
+        // Default value is BY_WORDS_AND_LINES.
         try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, null, recognitionPredictor,
                 new OnnxTrEngineProperties().setTextPositioning(TextPositioning.BY_WORDS))) {
 
