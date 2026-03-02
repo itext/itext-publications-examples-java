@@ -1,12 +1,10 @@
 package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
 
-import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
-import com.itextpdf.pdfocr.onnxtr.detection.IDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.detection.OnnxDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.orientation.IOrientationPredictor;
-import com.itextpdf.pdfocr.onnxtr.orientation.OnnxOrientationPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
+import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.OnnxRecognitionPredictor;
 
 import java.io.File;
 import java.util.Arrays;
