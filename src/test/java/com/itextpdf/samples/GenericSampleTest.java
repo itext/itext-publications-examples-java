@@ -66,7 +66,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateChainBeforeSigningExample",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample",
             "com.itextpdf.samples.sandbox.signatures.validation.LotlValidationThirdCountryTL",
-            "com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTxtFileExample",
+            "com.itextpdf.samples.sandbox.pdfocr.onnx.PdfOcrOnnxTxtFileExample",
             "com.itextpdf.samples.sandbox.pdfocr.tesseract4.PdfOcrTesseractTxtFileExample"
     );
 
@@ -94,7 +94,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         ignoredClassesMap = new HashMap<>();
         ignoredClassesMap.put("com.itextpdf.samples.sandbox.typography.latin.LatinSignature", ignoredAreasMap);
         // Output PDFs are different in Windows and Linux (in float values), but visually they're the same.
-        ignoredClassesMap.put("com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTextPositioningExample",
+        ignoredClassesMap.put("com.itextpdf.samples.sandbox.pdfocr.onnx.PdfOcrOnnxTextPositioningExample",
                 new HashMap<>());
     }
 

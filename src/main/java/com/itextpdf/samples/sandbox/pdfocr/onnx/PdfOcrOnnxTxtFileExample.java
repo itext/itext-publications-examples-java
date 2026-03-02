@@ -1,4 +1,4 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
 import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
@@ -11,17 +11,17 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * PdfOcrOnnxTrTxtFileExample.java
+ * PdfOcrOnnxTxtFileExample.java
  *
  * <p>
  * This example demonstrates how to perform OCR using provided {@link OnnxTrOcrEngine}
  * for the given list of input images and save output to a text file using provided path.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrTxtFileExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrTxtFileExample/ocr_result.txt";
+public class PdfOcrOnnxTxtFileExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxTxtFileExample/ocr_result.txt";
 
     private static final String BASIC_IMAGE = "./src/main/resources/img/ocrExample.png";
 
@@ -33,7 +33,7 @@ public class PdfOcrOnnxTrTxtFileExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrTxtFileExample().manipulate();
+        new PdfOcrOnnxTxtFileExample().manipulate();
     }
 
     protected void manipulate() throws Exception {

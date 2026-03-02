@@ -1,4 +1,4 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * PdfOcrOnnxTrTextPositioningExample.java
+ * PdfOcrOnnxTextPositioningExample.java
  *
  * <p>
  * This example demonstrates how to define the way text is retrieved from ocr engine output
@@ -29,10 +29,10 @@ import java.util.List;
  * to set color for recognized text.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrTextPositioningExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrTextPositioningExample/result.pdf";
+public class PdfOcrOnnxTextPositioningExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxTextPositioningExample/result.pdf";
 
     private static final String IMAGE = "./src/main/resources/img/scanned.png";
 
@@ -45,7 +45,7 @@ public class PdfOcrOnnxTrTextPositioningExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrTextPositioningExample().manipulate();
+        new PdfOcrOnnxTextPositioningExample().manipulate();
     }
 
     protected void manipulate() throws Exception {

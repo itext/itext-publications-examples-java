@@ -1,4 +1,4 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * PdfOcrOnnxTrMultilingualExample.java
+ * PdfOcrOnnxMultilingualExample.java
  *
  * <p>
  * This example demonstrates how to perform OCR using {@code onnxtr-parseq-multilingual-v1.onnx}
@@ -29,10 +29,10 @@ import java.util.List;
  * to set color for recognized text.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrMultilingualExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrMultilingualExample/result.pdf";
+public class PdfOcrOnnxMultilingualExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxMultilingualExample/result.pdf";
 
     private static final String FRENCH = "./src/main/resources/img/french.png";
     private static final String GERMAN = "./src/main/resources/img/german.jpg";
@@ -48,7 +48,7 @@ public class PdfOcrOnnxTrMultilingualExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrMultilingualExample().manipulate();
+        new PdfOcrOnnxMultilingualExample().manipulate();
     }
 
     protected void manipulate() throws Exception {
