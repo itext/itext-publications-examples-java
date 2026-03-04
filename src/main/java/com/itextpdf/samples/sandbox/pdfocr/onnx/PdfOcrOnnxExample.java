@@ -3,7 +3,7 @@ package com.itextpdf.samples.sandbox.pdfocr.onnx;
 import com.itextpdf.commons.utils.FileUtil;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
-import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
 import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.orientation.IOrientationPredictor;
@@ -20,7 +20,7 @@ import java.util.List;
  * PdfOcrOnnxExample.java
  *
  * <p>
- * This example demonstrates how to perform OCR using provided {@link OnnxTrOcrEngine}
+ * This example demonstrates how to perform OCR using provided {@link OnnxOcrEngine}
  * for the given list of input images and save output to a PDF file using provided path.
  *
  * <p>
@@ -52,10 +52,10 @@ public class PdfOcrOnnxExample {
         IOrientationPredictor orientationPredictor = OnnxOrientationPredictor.mobileNetV3(MOBILENETV3);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
+        // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
         // It will also close all predictors used for its creation.
-        try (OnnxTrOcrEngine ocrEngine =
-                     new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor);
+        try (OnnxOcrEngine ocrEngine =
+                     new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor);
              OutputStream output = FileUtil.getFileOutputStream(destination)) {
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
             pdfCreator.createPdf(images, new PdfWriter(output)).close();

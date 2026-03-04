@@ -4,7 +4,7 @@ import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.OcrPdfCreatorProperties;
-import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
 import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.orientation.IOrientationPredictor;
@@ -61,8 +61,8 @@ public class PdfOcrOnnxMultilingualExample {
         IRecognitionPredictor recognitionPredictor =
                 OnnxRecognitionPredictor.parSeq(MULTILANG, Vocabulary.LATIN_EXTENDED, 0);
 
-        try (OnnxTrOcrEngine ocrEngine =
-                     new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
+        try (OnnxOcrEngine ocrEngine =
+                     new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
 
             // Set green text color to show the recognition result. Skip that step for real usages.
             OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties()

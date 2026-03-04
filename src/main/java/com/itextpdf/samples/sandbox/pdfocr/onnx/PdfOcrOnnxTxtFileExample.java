@@ -1,6 +1,6 @@
 package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
-import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
 import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
@@ -14,7 +14,7 @@ import java.util.List;
  * PdfOcrOnnxTxtFileExample.java
  *
  * <p>
- * This example demonstrates how to perform OCR using provided {@link OnnxTrOcrEngine}
+ * This example demonstrates how to perform OCR using provided {@link OnnxOcrEngine}
  * for the given list of input images and save output to a text file using provided path.
  *
  * <p>
@@ -42,9 +42,9 @@ public class PdfOcrOnnxTxtFileExample {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
+        // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
         // It will also close all predictors used for its creation.
-        try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, recognitionPredictor)) {
+        try (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, recognitionPredictor)) {
             ocrEngine.createTxtFile(images, new File(DEST));
         }
     }

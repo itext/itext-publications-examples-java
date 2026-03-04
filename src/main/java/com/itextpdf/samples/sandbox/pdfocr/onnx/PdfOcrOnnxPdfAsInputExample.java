@@ -1,7 +1,7 @@
 package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.pdfocr.OcrPdfCreator;
-import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
 import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
@@ -14,7 +14,7 @@ import java.io.File;
  *
  * <p>
  * This example demonstrates how to perform OCR of all images in an input PDF file
- * and generate searchable PDF using provided {@link OnnxTrOcrEngine}.
+ * and generate searchable PDF using provided {@link OnnxOcrEngine}.
  *
  * <p>
  * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
@@ -40,7 +40,7 @@ public class PdfOcrOnnxPdfAsInputExample {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, recognitionPredictor)) {
+        try (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, recognitionPredictor)) {
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
             pdfCreator.makePdfSearchable(new File(PDF), new File(DEST));
         }

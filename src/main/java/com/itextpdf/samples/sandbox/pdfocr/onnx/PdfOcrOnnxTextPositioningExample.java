@@ -4,8 +4,8 @@ import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.OcrPdfCreatorProperties;
-import com.itextpdf.pdfocr.onnx.OnnxTrEngineProperties;
-import com.itextpdf.pdfocr.onnx.OnnxTrOcrEngine;
+import com.itextpdf.pdfocr.onnx.OnnxEngineProperties;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
 import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
 import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
@@ -21,8 +21,8 @@ import java.util.List;
  *
  * <p>
  * This example demonstrates how to define the way text is retrieved from ocr engine output
- * specifying {@link TextPositioning} in {@link OnnxTrEngineProperties} in order to perform OCR
- * using provided {@link OnnxTrOcrEngine} for the given images and save output to a PDF file.
+ * specifying {@link TextPositioning} in {@link OnnxEngineProperties} in order to perform OCR
+ * using provided {@link OnnxOcrEngine} for the given images and save output to a PDF file.
  *
  * <p>
  * Also, this example demonstrates how to show the recognition result using {@link OcrPdfCreatorProperties}
@@ -54,10 +54,10 @@ public class PdfOcrOnnxTextPositioningExample {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        // It is possible to specify text positioning mode through OnnxTrEngineProperties.
+        // It is possible to specify text positioning mode through OnnxEngineProperties.
         // Default value is BY_WORDS_AND_LINES.
-        try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, null, recognitionPredictor,
-                new OnnxTrEngineProperties().setTextPositioning(TextPositioning.BY_WORDS))) {
+        try (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, null, recognitionPredictor,
+                new OnnxEngineProperties().setTextPositioning(TextPositioning.BY_WORDS))) {
 
             // Set green text color to show the recognition result. Skip that step for real usages.
             OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties()
