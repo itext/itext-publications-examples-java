@@ -28,7 +28,7 @@ import java.io.File;
 public class ReduceSize {
     public static final String DEST = "./target/sandbox/images/reduce_size.pdf";
 
-    public static final String SRC = "./src/main/resources/pdfs/single_image.pdf";
+    public static final String SRC = "./src/main/resources/pdfs/pdf_with_simple_jpeg.pdf";
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);

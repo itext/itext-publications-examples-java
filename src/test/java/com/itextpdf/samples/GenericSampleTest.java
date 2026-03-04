@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -78,6 +80,17 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.tagging.AddStars",
             "com.itextpdf.samples.sandbox.tagging.CreateTaggedDocument"
     );
+
+    /**
+     * Samples which should be visually compared with ImageMagick fuzz value
+     * (to reduce flaky diffs on some Windows versions).
+     */
+    private static final Map<String, Double> visualCompareWithFuzzMap =
+            Stream.of(new Object[][] {
+                    { "com.itextpdf.samples.sandbox.images.ReplaceImage", 1d },
+                    { "com.itextpdf.samples.sandbox.images.MakeJpgMask", 1d },
+                    { "com.itextpdf.samples.sandbox.images.ReduceSize", 15d }
+            }).collect(Collectors.toMap(data -> (String) data[0], data -> (Double) data[1]));
 
     /**
      * Global map of classes with ignored areas
@@ -160,11 +173,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         // TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
-        // TODO DEVSIX-9261 Investigate test failures on Windows Server 2025 and Windows 11
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReplaceImage");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.MakeJpgMask");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReduceSize");
-
         return generateTestsList(searchConfig);
     }
 
@@ -193,6 +201,14 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             }
         } else if (txtCompareList.contains(sampleClass.getName())) {
             addError(compareTxt(dest, cmp));
+        } else if (visualCompareWithFuzzMap.containsKey(sampleClass.getName())) {
+            addError(compareTool.compareVisually(
+                    dest,
+                    cmp,
+                    outPath,
+                    visualCompareWithFuzzMap.get(sampleClass.getName())
+            ));
+
         } else if (renderCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));
