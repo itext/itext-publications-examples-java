@@ -18,17 +18,9 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 public class LotlSimpleSignatureValidation {
-
-    public static final String SRC = "./src/main/resources/pdfs"
-            + "/super_official_document_signed.pdf";
-
-    public static final String DEST = "./target/sandbox/signatures/validation/somepdf.pdf";
-    public static final String DUMMY_PDF = "./src/main/resources/validation/pdf/dummy.pdf";
+    public static final String SRC = "./src/main/resources/pdfs/super_official_document_signed.pdf";
 
     public static void main(String[] args) throws IOException {
-        File file = new File(DEST);
-        file.getParentFile().mkdirs();
-        Files.copy(Paths.get(DUMMY_PDF), Paths.get(DEST), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
         new LotlSimpleSignatureValidation().showCaseCacheInitializationAndSimpleUsage();
     }
 
@@ -87,7 +79,7 @@ public class LotlSimpleSignatureValidation {
         try (PdfDocument document = new PdfDocument(new PdfReader(SRC))) {
             SignatureValidator validator = builder.buildSignatureValidator(document);
             ValidationReport r = validator.validateSignatures();
-            //Here you have the vaidation report and can use it as you need
+            // Here you have the validation report and can use it as you need
             System.out.println(r);
             // Separately, now you can obtain Qualification results
             for (Map.Entry<String, QualifiedValidator.QualificationValidationData> result : qualifiedValidator.obtainAllSignaturesValidationResults().entrySet()) {

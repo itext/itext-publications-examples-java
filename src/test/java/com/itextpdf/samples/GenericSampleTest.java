@@ -170,6 +170,12 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         // TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
+        // Ignored due to natural LOTL retrieval instability.
+        // Covered in com.itextpdf.crossmodule.sign.lotl.CompleteLotlValidationTest#simpleCompleteLotlValidationTest.
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.validation.LotlSimpleSignatureValidation");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.validation.LotlLoadEuropeanCertificatesFromDifferentSource");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.validation.LotlValidationThirdCountryTL");
+
         return generateTestsList(searchConfig);
     }
 
