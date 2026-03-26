@@ -9,6 +9,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * RowColumnOrder.java
+ *
+ * Shows how cells are added to tables and explains the row-by-row
+ * filling order when creating table structures.
+ */
+
 public class RowColumnOrder {
     public static final String DEST = "./target/sandbox/tables/row_column_order.pdf";
 

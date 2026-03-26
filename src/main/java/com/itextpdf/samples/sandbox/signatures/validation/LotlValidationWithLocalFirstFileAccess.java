@@ -18,6 +18,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/*
+ * LotlValidationWithLocalFirstFileAccess.java
+ *
+ * Validates signatures using List of Trusted Lists (LOTL) with local file caching.
+ */
+
 public class LotlValidationWithLocalFirstFileAccess {
 
 

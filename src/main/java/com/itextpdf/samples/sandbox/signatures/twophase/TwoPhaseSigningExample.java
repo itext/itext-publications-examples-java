@@ -37,6 +37,12 @@ import java.util.Arrays;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/*
+ * TwoPhaseSigningExample.java
+ *
+ * Demonstrates two-phase PDF signing with external signature creation.
+ */
+
 /**
  * Basic example of document two-phase signing.
  */

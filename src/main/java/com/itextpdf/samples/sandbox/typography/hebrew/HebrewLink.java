@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewLink.java
+ *
+ * Creates PDF hyperlinks with Hebrew text to demonstrate typography
+ * support in interactive link elements.
+ */
+
 public class HebrewLink {
 
     public static final String DEST = "./target/sandbox/typography/HebrewLink.pdf";

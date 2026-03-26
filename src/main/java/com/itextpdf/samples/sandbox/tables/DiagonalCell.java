@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * DiagonalCell.java
+ *
+ * Demonstrates how to draw a diagonal line through a table cell using
+ * a custom cell renderer that paints on the cell's canvas.
+ */
+
 public class DiagonalCell {
     public static final String DEST = "./target/sandbox/tables/diagonal_cell.pdf";
 

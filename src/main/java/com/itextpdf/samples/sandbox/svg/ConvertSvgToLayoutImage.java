@@ -12,6 +12,12 @@ import java.io.FileInputStream;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ConvertSvgToLayoutImage.java
+ *
+ * Converts SVG to layout Image elements in PDF documents.
+ */
+
 public class ConvertSvgToLayoutImage {
     private static final String SRC = "./src/main/resources/svg/";
     public static final String DEST = "./target/sandbox/svg/ConvertSvgToLayoutImage.pdf";

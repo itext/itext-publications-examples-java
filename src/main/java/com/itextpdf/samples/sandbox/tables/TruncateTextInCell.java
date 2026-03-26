@@ -17,6 +17,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * TruncateTextInCell.java
+ *
+ * Illustrates how to truncate or clip text that exceeds cell
+ * boundaries rather than wrapping or splitting it.
+ */
+
 public class TruncateTextInCell {
     public static final String DEST = "./target/sandbox/tables/truncate_text_in_cell.pdf";
 

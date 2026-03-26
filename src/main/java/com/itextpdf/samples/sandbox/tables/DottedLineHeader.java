@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * DottedLineHeader.java
+ *
+ * Illustrates how to create a table with a dotted line separator
+ * between the header row and the data rows.
+ */
+
 public class DottedLineHeader {
     public static final String DEST = "./target/sandbox/tables/dotted_line_header.pdf";
 

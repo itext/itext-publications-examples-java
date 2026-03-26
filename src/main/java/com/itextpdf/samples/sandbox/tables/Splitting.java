@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * Splitting.java
+ *
+ * Illustrates how tables automatically split across multiple pages and
+ * how to use keepTogether to prevent splitting.
+ */
+
 public class Splitting {
     public static final String DEST = "./target/sandbox/tables/splitting.pdf";
 

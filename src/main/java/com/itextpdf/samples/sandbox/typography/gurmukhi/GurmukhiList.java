@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiList.java
+ *
+ * Generates PDF list elements containing Gurmukhi text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class GurmukhiList {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiList.pdf";

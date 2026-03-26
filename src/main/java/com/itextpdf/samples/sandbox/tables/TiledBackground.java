@@ -22,6 +22,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * TiledBackground.java
+ *
+ * Demonstrates how to create a tiled pattern background for table
+ * cells using repeating images or graphics.
+ */
+
 public class TiledBackground {
     public static final String DEST = "./target/sandbox/tables/tiled_background.pdf";
 

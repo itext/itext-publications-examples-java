@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * NestedTableProblem.java
+ *
+ * Illustrates a common issue with nested tables and demonstrates the
+ * proper way to handle table-within-table layouts.
+ */
+
 public class NestedTableProblem {
     public static final String DEST = "./target/sandbox/tables/nested_table_problem.pdf";
 

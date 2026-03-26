@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguLink.java
+ *
+ * Creates PDF hyperlinks with Telugu text to demonstrate typography
+ * support in interactive link elements.
+ */
+
 public class TeluguLink {
 
     public static final String DEST = "./target/sandbox/typography/TeluguLink.pdf";

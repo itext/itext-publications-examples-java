@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilOpacity.java
+ *
+ * Renders Tamil text with varying opacity levels to demonstrate
+ * transparency control in typography elements.
+ */
+
 public class TamilOpacity {
 
     public static final String DEST = "./target/sandbox/typography/TamilOpacity.pdf";

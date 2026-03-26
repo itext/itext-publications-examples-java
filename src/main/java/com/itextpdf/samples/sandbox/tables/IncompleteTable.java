@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * IncompleteTable.java
+ *
+ * Shows how iText handles incomplete tables where the last row doesn't
+ * have all cells filled, demonstrating auto-completion behavior.
+ */
+
 public class IncompleteTable {
     public static final String DEST = "./target/sandbox/tables/incomplete_table.pdf";
 

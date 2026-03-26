@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * DottedLineCell.java
+ *
+ * Shows how to create table cells with dotted line borders using
+ * DashedBorder with custom dash pattern settings.
+ */
+
 public class DottedLineCell {
     public static final String DEST = "./target/sandbox/tables/dotted_line_cell.pdf";
 

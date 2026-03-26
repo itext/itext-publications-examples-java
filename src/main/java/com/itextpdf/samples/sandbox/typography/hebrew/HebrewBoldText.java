@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewBoldText.java
+ *
+ * Demonstrates rendering bold Hebrew text in PDF documents using
+ * typography features with regular and bold fonts.
+ */
+
 public class HebrewBoldText {
 
     public static final String DEST = "./target/sandbox/typography/HebrewBoldText.pdf";

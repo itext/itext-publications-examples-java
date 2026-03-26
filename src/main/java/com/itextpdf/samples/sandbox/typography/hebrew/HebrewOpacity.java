@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewOpacity.java
+ *
+ * Renders Hebrew text with varying opacity levels to demonstrate
+ * transparency control in typography elements.
+ */
+
 public class HebrewOpacity {
 
     public static final String DEST = "./target/sandbox/typography/HebrewOpacity.pdf";

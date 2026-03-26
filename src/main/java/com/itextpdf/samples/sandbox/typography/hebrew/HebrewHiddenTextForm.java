@@ -18,6 +18,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
+/*
+ * HebrewHiddenTextForm.java
+ *
+ * Creates hidden text form fields with Hebrew content to demonstrate
+ * typography support in non-visible form elements.
+ */
+
 public class HebrewHiddenTextForm {
 
     public static final String DEST = "./target/sandbox/typography/HebrewHiddenTextForm.pdf";

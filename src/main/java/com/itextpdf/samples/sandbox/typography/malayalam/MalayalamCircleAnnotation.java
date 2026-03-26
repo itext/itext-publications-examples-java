@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamCircleAnnotation.java
+ *
+ * Creates PDF annotations with Malayalam text content to show
+ * typography support in annotation elements.
+ */
+
 public class MalayalamCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamCircleAnnotation.pdf";

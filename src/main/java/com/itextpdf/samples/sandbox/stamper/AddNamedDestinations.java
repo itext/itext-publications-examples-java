@@ -27,6 +27,13 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Element;
 
+/*
+ * AddNamedDestinations.java
+ *
+ * Creates XML file with named destinations from PDF document, mapping
+ * page numbers to destination objects for navigation purposes.
+ */
+
 public class AddNamedDestinations {
     public static final String PDF
             = "./target/sandbox/stamper/add_named_destinations.pdf";

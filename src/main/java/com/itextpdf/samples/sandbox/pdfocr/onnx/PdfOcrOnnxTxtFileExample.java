@@ -1,29 +1,27 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
-import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
-import com.itextpdf.pdfocr.onnxtr.detection.IDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.detection.OnnxDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.orientation.IOrientationPredictor;
-import com.itextpdf.pdfocr.onnxtr.orientation.OnnxOrientationPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
+import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.OnnxRecognitionPredictor;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * PdfOcrOnnxTrTxtFileExample.java
+ * PdfOcrOnnxTxtFileExample.java
  *
  * <p>
- * This example demonstrates how to perform OCR using provided {@link OnnxTrOcrEngine}
+ * This example demonstrates how to perform OCR using provided {@link OnnxOcrEngine}
  * for the given list of input images and save output to a text file using provided path.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrTxtFileExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrTxtFileExample/ocr_result.txt";
+public class PdfOcrOnnxTxtFileExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxTxtFileExample/ocr_result.txt";
 
     private static final String BASIC_IMAGE = "./src/main/resources/img/ocrExample.png";
 
@@ -35,7 +33,7 @@ public class PdfOcrOnnxTrTxtFileExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrTxtFileExample().manipulate();
+        new PdfOcrOnnxTxtFileExample().manipulate();
     }
 
     protected void manipulate() throws Exception {
@@ -44,9 +42,9 @@ public class PdfOcrOnnxTrTxtFileExample {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        // OnnxTrOcrEngine shall be closed after usage to avoid native allocations leak.
+        // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
         // It will also close all predictors used for its creation.
-        try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, recognitionPredictor)) {
+        try (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, recognitionPredictor)) {
             ocrEngine.createTxtFile(images, new File(DEST));
         }
     }

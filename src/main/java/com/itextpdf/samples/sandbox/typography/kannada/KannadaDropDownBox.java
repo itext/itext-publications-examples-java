@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Kannada text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class KannadaDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/KannadaDropDownBox.pdf";

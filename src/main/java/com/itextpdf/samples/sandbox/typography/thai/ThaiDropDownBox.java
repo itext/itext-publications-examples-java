@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ThaiDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Thai text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class ThaiDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/ThaiDropDownBox.pdf";

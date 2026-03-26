@@ -12,6 +12,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * RepeatLastRows.java
+ *
+ * Illustrates how to configure tables to repeat footer rows at the
+ * bottom of each page when a table spans multiple pages.
+ */
+
 public class RepeatLastRows {
     public static final String DEST = "./target/sandbox/tables/repeat_last_rows.pdf";
 

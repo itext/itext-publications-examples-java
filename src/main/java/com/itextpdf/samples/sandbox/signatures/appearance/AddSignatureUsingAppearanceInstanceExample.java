@@ -22,9 +22,13 @@ import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.Certificate;
 
-/**
+/*
+ * AddSignatureUsingAppearanceInstanceExample.java
+ *
+ * Creates and signs PDF signature fields using custom appearance.
  * Basic example of creating the signature field via signature appearance layout element.
  */
+
 public class AddSignatureUsingAppearanceInstanceExample {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DOC_TO_SIGN = "./target/sandbox/signatures/appearance/signatureAddedUsingAppearance.pdf";

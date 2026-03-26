@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable13.java
+ *
+ * Shows a thirteenth basic table example demonstrating additional
+ * simple table patterns.
+ */
+
 public class SimpleTable13 {
     public static final String DEST = "./target/sandbox/tables/simple_table13.pdf";
     public static final String[][] DATA = {

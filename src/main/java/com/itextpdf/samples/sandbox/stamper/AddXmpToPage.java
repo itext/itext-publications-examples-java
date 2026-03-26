@@ -8,6 +8,12 @@ import com.itextpdf.kernel.xmp.XMPMetaFactory;
 
 import java.io.File;
 
+/*
+ * AddXmpToPage.java
+ *
+ * Adds XMP metadata to PDF pages.
+ */
+
 public class AddXmpToPage {
     public static final String DEST = "./target/sandbox/stamper/add_xmp_to_page.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

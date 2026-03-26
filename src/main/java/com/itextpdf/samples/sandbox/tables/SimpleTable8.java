@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable8.java
+ *
+ * Shows an eighth basic table example demonstrating additional simple
+ * table creation patterns.
+ */
+
 public class SimpleTable8 {
     public static final String DEST = "./target/sandbox/tables/simple_table8.pdf";
 

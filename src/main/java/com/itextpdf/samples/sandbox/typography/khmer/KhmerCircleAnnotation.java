@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerCircleAnnotation.java
+ *
+ * Creates PDF annotations with Khmer text content to show
+ * typography support in annotation elements.
+ */
+
 public class KhmerCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/KhmerCircleAnnotation.pdf";

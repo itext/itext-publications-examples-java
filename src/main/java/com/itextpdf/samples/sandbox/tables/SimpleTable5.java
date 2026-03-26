@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable5.java
+ *
+ * Shows a fifth simple table example with specific focus on table
+ * dimensions or cell content types.
+ */
+
 public class SimpleTable5 {
     public static final String DEST = "./target/sandbox/tables/simple_table5.pdf";
 

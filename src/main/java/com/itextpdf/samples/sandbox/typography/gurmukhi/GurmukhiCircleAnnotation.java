@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiCircleAnnotation.java
+ *
+ * Creates PDF annotations with Gurmukhi text content to show
+ * typography support in annotation elements.
+ */
+
 public class GurmukhiCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiCircleAnnotation.pdf";

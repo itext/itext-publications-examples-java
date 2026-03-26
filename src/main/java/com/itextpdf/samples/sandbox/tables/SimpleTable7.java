@@ -16,6 +16,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable7.java
+ *
+ * Illustrates a seventh simple table example with focus on specific
+ * cell construction or formatting techniques.
+ */
+
 public class SimpleTable7 {
     public static final String DEST = "./target/sandbox/tables/simple_table7.pdf";
 

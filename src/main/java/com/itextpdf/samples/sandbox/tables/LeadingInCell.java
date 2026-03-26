@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * LeadingInCell.java
+ *
+ * Demonstrates how to control line spacing (leading) for text within
+ * table cells to adjust vertical text density.
+ */
+
 public class LeadingInCell {
     public static final String DEST = "./target/sandbox/tables/leading_in_cell.pdf";
 

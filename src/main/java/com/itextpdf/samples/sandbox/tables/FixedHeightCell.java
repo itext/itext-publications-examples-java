@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * FixedHeightCell.java
+ *
+ * Shows how to create table cells with fixed heights and demonstrates
+ * how content behavior changes when it doesn't fit the fixed size.
+ */
+
 public class FixedHeightCell {
     public static final String DEST = "./target/sandbox/tables/fixed_height_cell.pdf";
 

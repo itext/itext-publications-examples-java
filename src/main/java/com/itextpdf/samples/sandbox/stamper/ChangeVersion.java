@@ -8,6 +8,12 @@ import com.itextpdf.kernel.pdf.WriterProperties;
 
 import java.io.File;
 
+/*
+ * ChangeVersion.java
+ *
+ * Changes the PDF version of existing documents.
+ */
+
 public class ChangeVersion {
     public static final String DEST = "./target/sandbox/stamper/change_version.pdf";
     public static final String SRC = "./src/main/resources/pdfs/OCR.pdf";

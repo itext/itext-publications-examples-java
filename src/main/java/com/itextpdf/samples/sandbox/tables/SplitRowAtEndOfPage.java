@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SplitRowAtEndOfPage.java
+ *
+ * Shows how table rows behave when they need to split at page
+ * boundaries and how to control this splitting behavior.
+ */
+
 public class SplitRowAtEndOfPage {
     public static final String DEST = "./target/sandbox/tables/split_row_at_end_of_page.pdf";
 

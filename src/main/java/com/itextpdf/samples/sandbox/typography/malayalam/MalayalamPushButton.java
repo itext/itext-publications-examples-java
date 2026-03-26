@@ -18,6 +18,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamPushButton.java
+ *
+ * Creates PDF push button form field with Malayalam caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class MalayalamPushButton {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamPushButton.pdf";

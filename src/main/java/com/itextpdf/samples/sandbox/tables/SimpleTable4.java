@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable4.java
+ *
+ * Demonstrates a fourth variation of basic table creation with
+ * different styling or configuration approaches.
+ */
+
 public class SimpleTable4 {
     public static final String DEST = "./target/sandbox/tables/simple_table4.pdf";
 

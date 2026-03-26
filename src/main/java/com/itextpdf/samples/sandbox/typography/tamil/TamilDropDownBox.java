@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Tamil text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class TamilDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/TamilDropDownBox.pdf";

@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewTable.java
+ *
+ * Demonstrates rendering Hebrew text within PDF table cells to show
+ * typography support in tabular layouts.
+ */
+
 public class HebrewTable {
 
     public static final String DEST = "./target/sandbox/typography/HebrewTable.pdf";

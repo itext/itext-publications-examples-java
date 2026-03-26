@@ -12,6 +12,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ConvertSvgToPdfPage.java
+ *
+ * Converts SVG to specific pages in PDF documents.
+ */
+
 public class ConvertSvgToPdfPage {
     private static final String SRC = "./src/main/resources/svg/";
     public static final String DEST = "./target/sandbox/svg/SvgToPdfPage.pdf";

@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * NestedTables4.java
+ *
+ * Illustrates advanced nested table techniques with complex cell
+ * merging and alignment scenarios.
+ */
+
 public class NestedTables4 {
     public static final String DEST = "./target/sandbox/tables/nested_tables4.pdf";
 

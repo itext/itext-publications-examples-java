@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * CustomBorder3.java
+ *
+ * Shows another variation of custom border rendering with specific
+ * border patterns applied to table cells based on custom logic.
+ */
+
 public class CustomBorder3 {
     public static final String DEST = "./target/sandbox/tables/custom_border3.pdf";
 

@@ -14,6 +14,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariCircleAnnotation.java
+ *
+ * Demonstrates creating a circle annotation with Devanagari text content 
+ * in a PDF document. The annotation is positioned on the page with a 
+ * magenta color.
+ */
+
 public class DevanagariCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariCircleAnnotation.pdf";

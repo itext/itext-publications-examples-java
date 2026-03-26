@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaPushButton.java
+ *
+ * Creates PDF push button form field with Kannada caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class KannadaPushButton {
 
     public static final String DEST = "./target/sandbox/typography/KannadaPushButton.pdf";

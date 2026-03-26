@@ -15,9 +15,13 @@ import java.security.PrivateKey;
 import java.security.Security;
 import java.security.cert.Certificate;
 
-/**
- * Basic example of document signing with PaDES Baseline-B Profile.
+/*
+ * PadesSignatureBLevelExample.java
+ *
+ * Creates PAdES Baseline-B signatures with basic validation data.
  */
+
+
 public class PadesSignatureBLevelExample {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DEST = "./target/sandbox/signatures/pades/padesSignatureLevelBTest.pdf";

@@ -8,6 +8,12 @@ import com.itextpdf.kernel.pdf.WriterProperties;
 
 import java.io.File;
 
+/*
+ * ChangeMetadata.java
+ *
+ * Updates PDF document metadata and adds XMP metadata.
+ */
+
 public class ChangeMetadata {
     public static final String DEST = "./target/sandbox/stamper/change_meta_data.pdf";
     public static final String SRC = "./src/main/resources/pdfs/state.pdf";

@@ -15,6 +15,11 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * AddArtifactTable.java
+ *
+ * Adds an artifact table to the last page of a tagged PDF document.
+ */
 public class AddArtifactTable {
     public static final String DEST = "./target/sandbox/tagging/88th_Academy_Awards_artifact_table.pdf";
     public static final String SRC = "./src/main/resources/tagging/88th_Academy_Awards.pdf";

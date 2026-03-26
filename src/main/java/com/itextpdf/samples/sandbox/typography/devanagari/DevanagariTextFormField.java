@@ -19,6 +19,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariTextFormField.java
+ *
+ * Demonstrates creating a PDF form with a text input field containing 
+ * Devanagari text. Uses NotoSansDevanagari font with center alignment for 
+ * proper script rendering.
+ */
+
 public class DevanagariTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariTextFormField.pdf";

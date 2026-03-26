@@ -18,6 +18,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiChoiceFormField.java
+ *
+ * Creates PDF form with choice field containing Gujarati text options
+ * to demonstrate form field typography support.
+ */
+
 public class GujaratiChoiceFormField {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiChoiceFormField.pdf";

@@ -9,6 +9,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * Splitting2.java
+ *
+ * Shows alternative approaches to controlling table splitting behavior
+ * across page boundaries.
+ */
+
 public class Splitting2 {
     public static final String DEST = "./target/sandbox/tables/splitting2.pdf";
 

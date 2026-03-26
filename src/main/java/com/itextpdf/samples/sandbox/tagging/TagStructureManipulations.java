@@ -13,6 +13,11 @@ import com.itextpdf.kernel.pdf.tagutils.TagTreePointer;
 
 import java.io.File;
 
+/*
+ * TagStructureManipulations.java
+ *
+ * Demonstrates modifying and relocating elements in PDF tag structure.
+ */
 public class TagStructureManipulations {
     public static final String DEST = "./target/sandbox/tagging/88th_Academy_Awards_with_stars.pdf";
     public static final String SRC = "./src/main/resources/tagging/88th_Academy_Awards.pdf";

@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiPushButton.java
+ *
+ * Creates PDF push button form field with Gurmukhi caption text to
+ * illustrate typography in interactive button elements.
+ */
+
 public class GurmukhiPushButton {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiPushButton.pdf";

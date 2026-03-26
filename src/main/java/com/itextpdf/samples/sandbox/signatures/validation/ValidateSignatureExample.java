@@ -32,9 +32,12 @@ import java.util.Collections;
 import java.util.Date;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
-/**
- * Basic example of the existing signature validation.
+/*
+ * ValidateSignatureExample.java
+ *
+ * Validates existing signatures in PDF documents. (Basic example)
  */
+
 public class ValidateSignatureExample {
     public static final String SRC = "./src/main/resources/pdfs/validDocWithTimestamp.pdf";
     public static final String DEST = "./target/sandbox/signatures/validation/validateSignatureExample.txt";

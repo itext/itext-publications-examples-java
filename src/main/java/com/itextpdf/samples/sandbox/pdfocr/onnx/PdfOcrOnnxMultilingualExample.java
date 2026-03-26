@@ -1,24 +1,24 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.OcrPdfCreatorProperties;
-import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
-import com.itextpdf.pdfocr.onnxtr.detection.IDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.detection.OnnxDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.orientation.IOrientationPredictor;
-import com.itextpdf.pdfocr.onnxtr.orientation.OnnxOrientationPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.Vocabulary;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
+import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.orientation.IOrientationPredictor;
+import com.itextpdf.pdfocr.onnx.orientation.OnnxOrientationPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.Vocabulary;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * PdfOcrOnnxTrMultilingualExample.java
+ * PdfOcrOnnxMultilingualExample.java
  *
  * <p>
  * This example demonstrates how to perform OCR using {@code onnxtr-parseq-multilingual-v1.onnx}
@@ -29,10 +29,10 @@ import java.util.List;
  * to set color for recognized text.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrMultilingualExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrMultilingualExample/result.pdf";
+public class PdfOcrOnnxMultilingualExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxMultilingualExample/result.pdf";
 
     private static final String FRENCH = "./src/main/resources/img/french.png";
     private static final String GERMAN = "./src/main/resources/img/german.jpg";
@@ -48,7 +48,7 @@ public class PdfOcrOnnxTrMultilingualExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrMultilingualExample().manipulate();
+        new PdfOcrOnnxMultilingualExample().manipulate();
     }
 
     protected void manipulate() throws Exception {
@@ -61,8 +61,8 @@ public class PdfOcrOnnxTrMultilingualExample {
         IRecognitionPredictor recognitionPredictor =
                 OnnxRecognitionPredictor.parSeq(MULTILANG, Vocabulary.LATIN_EXTENDED, 0);
 
-        try (OnnxTrOcrEngine ocrEngine =
-                     new OnnxTrOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
+        try (OnnxOcrEngine ocrEngine =
+                     new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
 
             // Set green text color to show the recognition result. Skip that step for real usages.
             OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties()

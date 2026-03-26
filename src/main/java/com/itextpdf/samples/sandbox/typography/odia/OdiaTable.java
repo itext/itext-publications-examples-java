@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaTable.java
+ *
+ * Demonstrates rendering Odia text within PDF table cells to show
+ * typography support in tabular layouts.
+ */
+
 public class OdiaTable {
 
     public static final String DEST = "./target/sandbox/typography/OdiaTable.pdf";

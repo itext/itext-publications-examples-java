@@ -22,6 +22,13 @@ import java.security.Security;
 import java.security.cert.Certificate;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/*
+ * SignatureAppearanceLayersExample.java
+ *
+ * Creates PDF signatures using custom appearance layers.
+ * (Background and signature layers are created with custom graphics).
+ */
+
 public class SignatureAppearanceLayersExample {
     private static final char[] PASSWORD = "testpassphrase".toCharArray();
 

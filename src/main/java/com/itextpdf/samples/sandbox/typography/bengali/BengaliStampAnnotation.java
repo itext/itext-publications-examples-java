@@ -14,6 +14,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliStampAnnotation.java
+ *
+ * Demonstrates creating a stamp annotation with Bengali text content in a 
+ * PDF document. The annotation is positioned on the page with a cyan 
+ * color.
+ */
+
 public class BengaliStampAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/BengaliStampAnnotation.pdf";

@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamList.java
+ *
+ * Generates PDF list elements containing Malayalam text to showcase
+ * typography capabilities in structured list formats.
+ */
+
 public class MalayalamList {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamList.pdf";

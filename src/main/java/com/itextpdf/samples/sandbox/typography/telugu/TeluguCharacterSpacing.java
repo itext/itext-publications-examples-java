@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Telugu text with
+ * standard and custom spacing values.
+ */
+
 public class TeluguCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/TeluguCharacterSpacing.pdf";

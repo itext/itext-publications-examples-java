@@ -19,6 +19,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliDropDownBox.java
+ *
+ * Demonstrates creating a PDF form with a dropdown (combo box) field 
+ * containing Bengali text options. Uses NotoSansBengali font with center 
+ * alignment.
+ */
+
 public class BengaliDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/BengaliDropDownBox.pdf";

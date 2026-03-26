@@ -14,6 +14,12 @@ import com.itextpdf.svg.processors.impl.SvgConverterProperties;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ConvertSvgToUA2Pdf.java
+ *
+ * Converts SVG to PDF/UA-2 compliant accessible documents.
+ */
+
 public class ConvertSvgToUA2Pdf {
     private static final String SRC = "./src/main/resources/svg/";
     public static final String DEST = "./target/sandbox/svg/Svg2UA2CompliantPdf.pdf";

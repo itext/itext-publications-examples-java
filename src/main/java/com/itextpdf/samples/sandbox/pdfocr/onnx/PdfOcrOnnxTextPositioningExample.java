@@ -1,38 +1,38 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.OcrPdfCreatorProperties;
-import com.itextpdf.pdfocr.onnxtr.OnnxTrEngineProperties;
-import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
-import com.itextpdf.pdfocr.onnxtr.TextPositioning;
-import com.itextpdf.pdfocr.onnxtr.detection.IDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.detection.OnnxDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.OnnxEngineProperties;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
+import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.text.TextPositioning;
 
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * PdfOcrOnnxTrTextPositioningExample.java
+ * PdfOcrOnnxTextPositioningExample.java
  *
  * <p>
  * This example demonstrates how to define the way text is retrieved from ocr engine output
- * specifying {@link TextPositioning} in {@link OnnxTrEngineProperties} in order to perform OCR
- * using provided {@link OnnxTrOcrEngine} for the given images and save output to a PDF file.
+ * specifying {@link TextPositioning} in {@link OnnxEngineProperties} in order to perform OCR
+ * using provided {@link OnnxOcrEngine} for the given images and save output to a PDF file.
  *
  * <p>
  * Also, this example demonstrates how to show the recognition result using {@link OcrPdfCreatorProperties}
  * to set color for recognized text.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrTextPositioningExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrTextPositioningExample/result.pdf";
+public class PdfOcrOnnxTextPositioningExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxTextPositioningExample/result.pdf";
 
     private static final String IMAGE = "./src/main/resources/img/scanned.png";
 
@@ -45,7 +45,7 @@ public class PdfOcrOnnxTrTextPositioningExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrTextPositioningExample().manipulate();
+        new PdfOcrOnnxTextPositioningExample().manipulate();
     }
 
     protected void manipulate() throws Exception {
@@ -54,9 +54,10 @@ public class PdfOcrOnnxTrTextPositioningExample {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        // It is possible to specify text positioning mode through OnnxTrEngineProperties. Default value is BY_LINES.
-        try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, null, recognitionPredictor,
-                new OnnxTrEngineProperties().setTextPositioning(TextPositioning.BY_WORDS))) {
+        // It is possible to specify text positioning mode through OnnxEngineProperties.
+        // Default value is BY_WORDS_AND_LINES.
+        try (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, null, recognitionPredictor,
+                new OnnxEngineProperties().setTextPositioning(TextPositioning.BY_WORDS))) {
 
             // Set green text color to show the recognition result. Skip that step for real usages.
             OcrPdfCreatorProperties ocrPdfCreatorProperties = new OcrPdfCreatorProperties()

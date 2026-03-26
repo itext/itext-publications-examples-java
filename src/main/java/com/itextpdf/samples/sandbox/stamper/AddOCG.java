@@ -12,6 +12,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * AddOCG.java
+ *
+ * Adds optional content groups (layers) to PDF documents for
+ * controlling visibility of content elements.
+ */
+
 public class AddOCG {
     public static final String DEST = "./target/sandbox/stamper/add_ocg.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

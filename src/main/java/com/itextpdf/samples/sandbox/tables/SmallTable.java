@@ -15,6 +15,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * SmallTable.java
+ *
+ * Demonstrates how to create a compact table that doesn't use the full
+ * page width and can be positioned as desired.
+ */
+
 public class SmallTable {
     public static final String DEST = "./target/sandbox/tables/small_table.pdf";
 

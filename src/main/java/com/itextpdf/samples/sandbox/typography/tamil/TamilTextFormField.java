@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilTextFormField.java
+ *
+ * Creates PDF text input field with Tamil placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class TamilTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/TamilTextFormField.pdf";

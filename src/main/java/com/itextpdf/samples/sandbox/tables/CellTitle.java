@@ -17,6 +17,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * CellTitle.java
+ *
+ * Demonstrates how to add a title attribute to table cells using a
+ * custom cell renderer that writes additional metadata.
+ */
+
 public class CellTitle {
     public static final String DEST = "./target/sandbox/tables/cell_title.pdf";
 

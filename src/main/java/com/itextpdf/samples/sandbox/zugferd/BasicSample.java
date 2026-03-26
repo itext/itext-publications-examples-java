@@ -31,6 +31,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
+/*
+ * BasicSample.java
+ *
+ * Creates a PDF/A-3 compliant ZUGFeRD invoice with embedded XML data.
+ */
+
 public class BasicSample {
 
     public static final String DEST = "./target/sandbox/zugferd/invoice_with_zugferd.pdf";

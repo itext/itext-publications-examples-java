@@ -9,6 +9,12 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * ChangeInfoDictionary.java
+ *
+ * Modifies PDF info dictionary with custom metadata entries.
+ */
+
 public class ChangeInfoDictionary {
     public static final String DEST = "./target/sandbox/stamper/change_info_dictionary.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

@@ -16,6 +16,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * CellMethod.java
+ *
+ * Shows how to create table cells with different fonts and encodings
+ * including Greek and Czech character sets.
+ */
+
 public class CellMethod {
     public static final String DEST = "./target/sandbox/tables/cell_method.pdf";
     public static final String FONT = "./src/main/resources/font/FreeSans.ttf";

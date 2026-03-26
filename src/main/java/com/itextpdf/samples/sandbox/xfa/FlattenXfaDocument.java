@@ -10,6 +10,12 @@ import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * FlattenXfaDocument.java
+ *
+ * Demonstrates flattening XFA forms to static PDF with metadata.
+ */
+
 public class FlattenXfaDocument {
     public static final String DEST = "./target/sandbox/xfa/flattened.pdf";
 

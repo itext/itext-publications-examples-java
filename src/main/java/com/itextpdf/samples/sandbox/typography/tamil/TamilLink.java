@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilLink.java
+ *
+ * Creates PDF hyperlinks with Tamil text to demonstrate typography
+ * support in interactive link elements.
+ */
+
 public class TamilLink {
 
     public static final String DEST = "./target/sandbox/typography/TamilLink.pdf";

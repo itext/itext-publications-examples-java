@@ -5,6 +5,12 @@ import com.itextpdf.svg.converter.SvgConverter;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * ConvertSvgToPdf.java
+ *
+ * Converts SVG files directly to PDF documents.
+ */
+
 public class ConvertSvgToPdf {
     private static final String SRC = "./src/main/resources/svg/";
     public static final String DEST = "./target/sandbox/svg/ConvertSvgToPdf.pdf";

@@ -17,6 +17,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * TiledBackgroundColor.java
+ *
+ * Shows how to create tiled color patterns as backgrounds for table
+ * cells using custom rendering techniques.
+ */
+
 public class TiledBackgroundColor {
     public static final String DEST = "./target/sandbox/tables/tiled_background_color.pdf";
 

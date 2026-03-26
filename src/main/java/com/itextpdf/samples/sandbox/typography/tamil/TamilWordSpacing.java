@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TamilWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Tamil text with standard
+ * and custom spacing configurations.
+ */
+
 public class TamilWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/TamilWordSpacing.pdf";

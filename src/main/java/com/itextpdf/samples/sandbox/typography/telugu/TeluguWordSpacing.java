@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Telugu text with standard
+ * and custom spacing configurations.
+ */
+
 public class TeluguWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/TeluguWordSpacing.pdf";

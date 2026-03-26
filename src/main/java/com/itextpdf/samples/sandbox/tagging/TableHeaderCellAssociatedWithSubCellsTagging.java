@@ -23,6 +23,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+ * TableHeaderCellAssociatedWithSubCellsTagging.java
+ *
+ * Creates tagged tables with proper header cell associations.
+ */
 public class TableHeaderCellAssociatedWithSubCellsTagging {
     public static final String DEST =
             "./target/sandbox/tagging/TableHeaderCellAssociatedWithSubCellsTagging.pdf";

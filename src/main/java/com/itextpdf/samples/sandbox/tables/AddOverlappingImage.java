@@ -16,6 +16,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * AddOverlappingImage.java
+ *
+ * Demonstrates how to add an image that overlaps a table using a custom
+ * table renderer that draws an image on top of the table content.
+ */
+
 public class AddOverlappingImage {
     public static final String DEST = "./target/sandbox/tables/add_overlapping_image.pdf";
 

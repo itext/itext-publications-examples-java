@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ColoredBorder.java
+ *
+ * Demonstrates how to apply colored borders to individual sides of table
+ * cells using SolidBorder with different colors and widths.
+ */
+
 public class ColoredBorder {
     public static final String DEST = "./target/sandbox/tables/colored_border.pdf";
 

@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerDropDownBox.java
+ *
+ * Creates PDF dropdown form field with Khmer text options to
+ * demonstrate complex script rendering in interactive forms.
+ */
+
 public class KhmerDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/KhmerDropDownBox.pdf";

@@ -15,6 +15,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * CustomBorder2.java
+ *
+ * Demonstrates advanced custom border rendering with conditional border
+ * styling based on cell position within the table structure.
+ */
+
 public class CustomBorder2 {
     public static final String DEST = "./target/sandbox/tables/custom_border2.pdf";
 

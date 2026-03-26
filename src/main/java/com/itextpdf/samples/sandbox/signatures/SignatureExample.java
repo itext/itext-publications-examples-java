@@ -29,6 +29,12 @@ import java.util.Enumeration;
 import java.util.List;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
+/*
+ * SignatureExample.java
+ *
+ * Signs PDF documents with digital signatures and custom appearance.
+ */
+
 public class SignatureExample {
     public static final String DEST = "./target/sandbox/signatures/signExample.pdf";
 

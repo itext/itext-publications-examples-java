@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable9.java
+ *
+ * Demonstrates a ninth simple table variation exploring foundational
+ * table features and properties.
+ */
+
 public class SimpleTable9 {
     public static final String DEST = "./target/sandbox/tables/simple_table9.pdf";
 

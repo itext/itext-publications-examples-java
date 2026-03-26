@@ -18,6 +18,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerChoiceFormField.java
+ *
+ * Creates PDF form with choice field containing Khmer text options
+ * to demonstrate form field typography support.
+ */
+
 public class KhmerChoiceFormField {
 
     public static final String DEST = "./target/sandbox/typography/KhmerChoiceFormField.pdf";

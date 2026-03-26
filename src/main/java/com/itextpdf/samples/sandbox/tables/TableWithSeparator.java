@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * TableWithSeparator.java
+ *
+ * Shows how to add visual separators or dividers between table rows
+ * or sections for improved readability.
+ */
+
 public class TableWithSeparator {
     public static final String DEST = "./target/sandbox/tables/table_with_separator.pdf";
 

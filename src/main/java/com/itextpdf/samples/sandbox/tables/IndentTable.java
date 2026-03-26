@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * IndentTable.java
+ *
+ * Illustrates how to indent an entire table from the left margin using
+ * margin or horizontal alignment properties.
+ */
+
 public class IndentTable {
     public static final String DEST = "./target/sandbox/tables/indent_table.pdf";
 

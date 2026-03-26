@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaCharacterSpacing.java
+ *
+ * Demonstrates adjusting character spacing in Odia text with
+ * standard and custom spacing values.
+ */
+
 public class OdiaCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/OdiaCharacterSpacing.pdf";

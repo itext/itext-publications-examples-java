@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * TeluguOpacity.java
+ *
+ * Renders Telugu text with varying opacity levels to demonstrate
+ * transparency control in typography elements.
+ */
+
 public class TeluguOpacity {
 
     public static final String DEST = "./target/sandbox/typography/TeluguOpacity.pdf";

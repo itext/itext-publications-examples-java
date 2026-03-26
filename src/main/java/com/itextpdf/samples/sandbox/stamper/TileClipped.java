@@ -10,6 +10,12 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
 
+/*
+ * TileClipped.java
+ *
+ * Creates tiled and clipped versions of PDF pages.
+ */
+
 public class TileClipped {
     public static final String DEST = "./target/sandbox/stamper/tile_clipped.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hero.pdf";

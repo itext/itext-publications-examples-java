@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaTextFormField.java
+ *
+ * Creates PDF text input field with Kannada placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class KannadaTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/KannadaTextFormField.pdf";

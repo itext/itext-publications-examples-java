@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
 
+/*
+ * FullPageTable.java
+ *
+ * Demonstrates how to create a table that spans the entire page with
+ * zero margins and fills all available space.
+ */
+
 public class FullPageTable {
     public static final String DEST = "./target/sandbox/tables/full_page_table.pdf";
 

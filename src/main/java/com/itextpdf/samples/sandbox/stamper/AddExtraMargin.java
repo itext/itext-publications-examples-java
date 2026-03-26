@@ -12,6 +12,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
 
+/*
+ * AddExtraMargin.java
+ *
+ * Adds extra margin with gray rectangle to PDF pages.
+ */
+
 public class AddExtraMargin {
     public static final String DEST = "./target/sandbox/stamper/add_extra_margin.pdf";
     public static final String SRC = "./src/main/resources/pdfs/primes.pdf";

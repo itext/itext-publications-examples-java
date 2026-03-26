@@ -11,6 +11,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import java.io.File;
 import java.util.List;
 
+/*
+ * ChangeBookmarks.java
+ *
+ * Modifies bookmark destinations in PDF documents.
+ */
+
 public class ChangeBookmarks {
     public static final String DEST = "./target/sandbox/stamper/change_bookmarks.pdf";
     public static final String SRC = "./src/main/resources/pdfs/bookmarks.pdf";

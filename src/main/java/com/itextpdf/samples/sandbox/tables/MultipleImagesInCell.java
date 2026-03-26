@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * MultipleImagesInCell.java
+ *
+ * Shows how to add multiple images within a single table cell by
+ * combining them in a paragraph or using nested layout elements.
+ */
+
 public class MultipleImagesInCell {
     public static final String DEST
             = "./target/sandbox/tables/multiple_images_in_cell.pdf";

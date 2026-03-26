@@ -17,6 +17,11 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * CreateTaggedDocument.java
+ *
+ * Creates a tagged PDF document with structured content and tables.
+ */
 public class CreateTaggedDocument {
     public static final String DEST = "./target/sandbox/tagging/88th_Academy_Awards.pdf";
 

@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerTable.java
+ *
+ * Demonstrates rendering Khmer text within PDF table cells to show
+ * typography support in tabular layouts.
+ */
+
 public class KhmerTable {
 
     public static final String DEST = "./target/sandbox/typography/KhmerTable.pdf";

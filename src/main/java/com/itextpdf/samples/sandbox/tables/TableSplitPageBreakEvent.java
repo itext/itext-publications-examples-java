@@ -14,6 +14,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * TableSplitPageBreakEvent.java
+ *
+ * Shows how to use page event handlers to control table splitting
+ * behavior and add custom content at split points.
+ */
+
 // In this sample we will show how one can change the text of the cell on split.
 // The table contains two columns: the first one will be processed as usually and
 // the second one is the on which the required split logic will be performed.

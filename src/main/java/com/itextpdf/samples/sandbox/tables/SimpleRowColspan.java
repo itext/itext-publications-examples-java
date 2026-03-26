@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleRowColspan.java
+ *
+ * Shows a basic example of using colspan to merge cells horizontally
+ * across multiple columns in a table.
+ */
+
 public class SimpleRowColspan {
     public static final String DEST = "./target/sandbox/tables/simple_row_colspan.pdf";
 

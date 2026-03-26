@@ -18,6 +18,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariChoiceFormField.java
+ *
+ * Demonstrates creating a PDF form with a choice field (list box) 
+ * containing Devanagari text options. Uses NotoSansDevanagari font for 
+ * proper script rendering.
+ */
+
 public class DevanagariChoiceFormField {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariChoiceFormField.pdf";

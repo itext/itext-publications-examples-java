@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * Barcodes.java
+ *
+ * Demonstrates how to create EAN8 barcodes and add them as images in
+ * table cells using PdfFormXObject.
+ */
+
 public class Barcodes {
     public static final String DEST = "./target/sandbox/tables/barcodes.pdf";
 

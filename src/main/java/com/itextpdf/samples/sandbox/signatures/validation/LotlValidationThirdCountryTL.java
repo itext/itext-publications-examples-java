@@ -2,30 +2,22 @@ package com.itextpdf.samples.sandbox.signatures.validation;
 
 import com.itextpdf.signatures.validation.EuropeanTrustedListConfigurationFactory;
 import com.itextpdf.signatures.validation.SafeCalling;
-import com.itextpdf.signatures.validation.TrustedCertificatesStore;
 import com.itextpdf.signatures.validation.lotl.EuropeanResourceFetcher;
 import com.itextpdf.signatures.validation.lotl.LotlFetchingProperties;
 import com.itextpdf.signatures.validation.lotl.LotlService;
 import com.itextpdf.signatures.validation.lotl.LotlValidator;
-import com.itextpdf.signatures.validation.lotl.PivotFetcher;
 import com.itextpdf.signatures.validation.lotl.RemoveOnFailingCountryData;
-import com.itextpdf.signatures.validation.lotl.XmlSignatureValidator;
 import com.itextpdf.signatures.validation.report.ReportItem;
 import com.itextpdf.signatures.validation.report.ValidationReport;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
+import java.security.cert.CertificateException;
+import java.util.Arrays;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
@@ -44,9 +36,6 @@ import java.util.List;
  * - Customizes fetching of Official Journal signing certificates used to sign the third-country LOTL
  * by extracting X.509 certificates from the pointers section of a local TSL resource.
  * <br>
- * - Overrides pivot handling because the third-country LOTL does not publish pivot files the same way
- * as the EU LOTL. The custom pivot fetcher directly verifies the LOTL XML signature instead.
- * <br>
  * - Initializes a {@link LotlService} with tailored {@link LotlFetchingProperties} that limit countries
  * to those relevant for the scenario (e.g., UA, MD) and remove failed country data from use.
  * <br>
@@ -56,8 +45,6 @@ import java.util.List;
  * <br>
  * - When you need to validate the LOTL for third countries.
  * <br>
- * - When you need to adapt resource/pivot fetching logic to the structure of the third-country LOTL.
- * <br>
  * <p>Key customizations in this file:
  * <br>
  * - {@link EuropeanTrustedListConfigurationFactoryForThirdCountries}: supplies the third‑country LOTL URI
@@ -65,19 +52,27 @@ import java.util.List;
  * <br>
  * - {@link ThirdCountriesResourceFetcher}: provides Official Journal certificates by parsing them from
  * PointersToOtherTSL data of a local TSL resource.
- * <br>
- * - {@link ThirdCountriesDoesNotContainPivots}: bypasses pivot downloads and validates the LOTL XML
- * signature directly with trusted Official Journal certificates.
  */
 
 public class LotlValidationThirdCountryTL {
 
     /**
-     * Path to a local TSL XML used only to extract Official Journal certificates from
-     * the PointersToOtherTSL section. This is a convenience source for the certificates
-     * that sign the third-country LOTL.
+     * The certificates to validate third-countries main LOTL file. This particular list of base64 encoded certificates
+     * is taken from third-countries LOTL file itself. It looks unexpected that the certificates to validate LOTL file
+     * is put right into that same LOTL file. That is why this sample suggests the certificates are taken from
+     * somewhere else.
      */
-    private static final String TSL = "./src/main/resources/validation/tsl/jgoigecgmelgnadppbgklkndmkdgcjpm";
+    private static final List<String> validationCertificates = Arrays.asList(
+            "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",
+            "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",
+            "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",
+            "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",
+            "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",
+            "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",
+            "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",
+            "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",
+            "MIIF1zCCA7+gAwIBAgIUWIBUgm0KRXOBUXiNBQ80Pj+gHKkwDQYJKoZIhvcNAQENBQAwejELMAkGA1UEBhMCTUQxRTBDBgNVBAoMPFNlY3VyaXR5IGFuZCBJbnRlbGxpZ2VuY2UgU2VydmljZSBvZiB0aGUgUmVwdWJsaWMgb2YgTW9sZG92YTEkMCIGA1UEAwwbTUQgVEwgU2lnbmluZyBDZXJ0aWZpY2F0ZSAyMB4XDTI1MDYyNzEwMjc0MloXDTI3MDkyNjEwMjc0MlowejELMAkGA1UEBhMCTUQxRTBDBgNVBAoMPFNlY3VyaXR5IGFuZCBJbnRlbGxpZ2VuY2UgU2VydmljZSBvZiB0aGUgUmVwdWJsaWMgb2YgTW9sZG92YTEkMCIGA1UEAwwbTUQgVEwgU2lnbmluZyBDZXJ0aWZpY2F0ZSAyMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuZna+3vOfCLekcZ8OuBSikZpR6Bh8h5FaGM2bw1dgd1TexIto8KyYy6QEtPrQf2MOx9z4uL2s1RGiRcqa3JyrdZk3WQdru3q+1MSBkWh7pIopehQE45S6fIIKElzVcmGNSGJtKwqHBqcwxKOqtv40zYwVZPninfDMyaCl8VPn/qVWmLPPNsojjHJpOLm1jfOepa5i/hcuzsObXI757bsyTIwdrx51bM9gb1ySmXKUjlFnZk3of+r7kNsppSZWQtOfir4HkAVZMjAWjE2YYzyyETjz+t/1XHySavCeCQmonlvSIG2CI7JUq1w+iG78FXWpXyXkh44Yv8DVdFIg8lIUdtxDttbXCtPG4/lzM+QWKmphHT8geY5xtTa/H8MReKxTb0QKdKmofsamZeG6alQHNjklh2oqUH77DXdzcsfWtAGU+ryURsYHpZcS9e+cU7d1Wnwbw9BJaJ7Exy8IhE74Q9PKFAs/s1qXRVWAv7vQozSUMAzoI0XdBkFtrfiMEXo+A2YyztcwPfPaOtmmkP9g+RRMHO59NUtXl6KMr81F8rNMUYXWo3/q8g9QTNR7vsfH6p96zEpvnkSxRYnpUKPQ4//nBtLdDNPyAPI1mS+L3BrQlGP9w0FWNTnBbh02UlkjrLAEF8OFZAlBSVEE/3iPHeQhwAAXLJZB5hN08krGLsCAwEAAaNVMFMwDgYDVR0PAQH/BAQDAgbAMBQGA1UdJQEB/wQKMAgGBgQAkTcDADAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBT1WeiaPO0D+ut+SSZKzKJsZr0SqzANBgkqhkiG9w0BAQ0FAAOCAgEAcZ2qjO500yk838GAA43aKP+DPR9S0+BwGVhNiF8oH7AQchaAr4qbT16vPb6cl0FGTmz1fOBgq57kgYS2Jp5TagFd42GWlz9Ro9u5/c5SFZB6sy1sSwvbbz3x1BKQAnAvntHJTsgYXCoR6hFw1t0uG031G+7At9PvbZo3lWmbCYx1DDu29w6Aorae21S+RqDGpbiTMTmeM9uLVtzO+ZJPkdnnq8wfvHZwbTgaKxmNDVu3qk4GHircWJ8drwhSDfLBNUNF0csWF/jPcnNtwW+gF7MiVOaPEbxIbsPiAPJQxmIBQ3JKqvCcETfQ/k3Tdn9qUezuNvhpIPX/M7xV+wyBM/W87TkQTbpSfXrVGwMH8nb/IfX30MAf6OLzsFJNCvm/7HWnb3ulRolhslvpxgUaoJSdjzYF34NirJhr4tkmCEpUBtIOuW4GM2eBx0vTOOHTll4R37Z3WxITeh7u0B9aBu835CSxWp3XRDIGSgLyNn39UZ1Nw2LvXrRSBWiBjy7ct3hbpAPh73NRsawlJ/ztyjuVcxMb0M/Anvm9OaTeg9+TQdsnJqJVWz2VpTBb7mEy4gbybAp9PmE56LnCjGmG9MUtJ0EGaTcVawk+XEWDS1mo+itc8PfrHGhGpvZhd1Pd3JkWikR3WJDhRQu36/gm4FxorHopq4OoXWgpvTfGr+M="
+    );
 
     /**
      * Path where the textual {@link ValidationReport} will be written.
@@ -90,7 +85,6 @@ public class LotlValidationThirdCountryTL {
      * @param args CLI arguments (not used)
      * @throws IOException if report file creation fails
      */
-
     public static void main(String[] args) throws IOException {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
@@ -105,9 +99,6 @@ public class LotlValidationThirdCountryTL {
      * <br>
      * - Sets {@link LotlFetchingProperties} to remove failing country data and to focus on specific
      * country codes (e.g., UA, MD).
-     * <br>
-     * - Installs {@link ThirdCountriesResourceFetcher} to supply Official Journal certificates and
-     * {@link ThirdCountriesDoesNotContainPivots} to validate without pivots.
      * <br>
      * - Initializes cache, validates the LOTL, and writes the result to {@link #DEST}.
      * <br>
@@ -134,7 +125,6 @@ public class LotlValidationThirdCountryTL {
             LotlValidator validator;
             try (LotlService lotlService = new LotlService(lotlFetchingProperties)) {
                 lotlService.withEuropeanResourceFetcher(new ThirdCountriesResourceFetcher());
-                lotlService.withPivotFetcher(new ThirdCountriesDoesNotContainPivots(lotlService));
                 lotlService.initializeCache();
                 validator = new LotlValidator(lotlService);
             }
@@ -213,162 +203,26 @@ public class LotlValidationThirdCountryTL {
         public Result getEUJournalCertificates() {
             Result result = new Result();
             SafeCalling.onExceptionLog(
-                    () -> result.setCertificates(loadCertificatesFromPointersToOtherTSL(Paths.get(TSL))),
+                    () -> result.setCertificates(getGenerallyTrustedCertificates(validationCertificates)),
                     result.getLocalReport(),
                     e -> new ReportItem(LotlValidator.LOTL_VALIDATION, "JOURNAL_CERT_NOT_PARSABLE",
                             e, ReportItem.ReportItemStatus.INFO));
             return result;
         }
 
-        /**
-         * Loads Official Journal certificates from a local TSL XML file by reading the
-         * PointersToOtherTSL → ServiceDigitalIdentities → X509Certificate entries.
-         *
-         * @param euXmlPath path to a local TSL XML
-         * @return list of parsed certificates
-         * @throws Exception if XML parsing or certificate creation fails
-         */
-
-        private static List<Certificate> loadCertificatesFromPointersToOtherTSL(Path euXmlPath) throws Exception {
-            try (InputStream in = Files.newInputStream(euXmlPath)) {
-                return loadCertificatesFromPointersToOtherTSL(in);
-            }
-        }
-
-        /**
-         * Parses X.509 certificates from the given TSL XML stream using a namespace‑agnostic XPath.
-         *
-         * @param xmlStream input stream containing TSL XML
-         * @return list of X.509 certificates extracted from the XML
-         * @throws Exception if parsing or decoding fails
-         */
-        private static List<Certificate> loadCertificatesFromPointersToOtherTSL(InputStream xmlStream) throws Exception {
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setNamespaceAware(true);
-
-            Document doc = dbf.newDocumentBuilder().parse(xmlStream);
-
-            // Use a namespace-agnostic XPath with local-name() to avoid issues with default/prefixed namespaces
-            XPath xp = XPathFactory.newInstance().newXPath();
-            String x509CertXPath =
-                    "/*[local-name()='TrustServiceStatusList']" +
-                    "/*[local-name()='SchemeInformation']" +
-                    "/*[local-name()='PointersToOtherTSL']" +
-                    "//*[local-name()='ServiceDigitalIdentities']" +
-                    "/*[local-name()='ServiceDigitalIdentity']" +
-                    "/*[local-name()='DigitalId']" +
-                    "/*[local-name()='X509Certificate']";
-
-            NodeList nodes = (NodeList) xp.evaluate(x509CertXPath, doc, XPathConstants.NODESET);
-
+        private static List<Certificate> getGenerallyTrustedCertificates(List<String> certificates)
+                throws CertificateException, IOException {
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
-            List<Certificate> result = new ArrayList<>(nodes.getLength());
-
-            for (int i = 0; i < nodes.getLength(); i++) {
-                String b64 = nodes.item(i).getTextContent();
-                if (b64 == null) continue;
-                b64 = b64.trim();
-                if (b64.isEmpty()) continue;
-
-                byte[] der = Base64.getMimeDecoder().decode(b64);
+            final ArrayList<Certificate> result = new ArrayList<>();
+            for (String certificateString : certificates) {
+                byte[] der = Base64.getMimeDecoder().decode(certificateString);
                 try (ByteArrayInputStream bin = new ByteArrayInputStream(der)) {
                     Certificate cert = cf.generateCertificate(bin);
                     result.add(cert);
                 }
             }
+
             return result;
         }
-
-    }
-
-    /**
-     * Pivot handler for the third‑country LOTL which does not rely on pivot files.
-     *
-     * <p>Why it is needed:
-     * <br>
-     * - The third‑country LOTL does not publish or require pivot files in the same manner as the EU LOTL.
-     * <br>
-     * - This fetcher short‑circuits pivot retrieval and directly validates the LOTL XML signature
-     * using trusted Official Journal certificates.
-     */
-    static class ThirdCountriesDoesNotContainPivots extends PivotFetcher {
-        /**
-         * Creates the pivot fetcher bound to the provided {@link LotlService}.
-         *
-         * @param service current LOTL service instance
-         */
-        public ThirdCountriesDoesNotContainPivots(LotlService service) {
-            super(service);
-        }
-
-        /**
-         * Retains the current journal URI if set by upstream logic.
-         *
-         * @param currentJournalUri current journal URI
-         */
-        @Override
-        public void setCurrentJournalUri(String currentJournalUri) {
-            super.setCurrentJournalUri(currentJournalUri);
-        }
-
-        /**
-         * Validates the LOTL XML directly instead of downloading pivot files.
-         *
-         * <p>Implementation details:
-         * <br>
-         * - Builds a {@link TrustedCertificatesStore} from the provided Official Journal certificates.
-         * <br>
-         * - Uses a {@link CustomXmlSignatureValidator} to validate the LOTL XML signature.
-         * <br>
-         * - On failure, merges the detailed validation report and marks the operation as invalid.
-         *
-         * @param lotlXml      the LOTL XML bytes to validate
-         * @param certificates trusted Official Journal certificates
-         * @return a result whose {@code localReport} contains signature validation details
-         */
-        @Override
-        public Result downloadAndValidatePivotFiles(byte[] lotlXml, List<Certificate> certificates) {
-            List<Certificate> trustedCertificates = certificates;
-            Result result = new Result();
-            TrustedCertificatesStore trustedCertificatesStore = new TrustedCertificatesStore();
-            trustedCertificatesStore.addGenerallyTrustedCertificates(trustedCertificates);
-
-            CustomXmlSignatureValidator xmlSignatureValidator = new CustomXmlSignatureValidator(trustedCertificatesStore);
-            ValidationReport localReport = xmlSignatureValidator.publicValidate(new ByteArrayInputStream(lotlXml));
-            if (localReport.getValidationResult() != ValidationReport.ValidationResult.VALID) {
-                result.getLocalReport().addReportItem(new ReportItem(LotlValidator.LOTL_VALIDATION,
-                        "LOTL_VALIDATION_UNSUCCESSFUL", ReportItem.ReportItemStatus.INVALID));
-                result.getLocalReport().merge(localReport);
-                return result;
-            }
-            return result;
-        }
-
-        /**
-         * Small adapter around {@link XmlSignatureValidator} to expose its validate method
-         * for direct use in this sample.
-         */
-        static class CustomXmlSignatureValidator extends XmlSignatureValidator {
-
-            /**
-             * Creates a validator using the provided trust store containing Official Journal certificates.
-             *
-             * @param trustedCertificatesStore {@link TrustedCertificatesStore} holding trusted certificates
-             */
-            protected CustomXmlSignatureValidator(TrustedCertificatesStore trustedCertificatesStore) {
-                super(trustedCertificatesStore);
-            }
-
-            /**
-             * Exposes {@link #validate(InputStream)} for use by the enclosing pivot fetcher.
-             *
-             * @param xmlDocumentInputStream input stream of the LOTL XML
-             * @return a {@link ValidationReport} with the signature validation outcome
-             */
-            public ValidationReport publicValidate(InputStream xmlDocumentInputStream) {
-                return super.validate(xmlDocumentInputStream);
-            }
-        }
-
     }
 }

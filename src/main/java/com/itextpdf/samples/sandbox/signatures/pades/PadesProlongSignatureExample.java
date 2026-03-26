@@ -21,6 +21,12 @@ import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * PadesProlongSignatureExample.java
+ *
+ * Extends PAdES signature validity using timestamp and revocation data.
+ */
+
 /**
  * Basic example of document signature prolongation.
  */

@@ -20,6 +20,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * TableSplitTest.java
+ *
+ * Tests and demonstrates different scenarios for table splitting
+ * across pages with various configurations.
+ */
+
 public class TableSplitTest {
     public static final String DEST = "./target/sandbox/tables/tables_split_test.pdf";
 

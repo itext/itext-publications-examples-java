@@ -1,26 +1,26 @@
-package com.itextpdf.samples.sandbox.pdfocr.onnxtr;
+package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
 import com.itextpdf.pdfocr.OcrPdfCreator;
-import com.itextpdf.pdfocr.onnxtr.OnnxTrOcrEngine;
-import com.itextpdf.pdfocr.onnxtr.detection.IDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.detection.OnnxDetectionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.IRecognitionPredictor;
-import com.itextpdf.pdfocr.onnxtr.recognition.OnnxRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
+import com.itextpdf.pdfocr.onnx.detection.IDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.detection.OnnxDetectionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
+import com.itextpdf.pdfocr.onnx.recognition.OnnxRecognitionPredictor;
 
 import java.io.File;
 
 /**
- * PdfOcrOnnxTrPdfAsInputExample.java
+ * PdfOcrOnnxPdfAsInputExample.java
  *
  * <p>
  * This example demonstrates how to perform OCR of all images in an input PDF file
- * and generate searchable PDF using provided {@link OnnxTrOcrEngine}.
+ * and generate searchable PDF using provided {@link OnnxOcrEngine}.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-OnnxTR 4.1.0.
+ * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
  */
-public class PdfOcrOnnxTrPdfAsInputExample {
-    public static final String DEST = "./target/sandbox/pdfocr/onnxtr/PdfOcrOnnxTrPdfAsInputExample/result.pdf";
+public class PdfOcrOnnxPdfAsInputExample {
+    public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxPdfAsInputExample/result.pdf";
 
     private static final String PDF = "./src/main/resources/pdfs/numbers.pdf";
 
@@ -33,14 +33,14 @@ public class PdfOcrOnnxTrPdfAsInputExample {
         File file = new File(DEST);
         file.getParentFile().mkdirs();
 
-        new PdfOcrOnnxTrPdfAsInputExample().manipulate();
+        new PdfOcrOnnxPdfAsInputExample().manipulate();
     }
 
     protected void manipulate() throws Exception {
         IDetectionPredictor detectionPredictor = OnnxDetectionPredictor.fast(FAST);
         IRecognitionPredictor recognitionPredictor = OnnxRecognitionPredictor.crnnVgg16(CRNNVGG16);
 
-        try (OnnxTrOcrEngine ocrEngine = new OnnxTrOcrEngine(detectionPredictor, recognitionPredictor)) {
+        try (OnnxOcrEngine ocrEngine = new OnnxOcrEngine(detectionPredictor, recognitionPredictor)) {
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
             pdfCreator.makePdfSearchable(new File(PDF), new File(DEST));
         }

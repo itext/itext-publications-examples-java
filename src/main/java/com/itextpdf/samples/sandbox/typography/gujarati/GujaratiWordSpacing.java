@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Gujarati text with standard
+ * and custom spacing configurations.
+ */
+
 public class GujaratiWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiWordSpacing.pdf";

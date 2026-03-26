@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * RotatedCell.java
+ *
+ * Shows how to rotate text within table cells using rotation angle
+ * properties for vertical or angled text display.
+ */
+
 public class RotatedCell {
     public static final String DEST = "./target/sandbox/tables/rotated_cell.pdf";
 

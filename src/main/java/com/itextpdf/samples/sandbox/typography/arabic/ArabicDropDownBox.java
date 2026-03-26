@@ -19,6 +19,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicDropDownBox.java
+ *
+ * Creates a combo box form field with Arabic text options.
+ */
+
 public class ArabicDropDownBox {
 
     public static final String DEST = "./target/sandbox/typography/ArabicDropDownBox.pdf";

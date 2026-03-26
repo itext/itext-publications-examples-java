@@ -7,6 +7,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * ChangeViewerPreference.java
+ *
+ * Sets PDF viewer preferences such as duplex printing mode.
+ */
+
 public class ChangeViewerPreference {
     public static final String DEST = "./target/sandbox/stamper/change_viewer_preference.pdf";
     public static final String SRC = "./src/main/resources/pdfs/united_states.pdf";

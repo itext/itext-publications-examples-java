@@ -14,6 +14,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * RightCornerTable.java
+ *
+ * Demonstrates how to position a table in the top-right corner of a
+ * page using fixed positioning or alignment.
+ */
+
 public class RightCornerTable {
     public static final String DEST = "./target/sandbox/tables/right_corner_table.pdf";
 

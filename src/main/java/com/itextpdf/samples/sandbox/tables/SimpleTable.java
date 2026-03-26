@@ -8,6 +8,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * SimpleTable.java
+ *
+ * Demonstrates the most basic table creation with a simple grid of
+ * cells containing plain text.
+ */
+
 public class SimpleTable {
     public static final String DEST = "./target/sandbox/tables/simple_table.pdf";
 

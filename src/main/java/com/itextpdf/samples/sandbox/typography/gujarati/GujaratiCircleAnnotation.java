@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiCircleAnnotation.java
+ *
+ * Creates PDF annotations with Gujarati text content to show
+ * typography support in annotation elements.
+ */
+
 public class GujaratiCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiCircleAnnotation.pdf";

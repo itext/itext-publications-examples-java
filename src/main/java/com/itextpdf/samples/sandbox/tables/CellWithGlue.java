@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * CellWithGlue.java
+ *
+ * Shows how to create cells with content aligned to left and right using
+ * tab stops, simulating a "glue" effect between text elements.
+ */
+
 public class CellWithGlue {
     public static final String DEST = "./target/sandbox/tables/cell_with_glue.pdf";
 

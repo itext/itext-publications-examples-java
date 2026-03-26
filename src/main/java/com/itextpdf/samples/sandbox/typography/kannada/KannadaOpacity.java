@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaOpacity.java
+ *
+ * Renders Kannada text with varying opacity levels to demonstrate
+ * transparency control in typography elements.
+ */
+
 public class KannadaOpacity {
 
     public static final String DEST = "./target/sandbox/typography/KannadaOpacity.pdf";

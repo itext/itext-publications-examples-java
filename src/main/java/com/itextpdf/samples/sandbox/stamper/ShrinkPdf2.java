@@ -10,6 +10,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import java.io.File;
 import java.util.Locale;
 
+/*
+ * ShrinkPdf2.java
+ *
+ * Shrinks PDF content to specified percentage centered on page.
+ */
+
 public class ShrinkPdf2 {
     public static final String DEST = "./target/sandbox/stamper/shrink_pdf2.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hero.pdf";

@@ -8,6 +8,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
 
+/*
+ * HighLightByAddingContent.java
+ *
+ * Adds highlighting by drawing colored rectangles on PDF.
+ */
+
 public class HighLightByAddingContent {
     public static final String DEST = "./target/sandbox/stamper/high_light_by_adding_content.pdf";
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";

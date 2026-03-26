@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GujaratiTextFormField.java
+ *
+ * Creates PDF text input field with Gujarati placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class GujaratiTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/GujaratiTextFormField.pdf";

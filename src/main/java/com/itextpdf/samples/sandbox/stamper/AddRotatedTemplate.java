@@ -11,6 +11,12 @@ import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
 
+/*
+ * AddRotatedTemplate.java
+ *
+ * Adds rotated form XObjects/templates to PDF documents.
+ */
+
 public class AddRotatedTemplate {
     public static final String SRC = "./src/main/resources/pdfs/hello.pdf";
     public static final String DEST = "./target/sandbox/stamper/add_rotated_template.pdf";

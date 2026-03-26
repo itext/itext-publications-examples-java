@@ -16,6 +16,13 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 import java.io.File;
 import java.net.MalformedURLException;
 
+/*
+ * ImageNextToText.java
+ *
+ * Demonstrates how to position an image next to text within a table
+ * using a two-column layout with proper alignment.
+ */
+
 public class ImageNextToText {
     public static final String DEST = "./target/sandbox/tables/image_next_to_text.pdf";
 

@@ -20,6 +20,12 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * TransparentWatermark3.java
+ *
+ * Adds centered transparent watermarks to PDF pages.
+ */
+
 public class TransparentWatermark3 {
     public static final String DEST = "./target/sandbox/stamper/transparent_watermark3.pdf";
     public static final String IMG = "./src/main/resources/img/itext.png";

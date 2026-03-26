@@ -8,6 +8,12 @@ import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;
 
 import java.io.File;
 
+/*
+ * SuperImpose.java
+ *
+ * Superimposes multiple PDFs onto a single document.
+ */
+
 public class SuperImpose {
     public static final String DEST = "./target/sandbox/stamper/super_impose.pdf";
     public static final String[] EXTRA = {

@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * RoundedCorners.java
+ *
+ * Demonstrates how to create table cells and tables with rounded
+ * corners using custom border rendering techniques.
+ */
+
 public class RoundedCorners {
     public static final String DEST = "./target/sandbox/tables/rounded_corners.pdf";
 

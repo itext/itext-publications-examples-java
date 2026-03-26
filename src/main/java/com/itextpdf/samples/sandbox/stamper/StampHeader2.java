@@ -13,6 +13,12 @@ import com.itextpdf.layout.properties.VerticalAlignment;
 
 import java.io.File;
 
+/*
+ * StampHeader2.java
+ *
+ * Adds centered text headers to PDF pages.
+ */
+
 public class StampHeader2 {
     public static final String DEST = "./target/sandbox/stamper/stamp_header2.pdf";
     public static final String SRC = "./src/main/resources/pdfs/Wrong.pdf";

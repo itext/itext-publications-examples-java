@@ -16,6 +16,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * ClippedCell.java
+ *
+ * Demonstrates how content that exceeds cell boundaries is clipped
+ * rather than being wrapped or split across pages.
+ */
+
 public class ClippedCell {
     public static final String DEST = "./target/sandbox/tables/clipped_cell.pdf";
 

@@ -7,6 +7,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * Rotate90Degrees.java
+ *
+ * Rotates all PDF pages by 90 degrees.
+ */
+
 public class Rotate90Degrees {
     public static final String DEST = "./target/sandbox/stamper/rotate90degrees.pdf";
     public static final String SRC = "./src/main/resources/pdfs/pages.pdf";

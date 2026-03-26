@@ -17,6 +17,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * PositionContentInCell2.java
+ *
+ * Demonstrates alternative techniques for positioning and aligning
+ * content within cells, including vertical alignment options.
+ */
+
 public class PositionContentInCell2 {
     public static final String DEST = "./target/sandbox/tables/position_content_in_cell2.pdf";
 

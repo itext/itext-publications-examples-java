@@ -11,6 +11,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+/*
+ * SplitAndCount.java
+ *
+ * Splits PDF documents into smaller files based on size limit.
+ */
+
 public class SplitAndCount {
     public static final String DEST = "./target/sandbox/split/splitDocument1_%s.pdf";
 

@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -32,7 +34,11 @@ public class GenericSampleTest extends WrappedSamplesRunner {
      * List of samples, which should be validated visually and by link annotations on corresponding pages
      */
     private static final List<String> renderCompareList = Arrays.asList(
-            "com.itextpdf.samples.sandbox.signatures.SignatureExample"
+            "com.itextpdf.samples.sandbox.signatures.SignatureExample",
+            "com.itextpdf.samples.sandbox.signatures.pqc.MLDSA",
+            "com.itextpdf.samples.sandbox.signatures.pqc.SLHDSA",
+            "com.itextpdf.samples.sandbox.signatures.pqc.FNDSA",
+            "com.itextpdf.samples.sandbox.signatures.pqc.Picnic"
     );
 
     private static final List<String> veraPdfCompareList = Arrays.asList(
@@ -62,7 +68,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateChainBeforeSigningExample",
             "com.itextpdf.samples.sandbox.signatures.validation.ValidateSignatureExample",
             "com.itextpdf.samples.sandbox.signatures.validation.LotlValidationThirdCountryTL",
-            "com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTxtFileExample",
             "com.itextpdf.samples.sandbox.pdfocr.tesseract4.PdfOcrTesseractTxtFileExample"
     );
 
@@ -74,6 +79,17 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.tagging.AddStars",
             "com.itextpdf.samples.sandbox.tagging.CreateTaggedDocument"
     );
+
+    /**
+     * Samples which should be visually compared with ImageMagick fuzz value
+     * (to reduce flaky diffs on some Windows versions).
+     */
+    private static final Map<String, Double> visualCompareWithFuzzMap =
+            Stream.of(new Object[][] {
+                    { "com.itextpdf.samples.sandbox.images.ReplaceImage", 1d },
+                    { "com.itextpdf.samples.sandbox.images.MakeJpgMask", 1d },
+                    { "com.itextpdf.samples.sandbox.images.ReduceSize", 15d }
+            }).collect(Collectors.toMap(data -> (String) data[0], data -> (Double) data[1]));
 
     /**
      * Global map of classes with ignored areas
@@ -89,9 +105,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
 
         ignoredClassesMap = new HashMap<>();
         ignoredClassesMap.put("com.itextpdf.samples.sandbox.typography.latin.LatinSignature", ignoredAreasMap);
-        // Output PDFs are different in Windows and Linux (in float values), but visually they're the same.
-        ignoredClassesMap.put("com.itextpdf.samples.sandbox.pdfocr.onnxtr.PdfOcrOnnxTrTextPositioningExample",
-                new HashMap<>());
     }
 
     public static Collection<Object[]> data() {
@@ -119,6 +132,8 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.appearance");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.twophase");
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.signaturetag");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.pqc.PqcSignatureExample");
+        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.pdfocr.onnx");
 
         // Not a sample classes
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.signatures.utils");
@@ -155,11 +170,6 @@ public class GenericSampleTest extends WrappedSamplesRunner {
         // TODO DEVSIX-6508 remove unnecessary makeFormField calls
         searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.acroforms.RemoveXFA");
 
-        // TODO DEVSIX-9261 Investigate test failures on Windows Server 2025 and Windows 11
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReplaceImage");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.MakeJpgMask");
-        searchConfig.ignorePackageOrClass("com.itextpdf.samples.sandbox.images.ReduceSize");
-
         return generateTestsList(searchConfig);
     }
 
@@ -188,6 +198,14 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             }
         } else if (txtCompareList.contains(sampleClass.getName())) {
             addError(compareTxt(dest, cmp));
+        } else if (visualCompareWithFuzzMap.containsKey(sampleClass.getName())) {
+            addError(compareTool.compareVisually(
+                    dest,
+                    cmp,
+                    outPath,
+                    visualCompareWithFuzzMap.get(sampleClass.getName())
+            ));
+
         } else if (renderCompareList.contains(sampleClass.getName())) {
             addError(compareTool.compareVisually(dest, cmp, outPath, "diff_"));
             addError(compareTool.compareLinkAnnotations(dest, cmp));

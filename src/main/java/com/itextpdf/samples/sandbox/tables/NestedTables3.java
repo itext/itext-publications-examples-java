@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.TableRenderer;
 
 import java.io.File;
 
+/*
+ * NestedTables3.java
+ *
+ * Demonstrates a third variation of nested tables focusing on specific
+ * use cases for hierarchical data presentation.
+ */
+
 public class NestedTables3 {
     public static final String DEST = "./target/sandbox/tables/nested_tables3.pdf";
 

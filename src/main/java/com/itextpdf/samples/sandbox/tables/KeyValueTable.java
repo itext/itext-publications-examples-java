@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KeyValueTable.java
+ *
+ * Demonstrates creating a simple two-column key-value pair table layout
+ * commonly used for displaying data in a structured format.
+ */
+
 public class KeyValueTable {
     public static final String DEST = "./target/sandbox/tables/key_value_table.pdf";
 

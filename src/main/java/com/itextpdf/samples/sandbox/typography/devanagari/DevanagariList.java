@@ -14,6 +14,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * DevanagariList.java
+ *
+ * Demonstrates creating a bulleted list with Devanagari text items in a 
+ * PDF document. Uses NotoSansDevanagari font to properly render 
+ * Devanagari script.
+ */
+
 public class DevanagariList {
 
     public static final String DEST = "./target/sandbox/typography/DevanagariList.pdf";

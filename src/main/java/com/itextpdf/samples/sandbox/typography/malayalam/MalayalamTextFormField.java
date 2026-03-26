@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * MalayalamTextFormField.java
+ *
+ * Creates PDF text input field with Malayalam placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class MalayalamTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/MalayalamTextFormField.pdf";

@@ -17,6 +17,11 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 
+/*
+ * WalkTheTree.java
+ *
+ * Traverses and outputs the tag structure tree of a PDF document.
+ */
 public class WalkTheTree {
     public static final String DEST = "./target/txt/walk_the_tree.txt";
 

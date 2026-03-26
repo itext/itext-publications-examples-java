@@ -10,6 +10,12 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
 
+/*
+ * AddImageAffineTransform.java
+ *
+ * Adds images to PDF using affine transformations.
+ */
+
 public class AddImageAffineTransform {
     public static final String DEST = "./target/sandbox/stamper/add_image_affine_transform.pdf";
     public static final String IMG = "./src/main/resources/img/bruno.jpg";

@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewCircleAnnotation.java
+ *
+ * Creates PDF annotations with Hebrew text content to show
+ * typography support in annotation elements.
+ */
+
 public class HebrewCircleAnnotation {
 
     public static final String DEST = "./target/sandbox/typography/HebrewCircleAnnotation.pdf";

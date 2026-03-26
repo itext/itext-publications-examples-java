@@ -10,6 +10,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ColspanRowspan.java
+ *
+ * Illustrates how to create table cells that span multiple columns and
+ * rows using the Cell constructor with colspan and rowspan parameters.
+ */
+
 public class ColspanRowspan {
     public static final String DEST = "./target/sandbox/tables/colspan_rowspan.pdf";
 

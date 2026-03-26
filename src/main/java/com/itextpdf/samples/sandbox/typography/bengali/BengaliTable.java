@@ -15,6 +15,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * BengaliTable.java
+ *
+ * Demonstrates creating a table with Bengali text in a PDF document. Uses 
+ * NotoSansBengali font to properly render Bengali script characters in 
+ * table cells.
+ */
+
 public class BengaliTable {
 
     public static final String DEST = "./target/sandbox/typography/BengaliTable.pdf";

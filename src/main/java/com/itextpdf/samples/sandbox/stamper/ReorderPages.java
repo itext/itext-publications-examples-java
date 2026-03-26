@@ -14,6 +14,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * ReorderPages.java
+ *
+ * Reorders pages in PDF documents to custom sequence.
+ */
+
 public class ReorderPages {
     public static final String DEST = "./target/sandbox/stamper/reorder_pages.pdf";
 

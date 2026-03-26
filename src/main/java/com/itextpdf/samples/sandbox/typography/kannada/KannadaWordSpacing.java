@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KannadaWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Kannada text with standard
+ * and custom spacing configurations.
+ */
+
 public class KannadaWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/KannadaWordSpacing.pdf";

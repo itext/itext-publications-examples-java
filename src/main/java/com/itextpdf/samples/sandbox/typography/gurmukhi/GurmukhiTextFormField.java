@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * GurmukhiTextFormField.java
+ *
+ * Creates PDF text input field with Gurmukhi placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class GurmukhiTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/GurmukhiTextFormField.pdf";

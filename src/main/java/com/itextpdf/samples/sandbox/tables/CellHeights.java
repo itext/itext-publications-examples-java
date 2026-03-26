@@ -12,6 +12,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * CellHeights.java
+ *
+ * Illustrates different ways to control cell height including setting
+ * fixed height, minimum height, and extending the last row.
+ */
+
 public class CellHeights {
     public static final String DEST = "./target/sandbox/tables/cell_heights.pdf";
 

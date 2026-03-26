@@ -18,6 +18,13 @@ import com.itextpdf.layout.renderer.IRenderer;
 
 import java.io.File;
 
+/*
+ * DottedLineCell2.java
+ *
+ * Demonstrates an alternative approach to creating dotted line borders
+ * in table cells with different styling options.
+ */
+
 public class DottedLineCell2 {
     public static final String DEST = "./target/sandbox/tables/dotted_line_cell2.pdf";
 

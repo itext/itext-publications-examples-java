@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * OdiaWordSpacing.java
+ *
+ * Demonstrates adjusting word spacing in Odia text with standard
+ * and custom spacing configurations.
+ */
+
 public class OdiaWordSpacing {
 
     public static final String DEST = "./target/sandbox/typography/OdiaWordSpacing.pdf";

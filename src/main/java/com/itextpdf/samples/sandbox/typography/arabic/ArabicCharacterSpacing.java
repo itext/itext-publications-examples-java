@@ -15,6 +15,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ArabicCharacterSpacing.java
+ *
+ * Demonstrates applying different character spacing values to Arabic text
+ * in PDF documents.
+ */
+
 public class ArabicCharacterSpacing {
 
     public static final String DEST = "./target/sandbox/typography/ArabicCharacterSpacing.pdf";

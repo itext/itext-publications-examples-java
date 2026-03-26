@@ -14,6 +14,12 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 
 import java.io.File;
 
+/*
+ * ScaleRotate.java
+ *
+ * Scales pages using UserUnit and removes rotation.
+ */
+
 public class ScaleRotate {
     public static final String DEST = "./target/sandbox/stamper/scale_rotate.pdf";
     public static final String SRC = "./src/main/resources/pdfs/pages.pdf";

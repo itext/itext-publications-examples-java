@@ -16,6 +16,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * KhmerOpacity.java
+ *
+ * Renders Khmer text with varying opacity levels to demonstrate
+ * transparency control in typography elements.
+ */
+
 public class KhmerOpacity {
 
     public static final String DEST = "./target/sandbox/typography/KhmerOpacity.pdf";

@@ -17,6 +17,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * HebrewWithEnglish.java
+ *
+ * Demonstrates bidirectional text rendering with mixed Hebrew and
+ * English content in a single PDF document.
+ */
+
 public class HebrewWithEnglish {
 
     public static final String DEST = "./target/sandbox/typography/HebrewWithEnglish.pdf";

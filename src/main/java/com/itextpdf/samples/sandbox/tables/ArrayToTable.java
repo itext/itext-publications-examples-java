@@ -13,6 +13,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * ArrayToTable.java
+ *
+ * Shows how to convert a two-dimensional array of data into a PDF table
+ * by iterating through the dataset and adding cells to the table.
+ */
+
 public class ArrayToTable {
     public static final String DEST = "./target/sandbox/tables/array_to_table.pdf";
 

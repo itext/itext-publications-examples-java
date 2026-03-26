@@ -13,6 +13,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * LinkInPositionedTable.java
+ *
+ * Shows how to add clickable links to cells in a table that has been
+ * positioned at a specific location on the page.
+ */
+
 public class LinkInPositionedTable {
     public static final String DEST = "./target/sandbox/tables/link_in_positioned_table.pdf";
 

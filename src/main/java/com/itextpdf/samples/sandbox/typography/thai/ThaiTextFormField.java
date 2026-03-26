@@ -19,6 +19,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * ThaiTextFormField.java
+ *
+ * Creates PDF text input field with Thai placeholder and value to
+ * demonstrate complex script support in form fields.
+ */
+
 public class ThaiTextFormField {
 
     public static final String DEST = "./target/sandbox/typography/ThaiTextFormField.pdf";

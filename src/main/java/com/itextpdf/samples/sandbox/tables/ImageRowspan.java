@@ -11,6 +11,13 @@ import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
 
+/*
+ * ImageRowspan.java
+ *
+ * Illustrates how to add an image to a cell that spans multiple rows
+ * while maintaining proper alignment and sizing.
+ */
+
 public class ImageRowspan {
     public static final String DEST = "./target/sandbox/tables/image_rowspan.pdf";
 

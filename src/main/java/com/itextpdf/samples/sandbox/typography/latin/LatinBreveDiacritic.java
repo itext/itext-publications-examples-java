@@ -14,6 +14,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/*
+ * LatinBreveDiacritic.java
+ *
+ * Demonstrates rendering Latin text with breve diacritical marks using
+ * typography features for proper accent display.
+ */
+
 public class LatinBreveDiacritic {
 
     public static final String DEST = "./target/sandbox/typography/LatinBreveDiacritic.pdf";
