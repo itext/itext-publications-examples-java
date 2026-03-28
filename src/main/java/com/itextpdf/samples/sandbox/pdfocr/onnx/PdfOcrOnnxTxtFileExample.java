@@ -18,7 +18,9 @@ import java.util.List;
  * for the given list of input images and save output to a text file using provided path.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
+ * Required software: iText 9.6.0, pdfOCR-Onnx 5.0.0
+ * (pdfocr-onnx-cpu dependency to execute ONNX models on CPU or 
+ * pdfocr-onnx-abstract and onnxruntime_gpu dependencies to execute ONNX models on GPU).
  */
 public class PdfOcrOnnxTxtFileExample {
     public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxTxtFileExample/ocr_result.txt";

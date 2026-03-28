@@ -1,0 +1,60 @@
+This software uses the following deep-learning models for testing:
+| onnxtr-parseq-multilingual-v1.onnx                 | OnnxTR/DocTR  | Based on "https://huggingface.co/Felix92/onnxtr-parseq-multilingual-v1"
+| crnn_vgg16_bn-662979cc.onnx                        | OnnxTR/DocTR  | Based on "https://github.com/felixdittrich92/OnnxTR/releases/tag/v0.0.1"
+| rep_fast_tiny-28867779.onnx                        | OnnxTR/DocTR  | Based on "https://github.com/felixdittrich92/OnnxTR/releases/tag/v0.0.1"
+| mobilenet_v3_small_crop_orientation-5620cf7e.onnx  | OnnxTR        | Based on "https://github.com/felixdittrich92/OnnxTR/releases/tag/v0.0.1"
+| easyocr/craft_mlt_25k.onnx                         | EasyOCR       | Based on "https://www.jaided.ai/easyocr/modelhub/", converted to onnx format using "https://github.com/Eswcvlad/EasyOCR/commit/aca2af36aba30836ea900086e3142cd3172b38b2"
+| easyocr/latin_g2.onnx                              | EasyOCR       | Based on "https://www.jaided.ai/easyocr/modelhub/", converted to onnx format using "https://github.com/Eswcvlad/EasyOCR/commit/aca2af36aba30836ea900086e3142cd3172b38b2"
+| paddleocr/PP-OCRv5_mobile_det_infer/inference.onnx | PaddleOCR     | Based on "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv5_mobile_det_infer.tar", converted to onnx format using "https://www.paddleocr.ai/main/en/version3.x/deployment/obtaining_onnx_models.html"
+| paddleocr/PP-OCRv5_mobile_rec_infer/inference.onnx | PaddleOCR     | Based on "https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv5_mobile_rec_infer.tar", converted to onnx format using "https://www.paddleocr.ai/main/en/version3.x/deployment/obtaining_onnx_models.html"
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+OnnxTR full license agreement text is below:
+
+    Copyright (C) 2021-2024, Mindee | Felix Dittrich.
+
+    This program is licensed under the Apache License 2.0.
+    See <https://opensource.org/licenses/Apache-2.0> for full license details.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+EasyOCR full license agreement text is below:
+
+    Copyright (c) 2020 JaidedAI Authors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+PaddleOCR full license agreement text is below:
+
+    Copyright (c) 2016 PaddlePaddle Authors. All Rights Reserved.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

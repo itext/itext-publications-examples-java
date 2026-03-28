@@ -29,7 +29,9 @@ import java.util.List;
  * to set color for recognized text.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
+ * Required software: iText 9.6.0, pdfOCR-Onnx 5.0.0
+ * (pdfocr-onnx-cpu dependency to execute ONNX models on CPU or 
+ * pdfocr-onnx-abstract and onnxruntime_gpu dependencies to execute ONNX models on GPU).
  */
 public class PdfOcrOnnxMultilingualExample {
     public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxMultilingualExample/result.pdf";
