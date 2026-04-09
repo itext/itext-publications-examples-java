@@ -45,7 +45,12 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.pdfa.HelloPdfA2a",
             "com.itextpdf.samples.sandbox.pdfa.PdfA1a",
             "com.itextpdf.samples.sandbox.pdfa.PdfA1a_images",
-            "com.itextpdf.samples.sandbox.pdfa.PdfA3");
+            "com.itextpdf.samples.sandbox.pdfa.PdfA3",
+            "com.itextpdf.samples.sandbox.pdfa.PdfA4",
+            "com.itextpdf.samples.sandbox.pdfua.PdfUA2PdfA4",
+            "com.itextpdf.samples.sandbox.wtpdf.SimpleWtpdf",
+            "com.itextpdf.samples.sandbox.wtpdf.WtpdfWithUA2"
+    );
 
     /**
      * List of samples, which require xml files comparison
