@@ -105,6 +105,7 @@ public class ClipCenterCellContent {
             layoutCanvas.add(content);
 
             drawContext.getCanvas().addXObjectAt(xObject, occupiedArea.getBBox().getLeft(), occupiedArea.getBBox().getBottom());
+            layoutCanvas.close();
         }
     }
 }

@@ -39,6 +39,7 @@ public class WalkTheTree {
         StringBuilder builder = new StringBuilder();
 
         process(pdfDoc.getStructTreeRoot(), builder);
+        pdfDoc.close();
 
         createResultTxt(dest, builder.toString());
     }

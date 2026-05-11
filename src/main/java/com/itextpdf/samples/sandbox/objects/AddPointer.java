@@ -10,7 +10,6 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 /*

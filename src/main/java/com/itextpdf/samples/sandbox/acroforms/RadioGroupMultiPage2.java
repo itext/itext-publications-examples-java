@@ -8,7 +8,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.properties.UnitValue;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfButtonFormField;
-import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
@@ -71,6 +70,7 @@ public class RadioGroupMultiPage2 {
         form.addField(radioGroup);
 
         pdfDoc.close();
+        doc.close();
     }
 
 

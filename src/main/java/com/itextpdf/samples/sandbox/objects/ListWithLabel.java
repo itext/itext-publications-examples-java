@@ -8,7 +8,6 @@ import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.properties.HorizontalAlignment;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 /*

@@ -52,6 +52,7 @@ public class ConvertSvgToLayoutImage {
             doc.add(image);
 
             doc.add(new Paragraph("This is some text added after the SVG image."));
+            doc.close();
         }
     }
 }

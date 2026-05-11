@@ -11,10 +11,7 @@ import com.itextpdf.signatures.validation.lotl.QualifiedValidator;
 import com.itextpdf.signatures.validation.lotl.RemoveOnFailingCountryData;
 import com.itextpdf.signatures.validation.report.ValidationReport;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Map;
 
 public class LotlSimpleSignatureValidation {

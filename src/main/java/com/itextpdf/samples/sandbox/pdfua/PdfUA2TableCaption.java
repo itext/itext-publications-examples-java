@@ -80,6 +80,7 @@ public class PdfUA2TableCaption {
             }
 
             document.add(captionTopTable);
+            document.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

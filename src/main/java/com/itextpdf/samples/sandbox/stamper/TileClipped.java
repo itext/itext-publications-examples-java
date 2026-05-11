@@ -55,5 +55,6 @@ public class TileClipped {
         }
 
         pdfDoc.close();
+        srcDoc.close();
     }
 }

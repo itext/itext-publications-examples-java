@@ -65,5 +65,7 @@ public class PdfA4 {
         document.add(element);
 
         pdfDocument.close();
+        document.close();
+
     }
 }

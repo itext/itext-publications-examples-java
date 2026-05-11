@@ -8,7 +8,6 @@ import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /*

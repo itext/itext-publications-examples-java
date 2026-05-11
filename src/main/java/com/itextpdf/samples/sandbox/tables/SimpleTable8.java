@@ -60,5 +60,6 @@ public class SimpleTable8 {
         doc.add(table);
 
         doc.close();
+        srcDoc.close();
     }
 }

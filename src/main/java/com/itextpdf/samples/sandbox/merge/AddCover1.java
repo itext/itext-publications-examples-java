@@ -6,7 +6,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.utils.PdfMerger;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 /*

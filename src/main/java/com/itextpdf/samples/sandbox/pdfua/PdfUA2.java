@@ -45,6 +45,7 @@ public class PdfUA2 {
             document.setFont(font);
             Paragraph paragraph = new Paragraph("Hello PdfUA2");
             document.add(paragraph);
+            document.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

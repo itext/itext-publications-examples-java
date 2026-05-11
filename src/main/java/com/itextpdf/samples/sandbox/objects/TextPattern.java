@@ -12,7 +12,6 @@ import com.itextpdf.kernel.pdf.colorspace.PdfPattern;
 import com.itextpdf.layout.Document;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 /*
