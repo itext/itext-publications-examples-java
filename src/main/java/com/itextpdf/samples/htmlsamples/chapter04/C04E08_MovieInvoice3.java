@@ -1,22 +1,5 @@
 package com.itextpdf.samples.htmlsamples.chapter04;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.kernel.pdf.PdfAConformance;
@@ -28,6 +11,22 @@ import com.itextpdf.kernel.pdf.filespec.PdfFileSpec;
 import com.itextpdf.licensing.base.LicenseKey;
 import com.itextpdf.pdfa.PdfADocument;
 import com.itextpdf.samples.util.LicenseUtil;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 /**
  * Creates a PDF document from an XML file using XSLT to convert the XML to HTML,
@@ -58,7 +57,7 @@ public class C04E08_MovieInvoice3 {
     /**
      * The path to the output intent file.
      */
-    public static final String INTENT = "./src/main/resources/htmlsamples/color/sRGB_CS_profile.icm";
+    public static final String INTENT = "./src/main/resources/data/sRGB_CS_profile.icm";
 
     /**
      * The main method of this example.

@@ -53,7 +53,7 @@ public class PdfUA2PdfA4 {
                 "",
                 "http://www.color.org",
                 "sRGB IEC61964-2.1",
-                Files.newInputStream(Paths.get(SOURCE_FOLDER + "sRGB Color Space Profile.icm")));
+                Files.newInputStream(Paths.get("./src/main/resources/data/sRGB_CS_profile.icm")));
 
         WriterProperties writerProperties = new WriterProperties().setPdfVersion(PdfVersion.PDF_2_0);
         //If you need attachments you would PDF/A4-F
