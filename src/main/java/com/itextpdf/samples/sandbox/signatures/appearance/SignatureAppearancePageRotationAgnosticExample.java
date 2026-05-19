@@ -33,7 +33,7 @@ import java.security.cert.Certificate;
  * SignatureAppearancePageRotationAgnosticExample.java
  *
  * Creates PDF signatures using custom appearance layers and rotated input page.
- * Graphics are drawn as if page is not rotated and real rectangle is recalculated based on the rotation.
+ * Content is placed as if page is not rotated and real rectangle is recalculated based on the rotation.
  */
 public class SignatureAppearancePageRotationAgnosticExample {
 
