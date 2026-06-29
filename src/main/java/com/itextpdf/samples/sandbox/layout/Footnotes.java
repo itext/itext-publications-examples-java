@@ -41,6 +41,8 @@ public class Footnotes {
     public void manipulatePdf(String dest) throws IOException {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
         Document doc = new Document(pdfDoc);
+        // Optional: enable tagging.
+        pdfDoc.setTagged();
 
         // Configure footnote numbering and the look of the footnotes container.
         // ROMAN_LOWER numbering will be used for the anchor markers (i, ii, iii, ...),
