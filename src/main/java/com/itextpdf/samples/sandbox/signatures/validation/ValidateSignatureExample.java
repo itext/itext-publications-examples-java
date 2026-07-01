@@ -30,7 +30,6 @@ import java.security.cert.X509Certificate;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
-import static org.junit.jupiter.api.Assertions.assertSame;
 
 /*
  * ValidateSignatureExample.java

@@ -6,7 +6,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfcleanup.PdfCleaner;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 /*

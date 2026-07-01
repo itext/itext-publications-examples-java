@@ -13,7 +13,6 @@ import com.itextpdf.layout.properties.ParagraphOrphansControl;
 import com.itextpdf.layout.properties.ParagraphWidowsControl;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

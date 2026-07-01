@@ -7,7 +7,6 @@ import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.properties.UnitValue;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 /*

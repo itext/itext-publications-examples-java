@@ -33,7 +33,7 @@ public class HtmlToPdfA3Convert {
     public void manipulatePdf(String pdfDest) throws IOException {
         String htmlSource = SRC + "MixedContent.html";
 
-        InputStream inputStream = new FileInputStream(SRC + "sRGB Color Space Profile.icm");
+        InputStream inputStream = new FileInputStream("./src/main/resources/data/sRGB_CS_profile.icm");
 
         ConverterProperties converterProperties = new ConverterProperties();
         converterProperties.setBaseUri(SRC);

@@ -62,5 +62,6 @@ public class TableTemplate {
         }
 
         pdfDoc.close();
+        canvas.close();
     }
 }

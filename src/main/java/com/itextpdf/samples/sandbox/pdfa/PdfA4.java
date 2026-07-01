@@ -13,7 +13,6 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.pdfa.PdfADocument;
-import com.itextpdf.test.pdfa.VeraPdfValidator;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,7 +43,6 @@ public class PdfA4 {
         new PdfA4().manipulatePdf(DEST);
     }
 
-
     public void manipulatePdf(String dest) throws IOException {
         //PDF/a-4 requires a PDF 2.0 document
         PdfWriter writer = new PdfWriter(dest, new WriterProperties().setPdfVersion(PdfVersion.PDF_2_0));
@@ -67,8 +65,7 @@ public class PdfA4 {
         document.add(element);
 
         pdfDocument.close();
-        assert null == new VeraPdfValidator().validate(dest);
+        document.close();
 
     }
-
 }

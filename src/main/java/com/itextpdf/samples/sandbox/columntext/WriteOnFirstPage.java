@@ -1,8 +1,6 @@
 package com.itextpdf.samples.sandbox.columntext;
 
-import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.geom.Rectangle;
-import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.xobject.PdfFormXObject;

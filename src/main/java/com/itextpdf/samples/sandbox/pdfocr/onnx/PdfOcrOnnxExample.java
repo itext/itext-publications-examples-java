@@ -1,6 +1,5 @@
 package com.itextpdf.samples.sandbox.pdfocr.onnx;
 
-import com.itextpdf.commons.utils.FileUtil;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.pdfocr.OcrPdfCreator;
 import com.itextpdf.pdfocr.onnx.OnnxOcrEngine;
@@ -12,7 +11,6 @@ import com.itextpdf.pdfocr.onnx.recognition.IRecognitionPredictor;
 import com.itextpdf.pdfocr.onnx.recognition.OnnxRecognitionPredictor;
 
 import java.io.File;
-import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +22,9 @@ import java.util.List;
  * for the given list of input images and save output to a PDF file using provided path.
  *
  * <p>
- * Required software: iText 9.3.0, pdfOCR-Onnx 5.0.0.
+ * Required software: iText 9.6.0, pdfOCR-Onnx 5.0.0
+ * (pdfocr-onnx-cpu dependency to execute ONNX models on CPU or 
+ * pdfocr-onnx-abstract and onnxruntime_gpu dependencies to execute ONNX models on GPU).
  */
 public class PdfOcrOnnxExample {
     public static final String DEST = "./target/sandbox/pdfocr/onnx/PdfOcrOnnxExample/result.pdf";
@@ -36,7 +36,6 @@ public class PdfOcrOnnxExample {
     private static final String FAST = MODELS + "rep_fast_tiny-28867779.onnx";
     private static final String CRNNVGG16 = MODELS + "crnn_vgg16_bn-662979cc.onnx";
     private static final String MOBILENETV3 = MODELS + "mobilenet_v3_small_crop_orientation-5620cf7e.onnx";
-
 
     public static void main(String[] args) throws Exception {
         File file = new File(DEST);
@@ -55,10 +54,9 @@ public class PdfOcrOnnxExample {
         // OnnxOcrEngine shall be closed after usage to avoid native allocations leak.
         // It will also close all predictors used for its creation.
         try (OnnxOcrEngine ocrEngine =
-                     new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor);
-             OutputStream output = FileUtil.getFileOutputStream(destination)) {
+                     new OnnxOcrEngine(detectionPredictor, orientationPredictor, recognitionPredictor)) {
             OcrPdfCreator pdfCreator = new OcrPdfCreator(ocrEngine);
-            pdfCreator.createPdf(images, new PdfWriter(output)).close();
+            pdfCreator.createPdf(images, new PdfWriter(destination)).close();
         }
     }
 }

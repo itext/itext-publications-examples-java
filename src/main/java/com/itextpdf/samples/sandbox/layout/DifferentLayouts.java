@@ -8,7 +8,6 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /*

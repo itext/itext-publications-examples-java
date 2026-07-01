@@ -10,8 +10,6 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 
 /*
  * ReuseFont.java

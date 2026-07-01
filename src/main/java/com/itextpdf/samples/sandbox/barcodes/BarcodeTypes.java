@@ -22,7 +22,6 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /*

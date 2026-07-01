@@ -116,5 +116,6 @@ public class AddOCG {
         canvas.endLayer();
 
         pdfDoc.close();
+        canvasModel.close();
     }
 }

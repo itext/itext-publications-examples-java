@@ -2,7 +2,6 @@ package com.itextpdf.samples.sandbox.acroforms;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormCreator;
-import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.forms.fields.PdfTextFormField;
 import com.itextpdf.forms.fields.TextFormFieldBuilder;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -63,6 +62,7 @@ public class AddFieldAfterParagraph {
         doc.add(new Paragraph("This paragraph follows the form field"));
 
         pdfDoc.close();
+        doc.close();
     }
 
     private static class TextFieldRenderer extends DivRenderer {
