@@ -3,18 +3,18 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itextpdf</groupId>
   <artifactId>samples</artifactId>
-  <version>9.7.0-SNAPSHOT</version>
+  <version>9.7.0</version>
   <name>iText Examples: Sandbox</name>
   <url>https://itextpdf.com/</url>
   <properties>
-    <cleanup.version>5.0.7-SNAPSHOT</cleanup.version>
-    <ocr.version>5.0.1-SNAPSHOT</ocr.version>
-    <html2pdf.version>6.3.3-SNAPSHOT</html2pdf.version>
+    <cleanup.version>5.0.7</cleanup.version>
+    <ocr.version>5.0.1</ocr.version>
+    <html2pdf.version>6.3.3</html2pdf.version>
     <java.version>1.8</java.version>
-    <pdfxfa.version>5.0.7-SNAPSHOT</pdfxfa.version>
-    <licensekey.version>4.2.7-SNAPSHOT</licensekey.version>
+    <pdfxfa.version>5.0.7</pdfxfa.version>
+    <licensekey.version>4.2.7</licensekey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <typography.version>5.1.0-SNAPSHOT</typography.version>
+    <typography.version>5.1.0</typography.version>
   </properties>
   <dependencies>
     <dependency>
