@@ -2,11 +2,12 @@ package com.itextpdf.samples.sandbox.graphics;
 
 import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.colors.ColorConstants;
-import com.itextpdf.kernel.colors.gradients.AbstractLinearGradientBuilder;
+import com.itextpdf.kernel.colors.gradients.AbstractGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.GradientColorStop;
 import com.itextpdf.kernel.colors.gradients.LinearGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.StrategyBasedLinearGradientBuilder;
 import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.geom.Point;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -49,10 +50,11 @@ public class LinearGradientsInLayout {
     private void addLinearGradientAsElementBackground(Document doc) {
         doc.add(new Paragraph("The \"addLinearGradientAsElementBackground\" starts here."));
 
-        AbstractLinearGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder()
-                .addColorStop(new GradientColorStop(ColorConstants.RED.getColorValue()))
-                .addColorStop(new GradientColorStop(ColorConstants.GREEN.getColorValue()))
-                .addColorStop(new GradientColorStop(ColorConstants.BLUE.getColorValue()));
+        StrategyBasedLinearGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder();
+        gradientBuilder
+                .addStopColor(new GradientColorStop(ColorConstants.RED.getColorValue()))
+                .addStopColor(new GradientColorStop(ColorConstants.GREEN.getColorValue()))
+                .addStopColor(new GradientColorStop(ColorConstants.BLUE.getColorValue()));
 
         BackgroundImage backgroundImage = new BackgroundImage.Builder()
                 .setLinearGradientBuilder(gradientBuilder).build();
@@ -79,11 +81,11 @@ public class LinearGradientsInLayout {
 
         // The below such linear gradient spans across the whole page and therefore color created from it will be
         // different based at the location of the page.
-        AbstractLinearGradientBuilder gradientBuilder = new LinearGradientBuilder()
+        AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
                 .setGradientVector(PageSize.A4.getLeft(), PageSize.A4.getBottom(), PageSize.A4.getRight(), PageSize.A4.getTop())
-                .addColorStop(new GradientColorStop(ColorConstants.RED.getColorValue()))
-                .addColorStop(new GradientColorStop(ColorConstants.PINK.getColorValue()))
-                .addColorStop(new GradientColorStop(ColorConstants.BLUE.getColorValue()));
+                .addStopColor(new GradientColorStop(ColorConstants.RED.getColorValue()))
+                .addStopColor(new GradientColorStop(ColorConstants.PINK.getColorValue()))
+                .addStopColor(new GradientColorStop(ColorConstants.BLUE.getColorValue()));
 
         Color gradientColor = gradientBuilder.buildColor(PageSize.A4.clone(), null, doc.getPdfDocument());
 

@@ -1,7 +1,7 @@
 package com.itextpdf.samples.sandbox.graphics;
 
 import com.itextpdf.kernel.colors.ColorConstants;
-import com.itextpdf.kernel.colors.gradients.AbstractLinearGradientBuilder;
+import com.itextpdf.kernel.colors.gradients.AbstractGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.GradientColorStop;
 import com.itextpdf.kernel.colors.gradients.GradientColorStop.OffsetType;
 import com.itextpdf.kernel.colors.gradients.GradientSpreadMethod;
@@ -9,6 +9,7 @@ import com.itextpdf.kernel.colors.gradients.LinearGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.StrategyBasedLinearGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.StrategyBasedLinearGradientBuilder.GradientStrategy;
 import com.itextpdf.kernel.geom.AffineTransform;
+import com.itextpdf.kernel.geom.Point;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -45,12 +46,12 @@ public class LinearGradientsInKernel {
     }
 
     private void addLinearGradientITextAPIApproach(PdfDocument pdfDoc) {
-        AbstractLinearGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder()
+        AbstractGradientBuilder<Point> gradientBuilder = new StrategyBasedLinearGradientBuilder()
                 .setGradientDirectionAsStrategy(GradientStrategy.TO_TOP_RIGHT)
-                .setSpreadMethod(GradientSpreadMethod.PAD)
-                .addColorStop(new GradientColorStop(ColorConstants.CYAN.getColorValue()))
-                .addColorStop(new GradientColorStop(ColorConstants.GREEN.getColorValue()))
-                .addColorStop(new GradientColorStop(new float[]{1f, 0f, 0f}, 0.5f, OffsetType.RELATIVE));
+                .setSpread(GradientSpreadMethod.PAD)
+                .addStopColor(new GradientColorStop(ColorConstants.CYAN.getColorValue()))
+                .addStopColor(new GradientColorStop(ColorConstants.GREEN.getColorValue()))
+                .addStopColor(new GradientColorStop(new float[]{1f, 0f, 0f}, 0.5f, OffsetType.RELATIVE));
 
         AffineTransform canvasTransform = AffineTransform.getTranslateInstance(50, -50);
         canvasTransform.scale(0.8, 1.1);
@@ -81,20 +82,20 @@ public class LinearGradientsInKernel {
 
     private void addLinearGradientDirectCoordinatesApproach(PdfDocument pdfDoc) {
         Rectangle targetBoundingBox = new Rectangle(50f, 450f, 300f, 300f);
-        AbstractLinearGradientBuilder gradientBuilder = new LinearGradientBuilder()
+        AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
                 .setGradientVector(targetBoundingBox.getLeft() + 100f, targetBoundingBox.getBottom() + 100f,
                         targetBoundingBox.getRight() - 100f, targetBoundingBox.getTop() - 100f)
-                .setSpreadMethod(GradientSpreadMethod.REPEAT)
+                .setSpread(GradientSpreadMethod.REPEAT)
 
                 // For the RELATIVE offset type "0" value means the target vector start and the "1" value means the target vector end
-                .addColorStop(new GradientColorStop(ColorConstants.BLUE.getColorValue(), 0.5, OffsetType.RELATIVE))
-                .addColorStop(new GradientColorStop(ColorConstants.GREEN.getColorValue(), 1, OffsetType.RELATIVE));
+                .addStopColor(new GradientColorStop(ColorConstants.BLUE.getColorValue(), 0.5, OffsetType.RELATIVE))
+                .addStopColor(new GradientColorStop(ColorConstants.GREEN.getColorValue(), 1, OffsetType.RELATIVE));
 
         generatePdf(pdfDoc, null, gradientBuilder, targetBoundingBox);
     }
 
     private void generatePdf(PdfDocument pdfDocument, AffineTransform transform,
-            AbstractLinearGradientBuilder gradientBuilder, Rectangle rectangleToDraw) {
+            AbstractGradientBuilder<Point> gradientBuilder, Rectangle rectangleToDraw) {
             PdfCanvas canvas = new PdfCanvas(pdfDocument.addNewPage());
 
             if (transform != null) {
