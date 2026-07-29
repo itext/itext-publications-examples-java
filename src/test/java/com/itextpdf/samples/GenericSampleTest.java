@@ -258,8 +258,16 @@ public class GenericSampleTest extends WrappedSamplesRunner {
                             + "target file: \"" + destLine + "\n";
                 }
 
+                // Tesseract may or may not emit a form-feed (\f) end-of-page marker; the behavior varies by version.
+                // Should not really influence on other tests
                 destLine = destReader.readLine();
+                while ("\u000C".equals(destLine)) {
+                    destLine = destReader.readLine();
+                }
                 cmpLine = cmpReader.readLine();
+                while ("\u000C".equals(cmpLine)) {
+                    cmpLine = cmpReader.readLine();
+                }
                 lineNumber++;
             }
         }
