@@ -1,10 +1,10 @@
 package com.itextpdf.samples.sandbox.graphics;
 
 import com.itextpdf.kernel.colors.ColorConstants;
-import com.itextpdf.kernel.colors.gradients.AbstractGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.GradientColorStop;
 import com.itextpdf.kernel.colors.gradients.GradientColorStop.OffsetType;
 import com.itextpdf.kernel.colors.gradients.GradientSpreadMethod;
+import com.itextpdf.kernel.colors.gradients.IGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.LinearGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.StrategyBasedLinearGradientBuilder;
 import com.itextpdf.kernel.colors.gradients.StrategyBasedLinearGradientBuilder.GradientStrategy;
@@ -46,7 +46,7 @@ public class LinearGradientsInKernel {
     }
 
     private void addLinearGradientITextAPIApproach(PdfDocument pdfDoc) {
-        AbstractGradientBuilder<Point> gradientBuilder = new StrategyBasedLinearGradientBuilder()
+        IGradientBuilder gradientBuilder = new StrategyBasedLinearGradientBuilder()
                 .setGradientDirectionAsStrategy(GradientStrategy.TO_TOP_RIGHT)
                 .setSpread(GradientSpreadMethod.PAD)
                 .addStopColor(new GradientColorStop(ColorConstants.CYAN.getColorValue()))
@@ -82,7 +82,7 @@ public class LinearGradientsInKernel {
 
     private void addLinearGradientDirectCoordinatesApproach(PdfDocument pdfDoc) {
         Rectangle targetBoundingBox = new Rectangle(50f, 450f, 300f, 300f);
-        AbstractGradientBuilder<Point> gradientBuilder = new LinearGradientBuilder()
+        IGradientBuilder gradientBuilder = new LinearGradientBuilder()
                 .setGradientVector(targetBoundingBox.getLeft() + 100f, targetBoundingBox.getBottom() + 100f,
                         targetBoundingBox.getRight() - 100f, targetBoundingBox.getTop() - 100f)
                 .setSpread(GradientSpreadMethod.REPEAT)
@@ -95,7 +95,7 @@ public class LinearGradientsInKernel {
     }
 
     private void generatePdf(PdfDocument pdfDocument, AffineTransform transform,
-            AbstractGradientBuilder<Point> gradientBuilder, Rectangle rectangleToDraw) {
+            IGradientBuilder gradientBuilder, Rectangle rectangleToDraw) {
             PdfCanvas canvas = new PdfCanvas(pdfDocument.addNewPage());
 
             if (transform != null) {
