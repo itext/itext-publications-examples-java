@@ -78,6 +78,7 @@ public class FillWithUnderline {
          * This method implies that if the handler encounters opening tag &lt;u&gt;,
          * then it sets isUnderlined flag to true.
          */
+        @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) {
             if ("u".equals(qName)) {
                 isUnderlined = true;
@@ -89,6 +90,7 @@ public class FillWithUnderline {
          * if &lt;/div&gt;, then add the parsed text to the document;
          * if &lt;/u&gt;, then set isUnderlined flag to false
          */
+        @Override
         public void endElement(String uri, String localName, String qName) {
             if ("div".equals(qName)) {
                 document.add(paragraph.setFixedPosition(position.getLeft(), position.getBottom(), position.getWidth()));
@@ -104,6 +106,7 @@ public class FillWithUnderline {
         /**
          * Creates a {@link Text} from the passed parameters and wraps it if not empty with a paragraph.
          */
+        @Override
         public void characters(char[] ch, int start, int length) {
             Text text = new Text(strip(new StringBuffer().append(ch, start, length)));
             if (isUnderlined) {
