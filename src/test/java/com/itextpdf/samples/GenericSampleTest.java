@@ -37,8 +37,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.signatures.SignatureExample",
             "com.itextpdf.samples.sandbox.signatures.pqc.MLDSA",
             "com.itextpdf.samples.sandbox.signatures.pqc.SLHDSA",
-            "com.itextpdf.samples.sandbox.signatures.pqc.FNDSA",
-            "com.itextpdf.samples.sandbox.signatures.pqc.Picnic"
+            "com.itextpdf.samples.sandbox.signatures.pqc.FNDSA"
     );
 
     private static final List<String> veraPdfCompareList = Arrays.asList(
