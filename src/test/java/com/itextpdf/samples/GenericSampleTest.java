@@ -37,8 +37,7 @@ public class GenericSampleTest extends WrappedSamplesRunner {
             "com.itextpdf.samples.sandbox.signatures.SignatureExample",
             "com.itextpdf.samples.sandbox.signatures.pqc.MLDSA",
             "com.itextpdf.samples.sandbox.signatures.pqc.SLHDSA",
-            "com.itextpdf.samples.sandbox.signatures.pqc.FNDSA",
-            "com.itextpdf.samples.sandbox.signatures.pqc.Picnic"
+            "com.itextpdf.samples.sandbox.signatures.pqc.FNDSA"
     );
 
     private static final List<String> veraPdfCompareList = Arrays.asList(
@@ -258,8 +257,16 @@ public class GenericSampleTest extends WrappedSamplesRunner {
                             + "target file: \"" + destLine + "\n";
                 }
 
+                // Tesseract may or may not emit a form-feed (\f) end-of-page marker; the behavior varies by version.
+                // Should not really influence on other tests
                 destLine = destReader.readLine();
+                while ("\u000C".equals(destLine)) {
+                    destLine = destReader.readLine();
+                }
                 cmpLine = cmpReader.readLine();
+                while ("\u000C".equals(cmpLine)) {
+                    cmpLine = cmpReader.readLine();
+                }
                 lineNumber++;
             }
         }

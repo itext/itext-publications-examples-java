@@ -165,6 +165,7 @@ public class LotlValidationThirdCountryTL {
         /**
          * Returns the URI of the third‑country (MRA/AdES) LOTL.
          */
+        @Override
         public String getTrustedListUri() {
             return "https://ec.europa.eu/tools/lotl/mra/ades-lotl.xml";
         }
@@ -172,6 +173,7 @@ public class LotlValidationThirdCountryTL {
         /**
          * Third‑country LOTL does not rely on the same publication identifier; empty string is returned.
          */
+        @Override
         public String getCurrentlySupportedPublication() {
             return "";
         }
@@ -182,6 +184,7 @@ public class LotlValidationThirdCountryTL {
          *
          * @return Official Journal signing certificates
          */
+        @Override
         public List<Certificate> getCertificates() {
             return originalFactory.getCertificates();
         }
